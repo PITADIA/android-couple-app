@@ -1,0 +1,299 @@
+import Foundation
+import RealmSwift
+
+// MARK: - Realm Models
+
+class RealmQuestion: Object {
+    @Persisted var id: String = UUID().uuidString
+    @Persisted var text: String = ""
+    @Persisted var category: String = ""
+    @Persisted var isLiked: Bool = false
+    @Persisted var createdAt: Date = Date()
+    @Persisted var lastViewed: Date?
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
+    convenience init(question: Question, category: String) {
+        self.init()
+        self.text = question.text
+        self.category = category
+    }
+    
+    func toQuestion() -> Question {
+        return Question(text: self.text, category: self.category)
+    }
+}
+
+class RealmCategory: Object {
+    @Persisted var title: String = ""
+    @Persisted var questionsCount: Int = 0
+    @Persisted var lastUpdated: Date = Date()
+    @Persisted var isPopulated: Bool = false
+    
+    override static func primaryKey() -> String? {
+        return "title"
+    }
+}
+
+// MARK: - Favorites Model
+
+class RealmFavoriteQuestion: Object {
+    @Persisted var id: String = UUID().uuidString
+    @Persisted var questionId: String = ""
+    @Persisted var userId: String = ""
+    @Persisted var categoryTitle: String = ""
+    @Persisted var questionText: String = ""
+    @Persisted var dateAdded: Date = Date()
+    @Persisted var emoji: String = ""
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
+    convenience init(question: Question, category: QuestionCategory, userId: String) {
+        self.init()
+        self.questionId = question.id
+        self.userId = userId
+        self.categoryTitle = category.title
+        self.questionText = question.text
+        self.emoji = category.emoji
+        self.dateAdded = Date()
+    }
+    
+    func toFavoriteItem() -> FavoriteQuestion {
+        return FavoriteQuestion(
+            id: self.id,
+            questionId: self.questionId,
+            questionText: self.questionText,
+            categoryTitle: self.categoryTitle,
+            emoji: self.emoji,
+            dateAdded: self.dateAdded
+        )
+    }
+}
+
+// MARK: - Question Cache Manager
+
+@MainActor
+class QuestionCacheManager: ObservableObject {
+    private var realm: Realm?
+    
+    @Published var isLoading = false
+    @Published var cacheStatus: [String: Bool] = [:]
+    @Published var isRealmAvailable = false
+    
+    init() {
+        initializeRealm()
+    }
+    
+    private func initializeRealm() {
+        do {
+            // Configuration Realm optimisée pour la performance
+            var config = Realm.Configuration.defaultConfiguration
+            config.schemaVersion = 2 // Mise à jour pour les favoris
+            config.migrationBlock = { migration, oldSchemaVersion in
+                // Migration automatique pour les favoris
+                if oldSchemaVersion < 2 {
+                    // Ajouter les favoris si nécessaire
+                }
+            }
+            config.shouldCompactOnLaunch = { (totalBytes: Int, usedBytes: Int) in
+                let maxSize = 20 * 1024 * 1024 // RÉDUIT: 20MB au lieu de 50MB
+                let usageRatio = Double(usedBytes) / Double(totalBytes)
+                return totalBytes > maxSize && usageRatio < 0.5
+            }
+            
+            self.realm = try Realm(configuration: config)
+            self.isRealmAvailable = true
+            print("RealmManager: Initialisé")
+        } catch {
+            print("⚠️ RealmManager: Erreur d'initialisation: \(error)")
+            self.realm = nil
+            self.isRealmAvailable = false
+        }
+    }
+    
+    // MARK: - Cache Questions
+    
+    func cacheQuestions(for category: String, questions: [Question]) {
+        guard let realm = realm else {
+            print("⚠️ RealmManager: Realm non disponible")
+            return
+        }
+        
+        // OPTIMISATION: Limiter le nombre de questions cachées par catégorie
+        let limitedQuestions = Array(questions.prefix(100)) // MAX 100 questions par catégorie
+        
+        do {
+            try realm.write {
+                // Supprimer les anciennes questions de cette catégorie
+                let oldQuestions = realm.objects(RealmQuestion.self).filter("category == %@", category)
+                realm.delete(oldQuestions)
+                
+                // Ajouter les nouvelles questions (limitées)
+                for question in limitedQuestions {
+                    let realmQuestion = RealmQuestion(question: question, category: category)
+                    realm.add(realmQuestion)
+                }
+                
+                // Mettre à jour le statut de la catégorie
+                let realmCategory = RealmCategory()
+                realmCategory.title = category
+                realmCategory.questionsCount = limitedQuestions.count
+                realmCategory.isPopulated = true
+                realmCategory.lastUpdated = Date()
+                
+                realm.add(realmCategory, update: .modified)
+            }
+            
+            cacheStatus[category] = true
+            print("RealmManager: \(limitedQuestions.count) questions cachées pour '\(category)'")
+            
+        } catch {
+            print("⚠️ RealmManager: Erreur cache: \(error)")
+        }
+    }
+    
+    func getCachedQuestions(for category: String) -> [Question] {
+        guard let realm = realm else {
+            return []
+        }
+        
+        let realmQuestions = realm.objects(RealmQuestion.self)
+            .filter("category == %@", category)
+            .sorted(byKeyPath: "createdAt")
+        
+        let questions = Array(realmQuestions.map { $0.toQuestion() })
+        
+        if !questions.isEmpty {
+            print("RealmManager: \(questions.count) questions du cache pour '\(category)'")
+        }
+        
+        return questions
+    }
+    
+    func isCategoryPopulated(_ category: String) -> Bool {
+        guard let realm = realm else {
+            return false
+        }
+        
+        let realmCategory = realm.object(ofType: RealmCategory.self, forPrimaryKey: category)
+        return realmCategory?.isPopulated ?? false
+    }
+    
+    // MARK: - Smart Loading
+    
+    func getQuestionsWithSmartCache(for category: String, fallback: () -> [Question]) -> [Question] {
+        // 1. Essayer le cache d'abord
+        let cachedQuestions = getCachedQuestions(for: category)
+        
+        if !cachedQuestions.isEmpty {
+            return cachedQuestions
+        }
+        
+        // 2. Si pas de cache, utiliser le fallback et cacher
+        let freshQuestions = fallback()
+        
+        if !freshQuestions.isEmpty {
+            cacheQuestions(for: category, questions: freshQuestions)
+        }
+        
+        return freshQuestions
+    }
+    
+    // MARK: - Preloading OPTIMISÉ
+    
+    func preloadAllCategories() {
+        Task {
+            isLoading = true
+            
+            // OPTIMISATION: Précharger seulement les catégories essentielles
+            let essentialCategories = [
+                ("EN COUPLE", "En couple"),
+                ("TU PRÉFÈRES ?", "Tu préfères quoi ?"),
+                ("QUESTIONS PROFONDES", "Des questions profondes")
+            ]
+            
+            for (key, displayName) in essentialCategories {
+                if !isCategoryPopulated(displayName) {
+                    if let questions = Question.sampleQuestions[key] {
+                        cacheQuestions(for: displayName, questions: questions)
+                    }
+                }
+            }
+            
+            isLoading = false
+            print("RealmManager: Préchargement terminé (mode optimisé)")
+        }
+    }
+    
+    // MARK: - Statistics
+    
+    func getCacheStatistics() -> (totalQuestions: Int, categories: Int, cacheSize: String) {
+        guard let realm = realm else {
+            return (0, 0, "0 bytes")
+        }
+        
+        let totalQuestions = realm.objects(RealmQuestion.self).count
+        let categories = realm.objects(RealmCategory.self).count
+        
+        let fileSize = realm.configuration.fileURL?.fileSize ?? 0
+        let cacheSizeString = ByteCountFormatter.string(fromByteCount: Int64(fileSize), countStyle: .file)
+        
+        return (totalQuestions, categories, cacheSizeString)
+    }
+    
+    // MARK: - Cleanup
+    
+    func clearCache() {
+        guard let realm = realm else {
+            return
+        }
+        
+        do {
+            try realm.write {
+                realm.deleteAll()
+            }
+            cacheStatus.removeAll()
+            print("RealmManager: Cache vidé")
+        } catch {
+            print("⚠️ RealmManager: Erreur nettoyage: \(error)")
+        }
+    }
+    
+    // NOUVELLE FONCTION: Nettoyage intelligent de la mémoire
+    func optimizeMemoryUsage() {
+        guard let realm = realm else { return }
+        
+        do {
+            // Supprimer les questions anciennes et peu utilisées
+            try realm.write {
+                let oldQuestions = realm.objects(RealmQuestion.self)
+                    .filter("lastViewed < %@ OR lastViewed == nil", Date().addingTimeInterval(-7*24*60*60)) // Plus de 7 jours
+                
+                if oldQuestions.count > 500 {
+                    let toDelete = Array(oldQuestions.prefix(oldQuestions.count - 300))
+                    realm.delete(toDelete)
+                    print("RealmManager: \(toDelete.count) anciennes questions supprimées")
+                }
+            }
+        } catch {
+            print("⚠️ RealmManager: Erreur optimisation: \(error)")
+        }
+    }
+}
+
+// MARK: - Extensions
+
+extension URL {
+    var fileSize: Int {
+        do {
+            let resourceValues = try resourceValues(forKeys: [.fileSizeKey])
+            return resourceValues.fileSize ?? 0
+        } catch {
+            return 0
+        }
+    }
+} 
