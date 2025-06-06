@@ -82,6 +82,9 @@ class AppState: ObservableObject {
                     // Si l'utilisateur est authentifié mais sans données complètes
                     if self?.isAuthenticated == true {
                         print("AppState: Continuer onboarding")
+                        // Ne pas marquer l'onboarding comme terminé si les données sont incomplètes
+                        self?.isOnboardingCompleted = false
+                        self?.isOnboardingInProgress = false // user est nil ici, donc pas d'onboarding en cours
                     } else {
                         print("AppState: Onboarding requis")
                         self?.isOnboardingCompleted = false

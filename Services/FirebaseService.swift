@@ -323,16 +323,34 @@ class FirebaseService: NSObject, ObservableObject {
                     if onboardingInProgress {
                         print("🔥🔥🔥 FIREBASE LOAD: - Raison: Onboarding en cours de progression")
                         
-                        // NOUVEAU: Si l'onboarding est déjà en cours dans l'app, ne pas forcer la redirection
-                        if self?.isOnboardingInProgress == true {
-                            print("🔥🔥🔥 FIREBASE LOAD: ONBOARDING DEJA EN COURS - PAS DE REDIRECTION")
-                            print("🔥🔥🔥 FIREBASE LOAD: L'UTILISATEUR RESTE SUR SA PAGE ACTUELLE")
-                            // Marquer comme authentifié mais ne pas changer currentUser
-                            self?.isAuthenticated = true
-                            return
-                        } else {
-                            print("🔥🔥🔥 FIREBASE LOAD: REDIRECTION VERS ONBOARDING")
+                        // Vérifier si l'utilisateur vient juste de se créer (moins de 5 minutes)
+                        if let createdAt = data["createdAt"] as? Timestamp {
+                            let timeSinceCreation = Date().timeIntervalSince(createdAt.dateValue())
+                            if timeSinceCreation < 300 { // Moins de 5 minutes
+                                print("🔥🔥🔥 FIREBASE LOAD: UTILISATEUR RECENT - CONTINUER ONBOARDING SANS REDIRECTION")
+                                print("🔥🔥🔥 FIREBASE LOAD: Créé il y a \(timeSinceCreation) secondes")
+                                
+                                // Créer un utilisateur partiel pour permettre la continuation de l'onboarding
+                                let partialUser = User(
+                                    id: data["id"] as? String ?? UUID().uuidString,
+                                    name: name,
+                                    birthDate: birthDate?.dateValue() ?? Date(),
+                                    relationshipGoals: relationshipGoals,
+                                    relationshipDuration: User.RelationshipDuration(rawValue: relationshipDuration) ?? .notInRelationship,
+                                    partnerCode: data["partnerCode"] as? String,
+                                    isSubscribed: data["isSubscribed"] as? Bool ?? false,
+                                    onboardingInProgress: true
+                                )
+                                
+                                // Marquer comme authentifié avec l'utilisateur partiel
+                                self?.isAuthenticated = true
+                                self?.currentUser = partialUser
+                                print("🔥🔥🔥 FIREBASE LOAD: UTILISATEUR PARTIEL CREE POUR CONTINUER ONBOARDING")
+                                return
+                            }
                         }
+                        
+                        print("🔥🔥🔥 FIREBASE LOAD: REDIRECTION VERS ONBOARDING")
                     } else {
                         print("🔥🔥🔥 FIREBASE LOAD: - Raison: Données incomplètes")
                     }

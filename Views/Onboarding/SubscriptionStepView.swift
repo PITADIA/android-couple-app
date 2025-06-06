@@ -8,11 +8,11 @@ struct SubscriptionStepView: View {
     
     var body: some View {
         ZStack {
-            // Fond dégradé
+            // Fond dégradé personnalisé avec les nouvelles couleurs
             LinearGradient(
                 gradient: Gradient(colors: [
-                    Color(red: 0.8, green: 0.2, blue: 0.2),
-                    Color(red: 0.9, green: 0.4, blue: 0.1)
+                    Color(hex: "#FD267A"),
+                    Color(hex: "#FF655B")
                 ]),
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
@@ -115,8 +115,8 @@ struct SubscriptionStepView: View {
                         .background(
                             LinearGradient(
                                 gradient: Gradient(colors: [
-                                    Color.orange,
-                                    Color.red
+                                    Color(hex: "#FD267A"),
+                                    Color(hex: "#FF655B")
                                 ]),
                                 startPoint: .leading,
                                 endPoint: .trailing

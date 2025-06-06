@@ -7,11 +7,11 @@ struct LaunchScreenView: View {
     
     var body: some View {
         ZStack {
-            // Fond dégradé de #FD267A à #FF655B
+            // Fond dégradé personnalisé avec les nouvelles couleurs
             LinearGradient(
                 gradient: Gradient(colors: [
-                    Color(red: 0.99, green: 0.15, blue: 0.48), // #FD267A
-                    Color(red: 1.0, green: 0.40, blue: 0.36)   // #FF655B
+                    Color(hex: "#FD267A"),
+                    Color(hex: "#FF655B")
                 ]),
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing

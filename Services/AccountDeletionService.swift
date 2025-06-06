@@ -3,9 +3,14 @@ import FirebaseAuth
 import FirebaseFirestore
 import AuthenticationServices
 import FirebaseFunctions
+import UIKit
 
 class AccountDeletionService: NSObject, ObservableObject {
     static let shared = AccountDeletionService()
+    
+    // Variables pour gérer la ré-authentification
+    private var pendingDeletionCompletion: ((Bool) -> Void)?
+    private var userToDelete: FirebaseAuth.User?
     
     private override init() {
         super.init()
@@ -161,19 +166,19 @@ class AccountDeletionService: NSObject, ObservableObject {
     private func reauthenticateAndDelete(user: FirebaseAuth.User, completion: @escaping (Bool) -> Void) {
         print("🔥 AccountDeletionService: Tentative de ré-authentification pour suppression")
         
+        // Stocker la completion pour l'utiliser dans le delegate
+        self.pendingDeletionCompletion = completion
+        self.userToDelete = user
+        
         // Pour Apple Sign In, nous devons demander une nouvelle authentification
         let appleIDProvider = ASAuthorizationAppleIDProvider()
         let request = appleIDProvider.createRequest()
-        request.requestedScopes = [.fullName, .email]
+        request.requestedScopes = [] // Pas besoin de scopes pour la ré-auth
         
         let authorizationController = ASAuthorizationController(authorizationRequests: [request])
-        
-        // Note: Dans un vrai scénario, vous devriez implémenter ASAuthorizationControllerDelegate
-        // et gérer la ré-authentification complète. Pour simplifier, nous allons juste
-        // essayer de supprimer le compte sans ré-authentification et accepter l'échec.
-        
-        print("⚠️ AccountDeletionService: Ré-authentification Apple non implémentée - suppression sans ré-auth")
-        completion(false)
+        authorizationController.delegate = self
+        authorizationController.presentationContextProvider = self
+        authorizationController.performRequests()
     }
     
     private func callServerCleanupFunction(userId: String, completion: @escaping (Bool) -> Void) {
@@ -211,14 +216,72 @@ class AccountDeletionService: NSObject, ObservableObject {
     }
 }
 
-// Extension pour gérer la ré-authentification Apple (optionnel)
-extension AccountDeletionService: ASAuthorizationControllerDelegate {
+// Extension pour gérer la ré-authentification Apple
+extension AccountDeletionService: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
+    
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let window = windowScene.windows.first else {
+            return UIWindow()
+        }
+        return window
+    }
+    
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         print("🔥 AccountDeletionService: Ré-authentification Apple réussie")
-        // Ici vous pourriez implémenter la logique de ré-authentification complète
+        
+        guard let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential,
+              let identityToken = appleIDCredential.identityToken,
+              let idTokenString = String(data: identityToken, encoding: .utf8),
+              let user = userToDelete else {
+            print("❌ AccountDeletionService: Données de ré-authentification invalides")
+            pendingDeletionCompletion?(false)
+            cleanup()
+            return
+        }
+        
+        // Créer les credentials Firebase avec le nouveau token
+        let credential = OAuthProvider.credential(withProviderID: "apple.com",
+                                                idToken: idTokenString,
+                                                accessToken: nil)
+        
+        // Ré-authentifier l'utilisateur Firebase
+        user.reauthenticate(with: credential) { [weak self] result, error in
+            if let error = error {
+                print("❌ AccountDeletionService: Erreur ré-authentification Firebase: \(error.localizedDescription)")
+                self?.pendingDeletionCompletion?(false)
+                self?.cleanup()
+            } else {
+                print("✅ AccountDeletionService: Ré-authentification Firebase réussie")
+                // Maintenant essayer de supprimer le compte
+                user.delete { deleteError in
+                    if let deleteError = deleteError {
+                        print("❌ AccountDeletionService: Erreur suppression après ré-auth: \(deleteError.localizedDescription)")
+                        self?.pendingDeletionCompletion?(false)
+                    } else {
+                        print("✅ AccountDeletionService: Compte supprimé après ré-authentification")
+                        self?.pendingDeletionCompletion?(true)
+                    }
+                    self?.cleanup()
+                }
+            }
+        }
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
         print("❌ AccountDeletionService: Erreur ré-authentification Apple: \(error.localizedDescription)")
+        
+        // Vérifier si l'utilisateur a annulé
+        if let authError = error as? ASAuthorizationError, authError.code == .canceled {
+            print("🔥 AccountDeletionService: Ré-authentification annulée par l'utilisateur")
+        }
+        
+        pendingDeletionCompletion?(false)
+        cleanup()
+    }
+    
+    private func cleanup() {
+        pendingDeletionCompletion = nil
+        userToDelete = nil
     }
 } 

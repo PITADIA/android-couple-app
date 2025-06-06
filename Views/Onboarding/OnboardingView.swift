@@ -7,11 +7,11 @@ struct OnboardingView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                // Fond dégradé rouge/orange
+                // Fond dégradé personnalisé avec les nouvelles couleurs
                 LinearGradient(
                     gradient: Gradient(colors: [
-                        Color(red: 0.8, green: 0.2, blue: 0.2),
-                        Color(red: 0.9, green: 0.4, blue: 0.1)
+                        Color(hex: "#FD267A"),
+                        Color(hex: "#FF655B")
                     ]),
                     startPoint: .topLeading,
                     endPoint: .bottomTrailing
@@ -20,9 +20,11 @@ struct OnboardingView: View {
                 
                 VStack(spacing: 0) {
                     // Barre de progression
-                    ProgressBar(progress: viewModel.progressValue)
-                        .padding(.top, 60)
-                        .padding(.horizontal, 20)
+                    ProgressBar(progress: viewModel.progressValue) {
+                        viewModel.previousStep()
+                    }
+                    .padding(.top, 60)
+                    .padding(.horizontal, 20)
                     
                     // Contenu de l'étape actuelle
                     Group {
@@ -35,8 +37,12 @@ struct OnboardingView: View {
                             RelationshipGoalsStepView(viewModel: viewModel)
                         case .relationshipDuration:
                             RelationshipDurationStepView(viewModel: viewModel)
-                        case .partnerCode:
-                            PartnerCodeStepView(viewModel: viewModel)
+                        case .relationshipImprovement:
+                            RelationshipImprovementStepView(viewModel: viewModel)
+                        case .questionMode:
+                            QuestionModeStepView(viewModel: viewModel)
+                        case .completion:
+                            CompletionStepView(viewModel: viewModel)
                         case .loading:
                             LoadingStepView(viewModel: viewModel)
                         case .subscription:

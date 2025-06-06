@@ -40,9 +40,9 @@ struct AppleSignInView: View {
                 
                 // Barre de progression
                 HStack {
-                    // Barre orange (complète)
+                    // Barre blanche (complète)
                     RoundedRectangle(cornerRadius: 2)
-                        .fill(Color.orange)
+                        .fill(Color.white)
                         .frame(height: 4)
                         .frame(maxWidth: .infinity)
                     

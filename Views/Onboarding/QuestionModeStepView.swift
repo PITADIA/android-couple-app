@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct RelationshipGoalsStepView: View {
+struct QuestionModeStepView: View {
     @ObservedObject var viewModel: OnboardingViewModel
     
     var body: some View {
@@ -12,7 +12,7 @@ struct RelationshipGoalsStepView: View {
             // Contenu en haut
             VStack(spacing: 40) {
                 // Titre
-                Text("Que veux-tu de plus dans ta relation ?")
+                Text("Choisis ton mode de question préféré")
                     .font(.system(size: 36, weight: .bold))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
@@ -20,12 +20,13 @@ struct RelationshipGoalsStepView: View {
                 
                 // Options de sélection
                 VStack(spacing: 15) {
-                    ForEach(viewModel.relationshipGoals, id: \.self) { goal in
+                    ForEach(viewModel.questionModes, id: \.self) { mode in
                         Button(action: {
-                            viewModel.toggleGoal(goal)
+                            print("🔥 QuestionModeStepView: Mode sélectionné: \(mode)")
+                            viewModel.questionMode = mode
                         }) {
                             HStack {
-                                Text(goal)
+                                Text(mode)
                                     .font(.system(size: 16))
                                     .foregroundColor(.white)
                                     .multilineTextAlignment(.leading)
@@ -36,7 +37,7 @@ struct RelationshipGoalsStepView: View {
                             .padding(.vertical, 16)
                             .background(
                                 RoundedRectangle(cornerRadius: 12)
-                                    .fill(viewModel.selectedGoals.contains(goal) ? Color.white.opacity(0.3) : Color.white.opacity(0.1))
+                                    .fill(viewModel.questionMode == mode ? Color.white.opacity(0.3) : Color.white.opacity(0.1))
                                     .overlay(
                                         RoundedRectangle(cornerRadius: 12)
                                             .stroke(Color.white.opacity(0.3), lineWidth: 1)
@@ -52,7 +53,13 @@ struct RelationshipGoalsStepView: View {
             
             // Bouton Continuer collé en bas
             Button(action: {
-                viewModel.nextStep()
+                print("🔥 QuestionModeStepView: Bouton Continuer pressé")
+                if !viewModel.questionMode.isEmpty {
+                    print("🔥 QuestionModeStepView: Mode valide, passage à l'étape suivante")
+                    viewModel.nextStep()
+                } else {
+                    print("❌ QuestionModeStepView: Aucun mode sélectionné")
+                }
             }) {
                 Text("Continuer")
                     .font(.system(size: 18, weight: .semibold))
@@ -61,11 +68,18 @@ struct RelationshipGoalsStepView: View {
                     .frame(height: 56)
                     .background(Color(hex: "#FD267A"))
                     .cornerRadius(28)
-                    .opacity(viewModel.selectedGoals.isEmpty ? 0.5 : 1.0)
+                    .opacity(viewModel.questionMode.isEmpty ? 0.5 : 1.0)
             }
-            .disabled(viewModel.selectedGoals.isEmpty)
+            .disabled(viewModel.questionMode.isEmpty)
             .padding(.horizontal, 30)
             .padding(.bottom, 50)
         }
+        .onAppear {
+            print("🔥 QuestionModeStepView: Vue de mode de questions apparue")
+        }
     }
+}
+
+#Preview {
+    QuestionModeStepView(viewModel: OnboardingViewModel())
 } 

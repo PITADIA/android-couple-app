@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		111FEC662DF38CDD00CB1034 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 111FEC652DF38CDD00CB1034 /* ConfettiSwiftUI */; };
 		114926262DF23223009F7AFA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 114926252DF23223009F7AFA /* RealmSwift */; };
 		1149266F2DF241C5009F7AFA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1149266E2DF241C5009F7AFA /* RealmSwift */; };
 		1149278C2DF243DD009F7AFA /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 114926252DF23223009F7AFA /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -15,7 +16,6 @@
 		1188F98A2DF09230005B5328 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 1188F9892DF09230005B5328 /* FirebaseFunctions */; };
 		11FE3CC92DF0C8B600F58DB2 /* APPLE_SETUP_GUIDE.md in Resources */ = {isa = PBXBuildFile; fileRef = 11FE3C9D2DF0C8B600F58DB2 /* APPLE_SETUP_GUIDE.md */; };
 		11FE3CCA2DF0C8B600F58DB2 /* firebase-production-setup.md in Resources */ = {isa = PBXBuildFile; fileRef = 11FE3CA22DF0C8B600F58DB2 /* firebase-production-setup.md */; };
-		11FE3CCB2DF0C8B600F58DB2 /* privacy-policy.md in Resources */ = {isa = PBXBuildFile; fileRef = 11FE3CA82DF0C8B600F58DB2 /* privacy-policy.md */; };
 		11FE3CCC2DF0C8B600F58DB2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 11FE3CA92DF0C8B600F58DB2 /* README.md */; };
 		11FE3CCD2DF0C8B600F58DB2 /* CoupleApp.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 11FE3CA02DF0C8B600F58DB2 /* CoupleApp.storekit */; };
 		11FE3CCE2DF0C8B600F58DB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11FE3C9E2DF0C8B600F58DB2 /* Assets.xcassets */; };
@@ -44,7 +44,6 @@
 		11FE3CA12DF0C8B600F58DB2 /* CoupleApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CoupleApp.xcodeproj; sourceTree = "<group>"; };
 		11FE3CA22DF0C8B600F58DB2 /* firebase-production-setup.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "firebase-production-setup.md"; sourceTree = "<group>"; };
 		11FE3CA32DF0C8B600F58DB2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		11FE3CA82DF0C8B600F58DB2 /* privacy-policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "privacy-policy.md"; sourceTree = "<group>"; };
 		11FE3CA92DF0C8B600F58DB2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1A000001294A1234567890AA /* CoupleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoupleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -62,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				111FEC662DF38CDD00CB1034 /* ConfettiSwiftUI in Frameworks */,
 				114926262DF23223009F7AFA /* RealmSwift in Frameworks */,
 				1188F9862DF09230005B5328 /* FirebaseAuth in Frameworks */,
 				1188F9882DF09230005B5328 /* FirebaseFirestore in Frameworks */,
@@ -90,7 +90,6 @@
 				11FE3CA22DF0C8B600F58DB2 /* firebase-production-setup.md */,
 				11FE3CA32DF0C8B600F58DB2 /* GoogleService-Info.plist */,
 				11FE3CA62DF0C8B600F58DB2 /* Models */,
-				11FE3CA82DF0C8B600F58DB2 /* privacy-policy.md */,
 				11FE3CA92DF0C8B600F58DB2 /* README.md */,
 				11FE3CAD2DF0C8B600F58DB2 /* Services */,
 				11FE3CB02DF0C8B600F58DB2 /* ViewModels */,
@@ -162,6 +161,7 @@
 			packageReferences = (
 				1188F9842DF09230005B5328 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				114926242DF23223009F7AFA /* XCRemoteSwiftPackageReference "realm-swift" */,
+				111FEC642DF38CDD00CB1034 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 			);
 			productRefGroup = 1A000032294A1234567890AB /* Products */;
 			projectDirPath = "";
@@ -185,7 +185,6 @@
 			files = (
 				11FE3CC92DF0C8B600F58DB2 /* APPLE_SETUP_GUIDE.md in Resources */,
 				11FE3CCA2DF0C8B600F58DB2 /* firebase-production-setup.md in Resources */,
-				11FE3CCB2DF0C8B600F58DB2 /* privacy-policy.md in Resources */,
 				11FE3CCC2DF0C8B600F58DB2 /* README.md in Resources */,
 				11FE3CCD2DF0C8B600F58DB2 /* CoupleApp.storekit in Resources */,
 				11FE3CCE2DF0C8B600F58DB2 /* Assets.xcassets in Resources */,
@@ -411,6 +410,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		111FEC642DF38CDD00CB1034 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.3;
+			};
+		};
 		114926242DF23223009F7AFA /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -430,6 +437,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		111FEC652DF38CDD00CB1034 /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 111FEC642DF38CDD00CB1034 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
 		114926252DF23223009F7AFA /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 114926242DF23223009F7AFA /* XCRemoteSwiftPackageReference "realm-swift" */;

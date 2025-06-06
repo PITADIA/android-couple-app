@@ -6,6 +6,8 @@ struct User: Codable, Identifiable, Equatable {
     var birthDate: Date
     var relationshipGoals: [String]
     var relationshipDuration: RelationshipDuration
+    var relationshipImprovement: String?
+    var questionMode: String?
     var partnerCode: String?
     var isSubscribed: Bool
     var onboardingInProgress: Bool
@@ -17,12 +19,14 @@ struct User: Codable, Identifiable, Equatable {
         case notInRelationship = "Je ne suis pas en couple"
     }
     
-    init(id: String = UUID().uuidString, name: String, birthDate: Date, relationshipGoals: [String] = [], relationshipDuration: RelationshipDuration = .notInRelationship, partnerCode: String? = nil, isSubscribed: Bool = false, onboardingInProgress: Bool = false) {
+    init(id: String = UUID().uuidString, name: String, birthDate: Date, relationshipGoals: [String] = [], relationshipDuration: RelationshipDuration = .notInRelationship, relationshipImprovement: String? = nil, questionMode: String? = nil, partnerCode: String? = nil, isSubscribed: Bool = false, onboardingInProgress: Bool = false) {
         self.id = id
         self.name = name
         self.birthDate = birthDate
         self.relationshipGoals = relationshipGoals
         self.relationshipDuration = relationshipDuration
+        self.relationshipImprovement = relationshipImprovement
+        self.questionMode = questionMode
         self.partnerCode = partnerCode
         self.isSubscribed = isSubscribed
         self.onboardingInProgress = onboardingInProgress
@@ -35,6 +39,8 @@ struct User: Codable, Identifiable, Equatable {
                lhs.birthDate == rhs.birthDate &&
                lhs.relationshipGoals == rhs.relationshipGoals &&
                lhs.relationshipDuration == rhs.relationshipDuration &&
+               lhs.relationshipImprovement == rhs.relationshipImprovement &&
+               lhs.questionMode == rhs.questionMode &&
                lhs.partnerCode == rhs.partnerCode &&
                lhs.isSubscribed == rhs.isSubscribed &&
                lhs.onboardingInProgress == rhs.onboardingInProgress

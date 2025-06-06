@@ -7,7 +7,9 @@ class OnboardingViewModel: ObservableObject {
         case birthDate
         case relationshipGoals
         case relationshipDuration
-        case partnerCode
+        case relationshipImprovement
+        case questionMode
+        case completion
         case loading
         case authentication
         case subscription
@@ -18,7 +20,8 @@ class OnboardingViewModel: ObservableObject {
     @Published var birthDate: Date = Date()
     @Published var selectedGoals: [String] = []
     @Published var relationshipDuration: User.RelationshipDuration = .notInRelationship
-    @Published var partnerCode: String = ""
+    @Published var relationshipImprovement: String = ""
+    @Published var questionMode: String = ""
     @Published var isLoading: Bool = false
     
     private var appState: AppState?
@@ -30,6 +33,22 @@ class OnboardingViewModel: ObservableObject {
         "🔥 Aborder des sujets délicats",
         "🌶️ Pimenter notre relation",
         "🎉 S'amuser ensemble"
+    ]
+    
+    // Options pour l'amélioration de la relation
+    let relationshipImprovements = [
+        "🗣️ Aborder des sujets profonds",
+        "💕 Créer encore plus de lien",
+        "🤝 Mieux comprendre l'autre",
+        "🔍 Apprendre à se connaître encore plus"
+    ]
+    
+    // Options pour le mode de questions
+    let questionModes = [
+        "🎯 Sérieux",
+        "🎉 Fun",
+        "🔥 Hot et Sensuel",
+        "💭 Profond"
     ]
     
     // Propriété calculée pour la barre de progression
@@ -72,9 +91,15 @@ class OnboardingViewModel: ObservableObject {
             currentStep = .relationshipDuration
         case .relationshipDuration:
             print("🔥 OnboardingViewModel: Durée de relation: \(relationshipDuration)")
-            currentStep = .partnerCode
-        case .partnerCode:
-            print("🔥 OnboardingViewModel: Code partenaire: \(partnerCode.isEmpty ? "vide" : partnerCode)")
+            currentStep = .relationshipImprovement
+        case .relationshipImprovement:
+            print("🔥 OnboardingViewModel: Amélioration souhaitée: \(relationshipImprovement)")
+            currentStep = .questionMode
+        case .questionMode:
+            print("🔥 OnboardingViewModel: Mode de questions: \(questionMode)")
+            currentStep = .completion
+        case .completion:
+            print("🔥 OnboardingViewModel: Page de confirmation terminée")
             currentStep = .loading
             completeDataCollection()
         case .loading:
@@ -102,10 +127,14 @@ class OnboardingViewModel: ObservableObject {
             currentStep = .birthDate
         case .relationshipDuration:
             currentStep = .relationshipGoals
-        case .partnerCode:
+        case .relationshipImprovement:
             currentStep = .relationshipDuration
+        case .questionMode:
+            currentStep = .relationshipImprovement
+        case .completion:
+            currentStep = .questionMode
         case .loading:
-            currentStep = .partnerCode
+            currentStep = .completion
         case .authentication:
             print("🔥 OnboardingViewModel: Impossible de revenir en arrière depuis l'authentification")
             break
@@ -171,7 +200,8 @@ class OnboardingViewModel: ObservableObject {
         print("  - Date de naissance: \(birthDate)")
         print("  - Objectifs: \(selectedGoals)")
         print("  - Durée de relation: \(relationshipDuration)")
-        print("  - Code partenaire: \(partnerCode.isEmpty ? "aucun" : partnerCode)")
+        print("  - Amélioration souhaitée: \(relationshipImprovement)")
+        print("  - Mode de questions: \(questionMode)")
         print("  - Abonné: \(isSubscribed)")
         
         NSLog("🔥🔥🔥 ONBOARDING: CREATION USER - NOM: %@", userName)
@@ -182,7 +212,9 @@ class OnboardingViewModel: ObservableObject {
             birthDate: birthDate,
             relationshipGoals: selectedGoals,
             relationshipDuration: relationshipDuration,
-            partnerCode: partnerCode.isEmpty ? nil : partnerCode,
+            relationshipImprovement: relationshipImprovement.isEmpty ? nil : relationshipImprovement,
+            questionMode: questionMode.isEmpty ? nil : questionMode,
+            partnerCode: nil,
             isSubscribed: isSubscribed,
             onboardingInProgress: false
         )

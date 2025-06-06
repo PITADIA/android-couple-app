@@ -5,6 +5,8 @@ struct MenuView: View {
     @EnvironmentObject var appState: AppState
     @Environment(\.dismiss) private var dismiss
     @State private var showingFavorites = false
+    @State private var showingDeleteConfirmation = false
+    @State private var isDeleting = false
     
     var body: some View {
         NavigationView {
@@ -77,7 +79,7 @@ struct MenuView: View {
                             title: "Politique de confidentialité",
                             subtitle: "Protection de vos données"
                         ) {
-                            // Action confidentialité
+                            openPrivacyPolicy()
                         }
                         
                         Divider()
@@ -92,11 +94,11 @@ struct MenuView: View {
                     VStack(spacing: 15) {
                         MenuOptionView(
                             icon: "trash",
-                            title: "Supprimer le compte",
+                            title: isDeleting ? "Suppression en cours..." : "Supprimer le compte",
                             subtitle: "Suppression définitive",
                             isDestructive: false
                         ) {
-                            // Action supprimer le compte
+                            showingDeleteConfirmation = true
                         }
                         
                         // Version de l'app
@@ -115,6 +117,14 @@ struct MenuView: View {
                 .environmentObject(appState)
                 .environmentObject(appState.favoritesService ?? FavoritesService())
         }
+        .alert("Supprimer le compte", isPresented: $showingDeleteConfirmation) {
+            Button("Annuler", role: .cancel) { }
+            Button("Supprimer définitivement", role: .destructive) {
+                deleteAccount()
+            }
+        } message: {
+            Text("Cette action est irréversible. Toutes vos données seront supprimées définitivement.\n\nApple pourrait vous demander de vous ré-authentifier pour confirmer cette action.")
+        }
     }
     
     
@@ -129,6 +139,35 @@ struct MenuView: View {
         print("🔥 MenuView: Ouverture des conditions d'utilisation")
         if let url = URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/") {
             UIApplication.shared.open(url)
+        }
+    }
+    
+    private func openPrivacyPolicy() {
+        print("🔥 MenuView: Ouverture de la politique de confidentialité")
+        if let url = URL(string: "https://love2lovesite.onrender.com") {
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    private func deleteAccount() {
+        print("🔥 MenuView: Début de la suppression du compte")
+        isDeleting = true
+        
+        AccountDeletionService.shared.deleteAccount { [self] success in
+            DispatchQueue.main.async {
+                self.isDeleting = false
+                
+                if success {
+                    print("✅ MenuView: Compte supprimé avec succès")
+                    // Mettre à jour l'AppState
+                    self.appState.deleteAccount()
+                    // Fermer le menu
+                    self.dismiss()
+                } else {
+                    print("❌ MenuView: Échec de la suppression du compte")
+                    // Vous pourriez ajouter une alerte d'erreur ici
+                }
+            }
         }
     }
 }

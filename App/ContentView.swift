@@ -3,6 +3,7 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var appState: AppState
     @State private var isTransitioning = false
+    @State private var isOnboardingActive = false
     
     var body: some View {
         ZStack {
@@ -15,6 +16,12 @@ struct ContentView: View {
                     AuthenticationView()
                 } else if !appState.isOnboardingCompleted {
                     OnboardingView()
+                        .onAppear {
+                            isOnboardingActive = true
+                        }
+                        .onDisappear {
+                            isOnboardingActive = false
+                        }
                 } else {
                     MainView()
                 }
@@ -91,11 +98,11 @@ struct LoadingSplashView: View {
     
     var body: some View {
         ZStack {
-            // Fond dégradé identique à l'app
+            // Fond dégradé personnalisé avec les nouvelles couleurs
             LinearGradient(
                 gradient: Gradient(colors: [
-                    Color(red: 0.8, green: 0.2, blue: 0.2),
-                    Color(red: 0.9, green: 0.4, blue: 0.1)
+                    Color(hex: "#FD267A"),
+                    Color(hex: "#FF655B")
                 ]),
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing

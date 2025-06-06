@@ -5,47 +5,63 @@ struct NameStepView: View {
     @FocusState private var isTextFieldFocused: Bool
     
     var body: some View {
+        VStack(spacing: 0) {
+            Spacer()
+            
+            // Contenu centré
         VStack(spacing: 40) {
-            // Titre
-            VStack(spacing: 10) {
-                Text("AVANT DE COMMENCER,")
-                    .font(.system(size: 28, weight: .bold))
+                // Titre et sous-titre
+                VStack(spacing: 20) {
+                    Text("Comment tu t'appelles ?")
+                        .font(.system(size: 36, weight: .bold))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
+                        .frame(maxWidth: .infinity)
                 
-                Text("COMMENT TU T'APPELLES ?")
-                    .font(.system(size: 28, weight: .bold))
-                    .foregroundColor(.white)
+                    Text("Cette information nous permettra de personnaliser ton expérience")
+                        .font(.system(size: 18))
+                        .foregroundColor(.white.opacity(0.9))
                     .multilineTextAlignment(.center)
+                        .lineLimit(nil)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .frame(maxWidth: .infinity)
             }
             .padding(.horizontal, 30)
             
             // Champ de saisie
-            VStack(spacing: 20) {
-                TextField("Entrez votre prénom", text: $viewModel.userName)
-                    .font(.system(size: 18))
-                    .foregroundColor(.white)
-                    .padding(.horizontal, 20)
-                    .padding(.vertical, 16)
-                    .background(
+                ZStack(alignment: .leading) {
                         RoundedRectangle(cornerRadius: 12)
                             .fill(Color.white.opacity(0.2))
                             .overlay(
                                 RoundedRectangle(cornerRadius: 12)
                                     .stroke(Color.white.opacity(0.3), lineWidth: 1)
                             )
-                    )
-                    .focused($isTextFieldFocused)
-                    .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            isTextFieldFocused = true
-                        }
+                        .frame(height: 56)
+                    
+                    if viewModel.userName.isEmpty {
+                        Text("Entrez votre prénom")
+                            .foregroundColor(.white.opacity(0.7))
+                            .font(.system(size: 18))
+                            .padding(.horizontal, 20)
                     }
+                    
+                    TextField("", text: $viewModel.userName)
+                        .font(.system(size: 18))
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 16)
+                    .focused($isTextFieldFocused)
                     .onChange(of: viewModel.userName) { _, newName in
                         print("🔥 NameStepView: Nom saisi: '\(newName)'")
                     }
+                        .accentColor(.white)
+                }
+                .padding(.horizontal, 30)
+            }
+            
+            Spacer()
                 
-                // Bouton Continuer
+            // Bouton Continuer collé en bas
                 Button(action: {
                     print("🔥 NameStepView: Bouton Continuer pressé")
                     if !viewModel.userName.isEmpty {
@@ -60,36 +76,13 @@ struct NameStepView: View {
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                         .frame(height: 56)
-                        .background(
-                            LinearGradient(
-                                gradient: Gradient(colors: [
-                                    Color.orange,
-                                    Color.red
-                                ]),
-                                startPoint: .leading,
-                                endPoint: .trailing
-                            )
-                        )
+                    .background(Color(hex: "#FD267A"))
                         .cornerRadius(28)
                         .opacity(viewModel.userName.isEmpty ? 0.5 : 1.0)
                 }
                 .disabled(viewModel.userName.isEmpty)
-            }
             .padding(.horizontal, 30)
-            
-            // Suggestions de prénoms
-            HStack(spacing: 20) {
-                ForEach(["je", "tu", "c'est"], id: \.self) { suggestion in
-                    Button(suggestion) {
-                        print("🔥 NameStepView: Suggestion sélectionnée: '\(suggestion)'")
-                        viewModel.userName = suggestion
-                    }
-                    .foregroundColor(.white.opacity(0.7))
-                    .font(.system(size: 16))
-                }
-            }
-            
-            Spacer()
+            .padding(.bottom, 50)
         }
         .onAppear {
             print("🔥 NameStepView: Vue de saisie du nom apparue")

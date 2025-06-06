@@ -7,11 +7,11 @@ struct AuthenticationView: View {
     
     var body: some View {
         ZStack {
-            // Fond dégradé rouge/orange comme dans l'app originale
+            // Fond dégradé personnalisé avec les nouvelles couleurs
             LinearGradient(
                 gradient: Gradient(colors: [
-                    Color(red: 0.8, green: 0.2, blue: 0.2),
-                    Color(red: 0.9, green: 0.4, blue: 0.1)
+                    Color(hex: "#FD267A"),
+                    Color(hex: "#FF655B")
                 ]),
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
@@ -19,65 +19,36 @@ struct AuthenticationView: View {
             .ignoresSafeArea()
             
             VStack(spacing: 40) {
+                // Nom de l'app en haut
+                Text("Love2Love")
+                    .font(.system(size: 50, weight: .bold))
+                    .foregroundColor(.white)
+                    .padding(.top, 60)
+                    .padding(.bottom, 40)
+                
                 Spacer()
                 
-                // Logo principal de l'application
-                Image("LogoMain")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 140, height: 140)
-                    .padding(.bottom, 20)
-                
                 // Titre principal
-                VStack(spacing: 15) {
-                    Text("PRÊT À")
-                        .font(.system(size: 32, weight: .bold))
+                VStack(spacing: 20) {
+                    Text("Et si vous retombiez amoureux en vous parlant vraiment ?")
+                        .font(.system(size: 36, weight: .bold))
                         .foregroundColor(.white)
-                    
-                    Text("(RE)DÉCOUVRIR")
-                        .font(.system(size: 32, weight: .bold))
-                        .foregroundColor(.white)
-                    
-                    Text("VOTRE ÂME SŒUR ?")
-                        .font(.system(size: 32, weight: .bold))
-                        .foregroundColor(.white)
-                }
                 .multilineTextAlignment(.center)
+                        .lineLimit(nil)
+                        .fixedSize(horizontal: false, vertical: true)
                 .padding(.horizontal, 20)
                 
                 // Sous-titre
-                Text("Boostez vos conversations avec des questions bien\nplus profondes que 'Comment ça va ?'")
-                    .font(.system(size: 16))
+                    Text("Améliorez votre relation à travers des questions profondes, conçues pour vous rapprocher toujours plus.")
+                        .font(.system(size: 18))
                     .foregroundColor(.white.opacity(0.9))
                     .multilineTextAlignment(.center)
+                        .lineLimit(nil)
+                        .fixedSize(horizontal: false, vertical: true)
                     .padding(.horizontal, 30)
+                }
                 
                 Spacer()
-                
-                // Section des évaluations
-                VStack(spacing: 15) {
-                    Text("+450k Downloads")
-                        .font(.system(size: 18, weight: .semibold))
-                        .foregroundColor(.white)
-                    
-                    HStack(spacing: 5) {
-                        ForEach(0..<5) { _ in
-                            Image(systemName: "star.fill")
-                                .foregroundColor(.yellow)
-                                .font(.system(size: 20))
-                        }
-                    }
-                    
-                    HStack {
-                        Image(systemName: "applelogo")
-                            .foregroundColor(.white)
-                            .font(.system(size: 16))
-                        Text("4.6")
-                            .font(.system(size: 18, weight: .semibold))
-                            .foregroundColor(.white)
-                    }
-                }
-                .padding(.bottom, 40)
                 
                 // Boutons d'action
                 VStack(spacing: 15) {
@@ -90,16 +61,7 @@ struct AuthenticationView: View {
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity)
                             .frame(height: 56)
-                            .background(
-                                LinearGradient(
-                                    gradient: Gradient(colors: [
-                                        Color.orange,
-                                        Color.red
-                                    ]),
-                                    startPoint: .leading,
-                                    endPoint: .trailing
-                                )
-                            )
+                            .background(Color(hex: "#FD267A"))
                             .cornerRadius(28)
                     }
                     .padding(.horizontal, 30)

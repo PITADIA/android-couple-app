@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct RelationshipGoalsStepView: View {
+struct RelationshipImprovementStepView: View {
     @ObservedObject var viewModel: OnboardingViewModel
     
     var body: some View {
@@ -12,7 +12,7 @@ struct RelationshipGoalsStepView: View {
             // Contenu en haut
             VStack(spacing: 40) {
                 // Titre
-                Text("Que veux-tu de plus dans ta relation ?")
+                Text("Si cette application t'aidait à améliorer un seul aspect de ta relation, ce serait lequel ?")
                     .font(.system(size: 36, weight: .bold))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
@@ -20,12 +20,13 @@ struct RelationshipGoalsStepView: View {
                 
                 // Options de sélection
                 VStack(spacing: 15) {
-                    ForEach(viewModel.relationshipGoals, id: \.self) { goal in
+                    ForEach(viewModel.relationshipImprovements, id: \.self) { improvement in
                         Button(action: {
-                            viewModel.toggleGoal(goal)
+                            print("🔥 RelationshipImprovementStepView: Amélioration sélectionnée: \(improvement)")
+                            viewModel.relationshipImprovement = improvement
                         }) {
                             HStack {
-                                Text(goal)
+                                Text(improvement)
                                     .font(.system(size: 16))
                                     .foregroundColor(.white)
                                     .multilineTextAlignment(.leading)
@@ -36,7 +37,7 @@ struct RelationshipGoalsStepView: View {
                             .padding(.vertical, 16)
                             .background(
                                 RoundedRectangle(cornerRadius: 12)
-                                    .fill(viewModel.selectedGoals.contains(goal) ? Color.white.opacity(0.3) : Color.white.opacity(0.1))
+                                    .fill(viewModel.relationshipImprovement == improvement ? Color.white.opacity(0.3) : Color.white.opacity(0.1))
                                     .overlay(
                                         RoundedRectangle(cornerRadius: 12)
                                             .stroke(Color.white.opacity(0.3), lineWidth: 1)
@@ -52,7 +53,13 @@ struct RelationshipGoalsStepView: View {
             
             // Bouton Continuer collé en bas
             Button(action: {
-                viewModel.nextStep()
+                print("🔥 RelationshipImprovementStepView: Bouton Continuer pressé")
+                if !viewModel.relationshipImprovement.isEmpty {
+                    print("🔥 RelationshipImprovementStepView: Amélioration valide, passage à l'étape suivante")
+                    viewModel.nextStep()
+                } else {
+                    print("❌ RelationshipImprovementStepView: Aucune amélioration sélectionnée")
+                }
             }) {
                 Text("Continuer")
                     .font(.system(size: 18, weight: .semibold))
@@ -61,11 +68,18 @@ struct RelationshipGoalsStepView: View {
                     .frame(height: 56)
                     .background(Color(hex: "#FD267A"))
                     .cornerRadius(28)
-                    .opacity(viewModel.selectedGoals.isEmpty ? 0.5 : 1.0)
+                    .opacity(viewModel.relationshipImprovement.isEmpty ? 0.5 : 1.0)
             }
-            .disabled(viewModel.selectedGoals.isEmpty)
+            .disabled(viewModel.relationshipImprovement.isEmpty)
             .padding(.horizontal, 30)
             .padding(.bottom, 50)
         }
+        .onAppear {
+            print("🔥 RelationshipImprovementStepView: Vue d'amélioration de la relation apparue")
+        }
     }
+}
+
+#Preview {
+    RelationshipImprovementStepView(viewModel: OnboardingViewModel())
 } 

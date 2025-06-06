@@ -10,70 +10,25 @@ struct AuthenticationStepView: View {
     
     var body: some View {
         VStack(spacing: 40) {
-            // Titre
-            VStack(spacing: 15) {
-                Text("CRÉONS TON COMPTE !")
-                    .font(.system(size: 28, weight: .bold))
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
-                
-                Text("SÉCURISE TES DONNÉES")
-                    .font(.system(size: 28, weight: .bold))
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
-            }
-            .padding(.horizontal, 30)
+            // Espace avec le haut
+            Spacer()
+                .frame(height: 60)
             
-            // Description
+            // Titre unifié en une seule phrase
+            Text("CRÉONS TON COMPTE ET SÉCURISONS TES DONNÉES")
+                .font(.system(size: 28, weight: .bold))
+                .foregroundColor(.white)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 30)
+            
+            // Description complète sans troncature
             Text("Crée ton compte maintenant pour sauvegarder tes préférences et accéder à toutes les fonctionnalités premium !")
                 .font(.system(size: 16))
                 .foregroundColor(.white.opacity(0.9))
                 .multilineTextAlignment(.center)
+                .lineLimit(nil)
+                .fixedSize(horizontal: false, vertical: true)
                 .padding(.horizontal, 30)
-            
-            Spacer()
-            
-            // Icône
-            Text("🔥")
-                .font(.system(size: 100))
-            
-            // Avantages de créer un compte
-            VStack(spacing: 15) {
-                HStack(spacing: 15) {
-                    Image(systemName: "icloud.fill")
-                        .foregroundColor(.white)
-                        .font(.system(size: 20))
-                    Text("Sauvegarde automatique")
-                        .font(.system(size: 16))
-                        .foregroundColor(.white)
-                    Spacer()
-                }
-                
-                HStack(spacing: 15) {
-                    Image(systemName: "devices")
-                        .foregroundColor(.white)
-                        .font(.system(size: 20))
-                    Text("Synchronisation multi-appareils")
-                        .font(.system(size: 16))
-                        .foregroundColor(.white)
-                    Spacer()
-                }
-                
-                HStack(spacing: 15) {
-                    Image(systemName: "heart.fill")
-                        .foregroundColor(.white)
-                        .font(.system(size: 20))
-                    Text("Historique de tes conversations")
-                        .font(.system(size: 16))
-                        .foregroundColor(.white)
-                    Spacer()
-                }
-            }
-            .padding(.horizontal, 30)
-            .padding()
-            .background(Color.white.opacity(0.1))
-            .cornerRadius(15)
-            .padding(.horizontal, 30)
             
             Spacer()
             
@@ -107,16 +62,6 @@ struct AuthenticationStepView: View {
             .frame(height: 56)
             .cornerRadius(28)
             .padding(.horizontal, 30)
-            
-            // Bouton Skip (pour le debug)
-            Button("⚠️ SKIP AUTH (DEBUG)") {
-                print("🔥 AuthenticationStepView: Skip auth pour debug")
-                NSLog("🔥🔥🔥 APPLE SIGN IN: SKIP POUR DEBUG")
-                viewModel.completeAuthentication()
-            }
-            .font(.system(size: 12))
-            .foregroundColor(.white.opacity(0.7))
-            .padding(.top, 20)
         }
         .onAppear {
             print("🔥 AuthenticationStepView: Vue d'authentification apparue")
@@ -296,7 +241,9 @@ struct AuthenticationStepView: View {
             birthDate: viewModel.birthDate,
             relationshipGoals: viewModel.selectedGoals,
             relationshipDuration: viewModel.relationshipDuration,
-            partnerCode: viewModel.partnerCode.isEmpty ? nil : viewModel.partnerCode,
+            relationshipImprovement: viewModel.relationshipImprovement.isEmpty ? nil : viewModel.relationshipImprovement,
+            questionMode: viewModel.questionMode.isEmpty ? nil : viewModel.questionMode,
+            partnerCode: nil,
             isSubscribed: false, // Sera mis à jour après l'abonnement
             onboardingInProgress: true // IMPORTANT: Marquer l'onboarding comme en cours
         )
