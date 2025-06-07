@@ -14,15 +14,15 @@ struct QuestionListView: View {
     @State private var dragOffset = CGSize.zero
     
     // États pour les écrans de pack
-    @State private var showPackCompletion = false
     @State private var showNewPackReveal = false
     @State private var completedPackNumber = 1
+    @State private var showPackCompletionCard = false
     
     private var currentQuestionIndex: Int {
         return currentIndex
     }
     
-    // OPTIMISATION: Ne retourner que les questions visibles (3 maximum)
+    // OPTIMISATION: Ne retourner que les questions visibles (3 maximum) + carte de fin si nécessaire
     private var visibleQuestions: [(Int, Question)] {
         guard !accessibleQuestions.isEmpty else { return [] }
         
@@ -34,6 +34,16 @@ struct QuestionListView: View {
             result.append((i, accessibleQuestions[i]))
         }
         return result
+    }
+    
+    // Vérifier si on doit afficher la carte de fin de pack
+    private var shouldShowCompletionCard: Bool {
+        return showPackCompletionCard && currentIndex == accessibleQuestions.count
+    }
+    
+    // Nombre total d'éléments (questions + carte de fin éventuelle)
+    private var totalItems: Int {
+        return accessibleQuestions.count + (showPackCompletionCard ? 1 : 0)
     }
     
     private func loadQuestions() {
@@ -86,16 +96,9 @@ struct QuestionListView: View {
     
     var body: some View {
         ZStack {
-            // Fond dégradé sombre identique à l'app
-            LinearGradient(
-                gradient: Gradient(colors: [
-                    Color(red: 0.15, green: 0.05, blue: 0.2),
-                    Color(red: 0.25, green: 0.1, blue: 0.3)
-                ]),
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-            .ignoresSafeArea()
+            // Même fond que la page principale mais avec plus de rouge visible
+            Color(red: 0.15, green: 0.03, blue: 0.08)
+                .ignoresSafeArea()
             
             VStack(spacing: 0) {
                 // Header avec navigation
@@ -110,18 +113,10 @@ struct QuestionListView: View {
                     
                     Spacer()
                     
-                    // Compteur de questions avec pack
-                    VStack(spacing: 4) {
-                        Text("\(currentQuestionIndex + 1) sur \(accessibleQuestions.count)")
-                            .font(.system(size: 18, weight: .semibold))
-                            .foregroundColor(.white)
-                        
-                        let currentPack = packProgressService.getCurrentPack(for: currentIndex)
-                        let unlockedPacks = packProgressService.getUnlockedPacks(for: category.title)
-                        Text("Pack \(currentPack)/\(unlockedPacks)")
-                            .font(.system(size: 12, weight: .medium))
-                            .foregroundColor(.white.opacity(0.7))
-                    }
+                    // Compteur de questions
+                    Text("\(currentQuestionIndex + 1) sur \(totalItems)")
+                        .font(.system(size: 18, weight: .semibold))
+                        .foregroundColor(.white)
                     
                     Spacer()
                     
@@ -161,9 +156,10 @@ struct QuestionListView: View {
                     // RENDU OPTIMISÉ: Seulement 3 cartes maximum
                     GeometryReader { geometry in
                         let cardWidth = geometry.size.width - 40
-                        let cardSpacing: CGFloat = 20
+                        let cardSpacing: CGFloat = 30
                         
                         ZStack {
+                            // Afficher les questions normales
                             ForEach(visibleQuestions, id: \.0) { indexAndQuestion in
                                 let (index, question) = indexAndQuestion
                                 let offset = CGFloat(index - currentQuestionIndex)
@@ -176,8 +172,28 @@ struct QuestionListView: View {
                                 )
                                 .frame(width: cardWidth)
                                 .offset(x: xPosition)
-                                .scaleEffect(index == currentQuestionIndex ? 1.0 : 0.9)
-                                .opacity(index == currentQuestionIndex ? 1.0 : 0.7)
+                                .scaleEffect(index == currentQuestionIndex ? 1.0 : 0.95)
+                                .opacity(index == currentQuestionIndex ? 1.0 : 0.8)
+                                .animation(.spring(response: 0.6, dampingFraction: 0.8), value: currentQuestionIndex)
+                            }
+                            
+                            // Afficher la carte de fin de pack si elle doit être visible
+                            if showPackCompletionCard {
+                                let completionCardIndex = accessibleQuestions.count
+                                let offset = CGFloat(completionCardIndex - currentQuestionIndex)
+                                let xPosition = offset * (cardWidth + cardSpacing) + dragOffset.width
+                                
+                                PackCompletionCardView(
+                                    category: category,
+                                    packNumber: completedPackNumber
+                                ) {
+                                    // Action quand on tape sur la carte
+                                    showNewPackReveal = true
+                                }
+                                .frame(width: cardWidth)
+                                .offset(x: xPosition)
+                                .scaleEffect(currentQuestionIndex == completionCardIndex ? 1.0 : 0.95)
+                                .opacity(currentQuestionIndex == completionCardIndex ? 1.0 : 0.8)
                                 .animation(.spring(response: 0.6, dampingFraction: 0.8), value: currentQuestionIndex)
                             }
                         }
@@ -200,11 +216,11 @@ struct QuestionListView: View {
                                             }
                                         } else if value.translation.width < -threshold || velocity < -500 {
                                             // Swipe vers la gauche - question suivante
-                                            if currentQuestionIndex < accessibleQuestions.count - 1 {
+                                            if currentQuestionIndex < totalItems - 1 {
                                                 currentIndex += 1
                                                 
-                                                // Vérifier si on a terminé un pack
-                                                checkForPackCompletion()
+                                                // Vérifier si on a terminé un pack (mais ne pas afficher automatiquement)
+                                                checkForPackCompletionCard()
                                             }
                                         }
                                         
@@ -218,31 +234,8 @@ struct QuestionListView: View {
                     .padding(.horizontal, 20)
                 }
                 
-                // Boutons du bas
-                HStack(spacing: 20) {
-                    // Bouton Partager la carte
-                    Button(action: {
-                        // Action partager
-                    }) {
-                        Text("Partager la carte")
-                            .font(.system(size: 18, weight: .semibold))
-                            .foregroundColor(.white)
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 56)
-                            .background(
-                                LinearGradient(
-                                    gradient: Gradient(colors: [
-                                        Color(red: 1.0, green: 0.4, blue: 0.2),
-                                        Color(red: 1.0, green: 0.6, blue: 0.0)
-                                    ]),
-                                    startPoint: .leading,
-                                    endPoint: .trailing
-                                )
-                            )
-                            .cornerRadius(28)
-                    }
-                    
-                    // Bouton Favoris
+                // Bouton Ajouter en favoris (seulement pour les questions, pas pour la carte de fin)
+                if !shouldShowCompletionCard {
                     Button(action: {
                         if currentQuestionIndex < accessibleQuestions.count {
                             let currentQuestion = accessibleQuestions[currentQuestionIndex]
@@ -255,27 +248,32 @@ struct QuestionListView: View {
                         let currentQuestion = currentQuestionIndex < accessibleQuestions.count ? accessibleQuestions[currentQuestionIndex] : nil
                         let isCurrentlyFavorite = currentQuestion != nil ? favoritesService.isFavorite(questionId: currentQuestion!.id) : false
                         
-                        Image(systemName: isCurrentlyFavorite ? "heart.fill" : "heart")
-                            .font(.system(size: 24))
-                            .foregroundColor(.white)
-                            .frame(width: 56, height: 56)
-                            .background(
-                                LinearGradient(
-                                    gradient: Gradient(colors: [
-                                        isCurrentlyFavorite ? Color.red : Color(red: 0.6, green: 0.2, blue: 0.4),
-                                        isCurrentlyFavorite ? Color.pink : Color(red: 0.8, green: 0.3, blue: 0.5)
-                                    ]),
-                                    startPoint: .leading,
-                                    endPoint: .trailing
-                                )
-                            )
-                            .cornerRadius(28)
-                            .scaleEffect(isCurrentlyFavorite ? 1.1 : 1.0)
-                            .animation(.easeInOut(duration: 0.2), value: isCurrentlyFavorite)
+                        HStack(spacing: 12) {
+                            Text(isCurrentlyFavorite ? "Retirer des favoris" : "Ajouter en favoris")
+                                .font(.system(size: 18, weight: .semibold))
+                                .foregroundColor(.white)
+                            
+                            Image(systemName: isCurrentlyFavorite ? "heart.fill" : "heart")
+                                .font(.system(size: 20, weight: .medium))
+                                .foregroundColor(.white)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 56)
+                        .background(
+                            // Même couleur que le header des cartes
+                            Color(red: 1.0, green: 0.4, blue: 0.6)
+                        )
+                        .cornerRadius(28)
+                        .scaleEffect(isCurrentlyFavorite ? 1.02 : 1.0)
+                        .animation(.easeInOut(duration: 0.2), value: isCurrentlyFavorite)
                     }
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 50)
+                } else {
+                    // Espace pour maintenir la mise en page quand la carte de fin est affichée
+                    Spacer()
+                        .frame(height: 106) // 56 + 50 de padding
                 }
-                .padding(.horizontal, 20)
-                .padding(.bottom, 50)
             }
         }
         .navigationBarHidden(true)
@@ -284,29 +282,48 @@ struct QuestionListView: View {
             print("QuestionListView: Affichage catégorie '\(category.title)'")
             loadQuestions()
         }
-        .sheet(isPresented: $showPackCompletion) {
-            PackCompletionView(packNumber: completedPackNumber) {
-                showPackCompletion = false
-                showNewPackReveal = true
-            }
+        .onChange(of: currentIndex) { newIndex in
+            print("🔍 DEBUG: currentIndex changed to \(newIndex), accessibleQuestions.count=\(accessibleQuestions.count)")
+            print("🔍 DEBUG: showPackCompletionCard=\(showPackCompletionCard), shouldShowCompletionCard=\(shouldShowCompletionCard)")
+            print("🔍 DEBUG: totalItems=\(totalItems)")
         }
         .sheet(isPresented: $showNewPackReveal) {
             NewPackRevealView(packNumber: completedPackNumber + 1) {
                 showNewPackReveal = false
+                // Débloquer le nouveau pack
                 unlockNextPack()
+                // Masquer la carte de fin et aller aux nouvelles questions
+                showPackCompletionCard = false
+                // Aller à la première question du nouveau pack (pas au début)
+                currentIndex = completedPackNumber * 32 // Ex: Pack 1 terminé -> index 32 (première du pack 2)
             }
         }
     }
     
     // MARK: - Helper Methods
     
-    private func checkForPackCompletion() {
-        if packProgressService.checkPackCompletion(categoryTitle: category.title, currentIndex: currentIndex) {
-            completedPackNumber = packProgressService.getCurrentPack(for: currentIndex)
-            showPackCompletion = true
-            print("🎉 Pack \(completedPackNumber) terminé pour \(category.title)!")
+    private func checkForPackCompletionCard() {
+        print("🔍 DEBUG checkForPackCompletionCard: currentIndex=\(currentIndex), accessibleQuestions.count=\(accessibleQuestions.count)")
+        
+        // TEST TEMPORAIRE: Forcer l'affichage de la carte quand on arrive à l'avant-dernière question
+        if currentIndex == accessibleQuestions.count - 2 && !showPackCompletionCard {
+            completedPackNumber = 1
+            showPackCompletionCard = true
+            print("🔍 TEST: Affichage forcé de la carte de fin pour debug!")
+            return
+        }
+        
+        // Vérifier si on vient de terminer un pack (on était à la dernière question d'un pack)
+        let previousIndex = currentIndex - 1
+        if packProgressService.checkPackCompletion(categoryTitle: category.title, currentIndex: previousIndex) {
+            completedPackNumber = packProgressService.getCurrentPack(for: previousIndex)
+            showPackCompletionCard = true
+            print("🎉 Pack \(completedPackNumber) terminé pour \(category.title)! Affichage de la carte de fin.")
+            print("🔍 DEBUG: currentIndex=\(currentIndex), previousIndex=\(previousIndex), accessibleQuestions.count=\(accessibleQuestions.count)")
         }
     }
+    
+
     
     private func unlockNextPack() {
         packProgressService.unlockNextPack(for: category.title)
@@ -318,6 +335,93 @@ struct QuestionListView: View {
         )
         
         print("🔓 Nouveau pack débloqué ! \(accessibleQuestions.count) questions maintenant disponibles")
+    }
+}
+
+struct PackCompletionCardView: View {
+    let category: QuestionCategory
+    let packNumber: Int
+    let onTap: () -> Void
+    
+    @State private var flameAnimation = false
+    
+    var body: some View {
+        Button(action: onTap) {
+            VStack(spacing: 30) {
+                Spacer()
+                
+                VStack(spacing: 20) {
+                    Text("Félicitation !")
+                        .font(.system(size: 36, weight: .bold))
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+                    
+                    Text("Tu as terminé le pack.")
+                        .font(.system(size: 32, weight: .bold))
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+                    
+                    // Flamme avec animation améliorée
+                    Text("🔥")
+                        .font(.system(size: 60))
+                        .scaleEffect(flameAnimation ? 1.3 : 0.9)
+                        .rotationEffect(.degrees(flameAnimation ? 15 : -15))
+                        .offset(y: flameAnimation ? -5 : 5)
+                        .shadow(color: .orange, radius: flameAnimation ? 10 : 5)
+                        .animation(
+                            Animation.easeInOut(duration: 0.6)
+                                .repeatForever(autoreverses: true),
+                            value: flameAnimation
+                        )
+                        .onAppear {
+                            flameAnimation = true
+                        }
+                    
+                    Text("Tape sur moi pour débloquer une surprise")
+                        .font(.system(size: 24, weight: .bold))
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 20)
+                }
+                
+                Spacer()
+                
+                // Logo/Branding en bas
+                HStack(spacing: 8) {
+                    Image("Leetchi")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 24, height: 24)
+                    
+                    Text("Love2Love")
+                        .font(.system(size: 16, weight: .semibold))
+                        .foregroundColor(.white.opacity(0.9))
+                }
+                .padding(.bottom, 30)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(
+                LinearGradient(
+                    gradient: Gradient(colors: [
+                        Color(red: 0.2, green: 0.1, blue: 0.15),
+                        Color(red: 0.4, green: 0.2, blue: 0.3),
+                        Color(red: 0.6, green: 0.3, blue: 0.2)
+                    ]),
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+            )
+            .frame(maxWidth: .infinity)
+            .frame(height: 500)
+            .cornerRadius(20)
+            .overlay(
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.white, lineWidth: 3)
+                    .shadow(color: .white.opacity(0.5), radius: 8, x: 0, y: 0)
+            )
+            .shadow(color: .black.opacity(0.3), radius: 10, x: 0, y: 5)
+        }
+        .buttonStyle(PlainButtonStyle())
     }
 }
 
@@ -334,10 +438,6 @@ struct QuestionCardView: View {
                     .font(.system(size: 18, weight: .bold))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
-                
-                Text("Love2Love")
-                    .font(.system(size: 14, weight: .medium))
-                    .foregroundColor(.white.opacity(0.8))
             }
             .frame(maxWidth: .infinity)
             .padding(.vertical, 20)
@@ -357,7 +457,7 @@ struct QuestionCardView: View {
                 Spacer()
                 
                 Text(question.text)
-                    .font(.system(size: isBackground ? 18 : 22, weight: .medium))
+                    .font(.system(size: 22, weight: .medium))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
                     .lineSpacing(6)
@@ -367,13 +467,13 @@ struct QuestionCardView: View {
                 
                 // Logo/Branding en bas
                 HStack(spacing: 8) {
-                    Image("LogoMain")
+                    Image("Leetchi")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: isBackground ? 20 : 24, height: isBackground ? 20 : 24)
+                        .frame(width: 24, height: 24)
                     
-                    Text("Cray Cray")
-                        .font(.system(size: isBackground ? 14 : 16, weight: .semibold))
+                    Text("Love2Love")
+                        .font(.system(size: 16, weight: .semibold))
                         .foregroundColor(.white.opacity(0.9))
                 }
                 .padding(.bottom, 30)

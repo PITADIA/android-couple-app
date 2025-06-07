@@ -13,8 +13,14 @@ struct ContentView: View {
                 } else if isTransitioning {
                     LoadingTransitionView()
                 } else if !appState.isAuthenticated {
+                    // Utilisateur non authentifié -> Page de présentation
                     AuthenticationView()
-                } else if !appState.isOnboardingCompleted || appState.forceOnboarding {
+                } else if appState.isAuthenticated && !appState.hasUserStartedOnboarding && !appState.isOnboardingCompleted {
+                    // Utilisateur authentifié automatiquement par Firebase mais qui n'a pas démarré manuellement l'onboarding
+                    // -> Montrer la page de présentation
+                    AuthenticationView()
+                } else if appState.isAuthenticated && (appState.hasUserStartedOnboarding || appState.forceOnboarding) && !appState.isOnboardingCompleted {
+                    // Utilisateur authentifié qui a démarré l'onboarding manuellement -> Processus d'onboarding
                     OnboardingView()
                         .onAppear {
                             isOnboardingActive = true
@@ -23,6 +29,7 @@ struct ContentView: View {
                             isOnboardingActive = false
                         }
                 } else {
+                    // Utilisateur authentifié avec onboarding terminé -> Application principale
                     MainView()
                 }
             }

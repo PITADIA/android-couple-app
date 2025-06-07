@@ -20,6 +20,9 @@ class AppState: ObservableObject {
     // NOUVEAU: Flag pour forcer l'onboarding même si l'utilisateur a des données complètes
     @Published var forceOnboarding: Bool = false
     
+    // Flag pour savoir si l'utilisateur a volontairement commencé l'onboarding
+    @Published var hasUserStartedOnboarding: Bool = false
+    
     private let firebaseService = FirebaseService.shared
     private var cancellables = Set<AnyCancellable>()
     
@@ -115,6 +118,14 @@ class AppState: ObservableObject {
         currentOnboardingStep = 0
     }
     
+    // Méthode pour démarrer l'onboarding manuellement depuis AuthenticationView
+    func startUserOnboarding() {
+        print("🔥🔥🔥 AppState: UTILISATEUR A DEMARRE L'ONBOARDING MANUELLEMENT")
+        hasUserStartedOnboarding = true
+        isOnboardingCompleted = false
+        isOnboardingInProgress = true
+    }
+    
     func authenticate(with user: User) {
         print("AppState: Authentification: \(user.name)")
         self.currentUser = user
@@ -129,6 +140,7 @@ class AppState: ObservableObject {
         isOnboardingCompleted = true
         isOnboardingInProgress = false
         forceOnboarding = false // NOUVEAU: Réinitialiser le flag
+        hasUserStartedOnboarding = false // Réinitialiser le flag de démarrage manuel
         currentOnboardingStep = 0
     }
     
@@ -144,6 +156,7 @@ class AppState: ObservableObject {
         isOnboardingCompleted = false
         isOnboardingInProgress = false
         forceOnboarding = false // NOUVEAU: Réinitialiser le flag
+        hasUserStartedOnboarding = false
         currentOnboardingStep = 0
         currentUser = nil
     }
@@ -155,6 +168,7 @@ class AppState: ObservableObject {
         isAuthenticated = false
         isOnboardingInProgress = false
         forceOnboarding = false // NOUVEAU: Réinitialiser le flag
+        hasUserStartedOnboarding = false
         currentOnboardingStep = 0
         currentUser = nil
         isLoading = false

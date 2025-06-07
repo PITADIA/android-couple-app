@@ -132,6 +132,8 @@ struct AppleSignInView: View {
                     // Nouvel utilisateur, continuer l'onboarding
                     print("🔥 AppleSignInView: Nouvel utilisateur, authentification sans données complètes")
                     appState.isAuthenticated = true
+                    // Démarrer automatiquement l'onboarding pour ce nouvel utilisateur
+                    appState.startUserOnboarding()
                 }
                 print("🔥 AppleSignInView: Fermeture de la vue")
                 dismiss()

@@ -11,11 +11,11 @@ struct SubscriptionView: View {
     
     var body: some View {
         ZStack {
-            // Fond dégradé - même style que SubscriptionStepView
+            // Fond dégradé moderne identique à SubscriptionStepView
             LinearGradient(
                 gradient: Gradient(colors: [
-                    Color(red: 0.8, green: 0.2, blue: 0.2),
-                    Color(red: 0.9, green: 0.4, blue: 0.1)
+                    Color(hex: "#FD267A"),
+                    Color(hex: "#FF655B")
                 ]),
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
@@ -23,7 +23,7 @@ struct SubscriptionView: View {
             .ignoresSafeArea()
             
             VStack(spacing: 0) {
-                // Header avec bouton fermer et restaurer
+                // Header avec bouton fermer (design moderne)
                 HStack {
                     Button(action: {
                         print("🔥 SubscriptionView: Bouton X pressé - retour à MainView avec restrictions")
@@ -44,86 +44,24 @@ struct SubscriptionView: View {
                     }
                     
                     Spacer()
-                    
-                    Button(action: {
-                        receiptService.restorePurchases()
-                    }) {
-                        if receiptService.isLoading {
-                            ProgressView()
-                                .progressViewStyle(CircularProgressViewStyle(tint: .white))
-                                .scaleEffect(0.8)
-                        } else {
-                            Text("Restaurer")
-                                .font(.system(size: 16, weight: .medium))
-                                .foregroundColor(.white)
-                        }
-                    }
-                    .disabled(receiptService.isLoading)
                 }
                 .padding(.horizontal, 20)
                 .padding(.top, 50)
                 
+                // Titre en haut juste après la croix (design moderne)
+                Text("Commencez votre essai gratuit de 3 jours dès maintenant")
+                    .font(.system(size: 32, weight: .bold))
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 20)
+                    .padding(.top, 30)
+                
                 Spacer()
                 
-                // Contenu principal
+                // Contenu principal (design moderne)
                 VStack(spacing: 30) {
-                    // Icône
-                    Text("🔥")
-                        .font(.system(size: 80))
-                    
-                    // Titre avec contexte de la catégorie bloquée
-                    VStack(spacing: 10) {
-                        if let blockedCategory = appState.freemiumManager?.blockedCategoryAttempt {
-                            Text("DÉBLOQUEZ")
-                                .font(.system(size: 32, weight: .bold))
-                                .foregroundColor(.white)
-                            
-                            Text("\"\(blockedCategory.title)\"")
-                                .font(.system(size: 28, weight: .bold))
-                                .foregroundColor(.white)
-                                .multilineTextAlignment(.center)
-                            
-                            Text("ET TOUTES LES")
-                                .font(.system(size: 32, weight: .bold))
-                                .foregroundColor(.white)
-                            
-                            Text("FONCTIONNALITÉS")
-                                .font(.system(size: 32, weight: .bold))
-                                .foregroundColor(.white)
-                            
-                            Text("PREMIUM")
-                                .font(.system(size: 32, weight: .bold))
-                                .foregroundColor(.white)
-                        } else {
-                            Text("DÉBLOQUEZ")
-                                .font(.system(size: 32, weight: .bold))
-                                .foregroundColor(.white)
-                            
-                            Text("TOUTES LES")
-                                .font(.system(size: 32, weight: .bold))
-                                .foregroundColor(.white)
-                            
-                            Text("FONCTIONNALITÉS")
-                                .font(.system(size: 32, weight: .bold))
-                                .foregroundColor(.white)
-                            
-                            Text("PREMIUM")
-                                .font(.system(size: 32, weight: .bold))
-                                .foregroundColor(.white)
-                        }
-                    }
-                    .multilineTextAlignment(.center)
-                    
-                    // Sous-titre
-                    Text("Découvrez tout le potentiel de l'app !")
-                        .font(.system(size: 16))
-                        .foregroundColor(.white.opacity(0.9))
-                        .multilineTextAlignment(.center)
-                        .padding(.horizontal, 40)
-                    
                     // Fonctionnalités - même style que SubscriptionStepView
                     VStack(spacing: 15) {
-                        FeatureRow(icon: "calendar", text: "Nouveau contenu chaque semaine")
                         FeatureRow(icon: "heart.fill", text: "Mode surprise quotidien")
                         FeatureRow(icon: "key.fill", text: "Accès illimité à tous les packs de cartes")
                         FeatureRow(icon: "lock.fill", text: "Confidentialité garantie")
@@ -134,15 +72,20 @@ struct SubscriptionView: View {
                 
                 Spacer()
                 
-                // Section prix et bouton
+                // Section prix et bouton collée en bas (design moderne)
                 VStack(spacing: 15) {
-                    Text("Essai gratuit de 3 jours, puis 4,99 € hebdomadaire")
-                        .font(.system(size: 14))
-                        .foregroundColor(.white.opacity(0.8))
-                        .multilineTextAlignment(.center)
-                        .padding(.horizontal, 30)
+                    HStack(spacing: 5) {
+                        Image(systemName: "checkmark")
+                            .font(.system(size: 14, weight: .bold))
+                            .foregroundColor(.white)
+                        
+                        Text("Essai Gratuit de 3 jours, puis 4,99 € / semaine")
+                            .font(.system(size: 14))
+                            .foregroundColor(.white)
+                    }
+                    .padding(.horizontal, 30)
                     
-                    // Bouton principal
+                    // Bouton principal (design moderne)
                     Button(action: {
                         purchaseSubscription()
                     }) {
@@ -160,37 +103,50 @@ struct SubscriptionView: View {
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                         .frame(height: 56)
-                        .background(
-                            LinearGradient(
-                                gradient: Gradient(colors: [
-                                    Color.orange,
-                                    Color.red
-                                ]),
-                                startPoint: .leading,
-                                endPoint: .trailing
-                            )
-                        )
+                        .background(Color(hex: "#FD267A"))
                         .cornerRadius(28)
                     }
                     .disabled(receiptService.isLoading)
                     .padding(.horizontal, 30)
                     
-                    // Liens légaux
-                    HStack(spacing: 40) {
-                        Button("Conditions d'utilisation") {
-                            // Ouvrir les conditions
-                        }
-                        .font(.system(size: 12))
-                        .foregroundColor(.white.opacity(0.7))
-                        
-                        Button("Politique de confidentialité") {
-                            // Ouvrir la politique
-                        }
-                        .font(.system(size: 12))
-                        .foregroundColor(.white.opacity(0.7))
+                    // Bouton "Continuer sans premium" (nouveau)
+                    Button("Continuer sans mon accès Premium") {
+                        print("🔥 SubscriptionView: Continuer sans premium")
+                        appState.freemiumManager?.dismissSubscription()
+                        dismiss()
                     }
+                    .font(.system(size: 16))
+                    .foregroundColor(.white.opacity(0.8))
+                    .padding(.top, 10)
                 }
-                .padding(.bottom, 50)
+                .padding(.bottom, 20)
+                
+                // Liens légaux et restaurer tout en bas de l'écran (design moderne)
+                HStack(spacing: 15) {
+                    Button("Conditions générales") {
+                        if let url = URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/") {
+                            UIApplication.shared.open(url)
+                        }
+                    }
+                    .font(.system(size: 12))
+                    .foregroundColor(.white.opacity(0.7))
+                    
+                    Button("Politique de confidentialité") {
+                        if let url = URL(string: "https://love2lovesite.onrender.com") {
+                            UIApplication.shared.open(url)
+                        }
+                    }
+                    .font(.system(size: 12))
+                    .foregroundColor(.white.opacity(0.7))
+                    
+                    Button("Restaurer") {
+                        print("🔥 SubscriptionView: Tentative de restauration des achats")
+                        receiptService.restorePurchases()
+                    }
+                    .font(.system(size: 12))
+                    .foregroundColor(.white.opacity(0.7))
+                }
+                .padding(.bottom, 30)
             }
             
             // Affichage des erreurs

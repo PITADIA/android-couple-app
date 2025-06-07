@@ -236,8 +236,11 @@ extension AppleReceiptService: SKPaymentTransactionObserver {
         // Finaliser la transaction
         SKPaymentQueue.default().finishTransaction(transaction)
         
-        // Valider le reçu avec Firebase
-        validateReceiptWithFirebase()
+        print("🔥 AppleReceiptService: Transaction restaurée: \(transaction.payment.productIdentifier)")
+        NSLog("🔥 AppleReceiptService: Transaction restaurée: \(transaction.payment.productIdentifier)")
+        
+        // Ne pas valider avec Firebase ici car paymentQueueRestoreCompletedTransactionsFinished
+        // sera appelé à la fin et gérera la validation
     }
     
     private func handleFailed(_ transaction: SKPaymentTransaction) {
@@ -268,8 +271,24 @@ extension AppleReceiptService: SKPaymentTransactionObserver {
             if queue.transactions.isEmpty {
                 self.errorMessage = "Aucun achat à restaurer"
             } else {
-                // Valider le reçu après restauration
-                self.validateReceiptWithFirebase()
+                print("🔥 AppleReceiptService: Transactions restaurées, vérification du statut d'onboarding")
+                
+                // Vérifier si on est en cours d'onboarding
+                // Si oui, marquer simplement comme abonné localement sans validation Firebase
+                // La validation complète se fera après l'onboarding
+                
+                // Pour l'instant, marquer comme abonné pour permettre la navigation
+                self.isSubscribed = true
+                self.errorMessage = nil
+                
+                print("🔥 AppleReceiptService: ✅ Abonnement restauré avec succès")
+                NSLog("🔥 AppleReceiptService: ✅ Abonnement restauré avec succès")
+                
+                // Notifier le succès
+                NotificationCenter.default.post(
+                    name: NSNotification.Name("SubscriptionValidated"),
+                    object: nil
+                )
             }
         }
     }

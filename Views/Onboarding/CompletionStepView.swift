@@ -42,13 +42,21 @@ struct CompletionStepView: View {
                         .multilineTextAlignment(.center)
                 }
                 
-                // Sous-titre
-                Text("Nous promettons de toujours garder vos informations personnelles privées et sécurisées")
-                    .font(.system(size: 16))
-                    .foregroundColor(.white.opacity(0.9))
-                    .multilineTextAlignment(.center)
-                    .lineSpacing(4)
-                    .padding(.horizontal, 40)
+                // Sous-titre avec origine des confettis
+                ZStack {
+                    Text("Nous promettons de toujours garder vos informations personnelles privées et sécurisées")
+                        .font(.system(size: 16))
+                        .foregroundColor(.white.opacity(0.9))
+                        .multilineTextAlignment(.center)
+                        .lineSpacing(4)
+                        .padding(.horizontal, 40)
+                    
+                    // Point invisible pour les confettis au niveau du sous-titre
+                    Rectangle()
+                        .fill(Color.clear)
+                        .frame(width: 1, height: 1)
+                        .confettiCannon(trigger: $confettiCounter, num: 200, radius: 400)
+                }
                 
                 Spacer()
                 
@@ -67,10 +75,7 @@ struct CompletionStepView: View {
                 .padding(.horizontal, 30)
                 .padding(.bottom, 50)
             }
-            
-
         }
-        .confettiCannon(trigger: $confettiCounter, num: 200, radius: 400)
         .onAppear {
             print("🔥 CompletionStepView: Vue de confirmation apparue")
             // Déclencher l'animation des confettis immédiatement

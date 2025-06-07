@@ -106,33 +106,19 @@ struct NewPackRevealView: View {
                 
                 // Message principal
                 VStack(spacing: 20) {
-                    Text("WOW, ON A AJOUTÉ")
+                    Text("On vient de t'ajouter \(questionsCount) nouvelles cartes")
                         .font(.system(size: 32, weight: .bold))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                         .opacity(showContent ? 1.0 : 0.0)
                         .animation(.easeInOut(duration: 0.8).delay(0.3), value: showContent)
                     
-                    Text("\(questionsCount) NOUVELLES")
-                        .font(.system(size: 32, weight: .bold))
-                        .foregroundColor(.white)
-                        .multilineTextAlignment(.center)
-                        .opacity(showContent ? 1.0 : 0.0)
-                        .animation(.easeInOut(duration: 0.8).delay(0.5), value: showContent)
-                    
-                    Text("CARTES !")
-                        .font(.system(size: 32, weight: .bold))
-                        .foregroundColor(.white)
-                        .multilineTextAlignment(.center)
-                        .opacity(showContent ? 1.0 : 0.0)
-                        .animation(.easeInOut(duration: 0.8).delay(0.7), value: showContent)
-                    
-                    Text("Profitez-en")
+                    Text("Profites-en")
                         .font(.system(size: 20))
                         .foregroundColor(.white.opacity(0.9))
                         .multilineTextAlignment(.center)
                         .opacity(showContent ? 1.0 : 0.0)
-                        .animation(.easeInOut(duration: 0.8).delay(0.9), value: showContent)
+                        .animation(.easeInOut(duration: 0.8).delay(0.5), value: showContent)
                 }
                 
                 Spacer()
@@ -151,7 +137,7 @@ struct NewPackRevealView: View {
                 }
                 .padding(.horizontal, 40)
                 .opacity(showContent ? 1.0 : 0.0)
-                .animation(.easeInOut(duration: 0.8).delay(1.1), value: showContent)
+                .animation(.easeInOut(duration: 0.8).delay(0.7), value: showContent)
                 .padding(.bottom, 60)
             }
         }

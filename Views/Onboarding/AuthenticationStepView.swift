@@ -63,9 +63,29 @@ struct AuthenticationStepView: View {
             print("🔥 AuthenticationStepView: Vue d'authentification apparue")
             NSLog("🔥🔥🔥 AUTHENTICATION: VUE APPARUE")
             
-            // Vérifications de debug
+            // Vérifications de debug détaillées
             print("🔥 AuthenticationStepView: Bundle ID: \(Bundle.main.bundleIdentifier ?? "nil")")
+            print("🔥 AuthenticationStepView: Environnement: \(ProcessInfo.processInfo.environment["SIMULATOR_DEVICE_NAME"] != nil ? "Simulateur" : "Appareil physique")")
+            print("🔥 AuthenticationStepView: Auth.currentUser: \(Auth.auth().currentUser?.uid ?? "nil")")
+            print("🔥 AuthenticationStepView: AppState.isAuthenticated: \(appState.isAuthenticated)")
             NSLog("🔥🔥🔥 AUTHENTICATION: BUNDLE ID: %@", Bundle.main.bundleIdentifier ?? "nil")
+            
+            // Vérifier si l'utilisateur est déjà authentifié
+            if appState.isAuthenticated && Auth.auth().currentUser != nil {
+                print("🔥 AuthenticationStepView: Utilisateur déjà authentifié, passage direct à l'étape suivante")
+                NSLog("🔥🔥🔥 AUTHENTICATION: UTILISATEUR DEJA AUTHENTIFIE")
+                
+                // Créer le document utilisateur avec les données d'onboarding collectées
+                if let currentUser = Auth.auth().currentUser {
+                    createPartialUserDocument(firebaseUser: currentUser)
+                }
+                
+                // Passer directement à l'étape suivante
+                viewModel.completeAuthentication()
+            } else {
+                print("🔥 AuthenticationStepView: Utilisateur non authentifié - prêt pour Apple Sign In")
+                NSLog("🔥🔥🔥 AUTHENTICATION: UTILISATEUR NON AUTHENTIFIE")
+            }
         }
     }
     

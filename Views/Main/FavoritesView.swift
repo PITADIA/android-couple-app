@@ -30,16 +30,9 @@ struct FavoritesView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                // Fond dégradé identique à l'app
-                LinearGradient(
-                    gradient: Gradient(colors: [
-                        Color(red: 0.15, green: 0.05, blue: 0.2),
-                        Color(red: 0.25, green: 0.1, blue: 0.3)
-                    ]),
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
-                )
-                .ignoresSafeArea()
+                // Même fond que la page des cartes de favoris
+                Color(red: 0.15, green: 0.03, blue: 0.08)
+                    .ignoresSafeArea()
                 
                 VStack(spacing: 0) {
                     // Header personnalisé

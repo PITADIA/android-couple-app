@@ -30,16 +30,9 @@ struct FavoritesCardView: View {
     
     var body: some View {
         ZStack {
-            // Fond dégradé identique à QuestionListView
-            LinearGradient(
-                gradient: Gradient(colors: [
-                    Color(red: 0.15, green: 0.05, blue: 0.2),
-                    Color(red: 0.25, green: 0.1, blue: 0.3)
-                ]),
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-            .ignoresSafeArea()
+            // Même fond que les cartes de questions (moderne)
+            Color(red: 0.15, green: 0.03, blue: 0.08)
+                .ignoresSafeArea()
             
             VStack(spacing: 0) {
                 // Header avec navigation
@@ -99,7 +92,7 @@ struct FavoritesCardView: View {
                     // Cartes de favoris avec le même design
                     GeometryReader { geometry in
                         let cardWidth = geometry.size.width - 40
-                        let cardSpacing: CGFloat = 20
+                        let cardSpacing: CGFloat = 30
                         
                         ZStack {
                             ForEach(visibleFavorites, id: \.0) { indexAndFavorite in
@@ -113,8 +106,8 @@ struct FavoritesCardView: View {
                                 )
                                 .frame(width: cardWidth)
                                 .offset(x: xPosition)
-                                .scaleEffect(index == currentFavoriteIndex ? 1.0 : 0.9)
-                                .opacity(index == currentFavoriteIndex ? 1.0 : 0.7)
+                                .scaleEffect(index == currentFavoriteIndex ? 1.0 : 0.95)
+                                .opacity(index == currentFavoriteIndex ? 1.0 : 0.8)
                                 .animation(.spring(response: 0.6, dampingFraction: 0.8), value: currentFavoriteIndex)
                             }
                         }
@@ -152,54 +145,31 @@ struct FavoritesCardView: View {
                     .padding(.horizontal, 20)
                 }
                 
-                // Boutons du bas
-                HStack(spacing: 20) {
-                    // Bouton Partager la carte
-                    Button(action: {
-                        // Action partager le favori
-                    }) {
-                        Text("Partager la carte")
-                            .font(.system(size: 18, weight: .semibold))
-                            .foregroundColor(.white)
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 56)
-                            .background(
-                                LinearGradient(
-                                    gradient: Gradient(colors: [
-                                        Color(red: 1.0, green: 0.4, blue: 0.2),
-                                        Color(red: 1.0, green: 0.6, blue: 0.0)
-                                    ]),
-                                    startPoint: .leading,
-                                    endPoint: .trailing
-                                )
-                            )
-                            .cornerRadius(28)
-                    }
-                    
-                    // Bouton Supprimer des favoris
+                // Bouton Retirer des favoris (design moderne)
+                if !favoritesService.favoriteQuestions.isEmpty {
                     Button(action: {
                         showingDeleteAlert = true
                     }) {
-                        Image(systemName: "heart.fill")
-                            .font(.system(size: 24))
-                            .foregroundColor(.white)
-                            .frame(width: 56, height: 56)
-                            .background(
-                                LinearGradient(
-                                    gradient: Gradient(colors: [
-                                        Color.red,
-                                        Color.pink
-                                    ]),
-                                    startPoint: .leading,
-                                    endPoint: .trailing
-                                )
-                            )
-                            .cornerRadius(28)
-                            .scaleEffect(1.1)
+                        HStack(spacing: 12) {
+                            Text("Retirer des favoris")
+                                .font(.system(size: 18, weight: .semibold))
+                                .foregroundColor(.white)
+                            
+                            Image(systemName: "heart.fill")
+                                .font(.system(size: 20, weight: .medium))
+                                .foregroundColor(.white)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 56)
+                        .background(
+                            // Même couleur que le header des cartes
+                            Color(red: 1.0, green: 0.4, blue: 0.6)
+                        )
+                        .cornerRadius(28)
                     }
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 50)
                 }
-                .padding(.horizontal, 20)
-                .padding(.bottom, 50)
             }
         }
         .navigationBarHidden(true)
@@ -243,16 +213,12 @@ struct FavoriteQuestionCardView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            // Header de la carte avec nom de catégorie (même design que QuestionCardView)
+            // Header de la carte avec nom de catégorie (design moderne)
             VStack(spacing: 8) {
                 Text(favorite.categoryTitle)
                     .font(.system(size: 18, weight: .bold))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
-                
-                Text("Love2Love")
-                    .font(.system(size: 14, weight: .medium))
-                    .foregroundColor(.white.opacity(0.8))
             }
             .frame(maxWidth: .infinity)
             .padding(.vertical, 20)
@@ -272,7 +238,7 @@ struct FavoriteQuestionCardView: View {
                 Spacer()
                 
                 Text(favorite.questionText)
-                    .font(.system(size: isBackground ? 18 : 22, weight: .medium))
+                    .font(.system(size: 22, weight: .medium))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
                     .lineSpacing(6)
@@ -280,13 +246,15 @@ struct FavoriteQuestionCardView: View {
                 
                 Spacer()
                 
-                // Logo/Branding en bas avec emoji de la catégorie
+                // Logo/Branding en bas (design moderne)
                 HStack(spacing: 8) {
-                    Text(favorite.emoji)
-                        .font(.system(size: isBackground ? 16 : 20))
+                    Image("Leetchi")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 24, height: 24)
                     
-                    Text("Cray Cray")
-                        .font(.system(size: isBackground ? 14 : 16, weight: .semibold))
+                    Text("Love2Love")
+                        .font(.system(size: 16, weight: .semibold))
                         .foregroundColor(.white.opacity(0.9))
                 }
                 .padding(.bottom, 30)

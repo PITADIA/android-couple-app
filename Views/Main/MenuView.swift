@@ -12,16 +12,9 @@ struct MenuView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                // Fond dégradé identique à l'app
-                LinearGradient(
-                    gradient: Gradient(colors: [
-                        Color(red: 0.15, green: 0.05, blue: 0.2),
-                        Color(red: 0.25, green: 0.1, blue: 0.3)
-                    ]),
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
-                )
-                .ignoresSafeArea()
+                // Même fond que la page principale
+                Color(red: 0.1, green: 0.02, blue: 0.05)
+                    .ignoresSafeArea()
                 
                 VStack(spacing: 0) {
                     // Header
@@ -81,22 +74,6 @@ struct MenuView: View {
                             subtitle: "Protection de vos données"
                         ) {
                             openPrivacyPolicy()
-                        }
-                        
-                        MenuOptionView(
-                            icon: "arrow.clockwise",
-                            title: "Refaire l'onboarding",
-                            subtitle: "Modifier vos préférences"
-                        ) {
-                            restartOnboarding()
-                        }
-                        
-                        MenuOptionView(
-                            icon: "gobackward",
-                            title: "Réinitialiser progression",
-                            subtitle: "Remettre tous les packs à zéro"
-                        ) {
-                            resetPackProgress()
                         }
                         
                         Divider()
@@ -166,16 +143,7 @@ struct MenuView: View {
         }
     }
     
-    private func restartOnboarding() {
-        print("🔥🔥🔥 MenuView: REDEMARRAGE DE L'ONBOARDING DEMANDE")
-        appState.startOnboardingFlow()
-        dismiss()
-    }
-    
-    private func resetPackProgress() {
-        print("🔥 MenuView: Réinitialisation de la progression des packs")
-        packProgressService.resetAllProgress()
-    }
+
 
     
     private func deleteAccount() {

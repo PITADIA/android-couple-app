@@ -55,16 +55,6 @@ struct CategoryCardView: View {
                         .lineLimit(nil)
                         .fixedSize(horizontal: false, vertical: true)
                         .lineSpacing(2)
-                    
-                    // Icône premium si nécessaire (seulement pour les non-abonnés)
-                    if category.isPremium && !(appState.currentUser?.isSubscribed ?? false) {
-                        HStack(spacing: 4) {
-                            Image(systemName: "lock.fill")
-                                .font(.system(size: 12))
-                                .foregroundColor(.yellow)
-                        }
-                        .padding(.top, 4)
-                    }
                 }
                 .padding(.horizontal, 12)
                 .padding(.vertical, 16)
