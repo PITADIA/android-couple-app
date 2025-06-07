@@ -8,6 +8,10 @@ class AppState: ObservableObject {
     @Published var currentOnboardingStep: Int = 0
     @Published var isLoading: Bool = true
     
+    // NOUVEAU: Délai minimum pour l'écran de chargement
+    private var hasMinimumLoadingTimeElapsed: Bool = false
+    private var firebaseDataLoaded: Bool = false
+    
     // MARK: - Freemium Manager
     @Published var freemiumManager: FreemiumManager?
     
@@ -36,6 +40,13 @@ class AppState: ObservableObject {
         self.favoritesService = FavoritesService()
         print("🔥 AppState: FavoritesService initialisé")
         
+        // NOUVEAU: Délai minimum pour l'écran de chargement (2.5 secondes)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            print("AppState: Délai minimum écoulé")
+            self.hasMinimumLoadingTimeElapsed = true
+            self.checkIfLoadingComplete()
+        }
+        
         // Observer les changements d'authentification Firebase
         firebaseService.$isAuthenticated
             .receive(on: DispatchQueue.main)
@@ -43,10 +54,8 @@ class AppState: ObservableObject {
                 print("AppState: Auth changé: \(isAuth)")
                 self?.isAuthenticated = isAuth
                 
-                // Si Firebase a terminé sa vérification, arrêter le chargement
-                if !isAuth && self?.firebaseService.currentUser == nil {
-                    self?.isLoading = false
-                }
+                // MODIFIÉ: Ne plus arrêter le chargement ici directement
+                // Le chargement s'arrêtera via checkIfLoadingComplete()
             }
             .store(in: &cancellables)
         
@@ -56,8 +65,9 @@ class AppState: ObservableObject {
                 print("AppState: User changé: \(user?.name ?? "nil")")
                 self?.currentUser = user
                 
-                // Firebase a terminé sa vérification
-                self?.isLoading = false
+                // MODIFIÉ: Marquer que Firebase a terminé, mais ne pas arrêter le chargement directement
+                self?.firebaseDataLoaded = true
+                self?.checkIfLoadingComplete()
                 
                 // MODIFICATION: Vérifier si on force l'onboarding
                 if self?.forceOnboarding == true {
@@ -107,6 +117,23 @@ class AppState: ObservableObject {
                 }
             }
             .store(in: &cancellables)
+    }
+    
+    // NOUVEAU: Vérifier si le chargement peut se terminer
+    private func checkIfLoadingComplete() {
+        print("AppState: Vérification fin de chargement")
+        print("AppState: - Délai minimum écoulé: \(hasMinimumLoadingTimeElapsed)")
+        print("AppState: - Données Firebase chargées: \(firebaseDataLoaded)")
+        
+        // Le chargement se termine seulement quand TOUTES les conditions sont remplies:
+        // 1. Le délai minimum s'est écoulé (2.5s pour voir le LaunchScreen)
+        // 2. Firebase a terminé de charger les données
+        if hasMinimumLoadingTimeElapsed && firebaseDataLoaded {
+            print("AppState: ✅ Conditions remplies - Fin du chargement")
+            self.isLoading = false
+        } else {
+            print("AppState: ⏳ Attente des conditions pour finir le chargement")
+        }
     }
     
     // NOUVEAU: Méthode pour forcer l'onboarding
