@@ -7,7 +7,7 @@ struct AuthenticationStepView: View {
     @ObservedObject var viewModel: OnboardingViewModel
     @EnvironmentObject var appState: AppState
     @StateObject private var firebaseService = FirebaseService.shared
-    @State private var currentNonce: String?
+    @StateObject private var authService = AuthenticationService.shared
     
     var body: some View {
         VStack(spacing: 0) {
@@ -28,34 +28,23 @@ struct AuthenticationStepView: View {
             Spacer()
             
             // Bouton Sign in with Apple collé en bas
-            SignInWithAppleButton(
-                onRequest: { request in
-                    print("🔥 AuthenticationStepView: Début de la requête Apple Sign In")
-                    NSLog("🔥🔥🔥 APPLE SIGN IN: DEBUT DE LA REQUETE")
-                    
-                    // Générer le nonce
-                    let nonce = randomNonceString()
-                    currentNonce = nonce
-                    request.nonce = sha256(nonce)
-                    
-                    print("🔥 AuthenticationStepView: Bundle ID: \(Bundle.main.bundleIdentifier ?? "nil")")
-                    print("🔥 AuthenticationStepView: Nonce généré et configuré")
-                    NSLog("🔥🔥🔥 APPLE SIGN IN: BUNDLE ID: %@", Bundle.main.bundleIdentifier ?? "nil")
-                    NSLog("🔥🔥🔥 APPLE SIGN IN: NONCE GENERE")
-                    
-                    request.requestedScopes = [.fullName, .email]
-                    print("🔥 AuthenticationStepView: Scopes demandés: fullName, email")
-                    NSLog("🔥🔥🔥 APPLE SIGN IN: SCOPES DEMANDES")
-                },
-                onCompletion: { result in
-                    print("🔥 AuthenticationStepView: Réponse Apple Sign In reçue")
-                    NSLog("🔥🔥🔥 APPLE SIGN IN: REPONSE RECUE")
-                    handleSignInWithApple(result)
+            Button(action: {
+                print("🔥 AuthenticationStepView: Déclenchement de l'authentification Apple via AuthenticationService")
+                NSLog("🔥🔥🔥 APPLE SIGN IN: DECLENCHEMENT VIA AUTH SERVICE")
+                authService.signInWithApple()
+            }) {
+                HStack {
+                    Image(systemName: "applelogo")
+                        .font(.system(size: 20, weight: .medium))
+                    Text("Continuer avec Apple")
+                        .font(.system(size: 18, weight: .semibold))
                 }
-            )
-            .signInWithAppleButtonStyle(.white)
-            .frame(height: 56)
-            .cornerRadius(28)
+                .foregroundColor(.black)
+                .frame(maxWidth: .infinity)
+                .frame(height: 56)
+                .background(Color.white)
+                .cornerRadius(28)
+            }
             .padding(.horizontal, 30)
             .padding(.bottom, 50)
         }
@@ -87,160 +76,39 @@ struct AuthenticationStepView: View {
                 NSLog("🔥🔥🔥 AUTHENTICATION: UTILISATEUR NON AUTHENTIFIE")
             }
         }
-    }
-    
-    private func handleSignInWithApple(_ result: Result<ASAuthorization, Error>) {
-        switch result {
-        case .success(let authorization):
-            print("✅ AuthenticationStepView: Authentification Apple réussie")
-            NSLog("🔥🔥🔥 APPLE SIGN IN: SUCCES!")
+        .onReceive(NotificationCenter.default.publisher(for: NSNotification.Name("UserAuthenticated"))) { _ in
+            print("🔥 AuthenticationStepView: Notification d'authentification reçue de AuthenticationService")
+            NSLog("🔥🔥🔥 AUTHENTICATION: NOTIFICATION RECUE")
             
-            guard let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential else {
-                print("❌ AuthenticationStepView: Credential Apple ID manquant")
-                NSLog("❌❌❌ APPLE SIGN IN: CREDENTIAL MANQUANT")
-                // Ne pas continuer si les credentials sont manquants
-                return
-            }
-            
-            guard let nonce = currentNonce else {
-                print("❌ AuthenticationStepView: Nonce manquant")
-                NSLog("❌❌❌ APPLE SIGN IN: NONCE MANQUANT")
-                // Ne pas continuer si le nonce est manquant
-                return
-            }
-            
-            guard let appleIDToken = appleIDCredential.identityToken else {
-                print("❌ AuthenticationStepView: Token Apple manquant")
-                NSLog("❌❌❌ APPLE SIGN IN: TOKEN MANQUANT")
-                // Ne pas continuer si le token est manquant
-                return
-            }
-            
-            guard let idTokenString = String(data: appleIDToken, encoding: .utf8) else {
-                print("❌ AuthenticationStepView: Erreur de décodage du token")
-                NSLog("❌❌❌ APPLE SIGN IN: ERREUR DECODAGE TOKEN")
-                // Ne pas continuer si le décodage échoue
-                return
-            }
-            
-            print("🔥 AuthenticationStepView: Création des credentials Firebase")
-            NSLog("🔥🔥🔥 APPLE SIGN IN: CREATION CREDENTIALS FIREBASE")
-            
-            let credential = OAuthProvider.credential(withProviderID: "apple.com",
-                                                      idToken: idTokenString,
-                                                      rawNonce: nonce)
-            
-            // Authentification Firebase
-            Auth.auth().signIn(with: credential) { result, error in
-                DispatchQueue.main.async {
-                    if let error = error {
-                        print("❌ AuthenticationStepView: Erreur Firebase: \(error.localizedDescription)")
-                        NSLog("❌❌❌ FIREBASE AUTH: ERREUR: %@", error.localizedDescription)
-                        // Ne pas continuer en cas d'erreur Firebase
-                        return
-                    }
-                    
-                    guard let firebaseUser = result?.user else {
-                        print("❌ AuthenticationStepView: Utilisateur Firebase manquant")
-                        NSLog("❌❌❌ FIREBASE AUTH: USER MANQUANT")
-                        // Ne pas continuer si l'utilisateur Firebase est manquant
-                        return
-                    }
-                    
-                    print("✅ AuthenticationStepView: Authentification Firebase réussie!")
-                    print("🔥 AuthenticationStepView: Firebase UID: \(firebaseUser.uid)")
-                    print("🔥 AuthenticationStepView: Email: \(firebaseUser.email ?? "nil")")
-                    NSLog("✅✅✅ FIREBASE AUTH: SUCCES! UID: %@", firebaseUser.uid)
+            // Attendre un peu que Firebase se synchronise
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                if let firebaseUser = Auth.auth().currentUser {
+                    print("🔥 AuthenticationStepView: Utilisateur Firebase trouvé: \(firebaseUser.uid)")
+                    NSLog("🔥🔥🔥 AUTHENTICATION: FIREBASE USER TROUVE")
                     
                     // Créer immédiatement un document utilisateur partiel avec les données d'onboarding
                     self.createPartialUserDocument(firebaseUser: firebaseUser)
                     
                     // Passer à l'étape suivante (abonnement)
                     viewModel.completeAuthentication()
+                } else {
+                    print("❌ AuthenticationStepView: Aucun utilisateur Firebase trouvé")
+                    NSLog("❌❌❌ AUTHENTICATION: AUCUN FIREBASE USER")
                 }
             }
-            
-        case .failure(let error):
-            print("❌ AuthenticationStepView: Erreur d'authentification Apple: \(error.localizedDescription)")
-            NSLog("❌❌❌ APPLE SIGN IN: ERREUR: %@", error.localizedDescription)
-            
-            // Diagnostics supplémentaires
-            if let nsError = error as NSError? {
-                print("❌ AuthenticationStepView: Code d'erreur: \(nsError.code)")
-                print("❌ AuthenticationStepView: Domaine: \(nsError.domain)")
-                NSLog("❌❌❌ APPLE SIGN IN: CODE ERREUR: %ld", nsError.code)
-            }
-            
-            // Vérifier si c'est une annulation par l'utilisateur
-            if let authError = error as? ASAuthorizationError {
-                switch authError.code {
-                case .canceled:
-                    print("🔥 AuthenticationStepView: Authentification annulée par l'utilisateur - rester sur cette étape")
-                    NSLog("🔥 AuthenticationStepView: Authentification annulée par l'utilisateur")
-                    // Ne pas appeler completeAuthentication() - rester sur l'étape d'authentification
-                    return
-                case .failed, .invalidResponse, .notHandled, .unknown:
-                    print("🔥 AuthenticationStepView: Erreur d'authentification - rester sur cette étape")
-                    NSLog("🔥 AuthenticationStepView: Erreur d'authentification")
-                    // Ne pas appeler completeAuthentication() - rester sur l'étape d'authentification
-                    return
-                @unknown default:
-                    print("🔥 AuthenticationStepView: Erreur d'authentification inconnue - rester sur cette étape")
-                    NSLog("🔥 AuthenticationStepView: Erreur d'authentification inconnue")
-                    // Ne pas appeler completeAuthentication() - rester sur l'étape d'authentification
-                    return
-                }
-            }
-            
-            // Pour d'autres types d'erreurs, rester aussi sur cette étape
-            print("🔥 AuthenticationStepView: Erreur non-Apple - rester sur cette étape")
-            NSLog("🔥 AuthenticationStepView: Erreur non-Apple")
-            // Ne pas appeler completeAuthentication() - l'utilisateur peut réessayer
         }
-    }
-    
-    // MARK: - Nonce Generation
-    
-    private func randomNonceString(length: Int = 32) -> String {
-        precondition(length > 0)
-        let charset: [Character] =
-        Array("0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._")
-        var result = ""
-        var remainingLength = length
-        
-        while remainingLength > 0 {
-            let randoms: [UInt8] = (0 ..< 16).map { _ in
-                var random: UInt8 = 0
-                let errorCode = SecRandomCopyBytes(kSecRandomDefault, 1, &random)
-                if errorCode != errSecSuccess {
-                    fatalError("Unable to generate nonce. SecRandomCopyBytes failed with OSStatus \(errorCode)")
-                }
-                return random
-            }
-            
-            randoms.forEach { random in
-                if remainingLength == 0 {
-                    return
-                }
+        .onChange(of: authService.isAuthenticated) { _, isAuth in
+            print("🔥 AuthenticationStepView: Changement d'authentification: \(isAuth)")
+            if isAuth {
+                print("🔥 AuthenticationStepView: Authentification réussie via AuthenticationService")
+                NSLog("🔥🔥🔥 AUTHENTICATION: SUCCES VIA AUTH SERVICE")
                 
-                if random < charset.count {
-                    result.append(charset[Int(random)])
-                    remainingLength -= 1
+                if let firebaseUser = Auth.auth().currentUser {
+                    createPartialUserDocument(firebaseUser: firebaseUser)
+                    viewModel.completeAuthentication()
                 }
             }
         }
-        
-        return result
-    }
-    
-    private func sha256(_ input: String) -> String {
-        let inputData = Data(input.utf8)
-        let hashedData = SHA256.hash(data: inputData)
-        let hashString = hashedData.compactMap {
-            String(format: "%02x", $0)
-        }.joined()
-        
-        return hashString
     }
     
     private func createPartialUserDocument(firebaseUser: FirebaseAuth.User) {

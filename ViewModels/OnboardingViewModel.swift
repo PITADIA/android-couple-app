@@ -29,7 +29,7 @@ class OnboardingViewModel: ObservableObject {
     
     // Options pour les objectifs de relation
     let relationshipGoals = [
-        "👫 Créer une vraie connexion",
+        "💌 Créer une vraie connexion",
         "🔥 Parler enfin des sujets qu'on évite",
         "🌶️ Faire monter la passion entre nous",
         "🎉 Partager plus de rires ensemble",
@@ -41,15 +41,15 @@ class OnboardingViewModel: ObservableObject {
         "✨ Créer un moment fort à deux",
         "💕 Raviver notre connexion",
         "🔄 Sortir de la routine",
-        "💬 Se dire ce qu'on n'a jamais dit"
+        "🤍 Se dire ce qu'on n'a jamais dit"
     ]
     
     // Options pour le mode de questions
     let questionModes = [
         "🎯 Sérieux",
         "🎉 Fun",
-        "🔥 Hot et Sensuel",
-        "💭 Profond"
+        "🌶️ Hot et Sensuel",
+        "💫 Profond"
     ]
     
     // Propriété calculée pour la barre de progression

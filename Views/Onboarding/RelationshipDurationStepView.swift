@@ -29,13 +29,13 @@ struct RelationshipDurationStepView: View {
                                 Group {
                                     switch duration {
                                     case .lessThanYear:
-                                        Text("🌱") // Nouvelle relation qui pousse
+                                        Text("🫶") // Nouvelle relation qui pousse
                                     case .oneToThreeYears:
                                         Text("💕") // Amour qui se développe
                                     case .moreThanThreeYears:
-                                        Text("🏠") // Relation stable et établie
+                                        Text("❤️") // Relation stable et établie
                                     case .notInRelationship:
-                                        Text("🔍") // À la recherche de l'amour
+                                        Text("🙏") // À la recherche de l'amour
                                     case .none:
                                         Text("")
                                     }
