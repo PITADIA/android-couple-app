@@ -41,7 +41,7 @@ struct LoadingStepView: View {
     }
     
     private func startLoadingSequence() {
-        print("🔥 LoadingStepView: Début de la séquence de chargement de 15 secondes")
+        print("🔥 LoadingStepView: Début de la séquence de chargement")
         
         // Timer pour changer les messages toutes les 5 secondes
         loadingTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { _ in
@@ -51,11 +51,8 @@ struct LoadingStepView: View {
             print("🔥 LoadingStepView: Changement de message: \(loadingMessages[currentMessageIndex])")
         }
         
-        // Timer pour terminer le chargement après 15 secondes
-        DispatchQueue.main.asyncAfter(deadline: .now() + 15.0) {
-            print("🔥 LoadingStepView: Fin du chargement après 15 secondes")
-            loadingTimer?.invalidate()
-            viewModel.nextStep()
-        }
+        // SUPPRIMÉ: Le timer automatique de 15 secondes qui forçait l'avancement
+        // L'avancement doit maintenant être géré manuellement via completeDataCollection()
+        print("🔥 LoadingStepView: Attente de la finalisation manuelle de la collecte de données")
     }
 } 

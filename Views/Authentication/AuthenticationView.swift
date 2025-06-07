@@ -19,18 +19,26 @@ struct AuthenticationView: View {
             .ignoresSafeArea()
             
             VStack(spacing: 40) {
-                // Nom de l'app en haut
-                Text("Love2Love")
-                    .font(.system(size: 50, weight: .bold))
-                    .foregroundColor(.white)
-                    .padding(.top, 60)
-                    .padding(.bottom, 40)
+                // Logo et nom de l'app en haut
+                HStack(spacing: 15) {
+                    // Logo Leetchi à gauche
+                    Image("Leetchi")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 40, height: 40)
+                    
+                    Text("Love2Love")
+                        .font(.system(size: 50, weight: .bold))
+                        .foregroundColor(.white)
+                }
+                .padding(.top, 60)
+                .padding(.bottom, 40)
                 
                 Spacer()
                 
                 // Titre principal
                 VStack(spacing: 20) {
-                    Text("Et si vous retombiez amoureux en vous parlant vraiment ?")
+                    Text("Et Si Vous Retombiez Amoureux En Vous Parlant Vraiment ?")
                         .font(.system(size: 36, weight: .bold))
                         .foregroundColor(.white)
                 .multilineTextAlignment(.center)
@@ -39,7 +47,7 @@ struct AuthenticationView: View {
                 .padding(.horizontal, 20)
                 
                 // Sous-titre
-                    Text("Améliorez votre relation à travers des questions profondes, conçues pour vous rapprocher toujours plus.")
+                    Text("Redécouvrez-vous à travers des questions qui raviveront votre amour.")
                         .font(.system(size: 18))
                     .foregroundColor(.white.opacity(0.9))
                     .multilineTextAlignment(.center)

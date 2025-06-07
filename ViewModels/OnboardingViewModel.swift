@@ -19,28 +19,29 @@ class OnboardingViewModel: ObservableObject {
     @Published var userName: String = ""
     @Published var birthDate: Date = Date()
     @Published var selectedGoals: [String] = []
-    @Published var relationshipDuration: User.RelationshipDuration = .notInRelationship
+    @Published var relationshipDuration: User.RelationshipDuration = .none
     @Published var relationshipImprovement: String = ""
     @Published var questionMode: String = ""
     @Published var isLoading: Bool = false
     
-    private var appState: AppState?
+    var appState: AppState?
     private var cancellables = Set<AnyCancellable>()
     
     // Options pour les objectifs de relation
     let relationshipGoals = [
-        "👫 Mieux connaître mon partenaire",
-        "🔥 Aborder des sujets délicats",
-        "🌶️ Pimenter notre relation",
-        "🎉 S'amuser ensemble"
+        "👫 Créer une vraie connexion",
+        "🔥 Parler enfin des sujets qu'on évite",
+        "🌶️ Faire monter la passion entre nous",
+        "🎉 Partager plus de rires ensemble",
+        "💕 Retrouver une vraie complicité"
     ]
-    
+
     // Options pour l'amélioration de la relation
     let relationshipImprovements = [
-        "🗣️ Aborder des sujets profonds",
-        "💕 Créer encore plus de lien",
-        "🤝 Mieux comprendre l'autre",
-        "🔍 Apprendre à se connaître encore plus"
+        "✨ Créer un moment fort à deux",
+        "💕 Raviver notre connexion",
+        "🔄 Sortir de la routine",
+        "💬 Se dire ce qu'on n'a jamais dit"
     ]
     
     // Options pour le mode de questions
@@ -74,45 +75,34 @@ class OnboardingViewModel: ObservableObject {
     }
     
     func nextStep() {
-        print("🔥 OnboardingViewModel: Passage à l'étape suivante depuis \(currentStep)")
         switch currentStep {
         case .name:
             if !userName.isEmpty {
-                print("🔥 OnboardingViewModel: Nom saisi: \(userName)")
                 currentStep = .birthDate
-            } else {
-                print("❌ OnboardingViewModel: Nom vide, impossible de continuer")
             }
         case .birthDate:
-            print("🔥 OnboardingViewModel: Date de naissance: \(birthDate)")
             currentStep = .relationshipGoals
         case .relationshipGoals:
-            print("🔥 OnboardingViewModel: Objectifs sélectionnés: \(selectedGoals)")
             currentStep = .relationshipDuration
         case .relationshipDuration:
-            print("🔥 OnboardingViewModel: Durée de relation: \(relationshipDuration)")
-            currentStep = .relationshipImprovement
+            if relationshipDuration != .none {
+                currentStep = .relationshipImprovement
+            }
         case .relationshipImprovement:
-            print("🔥 OnboardingViewModel: Amélioration souhaitée: \(relationshipImprovement)")
             currentStep = .questionMode
         case .questionMode:
-            print("🔥 OnboardingViewModel: Mode de questions: \(questionMode)")
             currentStep = .completion
         case .completion:
-            print("🔥 OnboardingViewModel: Page de confirmation terminée")
             currentStep = .loading
             completeDataCollection()
         case .loading:
-            print("🔥 OnboardingViewModel: Fin du chargement, passage à l'authentification")
             currentStep = .authentication
         case .authentication:
-            print("🔥 OnboardingViewModel: Authentification terminée, passage à l'abonnement")
             currentStep = .subscription
         case .subscription:
-            print("🔥 OnboardingViewModel: Abonnement terminé, finalisation")
-            finalizeOnboarding()
+            // L'onboarding doit être finalisé via skipSubscription() ou completeSubscription()
+            break
         }
-        print("🔥 OnboardingViewModel: Nouvelle étape: \(currentStep)")
     }
     
     func previousStep() {
@@ -146,15 +136,11 @@ class OnboardingViewModel: ObservableObject {
     }
     
     func toggleGoal(_ goal: String) {
-        print("🔥 OnboardingViewModel: Toggle objectif: \(goal)")
         if selectedGoals.contains(goal) {
             selectedGoals.removeAll { $0 == goal }
-            print("🔥 OnboardingViewModel: Objectif retiré")
         } else {
             selectedGoals.append(goal)
-            print("🔥 OnboardingViewModel: Objectif ajouté")
         }
-        print("🔥 OnboardingViewModel: Objectifs actuels: \(selectedGoals)")
     }
     
     private func completeDataCollection() {
@@ -233,8 +219,10 @@ class OnboardingViewModel: ObservableObject {
         print("🔥🔥🔥 ONBOARDING FINALIZE: SAUVEGARDE FINALE AVEC ONBOARDING TERMINE")
         NSLog("🔥🔥🔥 ONBOARDING: MISE A JOUR VIA APPSTATE")
         
-        // NOUVEAU: Marquer la fin du processus d'onboarding
+        // NOUVEAU: Marquer la fin du processus d'onboarding dans Firebase et AppState
         FirebaseService.shared.completeOnboardingProcess()
+        appState.isOnboardingInProgress = false
+        print("🔥🔥🔥 ONBOARDING FINALIZE: FLAGS ONBOARDING REINITIALISES")
         
         // IMPORTANT: Sauvegarder avec saveUserData pour marquer l'onboarding comme terminé
         FirebaseService.shared.saveUserData(user)

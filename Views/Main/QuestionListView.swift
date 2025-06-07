@@ -5,11 +5,18 @@ struct QuestionListView: View {
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject private var questionCacheManager: QuestionCacheManager
     @EnvironmentObject private var favoritesService: FavoritesService
+    @StateObject private var packProgressService = PackProgressService.shared
     
     @State private var currentIndex = 0
     @State private var cachedQuestions: [Question] = []
+    @State private var accessibleQuestions: [Question] = []
     @State private var isQuestionsLoaded = false
     @State private var dragOffset = CGSize.zero
+    
+    // États pour les écrans de pack
+    @State private var showPackCompletion = false
+    @State private var showNewPackReveal = false
+    @State private var completedPackNumber = 1
     
     private var currentQuestionIndex: Int {
         return currentIndex
@@ -17,14 +24,14 @@ struct QuestionListView: View {
     
     // OPTIMISATION: Ne retourner que les questions visibles (3 maximum)
     private var visibleQuestions: [(Int, Question)] {
-        guard !cachedQuestions.isEmpty else { return [] }
+        guard !accessibleQuestions.isEmpty else { return [] }
         
         let startIndex = max(0, currentIndex - 1)
-        let endIndex = min(cachedQuestions.count - 1, currentIndex + 1)
+        let endIndex = min(accessibleQuestions.count - 1, currentIndex + 1)
         
         var result: [(Int, Question)] = []
         for i in startIndex...endIndex {
-            result.append((i, cachedQuestions[i]))
+            result.append((i, accessibleQuestions[i]))
         }
         return result
     }
@@ -64,9 +71,17 @@ struct QuestionListView: View {
         }
         
         cachedQuestions = questions
+        
+        // Filtrer les questions accessibles selon la progression
+        accessibleQuestions = packProgressService.getAccessibleQuestions(
+            from: questions, 
+            categoryTitle: category.title
+        )
+        
         isQuestionsLoaded = true
         
-        print("QuestionListView: \(questions.count) questions chargées")
+        let unlockedPacks = packProgressService.getUnlockedPacks(for: category.title)
+        print("QuestionListView: \(questions.count) questions totales, \(accessibleQuestions.count) accessibles (Pack \(unlockedPacks))")
     }
     
     var body: some View {
@@ -95,10 +110,18 @@ struct QuestionListView: View {
                     
                     Spacer()
                     
-                    // Compteur de questions
-                    Text("\(currentQuestionIndex + 1) sur \(cachedQuestions.count)")
-                        .font(.system(size: 18, weight: .semibold))
-                        .foregroundColor(.white)
+                    // Compteur de questions avec pack
+                    VStack(spacing: 4) {
+                        Text("\(currentQuestionIndex + 1) sur \(accessibleQuestions.count)")
+                            .font(.system(size: 18, weight: .semibold))
+                            .foregroundColor(.white)
+                        
+                        let currentPack = packProgressService.getCurrentPack(for: currentIndex)
+                        let unlockedPacks = packProgressService.getUnlockedPacks(for: category.title)
+                        Text("Pack \(currentPack)/\(unlockedPacks)")
+                            .font(.system(size: 12, weight: .medium))
+                            .foregroundColor(.white.opacity(0.7))
+                    }
                     
                     Spacer()
                     
@@ -117,7 +140,7 @@ struct QuestionListView: View {
                 .padding(.bottom, 40)
                 
                 // LOGIQUE CONDITIONNELLE CORRIGÉE
-                if cachedQuestions.isEmpty {
+                if accessibleQuestions.isEmpty {
                     // Message si vraiment pas de questions
                     VStack(spacing: 20) {
                         Text("🔒")
@@ -158,6 +181,8 @@ struct QuestionListView: View {
                                 .animation(.spring(response: 0.6, dampingFraction: 0.8), value: currentQuestionIndex)
                             }
                         }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
                         .gesture(
                             DragGesture()
                                 .onChanged { value in
@@ -175,8 +200,11 @@ struct QuestionListView: View {
                                             }
                                         } else if value.translation.width < -threshold || velocity < -500 {
                                             // Swipe vers la gauche - question suivante
-                                            if currentQuestionIndex < cachedQuestions.count - 1 {
+                                            if currentQuestionIndex < accessibleQuestions.count - 1 {
                                                 currentIndex += 1
+                                                
+                                                // Vérifier si on a terminé un pack
+                                                checkForPackCompletion()
                                             }
                                         }
                                         
@@ -216,15 +244,15 @@ struct QuestionListView: View {
                     
                     // Bouton Favoris
                     Button(action: {
-                        if currentQuestionIndex < cachedQuestions.count {
-                            let currentQuestion = cachedQuestions[currentQuestionIndex]
+                        if currentQuestionIndex < accessibleQuestions.count {
+                            let currentQuestion = accessibleQuestions[currentQuestionIndex]
                             Task { @MainActor in
                                 favoritesService.toggleFavorite(question: currentQuestion, category: category)
                                 print("🔥 QuestionListView: Toggle favori pour: \(currentQuestion.text.prefix(50))...")
                             }
                         }
                     }) {
-                        let currentQuestion = currentQuestionIndex < cachedQuestions.count ? cachedQuestions[currentQuestionIndex] : nil
+                        let currentQuestion = currentQuestionIndex < accessibleQuestions.count ? accessibleQuestions[currentQuestionIndex] : nil
                         let isCurrentlyFavorite = currentQuestion != nil ? favoritesService.isFavorite(questionId: currentQuestion!.id) : false
                         
                         Image(systemName: isCurrentlyFavorite ? "heart.fill" : "heart")
@@ -256,6 +284,40 @@ struct QuestionListView: View {
             print("QuestionListView: Affichage catégorie '\(category.title)'")
             loadQuestions()
         }
+        .sheet(isPresented: $showPackCompletion) {
+            PackCompletionView(packNumber: completedPackNumber) {
+                showPackCompletion = false
+                showNewPackReveal = true
+            }
+        }
+        .sheet(isPresented: $showNewPackReveal) {
+            NewPackRevealView(packNumber: completedPackNumber + 1) {
+                showNewPackReveal = false
+                unlockNextPack()
+            }
+        }
+    }
+    
+    // MARK: - Helper Methods
+    
+    private func checkForPackCompletion() {
+        if packProgressService.checkPackCompletion(categoryTitle: category.title, currentIndex: currentIndex) {
+            completedPackNumber = packProgressService.getCurrentPack(for: currentIndex)
+            showPackCompletion = true
+            print("🎉 Pack \(completedPackNumber) terminé pour \(category.title)!")
+        }
+    }
+    
+    private func unlockNextPack() {
+        packProgressService.unlockNextPack(for: category.title)
+        
+        // Recharger les questions accessibles
+        accessibleQuestions = packProgressService.getAccessibleQuestions(
+            from: cachedQuestions, 
+            categoryTitle: category.title
+        )
+        
+        print("🔓 Nouveau pack débloqué ! \(accessibleQuestions.count) questions maintenant disponibles")
     }
 }
 

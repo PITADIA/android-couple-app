@@ -27,23 +27,16 @@ struct MainView: View {
     @State private var activeSheet: SheetType?
     
     let columns = [
-        GridItem(.flexible(), spacing: 16),
-        GridItem(.flexible(), spacing: 16)
+        GridItem(.flexible(), spacing: 8),
+        GridItem(.flexible(), spacing: 8)
     ]
     
     var body: some View {
         NavigationView {
             ZStack {
-                // Fond dégradé sombre comme dans l'image
-                LinearGradient(
-                    gradient: Gradient(colors: [
-                        Color(red: 0.15, green: 0.05, blue: 0.2),
-                        Color(red: 0.25, green: 0.1, blue: 0.3)
-                    ]),
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
-                )
-                .ignoresSafeArea()
+                // Fond noir-rouge profond uniforme
+                Color(red: 0.1, green: 0.02, blue: 0.05)
+                    .ignoresSafeArea()
                 
                 VStack(spacing: 0) {
                     // Menu fixe en haut (hamburger et cœur)
@@ -86,16 +79,16 @@ struct MainView: View {
                     
                     // ScrollView avec logo et grille des catégories
                     ScrollView {
-                        VStack(spacing: 30) {
-                            // Logo principal qui scroll avec le contenu
-                            Image("LogoMain")
+                        VStack(spacing: 50) {
+                            // Logo Leetchi qui scroll avec le contenu
+                            Image("Leetchi")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 60, height: 60)
+                                .frame(width: 80, height: 80)
                                 .padding(.top, 20)
                             
                             // Grille des catégories
-                            LazyVGrid(columns: columns, spacing: 16) {
+                            LazyVGrid(columns: columns, alignment: .center, spacing: 16) {
                                 // Utiliser toutes les catégories - le FreemiumManager gère l'accès
                                 ForEach(QuestionCategory.categories) { category in
                                     CategoryCardView(category: category) {
@@ -107,6 +100,7 @@ struct MainView: View {
                                     .environmentObject(appState)
                                 }
                             }
+                            .frame(maxWidth: .infinity)
                             .padding(.horizontal, 20)
                         }
                         .padding(.bottom, 40)

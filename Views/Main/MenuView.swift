@@ -3,6 +3,7 @@ import AuthenticationServices
 
 struct MenuView: View {
     @EnvironmentObject var appState: AppState
+    @EnvironmentObject var packProgressService: PackProgressService
     @Environment(\.dismiss) private var dismiss
     @State private var showingFavorites = false
     @State private var showingDeleteConfirmation = false
@@ -82,6 +83,22 @@ struct MenuView: View {
                             openPrivacyPolicy()
                         }
                         
+                        MenuOptionView(
+                            icon: "arrow.clockwise",
+                            title: "Refaire l'onboarding",
+                            subtitle: "Modifier vos préférences"
+                        ) {
+                            restartOnboarding()
+                        }
+                        
+                        MenuOptionView(
+                            icon: "gobackward",
+                            title: "Réinitialiser progression",
+                            subtitle: "Remettre tous les packs à zéro"
+                        ) {
+                            resetPackProgress()
+                        }
+                        
                         Divider()
                             .background(Color.white.opacity(0.3))
                             .padding(.vertical, 10)
@@ -148,6 +165,18 @@ struct MenuView: View {
             UIApplication.shared.open(url)
         }
     }
+    
+    private func restartOnboarding() {
+        print("🔥🔥🔥 MenuView: REDEMARRAGE DE L'ONBOARDING DEMANDE")
+        appState.startOnboardingFlow()
+        dismiss()
+    }
+    
+    private func resetPackProgress() {
+        print("🔥 MenuView: Réinitialisation de la progression des packs")
+        packProgressService.resetAllProgress()
+    }
+
     
     private func deleteAccount() {
         print("🔥 MenuView: Début de la suppression du compte")

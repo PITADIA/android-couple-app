@@ -9,26 +9,26 @@ struct NameStepView: View {
             Spacer()
             
             // Contenu centré
-        VStack(spacing: 40) {
-                // Titre et sous-titre
-                VStack(spacing: 20) {
-                    Text("Comment tu t'appelles ?")
-                        .font(.system(size: 36, weight: .bold))
+            VStack(spacing: 30) {
+                // Titre
+                Text("Comment tu t'appelles ?")
+                    .font(.system(size: 36, weight: .bold))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
-                        .frame(maxWidth: .infinity)
+                    .frame(maxWidth: .infinity)
+                    .padding(.horizontal, 30)
                 
-                    Text("Cette information nous permettra de personnaliser ton expérience")
-                        .font(.system(size: 18))
-                        .foregroundColor(.white.opacity(0.9))
+                // Sous-titre
+                Text("Cette information nous permettra de personnaliser ton expérience")
+                    .font(.system(size: 18))
+                    .foregroundColor(.white.opacity(0.9))
                     .multilineTextAlignment(.center)
-                        .lineLimit(nil)
-                        .fixedSize(horizontal: false, vertical: true)
-                        .frame(maxWidth: .infinity)
-            }
-            .padding(.horizontal, 30)
-            
-            // Champ de saisie
+                    .lineLimit(nil)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .frame(maxWidth: .infinity)
+                    .padding(.horizontal, 30)
+                
+                // Champ de saisie
                 ZStack(alignment: .leading) {
                         RoundedRectangle(cornerRadius: 12)
                             .fill(Color.white.opacity(0.2))
@@ -50,10 +50,7 @@ struct NameStepView: View {
                         .foregroundColor(.white)
                         .padding(.horizontal, 20)
                         .padding(.vertical, 16)
-                    .focused($isTextFieldFocused)
-                    .onChange(of: viewModel.userName) { _, newName in
-                        print("🔥 NameStepView: Nom saisi: '\(newName)'")
-                    }
+                        .focused($isTextFieldFocused)
                         .accentColor(.white)
                 }
                 .padding(.horizontal, 30)
@@ -63,12 +60,8 @@ struct NameStepView: View {
                 
             // Bouton Continuer collé en bas
                 Button(action: {
-                    print("🔥 NameStepView: Bouton Continuer pressé")
                     if !viewModel.userName.isEmpty {
-                        print("🔥 NameStepView: Nom valide, passage à l'étape suivante")
                         viewModel.nextStep()
-                    } else {
-                        print("❌ NameStepView: Nom vide, impossible de continuer")
                     }
                 }) {
                     Text("Continuer")
@@ -86,7 +79,6 @@ struct NameStepView: View {
         }
         .onAppear {
             print("🔥 NameStepView: Vue de saisie du nom apparue")
-            NSLog("🔥🔥🔥 ONBOARDING DEBUT: NAME STEP APPARUE - DEBUT DU PROCESSUS!")
         }
     }
 } 

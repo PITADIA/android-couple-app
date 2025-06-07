@@ -14,7 +14,7 @@ struct ContentView: View {
                     LoadingTransitionView()
                 } else if !appState.isAuthenticated {
                     AuthenticationView()
-                } else if !appState.isOnboardingCompleted {
+                } else if !appState.isOnboardingCompleted || appState.forceOnboarding {
                     OnboardingView()
                         .onAppear {
                             isOnboardingActive = true

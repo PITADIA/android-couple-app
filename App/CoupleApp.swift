@@ -21,6 +21,7 @@ struct CoupleApp: App {
                 .environmentObject(questionCacheManager)
                 .environmentObject(performanceMonitor)
                 .environmentObject(appState.favoritesService ?? FavoritesService())
+                .environmentObject(PackProgressService.shared)
                 .onAppear {
                     print("CoupleApp: Application démarrée")
                     

@@ -17,6 +17,9 @@ class AppState: ObservableObject {
     // Flag pour savoir si l'utilisateur est en cours d'onboarding
     @Published var isOnboardingInProgress: Bool = false
     
+    // NOUVEAU: Flag pour forcer l'onboarding même si l'utilisateur a des données complètes
+    @Published var forceOnboarding: Bool = false
+    
     private let firebaseService = FirebaseService.shared
     private var cancellables = Set<AnyCancellable>()
     
@@ -52,6 +55,14 @@ class AppState: ObservableObject {
                 
                 // Firebase a terminé sa vérification
                 self?.isLoading = false
+                
+                // MODIFICATION: Vérifier si on force l'onboarding
+                if self?.forceOnboarding == true {
+                    print("🔥🔥🔥 AppState: ONBOARDING FORCE - Pas de redirection automatique")
+                    self?.isOnboardingCompleted = false
+                    self?.isOnboardingInProgress = true
+                    return
+                }
                 
                 // Marquer l'onboarding comme terminé si l'utilisateur a des données complètes
                 if let user = user {
@@ -95,6 +106,15 @@ class AppState: ObservableObject {
             .store(in: &cancellables)
     }
     
+    // NOUVEAU: Méthode pour forcer l'onboarding
+    func startOnboardingFlow() {
+        print("🔥🔥🔥 AppState: DEMARRAGE FORCE DE L'ONBOARDING")
+        forceOnboarding = true
+        isOnboardingCompleted = false
+        isOnboardingInProgress = true
+        currentOnboardingStep = 0
+    }
+    
     func authenticate(with user: User) {
         print("AppState: Authentification: \(user.name)")
         self.currentUser = user
@@ -108,6 +128,7 @@ class AppState: ObservableObject {
         print("AppState: Finalisation onboarding")
         isOnboardingCompleted = true
         isOnboardingInProgress = false
+        forceOnboarding = false // NOUVEAU: Réinitialiser le flag
         currentOnboardingStep = 0
     }
     
@@ -122,6 +143,7 @@ class AppState: ObservableObject {
         firebaseService.signOut()
         isOnboardingCompleted = false
         isOnboardingInProgress = false
+        forceOnboarding = false // NOUVEAU: Réinitialiser le flag
         currentOnboardingStep = 0
         currentUser = nil
     }
@@ -132,6 +154,7 @@ class AppState: ObservableObject {
         isOnboardingCompleted = false
         isAuthenticated = false
         isOnboardingInProgress = false
+        forceOnboarding = false // NOUVEAU: Réinitialiser le flag
         currentOnboardingStep = 0
         currentUser = nil
         isLoading = false

@@ -13,13 +13,14 @@ struct User: Codable, Identifiable, Equatable {
     var onboardingInProgress: Bool
     
     enum RelationshipDuration: String, Codable, CaseIterable {
+        case none = "" // État non sélectionné
         case lessThanYear = "Moins d'un an"
         case oneToThreeYears = "Entre 1 et 3 ans"
         case moreThanThreeYears = "Plus de 3 ans"
         case notInRelationship = "Je ne suis pas en couple"
     }
     
-    init(id: String = UUID().uuidString, name: String, birthDate: Date, relationshipGoals: [String] = [], relationshipDuration: RelationshipDuration = .notInRelationship, relationshipImprovement: String? = nil, questionMode: String? = nil, partnerCode: String? = nil, isSubscribed: Bool = false, onboardingInProgress: Bool = false) {
+    init(id: String = UUID().uuidString, name: String, birthDate: Date, relationshipGoals: [String] = [], relationshipDuration: RelationshipDuration = .none, relationshipImprovement: String? = nil, questionMode: String? = nil, partnerCode: String? = nil, isSubscribed: Bool = false, onboardingInProgress: Bool = false) {
         self.id = id
         self.name = name
         self.birthDate = birthDate

@@ -14,7 +14,6 @@ struct ProgressBar: View {
             // Bouton retour (si pas à la première étape et avant la page de chargement)
             if progress > 0.10 && progress < 0.80 { // Pas à la première étape et avant loading/auth/subscription
                 Button(action: {
-                    print("🔥 ProgressBar: Bouton retour pressé")
                     onBackPressed?()
                 }) {
                     Image(systemName: "chevron.left")
@@ -40,8 +39,6 @@ struct ProgressBar: View {
             Spacer()
                 .frame(width: 30)
         }
-        .onAppear {
-            print("🔥 ProgressBar: Barre de progression apparue avec valeur: \(progress)")
-        }
+
     }
 } 

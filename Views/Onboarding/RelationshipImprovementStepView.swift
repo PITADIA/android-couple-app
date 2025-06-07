@@ -12,7 +12,7 @@ struct RelationshipImprovementStepView: View {
             // Contenu en haut
             VStack(spacing: 40) {
                 // Titre
-                Text("Si cette application t'aidait à améliorer un seul aspect de ta relation, ce serait lequel ?")
+                Text("Quelle expérience aimeriez-vous vivre grâce à cette application ?")
                     .font(.system(size: 36, weight: .bold))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
@@ -22,7 +22,6 @@ struct RelationshipImprovementStepView: View {
                 VStack(spacing: 15) {
                     ForEach(viewModel.relationshipImprovements, id: \.self) { improvement in
                         Button(action: {
-                            print("🔥 RelationshipImprovementStepView: Amélioration sélectionnée: \(improvement)")
                             viewModel.relationshipImprovement = improvement
                         }) {
                             HStack {
@@ -53,12 +52,8 @@ struct RelationshipImprovementStepView: View {
             
             // Bouton Continuer collé en bas
             Button(action: {
-                print("🔥 RelationshipImprovementStepView: Bouton Continuer pressé")
                 if !viewModel.relationshipImprovement.isEmpty {
-                    print("🔥 RelationshipImprovementStepView: Amélioration valide, passage à l'étape suivante")
                     viewModel.nextStep()
-                } else {
-                    print("❌ RelationshipImprovementStepView: Aucune amélioration sélectionnée")
                 }
             }) {
                 Text("Continuer")
@@ -74,9 +69,7 @@ struct RelationshipImprovementStepView: View {
             .padding(.horizontal, 30)
             .padding(.bottom, 50)
         }
-        .onAppear {
-            print("🔥 RelationshipImprovementStepView: Vue d'amélioration de la relation apparue")
-        }
+
     }
 }
 

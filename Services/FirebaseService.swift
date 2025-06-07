@@ -323,6 +323,13 @@ class FirebaseService: NSObject, ObservableObject {
                     if onboardingInProgress {
                         print("🔥🔥🔥 FIREBASE LOAD: - Raison: Onboarding en cours de progression")
                         
+                        // MODIFICATION: Vérifier si l'onboarding est déjà actif dans l'app
+                        if self?.isOnboardingInProgress == true {
+                            print("🔥🔥🔥 FIREBASE LOAD: ONBOARDING DEJA ACTIF - IGNORER CETTE REDIRECTION")
+                            print("🔥🔥🔥 FIREBASE LOAD: Ne pas créer d'utilisateur partiel pour éviter la réinitialisation")
+                            return
+                        }
+                        
                         // Vérifier si l'utilisateur vient juste de se créer (moins de 5 minutes)
                         if let createdAt = data["createdAt"] as? Timestamp {
                             let timeSinceCreation = Date().timeIntervalSince(createdAt.dateValue())
@@ -330,22 +337,29 @@ class FirebaseService: NSObject, ObservableObject {
                                 print("🔥🔥🔥 FIREBASE LOAD: UTILISATEUR RECENT - CONTINUER ONBOARDING SANS REDIRECTION")
                                 print("🔥🔥🔥 FIREBASE LOAD: Créé il y a \(timeSinceCreation) secondes")
                                 
-                                // Créer un utilisateur partiel pour permettre la continuation de l'onboarding
-                                let partialUser = User(
-                                    id: data["id"] as? String ?? UUID().uuidString,
-                                    name: name,
-                                    birthDate: birthDate?.dateValue() ?? Date(),
-                                    relationshipGoals: relationshipGoals,
-                                    relationshipDuration: User.RelationshipDuration(rawValue: relationshipDuration) ?? .notInRelationship,
-                                    partnerCode: data["partnerCode"] as? String,
-                                    isSubscribed: data["isSubscribed"] as? Bool ?? false,
-                                    onboardingInProgress: true
-                                )
+                                // MODIFICATION: Ne créer un utilisateur partiel QUE si ce n'est pas déjà en cours
+                                print("🔥🔥🔥 FIREBASE LOAD: VERIFICATION - Processus onboarding actif: \(self?.isOnboardingInProgress ?? false)")
                                 
-                                // Marquer comme authentifié avec l'utilisateur partiel
-                                self?.isAuthenticated = true
-                                self?.currentUser = partialUser
-                                print("🔥🔥🔥 FIREBASE LOAD: UTILISATEUR PARTIEL CREE POUR CONTINUER ONBOARDING")
+                                if self?.isOnboardingInProgress != true {
+                                    // Créer un utilisateur partiel pour permettre la continuation de l'onboarding
+                                    let partialUser = User(
+                                        id: data["id"] as? String ?? UUID().uuidString,
+                                        name: name,
+                                        birthDate: birthDate?.dateValue() ?? Date(),
+                                        relationshipGoals: relationshipGoals,
+                                        relationshipDuration: User.RelationshipDuration(rawValue: relationshipDuration) ?? .notInRelationship,
+                                        partnerCode: data["partnerCode"] as? String,
+                                        isSubscribed: data["isSubscribed"] as? Bool ?? false,
+                                        onboardingInProgress: true
+                                    )
+                                    
+                                    // Marquer comme authentifié avec l'utilisateur partiel
+                                    self?.isAuthenticated = true
+                                    self?.currentUser = partialUser
+                                    print("🔥🔥🔥 FIREBASE LOAD: UTILISATEUR PARTIEL CREE POUR CONTINUER ONBOARDING")
+                                } else {
+                                    print("🔥🔥🔥 FIREBASE LOAD: ONBOARDING DEJA EN COURS - SKIP CREATION USER PARTIEL")
+                                }
                                 return
                             }
                         }

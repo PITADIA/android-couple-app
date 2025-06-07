@@ -54,7 +54,6 @@ struct CompletionStepView: View {
                 
                 // Bouton continuer
                 Button(action: {
-                    print("🔥 CompletionStepView: Bouton continuer pressé")
                     viewModel.nextStep()
                 }) {
                     Text("Continuer")
@@ -71,13 +70,11 @@ struct CompletionStepView: View {
             
 
         }
-        .confettiCannon(trigger: $confettiCounter, num: 100, radius: 200)
+        .confettiCannon(trigger: $confettiCounter, num: 200, radius: 400)
         .onAppear {
             print("🔥 CompletionStepView: Vue de confirmation apparue")
-            // Déclencher l'animation des confettis après un court délai
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                confettiCounter += 1
-            }
+            // Déclencher l'animation des confettis immédiatement
+            confettiCounter += 1
         }
     }
 } 

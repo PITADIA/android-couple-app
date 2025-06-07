@@ -31,7 +31,7 @@ struct CategoryCardView: View {
                     .fill(Color.black)
                     .overlay(
                         RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color.white.opacity(0.2), lineWidth: 1)
+                            .stroke(Color.white, lineWidth: 2)
                     )
                 
                 VStack(spacing: 10) {
@@ -56,8 +56,8 @@ struct CategoryCardView: View {
                         .fixedSize(horizontal: false, vertical: true)
                         .lineSpacing(2)
                     
-                    // Icône premium si nécessaire
-                    if category.isPremium {
+                    // Icône premium si nécessaire (seulement pour les non-abonnés)
+                    if category.isPremium && !(appState.currentUser?.isSubscribed ?? false) {
                         HStack(spacing: 4) {
                             Image(systemName: "lock.fill")
                                 .font(.system(size: 12))

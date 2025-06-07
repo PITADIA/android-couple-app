@@ -20,7 +20,7 @@ struct RelationshipDurationStepView: View {
                 
                 // Options de sélection
                 VStack(spacing: 15) {
-                    ForEach(User.RelationshipDuration.allCases, id: \.self) { duration in
+                    ForEach(User.RelationshipDuration.allCases.filter { $0 != .none }, id: \.self) { duration in
                         Button(action: {
                             viewModel.relationshipDuration = duration
                         }) {
@@ -29,13 +29,15 @@ struct RelationshipDurationStepView: View {
                                 Group {
                                     switch duration {
                                     case .lessThanYear:
-                                        Text("✨")
+                                        Text("🌱") // Nouvelle relation qui pousse
                                     case .oneToThreeYears:
-                                        Text("🔥")
+                                        Text("💕") // Amour qui se développe
                                     case .moreThanThreeYears:
-                                        Text("⚖️")
+                                        Text("🏠") // Relation stable et établie
                                     case .notInRelationship:
-                                        Text("💭")
+                                        Text("🔍") // À la recherche de l'amour
+                                    case .none:
+                                        Text("")
                                     }
                                 }
                                 .font(.system(size: 20))
@@ -76,7 +78,9 @@ struct RelationshipDurationStepView: View {
                     .frame(height: 56)
                     .background(Color(hex: "#FD267A"))
                     .cornerRadius(28)
+                    .opacity(viewModel.relationshipDuration == .none ? 0.5 : 1.0)
             }
+            .disabled(viewModel.relationshipDuration == .none)
             .padding(.horizontal, 30)
             .padding(.bottom, 50)
         }

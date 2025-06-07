@@ -5,34 +5,29 @@ import CryptoKit
 
 struct AuthenticationStepView: View {
     @ObservedObject var viewModel: OnboardingViewModel
+    @EnvironmentObject var appState: AppState
     @StateObject private var firebaseService = FirebaseService.shared
     @State private var currentNonce: String?
     
     var body: some View {
-        VStack(spacing: 40) {
-            // Espace avec le haut
+        VStack(spacing: 0) {
+            // Espace entre la barre de progression et le titre
             Spacer()
                 .frame(height: 60)
             
-            // Titre unifié en une seule phrase
-            Text("CRÉONS TON COMPTE ET SÉCURISONS TES DONNÉES")
-                .font(.system(size: 28, weight: .bold))
-                .foregroundColor(.white)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal, 30)
-            
-            // Description complète sans troncature
-            Text("Crée ton compte maintenant pour sauvegarder tes préférences et accéder à toutes les fonctionnalités premium !")
-                .font(.system(size: 16))
-                .foregroundColor(.white.opacity(0.9))
-                .multilineTextAlignment(.center)
-                .lineLimit(nil)
-                .fixedSize(horizontal: false, vertical: true)
-                .padding(.horizontal, 30)
+            // Contenu en haut
+            VStack(spacing: 40) {
+                // Titre
+                Text("Crée ton compte et sécurise tes données")
+                    .font(.system(size: 36, weight: .bold))
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 30)
+            }
             
             Spacer()
             
-            // Bouton Sign in with Apple
+            // Bouton Sign in with Apple collé en bas
             SignInWithAppleButton(
                 onRequest: { request in
                     print("🔥 AuthenticationStepView: Début de la requête Apple Sign In")
@@ -62,6 +57,7 @@ struct AuthenticationStepView: View {
             .frame(height: 56)
             .cornerRadius(28)
             .padding(.horizontal, 30)
+            .padding(.bottom, 50)
         }
         .onAppear {
             print("🔥 AuthenticationStepView: Vue d'authentification apparue")
@@ -234,6 +230,10 @@ struct AuthenticationStepView: View {
         
         // NOUVEAU: Marquer le début du processus d'onboarding pour éviter les redirections
         FirebaseService.shared.startOnboardingProcess()
+        
+        // NOUVEAU: Aussi marquer dans AppState que l'onboarding est en cours
+        appState.isOnboardingInProgress = true
+        print("🔥🔥🔥 AUTH PARTIAL: AppState.isOnboardingInProgress = true")
         
         // Créer un utilisateur avec les données d'onboarding collectées
         let partialUser = User(

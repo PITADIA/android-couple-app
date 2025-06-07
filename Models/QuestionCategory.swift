@@ -19,6 +19,14 @@ struct QuestionCategory: Identifiable, Codable {
     
     static let categories: [QuestionCategory] = [
         QuestionCategory(
+            id: "en-couple",
+            title: "En couple",
+            subtitle: "Des questions pour se rappeler ce qui nous unit.",
+            emoji: "💌",
+            gradientColors: ["#E91E63", "#F06292"],
+            isPremium: false
+        ),
+        QuestionCategory(
             id: "les-plus-hots",
             title: "Désirs Inavoués",
             subtitle: "Dévoilez vos envies pour mieux vous comprendre.",
@@ -32,7 +40,7 @@ struct QuestionCategory: Identifiable, Codable {
             subtitle: "Pour explorer ce que l'on garde en soi, en silence.",
             emoji: "✨",
             gradientColors: ["#FFD700", "#FFA500"],
-            isPremium: false
+            isPremium: true
         ),
         QuestionCategory(
             id: "tu-preferes",
@@ -40,7 +48,7 @@ struct QuestionCategory: Identifiable, Codable {
             subtitle: "Des questions qui touchent à ce qui te définit.",
             emoji: "😊",
             gradientColors: ["#9B59B6", "#8E44AD"],
-            isPremium: false
+            isPremium: true
         ),
         QuestionCategory(
             id: "en-famille",
@@ -48,7 +56,7 @@ struct QuestionCategory: Identifiable, Codable {
             subtitle: "Apprends à connaître ceux qui t'entourent.",
             emoji: "🏠",
             gradientColors: ["#27AE60", "#2ECC71"],
-            isPremium: false
+            isPremium: true
         ),
         QuestionCategory(
             id: "pour-un-date",
@@ -57,14 +65,6 @@ struct QuestionCategory: Identifiable, Codable {
             emoji: "🍸",
             gradientColors: ["#3498DB", "#2980B9"],
             isPremium: true
-        ),
-        QuestionCategory(
-            id: "en-couple",
-            title: "En couple",
-            subtitle: "Des questions pour se rappeler ce qui nous unit.",
-            emoji: "💌",
-            gradientColors: ["#E91E63", "#F06292"],
-            isPremium: false
         ),
         QuestionCategory(
             id: "mieux-ensemble",
