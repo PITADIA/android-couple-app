@@ -108,7 +108,6 @@ struct FavoritesCardView: View {
                                 .offset(x: xPosition)
                                 .scaleEffect(index == currentFavoriteIndex ? 1.0 : 0.95)
                                 .opacity(index == currentFavoriteIndex ? 1.0 : 0.8)
-                                .animation(.spring(response: 0.6, dampingFraction: 0.8), value: currentFavoriteIndex)
                             }
                         }
                         .frame(width: geometry.size.width, height: geometry.size.height)

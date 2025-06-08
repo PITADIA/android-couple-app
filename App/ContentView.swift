@@ -121,11 +121,14 @@ struct LoadingSplashView: View {
                 Text("🔥")
                     .font(.system(size: 80))
                     .scaleEffect(isAnimating ? 1.2 : 1.0)
-                    .animation(
-                        Animation.easeInOut(duration: 1.0)
-                            .repeatForever(autoreverses: true),
-                        value: isAnimating
-                    )
+                    .onAppear {
+                        withAnimation(
+                            Animation.easeInOut(duration: 1.0)
+                                .repeatForever(autoreverses: true)
+                        ) {
+                            isAnimating = true
+                        }
+                    }
                 
                 // Nom de l'app
                 Text("Love2Love")
@@ -144,7 +147,6 @@ struct LoadingSplashView: View {
         }
         .onAppear {
             print("LoadingSplashView: Écran de chargement affiché")
-            isAnimating = true
         }
     }
 } 

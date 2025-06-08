@@ -25,7 +25,7 @@ struct LoadingStepView: View {
                     .font(.system(size: 18, weight: .medium))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
-                    .animation(.easeInOut(duration: 0.5), value: currentMessageIndex)
+
             }
             
             Spacer()

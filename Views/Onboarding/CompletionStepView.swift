@@ -21,7 +21,6 @@ struct CompletionStepView: View {
                         .foregroundColor(.white)
                 }
                 .scaleEffect(confettiCounter > 0 ? 1.2 : 1.0)
-                .animation(.easeInOut(duration: 0.6), value: confettiCounter)
                 
                 // Titre principal
                 Text("Tout est terminé")

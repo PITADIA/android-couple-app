@@ -90,7 +90,6 @@ struct CategoryCardView: View {
         }
         .buttonStyle(PlainButtonStyle())
         .scaleEffect(1.0)
-        .animation(.easeInOut(duration: 0.1), value: false)
     }
 }
 

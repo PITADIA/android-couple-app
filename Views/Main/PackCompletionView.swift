@@ -37,11 +37,14 @@ struct PackCompletionView: View {
                     Text("🔥")
                         .font(.system(size: 120))
                         .scaleEffect(isAnimating ? 1.2 : 1.0)
-                        .animation(
-                            Animation.easeInOut(duration: 1.0)
-                                .repeatForever(autoreverses: true),
-                            value: isAnimating
-                        )
+                        .onAppear {
+                            withAnimation(
+                                Animation.easeInOut(duration: 1.0)
+                                    .repeatForever(autoreverses: true)
+                            ) {
+                                isAnimating = true
+                            }
+                        }
                 }
                 
                 // Message d'interaction
@@ -70,7 +73,6 @@ struct PackCompletionView: View {
             .padding(.horizontal, 40)
         }
         .onAppear {
-            isAnimating = true
             print("🔥 PackCompletionView: Pack \(packNumber) terminé !")
         }
     }
@@ -102,7 +104,6 @@ struct NewPackRevealView: View {
                 Text("💌")
                     .font(.system(size: 80))
                     .scaleEffect(showContent ? 1.0 : 0.5)
-                    .animation(.spring(response: 0.8, dampingFraction: 0.6), value: showContent)
                 
                 // Message principal
                 VStack(spacing: 20) {
@@ -111,14 +112,12 @@ struct NewPackRevealView: View {
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                         .opacity(showContent ? 1.0 : 0.0)
-                        .animation(.easeInOut(duration: 0.8).delay(0.3), value: showContent)
                     
                     Text("Profites-en")
                         .font(.system(size: 20))
                         .foregroundColor(.white.opacity(0.9))
                         .multilineTextAlignment(.center)
                         .opacity(showContent ? 1.0 : 0.0)
-                        .animation(.easeInOut(duration: 0.8).delay(0.5), value: showContent)
                 }
                 
                 Spacer()
@@ -137,12 +136,13 @@ struct NewPackRevealView: View {
                 }
                 .padding(.horizontal, 40)
                 .opacity(showContent ? 1.0 : 0.0)
-                .animation(.easeInOut(duration: 0.8).delay(0.7), value: showContent)
                 .padding(.bottom, 60)
             }
         }
         .onAppear {
-            showContent = true
+            withAnimation(.spring(response: 0.8, dampingFraction: 0.6)) {
+                showContent = true
+            }
             print("🔥 NewPackRevealView: Nouveau pack \(packNumber) révélé !")
         }
     }

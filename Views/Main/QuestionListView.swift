@@ -174,7 +174,6 @@ struct QuestionListView: View {
                                 .offset(x: xPosition)
                                 .scaleEffect(index == currentQuestionIndex ? 1.0 : 0.95)
                                 .opacity(index == currentQuestionIndex ? 1.0 : 0.8)
-                                .animation(.spring(response: 0.6, dampingFraction: 0.8), value: currentQuestionIndex)
                             }
                             
                             // Afficher la carte de fin de pack si elle doit être visible
@@ -194,7 +193,6 @@ struct QuestionListView: View {
                                 .offset(x: xPosition)
                                 .scaleEffect(currentQuestionIndex == completionCardIndex ? 1.0 : 0.95)
                                 .opacity(currentQuestionIndex == completionCardIndex ? 1.0 : 0.8)
-                                .animation(.spring(response: 0.6, dampingFraction: 0.8), value: currentQuestionIndex)
                             }
                         }
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -265,7 +263,6 @@ struct QuestionListView: View {
                         )
                         .cornerRadius(28)
                         .scaleEffect(isCurrentlyFavorite ? 1.02 : 1.0)
-                        .animation(.easeInOut(duration: 0.2), value: isCurrentlyFavorite)
                     }
                     .padding(.horizontal, 20)
                     .padding(.bottom, 50)
@@ -368,13 +365,13 @@ struct PackCompletionCardView: View {
                         .rotationEffect(.degrees(flameAnimation ? 15 : -15))
                         .offset(y: flameAnimation ? -5 : 5)
                         .shadow(color: .orange, radius: flameAnimation ? 10 : 5)
-                        .animation(
-                            Animation.easeInOut(duration: 0.6)
-                                .repeatForever(autoreverses: true),
-                            value: flameAnimation
-                        )
                         .onAppear {
-                            flameAnimation = true
+                            withAnimation(
+                                Animation.easeInOut(duration: 0.6)
+                                    .repeatForever(autoreverses: true)
+                            ) {
+                                flameAnimation = true
+                            }
                         }
                     
                     Text("Tape sur moi pour débloquer une surprise")

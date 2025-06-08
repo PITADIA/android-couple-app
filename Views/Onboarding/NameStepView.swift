@@ -19,7 +19,7 @@ struct NameStepView: View {
                     .padding(.horizontal, 30)
                 
                 // Sous-titre
-                Text("Cette information nous permettra de personnaliser ton expérience")
+                Text("Cette information nous permettra de personnaliser ton expérience.")
                     .font(.system(size: 18))
                     .foregroundColor(.white.opacity(0.9))
                     .multilineTextAlignment(.center)
