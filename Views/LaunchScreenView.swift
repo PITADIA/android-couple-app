@@ -15,7 +15,7 @@ struct LaunchScreenView: View {
             .ignoresSafeArea()
             
             // Logo leetchi centré
-            Image("Leetchi")
+            Image("leetchi2")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 200, height: 200)

@@ -7,22 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		111C37B32E09E36100FCA06D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 111C37B22E09E36100FCA06D /* FirebaseStorage */; };
 		111FEC662DF38CDD00CB1034 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 111FEC652DF38CDD00CB1034 /* ConfettiSwiftUI */; };
+		11384DC02E0A6E0F004E7AF3 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11384DBF2E0A6E0F004E7AF3 /* WidgetKit.framework */; };
+		11384DC22E0A6E0F004E7AF3 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11384DC12E0A6E0F004E7AF3 /* SwiftUI.framework */; };
+		11384DD32E0A6E11004E7AF3 /* Love2LoveWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 11384DBD2E0A6E0F004E7AF3 /* Love2LoveWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		114926262DF23223009F7AFA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 114926252DF23223009F7AFA /* RealmSwift */; };
 		1149266F2DF241C5009F7AFA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1149266E2DF241C5009F7AFA /* RealmSwift */; };
 		1149278C2DF243DD009F7AFA /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 114926252DF23223009F7AFA /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1188F9862DF09230005B5328 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1188F9852DF09230005B5328 /* FirebaseAuth */; };
 		1188F9882DF09230005B5328 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1188F9872DF09230005B5328 /* FirebaseFirestore */; };
 		1188F98A2DF09230005B5328 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 1188F9892DF09230005B5328 /* FirebaseFunctions */; };
-		11FE3CC92DF0C8B600F58DB2 /* APPLE_SETUP_GUIDE.md in Resources */ = {isa = PBXBuildFile; fileRef = 11FE3C9D2DF0C8B600F58DB2 /* APPLE_SETUP_GUIDE.md */; };
-		11FE3CCA2DF0C8B600F58DB2 /* firebase-production-setup.md in Resources */ = {isa = PBXBuildFile; fileRef = 11FE3CA22DF0C8B600F58DB2 /* firebase-production-setup.md */; };
 		11FE3CCC2DF0C8B600F58DB2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 11FE3CA92DF0C8B600F58DB2 /* README.md */; };
 		11FE3CCD2DF0C8B600F58DB2 /* CoupleApp.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 11FE3CA02DF0C8B600F58DB2 /* CoupleApp.storekit */; };
 		11FE3CCE2DF0C8B600F58DB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11FE3C9E2DF0C8B600F58DB2 /* Assets.xcassets */; };
 		11FE3CCF2DF0C8B600F58DB2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11FE3CA32DF0C8B600F58DB2 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		11384DD12E0A6E11004E7AF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A000000294A1234567890A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11384DBC2E0A6E0F004E7AF3;
+			remoteInfo = Love2LoveWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
+		11384DD42E0A6E11004E7AF3 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				11384DD32E0A6E11004E7AF3 /* Love2LoveWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1149278D2DF243DD009F7AFA /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -37,18 +60,32 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		11FE3C9D2DF0C8B600F58DB2 /* APPLE_SETUP_GUIDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = APPLE_SETUP_GUIDE.md; sourceTree = "<group>"; };
+		11384DBD2E0A6E0F004E7AF3 /* Love2LoveWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Love2LoveWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		11384DBF2E0A6E0F004E7AF3 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		11384DC12E0A6E0F004E7AF3 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		11384DDA2E0A6F1E004E7AF3 /* Love2LoveWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Love2LoveWidgetExtension.entitlements; sourceTree = "<group>"; };
 		11FE3C9E2DF0C8B600F58DB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11FE3C9F2DF0C8B600F58DB2 /* CoupleApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoupleApp.entitlements; sourceTree = "<group>"; };
 		11FE3CA02DF0C8B600F58DB2 /* CoupleApp.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = CoupleApp.storekit; sourceTree = "<group>"; };
 		11FE3CA12DF0C8B600F58DB2 /* CoupleApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CoupleApp.xcodeproj; sourceTree = "<group>"; };
-		11FE3CA22DF0C8B600F58DB2 /* firebase-production-setup.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "firebase-production-setup.md"; sourceTree = "<group>"; };
 		11FE3CA32DF0C8B600F58DB2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		11FE3CA92DF0C8B600F58DB2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1A000001294A1234567890AA /* CoupleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoupleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		11384DD72E0A6E11004E7AF3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 11384DBC2E0A6E0F004E7AF3 /* Love2LoveWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		11384DC32E0A6E0F004E7AF3 /* Love2LoveWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (11384DD72E0A6E11004E7AF3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Love2LoveWidget; sourceTree = "<group>"; };
+		1156E8412E0218BD004CC1C9 /* Extensions */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Extensions; sourceTree = "<group>"; };
 		11FE3C9C2DF0C8B600F58DB2 /* App */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = App; sourceTree = "<group>"; };
 		11FE3CA62DF0C8B600F58DB2 /* Models */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Models; sourceTree = "<group>"; };
 		11FE3CAD2DF0C8B600F58DB2 /* Services */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Services; sourceTree = "<group>"; };
@@ -57,6 +94,15 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		11384DBA2E0A6E0F004E7AF3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11384DC22E0A6E0F004E7AF3 /* SwiftUI.framework in Frameworks */,
+				11384DC02E0A6E0F004E7AF3 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1A000000294A1234567890A9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -65,6 +111,7 @@
 				114926262DF23223009F7AFA /* RealmSwift in Frameworks */,
 				1188F9862DF09230005B5328 /* FirebaseAuth in Frameworks */,
 				1188F9882DF09230005B5328 /* FirebaseFirestore in Frameworks */,
+				111C37B32E09E36100FCA06D /* FirebaseStorage in Frameworks */,
 				1149266F2DF241C5009F7AFA /* RealmSwift in Frameworks */,
 				1188F98A2DF09230005B5328 /* FirebaseFunctions in Frameworks */,
 			);
@@ -73,6 +120,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11384DBE2E0A6E0F004E7AF3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				11384DBF2E0A6E0F004E7AF3 /* WidgetKit.framework */,
+				11384DC12E0A6E0F004E7AF3 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		11FE3CC72DF0C8B600F58DB2 /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
@@ -81,19 +137,21 @@
 		1A000030294A1234567890AB = {
 			isa = PBXGroup;
 			children = (
+				11384DDA2E0A6F1E004E7AF3 /* Love2LoveWidgetExtension.entitlements */,
+				1156E8412E0218BD004CC1C9 /* Extensions */,
 				11FE3C9C2DF0C8B600F58DB2 /* App */,
-				11FE3C9D2DF0C8B600F58DB2 /* APPLE_SETUP_GUIDE.md */,
 				11FE3C9E2DF0C8B600F58DB2 /* Assets.xcassets */,
 				11FE3C9F2DF0C8B600F58DB2 /* CoupleApp.entitlements */,
 				11FE3CA02DF0C8B600F58DB2 /* CoupleApp.storekit */,
 				11FE3CA12DF0C8B600F58DB2 /* CoupleApp.xcodeproj */,
-				11FE3CA22DF0C8B600F58DB2 /* firebase-production-setup.md */,
 				11FE3CA32DF0C8B600F58DB2 /* GoogleService-Info.plist */,
 				11FE3CA62DF0C8B600F58DB2 /* Models */,
 				11FE3CA92DF0C8B600F58DB2 /* README.md */,
 				11FE3CAD2DF0C8B600F58DB2 /* Services */,
 				11FE3CB02DF0C8B600F58DB2 /* ViewModels */,
 				11FE3CC62DF0C8B600F58DB2 /* Views */,
+				11384DC32E0A6E0F004E7AF3 /* Love2LoveWidget */,
+				11384DBE2E0A6E0F004E7AF3 /* Frameworks */,
 				1A000032294A1234567890AB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -102,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				1A000001294A1234567890AA /* CoupleApp.app */,
+				11384DBD2E0A6E0F004E7AF3 /* Love2LoveWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,6 +168,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		11384DBC2E0A6E0F004E7AF3 /* Love2LoveWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11384DD82E0A6E11004E7AF3 /* Build configuration list for PBXNativeTarget "Love2LoveWidgetExtension" */;
+			buildPhases = (
+				11384DB92E0A6E0F004E7AF3 /* Sources */,
+				11384DBA2E0A6E0F004E7AF3 /* Frameworks */,
+				11384DBB2E0A6E0F004E7AF3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				11384DC32E0A6E0F004E7AF3 /* Love2LoveWidget */,
+			);
+			name = Love2LoveWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = Love2LoveWidgetExtension;
+			productReference = 11384DBD2E0A6E0F004E7AF3 /* Love2LoveWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		1A000000294A1234567890A8 /* CoupleApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A00002A294A1234567890AB /* Build configuration list for PBXNativeTarget "CoupleApp" */;
@@ -117,12 +198,15 @@
 				1A000000294A1234567890A9 /* Frameworks */,
 				1A000000294A1234567890AC /* Resources */,
 				1149278D2DF243DD009F7AFA /* Embed Frameworks */,
+				11384DD42E0A6E11004E7AF3 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				11384DD22E0A6E11004E7AF3 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
+				1156E8412E0218BD004CC1C9 /* Extensions */,
 				11FE3C9C2DF0C8B600F58DB2 /* App */,
 				11FE3CA62DF0C8B600F58DB2 /* Models */,
 				11FE3CAD2DF0C8B600F58DB2 /* Services */,
@@ -141,9 +225,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
+				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					11384DBC2E0A6E0F004E7AF3 = {
+						CreatedOnToolsVersion = 16.2;
+					};
 					1A000000294A1234567890A8 = {
 						CreatedOnToolsVersion = 15.0;
 					};
@@ -174,17 +261,23 @@
 			projectRoot = "";
 			targets = (
 				1A000000294A1234567890A8 /* CoupleApp */,
+				11384DBC2E0A6E0F004E7AF3 /* Love2LoveWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		11384DBB2E0A6E0F004E7AF3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1A000000294A1234567890AC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11FE3CC92DF0C8B600F58DB2 /* APPLE_SETUP_GUIDE.md in Resources */,
-				11FE3CCA2DF0C8B600F58DB2 /* firebase-production-setup.md in Resources */,
 				11FE3CCC2DF0C8B600F58DB2 /* README.md in Resources */,
 				11FE3CCD2DF0C8B600F58DB2 /* CoupleApp.storekit in Resources */,
 				11FE3CCE2DF0C8B600F58DB2 /* Assets.xcassets in Resources */,
@@ -195,6 +288,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		11384DB92E0A6E0F004E7AF3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1A000000294A1234567890A7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -204,7 +304,77 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		11384DD22E0A6E11004E7AF3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11384DBC2E0A6E0F004E7AF3 /* Love2LoveWidgetExtension */;
+			targetProxy = 11384DD12E0A6E11004E7AF3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		11384DD52E0A6E11004E7AF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = Love2LoveWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GMS9SB6YB7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Love2LoveWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Love2LoveWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lyes.love2love.Love2LoveWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		11384DD62E0A6E11004E7AF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = Love2LoveWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GMS9SB6YB7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Love2LoveWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Love2LoveWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lyes.love2love.Love2LoveWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		1A00002B294A1234567890AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -330,6 +500,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CoupleApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
@@ -349,6 +520,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lyes.love2love;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -361,6 +537,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CoupleApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
@@ -380,6 +557,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lyes.love2love;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -389,6 +571,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		11384DD82E0A6E11004E7AF3 /* Build configuration list for PBXNativeTarget "Love2LoveWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11384DD52E0A6E11004E7AF3 /* Debug */,
+				11384DD62E0A6E11004E7AF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1A000000294A1234567890A5 /* Build configuration list for PBXProject "CoupleApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -437,6 +628,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		111C37B22E09E36100FCA06D /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1188F9842DF09230005B5328 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
 		111FEC652DF38CDD00CB1034 /* ConfettiSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 111FEC642DF38CDD00CB1034 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;

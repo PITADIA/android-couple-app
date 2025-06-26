@@ -55,7 +55,7 @@ struct AppleSignInView: View {
                     }
                 }
                 .padding(.horizontal, 20)
-                .padding(.top, 20)
+                .padding(.top, 10)
                 
                 Spacer()
                 

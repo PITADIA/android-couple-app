@@ -433,7 +433,107 @@ exports.deleteUserAccount = functions.https.onCall(async (data, context) => {
       userId
     );
 
-    // Étape 1: Supprimer le document utilisateur de Firestore
+    // Étape 1: Gérer la déconnexion partenaire proprement
+    try {
+      const userDoc = await admin
+        .firestore()
+        .collection("users")
+        .doc(userId)
+        .get();
+      if (userDoc.exists) {
+        const userData = userDoc.data();
+        const partnerCode = userData.partnerCode;
+        const partnerId = userData.partnerId;
+
+        // 1. Si l'utilisateur a un code partenaire ET un partenaire connecté
+        if (partnerCode) {
+          const codeDoc = await admin
+            .firestore()
+            .collection("partnerCodes")
+            .doc(partnerCode)
+            .get();
+
+          if (codeDoc.exists) {
+            const codeData = codeDoc.data();
+
+            // Si quelqu'un est connecté à ce code, le déconnecter proprement
+            if (codeData.connectedPartnerId) {
+              console.log(
+                "🔗 deleteUserAccount: Déconnexion du partenaire connecté:",
+                codeData.connectedPartnerId
+              );
+
+              // Mettre à jour le partenaire pour supprimer la connexion
+              await admin
+                .firestore()
+                .collection("users")
+                .doc(codeData.connectedPartnerId)
+                .update({
+                  partnerId: admin.firestore.FieldValue.delete(),
+                  partnerConnectedAt: admin.firestore.FieldValue.delete(),
+                  connectedPartnerCode: admin.firestore.FieldValue.delete(),
+                  connectedPartnerId: admin.firestore.FieldValue.delete(),
+                  connectedAt: admin.firestore.FieldValue.delete(),
+                  // Supprimer aussi l'abonnement hérité si applicable
+                  subscriptionInheritedFrom:
+                    admin.firestore.FieldValue.delete(),
+                  subscriptionInheritedAt: admin.firestore.FieldValue.delete(),
+                  // Si c'était un abonnement partagé, le désactiver
+                  isSubscribed: false,
+                });
+            }
+
+            // Maintenant supprimer le code partenaire
+            await admin
+              .firestore()
+              .collection("partnerCodes")
+              .doc(partnerCode)
+              .delete();
+            console.log(
+              "✅ deleteUserAccount: Code partenaire supprimé:",
+              partnerCode
+            );
+          }
+        }
+
+        // 2. Si l'utilisateur était connecté à un code partenaire d'un autre utilisateur
+        const connectedPartnerCode = userData.connectedPartnerCode;
+        if (connectedPartnerCode) {
+          await admin
+            .firestore()
+            .collection("partnerCodes")
+            .doc(connectedPartnerCode)
+            .update({
+              connectedPartnerId: null,
+              connectedAt: null,
+            });
+          console.log(
+            "✅ deleteUserAccount: Déconnexion du code partenaire:",
+            connectedPartnerCode
+          );
+
+          // Mettre à jour aussi l'autre utilisateur (propriétaire du code)
+          if (partnerId) {
+            await admin.firestore().collection("users").doc(partnerId).update({
+              partnerId: admin.firestore.FieldValue.delete(),
+              partnerConnectedAt: admin.firestore.FieldValue.delete(),
+            });
+            console.log(
+              "✅ deleteUserAccount: Partenaire mis à jour:",
+              partnerId
+            );
+          }
+        }
+      }
+    } catch (error) {
+      console.error(
+        "❌ deleteUserAccount: Erreur libération code partenaire:",
+        error
+      );
+      // Ne pas faire échouer la suppression pour cela
+    }
+
+    // Étape 2: Supprimer le document utilisateur de Firestore
     try {
       await admin.firestore().collection("users").doc(userId).delete();
       console.log(
@@ -450,7 +550,7 @@ exports.deleteUserAccount = functions.https.onCall(async (data, context) => {
       );
     }
 
-    // Étape 2: Supprimer toutes les données associées (abonnements temporaires, etc.)
+    // Étape 3: Supprimer toutes les données associées (abonnements temporaires, etc.)
     try {
       // Supprimer les abonnements temporaires s'il y en a
       const tempSubscriptionsSnapshot = await admin
@@ -476,7 +576,7 @@ exports.deleteUserAccount = functions.https.onCall(async (data, context) => {
       // Ne pas faire échouer la suppression pour cela
     }
 
-    // Étape 3: Supprimer le compte Firebase Auth
+    // Étape 4: Supprimer le compte Firebase Auth
     try {
       await admin.auth().deleteUser(userId);
       console.log("✅ deleteUserAccount: Compte Firebase Auth supprimé");
@@ -501,6 +601,1717 @@ exports.deleteUserAccount = functions.https.onCall(async (data, context) => {
     };
   } catch (error) {
     console.error("🔥 deleteUserAccount: Erreur détaillée:", error);
+    throw new functions.https.HttpsError("internal", error.message);
+  }
+});
+
+/**
+ * Créer un code partenaire pour un utilisateur
+ */
+exports.createPartnerCode = functions.https.onCall(async (data, context) => {
+  try {
+    console.log("🔥 createPartnerCode: Début de la création du code");
+
+    if (!context.auth) {
+      throw new functions.https.HttpsError(
+        "unauthenticated",
+        "Utilisateur non authentifié"
+      );
+    }
+
+    const userId = context.auth.uid;
+    console.log("🔥 createPartnerCode: Création pour l'utilisateur:", userId);
+
+    // Vérifier si l'utilisateur a déjà un code
+    const userDoc = await admin
+      .firestore()
+      .collection("users")
+      .doc(userId)
+      .get();
+    if (!userDoc.exists) {
+      throw new functions.https.HttpsError(
+        "not-found",
+        "Utilisateur non trouvé"
+      );
+    }
+
+    const userData = userDoc.data();
+    if (userData.partnerCode) {
+      console.log(
+        "🔥 createPartnerCode: L'utilisateur a déjà un code:",
+        userData.partnerCode
+      );
+      return {
+        success: true,
+        code: userData.partnerCode,
+        message: "Code existant retourné",
+      };
+    }
+
+    // Générer un nouveau code unique
+    let newCode;
+    let attempts = 0;
+    const maxAttempts = 10;
+
+    do {
+      newCode = Math.floor(10000000 + Math.random() * 90000000).toString();
+      attempts++;
+
+      const existingCode = await admin
+        .firestore()
+        .collection("partnerCodes")
+        .doc(newCode)
+        .get();
+      if (!existingCode.exists) {
+        break;
+      }
+
+      if (attempts >= maxAttempts) {
+        throw new functions.https.HttpsError(
+          "internal",
+          "Impossible de générer un code unique"
+        );
+      }
+    } while (true);
+
+    // Créer le code dans Firestore
+    await admin.firestore().collection("partnerCodes").doc(newCode).set({
+      userId: userId,
+      isActive: true,
+      connectedPartnerId: null,
+      connectedAt: null,
+      createdAt: admin.firestore.FieldValue.serverTimestamp(),
+    });
+
+    // Mettre à jour l'utilisateur
+    await admin.firestore().collection("users").doc(userId).update({
+      partnerCode: newCode,
+    });
+
+    console.log("✅ createPartnerCode: Code créé avec succès:", newCode);
+
+    return {
+      success: true,
+      code: newCode,
+      message: "Code créé avec succès",
+    };
+  } catch (error) {
+    console.error("🔥 createPartnerCode: Erreur détaillée:", error);
+    throw new functions.https.HttpsError("internal", error.message);
+  }
+});
+
+/**
+ * Connecter un utilisateur à un partenaire via un code
+ */
+exports.connectToPartner = functions.https.onCall(async (data, context) => {
+  try {
+    console.log("🔥 connectToPartner: Début de la connexion");
+
+    if (!context.auth) {
+      throw new functions.https.HttpsError(
+        "unauthenticated",
+        "Utilisateur non authentifié"
+      );
+    }
+
+    const { partnerCode } = data;
+    if (!partnerCode) {
+      throw new functions.https.HttpsError(
+        "invalid-argument",
+        "Code partenaire requis"
+      );
+    }
+
+    const userId = context.auth.uid;
+    console.log("🔥 connectToPartner: Connexion pour l'utilisateur:", userId);
+    console.log("🔥 connectToPartner: Code partenaire:", partnerCode);
+
+    // Vérifier que le code existe et est valide
+    const codeDoc = await admin
+      .firestore()
+      .collection("partnerCodes")
+      .doc(partnerCode)
+      .get();
+    if (!codeDoc.exists) {
+      throw new functions.https.HttpsError(
+        "not-found",
+        "Code partenaire invalide"
+      );
+    }
+
+    const codeData = codeDoc.data();
+
+    // Vérifications de sécurité
+    if (!codeData.isActive) {
+      throw new functions.https.HttpsError(
+        "failed-precondition",
+        "Code partenaire inactif"
+      );
+    }
+
+    if (codeData.userId === userId) {
+      throw new functions.https.HttpsError(
+        "invalid-argument",
+        "Vous ne pouvez pas utiliser votre propre code"
+      );
+    }
+
+    if (codeData.connectedPartnerId) {
+      throw new functions.https.HttpsError(
+        "already-exists",
+        "Ce code est déjà utilisé par un autre partenaire"
+      );
+    }
+
+    // Vérifier que l'utilisateur n'est pas déjà connecté à un partenaire
+    const userDoc = await admin
+      .firestore()
+      .collection("users")
+      .doc(userId)
+      .get();
+    if (!userDoc.exists) {
+      throw new functions.https.HttpsError(
+        "not-found",
+        "Utilisateur non trouvé"
+      );
+    }
+
+    const userData = userDoc.data();
+    if (userData.connectedPartnerCode) {
+      throw new functions.https.HttpsError(
+        "already-exists",
+        "Vous êtes déjà connecté à un partenaire"
+      );
+    }
+
+    // Récupérer les données du partenaire
+    const partnerDoc = await admin
+      .firestore()
+      .collection("users")
+      .doc(codeData.userId)
+      .get();
+    if (!partnerDoc.exists) {
+      throw new functions.https.HttpsError(
+        "not-found",
+        "Partenaire non trouvé"
+      );
+    }
+
+    const partnerData = partnerDoc.data();
+
+    // Vérifier si le partenaire a un abonnement actif
+    const partnerSubscription = partnerData.subscription || {};
+    const hasActiveSubscription = partnerSubscription.isSubscribed === true;
+
+    // Effectuer la connexion
+    const batch = admin.firestore().batch();
+
+    // Mettre à jour le code partenaire
+    batch.update(
+      admin.firestore().collection("partnerCodes").doc(partnerCode),
+      {
+        connectedPartnerId: userId,
+        connectedAt: admin.firestore.FieldValue.serverTimestamp(),
+      }
+    );
+
+    // Mettre à jour l'utilisateur
+    const userUpdate = {
+      connectedPartnerCode: partnerCode,
+      connectedPartnerId: codeData.userId,
+      connectedAt: admin.firestore.FieldValue.serverTimestamp(),
+    };
+
+    // Si le partenaire a un abonnement actif, l'hériter
+    if (hasActiveSubscription) {
+      userUpdate.subscription = {
+        ...partnerSubscription,
+        subscriptionType: "inherited",
+        inheritedFrom: codeData.userId,
+        inheritedAt: admin.firestore.FieldValue.serverTimestamp(),
+      };
+    }
+
+    batch.update(admin.firestore().collection("users").doc(userId), userUpdate);
+
+    await batch.commit();
+
+    console.log("✅ connectToPartner: Connexion réussie");
+    console.log(
+      "✅ connectToPartner: Abonnement hérité:",
+      hasActiveSubscription
+    );
+
+    return {
+      success: true,
+      hasInheritedSubscription: hasActiveSubscription,
+      partnerInfo: {
+        id: codeData.userId,
+        // Ne pas exposer d'informations sensibles
+      },
+      message: hasActiveSubscription
+        ? "Connexion réussie avec héritage d'abonnement"
+        : "Connexion réussie",
+    };
+  } catch (error) {
+    console.error("🔥 connectToPartner: Erreur détaillée:", error);
+    throw new functions.https.HttpsError("internal", error.message);
+  }
+});
+
+/**
+ * Déconnecter deux partenaires sans supprimer les comptes
+ */
+exports.disconnectPartners = functions.https.onCall(async (data, context) => {
+  try {
+    console.log("🔗 disconnectPartners: Début déconnexion partenaires");
+
+    if (!context.auth) {
+      throw new functions.https.HttpsError(
+        "unauthenticated",
+        "Utilisateur non authentifié"
+      );
+    }
+
+    const currentUserId = context.auth.uid;
+    console.log("🔗 disconnectPartners: Utilisateur:", currentUserId);
+
+    // Récupérer les données de l'utilisateur actuel
+    const currentUserDoc = await admin
+      .firestore()
+      .collection("users")
+      .doc(currentUserId)
+      .get();
+
+    if (!currentUserDoc.exists) {
+      throw new functions.https.HttpsError(
+        "not-found",
+        "Utilisateur non trouvé"
+      );
+    }
+
+    const currentUserData = currentUserDoc.data();
+    const partnerId = currentUserData.partnerId;
+    const partnerCode = currentUserData.partnerCode;
+    const connectedPartnerCode = currentUserData.connectedPartnerCode;
+
+    if (!partnerId) {
+      throw new functions.https.HttpsError(
+        "failed-precondition",
+        "Aucun partenaire connecté"
+      );
+    }
+
+    console.log("🔗 disconnectPartners: Partenaire à déconnecter:", partnerId);
+
+    // Effectuer la déconnexion dans une transaction
+    await admin.firestore().runTransaction(async (transaction) => {
+      // 1. Mettre à jour l'utilisateur actuel
+      transaction.update(currentUserDoc.ref, {
+        partnerId: admin.firestore.FieldValue.delete(),
+        partnerConnectedAt: admin.firestore.FieldValue.delete(),
+        connectedPartnerCode: admin.firestore.FieldValue.delete(),
+        connectedPartnerId: admin.firestore.FieldValue.delete(),
+        connectedAt: admin.firestore.FieldValue.delete(),
+        subscriptionInheritedFrom: admin.firestore.FieldValue.delete(),
+        subscriptionInheritedAt: admin.firestore.FieldValue.delete(),
+        // Désactiver l'abonnement s'il était hérité
+        isSubscribed:
+          currentUserData.subscriptionType === "shared_from_partner"
+            ? false
+            : currentUserData.isSubscribed,
+      });
+
+      // 2. Mettre à jour le partenaire
+      const partnerDoc = admin.firestore().collection("users").doc(partnerId);
+      transaction.update(partnerDoc, {
+        partnerId: admin.firestore.FieldValue.delete(),
+        partnerConnectedAt: admin.firestore.FieldValue.delete(),
+        connectedPartnerCode: admin.firestore.FieldValue.delete(),
+        connectedPartnerId: admin.firestore.FieldValue.delete(),
+        connectedAt: admin.firestore.FieldValue.delete(),
+        subscriptionInheritedFrom: admin.firestore.FieldValue.delete(),
+        subscriptionInheritedAt: admin.firestore.FieldValue.delete(),
+      });
+
+      // 3. Mettre à jour le code partenaire de l'utilisateur actuel
+      if (partnerCode) {
+        transaction.update(
+          admin.firestore().collection("partnerCodes").doc(partnerCode),
+          {
+            connectedPartnerId: null,
+            connectedAt: null,
+          }
+        );
+      }
+
+      // 4. Mettre à jour le code partenaire connecté
+      if (connectedPartnerCode) {
+        transaction.update(
+          admin
+            .firestore()
+            .collection("partnerCodes")
+            .doc(connectedPartnerCode),
+          {
+            connectedPartnerId: null,
+            connectedAt: null,
+          }
+        );
+      }
+    });
+
+    console.log("✅ disconnectPartners: Déconnexion réussie");
+
+    return {
+      success: true,
+      message: "Partenaires déconnectés avec succès",
+    };
+  } catch (error) {
+    console.error("❌ disconnectPartners: Erreur:", error);
+    throw new functions.https.HttpsError("internal", error.message);
+  }
+});
+
+// NOUVEAU: Fonction pour nettoyer les codes partenaires orphelins
+exports.cleanupOrphanedPartnerCodes = functions.https.onCall(
+  async (data, context) => {
+    try {
+      console.log("🧹 cleanupOrphanedPartnerCodes: Début du nettoyage");
+
+      // Récupérer tous les codes partenaires
+      const codesSnapshot = await admin
+        .firestore()
+        .collection("partnerCodes")
+        .get();
+
+      let deletedCount = 0;
+      let checkedCount = 0;
+
+      for (const codeDoc of codesSnapshot.docs) {
+        const codeData = codeDoc.data();
+        const userId = codeData.userId;
+        checkedCount++;
+
+        console.log(
+          `🧹 Vérification du code ${codeDoc.id} - Propriétaire: ${userId}`
+        );
+
+        try {
+          // Vérifier si l'utilisateur propriétaire existe encore
+          const userDoc = await admin
+            .firestore()
+            .collection("users")
+            .doc(userId)
+            .get();
+
+          if (!userDoc.exists) {
+            console.log(
+              `❌ Utilisateur ${userId} n'existe plus - Suppression du code ${codeDoc.id}`
+            );
+
+            // Supprimer le code orphelin
+            await codeDoc.ref.delete();
+            deletedCount++;
+          } else {
+            console.log(
+              `✅ Utilisateur ${userId} existe - Code ${codeDoc.id} conservé`
+            );
+          }
+        } catch (error) {
+          console.log(
+            `❌ Erreur vérification utilisateur ${userId}: ${error.message}`
+          );
+
+          // Si erreur d'accès, probablement que l'utilisateur n'existe plus
+          if (
+            error.code === "permission-denied" ||
+            error.code === "not-found"
+          ) {
+            console.log(
+              `🗑️ Suppression du code ${codeDoc.id} (utilisateur inaccessible)`
+            );
+            await codeDoc.ref.delete();
+            deletedCount++;
+          }
+        }
+      }
+
+      console.log(`✅ cleanupOrphanedPartnerCodes: Terminé`);
+      console.log(
+        `📊 Codes vérifiés: ${checkedCount}, Codes supprimés: ${deletedCount}`
+      );
+
+      return {
+        success: true,
+        checkedCount,
+        deletedCount,
+        message: `Nettoyage terminé: ${deletedCount} codes orphelins supprimés sur ${checkedCount} vérifiés`,
+      };
+    } catch (error) {
+      console.error("❌ cleanupOrphanedPartnerCodes: Erreur:", error);
+      throw new functions.https.HttpsError("internal", error.message);
+    }
+  }
+);
+
+// Fonction pour valider un code partenaire avant connexion
+exports.validatePartnerCode = functions.https.onCall(async (data, context) => {
+  console.log("🔗 validatePartnerCode: Début validation code");
+
+  // Vérifier l'authentification
+  if (!context.auth) {
+    console.log("❌ validatePartnerCode: Utilisateur non authentifié");
+    throw new functions.https.HttpsError(
+      "unauthenticated",
+      "Utilisateur non authentifié"
+    );
+  }
+
+  const { partnerCode } = data;
+  const currentUserId = context.auth.uid;
+
+  console.log(`🔗 validatePartnerCode: Code à valider: ${partnerCode}`);
+  console.log(`🔗 validatePartnerCode: Utilisateur: ${currentUserId}`);
+
+  if (!partnerCode || typeof partnerCode !== "string") {
+    console.log("❌ validatePartnerCode: Code invalide");
+    throw new functions.https.HttpsError(
+      "invalid-argument",
+      "Code partenaire invalide"
+    );
+  }
+
+  try {
+    // 1. Rechercher le code dans la collection partnerCodes (le code est l'ID du document)
+    const codeDoc = await admin
+      .firestore()
+      .collection("partnerCodes")
+      .doc(partnerCode)
+      .get();
+
+    if (!codeDoc.exists) {
+      console.log("❌ validatePartnerCode: Code non trouvé");
+      return {
+        isValid: false,
+        reason: "CODE_NOT_FOUND",
+        message: "Code partenaire introuvable",
+      };
+    }
+
+    const codeData = codeDoc.data();
+    const ownerId = codeData.userId;
+    const isActive = codeData.isActive;
+
+    console.log(
+      `🔗 validatePartnerCode: Code trouvé - Propriétaire: ${ownerId}`
+    );
+    console.log(`🔗 validatePartnerCode: Code actif: ${isActive}`);
+
+    // Vérifier que le code est actif
+    if (!isActive) {
+      console.log("❌ validatePartnerCode: Code inactif");
+      return {
+        isValid: false,
+        reason: "CODE_INACTIVE",
+        message: "Ce code n'est plus actif",
+      };
+    }
+
+    // 2. Vérifier que l'utilisateur ne se connecte pas à son propre code
+    if (ownerId === currentUserId) {
+      console.log(
+        "❌ validatePartnerCode: Tentative de connexion à son propre code"
+      );
+      return {
+        isValid: false,
+        reason: "SELF_CONNECTION",
+        message: "Vous ne pouvez pas vous connecter à votre propre code",
+      };
+    }
+
+    // 3. Vérifier que le code n'est pas déjà utilisé
+    if (
+      codeData.connectedPartnerId &&
+      codeData.connectedPartnerId !== currentUserId
+    ) {
+      console.log(
+        "❌ validatePartnerCode: Code déjà utilisé par un autre utilisateur"
+      );
+      return {
+        isValid: false,
+        reason: "CODE_ALREADY_USED",
+        message: "Ce code est déjà utilisé par un autre utilisateur",
+      };
+    }
+
+    // 4. Vérifier l'existence du propriétaire du code (côté serveur)
+    console.log(
+      `🔗 validatePartnerCode: Vérification existence propriétaire: ${ownerId}`
+    );
+    const ownerDoc = await admin
+      .firestore()
+      .collection("users")
+      .doc(ownerId)
+      .get();
+
+    if (!ownerDoc.exists) {
+      console.log(
+        "❌ validatePartnerCode: Propriétaire du code inexistant - Code orphelin"
+      );
+
+      // Marquer le code comme inactif (nettoyage automatique)
+      await codeDoc.ref.update({
+        isActive: false,
+        deactivatedAt: admin.firestore.FieldValue.serverTimestamp(),
+        deactivationReason: "owner_not_found",
+      });
+
+      return {
+        isValid: false,
+        reason: "OWNER_NOT_FOUND",
+        message: "Le propriétaire de ce code n'existe plus",
+      };
+    }
+
+    const ownerData = ownerDoc.data();
+    console.log(
+      `✅ validatePartnerCode: Propriétaire trouvé: ${
+        ownerData.name || "Nom non défini"
+      }`
+    );
+
+    // 5. Vérifier que l'utilisateur actuel n'a pas déjà un partenaire
+    const currentUserDoc = await admin
+      .firestore()
+      .collection("users")
+      .doc(currentUserId)
+      .get();
+    const currentUserData = currentUserDoc.data();
+
+    if (
+      currentUserData &&
+      currentUserData.partnerId &&
+      currentUserData.partnerId !== ownerId
+    ) {
+      console.log(
+        "❌ validatePartnerCode: Utilisateur déjà connecté à un autre partenaire"
+      );
+      return {
+        isValid: false,
+        reason: "ALREADY_CONNECTED",
+        message: "Vous êtes déjà connecté à un autre partenaire",
+      };
+    }
+
+    console.log("✅ validatePartnerCode: Code valide - Connexion autorisée");
+    return {
+      isValid: true,
+      ownerName: ownerData.name || "Partenaire",
+      ownerId: ownerId,
+      codeId: codeDoc.id,
+    };
+  } catch (error) {
+    console.error("❌ validatePartnerCode: Erreur:", error);
+    throw new functions.https.HttpsError(
+      "internal",
+      "Erreur lors de la validation du code"
+    );
+  }
+});
+
+// Fonction pour connecter deux partenaires de manière sécurisée
+exports.connectPartners = functions.https.onCall(async (data, context) => {
+  console.log("🔗 connectPartners: Début connexion partenaires");
+
+  // Vérifier l'authentification
+  if (!context.auth) {
+    console.log("❌ connectPartners: Utilisateur non authentifié");
+    throw new functions.https.HttpsError(
+      "unauthenticated",
+      "Utilisateur non authentifié"
+    );
+  }
+
+  const { partnerCode } = data;
+  const currentUserId = context.auth.uid;
+
+  console.log(`🔗 connectPartners: Code: ${partnerCode}`);
+  console.log(`🔗 connectPartners: Utilisateur: ${currentUserId}`);
+
+  if (!partnerCode || typeof partnerCode !== "string") {
+    console.log("❌ connectPartners: Code invalide");
+    throw new functions.https.HttpsError(
+      "invalid-argument",
+      "Code partenaire invalide"
+    );
+  }
+
+  try {
+    // 1. Valider le code partenaire
+    console.log("🔗 connectPartners: Validation du code...");
+    const codeDoc = await admin
+      .firestore()
+      .collection("partnerCodes")
+      .doc(partnerCode)
+      .get();
+
+    if (!codeDoc.exists) {
+      throw new functions.https.HttpsError(
+        "not-found",
+        "Code partenaire introuvable"
+      );
+    }
+
+    const codeData = codeDoc.data();
+    const partnerUserId = codeData.userId;
+
+    if (!codeData.isActive) {
+      throw new functions.https.HttpsError(
+        "failed-precondition",
+        "Ce code n'est plus actif"
+      );
+    }
+
+    if (partnerUserId === currentUserId) {
+      throw new functions.https.HttpsError(
+        "invalid-argument",
+        "Vous ne pouvez pas vous connecter à votre propre code"
+      );
+    }
+
+    if (
+      codeData.connectedPartnerId &&
+      codeData.connectedPartnerId !== currentUserId
+    ) {
+      throw new functions.https.HttpsError(
+        "already-exists",
+        "Ce code est déjà utilisé par un autre utilisateur"
+      );
+    }
+
+    // 2. Vérifier l'existence des deux utilisateurs
+    console.log("🔗 connectPartners: Vérification des utilisateurs...");
+    const [currentUserDoc, partnerUserDoc] = await Promise.all([
+      admin.firestore().collection("users").doc(currentUserId).get(),
+      admin.firestore().collection("users").doc(partnerUserId).get(),
+    ]);
+
+    if (!currentUserDoc.exists) {
+      throw new functions.https.HttpsError(
+        "not-found",
+        "Votre compte utilisateur est introuvable"
+      );
+    }
+
+    if (!partnerUserDoc.exists) {
+      console.log(
+        "❌ connectPartners: Propriétaire du code inexistant - Nettoyage automatique"
+      );
+      await codeDoc.ref.update({
+        isActive: false,
+        deactivatedAt: admin.firestore.FieldValue.serverTimestamp(),
+        deactivationReason: "owner_not_found",
+      });
+      throw new functions.https.HttpsError(
+        "not-found",
+        "Le propriétaire de ce code n'existe plus"
+      );
+    }
+
+    const currentUserData = currentUserDoc.data();
+    const partnerUserData = partnerUserDoc.data();
+
+    // 3. Vérifier que l'utilisateur actuel n'est pas déjà connecté à quelqu'un d'autre
+    if (
+      currentUserData.partnerId &&
+      currentUserData.partnerId !== partnerUserId
+    ) {
+      throw new functions.https.HttpsError(
+        "already-exists",
+        "Vous êtes déjà connecté à un autre partenaire"
+      );
+    }
+
+    // 4. CONFORMITÉ APPLE: Vérifier les règles de partage d'abonnement
+    const partnerIsSubscribed = partnerUserData.isSubscribed || false;
+    if (partnerIsSubscribed) {
+      console.log(
+        "🔗 connectPartners: Partenaire abonné - Vérification conformité Apple"
+      );
+
+      // Compter les partages existants
+      const existingShares = await admin
+        .firestore()
+        .collection("users")
+        .where("subscriptionInheritedFrom", "==", partnerUserId)
+        .get();
+
+      if (existingShares.size >= 1) {
+        throw new functions.https.HttpsError(
+          "resource-exhausted",
+          "Ce partenaire partage déjà son abonnement avec quelqu'un d'autre"
+        );
+      }
+    }
+
+    // 5. Effectuer la connexion dans une transaction
+    console.log("🔗 connectPartners: Création de la connexion...");
+    await admin.firestore().runTransaction(async (transaction) => {
+      // Marquer le code comme utilisé
+      transaction.update(codeDoc.ref, {
+        connectedPartnerId: currentUserId,
+        connectedAt: admin.firestore.FieldValue.serverTimestamp(),
+      });
+
+      // Mettre à jour l'utilisateur actuel
+      const currentUserUpdate = {
+        partnerId: partnerUserId,
+        partnerConnectedAt: admin.firestore.FieldValue.serverTimestamp(),
+      };
+
+      // Hériter de l'abonnement si le partenaire est abonné
+      if (partnerIsSubscribed) {
+        console.log("🔗 connectPartners: Héritage de l'abonnement...");
+        currentUserUpdate.isSubscribed = true;
+        currentUserUpdate.subscriptionInheritedFrom = partnerUserId;
+        currentUserUpdate.subscriptionInheritedAt =
+          admin.firestore.FieldValue.serverTimestamp();
+        currentUserUpdate.subscriptionType = "shared_from_partner";
+
+        // Logger le partage pour conformité Apple
+        const logData = {
+          fromUserId: partnerUserId,
+          toUserId: currentUserId,
+          sharedAt: admin.firestore.FieldValue.serverTimestamp(),
+          subscriptionType: "inherited",
+          deviceInfo: "iOS App",
+          appVersion: "1.0",
+        };
+
+        transaction.create(
+          admin.firestore().collection("subscription_sharing_logs").doc(),
+          logData
+        );
+      }
+
+      transaction.update(currentUserDoc.ref, currentUserUpdate);
+
+      // Mettre à jour le partenaire
+      transaction.update(partnerUserDoc.ref, {
+        partnerId: currentUserId,
+        partnerConnectedAt: admin.firestore.FieldValue.serverTimestamp(),
+        hasUnreadPartnerConnection: true, // Notification de connexion
+      });
+    });
+
+    console.log("✅ connectPartners: Connexion créée avec succès");
+
+    // 6. Synchroniser automatiquement les entrées de journal existantes
+    try {
+      console.log(
+        "📚 connectPartners: Synchronisation des entrées de journal..."
+      );
+
+      // Appeler la fonction de synchronisation interne (pas via HTTPS)
+      const syncResult = await syncPartnerJournalEntriesInternal(
+        currentUserId,
+        partnerUserId
+      );
+
+      console.log(
+        `✅ connectPartners: Synchronisation journal terminée - ${syncResult.updatedEntriesCount} entrées mises à jour`
+      );
+    } catch (syncError) {
+      console.error(
+        "❌ connectPartners: Erreur synchronisation journal:",
+        syncError
+      );
+      // Ne pas faire échouer la connexion pour une erreur de synchronisation
+    }
+
+    return {
+      success: true,
+      partnerName: partnerUserData.name || "Partenaire",
+      partnerIsSubscribed: partnerIsSubscribed,
+      subscriptionInherited: partnerIsSubscribed,
+      message: partnerIsSubscribed
+        ? `Connecté à ${
+            partnerUserData.name || "votre partenaire"
+          } - Abonnement premium débloqué !`
+        : `Connecté à ${partnerUserData.name || "votre partenaire"}`,
+    };
+  } catch (error) {
+    console.error("❌ connectPartners: Erreur:", error);
+
+    // Si c'est déjà une HttpsError, la relancer
+    if (error.code && error.message) {
+      throw error;
+    }
+
+    // Sinon, créer une nouvelle erreur générique
+    throw new functions.https.HttpsError(
+      "internal",
+      "Erreur lors de la connexion"
+    );
+  }
+});
+
+// Fonction de synchronisation des abonnements entre partenaires
+exports.syncPartnerSubscriptions = functions.https.onCall(
+  async (data, context) => {
+    console.log("🔄 syncPartnerSubscriptions: Début synchronisation");
+
+    // Vérifier l'authentification
+    if (!context.auth) {
+      console.log("❌ syncPartnerSubscriptions: Utilisateur non authentifié");
+      throw new functions.https.HttpsError(
+        "unauthenticated",
+        "Utilisateur non authentifié"
+      );
+    }
+
+    const currentUserId = context.auth.uid;
+    const { partnerId } = data;
+
+    console.log(`🔄 syncPartnerSubscriptions: Utilisateur: ${currentUserId}`);
+    console.log(`🔄 syncPartnerSubscriptions: Partenaire: ${partnerId}`);
+    console.log(
+      `🔄 syncPartnerSubscriptions: Type currentUserId: ${typeof currentUserId}`
+    );
+    console.log(
+      `🔄 syncPartnerSubscriptions: Longueur currentUserId: ${
+        currentUserId ? currentUserId.length : "null/undefined"
+      }`
+    );
+    console.log(
+      `🔄 syncPartnerSubscriptions: Type partnerId: ${typeof partnerId}`
+    );
+    console.log(
+      `🔄 syncPartnerSubscriptions: Longueur partnerId: ${
+        partnerId ? partnerId.length : "null/undefined"
+      }`
+    );
+
+    // 🔧 CORRECTION: Vérification robuste du currentUserId
+    if (
+      !currentUserId ||
+      typeof currentUserId !== "string" ||
+      currentUserId.trim() === ""
+    ) {
+      console.log(
+        "❌ syncPartnerSubscriptions: ID utilisateur actuel invalide ou vide"
+      );
+      throw new functions.https.HttpsError(
+        "unauthenticated",
+        "ID utilisateur actuel invalide"
+      );
+    }
+
+    // 🔧 CORRECTION: Vérification plus robuste du partnerId
+    if (
+      !partnerId ||
+      typeof partnerId !== "string" ||
+      partnerId.trim() === ""
+    ) {
+      console.log(
+        "❌ syncPartnerSubscriptions: ID partenaire invalide ou vide"
+      );
+      throw new functions.https.HttpsError(
+        "invalid-argument",
+        "ID partenaire requis et ne peut pas être vide"
+      );
+    }
+
+    try {
+      // Récupérer les données des deux utilisateurs
+      const [currentUserDoc, partnerUserDoc] = await Promise.all([
+        admin.firestore().collection("users").doc(currentUserId).get(),
+        admin.firestore().collection("users").doc(partnerId).get(),
+      ]);
+
+      if (!currentUserDoc.exists || !partnerUserDoc.exists) {
+        throw new functions.https.HttpsError(
+          "not-found",
+          "Utilisateur ou partenaire non trouvé"
+        );
+      }
+
+      const currentUserData = currentUserDoc.data();
+      const partnerUserData = partnerUserDoc.data();
+
+      // Vérifier que les utilisateurs sont bien connectés
+      if (
+        currentUserData.partnerId !== partnerId ||
+        partnerUserData.partnerId !== currentUserId
+      ) {
+        throw new functions.https.HttpsError(
+          "permission-denied",
+          "Les utilisateurs ne sont pas connectés en tant que partenaires"
+        );
+      }
+
+      const currentIsSubscribed = currentUserData.isSubscribed || false;
+      const currentSubscriptionType = currentUserData.subscriptionType;
+
+      const partnerIsSubscribed = partnerUserData.isSubscribed || false;
+      const partnerSubscriptionType = partnerUserData.subscriptionType;
+
+      console.log("🔄 syncPartnerSubscriptions: État actuel:");
+      console.log(
+        `🔄 User: isSubscribed=${currentIsSubscribed}, type=${currentSubscriptionType}`
+      );
+      console.log(
+        `🔄 Partner: isSubscribed=${partnerIsSubscribed}, type=${partnerSubscriptionType}`
+      );
+
+      let subscriptionInherited = false;
+      let fromPartnerName = "";
+
+      // Logique de synchronisation
+      if (currentIsSubscribed && currentSubscriptionType === "direct") {
+        // L'utilisateur actuel a un abonnement direct, partager avec le partenaire
+        if (
+          !partnerIsSubscribed ||
+          partnerSubscriptionType !== "shared_from_partner"
+        ) {
+          await admin.firestore().collection("users").doc(partnerId).update({
+            isSubscribed: true,
+            subscriptionType: "shared_from_partner",
+            subscriptionSharedFrom: currentUserId,
+            subscriptionSharedAt: admin.firestore.FieldValue.serverTimestamp(),
+          });
+          console.log(
+            "✅ syncPartnerSubscriptions: Abonnement partagé vers le partenaire"
+          );
+        }
+      } else if (partnerIsSubscribed && partnerSubscriptionType === "direct") {
+        // Le partenaire a un abonnement direct, partager avec l'utilisateur actuel
+        if (
+          !currentIsSubscribed ||
+          currentSubscriptionType !== "shared_from_partner"
+        ) {
+          await admin
+            .firestore()
+            .collection("users")
+            .doc(currentUserId)
+            .update({
+              isSubscribed: true,
+              subscriptionType: "shared_from_partner",
+              subscriptionSharedFrom: partnerId,
+              subscriptionSharedAt:
+                admin.firestore.FieldValue.serverTimestamp(),
+            });
+          subscriptionInherited = true;
+          fromPartnerName = partnerUserData.name || "Partenaire";
+          console.log(
+            "✅ syncPartnerSubscriptions: Abonnement hérité du partenaire"
+          );
+        }
+      } else if (!currentIsSubscribed && !partnerIsSubscribed) {
+        // Aucun des deux n'a d'abonnement direct, nettoyer les abonnements partagés
+        const batch = admin.firestore().batch();
+
+        const currentUserRef = admin
+          .firestore()
+          .collection("users")
+          .doc(currentUserId);
+        const partnerUserRef = admin
+          .firestore()
+          .collection("users")
+          .doc(partnerId);
+
+        batch.update(currentUserRef, {
+          isSubscribed: false,
+          subscriptionType: admin.firestore.FieldValue.delete(),
+          subscriptionSharedFrom: admin.firestore.FieldValue.delete(),
+          subscriptionSharedAt: admin.firestore.FieldValue.delete(),
+        });
+
+        batch.update(partnerUserRef, {
+          isSubscribed: false,
+          subscriptionType: admin.firestore.FieldValue.delete(),
+          subscriptionSharedFrom: admin.firestore.FieldValue.delete(),
+          subscriptionSharedAt: admin.firestore.FieldValue.delete(),
+        });
+
+        await batch.commit();
+        console.log(
+          "✅ syncPartnerSubscriptions: Abonnements nettoyés - mode gratuit"
+        );
+      }
+
+      return {
+        success: true,
+        subscriptionInherited: subscriptionInherited,
+        fromPartnerName: fromPartnerName,
+      };
+    } catch (error) {
+      console.error("❌ syncPartnerSubscriptions: Erreur:", error);
+      throw new functions.https.HttpsError("internal", error.message);
+    }
+  }
+);
+
+// Fonction pour récupérer les informations du partenaire de manière sécurisée
+exports.getPartnerInfo = functions.https.onCall(async (data, context) => {
+  console.log("👥 getPartnerInfo: Début récupération info partenaire");
+
+  // Vérifier l'authentification
+  if (!context.auth) {
+    console.log("❌ getPartnerInfo: Utilisateur non authentifié");
+    throw new functions.https.HttpsError(
+      "unauthenticated",
+      "Utilisateur non authentifié"
+    );
+  }
+
+  const currentUserId = context.auth.uid;
+  const { partnerId } = data;
+
+  console.log(`👥 getPartnerInfo: Utilisateur: ${currentUserId}`);
+  console.log(`👥 getPartnerInfo: Partenaire demandé: ${partnerId}`);
+
+  if (!partnerId) {
+    throw new functions.https.HttpsError(
+      "invalid-argument",
+      "ID partenaire requis"
+    );
+  }
+
+  try {
+    // Vérifier que l'utilisateur actuel est bien connecté à ce partenaire
+    const currentUserDoc = await admin
+      .firestore()
+      .collection("users")
+      .doc(currentUserId)
+      .get();
+
+    if (!currentUserDoc.exists) {
+      throw new functions.https.HttpsError(
+        "not-found",
+        "Utilisateur non trouvé"
+      );
+    }
+
+    const currentUserData = currentUserDoc.data();
+
+    // Vérifier que le partenaire demandé est bien le partenaire connecté
+    if (currentUserData.partnerId !== partnerId) {
+      throw new functions.https.HttpsError(
+        "permission-denied",
+        "Vous n'êtes pas autorisé à accéder aux informations de cet utilisateur"
+      );
+    }
+
+    // Récupérer les informations du partenaire
+    const partnerDoc = await admin
+      .firestore()
+      .collection("users")
+      .doc(partnerId)
+      .get();
+
+    if (!partnerDoc.exists) {
+      throw new functions.https.HttpsError(
+        "not-found",
+        "Partenaire non trouvé"
+      );
+    }
+
+    const partnerData = partnerDoc.data();
+
+    // Retourner seulement les informations nécessaires
+    const partnerInfo = {
+      name: partnerData.name || "Partenaire",
+      isSubscribed: partnerData.isSubscribed || false,
+      subscriptionType: partnerData.subscriptionType || null,
+      subscriptionSharedFrom: partnerData.subscriptionSharedFrom || null,
+      profileImageURL: partnerData.profileImageURL || null,
+    };
+
+    console.log("✅ getPartnerInfo: Informations récupérées avec succès");
+    console.log(
+      `✅ getPartnerInfo: Photo profil: ${
+        partnerInfo.profileImageURL ? "Présente" : "Absente"
+      }`
+    );
+
+    return {
+      success: true,
+      partnerInfo: partnerInfo,
+    };
+  } catch (error) {
+    console.error("❌ getPartnerInfo: Erreur:", error);
+
+    // Si c'est déjà une HttpsError, la relancer
+    if (error.code && error.message) {
+      throw error;
+    }
+
+    throw new functions.https.HttpsError("internal", error.message);
+  }
+});
+
+// Fonction pour récupérer l'image de profil du partenaire avec URL signée
+exports.getPartnerProfileImage = functions.https.onCall(
+  async (data, context) => {
+    console.log(
+      "🖼️ getPartnerProfileImage: Début récupération image partenaire"
+    );
+
+    // Vérifier l'authentification
+    if (!context.auth) {
+      console.log("❌ getPartnerProfileImage: Utilisateur non authentifié");
+      throw new functions.https.HttpsError(
+        "unauthenticated",
+        "Utilisateur non authentifié"
+      );
+    }
+
+    const currentUserId = context.auth.uid;
+    const { partnerId } = data;
+
+    console.log(`🖼️ getPartnerProfileImage: Utilisateur: ${currentUserId}`);
+    console.log(`🖼️ getPartnerProfileImage: Partenaire: ${partnerId}`);
+
+    if (!partnerId) {
+      throw new functions.https.HttpsError(
+        "invalid-argument",
+        "ID partenaire requis"
+      );
+    }
+
+    try {
+      // Vérifier que l'utilisateur actuel est bien connecté à ce partenaire
+      const currentUserDoc = await admin
+        .firestore()
+        .collection("users")
+        .doc(currentUserId)
+        .get();
+
+      if (!currentUserDoc.exists) {
+        throw new functions.https.HttpsError(
+          "not-found",
+          "Utilisateur non trouvé"
+        );
+      }
+
+      const currentUserData = currentUserDoc.data();
+
+      // Vérifier que le partenaire demandé est bien le partenaire connecté
+      if (currentUserData.partnerId !== partnerId) {
+        throw new functions.https.HttpsError(
+          "permission-denied",
+          "Vous n'êtes pas autorisé à accéder aux informations de cet utilisateur"
+        );
+      }
+
+      // Récupérer les informations du partenaire
+      const partnerDoc = await admin
+        .firestore()
+        .collection("users")
+        .doc(partnerId)
+        .get();
+
+      if (!partnerDoc.exists) {
+        throw new functions.https.HttpsError(
+          "not-found",
+          "Partenaire non trouvé"
+        );
+      }
+
+      const partnerData = partnerDoc.data();
+      const profileImageURL = partnerData.profileImageURL;
+
+      if (!profileImageURL) {
+        console.log(
+          "❌ getPartnerProfileImage: Aucune photo de profil pour ce partenaire"
+        );
+        return {
+          success: false,
+          reason: "NO_PROFILE_IMAGE",
+          message: "Aucune photo de profil disponible",
+        };
+      }
+
+      // Générer une URL signée temporaire pour l'image (1 heure de validité)
+      const bucket = admin.storage().bucket();
+
+      // Extraire le chemin du fichier depuis l'URL Firebase Storage
+      const urlMatch = profileImageURL.match(/\/o\/(.*?)\?/);
+      if (!urlMatch) {
+        throw new functions.https.HttpsError(
+          "internal",
+          "Format d'URL d'image invalide"
+        );
+      }
+
+      const filePath = decodeURIComponent(urlMatch[1]);
+      const file = bucket.file(filePath);
+
+      console.log(
+        `🖼️ getPartnerProfileImage: Génération URL signée pour: ${filePath}`
+      );
+
+      const [signedUrl] = await file.getSignedUrl({
+        action: "read",
+        expires: Date.now() + 60 * 60 * 1000, // 1 heure
+      });
+
+      console.log("✅ getPartnerProfileImage: URL signée générée avec succès");
+
+      return {
+        success: true,
+        imageUrl: signedUrl,
+        expiresIn: 3600, // 1 heure en secondes
+      };
+    } catch (error) {
+      console.error("❌ getPartnerProfileImage: Erreur:", error);
+
+      // Si c'est déjà une HttpsError, la relancer
+      if (error.code && error.message) {
+        throw error;
+      }
+
+      throw new functions.https.HttpsError("internal", error.message);
+    }
+  }
+);
+
+// 🔧 NOUVELLE FONCTION: Générer URL signée pour toutes les images Firebase Storage
+exports.getSignedImageURL = functions.https.onCall(async (data, context) => {
+  console.log("🔧 getSignedImageURL: Début génération URL signée");
+
+  // Vérifier l'authentification
+  if (!context.auth) {
+    console.log("❌ getSignedImageURL: Utilisateur non authentifié");
+    throw new functions.https.HttpsError(
+      "unauthenticated",
+      "Utilisateur non authentifié"
+    );
+  }
+
+  const currentUserId = context.auth.uid;
+  const { filePath } = data;
+
+  console.log(`🔧 getSignedImageURL: Utilisateur: ${currentUserId}`);
+  console.log(`🔧 getSignedImageURL: Chemin fichier: ${filePath}`);
+
+  if (!filePath) {
+    throw new functions.https.HttpsError(
+      "invalid-argument",
+      "Chemin de fichier requis"
+    );
+  }
+
+  try {
+    // Vérifier les permissions selon le type d'image
+    if (filePath.startsWith("profile_images/")) {
+      // Image de profil - vérifier que c'est l'utilisateur ou son partenaire
+      const pathComponents = filePath.split("/");
+      if (pathComponents.length < 2) {
+        throw new functions.https.HttpsError(
+          "invalid-argument",
+          "Chemin d'image de profil invalide"
+        );
+      }
+
+      const imageOwnerId = pathComponents[1];
+
+      // Permettre l'accès si c'est l'utilisateur lui-même
+      if (imageOwnerId === currentUserId) {
+        console.log(
+          "✅ getSignedImageURL: Accès autorisé - Propriétaire de l'image"
+        );
+      } else {
+        // Vérifier si c'est le partenaire connecté
+        const currentUserDoc = await admin
+          .firestore()
+          .collection("users")
+          .doc(currentUserId)
+          .get();
+
+        if (!currentUserDoc.exists) {
+          throw new functions.https.HttpsError(
+            "not-found",
+            "Utilisateur non trouvé"
+          );
+        }
+
+        const currentUserData = currentUserDoc.data();
+
+        if (currentUserData.partnerId !== imageOwnerId) {
+          throw new functions.https.HttpsError(
+            "permission-denied",
+            "Vous n'êtes pas autorisé à accéder à cette image"
+          );
+        }
+
+        console.log(
+          "✅ getSignedImageURL: Accès autorisé - Image du partenaire"
+        );
+      }
+    } else if (filePath.startsWith("journal_images/")) {
+      // Image du journal - vérifier que c'est l'utilisateur ou son partenaire
+      const pathComponents = filePath.split("/");
+      if (pathComponents.length < 2) {
+        throw new functions.https.HttpsError(
+          "invalid-argument",
+          "Chemin d'image de journal invalide"
+        );
+      }
+
+      const imageOwnerId = pathComponents[1];
+
+      // Permettre l'accès si c'est l'utilisateur lui-même
+      if (imageOwnerId === currentUserId) {
+        console.log(
+          "✅ getSignedImageURL: Accès autorisé - Propriétaire de l'image journal"
+        );
+      } else {
+        // Vérifier si c'est le partenaire connecté
+        const currentUserDoc = await admin
+          .firestore()
+          .collection("users")
+          .doc(currentUserId)
+          .get();
+
+        if (!currentUserDoc.exists) {
+          throw new functions.https.HttpsError(
+            "not-found",
+            "Utilisateur non trouvé"
+          );
+        }
+
+        const currentUserData = currentUserDoc.data();
+
+        // Vérification bidirectionnelle pour les images du journal
+        if (currentUserData.partnerId !== imageOwnerId) {
+          // Vérifier aussi avec connectedPartnerId (compatibilité)
+          if (currentUserData.connectedPartnerId !== imageOwnerId) {
+            throw new functions.https.HttpsError(
+              "permission-denied",
+              "Vous n'êtes pas autorisé à accéder à cette image de journal"
+            );
+          }
+        }
+
+        console.log(
+          "✅ getSignedImageURL: Accès autorisé - Image journal du partenaire"
+        );
+      }
+    } else {
+      // Type d'image non reconnu
+      throw new functions.https.HttpsError(
+        "invalid-argument",
+        "Type d'image non supporté"
+      );
+    }
+
+    // Générer l'URL signée
+    const bucket = admin.storage().bucket();
+    const file = bucket.file(filePath);
+
+    console.log(
+      `🔧 getSignedImageURL: Génération URL signée pour: ${filePath}`
+    );
+
+    const [signedUrl] = await file.getSignedUrl({
+      action: "read",
+      expires: Date.now() + 60 * 60 * 1000, // 1 heure
+    });
+
+    console.log("✅ getSignedImageURL: URL signée générée avec succès");
+
+    return {
+      success: true,
+      signedUrl: signedUrl,
+      expiresIn: 3600, // 1 heure en secondes
+    };
+  } catch (error) {
+    console.error("❌ getSignedImageURL: Erreur:", error);
+
+    // Si c'est déjà une HttpsError, la relancer
+    if (error.code && error.message) {
+      throw error;
+    }
+
+    throw new functions.https.HttpsError("internal", error.message);
+  }
+});
+
+// Fonction interne pour synchroniser les entrées de journal (appelée en interne)
+async function syncPartnerJournalEntriesInternal(currentUserId, partnerId) {
+  console.log("📚 syncPartnerJournalEntriesInternal: Début synchronisation");
+  console.log(`📚 Utilisateur: ${currentUserId}, Partenaire: ${partnerId}`);
+
+  // 1. Récupérer toutes les entrées créées par l'utilisateur actuel
+  const currentUserEntriesSnapshot = await admin
+    .firestore()
+    .collection("journalEntries")
+    .where("authorId", "==", currentUserId)
+    .get();
+
+  // 2. Récupérer toutes les entrées créées par le partenaire
+  const partnerEntriesSnapshot = await admin
+    .firestore()
+    .collection("journalEntries")
+    .where("authorId", "==", partnerId)
+    .get();
+
+  let updatedCount = 0;
+  const batch = admin.firestore().batch();
+
+  // 3. Mettre à jour les entrées de l'utilisateur actuel pour inclure le partenaire
+  for (const doc of currentUserEntriesSnapshot.docs) {
+    const entryData = doc.data();
+    const currentPartnerIds = entryData.partnerIds || [];
+
+    // Ajouter le partenaire s'il n'est pas déjà présent
+    if (!currentPartnerIds.includes(partnerId)) {
+      const updatedPartnerIds = [...currentPartnerIds, partnerId];
+      batch.update(doc.ref, {
+        partnerIds: updatedPartnerIds,
+        updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+      });
+      updatedCount++;
+      console.log(`📚 Mise à jour entrée utilisateur: ${doc.id}`);
+    }
+  }
+
+  // 4. Mettre à jour les entrées du partenaire pour inclure l'utilisateur actuel
+  for (const doc of partnerEntriesSnapshot.docs) {
+    const entryData = doc.data();
+    const currentPartnerIds = entryData.partnerIds || [];
+
+    // Ajouter l'utilisateur actuel s'il n'est pas déjà présent
+    if (!currentPartnerIds.includes(currentUserId)) {
+      const updatedPartnerIds = [...currentPartnerIds, currentUserId];
+      batch.update(doc.ref, {
+        partnerIds: updatedPartnerIds,
+        updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+      });
+      updatedCount++;
+      console.log(`📚 Mise à jour entrée partenaire: ${doc.id}`);
+    }
+  }
+
+  // 5. Exécuter toutes les mises à jour
+  if (updatedCount > 0) {
+    await batch.commit();
+    console.log(
+      `✅ syncPartnerJournalEntriesInternal: ${updatedCount} entrées mises à jour`
+    );
+  } else {
+    console.log(
+      "📚 syncPartnerJournalEntriesInternal: Aucune entrée à mettre à jour"
+    );
+  }
+
+  return {
+    success: true,
+    updatedEntriesCount: updatedCount,
+    userEntriesCount: currentUserEntriesSnapshot.docs.length,
+    partnerEntriesCount: partnerEntriesSnapshot.docs.length,
+  };
+}
+
+// NOUVEAU: Fonction pour synchroniser les entrées de journal après connexion partenaire
+exports.syncPartnerJournalEntries = functions.https.onCall(
+  async (data, context) => {
+    console.log("📚 syncPartnerJournalEntries: Début synchronisation journal");
+
+    // Vérifier l'authentification
+    if (!context.auth) {
+      console.log("❌ syncPartnerJournalEntries: Utilisateur non authentifié");
+      throw new functions.https.HttpsError(
+        "unauthenticated",
+        "Utilisateur non authentifié"
+      );
+    }
+
+    const currentUserId = context.auth.uid;
+    const { partnerId } = data;
+
+    console.log(`📚 syncPartnerJournalEntries: Utilisateur: ${currentUserId}`);
+    console.log(`📚 syncPartnerJournalEntries: Partenaire: ${partnerId}`);
+
+    if (
+      !partnerId ||
+      typeof partnerId !== "string" ||
+      partnerId.trim() === ""
+    ) {
+      throw new functions.https.HttpsError(
+        "invalid-argument",
+        "ID partenaire requis"
+      );
+    }
+
+    try {
+      // Vérifier que les utilisateurs sont bien connectés
+      const [currentUserDoc, partnerUserDoc] = await Promise.all([
+        admin.firestore().collection("users").doc(currentUserId).get(),
+        admin.firestore().collection("users").doc(partnerId).get(),
+      ]);
+
+      if (!currentUserDoc.exists || !partnerUserDoc.exists) {
+        throw new functions.https.HttpsError(
+          "not-found",
+          "Utilisateur ou partenaire non trouvé"
+        );
+      }
+
+      const currentUserData = currentUserDoc.data();
+      const partnerUserData = partnerUserDoc.data();
+
+      // Vérifier que les utilisateurs sont bien connectés
+      if (
+        currentUserData.partnerId !== partnerId ||
+        partnerUserData.partnerId !== currentUserId
+      ) {
+        throw new functions.https.HttpsError(
+          "permission-denied",
+          "Les utilisateurs ne sont pas connectés en tant que partenaires"
+        );
+      }
+
+      console.log(
+        "📚 syncPartnerJournalEntries: Connexion partenaire vérifiée"
+      );
+
+      // Appeler la fonction interne de synchronisation
+      const result = await syncPartnerJournalEntriesInternal(
+        currentUserId,
+        partnerId
+      );
+
+      return {
+        success: true,
+        updatedEntriesCount: result.updatedEntriesCount,
+        userEntriesCount: result.userEntriesCount,
+        partnerEntriesCount: result.partnerEntriesCount,
+        message: `Synchronisation terminée: ${result.updatedEntriesCount} entrées mises à jour`,
+      };
+    } catch (error) {
+      console.error("❌ syncPartnerJournalEntries: Erreur:", error);
+
+      // Si c'est déjà une HttpsError, la relancer
+      if (error.code && error.message) {
+        throw error;
+      }
+
+      throw new functions.https.HttpsError("internal", error.message);
+    }
+  }
+);
+
+// NOUVEAU: Fonction pour récupérer la localisation du partenaire de manière sécurisée
+exports.getPartnerLocation = functions.https.onCall(async (data, context) => {
+  console.log(
+    "🌍 getPartnerLocation: Début récupération localisation partenaire"
+  );
+
+  // Vérifier l'authentification
+  if (!context.auth) {
+    console.log("❌ getPartnerLocation: Utilisateur non authentifié");
+    throw new functions.https.HttpsError(
+      "unauthenticated",
+      "Utilisateur non authentifié"
+    );
+  }
+
+  const currentUserId = context.auth.uid;
+  const { partnerId } = data;
+
+  console.log(`🌍 getPartnerLocation: Utilisateur: ${currentUserId}`);
+  console.log(`🌍 getPartnerLocation: Partenaire demandé: ${partnerId}`);
+
+  if (!partnerId) {
+    throw new functions.https.HttpsError(
+      "invalid-argument",
+      "ID partenaire requis"
+    );
+  }
+
+  try {
+    // Vérifier que l'utilisateur actuel est bien connecté à ce partenaire
+    const currentUserDoc = await admin
+      .firestore()
+      .collection("users")
+      .doc(currentUserId)
+      .get();
+
+    if (!currentUserDoc.exists) {
+      throw new functions.https.HttpsError(
+        "not-found",
+        "Utilisateur non trouvé"
+      );
+    }
+
+    const currentUserData = currentUserDoc.data();
+
+    // Vérifier que le partenaire demandé est bien le partenaire connecté
+    if (currentUserData.partnerId !== partnerId) {
+      throw new functions.https.HttpsError(
+        "permission-denied",
+        "Vous n'êtes pas autorisé à accéder à la localisation de cet utilisateur"
+      );
+    }
+
+    // Récupérer les informations du partenaire
+    const partnerDoc = await admin
+      .firestore()
+      .collection("users")
+      .doc(partnerId)
+      .get();
+
+    if (!partnerDoc.exists) {
+      throw new functions.https.HttpsError(
+        "not-found",
+        "Partenaire non trouvé"
+      );
+    }
+
+    const partnerData = partnerDoc.data();
+    const currentLocation = partnerData.currentLocation;
+
+    console.log(
+      "🌍 getPartnerLocation: Localisation partenaire trouvée:",
+      currentLocation ? "OUI" : "NON"
+    );
+
+    if (!currentLocation) {
+      console.log(
+        "❌ getPartnerLocation: Aucune localisation pour ce partenaire"
+      );
+      return {
+        success: false,
+        reason: "NO_LOCATION",
+        message: "Aucune localisation disponible pour ce partenaire",
+      };
+    }
+
+    console.log("✅ getPartnerLocation: Localisation récupérée avec succès");
+
+    return {
+      success: true,
+      location: {
+        latitude: currentLocation.latitude,
+        longitude: currentLocation.longitude,
+        address: currentLocation.address || null,
+        city: currentLocation.city || null,
+        country: currentLocation.country || null,
+        lastUpdated: currentLocation.lastUpdated,
+      },
+    };
+  } catch (error) {
+    console.error("❌ getPartnerLocation: Erreur:", error);
+
+    // Si c'est déjà une HttpsError, la relancer
+    if (error.code && error.message) {
+      throw error;
+    }
+
     throw new functions.https.HttpsError("internal", error.message);
   }
 });

@@ -7,76 +7,92 @@ struct CompletionStepView: View {
     
     var body: some View {
         ZStack {
-            VStack(spacing: 40) {
+            VStack(spacing: 0) {
+                // Espace entre barre de progression et titre (harmonisé)
+                Spacer()
+                    .frame(height: 40)
+                
+                // Premier Spacer pour centrer le contenu
                 Spacer()
                 
-                // Icône de validation avec animation
-                ZStack {
-                    Circle()
-                        .fill(Color.white.opacity(0.2))
-                        .frame(width: 80, height: 80)
-                    
-                    Image(systemName: "checkmark")
-                        .font(.system(size: 40, weight: .bold))
-                        .foregroundColor(.white)
-                }
-                .scaleEffect(confettiCounter > 0 ? 1.2 : 1.0)
-                
-                // Titre principal
-                Text("Tout est terminé")
-                    .font(.system(size: 24, weight: .medium))
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
-                
-                // Titre principal
+                // Contenu principal centré
                 VStack(spacing: 10) {
-                    Text("Merci de nous")
-                        .font(.system(size: 36, weight: .bold))
-                        .foregroundColor(.white)
-                        .multilineTextAlignment(.center)
+                    // Petit titre "Tout est terminé" avec icône
+                    HStack(spacing: 8) {
+                        // Icône de validation verte
+                        ZStack {
+                            Circle()
+                                .fill(Color.green)
+                                .frame(width: 20, height: 20)
+                            
+                            Image(systemName: "checkmark")
+                                .font(.system(size: 12, weight: .bold))
+                                .foregroundColor(.white)
+                        }
+                        .scaleEffect(confettiCounter > 0 ? 1.2 : 1.0)
+                        
+                        Text("Tout est terminé")
+                            .font(.system(size: 18, weight: .medium))
+                            .foregroundColor(.gray)
+                    }
                     
-                    Text("faire confiance")
-                        .font(.system(size: 36, weight: .bold))
-                        .foregroundColor(.white)
-                        .multilineTextAlignment(.center)
-                }
-                
-                // Sous-titre avec origine des confettis
-                ZStack {
-                    Text("Nous promettons de toujours garder vos informations personnelles privées et sécurisées")
+                    // Grand titre "Merci de nous faire confiance."
+                    VStack(spacing: 2) {
+                        Text("Merci de nous")
+                            .font(.system(size: 48, weight: .bold))
+                            .foregroundColor(.black)
+                            .multilineTextAlignment(.center)
+                        
+                        Text("faire confiance.")
+                            .font(.system(size: 48, weight: .bold))
+                            .foregroundColor(.black)
+                            .multilineTextAlignment(.center)
+                    }
+                    .padding(.top, 10)
+                    
+                    Spacer()
+                        .frame(height: 15)
+                    
+                    // Sous-titre gris
+                    Text("Nous promettons de toujours garder vos informations personnelles privées et sécurisées.")
                         .font(.system(size: 16))
-                        .foregroundColor(.white.opacity(0.9))
+                        .foregroundColor(.gray)
                         .multilineTextAlignment(.center)
                         .lineSpacing(4)
                         .padding(.horizontal, 40)
                     
-                    // Point invisible pour les confettis au niveau du sous-titre
+                    // Point invisible pour les confettis au niveau du texte
                     Rectangle()
                         .fill(Color.clear)
                         .frame(width: 1, height: 1)
-                        .confettiCannon(trigger: $confettiCounter, num: 200, radius: 400)
+                        .confettiCannon(trigger: $confettiCounter, num: 200, radius: 500)
+                        .padding(.top, 30)
                 }
                 
+                // Deuxième Spacer pour pousser la zone bouton vers le bas
                 Spacer()
-                
-                // Bouton continuer
-                Button(action: {
-                    viewModel.nextStep()
-                }) {
-                    Text("Continuer")
-                        .font(.system(size: 18, weight: .semibold))
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 56)
-                        .background(Color(hex: "#FD267A"))
-                        .cornerRadius(28)
+                    
+                // Zone blanche collée en bas
+                VStack(spacing: 0) {
+                    Button(action: {
+                        viewModel.nextStep()
+                    }) {
+                        Text("Continuer")
+                            .font(.system(size: 18, weight: .semibold))
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 56)
+                            .background(Color(hex: "#FD267A"))
+                            .cornerRadius(28)
+                    }
+                    .padding(.horizontal, 30)
                 }
-                .padding(.horizontal, 30)
-                .padding(.bottom, 50)
+                .padding(.vertical, 30)
+                .background(Color.white)
             }
         }
         .onAppear {
-            print("🔥 CompletionStepView: Vue de confirmation apparue")
+            print("🔥 CompletionStepView: Vue de completion apparue")
             // Déclencher l'animation des confettis immédiatement
             confettiCounter += 1
         }

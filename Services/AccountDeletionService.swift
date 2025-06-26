@@ -60,51 +60,57 @@ class AccountDeletionService: NSObject, ObservableObject {
         let db = Firestore.firestore()
         let userRef = db.collection("users").document(userId)
         
-        // D'abord, vérifier si le document existe
-        userRef.getDocument { document, error in
-            if let error = error {
-                print("❌ AccountDeletionService: Erreur lors de la vérification: \(error.localizedDescription)")
-                completion(false)
-                return
-            }
+        // ÉTAPE 1: Supprimer les codes partenaires associés
+        Task {
+            await PartnerCodeService.shared.deleteUserPartnerCode()
+            print("✅ AccountDeletionService: Codes partenaires supprimés")
             
-            if let document = document, document.exists {
-                print("🔥 AccountDeletionService: Document trouvé, suppression en cours...")
-                print("🔥 AccountDeletionService: Données à supprimer: \(document.data() ?? [:])")
+            // ÉTAPE 2: Continuer avec la suppression du document utilisateur
+            userRef.getDocument { document, error in
+                if let error = error {
+                    print("❌ AccountDeletionService: Erreur lors de la vérification: \(error.localizedDescription)")
+                    completion(false)
+                    return
+                }
                 
-                // Supprimer le document
-                userRef.delete { deleteError in
-                    if let deleteError = deleteError {
-                        print("❌ AccountDeletionService: Erreur suppression Firestore: \(deleteError.localizedDescription)")
-                        
-                        // Tenter une suppression avec overwrite
-                        print("🔥 AccountDeletionService: Tentative de suppression par overwrite...")
-                        userRef.setData([:]) { overwriteError in
-                            if let overwriteError = overwriteError {
-                                print("❌ AccountDeletionService: Échec overwrite: \(overwriteError.localizedDescription)")
-                                completion(false)
-                            } else {
-                                print("✅ AccountDeletionService: Document vidé par overwrite")
-                                // Maintenant essayer de supprimer le document vide
-                                userRef.delete { finalDeleteError in
-                                    if let finalDeleteError = finalDeleteError {
-                                        print("❌ AccountDeletionService: Échec suppression finale: \(finalDeleteError.localizedDescription)")
-                                        completion(false)
-                                    } else {
-                                        print("✅ AccountDeletionService: Document supprimé après overwrite")
-                                        completion(true)
+                if let document = document, document.exists {
+                    print("🔥 AccountDeletionService: Document trouvé, suppression en cours...")
+                    print("🔥 AccountDeletionService: Données à supprimer: \(document.data() ?? [:])")
+                    
+                    // Supprimer le document
+                    userRef.delete { deleteError in
+                        if let deleteError = deleteError {
+                            print("❌ AccountDeletionService: Erreur suppression Firestore: \(deleteError.localizedDescription)")
+                            
+                            // Tenter une suppression avec overwrite
+                            print("🔥 AccountDeletionService: Tentative de suppression par overwrite...")
+                            userRef.setData([:]) { overwriteError in
+                                if let overwriteError = overwriteError {
+                                    print("❌ AccountDeletionService: Échec overwrite: \(overwriteError.localizedDescription)")
+                                    completion(false)
+                                } else {
+                                    print("✅ AccountDeletionService: Document vidé par overwrite")
+                                    // Maintenant essayer de supprimer le document vide
+                                    userRef.delete { finalDeleteError in
+                                        if let finalDeleteError = finalDeleteError {
+                                            print("❌ AccountDeletionService: Échec suppression finale: \(finalDeleteError.localizedDescription)")
+                                            completion(false)
+                                        } else {
+                                            print("✅ AccountDeletionService: Document supprimé après overwrite")
+                                            completion(true)
+                                        }
                                     }
                                 }
                             }
+                        } else {
+                            print("✅ AccountDeletionService: Document utilisateur supprimé de Firestore")
+                            completion(true)
                         }
-                    } else {
-                        print("✅ AccountDeletionService: Document utilisateur supprimé de Firestore")
-                        completion(true)
                     }
+                } else {
+                    print("🔥 AccountDeletionService: Aucun document trouvé pour l'utilisateur \(userId)")
+                    completion(true) // Pas de document = déjà supprimé
                 }
-            } else {
-                print("🔥 AccountDeletionService: Aucun document trouvé pour l'utilisateur \(userId)")
-                completion(true) // Pas de document = déjà supprimé
             }
         }
     }

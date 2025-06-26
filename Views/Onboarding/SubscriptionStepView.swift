@@ -8,57 +8,42 @@ struct SubscriptionStepView: View {
     
     var body: some View {
         ZStack {
-            // Fond dégradé personnalisé avec les nouvelles couleurs
-            LinearGradient(
-                gradient: Gradient(colors: [
-                    Color(hex: "#FD267A"),
-                    Color(hex: "#FF655B")
-                ]),
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-            .ignoresSafeArea()
+            // Fond gris clair identique aux autres pages d'onboarding
+            Color(red: 0.97, green: 0.97, blue: 0.98)
+                .ignoresSafeArea()
             
             VStack(spacing: 0) {
-                // Bouton fermer
-                HStack {
-                    Button(action: {
-                        // Fermer sans s'abonner - finaliser l'onboarding
-                        print("🔥 SubscriptionStepView: Bouton fermer pressé - finalisation sans abonnement")
-                        NSLog("🔥 SubscriptionStepView: Bouton fermer pressé - finalisation sans abonnement")
-                        viewModel.skipSubscription()
-                    }) {
-                        Image(systemName: "xmark")
-                            .font(.system(size: 20))
-                            .foregroundColor(.white)
-                    }
-                    
-                    Spacer()
-                }
-                .padding(.horizontal, 20)
-                .padding(.top, 50)
+                // Espace en haut
+                Spacer()
+                    .frame(height: 80)
                 
-                // Titre en haut juste après la croix
+                // Titre principal
                 Text("Commencez votre essai gratuit de 3 jours dès maintenant")
                     .font(.system(size: 32, weight: .bold))
-                    .foregroundColor(.white)
+                    .foregroundColor(.black)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 20)
-                    .padding(.top, 30)
                 
                 Spacer()
                 
-                // Contenu principal
-                VStack(spacing: 30) {
-                    // Fonctionnalités
-                    VStack(spacing: 15) {
-                        FeatureRow(icon: "heart.fill", text: "Mode surprise quotidien")
-                        FeatureRow(icon: "key.fill", text: "Accès illimité à tous les packs de cartes")
-                        FeatureRow(icon: "lock.fill", text: "Confidentialité garantie")
-                        FeatureRow(icon: "clock.fill", text: "Annule quand tu veux")
-                    }
-                    .padding(.horizontal, 40)
+                // Contenu principal - Nouvelles fonctionnalités
+                VStack(spacing: 25) {
+                    NewFeatureRow(
+                        title: "✓ Apprenez à mieux vous connaître",
+                        subtitle: "Parce qu'aimer, c'est aussi se poser les bonnes questions. Explorez l'univers intérieur de votre partenaire, une question à la fois."
+                    )
+                    
+                    NewFeatureRow(
+                        title: "✓ Resserrez le lien qui vous unit",
+                        subtitle: "Ravivez la flamme avec des échanges sincères, profonds, et pleins de tendresse."
+                    )
+                    
+                    NewFeatureRow(
+                        title: "✓ Aimez-vous encore plus fort",
+                        subtitle: "Débloquez nos plus de 2000 questions à la fois fun, profondes, rassurantes, et passez un merveilleux moment ensemble."
+                    )
                 }
+                .padding(.horizontal, 25)
                 
                 Spacer()
                 
@@ -67,11 +52,11 @@ struct SubscriptionStepView: View {
                     HStack(spacing: 5) {
                         Image(systemName: "checkmark")
                             .font(.system(size: 14, weight: .bold))
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                         
                         Text("Essai Gratuit de 3 jours, puis 4,99 € / semaine")
                             .font(.system(size: 14))
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                     }
                     .padding(.horizontal, 30)
                     
@@ -106,7 +91,7 @@ struct SubscriptionStepView: View {
                         viewModel.skipSubscription()
                     }
                     .font(.system(size: 16))
-                    .foregroundColor(.white.opacity(0.8))
+                    .foregroundColor(.black.opacity(0.6))
                     .padding(.top, 10)
                 }
                 .padding(.bottom, 20)
@@ -119,7 +104,7 @@ struct SubscriptionStepView: View {
                         }
                     }
                     .font(.system(size: 12))
-                    .foregroundColor(.white.opacity(0.7))
+                    .foregroundColor(.black.opacity(0.5))
                     
                     Button("Politique de confidentialité") {
                         if let url = URL(string: "https://love2lovesite.onrender.com") {
@@ -127,7 +112,7 @@ struct SubscriptionStepView: View {
                         }
                     }
                     .font(.system(size: 12))
-                    .foregroundColor(.white.opacity(0.7))
+                    .foregroundColor(.black.opacity(0.5))
                     
                     Button("Restaurer") {
                         print("🔥 SubscriptionStepView: Tentative de restauration des achats")
@@ -135,7 +120,7 @@ struct SubscriptionStepView: View {
                         receiptService.restorePurchases()
                     }
                     .font(.system(size: 12))
-                    .foregroundColor(.white.opacity(0.7))
+                    .foregroundColor(.black.opacity(0.5))
                 }
                 .padding(.bottom, 30)
             }
@@ -192,6 +177,30 @@ struct SubscriptionStepView: View {
     }
 }
 
+// Nouveau composant pour les fonctionnalités avec titre et sous-titre
+struct NewFeatureRow: View {
+    let title: String
+    let subtitle: String
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(title)
+                .font(.system(size: 18, weight: .bold))
+                .foregroundColor(.black)
+                .multilineTextAlignment(.leading)
+            
+            Text(subtitle)
+                .font(.system(size: 16))
+                .foregroundColor(.black.opacity(0.7))
+                .multilineTextAlignment(.leading)
+                .lineLimit(nil)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}
+
+// Ancien composant conservé pour compatibilité si nécessaire
 struct FeatureRow: View {
     let icon: String
     let text: String

@@ -15,6 +15,13 @@ class FreemiumManager: ObservableObject {
     private weak var appState: AppState?
     private var cancellables = Set<AnyCancellable>()
     
+    // NOUVEAU: Configuration freemium
+    private let questionsPerPack = 32
+    private let freePacksLimit = 2 // 2 packs gratuits = 64 questions
+    
+    // NOUVEAU: Configuration freemium pour le journal
+    private let freeJournalEntriesLimit = 5
+    
     init(appState: AppState) {
         self.appState = appState
         setupObservers()
@@ -23,7 +30,7 @@ class FreemiumManager: ObservableObject {
     private func setupObservers() {
         // Observer les changements d'abonnement
         appState?.$currentUser
-            .sink { [weak self] user in
+            .sink { [weak self] (user: AppUser?) in
                 // Réagir aux changements d'abonnement si nécessaire
                 print("🔥 FreemiumManager: Utilisateur changé - isSubscribed: \(user?.isSubscribed ?? false)")
             }
@@ -34,13 +41,54 @@ class FreemiumManager: ObservableObject {
     
     /// Vérifie si l'utilisateur peut accéder à une catégorie
     func canAccessCategory(_ category: QuestionCategory) -> Bool {
-        // Les catégories gratuites sont toujours accessibles
-        if !category.isPremium {
+        // Les catégories premium nécessitent un abonnement
+        if category.isPremium {
+            return appState?.currentUser?.isSubscribed ?? false
+        }
+        
+        // La catégorie "En couple" est gratuite
+        return true
+    }
+    
+    /// NOUVEAU: Vérifie si l'utilisateur peut accéder à une question spécifique dans une catégorie
+    func canAccessQuestion(at index: Int, in category: QuestionCategory) -> Bool {
+        // Si l'utilisateur est abonné, accès illimité
+        if appState?.currentUser?.isSubscribed ?? false {
             return true
         }
         
-        // Les catégories premium nécessitent un abonnement
-        return appState?.currentUser?.isSubscribed ?? false
+        // Si c'est une catégorie premium, aucun accès
+        if category.isPremium {
+            return false
+        }
+        
+        // Pour la catégorie "En couple" gratuite, limiter à 2 packs (64 questions)
+        if category.title == "En couple" {
+            let maxFreeQuestions = freePacksLimit * questionsPerPack // 2 * 32 = 64
+            return index < maxFreeQuestions
+        }
+        
+        // Autres catégories gratuites (si elles existent)
+        return true
+    }
+    
+    /// NOUVEAU: Gère le tap sur une question avec vérification freemium
+    func handleQuestionAccess(at index: Int, in category: QuestionCategory, onSuccess: @escaping () -> Void) {
+        print("🔥🔥🔥 FREEMIUM QUESTION: Tentative accès question \(index + 1) dans \(category.title)")
+        
+        if canAccessQuestion(at: index, in: category) {
+            print("🔥🔥🔥 FREEMIUM QUESTION: Accès autorisé")
+            onSuccess()
+        } else {
+            print("🔥🔥🔥 FREEMIUM QUESTION: Accès bloqué - Affichage paywall")
+            print("🔥🔥🔥 FREEMIUM QUESTION: Limite atteinte (64 questions) pour \(category.title)")
+            
+            blockedCategoryAttempt = category
+            showingSubscription = true
+            
+            // Analytics - track blocked question
+            trackQuestionBlocked(at: index, in: category)
+        }
     }
     
     /// Gère le tap sur une catégorie avec la logique freemium
@@ -49,15 +97,23 @@ class FreemiumManager: ObservableObject {
         print("🔥🔥🔥 FREEMIUM TAP: DEBUT GESTION TAP")
         print("🔥🔥🔥 FREEMIUM TAP: - Catégorie: \(category.title)")
         print("🔥🔥🔥 FREEMIUM TAP: - isPremium: \(category.isPremium)")
+        print("🔥🔥🔥 FREEMIUM TAP: - Utilisateur abonné: \(appState?.currentUser?.isSubscribed ?? false)")
         print("🔥🔥🔥 FREEMIUM TAP: - showingSubscription AVANT: \(showingSubscription)")
         
-        if canAccessCategory(category) {
-            print("🔥 FreemiumManager: Accès autorisé à \(category.title)")
-            print("🔥🔥🔥 FREEMIUM TAP: ACCES AUTORISE - EXECUTION CALLBACK")
+        // Vérifier si l'utilisateur est abonné
+        let isSubscribed = appState?.currentUser?.isSubscribed ?? false
+        
+        // Si l'utilisateur est abonné, accès illimité
+        if isSubscribed {
+            print("🔥🔥🔥 FREEMIUM TAP: UTILISATEUR ABONNE - ACCES ILLIMITE")
             onSuccess()
-        } else {
+            return
+        }
+        
+        // Si c'est une catégorie premium et l'utilisateur n'est pas abonné
+        if category.isPremium {
+            print("🔥🔥🔥 FREEMIUM TAP: CATEGORIE PREMIUM - ACCES BLOQUE")
             print("🔥 FreemiumManager: Accès bloqué à \(category.title) - affichage subscription")
-            print("🔥🔥🔥 FREEMIUM TAP: ACCES BLOQUE - PREPARATION AFFICHAGE")
             
             blockedCategoryAttempt = category
             print("🔥🔥🔥 FREEMIUM TAP: - blockedCategoryAttempt défini: \(category.title)")
@@ -70,16 +126,18 @@ class FreemiumManager: ObservableObject {
             NotificationCenter.default.post(name: .freemiumManagerChanged, object: nil)
             print("🔥🔥🔥 FREEMIUM TAP: - NOTIFICATION ENVOYEE")
             
-            // Vérification immédiate
-            DispatchQueue.main.async {
-                print("🔥🔥🔥 FREEMIUM TAP: VERIFICATION ASYNC - showingSubscription: \(self.showingSubscription)")
-            }
-            
             // Analytics - track blocked category
             trackCategoryBlocked(category)
-            
             print("🔥🔥🔥 FREEMIUM TAP: FIN GESTION TAP BLOQUE")
+            return
         }
+        
+        // Pour les catégories gratuites (comme "En couple"), permettre l'accès
+        // La limitation se fera au niveau des questions dans QuestionListView
+        print("🔥🔥🔥 FREEMIUM TAP: CATEGORIE GRATUITE - ACCES AUTORISE")
+        print("🔥 FreemiumManager: Accès autorisé à \(category.title)")
+        print("🔥🔥🔥 FREEMIUM TAP: ACCES AUTORISE - EXECUTION CALLBACK")
+        onSuccess()
     }
     
     /// Retourne les catégories accessibles selon le statut d'abonnement
@@ -115,6 +173,28 @@ class FreemiumManager: ObservableObject {
         return isBlocked
     }
     
+    /// NOUVEAU: Vérifie si une question doit être affichée comme bloquée
+    func isQuestionBlocked(at index: Int, in category: QuestionCategory) -> Bool {
+        return !canAccessQuestion(at: index, in: category)
+    }
+    
+    /// NOUVEAU: Retourne le nombre maximum de questions gratuites pour une catégorie
+    func getMaxFreeQuestions(for category: QuestionCategory) -> Int {
+        if appState?.currentUser?.isSubscribed ?? false {
+            return Int.max // Illimité pour les abonnés
+        }
+        
+        if category.isPremium {
+            return 0 // Aucune question gratuite pour les catégories premium
+        }
+        
+        if category.title == "En couple" {
+            return freePacksLimit * questionsPerPack // 64 questions
+        }
+        
+        return Int.max // Autres catégories gratuites (si elles existent)
+    }
+    
     /// Ferme la vue de subscription
     func dismissSubscription() {
         print("🔥 FreemiumManager: Fermeture de la vue subscription")
@@ -134,12 +214,90 @@ class FreemiumManager: ObservableObject {
         print("🔥🔥🔥 FREEMIUM DISMISS: FIN FERMETURE")
     }
     
+    /// NOUVEAU: Gère l'accès au widget de distance avec la logique freemium
+    func handleDistanceWidgetAccess(onSuccess: @escaping () -> Void) {
+        print("🔒 FreemiumManager: Accès au widget de distance demandé")
+        
+        // Tous les widgets sont maintenant gratuits
+        print("✅ FreemiumManager: Accès autorisé au widget de distance (gratuit)")
+        onSuccess()
+    }
+    
+    /// NOUVEAU: Vérifie si l'utilisateur peut ajouter une nouvelle entrée journal
+    func canAddJournalEntry(currentEntriesCount: Int) -> Bool {
+        // Si l'utilisateur est abonné (direct ou hérité), pas de limite
+        if appState?.currentUser?.isSubscribed ?? false {
+            return true
+        }
+        
+        // Pour les utilisateurs gratuits, limite à 5 entrées
+        return currentEntriesCount < freeJournalEntriesLimit
+    }
+    
+    /// NOUVEAU: Gère la tentative d'ajout d'entrée journal avec la logique freemium
+    func handleJournalEntryCreation(currentEntriesCount: Int, onSuccess: @escaping () -> Void) {
+        print("📝 FreemiumManager: Tentative d'ajout d'entrée journal")
+        print("📝 FreemiumManager: Nombre d'entrées actuelles: \(currentEntriesCount)")
+        
+        // Vérifier si l'utilisateur est abonné (direct ou hérité)
+        let isSubscribed = appState?.currentUser?.isSubscribed ?? false
+        
+        if isSubscribed {
+            print("📝 FreemiumManager: Utilisateur premium - Ajout autorisé")
+            onSuccess()
+        } else if currentEntriesCount < freeJournalEntriesLimit {
+            print("📝 FreemiumManager: Utilisateur gratuit - Ajout autorisé (\(currentEntriesCount)/\(freeJournalEntriesLimit))")
+            onSuccess()
+        } else {
+            print("📝 FreemiumManager: Utilisateur gratuit - Limite atteinte (\(freeJournalEntriesLimit) entrées)")
+            print("📝 FreemiumManager: Affichage du paywall pour journal")
+            
+            // Marquer que la tentative d'accès était pour le journal
+            showingSubscription = true
+            
+            // Analytics - track blocked journal entry
+            trackJournalEntryBlocked(entriesCount: currentEntriesCount)
+        }
+    }
+    
+    /// NOUVEAU: Retourne le nombre maximum d'entrées journal gratuites
+    func getMaxFreeJournalEntries() -> Int {
+        return freeJournalEntriesLimit
+    }
+    
+    /// NOUVEAU: Retourne le nombre d'entrées restantes pour les utilisateurs gratuits
+    func getRemainingFreeJournalEntries(currentEntriesCount: Int) -> Int {
+        if appState?.currentUser?.isSubscribed ?? false {
+            return Int.max // Illimité pour les abonnés
+        }
+        
+        return max(0, freeJournalEntriesLimit - currentEntriesCount)
+    }
+    
     // MARK: - Analytics (pour le futur)
     
     private func trackCategoryBlocked(_ category: QuestionCategory) {
         print("🔥 FreemiumManager: Analytics - Catégorie bloquée: \(category.title)")
         // Ici vous pourrez ajouter Firebase Analytics, Mixpanel, etc.
         // Analytics.track("category_blocked", properties: ["category": category.title])
+    }
+    
+    /// NOUVEAU: Analytics pour les questions bloquées
+    private func trackQuestionBlocked(at index: Int, in category: QuestionCategory) {
+        print("🔥 FreemiumManager: Analytics - Question bloquée: \(index + 1) dans \(category.title)")
+        // Analytics.track("question_blocked", properties: ["category": category.title, "questionIndex": index])
+    }
+    
+    /// NOUVEAU: Analytics pour le widget de distance bloqué
+    private func trackDistanceWidgetBlocked() {
+        print("🔒 FreemiumManager: Analytics - Widget de distance bloqué")
+        // Analytics.track("distance_widget_blocked", properties: ["feature": "distance_widget"])
+    }
+    
+    /// NOUVEAU: Analytics pour les entrées journal bloquées
+    private func trackJournalEntryBlocked(entriesCount: Int) {
+        print("📝 FreemiumManager: Analytics - Entrée journal bloquée à \(entriesCount) entrées")
+        // Analytics.track("journal_entry_blocked", properties: ["entries_count": entriesCount, "limit": freeJournalEntriesLimit])
     }
     
     func trackUpgradePromptShown() {

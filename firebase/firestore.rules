@@ -1,0 +1,53 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Seuls les utilisateurs authentifiés peuvent accéder à leurs propres données
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Règles pour les codes partenaires
+    match /partnerCodes/{codeId} {
+      // Permettre la lecture pour vérifier l'existence et la validité d'un code
+      allow read: if request.auth != null;
+      
+      // Permettre la création seulement par le propriétaire du code
+      allow create: if request.auth != null && 
+                   request.auth.uid == request.resource.data.userId;
+      
+      // Permettre la mise à jour dans ces cas :
+      // 1. Le propriétaire du code peut toujours modifier son code
+      // 2. Un utilisateur peut se connecter à un code libre (connectedPartnerId == null)
+      // 3. Le partenaire connecté peut modifier certains champs
+      allow update: if request.auth != null && 
+                   (
+                     // Cas 1: Propriétaire du code
+                     request.auth.uid == resource.data.userId ||
+                     
+                     // Cas 2: Connexion à un code libre
+                     (resource.data.connectedPartnerId == null && 
+                      request.resource.data.connectedPartnerId == request.auth.uid) ||
+                     
+                     // Cas 3: Partenaire déjà connecté modifie ses données
+                     (request.auth.uid == resource.data.connectedPartnerId)
+                   );
+      
+      // Permettre la suppression seulement par le propriétaire
+      allow delete: if request.auth != null && 
+                   request.auth.uid == resource.data.userId;
+    }
+    
+    // Règles pour les logs de partage d'abonnement (conformité Apple)
+    match /subscription_sharing_logs/{logId} {
+      // Permettre la création pour tous les utilisateurs authentifiés (pour les logs)
+      allow create: if request.auth != null;
+      // Lecture seulement pour les administrateurs (pas implémenté ici)
+      allow read: if false;
+    }
+    
+    // Interdire tout autre accès
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+} 

@@ -18,7 +18,7 @@ struct ProgressBar: View {
                 }) {
                     Image(systemName: "chevron.left")
                         .font(.system(size: 20))
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                 }
             } else {
                 Spacer()
@@ -27,9 +27,9 @@ struct ProgressBar: View {
             
             Spacer()
             
-            // Barre de progression en blanc
+            // Barre de progression avec la couleur principale rose
             ProgressView(value: progress)
-                .progressViewStyle(LinearProgressViewStyle(tint: .white))
+                .progressViewStyle(LinearProgressViewStyle(tint: Color(hex: "#FD267A")))
                 .frame(width: 200)
                 .scaleEffect(y: 2)
             
@@ -39,6 +39,5 @@ struct ProgressBar: View {
             Spacer()
                 .frame(width: 30)
         }
-
     }
 } 

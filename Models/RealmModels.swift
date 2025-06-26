@@ -296,4 +296,20 @@ extension URL {
             return 0
         }
     }
+}
+
+class RealmUser: Object, Identifiable {
+    @Persisted var id: String = UUID().uuidString
+    @Persisted var name: String = ""
+    @Persisted var birthDate: Date = Date()
+    @Persisted var selectedGoals: List<String> = List<String>()
+    @Persisted var relationshipDuration: String = ""
+    @Persisted var relationshipImprovement: String = ""
+    @Persisted var questionMode: String = ""
+    @Persisted var isSubscribed: Bool = false
+    @Persisted var partnerCode: String?
+    @Persisted var partnerId: String?
+    @Persisted var partnerConnectedAt: Date?
+    @Persisted var subscriptionInheritedFrom: String?
+    @Persisted var subscriptionInheritedAt: Date?
 } 

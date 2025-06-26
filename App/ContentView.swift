@@ -30,7 +30,7 @@ struct ContentView: View {
                         }
                 } else {
                     // Utilisateur authentifié avec onboarding terminé -> Application principale
-                    MainView()
+                    TabContainerView()
                 }
             }
             .preferredColorScheme(.light)

@@ -1,10 +1,11 @@
 import Foundation
 import Combine
+import FirebaseAuth
 
 class AppState: ObservableObject {
     @Published var isOnboardingCompleted: Bool = false
     @Published var isAuthenticated: Bool = false
-    @Published var currentUser: User?
+    @Published var currentUser: AppUser?
     @Published var currentOnboardingStep: Int = 0
     @Published var isLoading: Bool = true
     
@@ -17,6 +18,30 @@ class AppState: ObservableObject {
     
     // MARK: - Favorites Service
     @Published var favoritesService: FavoritesService?
+    
+    // MARK: - Category Progress Service
+    @Published var categoryProgressService: CategoryProgressService?
+    
+    // MARK: - Partner Connection Notification Service
+    @Published var partnerConnectionService: PartnerConnectionNotificationService?
+    
+    // MARK: - Partner Subscription Notification Service
+    @Published var partnerSubscriptionService: PartnerSubscriptionNotificationService?
+    
+    // MARK: - Partner Subscription Sync Service
+    @Published var partnerSubscriptionSyncService: PartnerSubscriptionSyncService?
+    
+    // MARK: - Partner Location Service
+    @Published var partnerLocationService: PartnerLocationService?
+    
+    // NOUVEAU: Journal Service
+    @Published var journalService: JournalService?
+    
+    // NOUVEAU: Widget Service (global pour toute l'app)
+    @Published var widgetService: WidgetService?
+    
+    // NOUVEAU: Location Service (pour sauvegarder automatiquement la localisation)
+    @Published var locationService: LocationService?
     
     // Flag pour savoir si l'utilisateur est en cours d'onboarding
     @Published var isOnboardingInProgress: Bool = false
@@ -40,8 +65,41 @@ class AppState: ObservableObject {
         self.favoritesService = FavoritesService()
         print("🔥 AppState: FavoritesService initialisé")
         
-        // NOUVEAU: Délai minimum pour l'écran de chargement (2.5 secondes)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+        // Initialiser le CategoryProgressService
+        self.categoryProgressService = CategoryProgressService.shared
+        print("🔥 AppState: CategoryProgressService initialisé")
+        
+        // Initialiser le PartnerConnectionNotificationService
+        self.partnerConnectionService = PartnerConnectionNotificationService.shared
+        print("🔥 AppState: PartnerConnectionNotificationService initialisé")
+        
+        // Initialiser le PartnerSubscriptionNotificationService
+        self.partnerSubscriptionService = PartnerSubscriptionNotificationService.shared
+        print("🔥 AppState: PartnerSubscriptionNotificationService initialisé")
+        
+        // Initialiser le PartnerSubscriptionSyncService
+        self.partnerSubscriptionSyncService = PartnerSubscriptionSyncService.shared
+        print("🔥 AppState: PartnerSubscriptionSyncService initialisé")
+        
+        // Initialiser le PartnerLocationService
+        self.partnerLocationService = PartnerLocationService.shared
+        print("🔥 AppState: PartnerLocationService initialisé")
+        
+        // NOUVEAU: Initialiser et configurer le JournalService
+        self.journalService = JournalService.shared
+        self.journalService?.configure(with: self)
+        print("🔥 AppState: JournalService initialisé et configuré")
+        
+        // NOUVEAU: Initialiser le WidgetService
+        self.widgetService = WidgetService()
+        print("🔥 AppState: WidgetService initialisé")
+        
+        // NOUVEAU: Initialiser le LocationService
+        self.locationService = LocationService.shared
+        print("🔥 AppState: LocationService initialisé")
+        
+        // NOUVEAU: Délai minimum pour l'écran de chargement (1.0 seconde)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             print("AppState: Délai minimum écoulé")
             self.hasMinimumLoadingTimeElapsed = true
             self.checkIfLoadingComplete()
@@ -61,7 +119,7 @@ class AppState: ObservableObject {
         
         firebaseService.$currentUser
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] user in
+            .sink { [weak self] (user: AppUser?) in
                 print("AppState: User changé: \(user?.name ?? "nil")")
                 self?.currentUser = user
                 
@@ -95,6 +153,13 @@ class AppState: ObservableObject {
                                 favoritesService.setCurrentUser(user.id)
                             }
                         }
+                        
+                        // Configurer le PartnerLocationService si un partenaire est connecté
+                        // NOTE: Ce sera géré par l'observer firebaseService.$currentUser plus bas
+                        
+                        // NOUVEAU: Forcer le rafraîchissement des images de profil pour les widgets
+                        self?.widgetService?.forceRefreshProfileImages()
+                        print("🔄 AppState: Rafraîchissement des images de profil pour widgets")
                     } else if user.onboardingInProgress {
                         print("AppState: Onboarding en cours")
                         self?.isOnboardingInProgress = true
@@ -115,6 +180,39 @@ class AppState: ObservableObject {
                         self?.isOnboardingInProgress = false
                     }
                 }
+                
+                // NOUVEAU: Vérifier les messages de connexion en attente
+                Task {
+                    await PartnerCodeService.shared.checkForPendingConnectionMessage()
+                }
+            }
+            .store(in: &cancellables)
+        
+        // Observer les changements d'utilisateur pour redémarrer les services partenaires
+        firebaseService.$currentUser
+            .sink { [weak self] user in
+                if let user = user, let partnerId = user.partnerId {
+                    print("🔄 AppState: Utilisateur reconnecté - Redémarrage des services partenaires")
+                    self?.partnerLocationService?.configureListener(for: partnerId)
+                } else {
+                    print("🔄 AppState: Pas de partenaire connecté - Arrêt des services")
+                    self?.partnerLocationService?.configureListener(for: nil)
+                }
+            }
+            .store(in: &cancellables)
+        
+        // NOUVEAU: Observer les changements de connexion partenaire pour rafraîchir les données
+        NotificationCenter.default.publisher(for: .partnerConnected)
+            .sink { [weak self] _ in
+                print("📱 AppState: Partenaire connecté - Rechargement données utilisateur")
+                self?.refreshCurrentUserData()
+            }
+            .store(in: &cancellables)
+        
+        NotificationCenter.default.publisher(for: .partnerDisconnected)
+            .sink { [weak self] _ in
+                print("📱 AppState: Partenaire déconnecté - Rechargement données utilisateur")
+                self?.refreshCurrentUserData()
             }
             .store(in: &cancellables)
     }
@@ -153,7 +251,7 @@ class AppState: ObservableObject {
         isOnboardingInProgress = true
     }
     
-    func authenticate(with user: User) {
+    func authenticate(with user: AppUser) {
         print("AppState: Authentification: \(user.name)")
         self.currentUser = user
         self.isAuthenticated = true
@@ -171,7 +269,7 @@ class AppState: ObservableObject {
         currentOnboardingStep = 0
     }
     
-    func updateUser(_ user: User) {
+    func updateUser(_ user: AppUser) {
         self.currentUser = user
         
         // Sauvegarder dans Firebase
@@ -185,7 +283,7 @@ class AppState: ObservableObject {
         forceOnboarding = false // NOUVEAU: Réinitialiser le flag
         hasUserStartedOnboarding = false
         currentOnboardingStep = 0
-        currentUser = nil
+        currentUser = nil as AppUser?
     }
     
     func deleteAccount() {
@@ -197,8 +295,19 @@ class AppState: ObservableObject {
         forceOnboarding = false // NOUVEAU: Réinitialiser le flag
         hasUserStartedOnboarding = false
         currentOnboardingStep = 0
-        currentUser = nil
+        currentUser = nil as AppUser?
         isLoading = false
+    }
+    
+    // NOUVEAU: Méthode pour rafraîchir les données utilisateur après changement de connexion partenaire
+    private func refreshCurrentUserData() {
+        guard let firebaseUser = Auth.auth().currentUser else {
+            print("❌ AppState: Impossible de rafraîchir - pas d'utilisateur Firebase connecté")
+            return
+        }
+        
+        print("🔄 AppState: Rafraîchissement des données utilisateur: \(firebaseUser.uid)")
+        firebaseService.loadUserData(uid: firebaseUser.uid)
     }
     
     func nextOnboardingStep() {

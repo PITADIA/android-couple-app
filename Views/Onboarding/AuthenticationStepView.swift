@@ -10,43 +10,49 @@ struct AuthenticationStepView: View {
     @StateObject private var authService = AuthenticationService.shared
     
     var body: some View {
-        VStack(spacing: 0) {
-            // Espace entre la barre de progression et le titre
-            Spacer()
-                .frame(height: 60)
+        ZStack {
+            // Fond gris clair identique aux autres pages d'onboarding
+            Color(red: 0.97, green: 0.97, blue: 0.98)
+                .ignoresSafeArea()
             
-            // Contenu en haut
-            VStack(spacing: 40) {
-                // Titre
-                Text("Crée ton compte et sécurise tes données")
-                    .font(.system(size: 36, weight: .bold))
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 30)
-            }
-            
-            Spacer()
-            
-            // Bouton Sign in with Apple collé en bas
-            Button(action: {
-                print("🔥 AuthenticationStepView: Déclenchement de l'authentification Apple via AuthenticationService")
-                NSLog("🔥🔥🔥 APPLE SIGN IN: DECLENCHEMENT VIA AUTH SERVICE")
-                authService.signInWithApple()
-            }) {
-                HStack {
-                    Image(systemName: "applelogo")
-                        .font(.system(size: 20, weight: .medium))
-                    Text("Continuer avec Apple")
-                        .font(.system(size: 18, weight: .semibold))
+            VStack(spacing: 0) {
+                // Espace entre la barre de progression et le titre
+                Spacer()
+                    .frame(height: 20)
+                
+                // Contenu en haut
+                VStack(spacing: 40) {
+                    // Titre
+                    Text("Crée ton compte et sécurise tes données")
+                        .font(.system(size: 36, weight: .bold))
+                        .foregroundColor(.black)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 30)
                 }
-                .foregroundColor(.black)
-                .frame(maxWidth: .infinity)
-                .frame(height: 56)
-                .background(Color.white)
-                .cornerRadius(28)
+                
+                Spacer()
+                
+                // Bouton Sign in with Apple collé en bas
+                Button(action: {
+                    print("🔥 AuthenticationStepView: Déclenchement de l'authentification Apple via AuthenticationService")
+                    NSLog("🔥🔥🔥 APPLE SIGN IN: DECLENCHEMENT VIA AUTH SERVICE")
+                    authService.signInWithApple()
+                }) {
+                    HStack {
+                        Image(systemName: "applelogo")
+                            .font(.system(size: 20, weight: .medium))
+                        Text("Continuer avec Apple")
+                            .font(.system(size: 18, weight: .semibold))
+                    }
+                    .foregroundColor(.black)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 56)
+                    .background(Color.white)
+                    .cornerRadius(28)
+                }
+                .padding(.horizontal, 30)
+                .padding(.bottom, 50)
             }
-            .padding(.horizontal, 30)
-            .padding(.bottom, 50)
         }
         .onAppear {
             print("🔥 AuthenticationStepView: Vue d'authentification apparue")
@@ -124,16 +130,19 @@ struct AuthenticationStepView: View {
         print("🔥🔥🔥 AUTH PARTIAL: AppState.isOnboardingInProgress = true")
         
         // Créer un utilisateur avec les données d'onboarding collectées
-        let partialUser = User(
+        let partialUser = AppUser(
             name: viewModel.userName,
             birthDate: viewModel.birthDate,
             relationshipGoals: viewModel.selectedGoals,
             relationshipDuration: viewModel.relationshipDuration,
-            relationshipImprovement: viewModel.relationshipImprovement.isEmpty ? nil : viewModel.relationshipImprovement,
+            relationshipImprovement: viewModel.selectedImprovements.joined(separator: ", ").isEmpty ? nil : viewModel.selectedImprovements.joined(separator: ", "),
             questionMode: viewModel.questionMode.isEmpty ? nil : viewModel.questionMode,
             partnerCode: nil,
             isSubscribed: false, // Sera mis à jour après l'abonnement
-            onboardingInProgress: true // IMPORTANT: Marquer l'onboarding comme en cours
+            onboardingInProgress: true, // IMPORTANT: Marquer l'onboarding comme en cours
+            relationshipStartDate: viewModel.relationshipStartDate,
+            profileImageURL: nil, // L'image sera uploadée plus tard
+            currentLocation: viewModel.currentLocation
         )
         
         print("🔥 AuthenticationStepView: Sauvegarde des données partielles pour: \(partialUser.name)")

@@ -15,12 +15,19 @@ struct CategoryCardView: View {
             // Utiliser le FreemiumManager pour gérer le tap
             if let freemiumManager = appState.freemiumManager {
                 print("🔥🔥🔥 CATEGORY TAP: APPEL handleCategoryTap")
+                print("🔥🔥🔥 CATEGORY TAP: FreemiumManager trouvé: \(freemiumManager)")
+                print("🔥🔥🔥 CATEGORY TAP: Avant appel handleCategoryTap")
+                
                 freemiumManager.handleCategoryTap(category) {
                     print("🔥🔥🔥 CATEGORY TAP: CALLBACK EXECUTE - ACCES AUTORISE")
                     action()
                 }
+                
+                print("🔥🔥🔥 CATEGORY TAP: Après appel handleCategoryTap")
             } else {
                 print("🔥🔥🔥 CATEGORY TAP: FREEMIUM MANAGER MANQUANT - FALLBACK")
+                print("🔥🔥🔥 CATEGORY TAP: appState: \(appState)")
+                print("🔥🔥🔥 CATEGORY TAP: appState.freemiumManager: \(appState.freemiumManager)")
                 // Fallback si FreemiumManager n'est pas disponible
                 action()
             }
@@ -37,7 +44,7 @@ struct CategoryCardView: View {
                 VStack(spacing: 10) {
                     // Emoji en haut
                     Text(category.emoji)
-                        .font(.system(size: 28))
+                        .font(.system(size: 40))
                     
                     // Titre
                     Text(category.title)
@@ -47,77 +54,32 @@ struct CategoryCardView: View {
                         .lineLimit(nil)
                         .fixedSize(horizontal: false, vertical: true)
                     
-                    // Sous-titre
-                    Text(category.subtitle)
-                        .font(.system(size: 12))
-                        .foregroundColor(.gray)
-                        .multilineTextAlignment(.center)
-                        .lineLimit(nil)
-                        .fixedSize(horizontal: false, vertical: true)
-                        .lineSpacing(2)
-                }
-                .padding(.horizontal, 12)
-                .padding(.vertical, 16)
-                
-                // Overlay de blocage pour les catégories premium non accessibles
-                if let freemiumManager = appState.freemiumManager,
-                   category.isPremium && !(appState.currentUser?.isSubscribed ?? false) {
-                    ZStack {
-                        // Fond semi-transparent
-                        RoundedRectangle(cornerRadius: 20)
-                            .fill(Color.black.opacity(0.75))
-                        
-                        VStack(spacing: 8) {
-                            // Icône de cadenas
-                            Image(systemName: "lock.fill")
-                                .font(.system(size: 24))
-                                .foregroundColor(.yellow)
-                            
-                            // Texte "Premium"
-                            Text("Premium")
-                                .font(.system(size: 14, weight: .bold))
-                                .foregroundColor(.yellow)
-                            
-                            // Texte "Débloquer"
-                            Text("Toucher pour débloquer")
-                                .font(.system(size: 10))
-                                .foregroundColor(.white.opacity(0.8))
+                    // Sous-titre avec cadenas si premium
+                    VStack(spacing: 4) {
+                        HStack(spacing: 4) {
+                            Text(category.subtitle)
+                                .font(.system(size: 12))
+                                .foregroundColor(.gray)
                                 .multilineTextAlignment(.center)
+                                .lineLimit(nil)
+                                .fixedSize(horizontal: false, vertical: true)
+                                .lineSpacing(2)
+                            
+                            // Cadenas pour les catégories premium - emoji traditionnel
+                            if let freemiumManager = appState.freemiumManager,
+                               category.isPremium && !(appState.currentUser?.isSubscribed ?? false) {
+                                Text("🔒")
+                                    .font(.system(size: 12))
+                            }
                         }
                     }
                 }
+                .padding(.horizontal, 12)
+                .padding(.vertical, 16)
             }
         }
         .buttonStyle(PlainButtonStyle())
         .scaleEffect(1.0)
-    }
-}
-
-// Extension pour convertir les couleurs hex en Color
-extension Color {
-    init(hex: String) {
-        let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
-        var int: UInt64 = 0
-        Scanner(string: hex).scanHexInt64(&int)
-        let a, r, g, b: UInt64
-        switch hex.count {
-        case 3: // RGB (12-bit)
-            (a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
-        case 6: // RGB (24-bit)
-            (a, r, g, b) = (255, int >> 16, int >> 8 & 0xFF, int & 0xFF)
-        case 8: // ARGB (32-bit)
-            (a, r, g, b) = (int >> 24, int >> 16 & 0xFF, int >> 8 & 0xFF, int & 0xFF)
-        default:
-            (a, r, g, b) = (1, 1, 1, 0)
-        }
-
-        self.init(
-            .sRGB,
-            red: Double(r) / 255,
-            green: Double(g) / 255,
-            blue:  Double(b) / 255,
-            opacity: Double(a) / 255
-        )
     }
 }
 

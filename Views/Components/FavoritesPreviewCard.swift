@@ -15,7 +15,7 @@ struct FavoritesPreviewCard: View {
                     
                     Text("Mes Favoris")
                         .font(.system(size: 16, weight: .semibold))
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                 }
                 
                 Spacer()
@@ -35,7 +35,7 @@ struct FavoritesPreviewCard: View {
                     
                     Text("Aucun favori pour le moment")
                         .font(.system(size: 14))
-                        .foregroundColor(.white.opacity(0.7))
+                        .foregroundColor(.black.opacity(0.7))
                         .multilineTextAlignment(.center)
                 }
                 .frame(maxWidth: .infinity)
@@ -49,7 +49,7 @@ struct FavoritesPreviewCard: View {
                             
                             Text(favorite.questionText)
                                 .font(.system(size: 12))
-                                .foregroundColor(.white.opacity(0.9))
+                                .foregroundColor(.black.opacity(0.9))
                                 .lineLimit(2)
                             
                             Spacer()
@@ -59,7 +59,7 @@ struct FavoritesPreviewCard: View {
                     if favoritesService.getFavoritesCount() > 3 {
                         Text("et \(favoritesService.getFavoritesCount() - 3) autres...")
                             .font(.system(size: 11))
-                            .foregroundColor(.white.opacity(0.6))
+                            .foregroundColor(.black.opacity(0.6))
                             .frame(maxWidth: .infinity, alignment: .leading)
                     }
                 }
@@ -68,10 +68,10 @@ struct FavoritesPreviewCard: View {
         .padding(16)
         .background(
             RoundedRectangle(cornerRadius: 12)
-                .fill(Color.white.opacity(0.1))
+                .fill(Color.white.opacity(0.8))
                 .overlay(
                     RoundedRectangle(cornerRadius: 12)
-                        .stroke(Color.white.opacity(0.2), lineWidth: 1)
+                        .stroke(Color.black.opacity(0.1), lineWidth: 1)
                 )
         )
     }

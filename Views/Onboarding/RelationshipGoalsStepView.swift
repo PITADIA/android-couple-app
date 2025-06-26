@@ -5,67 +5,82 @@ struct RelationshipGoalsStepView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            // Espace entre la barre de progression et le titre
+            // Espace entre barre de progression et titre (harmonisé)
             Spacer()
-                .frame(height: 60)
+                .frame(height: 40)
             
-            // Contenu en haut
-            VStack(spacing: 40) {
-                // Titre
-                Text("Que veux-tu de plus dans ta relation ?")
+            // Titre centré à gauche
+            HStack {
+                Text("Quels sont vos objectifs de couple ?")
                     .font(.system(size: 36, weight: .bold))
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 30)
-                
-                // Options de sélection
-                VStack(spacing: 15) {
+                    .foregroundColor(.black)
+                    .multilineTextAlignment(.leading)
+                Spacer()
+            }
+            .padding(.horizontal, 30)
+            
+            // Premier Spacer pour centrer le contenu
+            Spacer()
+            
+            // Contenu principal centré
+            VStack(spacing: 30) {
+                // Options sur cartes blanches
+                VStack(spacing: 12) {
                     ForEach(viewModel.relationshipGoals, id: \.self) { goal in
                         Button(action: {
-                            viewModel.toggleGoal(goal)
-                        }) {
-                            HStack {
-                                Text(goal)
-                                    .font(.system(size: 16))
-                                    .foregroundColor(.white)
-                                    .multilineTextAlignment(.leading)
-                                
-                                Spacer()
+                            if viewModel.selectedGoals.contains(goal) {
+                                viewModel.selectedGoals.removeAll { $0 == goal }
+                            } else {
+                                viewModel.selectedGoals.append(goal)
                             }
-                            .padding(.horizontal, 20)
-                            .padding(.vertical, 16)
-                            .background(
-                                RoundedRectangle(cornerRadius: 12)
-                                    .fill(viewModel.selectedGoals.contains(goal) ? Color.white.opacity(0.3) : Color.white.opacity(0.1))
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 12)
-                                            .stroke(Color.white.opacity(0.3), lineWidth: 1)
-                                    )
-                            )
+                        }) {
+                            Text(goal)
+                                .font(.system(size: 16))
+                                .foregroundColor(viewModel.selectedGoals.contains(goal) ? .white : .black)
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 16)
+                                .padding(.horizontal, 20)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .fill(viewModel.selectedGoals.contains(goal) ? Color(hex: "#FD267A") : Color.white)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 12)
+                                                .stroke(
+                                                    viewModel.selectedGoals.contains(goal) ? Color(hex: "#FD267A") : Color.black.opacity(0.1),
+                                                    lineWidth: viewModel.selectedGoals.contains(goal) ? 2 : 1
+                                                )
+                                        )
+                                        .shadow(color: Color.black.opacity(0.05), radius: 8, x: 0, y: 4)
+                                )
                         }
+                        .buttonStyle(PlainButtonStyle())
                     }
                 }
                 .padding(.horizontal, 30)
             }
             
+            // Deuxième Spacer pour pousser la zone bouton vers le bas
             Spacer()
-            
-            // Bouton Continuer collé en bas
-            Button(action: {
-                viewModel.nextStep()
-            }) {
-                Text("Continuer")
-                    .font(.system(size: 18, weight: .semibold))
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 56)
-                    .background(Color(hex: "#FD267A"))
-                    .cornerRadius(28)
-                    .opacity(viewModel.selectedGoals.isEmpty ? 0.5 : 1.0)
+                
+            // Zone blanche collée en bas
+            VStack(spacing: 0) {
+                Button(action: {
+                    viewModel.nextStep()
+                }) {
+                    Text("Continuer")
+                        .font(.system(size: 18, weight: .semibold))
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 56)
+                        .background(Color(hex: "#FD267A"))
+                        .cornerRadius(28)
+                        .opacity(viewModel.selectedGoals.isEmpty ? 0.5 : 1.0)
+                }
+                .disabled(viewModel.selectedGoals.isEmpty)
+                .padding(.horizontal, 30)
             }
-            .disabled(viewModel.selectedGoals.isEmpty)
-            .padding(.horizontal, 30)
-            .padding(.bottom, 50)
+            .padding(.vertical, 30)
+            .background(Color.white)
         }
     }
 } 

@@ -1,22 +1,31 @@
 import Foundation
 import FirebaseAuth
 import FirebaseFirestore
+import FirebaseStorage
+import FirebaseFunctions
 import AuthenticationServices
 import Combine
+import UIKit
+import CoreLocation
 
 class FirebaseService: NSObject, ObservableObject {
     static let shared = FirebaseService()
     
+    // Published properties
     @Published var isAuthenticated = false
-    @Published var currentUser: User?
-    @Published var isLoading = false
+    @Published var currentUser: AppUser?
+    @Published var isLoading = true
     @Published var errorMessage: String?
     
+    // Private properties
     private let db = Firestore.firestore()
     private var cancellables = Set<AnyCancellable>()
     
     // NOUVEAU: Flag pour éviter les redirections automatiques pendant l'onboarding
     private var isOnboardingInProgress = false
+    
+    private var authListener: AuthStateDidChangeListenerHandle?
+    private var subscriptionListener: ListenerRegistration?
     
     override init() {
         super.init()
@@ -61,6 +70,97 @@ class FirebaseService: NSObject, ObservableObject {
     func completeOnboardingProcess() {
         print("🔥🔥🔥 FIREBASE: FIN PROCESSUS ONBOARDING - AUTORISATION REDIRECTIONS")
         isOnboardingInProgress = false
+    }
+    
+    // 🔧 NOUVELLE MÉTHODE: Finalisation onboarding avec préservation données partenaire
+    func finalizeOnboardingWithPartnerData(
+        name: String,
+        relationshipGoals: [String],
+        relationshipDuration: AppUser.RelationshipDuration,
+        relationshipImprovement: String?,
+        questionMode: String?,
+        isSubscribed: Bool,
+        relationshipStartDate: Date?,
+        profileImage: UIImage?,
+        currentLocation: UserLocation?,
+        completion: @escaping (Bool, AppUser?) -> Void
+    ) {
+        print("🔥 FirebaseService: Finalisation onboarding avec préservation données partenaire")
+        
+        guard let firebaseUser = Auth.auth().currentUser else {
+            print("❌ FirebaseService: Aucun utilisateur Firebase connecté")
+            completion(false, nil)
+            return
+        }
+        
+        let uid = firebaseUser.uid
+        print("🔥 FirebaseService: Récupération données existantes pour UID: \(uid)")
+        
+        // Récupérer les données existantes pour préserver les infos partenaire
+        db.collection("users").document(uid).getDocument { [weak self] document, error in
+            guard let self = self else { return }
+            
+            if let error = error {
+                print("❌ FirebaseService: Erreur récupération données: \(error.localizedDescription)")
+                completion(false, nil)
+                return
+            }
+            
+            // Données existantes (peuvent être vides pour un nouvel utilisateur)
+            let existingData = document?.data() ?? [:]
+            print("🔥 FirebaseService: Données existantes récupérées: \(existingData.keys)")
+            
+            // Traiter l'upload de l'image de profil si présente
+            var profileImageURL: String?
+            let group = DispatchGroup()
+            
+            if let profileImage = profileImage {
+                group.enter()
+                self.uploadProfileImage(profileImage) { imageURL in
+                    profileImageURL = imageURL
+                    group.leave()
+                }
+            }
+            
+            group.notify(queue: .main) {
+                // Créer l'utilisateur final en fusionnant les données
+                let finalUser = AppUser(
+                    id: existingData["id"] as? String ?? UUID().uuidString,
+                    name: name,
+                    birthDate: (existingData["birthDate"] as? Timestamp)?.dateValue() ?? Date(),
+                    relationshipGoals: relationshipGoals,
+                    relationshipDuration: relationshipDuration,
+                    relationshipImprovement: relationshipImprovement,
+                    questionMode: questionMode,
+                    // 🔧 PRÉSERVATION: Garder les données de connexion partenaire existantes
+                    partnerCode: existingData["partnerCode"] as? String,
+                    partnerId: existingData["partnerId"] as? String,
+                    partnerConnectedAt: (existingData["partnerConnectedAt"] as? Timestamp)?.dateValue(),
+                    subscriptionInheritedFrom: existingData["subscriptionSharedFrom"] as? String,  // 🔧 CORRECTION: Utiliser le bon nom de champ
+                    subscriptionInheritedAt: (existingData["subscriptionInheritedAt"] as? Timestamp)?.dateValue(),
+                    connectedPartnerCode: existingData["connectedPartnerCode"] as? String,
+                    connectedPartnerId: existingData["connectedPartnerId"] as? String,
+                    connectedAt: (existingData["connectedAt"] as? Timestamp)?.dateValue(),
+                    isSubscribed: isSubscribed,
+                    onboardingInProgress: false,
+                    relationshipStartDate: relationshipStartDate ?? (existingData["relationshipStartDate"] as? Timestamp)?.dateValue(),
+                    profileImageURL: profileImageURL ?? existingData["profileImageURL"] as? String,
+                    currentLocation: currentLocation ?? self.parseUserLocation(from: existingData["currentLocation"] as? [String: Any])
+                )
+                
+                print("🔥🔥🔥 FIREBASE FINALIZE: Utilisateur final créé avec:")
+                print("🔥🔥🔥 FIREBASE FINALIZE: - Nom: \(finalUser.name)")
+                print("🔥🔥🔥 FIREBASE FINALIZE: - Partner ID: \(finalUser.partnerId ?? "none")")
+                print("🔥🔥🔥 FIREBASE FINALIZE: - Connected Partner ID: \(finalUser.connectedPartnerId ?? "none")")
+                print("🔥🔥🔥 FIREBASE FINALIZE: - Abonné: \(finalUser.isSubscribed)")
+                
+                // Sauvegarder l'utilisateur final
+                self.saveUserData(finalUser)
+                
+                // Retourner l'utilisateur créé
+                completion(true, finalUser)
+            }
+        }
     }
     
     // MARK: - Sign in with Apple (UNIQUEMENT)
@@ -124,7 +224,7 @@ class FirebaseService: NSObject, ObservableObject {
     
     // MARK: - User Data Management
     
-    func savePartialUserData(_ user: User) {
+    func savePartialUserData(_ user: AppUser) {
         print("🔥🔥🔥 FIREBASE PARTIAL: SAUVEGARDE PARTIELLE PENDANT ONBOARDING")
         print("🔥🔥🔥 FIREBASE PARTIAL: - Utilisateur: \(user.name)")
         
@@ -141,20 +241,51 @@ class FirebaseService: NSObject, ObservableObject {
             return
         }
         
-        let userData: [String: Any] = [
+        var userData: [String: Any] = [
             "id": user.id,
             "name": user.name,
             "birthDate": Timestamp(date: user.birthDate),
             "relationshipGoals": user.relationshipGoals,
             "relationshipDuration": user.relationshipDuration.rawValue,
             "partnerCode": user.partnerCode ?? "",
+            "partnerId": user.partnerId ?? "",
+            "partnerConnectedAt": user.partnerConnectedAt != nil ? Timestamp(date: user.partnerConnectedAt!) : nil as Timestamp?,
+            "subscriptionInheritedFrom": user.subscriptionInheritedFrom ?? "",
+            "subscriptionInheritedAt": user.subscriptionInheritedAt != nil ? Timestamp(date: user.subscriptionInheritedAt!) : nil as Timestamp?,
+            "connectedPartnerCode": user.connectedPartnerCode ?? "",
+            "connectedPartnerId": user.connectedPartnerId ?? "",
+            "connectedAt": user.connectedAt != nil ? Timestamp(date: user.connectedAt!) : nil as Timestamp?,
             "isSubscribed": user.isSubscribed,
             "appleUserID": firebaseUser.uid,
             "lastLoginDate": Timestamp(date: Date()),
             "createdAt": Timestamp(date: Date()),
             "updatedAt": Timestamp(date: Date()),
-            "onboardingInProgress": true  // IMPORTANT: Marquer l'onboarding comme en cours
+            "onboardingInProgress": true,  // IMPORTANT: Marquer l'onboarding comme en cours
+            "relationshipImprovement": user.relationshipImprovement ?? "",
+            "questionMode": user.questionMode ?? ""
         ]
+        
+        // Ajouter la date de début de relation si présente
+        if let relationshipStartDate = user.relationshipStartDate {
+            userData["relationshipStartDate"] = Timestamp(date: relationshipStartDate)
+        }
+        
+        // Ajouter l'URL de photo de profil si présente
+        if let profileImageURL = user.profileImageURL {
+            userData["profileImageURL"] = profileImageURL
+        }
+        
+        // Ajouter la localisation actuelle si présente
+        if let currentLocation = user.currentLocation {
+            userData["currentLocation"] = [
+                "latitude": currentLocation.latitude,
+                "longitude": currentLocation.longitude,
+                "address": currentLocation.address as Any,
+                "city": currentLocation.city as Any,
+                "country": currentLocation.country as Any,
+                "lastUpdated": Timestamp(date: currentLocation.lastUpdated)
+            ]
+        }
         
         print("🔥🔥🔥 FIREBASE PARTIAL: DONNEES PARTIELLES A SAUVEGARDER:")
         print("🔥🔥🔥 FIREBASE PARTIAL: - onboardingInProgress: true (en cours)")
@@ -174,7 +305,7 @@ class FirebaseService: NSObject, ObservableObject {
         }
     }
     
-    func saveUserData(_ user: User) {
+    func saveUserData(_ user: AppUser) {
         print("🔥 FirebaseService: Tentative de sauvegarde des données utilisateur")
         print("🔥 FirebaseService: Nom: \(user.name)")
         
@@ -198,20 +329,51 @@ class FirebaseService: NSObject, ObservableObject {
         print("🔥🔥🔥 FIREBASE SAVE: - Abonné: \(user.isSubscribed)")
         isLoading = true
         
-        let userData: [String: Any] = [
+        var userData: [String: Any] = [
             "id": user.id,
             "name": user.name,
             "birthDate": Timestamp(date: user.birthDate),
             "relationshipGoals": user.relationshipGoals,
             "relationshipDuration": user.relationshipDuration.rawValue,
             "partnerCode": user.partnerCode ?? "",
+            "partnerId": user.partnerId ?? "",
+            "partnerConnectedAt": user.partnerConnectedAt != nil ? Timestamp(date: user.partnerConnectedAt!) : nil as Timestamp?,
+            "subscriptionInheritedFrom": user.subscriptionInheritedFrom ?? "",
+            "subscriptionInheritedAt": user.subscriptionInheritedAt != nil ? Timestamp(date: user.subscriptionInheritedAt!) : nil as Timestamp?,
+            "connectedPartnerCode": user.connectedPartnerCode ?? "",
+            "connectedPartnerId": user.connectedPartnerId ?? "",
+            "connectedAt": user.connectedAt != nil ? Timestamp(date: user.connectedAt!) : nil as Timestamp?,
             "isSubscribed": user.isSubscribed,
-            "appleUserID": firebaseUser.uid, // Lier à l'Apple ID
+            "appleUserID": firebaseUser.uid,
             "lastLoginDate": Timestamp(date: Date()),
             "createdAt": Timestamp(date: Date()),
             "updatedAt": Timestamp(date: Date()),
-            "onboardingInProgress": false  // NOUVEAU: Marquer l'onboarding comme terminé
+            "onboardingInProgress": false,  // NOUVEAU: Marquer l'onboarding comme terminé
+            "relationshipImprovement": user.relationshipImprovement ?? "",
+            "questionMode": user.questionMode ?? ""
         ]
+        
+        // Ajouter la date de début de relation si présente
+        if let relationshipStartDate = user.relationshipStartDate {
+            userData["relationshipStartDate"] = Timestamp(date: relationshipStartDate)
+        }
+        
+        // Ajouter l'URL de photo de profil si présente
+        if let profileImageURL = user.profileImageURL {
+            userData["profileImageURL"] = profileImageURL
+        }
+        
+        // Ajouter la localisation actuelle si présente
+        if let currentLocation = user.currentLocation {
+            userData["currentLocation"] = [
+                "latitude": currentLocation.latitude,
+                "longitude": currentLocation.longitude,
+                "address": currentLocation.address as Any,
+                "city": currentLocation.city as Any,
+                "country": currentLocation.country as Any,
+                "lastUpdated": Timestamp(date: currentLocation.lastUpdated)
+            ]
+        }
         
         print("🔥🔥🔥 FIREBASE SAVE: DONNEES A SAUVEGARDER:")
         print("🔥🔥🔥 FIREBASE SAVE: - onboardingInProgress: false (terminé)")
@@ -270,12 +432,20 @@ class FirebaseService: NSObject, ObservableObject {
                     let timeSinceLastLogin = now.timeIntervalSince(lastLogin)
                     let timeSinceCreation = now.timeIntervalSince(created)
                     
+                    // NOUVEAU: Vérifier si l'onboarding a été terminé avec succès
+                    let onboardingInProgress = data["onboardingInProgress"] as? Bool ?? false
+                    let hasValidData = !(data["name"] as? String ?? "").isEmpty && 
+                                      !(data["relationshipGoals"] as? [String] ?? []).isEmpty
+                    
                     // Si l'utilisateur a été créé récemment (moins de 5 minutes) et qu'il se reconnecte
-                    // c'est probablement un cas de suppression ratée
-                    if timeSinceCreation < 300 && timeSinceLastLogin > 60 {
+                    // MAIS seulement si l'onboarding n'a PAS été terminé avec succès
+                    if timeSinceCreation < 300 && timeSinceLastLogin > 60 && 
+                       (onboardingInProgress || !hasValidData) {
                         print("🔥 FirebaseService: DÉTECTION - Possible reconnexion après suppression ratée")
                         print("🔥 FirebaseService: - Créé il y a: \(timeSinceCreation) secondes")
                         print("🔥 FirebaseService: - Dernière connexion il y a: \(timeSinceLastLogin) secondes")
+                        print("🔥 FirebaseService: - Onboarding en cours: \(onboardingInProgress)")
+                        print("🔥 FirebaseService: - Données valides: \(hasValidData)")
                         print("🔥 FirebaseService: SUPPRESSION FORCÉE des données résiduelles")
                         
                         // Supprimer les données résiduelles
@@ -291,6 +461,10 @@ class FirebaseService: NSObject, ObservableObject {
                         self?.isAuthenticated = true
                         self?.currentUser = nil
                         return
+                    } else if timeSinceCreation < 300 && timeSinceLastLogin > 60 {
+                        print("🔥 FirebaseService: Utilisateur récent mais onboarding terminé - Conservation des données")
+                        print("🔥 FirebaseService: - Onboarding en cours: \(onboardingInProgress)")
+                        print("🔥 FirebaseService: - Données valides: \(hasValidData)")
                     }
                 }
                 
@@ -342,13 +516,17 @@ class FirebaseService: NSObject, ObservableObject {
                                 
                                 if self?.isOnboardingInProgress != true {
                                     // Créer un utilisateur partiel pour permettre la continuation de l'onboarding
-                                    let partialUser = User(
+                                    let partialUser = AppUser(
                                         id: data["id"] as? String ?? UUID().uuidString,
                                         name: name,
                                         birthDate: birthDate?.dateValue() ?? Date(),
                                         relationshipGoals: relationshipGoals,
-                                        relationshipDuration: User.RelationshipDuration(rawValue: relationshipDuration) ?? .notInRelationship,
+                                        relationshipDuration: AppUser.RelationshipDuration(rawValue: relationshipDuration) ?? .notInRelationship,
                                         partnerCode: data["partnerCode"] as? String,
+                                        partnerId: data["partnerId"] as? String,
+                                        partnerConnectedAt: (data["partnerConnectedAt"] as? Timestamp)?.dateValue(),
+                                        subscriptionInheritedFrom: data["subscriptionSharedFrom"] as? String,  // 🔧 CORRECTION: Utiliser le bon nom de champ
+                                        subscriptionInheritedAt: (data["subscriptionInheritedAt"] as? Timestamp)?.dateValue(),
                                         isSubscribed: data["isSubscribed"] as? Bool ?? false,
                                         onboardingInProgress: true
                                     )
@@ -378,15 +556,27 @@ class FirebaseService: NSObject, ObservableObject {
                 print("🔥🔥🔥 FIREBASE LOAD: DONNEES COMPLETES - CHARGEMENT UTILISATEUR")
                 
                 // Convertir les données Firestore en User
-                let user = User(
+                let user = AppUser(
                     id: data["id"] as? String ?? UUID().uuidString,
                     name: name,
                     birthDate: birthDate?.dateValue() ?? Date(),
                     relationshipGoals: relationshipGoals,
-                    relationshipDuration: User.RelationshipDuration(rawValue: relationshipDuration) ?? .notInRelationship,
+                    relationshipDuration: AppUser.RelationshipDuration(rawValue: relationshipDuration) ?? .notInRelationship,
+                    relationshipImprovement: data["relationshipImprovement"] as? String,
+                    questionMode: data["questionMode"] as? String,
                     partnerCode: data["partnerCode"] as? String,
+                    partnerId: data["partnerId"] as? String,
+                    partnerConnectedAt: (data["partnerConnectedAt"] as? Timestamp)?.dateValue(),
+                    subscriptionInheritedFrom: data["subscriptionSharedFrom"] as? String,  // 🔧 CORRECTION: Utiliser le bon nom de champ
+                    subscriptionInheritedAt: (data["subscriptionInheritedAt"] as? Timestamp)?.dateValue(),
+                    connectedPartnerCode: data["connectedPartnerCode"] as? String,
+                    connectedPartnerId: data["connectedPartnerId"] as? String,
+                    connectedAt: (data["connectedAt"] as? Timestamp)?.dateValue(),
                     isSubscribed: data["isSubscribed"] as? Bool ?? false,
-                    onboardingInProgress: onboardingInProgress
+                    onboardingInProgress: false,
+                    relationshipStartDate: (data["relationshipStartDate"] as? Timestamp)?.dateValue(),
+                    profileImageURL: data["profileImageURL"] as? String,
+                    currentLocation: self?.parseUserLocation(from: data["currentLocation"] as? [String: Any])
                 )
                 
                 print("✅ FirebaseService: Utilisateur chargé avec données complètes: \(user.name)")
@@ -394,6 +584,11 @@ class FirebaseService: NSObject, ObservableObject {
                 self?.currentUser = user
                 self?.isAuthenticated = true
                 print("✅ Données utilisateur chargées depuis Apple ID")
+                
+                // NOUVEAU: Démarrer l'écoute des changements d'abonnement
+                self?.startListeningForSubscriptionChanges()
+                
+                print("🔥🔥🔥 FIREBASE LOAD: UTILISATEUR CHARGE ET AUTHENTIFIE")
             }
         }
     }
@@ -454,13 +649,23 @@ class FirebaseService: NSObject, ObservableObject {
     func signOut() {
         do {
             try Auth.auth().signOut()
+            print("🔥 FirebaseService: Déconnexion réussie")
+            
+            // Réinitialiser l'état
             DispatchQueue.main.async {
                 self.isAuthenticated = false
                 self.currentUser = nil
-                self.currentNonce = nil
+                self.errorMessage = nil
             }
+            
+            // Arrêter l'écoute des changements d'abonnement
+            stopListeningForSubscriptionChanges()
+            
         } catch {
-            self.errorMessage = "Erreur de déconnexion: \(error.localizedDescription)"
+            print("❌ FirebaseService: Erreur déconnexion: \(error)")
+            DispatchQueue.main.async {
+                self.errorMessage = "Erreur lors de la déconnexion"
+            }
         }
     }
     
@@ -497,5 +702,559 @@ class FirebaseService: NSObject, ObservableObject {
         
         currentNonce = result
         return result
+    }
+    
+    // MARK: - Observer les changements d'abonnement en temps réel
+    
+    func startListeningForSubscriptionChanges() {
+        guard let user = Auth.auth().currentUser else { return }
+        
+        subscriptionListener = db.collection("users").document(user.uid)
+            .addSnapshotListener { [weak self] snapshot, error in
+                if let error = error {
+                    print("❌ FirebaseService: Erreur listener abonnement: \(error)")
+                    return
+                }
+                
+                guard let data = snapshot?.data() else { return }
+                
+                let isSubscribed = data["isSubscribed"] as? Bool ?? false
+                let subscriptionType = data["subscriptionType"] as? String
+                
+                // Mettre à jour l'état local si l'abonnement a changé
+                if let currentUser = self?.currentUser, currentUser.isSubscribed != isSubscribed {
+                    var updatedUser = currentUser
+                    updatedUser.isSubscribed = isSubscribed
+                    
+                    // Mettre à jour les champs d'héritage si nécessaire
+                    if subscriptionType == "shared_from_partner" {  // 🔧 CORRECTION: Utiliser le bon type d'abonnement
+                        updatedUser.subscriptionInheritedFrom = data["subscriptionSharedFrom"] as? String  // 🔧 CORRECTION: Utiliser le bon nom de champ
+                        updatedUser.subscriptionInheritedAt = (data["subscriptionSharedAt"] as? Timestamp)?.dateValue()  // 🔧 CORRECTION: Utiliser le bon nom de champ
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self?.currentUser = updatedUser
+                        print("🔥 FirebaseService: Abonnement mis à jour localement: \(isSubscribed)")
+                        
+                        // Notifier le changement d'abonnement
+                        NotificationCenter.default.post(name: .subscriptionUpdated, object: nil)
+                    }
+                }
+            }
+    }
+    
+    func stopListeningForSubscriptionChanges() {
+        subscriptionListener?.remove()
+        subscriptionListener = nil
+    }
+    
+    // MARK: - Widget Support Methods
+    
+    func getUserData(userId: String, completion: @escaping (AppUser?) -> Void) {
+        print("🔥 FirebaseService: Récupération données utilisateur: \(userId)")
+        print("🔥🔥🔥 FIRESTORE ACCESS: Tentative d'accès aux données de: \(userId)")
+        
+        // Vérifier si c'est l'utilisateur actuel (accès direct autorisé)
+        if let currentUser = Auth.auth().currentUser, currentUser.uid == userId {
+            print("🔥🔥🔥 FIRESTORE ACCESS: Accès direct autorisé (utilisateur actuel)")
+            getUserDataDirect(userId: userId, completion: completion)
+            return
+        }
+        
+        // Pour les partenaires, utiliser la Cloud Function sécurisée
+        print("🔥🔥🔥 FIRESTORE ACCESS: Accès partenaire - Utilisation Cloud Function")
+        getPartnerInfoViaCloudFunction(partnerId: userId, completion: completion)
+    }
+    
+    private func getUserDataDirect(userId: String, completion: @escaping (AppUser?) -> Void) {
+        print("🔥🔥🔥 DIRECT ACCESS: Accès direct aux données de: \(userId)")
+        
+        db.collection("users").document(userId).getDocument { document, error in
+            if let error = error {
+                print("❌ FirebaseService: Erreur récupération utilisateur (direct): \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
+            
+            guard let document = document, document.exists,
+                  let data = document.data() else {
+                print("❌ FirebaseService: Utilisateur non trouvé (direct): \(userId)")
+                completion(nil)
+                return
+            }
+            
+            // Convertir les données en AppUser
+            let user = AppUser(
+                id: data["id"] as? String ?? userId,
+                name: data["name"] as? String ?? "",
+                birthDate: (data["birthDate"] as? Timestamp)?.dateValue() ?? Date(),
+                relationshipGoals: data["relationshipGoals"] as? [String] ?? [],
+                relationshipDuration: AppUser.RelationshipDuration(rawValue: data["relationshipDuration"] as? String ?? "") ?? .notInRelationship,
+                relationshipImprovement: data["relationshipImprovement"] as? String,
+                questionMode: data["questionMode"] as? String,
+                partnerCode: data["partnerCode"] as? String,
+                partnerId: data["partnerId"] as? String,
+                partnerConnectedAt: (data["partnerConnectedAt"] as? Timestamp)?.dateValue(),
+                subscriptionInheritedFrom: data["subscriptionSharedFrom"] as? String,
+                subscriptionInheritedAt: (data["subscriptionInheritedAt"] as? Timestamp)?.dateValue(),
+                connectedPartnerCode: data["connectedPartnerCode"] as? String,
+                connectedPartnerId: data["connectedPartnerId"] as? String,
+                connectedAt: (data["connectedAt"] as? Timestamp)?.dateValue(),
+                isSubscribed: data["isSubscribed"] as? Bool ?? false,
+                onboardingInProgress: data["onboardingInProgress"] as? Bool ?? false,
+                relationshipStartDate: (data["relationshipStartDate"] as? Timestamp)?.dateValue(),
+                profileImageURL: data["profileImageURL"] as? String,
+                currentLocation: self.parseUserLocation(from: data["currentLocation"] as? [String: Any])
+            )
+            
+            print("✅ FirebaseService: Utilisateur récupéré (direct): \(user.name)")
+            completion(user)
+        }
+    }
+    
+    private func getPartnerInfoViaCloudFunction(partnerId: String, completion: @escaping (AppUser?) -> Void) {
+        print("🔥🔥🔥 CLOUD FUNCTION: Récupération données partenaire via fonction sécurisée")
+        print("🔥🔥🔥 CLOUD FUNCTION: partnerId: \(partnerId)")
+        
+        let functions = Functions.functions()
+        
+        functions.httpsCallable("getPartnerInfo").call(["partnerId": partnerId]) { result, error in
+            if let error = error {
+                print("❌ FirebaseService: Erreur Cloud Function getPartnerInfo: \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
+            
+            guard let data = result?.data as? [String: Any],
+                  let success = data["success"] as? Bool,
+                  success,
+                  let partnerInfo = data["partnerInfo"] as? [String: Any] else {
+                print("❌ FirebaseService: Format de réponse invalide")
+                completion(nil)
+                return
+            }
+            
+            // Créer un AppUser minimal avec les données du partenaire
+            let partnerUser = AppUser(
+                id: partnerId,
+                name: partnerInfo["name"] as? String ?? "Partenaire",
+                birthDate: Date(), // Date par défaut
+                relationshipGoals: [],
+                relationshipDuration: .notInRelationship,
+                relationshipImprovement: nil,
+                questionMode: nil,
+                partnerCode: nil,
+                partnerId: nil,
+                partnerConnectedAt: nil,
+                subscriptionInheritedFrom: partnerInfo["subscriptionSharedFrom"] as? String,
+                subscriptionInheritedAt: nil,
+                connectedPartnerCode: nil,
+                connectedPartnerId: nil,
+                connectedAt: nil,
+                isSubscribed: partnerInfo["isSubscribed"] as? Bool ?? false,
+                onboardingInProgress: false,
+                relationshipStartDate: nil,
+                profileImageURL: partnerInfo["profileImageURL"] as? String, // CORRECTION: Récupérer l'URL photo
+                currentLocation: nil
+            )
+            
+            print("✅ FirebaseService: Données partenaire récupérées via Cloud Function: \(partnerUser.name)")
+            if let profileURL = partnerUser.profileImageURL {
+                print("✅ FirebaseService: Photo de profil partenaire trouvée: \(profileURL)")
+            } else {
+                print("❌ FirebaseService: Aucune photo de profil pour le partenaire")
+            }
+            completion(partnerUser)
+        }
+    }
+    
+    func updateUserLocation(_ location: UserLocation, completion: @escaping (Bool) -> Void) {
+        guard let firebaseUser = Auth.auth().currentUser else {
+            print("❌ FirebaseService: Aucun utilisateur connecté pour mise à jour localisation")
+            completion(false)
+            return
+        }
+        
+        print("🔥 FirebaseService: Mise à jour localisation utilisateur")
+        
+        let locationData: [String: Any] = [
+            "latitude": location.latitude,
+            "longitude": location.longitude,
+            "address": location.address as Any,
+            "city": location.city as Any,
+            "country": location.country as Any,
+            "lastUpdated": Timestamp(date: location.lastUpdated)
+        ]
+        
+        db.collection("users").document(firebaseUser.uid).updateData([
+            "currentLocation": locationData,
+            "updatedAt": Timestamp(date: Date())
+        ]) { error in
+            if let error = error {
+                print("❌ FirebaseService: Erreur mise à jour localisation: \(error.localizedDescription)")
+                completion(false)
+            } else {
+                print("✅ FirebaseService: Localisation mise à jour avec succès")
+                completion(true)
+            }
+        }
+    }
+    
+    private func parseUserLocation(from data: [String: Any]?) -> UserLocation? {
+        print("🌍 FirebaseService: parseUserLocation - Analyse données localisation")
+        print("🌍 FirebaseService: Données reçues: \(data ?? [:])")
+        
+        guard let data = data else {
+            print("❌ FirebaseService: Aucune donnée de localisation fournie")
+            return nil
+        }
+        
+        guard let latitude = data["latitude"] as? Double,
+              let longitude = data["longitude"] as? Double else {
+            print("❌ FirebaseService: Latitude ou longitude manquante/invalide")
+            print("❌ FirebaseService: - Latitude: \(data["latitude"] ?? "nil")")
+            print("❌ FirebaseService: - Longitude: \(data["longitude"] ?? "nil")")
+            return nil
+        }
+        
+        let address = data["address"] as? String
+        let city = data["city"] as? String
+        let country = data["country"] as? String
+        
+        let location = UserLocation(
+            coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude),
+            address: address,
+            city: city,
+            country: country
+        )
+        
+        print("✅ FirebaseService: Localisation analysée avec succès")
+        print("✅ FirebaseService: - Position: \(latitude), \(longitude)")
+        print("✅ FirebaseService: - Ville: \(city ?? "non spécifiée")")
+        print("✅ FirebaseService: - Pays: \(country ?? "non spécifié")")
+        
+        return location
+    }
+    
+    // MARK: - User Profile Updates
+    
+    func updateUserName(_ newName: String, completion: @escaping (Bool) -> Void) {
+        guard let firebaseUser = Auth.auth().currentUser else {
+            print("❌ FirebaseService: Aucun utilisateur connecté pour mise à jour nom")
+            completion(false)
+            return
+        }
+        
+        print("🔥 FirebaseService: Mise à jour nom utilisateur: \(newName)")
+        
+        db.collection("users").document(firebaseUser.uid).updateData([
+            "name": newName,
+            "updatedAt": Timestamp(date: Date())
+        ]) { [weak self] error in
+            DispatchQueue.main.async {
+                if let error = error {
+                    print("❌ FirebaseService: Erreur mise à jour nom: \(error.localizedDescription)")
+                    completion(false)
+                } else {
+                    print("✅ FirebaseService: Nom mis à jour avec succès")
+                    // Mettre à jour l'utilisateur local
+                    if var currentUser = self?.currentUser {
+                        currentUser.name = newName
+                        self?.currentUser = currentUser
+                    }
+                    completion(true)
+                }
+            }
+        }
+    }
+    
+    func updateRelationshipStartDate(_ date: Date, completion: @escaping (Bool) -> Void) {
+        guard let firebaseUser = Auth.auth().currentUser else {
+            print("❌ FirebaseService: Aucun utilisateur connecté pour mise à jour date relation")
+            completion(false)
+            return
+        }
+        
+        print("🔥 FirebaseService: Mise à jour date début relation: \(date)")
+        
+        db.collection("users").document(firebaseUser.uid).updateData([
+            "relationshipStartDate": Timestamp(date: date),
+            "updatedAt": Timestamp(date: Date())
+        ]) { [weak self] error in
+            DispatchQueue.main.async {
+                if let error = error {
+                    print("❌ FirebaseService: Erreur mise à jour date relation: \(error.localizedDescription)")
+                    completion(false)
+                } else {
+                    print("✅ FirebaseService: Date relation mise à jour avec succès")
+                    // Mettre à jour l'utilisateur local
+                    if var currentUser = self?.currentUser {
+                        currentUser.relationshipStartDate = date
+                        self?.currentUser = currentUser
+                    }
+                    completion(true)
+                }
+            }
+        }
+    }
+    
+    // MARK: - Profile Image Upload
+    
+    func updateProfileImage(_ image: UIImage, completion: @escaping (Bool, String?) -> Void) {
+        print("🔥 FirebaseService: updateProfileImage - Méthode publique")
+        
+        guard let currentUser = currentUser else {
+            print("❌ FirebaseService: Aucun utilisateur actuel pour mise à jour image")
+            completion(false, nil)
+            return
+        }
+        
+        uploadProfileImage(image) { [weak self] imageURL in
+            guard let self = self else { return }
+            
+            if let imageURL = imageURL {
+                print("✅ FirebaseService: Image uploadée avec succès, mise à jour utilisateur...")
+                
+                // Mettre à jour l'utilisateur avec la nouvelle URL d'image
+                var updatedUser = currentUser
+                updatedUser = AppUser(
+                    id: updatedUser.id,
+                    name: updatedUser.name,
+                    birthDate: updatedUser.birthDate,
+                    relationshipGoals: updatedUser.relationshipGoals,
+                    relationshipDuration: updatedUser.relationshipDuration,
+                    relationshipImprovement: updatedUser.relationshipImprovement,
+                    questionMode: updatedUser.questionMode,
+                    partnerCode: updatedUser.partnerCode,
+                    partnerId: updatedUser.partnerId,
+                    partnerConnectedAt: updatedUser.partnerConnectedAt,
+                    subscriptionInheritedFrom: updatedUser.subscriptionInheritedFrom,
+                    subscriptionInheritedAt: updatedUser.subscriptionInheritedAt,
+                    connectedPartnerCode: updatedUser.connectedPartnerCode,
+                    connectedPartnerId: updatedUser.connectedPartnerId,
+                    connectedAt: updatedUser.connectedAt,
+                    isSubscribed: updatedUser.isSubscribed,
+                    onboardingInProgress: updatedUser.onboardingInProgress,
+                    relationshipStartDate: updatedUser.relationshipStartDate,
+                    profileImageURL: imageURL,
+                    currentLocation: updatedUser.currentLocation
+                )
+                
+                // Sauvegarder l'utilisateur mis à jour
+                self.saveUserData(updatedUser)
+                completion(true, imageURL)
+            } else {
+                print("❌ FirebaseService: Échec upload image")
+                completion(false, nil)
+            }
+        }
+    }
+    
+    private func uploadProfileImage(_ image: UIImage, completion: @escaping (String?) -> Void) {
+        print("🔥 FirebaseService: uploadProfileImage - Début")
+        
+        guard let firebaseUser = Auth.auth().currentUser else {
+            print("❌ FirebaseService: Aucun utilisateur connecté pour upload image")
+            completion(nil)
+            return
+        }
+        
+        print("🔥 FirebaseService: Utilisateur authentifié: \(firebaseUser.uid)")
+        print("🔥 FirebaseService: Providers: \(firebaseUser.providerData.map { $0.providerID })")
+        
+        // Redimensionner l'image
+        guard let resizedImage = resizeImage(image, to: CGSize(width: 300, height: 300)),
+              let imageData = resizedImage.jpegData(compressionQuality: 0.8) else {
+            print("❌ FirebaseService: Erreur traitement image")
+            completion(nil)
+            return
+        }
+        
+        print("🔥 FirebaseService: Image redimensionnée - Taille finale: \(imageData.count) bytes")
+        
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let profileImagePath = "profile_images/\(firebaseUser.uid)/profile.jpg"
+        let profileImageRef = storageRef.child(profileImagePath)
+        
+        print("🔥 FirebaseService: Chemin upload: \(profileImagePath)")
+        print("🔥 FirebaseService: Référence Storage: \(profileImageRef.fullPath)")
+        print("🔥 FirebaseService: Début upload...")
+        
+        // Créer des métadonnées explicites
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
+        metadata.customMetadata = ["uploadedBy": firebaseUser.uid]
+        
+        profileImageRef.putData(imageData, metadata: metadata) { uploadMetadata, error in
+            print("🔥 FirebaseService: Callback upload reçu")
+            
+            if let error = error {
+                print("❌ FirebaseService: Erreur upload image: \(error.localizedDescription)")
+                print("❌ FirebaseService: Code erreur: \((error as NSError).code)")
+                print("❌ FirebaseService: Domaine erreur: \((error as NSError).domain)")
+                
+                // Log des détails supplémentaires pour debug
+                if let storageError = error as NSError? {
+                    print("❌ FirebaseService: UserInfo: \(storageError.userInfo)")
+                }
+                
+                completion(nil)
+                return
+            }
+            
+            print("✅ FirebaseService: Upload réussi - Métadonnées: \(uploadMetadata?.description ?? "nil")")
+            print("🔥 FirebaseService: Récupération URL de téléchargement...")
+            
+            profileImageRef.downloadURL { url, urlError in
+                print("🔥 FirebaseService: Callback downloadURL reçu")
+                
+                if let urlError = urlError {
+                    print("❌ FirebaseService: Erreur récupération URL: \(urlError.localizedDescription)")
+                    completion(nil)
+                } else if let downloadURL = url {
+                    print("✅ FirebaseService: URL de téléchargement obtenue: \(downloadURL.absoluteString)")
+                    completion(downloadURL.absoluteString)
+                } else {
+                    print("❌ FirebaseService: URL de téléchargement nil inexpliquée")
+                    completion(nil)
+                }
+            }
+        }
+    }
+    
+    private func resizeImage(_ image: UIImage, to size: CGSize) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+        image.draw(in: CGRect(origin: .zero, size: size))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return resizedImage
+    }
+    
+    // MARK: - Shared Partner Data (Sécurisé)
+    
+    func updateSharedPartnerData() {
+        guard let firebaseUser = Auth.auth().currentUser,
+              let currentUser = currentUser else {
+            print("❌ FirebaseService: Aucun utilisateur pour partage données")
+            return
+        }
+        
+        // Données sécurisées à partager avec le partenaire (pour widgets)
+        let sharedData: [String: Any] = [
+            "name": currentUser.name,
+            "relationshipStartDate": currentUser.relationshipStartDate != nil ? Timestamp(date: currentUser.relationshipStartDate!) : nil as Timestamp?,
+            "currentLocation": currentUser.currentLocation != nil ? [
+                "latitude": currentUser.currentLocation!.latitude,
+                "longitude": currentUser.currentLocation!.longitude,
+                "city": currentUser.currentLocation!.city as Any,
+                "country": currentUser.currentLocation!.country as Any,
+                "lastUpdated": Timestamp(date: currentUser.currentLocation!.lastUpdated)
+            ] : nil as [String: Any]?,
+            "lastActive": Timestamp(date: Date()),
+            "profileImageURL": currentUser.profileImageURL as Any
+        ]
+        
+        db.collection("sharedPartnerData").document(firebaseUser.uid).setData(sharedData, merge: true) { error in
+            if let error = error {
+                print("❌ FirebaseService: Erreur partage données: \(error.localizedDescription)")
+            } else {
+                print("✅ FirebaseService: Données partagées mises à jour")
+            }
+        }
+    }
+    
+    func getSharedPartnerData(partnerId: String, completion: @escaping (AppUser?) -> Void) {
+        print("🔥 FirebaseService: Récupération données partagées partenaire: \(partnerId)")
+        
+        db.collection("sharedPartnerData").document(partnerId).getDocument { document, error in
+            if let error = error {
+                print("❌ FirebaseService: Erreur récupération données partagées: \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
+            
+            guard let document = document, document.exists,
+                  let data = document.data() else {
+                print("❌ FirebaseService: Données partagées non trouvées: \(partnerId)")
+                completion(nil)
+                return
+            }
+            
+            // Créer un AppUser avec seulement les données partagées
+            let partnerUser = AppUser(
+                id: partnerId,
+                name: data["name"] as? String ?? "",
+                birthDate: Date(), // Non partagé
+                relationshipGoals: [], // Non partagé
+                relationshipDuration: .none, // Non partagé
+                relationshipImprovement: nil, // Non partagé
+                questionMode: nil, // Non partagé
+                partnerCode: nil, // Non partagé
+                partnerId: nil, // Non partagé
+                partnerConnectedAt: nil, // Non partagé
+                subscriptionInheritedFrom: nil, // Non partagé
+                subscriptionInheritedAt: nil, // Non partagé
+                connectedPartnerCode: nil, // Non partagé
+                connectedPartnerId: nil, // Non partagé
+                connectedAt: nil, // Non partagé
+                isSubscribed: false, // Non partagé
+                onboardingInProgress: false,
+                relationshipStartDate: (data["relationshipStartDate"] as? Timestamp)?.dateValue(),
+                profileImageURL: data["profileImageURL"] as? String,
+                currentLocation: self.parseUserLocation(from: data["currentLocation"] as? [String: Any])
+            )
+            
+            print("✅ FirebaseService: Données partagées récupérées: \(partnerUser.name)")
+            completion(partnerUser)
+        }
+    }
+    
+    // MARK: - Synchronisation des entrées de journal
+    
+    func syncPartnerJournalEntries(partnerId: String, completion: @escaping (Bool, String?) -> Void) {
+        print("📚 FirebaseService: Début synchronisation entrées journal avec partenaire: \(partnerId)")
+        
+        guard let firebaseUser = Auth.auth().currentUser else {
+            print("❌ FirebaseService: Aucun utilisateur connecté")
+            completion(false, "Utilisateur non connecté")
+            return
+        }
+        
+        let functions = Functions.functions()
+        let syncFunction = functions.httpsCallable("syncPartnerJournalEntries")
+        
+        syncFunction.call(["partnerId": partnerId]) { result, error in
+            if let error = error {
+                print("❌ FirebaseService: Erreur synchronisation journal: \(error.localizedDescription)")
+                completion(false, "Erreur lors de la synchronisation: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let data = result?.data as? [String: Any],
+                  let success = data["success"] as? Bool else {
+                print("❌ FirebaseService: Réponse invalide de la fonction")
+                completion(false, "Réponse invalide du serveur")
+                return
+            }
+            
+            if success {
+                let updatedCount = data["updatedEntriesCount"] as? Int ?? 0
+                let userEntriesCount = data["userEntriesCount"] as? Int ?? 0
+                let partnerEntriesCount = data["partnerEntriesCount"] as? Int ?? 0
+                let message = data["message"] as? String ?? "Synchronisation terminée"
+                
+                print("✅ FirebaseService: Synchronisation journal réussie")
+                print("📚 FirebaseService: - Entrées mises à jour: \(updatedCount)")
+                print("📚 FirebaseService: - Vos entrées: \(userEntriesCount)")
+                print("📚 FirebaseService: - Entrées partenaire: \(partnerEntriesCount)")
+                
+                completion(true, message)
+            } else {
+                let errorMessage = data["message"] as? String ?? "Erreur inconnue"
+                print("❌ FirebaseService: Échec synchronisation journal: \(errorMessage)")
+                completion(false, errorMessage)
+            }
+        }
     }
 } 

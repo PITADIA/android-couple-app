@@ -30,37 +30,21 @@ struct FavoritesCardView: View {
     
     var body: some View {
         ZStack {
-            // Même fond que les cartes de questions (moderne)
-            Color(red: 0.15, green: 0.03, blue: 0.08)
+            // Fond gris clair identique aux autres pages
+            Color(red: 0.97, green: 0.97, blue: 0.98)
                 .ignoresSafeArea()
             
             VStack(spacing: 0) {
                 // Header avec navigation
                 HStack {
-                    Button(action: {
-                        dismiss()
-                    }) {
-                        Image(systemName: "chevron.left")
-                            .font(.system(size: 20, weight: .medium))
-                            .foregroundColor(.white)
-                    }
-                    
                     Spacer()
                     
                     // Compteur de favoris
                     Text("\(currentFavoriteIndex + 1) sur \(favoritesService.favoriteQuestions.count)")
                         .font(.system(size: 18, weight: .semibold))
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                     
                     Spacer()
-                    
-                    Button(action: {
-                        showingListView = true
-                    }) {
-                        Image(systemName: "list.bullet")
-                            .font(.system(size: 20, weight: .medium))
-                            .foregroundColor(.white)
-                    }
                 }
                 .padding(.horizontal, 20)
                 .padding(.top, 60)
@@ -75,13 +59,9 @@ struct FavoritesCardView: View {
                         Text("❤️")
                             .font(.system(size: 80))
                         
-                        Text("Aucun favori")
-                            .font(.system(size: 24, weight: .bold))
-                            .foregroundColor(.white)
-                        
-                        Text("Ajoutez des questions en favoris\nen appuyant sur ❤️ dans les cartes")
+                        Text("Ajoutez des questions en favoris\nen appuyant sur le coeur en-dessous des cartes \npuis vous les verrez apparaître ici")
                             .font(.system(size: 16))
-                            .foregroundColor(.white.opacity(0.8))
+                            .foregroundColor(.black.opacity(0.8))
                             .multilineTextAlignment(.center)
                             .padding(.horizontal, 40)
                         
@@ -149,16 +129,10 @@ struct FavoritesCardView: View {
                     Button(action: {
                         showingDeleteAlert = true
                     }) {
-                        HStack(spacing: 12) {
-                            Text("Retirer des favoris")
-                                .font(.system(size: 18, weight: .semibold))
-                                .foregroundColor(.white)
-                            
-                            Image(systemName: "heart.fill")
-                                .font(.system(size: 20, weight: .medium))
-                                .foregroundColor(.white)
-                        }
-                        .frame(maxWidth: .infinity)
+                        Text("Retirer des favoris")
+                            .font(.system(size: 18, weight: .semibold))
+                            .foregroundColor(.white)
+                        .frame(width: UIScreen.main.bounds.width - 40) // Même largeur que les cartes
                         .frame(height: 56)
                         .background(
                             // Même couleur que le header des cartes
@@ -166,7 +140,7 @@ struct FavoritesCardView: View {
                         )
                         .cornerRadius(28)
                     }
-                    .padding(.horizontal, 20)
+                    .padding(.top, 40) // Ajout d'espace au-dessus du bouton
                     .padding(.bottom, 50)
                 }
             }
@@ -247,7 +221,7 @@ struct FavoriteQuestionCardView: View {
                 
                 // Logo/Branding en bas (design moderne)
                 HStack(spacing: 8) {
-                    Image("Leetchi")
+                    Image("leetchi2")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 24, height: 24)

@@ -5,72 +5,86 @@ struct RelationshipImprovementStepView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            // Espace entre la barre de progression et le titre
+            // Espace entre barre de progression et titre (harmonisé)
             Spacer()
-                .frame(height: 60)
+                .frame(height: 40)
             
-            // Contenu en haut
-            VStack(spacing: 40) {
-                // Titre
-                Text("Quelle expérience aimeriez-vous vivre grâce à cette application ?")
+            // Titre centré à gauche
+            HStack {
+                Text("Qu'aimeriez-vous améliorer dans votre relation ?")
                     .font(.system(size: 36, weight: .bold))
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 30)
-                
-                // Options de sélection
-                VStack(spacing: 15) {
+                    .foregroundColor(.black)
+                    .multilineTextAlignment(.leading)
+                Spacer()
+            }
+            .padding(.horizontal, 30)
+            
+            // Premier Spacer pour centrer le contenu
+            Spacer()
+            
+            // Contenu principal centré
+            VStack(spacing: 30) {
+                // Options sur cartes blanches
+                VStack(spacing: 12) {
                     ForEach(viewModel.relationshipImprovements, id: \.self) { improvement in
                         Button(action: {
-                            viewModel.relationshipImprovement = improvement
-                        }) {
-                            HStack {
-                                Text(improvement)
-                                    .font(.system(size: 16))
-                                    .foregroundColor(.white)
-                                    .multilineTextAlignment(.leading)
-                                
-                                Spacer()
+                            if viewModel.selectedImprovements.contains(improvement) {
+                                viewModel.selectedImprovements.removeAll { $0 == improvement }
+                            } else {
+                                viewModel.selectedImprovements.append(improvement)
                             }
-                            .padding(.horizontal, 20)
-                            .padding(.vertical, 16)
-                            .background(
-                                RoundedRectangle(cornerRadius: 12)
-                                    .fill(viewModel.relationshipImprovement == improvement ? Color.white.opacity(0.3) : Color.white.opacity(0.1))
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 12)
-                                            .stroke(Color.white.opacity(0.3), lineWidth: 1)
-                                    )
-                            )
+                        }) {
+                            Text(improvement)
+                                .font(.system(size: 16))
+                                .foregroundColor(viewModel.selectedImprovements.contains(improvement) ? .white : .black)
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 16)
+                                .padding(.horizontal, 20)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .fill(viewModel.selectedImprovements.contains(improvement) ? Color(hex: "#FD267A") : Color.white)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 12)
+                                                .stroke(
+                                                    viewModel.selectedImprovements.contains(improvement) ? Color(hex: "#FD267A") : Color.black.opacity(0.1),
+                                                    lineWidth: viewModel.selectedImprovements.contains(improvement) ? 2 : 1
+                                                )
+                                        )
+                                        .shadow(color: Color.black.opacity(0.05), radius: 8, x: 0, y: 4)
+                                )
                         }
+                        .buttonStyle(PlainButtonStyle())
                     }
                 }
                 .padding(.horizontal, 30)
             }
             
+            // Deuxième Spacer pour pousser la zone bouton vers le bas
             Spacer()
-            
-            // Bouton Continuer collé en bas
-            Button(action: {
-                if !viewModel.relationshipImprovement.isEmpty {
+                
+            // Zone blanche collée en bas
+            VStack(spacing: 0) {
+                Button(action: {
                     viewModel.nextStep()
+                }) {
+                    Text("Continuer")
+                        .font(.system(size: 18, weight: .semibold))
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 56)
+                        .background(Color(hex: "#FD267A"))
+                        .cornerRadius(28)
+                        .opacity(viewModel.selectedImprovements.isEmpty ? 0.5 : 1.0)
                 }
-            }) {
-                Text("Continuer")
-                    .font(.system(size: 18, weight: .semibold))
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 56)
-                    .background(Color(hex: "#FD267A"))
-                    .cornerRadius(28)
-                    .opacity(viewModel.relationshipImprovement.isEmpty ? 0.5 : 1.0)
+                .disabled(viewModel.selectedImprovements.isEmpty)
+                .padding(.horizontal, 30)
             }
-            .disabled(viewModel.relationshipImprovement.isEmpty)
-            .padding(.horizontal, 30)
-            .padding(.bottom, 50)
+            .padding(.vertical, 30)
+            .background(Color.white)
         }
-
     }
+    
+    // MARK: - Computed Properties
 }
 
 #Preview {

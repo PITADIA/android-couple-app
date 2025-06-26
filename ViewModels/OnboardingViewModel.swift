@@ -1,17 +1,21 @@
 import Foundation
 import Combine
+import UIKit
 
 class OnboardingViewModel: ObservableObject {
     enum OnboardingStep: CaseIterable {
         case name
-        case birthDate
+        case profilePhoto
         case relationshipGoals
-        case relationshipDuration
+        case relationshipDate
         case relationshipImprovement
-        case questionMode
         case completion
         case loading
         case authentication
+        case partnerCode
+        case fitnessIntro
+        case fitnessIntro2
+        case categoriesPreview
         case subscription
     }
     
@@ -19,10 +23,17 @@ class OnboardingViewModel: ObservableObject {
     @Published var userName: String = ""
     @Published var birthDate: Date = Date()
     @Published var selectedGoals: [String] = []
-    @Published var relationshipDuration: User.RelationshipDuration = .none
+    @Published var relationshipDuration: AppUser.RelationshipDuration = .oneToThreeYears
     @Published var relationshipImprovement: String = ""
-    @Published var questionMode: String = ""
+    @Published var selectedImprovements: [String] = []
+    @Published var questionMode: String = "🔄 Questions variées"
     @Published var isLoading: Bool = false
+    @Published var shouldSkipSubscription: Bool = false
+    @Published var shouldShowPartnerConnectionSuccess = false
+    @Published var connectedPartnerName: String = ""
+    @Published var relationshipStartDate: Date?
+    @Published var profileImage: UIImage?
+    @Published var currentLocation: UserLocation?
     
     var appState: AppState?
     private var cancellables = Set<AnyCancellable>()
@@ -62,6 +73,27 @@ class OnboardingViewModel: ObservableObject {
     init(appState: AppState) {
         print("🔥 OnboardingViewModel: Initialisation avec AppState")
         self.appState = appState
+        
+        // Observer les changements d'abonnement
+        NotificationCenter.default.addObserver(
+            forName: .subscriptionUpdated,
+            object: nil,
+            queue: .main
+        ) { [weak self] _ in
+            self?.handleSubscriptionUpdate()
+        }
+        
+        // NOUVEAU: Observer les connexions partenaire réussies
+        NotificationCenter.default.addObserver(
+            forName: .partnerConnectionSuccess,
+            object: nil,
+            queue: .main
+        ) { [weak self] notification in
+            if let userInfo = notification.userInfo,
+               let partnerName = userInfo["partnerName"] as? String {
+                self?.showPartnerConnectionSuccess(partnerName: partnerName)
+            }
+        }
     }
     
     init() {
@@ -78,19 +110,15 @@ class OnboardingViewModel: ObservableObject {
         switch currentStep {
         case .name:
             if !userName.isEmpty {
-                currentStep = .birthDate
+                currentStep = .profilePhoto
             }
-        case .birthDate:
+        case .profilePhoto:
             currentStep = .relationshipGoals
         case .relationshipGoals:
-            currentStep = .relationshipDuration
-        case .relationshipDuration:
-            if relationshipDuration != .none {
-                currentStep = .relationshipImprovement
-            }
+            currentStep = .relationshipDate
+        case .relationshipDate:
+            currentStep = .relationshipImprovement
         case .relationshipImprovement:
-            currentStep = .questionMode
-        case .questionMode:
             currentStep = .completion
         case .completion:
             currentStep = .loading
@@ -98,6 +126,18 @@ class OnboardingViewModel: ObservableObject {
         case .loading:
             currentStep = .authentication
         case .authentication:
+            if shouldSkipSubscription {
+                finalizeOnboarding(withSubscription: true)
+            } else {
+                currentStep = .partnerCode
+            }
+        case .partnerCode:
+            currentStep = .fitnessIntro
+        case .fitnessIntro:
+            currentStep = .fitnessIntro2
+        case .fitnessIntro2:
+            currentStep = .categoriesPreview
+        case .categoriesPreview:
             currentStep = .subscription
         case .subscription:
             // L'onboarding doit être finalisé via skipSubscription() ou completeSubscription()
@@ -111,23 +151,29 @@ class OnboardingViewModel: ObservableObject {
         case .name:
             print("🔥 OnboardingViewModel: Déjà à la première étape")
             break
-        case .birthDate:
+        case .profilePhoto:
             currentStep = .name
         case .relationshipGoals:
-            currentStep = .birthDate
-        case .relationshipDuration:
+            currentStep = .profilePhoto
+        case .relationshipDate:
             currentStep = .relationshipGoals
         case .relationshipImprovement:
-            currentStep = .relationshipDuration
-        case .questionMode:
-            currentStep = .relationshipImprovement
+            currentStep = .relationshipDate
         case .completion:
-            currentStep = .questionMode
+            currentStep = .relationshipImprovement
         case .loading:
             currentStep = .completion
         case .authentication:
             print("🔥 OnboardingViewModel: Impossible de revenir en arrière depuis l'authentification")
             break
+        case .partnerCode:
+            currentStep = .authentication
+        case .fitnessIntro:
+            currentStep = .partnerCode
+        case .fitnessIntro2:
+            currentStep = .fitnessIntro
+        case .categoriesPreview:
+            currentStep = .fitnessIntro2
         case .subscription:
             print("🔥 OnboardingViewModel: Impossible de revenir en arrière depuis l'abonnement")
             break
@@ -157,7 +203,7 @@ class OnboardingViewModel: ObservableObject {
     
     func completeAuthentication() {
         print("🔥 OnboardingViewModel: Authentification terminée, passage à l'abonnement")
-        currentStep = .subscription
+        currentStep = .partnerCode
     }
     
     func skipSubscription() {
@@ -181,62 +227,108 @@ class OnboardingViewModel: ObservableObject {
         NSLog("🔥🔥🔥 ONBOARDING: FINALISATION COMPLETE - VOUS DEVRIEZ VOIR CECI!")
         NSLog("🔥🔥🔥 ONBOARDING: AVEC ABONNEMENT: %@", isSubscribed ? "OUI" : "NON")
         
+        // NOUVEAU: Désactiver l'overlay de connexion partenaire de l'onboarding
+        // car MainView va prendre le relais
+        if shouldShowPartnerConnectionSuccess {
+            print("🔥 OnboardingViewModel: Désactivation overlay connexion partenaire (MainView prend le relais)")
+            shouldShowPartnerConnectionSuccess = false
+        }
+        
         print("🔥 OnboardingViewModel: Création de l'utilisateur avec:")
         print("  - Nom: \(userName)")
-        print("  - Date de naissance: \(birthDate)")
         print("  - Objectifs: \(selectedGoals)")
         print("  - Durée de relation: \(relationshipDuration)")
-        print("  - Amélioration souhaitée: \(relationshipImprovement)")
+        print("  - Amélioration souhaitée: \(selectedImprovements)")
         print("  - Mode de questions: \(questionMode)")
         print("  - Abonné: \(isSubscribed)")
         
         NSLog("🔥🔥🔥 ONBOARDING: CREATION USER - NOM: %@", userName)
         NSLog("🔥🔥🔥 ONBOARDING: CREATION USER - ABONNE: %@", isSubscribed ? "OUI" : "NON")
         
-        let user = User(
+        // Convertir le tableau d'améliorations en string pour Firebase
+        let improvementString = selectedImprovements.joined(separator: ", ")
+        
+        // 🔧 CORRECTION: Préserver les données de connexion partenaire existantes
+        FirebaseService.shared.finalizeOnboardingWithPartnerData(
             name: userName,
-            birthDate: birthDate,
             relationshipGoals: selectedGoals,
             relationshipDuration: relationshipDuration,
-            relationshipImprovement: relationshipImprovement.isEmpty ? nil : relationshipImprovement,
+            relationshipImprovement: improvementString.isEmpty ? nil : improvementString,
             questionMode: questionMode.isEmpty ? nil : questionMode,
-            partnerCode: nil,
             isSubscribed: isSubscribed,
-            onboardingInProgress: false
-        )
-        
-        print("🔥 OnboardingViewModel: Utilisateur créé avec ID: \(user.id)")
-        print("🔥🔥🔥 ONBOARDING FINALIZE: USER CREE - ABONNE: \(user.isSubscribed)")
-        NSLog("🔥🔥🔥 ONBOARDING: USER CREE - ID: %@", user.id)
-        
-        guard let appState = appState else {
-            print("❌ OnboardingViewModel: AppState manquant!")
-            NSLog("❌❌❌ ONBOARDING: APPSTATE MANQUANT!")
-            return
+            relationshipStartDate: relationshipStartDate,
+            profileImage: profileImage,
+            currentLocation: currentLocation
+        ) { [weak self] success, user in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                
+                if success, let user = user {
+                    print("✅ OnboardingViewModel: Finalisation réussie avec préservation données partenaire")
+                    print("🔥🔥🔥 ONBOARDING FINALIZE: USER CREE - ABONNE: \(user.isSubscribed)")
+                    print("🔥🔥🔥 ONBOARDING FINALIZE: PARTNER ID: \(user.partnerId ?? "none")")
+                    NSLog("🔥🔥🔥 ONBOARDING: USER CREE - ID: %@", user.id)
+                    
+                    guard let appState = self.appState else {
+                        print("❌ OnboardingViewModel: AppState manquant!")
+                        NSLog("❌❌❌ ONBOARDING: APPSTATE MANQUANT!")
+                        return
+                    }
+                    
+                    print("🔥 OnboardingViewModel: Mise à jour de l'utilisateur via AppState")
+                    print("🔥🔥🔥 ONBOARDING FINALIZE: SAUVEGARDE FINALE AVEC ONBOARDING TERMINE")
+                    NSLog("🔥🔥🔥 ONBOARDING: MISE A JOUR VIA APPSTATE")
+                    
+                    // NOUVEAU: Marquer la fin du processus d'onboarding dans Firebase et AppState
+                    FirebaseService.shared.completeOnboardingProcess()
+                    appState.isOnboardingInProgress = false
+                    print("🔥🔥🔥 ONBOARDING FINALIZE: FLAGS ONBOARDING REINITIALISES")
+                    
+                    appState.updateUser(user)
+                    appState.completeOnboarding()
+                    print("🔥 OnboardingViewModel: Onboarding terminé")
+                    print("🔥🔥🔥 ONBOARDING FINALIZE: ONBOARDING MARQUE COMME TERMINE")
+                    NSLog("🔥🔥🔥 ONBOARDING: TERMINE AVEC SUCCES!")
+                } else {
+                    print("❌ OnboardingViewModel: Erreur lors de la finalisation")
+                    NSLog("❌❌❌ ONBOARDING: ERREUR FINALISATION!")
+                }
+            }
         }
-        
-        print("🔥 OnboardingViewModel: Mise à jour de l'utilisateur via AppState")
-        print("🔥🔥🔥 ONBOARDING FINALIZE: SAUVEGARDE FINALE AVEC ONBOARDING TERMINE")
-        NSLog("🔥🔥🔥 ONBOARDING: MISE A JOUR VIA APPSTATE")
-        
-        // NOUVEAU: Marquer la fin du processus d'onboarding dans Firebase et AppState
-        FirebaseService.shared.completeOnboardingProcess()
-        appState.isOnboardingInProgress = false
-        print("🔥🔥🔥 ONBOARDING FINALIZE: FLAGS ONBOARDING REINITIALISES")
-        
-        // IMPORTANT: Sauvegarder avec saveUserData pour marquer l'onboarding comme terminé
-        FirebaseService.shared.saveUserData(user)
-        
-        appState.updateUser(user)
-        appState.completeOnboarding()
-        print("🔥 OnboardingViewModel: Onboarding terminé")
-        print("🔥🔥🔥 ONBOARDING FINALIZE: ONBOARDING MARQUE COMME TERMINE")
-        NSLog("🔥🔥🔥 ONBOARDING: TERMINE AVEC SUCCES!")
     }
     
     // DEPRECATED: Ces méthodes ne sont plus utilisées avec le nouveau flux
     func completeOnboardingAfterSubscription() {
         print("⚠️ OnboardingViewModel: DEPRECATED - completeOnboardingAfterSubscription appelée")
         completeAuthentication()
+    }
+    
+    // NOUVEAU: Méthode pour passer l'abonnement suite à un héritage
+    func skipSubscriptionDueToInheritance() {
+        print("🔥 OnboardingViewModel: Abonnement hérité du partenaire premium - skip subscription")
+        shouldSkipSubscription = true
+    }
+    
+    // NOUVEAU: Méthode pour réinitialiser le flag de skip si nécessaire
+    func resetSubscriptionSkip() {
+        print("🔥 OnboardingViewModel: Reset flag skip subscription")
+        shouldSkipSubscription = false
+    }
+    
+    func handleSubscriptionUpdate() {
+        print("🔥 OnboardingViewModel: Mise à jour d'abonnement détectée")
+        // Gérer les mises à jour d'abonnement si nécessaire
+    }
+    
+    func showPartnerConnectionSuccess(partnerName: String) {
+        print("🎉 OnboardingViewModel: Affichage message connexion pour: \(partnerName)")
+        connectedPartnerName = partnerName
+        shouldShowPartnerConnectionSuccess = true
+    }
+    
+    func dismissPartnerConnectionSuccess() {
+        print("🎉 OnboardingViewModel: Fermeture message connexion")
+        shouldShowPartnerConnectionSuccess = false
+        connectedPartnerName = ""
     }
 }

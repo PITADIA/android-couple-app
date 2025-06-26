@@ -1,64 +1,145 @@
 import SwiftUI
 import Combine
 
-// MARK: - Sheet Type Enum
-enum SheetType: Identifiable {
-    case questions(QuestionCategory)
-    case menu
-    case subscription
-    case favorites
-    
-    var id: String {
-        switch self {
-        case .questions(let category):
-            return "questions_\(category.id)"
-        case .menu:
-            return "menu"
-        case .subscription:
-            return "subscription"
-        case .favorites:
-            return "favorites"
-        }
-    }
-}
-
 struct MainView: View {
     @EnvironmentObject var appState: AppState
     @State private var activeSheet: SheetType?
     
-    let columns = [
-        GridItem(.flexible(), spacing: 8),
-        GridItem(.flexible(), spacing: 8)
-    ]
+    // Vérifier si un partenaire est connecté
+    private var hasConnectedPartner: Bool {
+        guard let partnerId = appState.currentUser?.partnerId else { return false }
+        return !partnerId.isEmpty
+    }
     
     var body: some View {
         NavigationView {
             ZStack {
-                // Fond noir-rouge profond uniforme
-                Color(red: 0.1, green: 0.02, blue: 0.05)
-                    .ignoresSafeArea()
+                // Fond gris clair pour toute la vue
+                Color(red: 0.97, green: 0.97, blue: 0.98)
+                    .ignoresSafeArea(.all)
                 
                 VStack(spacing: 0) {
-                    // Menu fixe en haut (hamburger et cœur)
-                    HStack {
-                        Button(action: {
-                            activeSheet = .menu
-                        }) {
-                            Image(systemName: "line.3.horizontal")
-                                .font(.system(size: 20))
-                                .foregroundColor(.white)
+                    // ScrollView avec section distance partenaires et grille des catégories
+                    ScrollView {
+                        VStack(spacing: 30) {
+                            // Section distance entre partenaires (remplace le logo)
+                            PartnerDistanceView(
+                                onPartnerAvatarTap: {
+                                    activeSheet = .partnerManagement
+                                },
+                                onDistanceTap: { showPartnerMessageOnly in
+                                    if showPartnerMessageOnly {
+                                        activeSheet = .partnerLocationMessage
+                                    } else {
+                                        activeSheet = .locationPermission
+                                    }
+                                }
+                            )
+                                .environmentObject(appState)
+                                .padding(.top, 80) // Ajouter plus d'espace depuis la status bar
+                            
+                            // Section invitation partenaire (si pas connecté)
+                            if !hasConnectedPartner {
+                                PartnerInviteView {
+                                    activeSheet = .partnerManagement
+                                }
+                                .padding(.top, -15) // Rapprocher de la section distance
+                            }
+                            
+                            // Liste des catégories (style rectangulaire)
+                            VStack(spacing: 20) {
+                                // Utiliser toutes les catégories - le FreemiumManager gère l'accès
+                                ForEach(QuestionCategory.categories) { category in
+                                    CategoryListCardView(category: category) {
+                                        print("🔥🔥🔥 MAINVIEW CALLBACK: Catégorie sélectionnée: \(category.title)")
+                                        activeSheet = .questions(category)
+                                        print("🔥🔥🔥 MAINVIEW CALLBACK: activeSheet = .questions(\(category.title))")
+                                    }
+                                    .environmentObject(appState)
+                                }
+                            }
+                            .padding(.horizontal, 20)
+                            
+                            // Section widgets défilants (en bas des catégories)
+                            WidgetPreviewSection(
+                                onWidgetTap: {
+                                    activeSheet = .widgetTutorial
+                                },
+                                onDistanceWidgetTap: { showPartnerMessageOnly in
+                                    if showPartnerMessageOnly {
+                                        activeSheet = .partnerLocationMessage
+                                    } else {
+                                        activeSheet = .locationPermission
+                                    }
+                                }
+                            )
+                            .environmentObject(appState)
                         }
+                        .padding(.bottom, 100) // Espace pour le menu du bas
+                        .background(
+                            // Dégradé rose en arrière-plan du contenu
+                            VStack {
+                                LinearGradient(
+                                    gradient: Gradient(colors: [
+                                        Color(hex: "#FD267A").opacity(0.3),
+                                        Color(hex: "#FD267A").opacity(0.1),
+                                        Color.white.opacity(0)
+                                    ]),
+                                    startPoint: .top,
+                                    endPoint: .bottom
+                                )
+                                .frame(height: 350) // Augmenter la hauteur pour couvrir plus d'espace
+                                .ignoresSafeArea(edges: .top)
+                                
+                                Spacer()
+                            }
+                            , alignment: .top
+                        )
+                    }
+                    .ignoresSafeArea(edges: .top) // Permettre au ScrollView de remonter jusqu'en haut
+                }
+                
+                // Menu fixe en bas
+                VStack {
+                    Spacer()
+                    
+                    HStack(spacing: 0) {
+                        // Accueil
+                        Button(action: {
+                            // Déjà sur l'accueil
+                        }) {
+                            Image("home")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 30, height: 24)
+                                .foregroundColor(Color(hex: "#FD267A"))
+                        }
+                        .frame(maxWidth: .infinity)
                         
-                        Spacer()
+                        // Journal
+                        Button(action: {
+                            activeSheet = .journal
+                            print("🔥 MainView: Ouverture du journal")
+                        }) {
+                            Image("star")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 30, height: 24)
+                                .foregroundColor(Color(hex: "#FD267A"))
+                        }
+                        .frame(maxWidth: .infinity)
                         
+                        // Favoris
                         Button(action: {
                             activeSheet = .favorites
                             print("🔥 MainView: Ouverture des favoris")
                         }) {
                             ZStack {
-                                Image(systemName: "heart")
-                                    .font(.system(size: 20))
-                                    .foregroundColor(.white)
+                                Image("heart")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 30, height: 24)
+                                    .foregroundColor(.gray)
                                 
                                 // Badge avec le nombre de favoris
                                 if let favoritesService = appState.favoritesService, favoritesService.getFavoritesCount() > 0 {
@@ -68,43 +149,31 @@ struct MainView: View {
                                         .frame(width: 16, height: 16)
                                         .background(Color.red)
                                         .clipShape(Circle())
-                                        .offset(x: 10, y: -10)
+                                        .offset(x: 13, y: -13)
                                 }
                             }
                         }
-                    }
-                    .padding(.horizontal, 20)
-                    .padding(.top, 20)
-                    .padding(.bottom, 10)
-                    
-                    // ScrollView avec logo et grille des catégories
-                    ScrollView {
-                        VStack(spacing: 50) {
-                            // Logo Leetchi qui scroll avec le contenu
-                            Image("Leetchi")
+                        .frame(maxWidth: .infinity)
+                        
+                        // Profil
+                        Button(action: {
+                            activeSheet = .menu
+                        }) {
+                            Image("profile")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 80, height: 80)
-                                .padding(.top, 20)
-                            
-                            // Grille des catégories
-                            LazyVGrid(columns: columns, alignment: .center, spacing: 16) {
-                                // Utiliser toutes les catégories - le FreemiumManager gère l'accès
-                                ForEach(QuestionCategory.categories) { category in
-                                    CategoryCardView(category: category) {
-                                        print("🔥🔥🔥 MAINVIEW CALLBACK: Catégorie sélectionnée: \(category.title)")
-                                        activeSheet = .questions(category)
-                                        print("🔥🔥🔥 MAINVIEW CALLBACK: activeSheet = .questions(\(category.title))")
-                                    }
-                                    .frame(height: 200)
-                                    .environmentObject(appState)
-                                }
-                            }
-                            .frame(maxWidth: .infinity)
-                            .padding(.horizontal, 20)
+                                .frame(width: 30, height: 24)
+                                .foregroundColor(.gray)
                         }
-                        .padding(.bottom, 40)
+                        .frame(maxWidth: .infinity)
                     }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 12)
+                    .background(
+                        Color.white.opacity(0.95)
+                            .blur(radius: 10)
+                    )
+                    .background(Color.white.opacity(0.9))
                 }
             }
         }
@@ -145,6 +214,53 @@ struct MainView: View {
                     .onAppear {
                         print("🔥 MainView: FavoritesCardView apparue dans la sheet")
                     }
+                
+            case .journal:
+                JournalView()
+                    .environmentObject(appState)
+                    .onAppear {
+                        print("🔥 MainView: JournalView apparue dans la sheet")
+                    }
+                
+            case .widgets:
+                WidgetsView()
+                    .environmentObject(appState)
+                    .onAppear {
+                        print("🔥 MainView: WidgetsView apparue dans la sheet")
+                    }
+                
+            case .widgetTutorial:
+                WidgetTutorialView()
+                    .presentationDetents([.fraction(0.55)])
+                    .onAppear {
+                        print("🔥 MainView: WidgetTutorialView apparue dans la sheet")
+                    }
+                
+            case .partnerManagement:
+                PartnerManagementView()
+                    .environmentObject(appState)
+                    .onAppear {
+                        print("🔥 MainView: PartnerManagementView apparue dans la sheet")
+                    }
+                
+            case .locationPermission:
+                LocationPermissionFlow()
+                    .onAppear {
+                        print("📍 MainView: LocationPermissionFlow apparue dans la sheet")
+                    }
+                
+            case .partnerLocationMessage:
+                LocationPartnerMessageView()
+                    .onAppear {
+                        print("📍 MainView: LocationPartnerMessageView apparue dans la sheet")
+                    }
+                
+            case .eventsMap:
+                JournalMapView()
+                    .environmentObject(appState)
+                    .onAppear {
+                        print("🗺️ MainView: JournalMapView apparue dans la sheet")
+                    }
                 }
         }
 
@@ -162,9 +278,11 @@ struct MainView: View {
         }
         .onReceive(NotificationCenter.default.publisher(for: .freemiumManagerChanged)) { _ in
             // Synchroniser l'état local avec le FreemiumManager
-            if let freemiumManager = appState.freemiumManager, freemiumManager.showingSubscription {
-                print("🔥🔥🔥 MAINVIEW NOTIFICATION: FreemiumManager demande subscription")
-                activeSheet = .subscription
+            if let freemiumManager = appState.freemiumManager {
+                if freemiumManager.showingSubscription && activeSheet != .subscription {
+                    print("🔥🔥🔥 MAINVIEW ONRECEIVE: AFFICHAGE SUBSCRIPTION DEMANDE")
+                    activeSheet = .subscription
+                }
             }
         }
     }

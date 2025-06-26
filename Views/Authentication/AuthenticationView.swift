@@ -10,60 +10,54 @@ struct AuthenticationView: View {
     
     var body: some View {
         ZStack {
-            // Fond dégradé personnalisé avec les nouvelles couleurs
-            LinearGradient(
-                gradient: Gradient(colors: [
-                    Color(hex: "#FD267A"),
-                    Color(hex: "#FF655B")
-                ]),
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-            .ignoresSafeArea()
+            // Fond gris clair identique aux pages d'onboarding
+            Color(red: 0.97, green: 0.97, blue: 0.98)
+                .ignoresSafeArea()
             
             VStack(spacing: 0) {
                 // Logo et nom de l'app en haut
-                HStack(spacing: 15) {
-                    // Logo Leetchi à gauche
-                    Image("Leetchi")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 40, height: 40)
-                    
-                    Text("Love2Love")
-                        .font(.system(size: 50, weight: .bold))
-                        .foregroundColor(.white)
+                VStack(spacing: 20) {
+                    HStack(spacing: 15) {
+                        // Logo Leetchi à gauche
+                        Image("Leetchi")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 40, height: 40)
+                        
+                        Text("Love2Love")
+                            .font(.system(size: 50, weight: .bold))
+                            .foregroundColor(.black)
+                    }
+                    .padding(.top, 60)
                 }
-                .padding(.top, 60)
-                .padding(.bottom, 40)
                 
-                // Spacer pour centrer le titre au milieu
+                // Premier Spacer pour pousser le contenu vers le centre
                 Spacer()
                 
-                // Titre principal centré au milieu de l'écran
+                // Titre principal centré - directement sur le background
                 VStack(spacing: 20) {
-                    Text("Et Si Vous Retombiez Amoureux En Vous Parlant Vraiment ?")
+                    Text("L'application qui vous rapproche")
                         .font(.system(size: 36, weight: .bold))
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                         .multilineTextAlignment(.center)
                         .lineLimit(nil)
                         .fixedSize(horizontal: false, vertical: true)
-                        .padding(.horizontal, 20)
+                        .padding(.horizontal, 30)
                     
                     // Sous-titre
-                    Text("Redécouvrez-vous à travers des questions qui raviveront votre amour.")
+                    Text("Redécouvrez-vous à travers des questions qui raviveront votre amour et sauvegardez les moments passés ensemble.")
                         .font(.system(size: 18))
-                        .foregroundColor(.white.opacity(0.9))
+                        .foregroundColor(.black.opacity(0.7))
                         .multilineTextAlignment(.center)
                         .lineLimit(nil)
                         .fixedSize(horizontal: false, vertical: true)
                         .padding(.horizontal, 30)
                 }
                 
-                // Spacer pour pousser les boutons vers le bas
+                // Deuxième Spacer pour pousser les boutons vers le bas
                 Spacer()
                 
-                // Boutons d'action collés en bas
+                // Zone blanche collée en bas avec les boutons
                 VStack(spacing: 15) {
                     // Bouton principal
                     Button(action: {
@@ -86,11 +80,12 @@ struct AuthenticationView: View {
                     }) {
                         Text("J'ai déjà un compte")
                             .font(.system(size: 16))
-                            .foregroundColor(.white)
+                            .foregroundColor(.black.opacity(0.6))
                             .underline()
                     }
                 }
-                .padding(.bottom, 50)
+                .padding(.vertical, 20)
+                .background(Color.white)
             }
         }
         .fullScreenCover(isPresented: $showingOnboarding) {
@@ -126,6 +121,4 @@ struct AuthenticationView: View {
         print("🔥 AuthenticationView: Déclenchement de l'authentification Apple via AuthenticationService")
         authService.signInWithApple()
     }
-    
-
 } 

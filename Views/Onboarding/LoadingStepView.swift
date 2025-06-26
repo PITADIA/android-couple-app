@@ -12,23 +12,29 @@ struct LoadingStepView: View {
     ]
     
     var body: some View {
-        VStack(spacing: 40) {
-            Spacer()
+        ZStack {
+            // Fond gris clair identique aux autres pages d'onboarding
+            Color(red: 0.97, green: 0.97, blue: 0.98)
+                .ignoresSafeArea()
             
-            // Animation de chargement
-            VStack(spacing: 30) {
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle(tint: .white))
-                    .scaleEffect(2.0)
+            VStack(spacing: 40) {
+                Spacer()
                 
-                Text(loadingMessages[currentMessageIndex])
-                    .font(.system(size: 18, weight: .medium))
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
+                // Animation de chargement
+                VStack(spacing: 30) {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: .black))
+                        .scaleEffect(2.0)
+                    
+                    Text(loadingMessages[currentMessageIndex])
+                        .font(.system(size: 18, weight: .medium))
+                        .foregroundColor(.black)
+                        .multilineTextAlignment(.center)
 
+                }
+                
+                Spacer()
             }
-            
-            Spacer()
         }
         .onAppear {
             print("🔥 LoadingStepView: Vue de chargement apparue")

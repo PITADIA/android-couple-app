@@ -1,6 +1,8 @@
 import Foundation
 import StoreKit
 import Combine
+import FirebaseFirestore
+import FirebaseAuth
 
 class SubscriptionService: NSObject, ObservableObject, SKPaymentTransactionObserver {
     static let shared = SubscriptionService()
@@ -100,7 +102,7 @@ class SubscriptionService: NSObject, ObservableObject, SKPaymentTransactionObser
             case .purchased:
                 print("🔥 SubscriptionService: Transaction PURCHASED")
                 NSLog("🔥 SubscriptionService: Transaction PURCHASED")
-                handlePurchased(transaction)
+                handleSuccessfulPurchase(transaction)
             case .restored:
                 print("🔥 SubscriptionService: Transaction RESTORED")
                 NSLog("🔥 SubscriptionService: Transaction RESTORED")
@@ -123,25 +125,26 @@ class SubscriptionService: NSObject, ObservableObject, SKPaymentTransactionObser
         }
     }
     
-    private func handlePurchased(_ transaction: SKPaymentTransaction) {
+    private func handleSuccessfulPurchase(_ transaction: SKPaymentTransaction) {
         print("🔥 SubscriptionService: ✅ Achat réussi: \(transaction.payment.productIdentifier)")
         NSLog("🔥 SubscriptionService: ✅ Achat réussi: \(transaction.payment.productIdentifier)")
         
-        // Marquer comme abonné
         isSubscribed = true
         isLoading = false
         
-        // Mettre à jour Firebase
-        FirebaseService.shared.updateSubscriptionStatus(isSubscribed: true)
-        
-        // Trouver le produit correspondant
-        if let product = products.first(where: { $0.productIdentifier == transaction.payment.productIdentifier }) {
-            lastPurchasedProduct = product
-            print("🔥 SubscriptionService: Produit acheté: \(product.localizedTitle)")
-            NSLog("🔥 SubscriptionService: Produit acheté: \(product.localizedTitle)")
+        // NOUVEAU: Marquer comme abonnement direct AVANT de mettre à jour Firebase
+        Task {
+            await markSubscriptionAsDirect()
+            
+            // Mettre à jour Firebase APRÈS avoir marqué l'abonnement comme direct
+            await MainActor.run {
+                FirebaseService.shared.updateSubscriptionStatus(isSubscribed: true)
+            }
+            
+            // Le partage automatique sera géré par PartnerSubscriptionSyncService
+            print("🔥 SubscriptionService: Synchronisation automatique via PartnerSubscriptionSyncService")
         }
         
-        // Finaliser la transaction
         SKPaymentQueue.default().finishTransaction(transaction)
         
         // Notifier le succès
@@ -150,8 +153,8 @@ class SubscriptionService: NSObject, ObservableObject, SKPaymentTransactionObser
             object: nil
         )
         
-        print("🔥 SubscriptionService: Transaction finalisée et notification envoyée")
-        NSLog("🔥 SubscriptionService: Transaction finalisée et notification envoyée")
+        print("🔥 SubscriptionService: Achat finalisé et partagé avec partenaire")
+        NSLog("🔥 SubscriptionService: Achat finalisé et partagé avec partenaire")
     }
     
     private func handleRestored(_ transaction: SKPaymentTransaction) {
@@ -161,8 +164,18 @@ class SubscriptionService: NSObject, ObservableObject, SKPaymentTransactionObser
         isSubscribed = true
         isLoading = false
         
-        // Mettre à jour Firebase
-        FirebaseService.shared.updateSubscriptionStatus(isSubscribed: true)
+        // NOUVEAU: Marquer comme abonnement direct AVANT de mettre à jour Firebase
+        Task {
+            await markSubscriptionAsDirect()
+            
+            // Mettre à jour Firebase APRÈS avoir marqué l'abonnement comme direct
+            await MainActor.run {
+                FirebaseService.shared.updateSubscriptionStatus(isSubscribed: true)
+            }
+            
+            // Le partage automatique sera géré par PartnerSubscriptionSyncService
+            print("🔥 SubscriptionService: Synchronisation automatique via PartnerSubscriptionSyncService")
+        }
         
         SKPaymentQueue.default().finishTransaction(transaction)
         
@@ -172,8 +185,8 @@ class SubscriptionService: NSObject, ObservableObject, SKPaymentTransactionObser
             object: nil
         )
         
-        print("🔥 SubscriptionService: Restauration finalisée")
-        NSLog("🔥 SubscriptionService: Restauration finalisée")
+        print("🔥 SubscriptionService: Restauration finalisée et partagée avec partenaire")
+        NSLog("🔥 SubscriptionService: Restauration finalisée et partagée avec partenaire")
     }
     
     private func handleFailed(_ transaction: SKPaymentTransaction) {
@@ -221,6 +234,109 @@ class SubscriptionService: NSObject, ObservableObject, SKPaymentTransactionObser
             errorMessage = "Aucun achat à restaurer trouvé"
             print("🔥 SubscriptionService: Aucun achat à restaurer")
             NSLog("🔥 SubscriptionService: Aucun achat à restaurer")
+        }
+    }
+    
+    // MARK: - Gestion de la résiliation d'abonnement
+    
+    func handleSubscriptionExpired() async {
+        guard let currentUser = Auth.auth().currentUser else {
+            print("🔥 SubscriptionService: Pas d'utilisateur connecté pour résiliation")
+            return
+        }
+        
+        print("🔥 SubscriptionService: Gestion résiliation abonnement pour: \(currentUser.uid)")
+        
+        // Révoquer l'abonnement de l'utilisateur principal
+        await revokeUserSubscription(userId: currentUser.uid)
+        
+        // Mettre à jour l'état local
+        await MainActor.run {
+            self.isSubscribed = false
+        }
+        
+        // Mettre à jour Firebase
+        FirebaseService.shared.updateSubscriptionStatus(isSubscribed: false)
+        
+        // La synchronisation avec le partenaire sera automatiquement gérée par PartnerSubscriptionSyncService
+        print("✅ SubscriptionService: Résiliation effectuée, synchronisation automatique en cours")
+    }
+    
+    private func revokeUserSubscription(userId: String) async {
+        do {
+            try await Firestore.firestore()
+                .collection("users")
+                .document(userId)
+                .updateData([
+                    "isSubscribed": false,
+                    "subscriptionExpiredAt": Timestamp(date: Date()),
+                    "subscriptionType": FieldValue.delete()
+                ])
+            
+            print("✅ SubscriptionService: Abonnement révoqué pour utilisateur: \(userId)")
+            
+        } catch {
+            print("❌ SubscriptionService: Erreur révocation utilisateur: \(error)")
+        }
+    }
+    
+    // MARK: - Vérification périodique des abonnements
+    
+    func startSubscriptionStatusMonitoring() {
+        // Timer pour vérifier l'état des abonnements toutes les heures
+        Timer.scheduledTimer(withTimeInterval: 3600, repeats: true) { _ in
+            Task {
+                await self.checkSubscriptionStatus()
+            }
+        }
+        
+        print("🔥 SubscriptionService: Monitoring des abonnements démarré")
+    }
+    
+    private func checkSubscriptionStatus() async {
+        guard let currentUser = Auth.auth().currentUser else { return }
+        
+        print("🔥 SubscriptionService: Vérification statut abonnement...")
+        
+        // TODO: Ici vous devriez implémenter la vérification Apple Receipt
+        // Pour l'instant, simulation basée sur l'état Firebase
+        
+        do {
+            let userDoc = try await Firestore.firestore()
+                .collection("users")
+                .document(currentUser.uid)
+                .getDocument()
+            
+            guard let userData = userDoc.data(),
+                  let isSubscribed = userData["isSubscribed"] as? Bool else { return }
+            
+            // Si l'utilisateur était abonné localement mais ne l'est plus dans Firebase
+            if self.isSubscribed && !isSubscribed {
+                print("🔥 SubscriptionService: Détection de résiliation d'abonnement")
+                await handleSubscriptionExpired()
+            }
+            
+        } catch {
+            print("❌ SubscriptionService: Erreur vérification statut: \(error)")
+        }
+    }
+    
+    private func markSubscriptionAsDirect() async {
+        guard let currentUser = Auth.auth().currentUser else { return }
+        
+        do {
+            try await Firestore.firestore()
+                .collection("users")
+                .document(currentUser.uid)
+                .updateData([
+                    "subscriptionType": "direct",
+                    "subscriptionPurchasedAt": Timestamp(date: Date())
+                ])
+            
+            print("✅ SubscriptionService: Abonnement marqué comme direct")
+            
+        } catch {
+            print("❌ SubscriptionService: Erreur marquage abonnement direct: \(error)")
         }
     }
 }
