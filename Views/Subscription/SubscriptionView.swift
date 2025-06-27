@@ -52,14 +52,20 @@ struct SubscriptionView: View {
                 
                 // Section prix et bouton collée en bas (design moderne)
                 VStack(spacing: 15) {
-                    HStack(spacing: 5) {
-                        Image(systemName: "checkmark")
-                            .font(.system(size: 14, weight: .bold))
-                            .foregroundColor(.black)
+                    VStack(spacing: 5) {
+                        HStack(spacing: 5) {
+                            Image(systemName: "checkmark")
+                                .font(.system(size: 14, weight: .bold))
+                                .foregroundColor(.black)
+                            
+                            Text("Essai Gratuit de 3 jours, puis 4,99 € / semaine")
+                                .font(.system(size: 14))
+                                .foregroundColor(.black)
+                        }
                         
-                        Text("Essai Gratuit de 3 jours, puis 4,99 € / semaine")
-                            .font(.system(size: 14))
-                            .foregroundColor(.black)
+                        Text("Abonnement pour 2 utilisateurs donc 2,49€ / utilisateur / semaine")
+                            .font(.system(size: 12))
+                            .foregroundColor(.black.opacity(0.7))
                     }
                     .padding(.horizontal, 30)
                     
@@ -69,10 +75,12 @@ struct SubscriptionView: View {
                     }) {
                         HStack {
                             if receiptService.isLoading {
-                                ProgressView()
-                                    .progressViewStyle(CircularProgressViewStyle(tint: .white))
-                                    .scaleEffect(0.8)
-                                Text("CHARGEMENT...")
+                                HStack(spacing: 8) {
+                                    ProgressView()
+                                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                                        .scaleEffect(0.8)
+                                    Text("CHARGEMENT...")
+                                }
                             } else {
                                 Text("COMMENCER L'ESSAI")
                             }

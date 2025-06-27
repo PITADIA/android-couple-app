@@ -49,14 +49,20 @@ struct SubscriptionStepView: View {
                 
                 // Section prix et bouton collée en bas
                 VStack(spacing: 15) {
-                    HStack(spacing: 5) {
-                        Image(systemName: "checkmark")
-                            .font(.system(size: 14, weight: .bold))
-                            .foregroundColor(.black)
+                    VStack(spacing: 5) {
+                        HStack(spacing: 5) {
+                            Image(systemName: "checkmark")
+                                .font(.system(size: 14, weight: .bold))
+                                .foregroundColor(.black)
+                            
+                            Text("Essai Gratuit de 3 jours, puis 4,99 € / semaine")
+                                .font(.system(size: 14))
+                                .foregroundColor(.black)
+                        }
                         
-                        Text("Essai Gratuit de 3 jours, puis 4,99 € / semaine")
-                            .font(.system(size: 14))
-                            .foregroundColor(.black)
+                        Text("Abonnement pour 2 utilisateurs donc 2,50€ / utilisateur / semaine")
+                            .font(.system(size: 12))
+                            .foregroundColor(.black.opacity(0.7))
                     }
                     .padding(.horizontal, 30)
                     
@@ -66,10 +72,12 @@ struct SubscriptionStepView: View {
                     }) {
                         HStack {
                             if receiptService.isLoading {
-                                ProgressView()
-                                    .progressViewStyle(CircularProgressViewStyle(tint: .white))
-                                    .scaleEffect(0.8)
-                                Text("CHARGEMENT...")
+                                HStack(spacing: 8) {
+                                    ProgressView()
+                                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                                        .scaleEffect(0.8)
+                                    Text("CHARGEMENT...")
+                                }
                             } else {
                                 Text("COMMENCER L'ESSAI")
                             }
@@ -162,11 +170,7 @@ struct SubscriptionStepView: View {
                 NSLog("🔥 SubscriptionStepView: Erreur reçue: \(error)")
             }
         }
-        .onReceive(NotificationCenter.default.publisher(for: NSNotification.Name("SubscriptionValidated"))) { _ in
-            print("🔥 SubscriptionStepView: Notification de validation d'abonnement reçue")
-            NSLog("🔥 SubscriptionStepView: Notification de validation d'abonnement reçue")
-            viewModel.completeSubscription()
-        }
+
     }
     
     private func purchaseSubscription() {

@@ -210,6 +210,8 @@ struct Love2LoveWidgetEntryView: View {
             SmallWidgetView(data: entry.widgetData)
         case .systemMedium:
             MediumWidgetView(data: entry.widgetData)
+        case .accessoryCircular:
+            AccessoryCircularWidgetView(data: entry.widgetData)
         default:
             SmallWidgetView(data: entry.widgetData)
         }
@@ -450,140 +452,6 @@ struct MediumWidgetView: View {
     }
 }
 
-// MARK: - Map Distance Widget (NOUVEAU - Style simplifié comme l'image)
-struct MapDistanceWidgetView: View {
-    let data: WidgetData
-    
-    private var locationStatus: LocationStatus {
-        let hasUserLocation = data.userLatitude != nil && data.userLongitude != nil
-        let hasPartnerLocation = data.partnerLatitude != nil && data.partnerLongitude != nil
-        
-        if hasUserLocation && hasPartnerLocation {
-            return .bothAvailable
-        } else if !hasUserLocation && hasPartnerLocation {
-            return .userMissing
-        } else if hasUserLocation && !hasPartnerLocation {
-            return .partnerMissing
-        } else {
-            return .bothMissing
-        }
-    }
-    
-    private enum LocationStatus {
-        case bothAvailable
-        case userMissing
-        case partnerMissing
-        case bothMissing
-        
-        var message: String {
-            switch self {
-            case .bothAvailable:
-                return ""
-            case .userMissing:
-                return "Ta localisation doit être activée pour voir votre distance"
-            case .partnerMissing:
-                return "Ton partenaire doit activer sa localisation pour voir votre distance"
-            case .bothMissing:
-                return "Activez vos localisations pour voir votre distance"
-            }
-        }
-        
-        var showDistance: Bool {
-            return self == .bothAvailable
-        }
-    }
-    
-    var body: some View {
-        GeometryReader { geometry in
-            ZStack {
-                // Image de fond personnalisée avec centrage intelligent
-                Image("ouioui")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: geometry.size.width, height: geometry.size.height)
-                    .clipped()
-                    .ignoresSafeArea(.all)
-                
-                // Overlay semi-transparent pour améliorer la lisibilité du texte
-                Color.black.opacity(0.2)
-                    .ignoresSafeArea(.all)
-                
-                VStack(spacing: 20) {
-                    // Distance en haut
-                    if locationStatus.showDistance {
-                        Text("Notre distance : \(data.distance ?? "? km")")
-                            .font(.system(size: 16, weight: .semibold))
-                            .foregroundColor(.white)
-                            .shadow(color: .black.opacity(0.5), radius: 1, x: 0, y: 1)
-                    } else {
-                        Text(locationStatus.message)
-                            .font(.system(size: 14, weight: .medium))
-                            .foregroundColor(.white)
-                            .multilineTextAlignment(.center)
-                            .padding(.horizontal, 16)
-                            .shadow(color: .black.opacity(0.5), radius: 1, x: 0, y: 1)
-                    }
-                    
-                    // Section avec photos et cœur
-                    HStack(spacing: 20) { // Augmentation de 0 à 20 pour plus d'espacement
-                        // Photo utilisateur (côté gauche) - taille réduite
-                        ProfileCircleForWidget(
-                            imageURL: data.userImageURL,
-                            userName: data.userName,
-                            size: 65 // Réduit de 80 à 65
-                        )
-                        
-                        // Traits discontinus avec cœur au milieu
-                        HStack(spacing: 0) {
-                            // Trait gauche
-                            DashedLineWidget()
-                                .stroke(Color.white.opacity(0.9), style: StrokeStyle(lineWidth: 2, dash: [5, 3]))
-                                .frame(height: 2)
-                                .shadow(color: .black.opacity(0.3), radius: 1, x: 0, y: 1)
-                            
-                            // Cœur au milieu
-                            ZStack {
-                                Circle()
-                                    .fill(Color.white.opacity(0.3))
-                                    .frame(width: 35, height: 35)
-                                    .shadow(color: .black.opacity(0.2), radius: 2, x: 0, y: 1)
-                                
-                                Image(systemName: "heart.fill")
-                                    .font(.system(size: 14))
-                                    .foregroundColor(.white)
-                                    .shadow(color: .black.opacity(0.5), radius: 1, x: 0, y: 1)
-                            }
-                            
-                            // Trait droit
-                            DashedLineWidget()
-                                .stroke(Color.white.opacity(0.9), style: StrokeStyle(lineWidth: 2, dash: [5, 3]))
-                                .frame(height: 2)
-                                .shadow(color: .black.opacity(0.3), radius: 1, x: 0, y: 1)
-                        }
-                        .frame(width: 120) // Augmentation de 100 à 120 pour adapter à l'espacement
-                        
-                        // Photo partenaire (côté droit) - taille réduite
-                        ProfileCircleForWidget(
-                            imageURL: data.partnerImageURL,
-                            userName: data.partnerName,
-                            size: 65 // Réduit de 80 à 65
-                        )
-                    }
-                }
-                .padding(.horizontal, 20)
-            }
-        }
-        .clipped()
-        // Support natif pour fond personnalisé
-        .containerBackground(for: .widget) {
-            Image("ouioui")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .ignoresSafeArea(.all)
-        }
-    }
-}
-
 // MARK: - Profile Circle pour Widget (Version simplifiée)
 struct ProfileCircleForWidget: View {
     let imageURL: String?
@@ -652,6 +520,44 @@ struct ProfileCircleForWidget: View {
     }
 }
 
+// MARK: - Lock Screen Widgets
+
+// MARK: - Accessory Circular Widget (widget circulaire - comme image 1)
+struct AccessoryCircularWidgetView: View {
+    let data: WidgetData
+    
+    var body: some View {
+        let timeComponents = data.getTimeComponents()
+        
+        ZStack {
+            VStack(spacing: 4) {
+                // Deux cœurs espacés (comme l'émoji 💕)
+                ZStack {
+                    Image(systemName: "heart.fill")
+                        .font(.system(size: 14, weight: .bold))
+                        .foregroundColor(.white)
+                        .offset(x: -4, y: -2)
+                    
+                    Image(systemName: "heart.fill")
+                        .font(.system(size: 12, weight: .bold))
+                        .foregroundColor(.white)
+                        .offset(x: 4, y: 2)
+                }
+                
+                // Nombre de jours
+                Text("\(timeComponents.days)")
+                    .font(.system(size: 20, weight: .bold))
+                    .foregroundColor(.white)
+                
+                // Label "days" en français
+                Text("jours")
+                    .font(.system(size: 10, weight: .medium))
+                    .foregroundColor(.white)
+            }
+        }
+    }
+}
+
 // MARK: - Dashed Line pour Widget
 struct DashedLineWidget: Shape {
     func path(in rect: CGRect) -> Path {
@@ -661,8 +567,6 @@ struct DashedLineWidget: Shape {
         return path
     }
 }
-
-
 
 // MARK: - Widget Configuration
 struct Love2LoveWidget: Widget {
@@ -675,22 +579,10 @@ struct Love2LoveWidget: Widget {
         }
         .configurationDisplayName("Love2Love")
         .description("Suivez votre relation avec votre partenaire.")
-        .supportedFamilies([.systemSmall, .systemMedium])
-        .contentMarginsDisabledIfAvailable()
-    }
-}
-
-struct Love2LoveMapWidget: Widget {
-    let kind: String = "Love2LoveMapWidget"
-
-    var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            MapDistanceWidgetView(data: entry.widgetData)
-                .containerBackground(.clear, for: .widget)
-        }
-        .configurationDisplayName("Distance Love2Love")
-        .description("Voir la distance avec votre partenaire.")
-        .supportedFamilies([.systemMedium])
+        .supportedFamilies([
+            .systemSmall, .systemMedium,           // Écran d'accueil
+            .accessoryCircular                     // Lock screen - circulaire seulement
+        ])
         .contentMarginsDisabledIfAvailable()
     }
 }
@@ -708,25 +600,10 @@ struct Love2LoveMapWidget: Widget {
     SimpleEntry(date: .now, widgetData: .placeholder)
 }
 
-
-
-// MARK: - Map Widget Previews
-#Preview("Map Widget", as: .systemMedium) {
-    Love2LoveMapWidget()
+#Preview(as: .accessoryCircular) {
+    Love2LoveWidget()
 } timeline: {
     SimpleEntry(date: .now, widgetData: .placeholder)
-}
-
-#Preview("Map Widget - User Missing", as: .systemMedium) {
-    Love2LoveMapWidget()
-} timeline: {
-    SimpleEntry(date: .now, widgetData: .placeholderUserMissing)
-}
-
-#Preview("Map Widget - Partner Missing", as: .systemMedium) {
-    Love2LoveMapWidget()
-} timeline: {
-    SimpleEntry(date: .now, widgetData: .placeholderPartnerMissing)
 }
 
 // MARK: - Previews
@@ -737,21 +614,6 @@ struct Love2LoveWidget_Previews: PreviewProvider {
             Love2LoveWidgetEntryView(entry: SimpleEntry(date: Date(), widgetData: .placeholder))
                 .previewContext(WidgetPreviewContext(family: .systemMedium))
                 .previewDisplayName("Widget Classique - Medium")
-            
-            // Preview du nouveau widget Map Distance
-            MapDistanceWidgetView(data: .placeholder)
-                .previewContext(WidgetPreviewContext(family: .systemMedium))
-                .previewDisplayName("Widget Distance - Avec localisation")
-            
-            // Preview widget distance - utilisateur manquant
-            MapDistanceWidgetView(data: .placeholderUserMissing)
-                .previewContext(WidgetPreviewContext(family: .systemMedium))
-                .previewDisplayName("Widget Distance - Utilisateur manquant")
-            
-            // Preview widget distance - partenaire manquant
-            MapDistanceWidgetView(data: .placeholderPartnerMissing)
-                .previewContext(WidgetPreviewContext(family: .systemMedium))
-                .previewDisplayName("Widget Distance - Partenaire manquant")
         }
     }
 }
@@ -768,5 +630,102 @@ extension WidgetConfiguration {
         #else
             return self
         #endif
+    }
+}
+
+struct Love2LoveMapWidget: Widget {
+    let kind: String = "Love2LoveMapWidget"
+
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+            MapDistanceWidgetEntryView(entry: entry)
+                .containerBackground(.clear, for: .widget)
+        }
+        .configurationDisplayName("Distance Love2Love")
+        .description("Ce Widget nécessite la localisation activée des deux partenaires.")
+        .supportedFamilies([
+            .accessoryRectangular                  // Lock screen uniquement
+        ])
+        .contentMarginsDisabledIfAvailable()
+    }
+}
+
+// MARK: - Map Widget Entry View
+struct MapDistanceWidgetEntryView: View {
+    var entry: Provider.Entry
+    @Environment(\.widgetFamily) var family
+    
+    var body: some View {
+        switch family {
+        case .accessoryRectangular:
+            MapDistanceRectangularWidgetView(data: entry.widgetData)
+        default:
+            MapDistanceRectangularWidgetView(data: entry.widgetData)
+        }
+    }
+}
+
+// MARK: - Map Distance Lock Screen Widget
+
+// Widget rectangulaire pour la distance
+struct MapDistanceRectangularWidgetView: View {
+    let data: WidgetData
+    
+    var body: some View {
+        VStack(spacing: 6) {
+            // Section haut : "Notre distance" centrée
+            Text("Notre distance: \(data.distance ?? "? km")")
+                .font(.system(size: 13, weight: .medium))
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity, alignment: .center)
+            
+            // Section bas : Profils avec lignes pointillées centrés
+            HStack(spacing: 0) {
+                // Cercle utilisateur avec initiale
+                Circle()
+                    .fill(Color.white.opacity(0.3))
+                    .frame(width: 28, height: 28)
+                    .overlay(
+                        Text(data.userName?.prefix(1).uppercased() ?? "U")
+                            .font(.system(size: 12, weight: .bold))
+                            .foregroundColor(.white)
+                    )
+                
+                // Ligne pointillée gauche
+                DashedLineWidget()
+                    .stroke(Color.white, style: StrokeStyle(lineWidth: 1, dash: [3, 2]))
+                    .frame(width: 25, height: 1)
+                
+                // Cœur au centre
+                ZStack {
+                    Circle()
+                        .fill(Color.white.opacity(0.3))
+                        .frame(width: 20, height: 20)
+                    
+                    Image(systemName: "heart.fill")
+                        .font(.system(size: 10))
+                        .foregroundColor(.white)
+                }
+                
+                // Ligne pointillée droite
+                DashedLineWidget()
+                    .stroke(Color.white, style: StrokeStyle(lineWidth: 1, dash: [3, 2]))
+                    .frame(width: 25, height: 1)
+                
+                // Cercle partenaire avec initiale
+                Circle()
+                    .fill(Color.white.opacity(0.3))
+                    .frame(width: 28, height: 28)
+                    .overlay(
+                        Text(data.partnerName?.prefix(1).uppercased() ?? "P")
+                            .font(.system(size: 12, weight: .bold))
+                            .foregroundColor(.white)
+                    )
+            }
+            .frame(maxWidth: .infinity, alignment: .center)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding(.horizontal, 8)
+        .padding(.vertical, 4)
     }
 }

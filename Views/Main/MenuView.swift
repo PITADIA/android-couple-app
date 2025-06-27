@@ -1,6 +1,7 @@
 import SwiftUI
 import AuthenticationServices
 import PhotosUI
+import Photos
 
 struct MenuView: View {
     @EnvironmentObject var appState: AppState
@@ -8,17 +9,22 @@ struct MenuView: View {
 
     @State private var showingDeleteConfirmation = false
     @State private var isDeleting = false
-    @State private var showingImagePicker = false
 
     @State private var profileImage: UIImage?
     @State private var showingPartnerCode = false
     @State private var showingNameEdit = false
     @State private var showingRelationshipEdit = false
 
-
     @State private var editedName = ""
     @State private var editedRelationshipStart = ""
     
+    // MARK: - Gestion des autorisations photos (comme ProfilePhotoStepView)
+    @State private var showingGalleryPicker = false        // Picker standard (accès complet)
+    @State private var showingLimitedGalleryView = false   // Interface personnalisée (accès limité)
+    @State private var showSettingsAlert = false          // Alerte paramètres
+    @State private var limitedPhotoAssets: [PHAsset] = [] // Photos autorisées
+    @State private var alertMessage = ""
+
     var body: some View {
         ScrollView {
             VStack(spacing: 0) {
@@ -37,8 +43,21 @@ struct MenuView: View {
                 Spacer(minLength: 40)
             }
         }
-        .sheet(isPresented: $showingImagePicker) {
-            LovePhotoPickerView(selectedImage: $profileImage)
+        .sheet(isPresented: $showingGalleryPicker) {
+            StandardGalleryPicker(onImageSelected: handleImageSelection)
+        }
+        .sheet(isPresented: $showingLimitedGalleryView) {
+            LimitedGalleryView(assets: limitedPhotoAssets, onImageSelected: handleImageSelection)
+        }
+        .alert(isPresented: $showSettingsAlert) {
+            Alert(
+                title: Text("Autorisation requise"),
+                message: Text(alertMessage),
+                primaryButton: .default(Text("Ouvrir les paramètres")) {
+                    openSettings()
+                },
+                secondaryButton: .cancel(Text("Annuler"))
+            )
         }
         .onChange(of: profileImage) { _, newImage in
             if let image = newImage {
@@ -88,7 +107,7 @@ struct MenuView: View {
         VStack(spacing: 16) {
             // Photo de profil cliquable
                 Button(action: {
-                    showingImagePicker = true
+                    checkPhotoLibraryPermission() // ✅ Même comportement que l'onboarding
                 }) {
                 ZStack {
                     Circle()
@@ -592,7 +611,100 @@ struct EditRelationshipView: View {
     }
 }
 
+// MARK: - Gestion des autorisations photos (copié de ProfilePhotoStepView)
 
+extension MenuView {
+    private func checkPhotoLibraryPermission() {
+        print("🔐 MenuView: Vérification des autorisations de la photothèque")
+        let status = PHPhotoLibrary.authorizationStatus(for: .readWrite)
+        print("📱 MenuView: Statut actuel: \(status.toString())")
+        
+        switch status {
+        case .authorized:
+            // ✅ ACCÈS COMPLET
+            print("✅ MenuView: Accès complet déjà autorisé")
+            showingGalleryPicker = true
+            
+        case .limited:
+            // ✅ ACCÈS LIMITÉ - Charger les photos autorisées
+            print("🔍 MenuView: Accès limité détecté")
+            loadLimitedAssets { success in
+                DispatchQueue.main.async {
+                    if success {
+                        self.showingLimitedGalleryView = true
+                    } else {
+                        // Fallback vers picker standard si échec
+                        self.showingGalleryPicker = true
+                    }
+                }
+            }
+            
+        case .notDetermined:
+            // ⏳ PREMIÈRE DEMANDE
+            print("⏳ MenuView: Première demande d'autorisation")
+            PHPhotoLibrary.requestAuthorization(for: .readWrite) { newStatus in
+                DispatchQueue.main.async {
+                    print("📱 MenuView: Nouveau statut: \(newStatus.toString())")
+                    // Récursion pour traiter le nouveau statut
+                    self.checkPhotoLibraryPermission()
+                }
+            }
+            
+        case .denied, .restricted:
+            // ❌ ACCÈS REFUSÉ - Proposer d'aller aux paramètres
+            print("❌ MenuView: Accès refusé")
+            alertMessage = "L'accès à votre galerie est nécessaire pour changer votre photo de profil. Veuillez l'activer dans les paramètres de votre appareil."
+            showSettingsAlert = true
+            
+        @unknown default:
+            print("❓ MenuView: Statut inconnu")
+            alertMessage = "Erreur d'accès à la galerie"
+            showSettingsAlert = true
+        }
+    }
+    
+    private func loadLimitedAssets(completion: @escaping (Bool) -> Void) {
+        print("📸 MenuView: Chargement des photos autorisées...")
+        
+        let fetchOptions = PHFetchOptions()
+        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        
+        // ✅ MAGIE iOS : Cette ligne ne retourne QUE les photos autorisées
+        let allPhotos = PHAsset.fetchAssets(with: .image, options: fetchOptions)
+        print("📸 MenuView: Nombre de photos accessibles: \(allPhotos.count)")
+        
+        limitedPhotoAssets = []
+        
+        if allPhotos.count > 0 {
+            for i in 0..<allPhotos.count {
+                let asset = allPhotos.object(at: i)
+                limitedPhotoAssets.append(asset)
+            }
+            completion(true)
+        } else {
+            print("❌ MenuView: Aucune photo accessible")
+            completion(false)
+        }
+    }
+    
+    private func handleImageSelection(_ imageData: UIImage) {
+        print("✅ MenuView: Image sélectionnée")
+        profileImage = imageData
+        
+        // Fermer la sheet après sélection
+        showingGalleryPicker = false
+        showingLimitedGalleryView = false
+        
+        // Upload de l'image
+        uploadProfileImage(imageData)
+    }
+    
+    private func openSettings() {
+        if let url = URL(string: UIApplication.openSettingsURLString) {
+            UIApplication.shared.open(url)
+        }
+    }
+}
 
 #Preview {
     MenuView()

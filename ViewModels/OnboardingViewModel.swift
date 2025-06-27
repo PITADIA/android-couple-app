@@ -37,6 +37,7 @@ class OnboardingViewModel: ObservableObject {
     
     var appState: AppState?
     private var cancellables = Set<AnyCancellable>()
+    private var isCompletingSubscription = false
     
     // Options pour les objectifs de relation
     let relationshipGoals = [
@@ -214,6 +215,13 @@ class OnboardingViewModel: ObservableObject {
     }
     
     func completeSubscription() {
+        // Protection contre les doubles appels
+        guard !isCompletingSubscription else {
+            print("🔥 OnboardingViewModel: ⚠️ Appel ignoré - Finalisation déjà en cours")
+            return
+        }
+        
+        isCompletingSubscription = true
         print("🔥 OnboardingViewModel: Abonnement terminé, finalisation")
         print("🔥🔥🔥 ONBOARDING COMPLETE: ABONNEMENT TERMINE - FINALISATION AVEC PREMIUM")
         NSLog("🔥🔥🔥 ONBOARDING COMPLETE: ABONNEMENT TERMINE")
@@ -293,6 +301,9 @@ class OnboardingViewModel: ObservableObject {
                     print("❌ OnboardingViewModel: Erreur lors de la finalisation")
                     NSLog("❌❌❌ ONBOARDING: ERREUR FINALISATION!")
                 }
+                
+                // Reset du flag de protection
+                self.isCompletingSubscription = false
             }
         }
     }

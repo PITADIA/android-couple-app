@@ -308,19 +308,35 @@ struct LocationPartnerExplanationView: View {
             
             Spacer().frame(height: 50)
             
-            // Widget preview de distance avec le vrai MapDistancePreviewWidget
+            // Widget preview simple sans ouioui
             VStack(spacing: 24) {
                 // Titre du widget
-                Text("Widget Distance")
+                Text("Widget Love2Love")
                     .font(.system(size: 18, weight: .semibold))
                     .foregroundColor(.black)
                 
-                // Utilisation du vrai composant MapDistancePreviewWidget avec données simulées
-                MapDistancePreviewWidget(
-                    distanceInfo: createSampleDistanceInfo(),
-                    canAccess: true
-                )
+                // Simple preview sans l'image ouioui
+                VStack(spacing: 8) {
+                    Text("Ensemble depuis")
+                        .font(.system(size: 14, weight: .medium))
+                        .foregroundColor(.white.opacity(0.9))
+                    
+                    Text("365 JOURS")
+                        .font(.system(size: 24, weight: .bold))
+                        .foregroundColor(.white)
+                }
                 .frame(width: 280, height: 172)
+                .background(
+                    LinearGradient(
+                        gradient: Gradient(colors: [
+                            Color(red: 0.99, green: 0.15, blue: 0.48),
+                            Color(red: 1.0, green: 0.4, blue: 0.36)
+                        ]),
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                )
+                .cornerRadius(16)
             }
             
             Spacer()
@@ -340,22 +356,7 @@ struct LocationPartnerExplanationView: View {
         }
     }
     
-    // Créer des données d'exemple pour le widget preview
-    private func createSampleDistanceInfo() -> DistanceInfo {
-        let userCoordinate = CLLocationCoordinate2D(latitude: 48.8566, longitude: 2.3522)
-        let userLocation = UserLocation(coordinate: userCoordinate)
-        
-        let partnerCoordinate = CLLocationCoordinate2D(latitude: 43.6047, longitude: 1.4442)
-        let partnerLocation = UserLocation(coordinate: partnerCoordinate)
-        
-        return DistanceInfo(
-            distance: 2.5, // 2.5 km comme exemple
-            currentUserLocation: userLocation,
-            partnerLocation: partnerLocation,
-            messages: ["💕 Je pense à toi"],
-            lastUpdated: Date()
-        )
-    }
+
 }
 
 // MARK: - Permission Location Manager

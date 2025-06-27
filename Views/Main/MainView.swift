@@ -64,13 +64,6 @@ struct MainView: View {
                             WidgetPreviewSection(
                                 onWidgetTap: {
                                     activeSheet = .widgetTutorial
-                                },
-                                onDistanceWidgetTap: { showPartnerMessageOnly in
-                                    if showPartnerMessageOnly {
-                                        activeSheet = .partnerLocationMessage
-                                    } else {
-                                        activeSheet = .locationPermission
-                                    }
                                 }
                             )
                             .environmentObject(appState)

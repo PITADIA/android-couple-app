@@ -191,11 +191,22 @@ class AppState: ObservableObject {
         // Observer les changements d'utilisateur pour redémarrer les services partenaires
         firebaseService.$currentUser
             .sink { [weak self] user in
-                if let user = user, let partnerId = user.partnerId {
-                    print("🔄 AppState: Utilisateur reconnecté - Redémarrage des services partenaires")
-                    self?.partnerLocationService?.configureListener(for: partnerId)
+                print("🔄 AppState: Changement utilisateur détecté")
+                if let user = user {
+                    print("🔄 AppState: - Utilisateur: \(user.name)")
+                    print("🔄 AppState: - Partner ID: '\(user.partnerId ?? "nil")'")
+                    print("🔄 AppState: - Partner ID isEmpty: \(user.partnerId?.isEmpty ?? true)")
+                    
+                    if let partnerId = user.partnerId, !partnerId.isEmpty {
+                        print("🔄 AppState: Utilisateur reconnecté - Redémarrage des services partenaires pour: \(partnerId)")
+                        self?.partnerLocationService?.configureListener(for: partnerId)
+                    } else {
+                        print("🔄 AppState: Pas de partenaire connecté - Arrêt des services")
+                        print("🔄 AppState: - Raison: partnerId = '\(user.partnerId ?? "nil")'")
+                        self?.partnerLocationService?.configureListener(for: nil)
+                    }
                 } else {
-                    print("🔄 AppState: Pas de partenaire connecté - Arrêt des services")
+                    print("🔄 AppState: Utilisateur nil - Arrêt des services")
                     self?.partnerLocationService?.configureListener(for: nil)
                 }
             }
@@ -307,7 +318,7 @@ class AppState: ObservableObject {
         }
         
         print("🔄 AppState: Rafraîchissement des données utilisateur: \(firebaseUser.uid)")
-        firebaseService.loadUserData(uid: firebaseUser.uid)
+        firebaseService.forceRefreshUserData()
     }
     
     func nextOnboardingStep() {

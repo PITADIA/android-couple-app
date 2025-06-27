@@ -212,6 +212,10 @@ extension AppleReceiptService: SKPaymentTransactionObserver {
             case .purchasing:
                 print("🔥 AppleReceiptService: 🔄 Achat en cours...")
                 NSLog("🔥 AppleReceiptService: 🔄 Achat en cours...")
+                // S'assurer que le chargement reste actif pendant l'achat
+                DispatchQueue.main.async {
+                    self.isLoading = true
+                }
                 
             case .deferred:
                 print("🔥 AppleReceiptService: ⏳ Achat différé")

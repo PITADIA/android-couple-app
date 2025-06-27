@@ -15,19 +15,17 @@ struct WidgetsView: View {
     enum WidgetType: String, CaseIterable {
         case countdown = "Compteur"
         case daysTotal = "Jours ensemble"
-        case distance = "Notre distance"
         
         var icon: String {
             switch self {
             case .countdown: return "timer"
             case .daysTotal: return "heart.fill"
-            case .distance: return "location.fill"
             }
         }
         
         var requiresPremium: Bool {
             switch self {
-            case .countdown, .daysTotal, .distance:
+            case .countdown, .daysTotal:
                 return false
             }
         }
@@ -71,11 +69,6 @@ struct WidgetsView: View {
                             CountdownWidgetView(stats: widgetService?.relationshipStats)
                         case .daysTotal:
                             DaysTotalWidgetView(stats: widgetService?.relationshipStats)
-                        case .distance:
-                            DistanceWidgetView(
-                                distanceInfo: widgetService?.distanceInfo,
-                                currentMessageIndex: $currentMessageIndex
-                            )
                         }
                         
                         Spacer(minLength: 100)
@@ -381,139 +374,7 @@ struct DaysTotalWidgetView: View {
     }
 }
 
-struct DistanceWidgetView: View {
-    let distanceInfo: DistanceInfo?
-    @Binding var currentMessageIndex: Int
-    
-    var body: some View {
-        VStack(spacing: 24) {
-            if let distanceInfo = distanceInfo {
-                mapView
-                    .frame(height: 200)
-                    .cornerRadius(16)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 16)
-                            .stroke(Color.black.opacity(0.1), lineWidth: 1)
-                    )
-                
-                VStack(spacing: 8) {
-                    Text("\(distanceInfo.formattedDistance)")
-                        .font(.system(size: 36, weight: .bold))
-                        .foregroundColor(.black)
-                    
-                    Text("nous séparent")
-                        .font(.system(size: 18))
-                        .foregroundColor(.black.opacity(0.7))
-                }
-                
-                if !distanceInfo.messages.isEmpty {
-                    VStack(spacing: 12) {
-                        Text(distanceInfo.messages[currentMessageIndex])
-                            .font(.system(size: 20, weight: .medium))
-                            .foregroundColor(Color(hex: "#FD267A"))
-                            .multilineTextAlignment(.center)
-                            .animation(.easeInOut(duration: 0.5), value: currentMessageIndex)
-                    }
-                    .frame(height: 50)
-                }
-                
-                Text("Mis à jour \(timeAgoString)")
-                    .font(.system(size: 12))
-                    .foregroundColor(.black.opacity(0.5))
-            } else {
-                VStack(spacing: 16) {
-                    Image(systemName: "location.slash")
-                        .font(.system(size: 60))
-                        .foregroundColor(.black.opacity(0.3))
-                    
-                    Text("Localisation non disponible")
-                        .font(.system(size: 18, weight: .medium))
-                        .foregroundColor(.black.opacity(0.7))
-                    
-                    Text("Activez la localisation pour voir la distance avec votre partenaire")
-                        .font(.system(size: 14))
-                        .foregroundColor(.black.opacity(0.5))
-                        .multilineTextAlignment(.center)
-                }
-            }
-        }
-        .frame(maxWidth: .infinity)
-        .padding(.vertical, 32)
-        .padding(.horizontal, 24)
-        .background(
-            RoundedRectangle(cornerRadius: 24)
-                .fill(Color.white)
-                .shadow(color: Color.black.opacity(0.08), radius: 8, x: 0, y: 4)
-                .shadow(color: Color.black.opacity(0.04), radius: 1, x: 0, y: 1)
-        )
-    }
-    
-    private var mapView: some View {
-        Map(coordinateRegion: .constant(mapRegion),
-            annotationItems: mapAnnotations) { annotation in
-            MapPin(coordinate: annotation.coordinate, tint: annotation.color)
-        }
-    }
-    
-    private var mapAnnotations: [MapPinData] {
-        guard let distanceInfo = distanceInfo else { return [] }
-        
-        return [
-            MapPinData(
-                id: "current",
-                coordinate: distanceInfo.currentUserLocation.coordinate,
-                color: Color(hex: "#FD267A")
-            ),
-            MapPinData(
-                id: "partner",
-                coordinate: distanceInfo.partnerLocation.coordinate,
-                color: Color(hex: "#FF6B9D")
-            )
-        ]
-    }
-    
-    private var mapRegion: MKCoordinateRegion {
-        guard let distanceInfo = distanceInfo else {
-            return MKCoordinateRegion(
-                center: CLLocationCoordinate2D(latitude: 46.2276, longitude: 2.2137),
-                span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10)
-            )
-        }
-        
-        let currentLat = distanceInfo.currentUserLocation.latitude
-        let currentLng = distanceInfo.currentUserLocation.longitude
-        let partnerLat = distanceInfo.partnerLocation.latitude
-        let partnerLng = distanceInfo.partnerLocation.longitude
-        
-        let centerLat = (currentLat + partnerLat) / 2
-        let centerLng = (currentLng + partnerLng) / 2
-        
-        let latDelta = abs(currentLat - partnerLat) * 1.5
-        let lngDelta = abs(currentLng - partnerLng) * 1.5
-        
-        return MKCoordinateRegion(
-            center: CLLocationCoordinate2D(latitude: centerLat, longitude: centerLng),
-            span: MKCoordinateSpan(
-                latitudeDelta: max(latDelta, 0.1),
-                longitudeDelta: max(lngDelta, 0.1)
-            )
-        )
-    }
-    
-    private var timeAgoString: String {
-        guard let distanceInfo = distanceInfo else { return "" }
-        
-        let formatter = RelativeDateTimeFormatter()
-        formatter.locale = Locale(identifier: "fr_FR")
-        return formatter.localizedString(for: distanceInfo.lastUpdated, relativeTo: Date())
-    }
-}
 
-struct MapPinData: Identifiable {
-    let id: String
-    let coordinate: CLLocationCoordinate2D
-    let color: Color
-}
 
 extension DateFormatter {
     static let anniversaryFormatter: DateFormatter = {

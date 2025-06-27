@@ -1257,4 +1257,17 @@ class FirebaseService: NSObject, ObservableObject {
             }
         }
     }
+    
+    // MARK: - Public Methods for Data Refresh
+    
+    func forceRefreshUserData() {
+        print("🔄 FirebaseService: Rechargement forcé des données utilisateur")
+        guard let firebaseUser = Auth.auth().currentUser else {
+            print("❌ FirebaseService: Aucun utilisateur Firebase pour rechargement")
+            return
+        }
+        
+        print("🔄 FirebaseService: Rechargement pour UID: \(firebaseUser.uid)")
+        loadUserData(uid: firebaseUser.uid)
+    }
 } 

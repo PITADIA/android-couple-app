@@ -1,6 +1,7 @@
 import SwiftUI
 import PhotosUI
 import Photos
+import MapKit
 
 struct CreateJournalEntryView: View {
     @EnvironmentObject var appState: AppState
@@ -25,6 +26,12 @@ struct CreateJournalEntryView: View {
     @State private var showingTimePicker = false
     @State private var showingFreemiumAlert = false
     @State private var freemiumErrorMessage = ""
+    
+    // MARK: - Gestion des autorisations photos (comme ProfilePhotoStepView)
+    @State private var showingLimitedGalleryView = false
+    @State private var limitedPhotoAssets: [PHAsset] = []
+    @State private var showSettingsAlert = false
+    @State private var alertMessage = ""
     
     private var canSave: Bool {
         !title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
@@ -100,7 +107,7 @@ struct CreateJournalEntryView: View {
                     HStack(spacing: 20) {
                         // Icône image avec preview si sélectionnée
                         Button(action: {
-                            showingImagePicker = true
+                            checkPhotoLibraryPermission() // ✅ Vérifier autorisations comme l'onboarding
                         }) {
                             if let image = selectedImage {
                                 // Affichage de l'image sélectionnée
@@ -189,9 +196,14 @@ struct CreateJournalEntryView: View {
         }
         .navigationBarHidden(true)
         .sheet(isPresented: $showingImagePicker) {
-            ImagePicker(image: $selectedImage)
+            StandardGalleryPicker(onImageSelected: { image in
+                selectedImage = image
+                showingImagePicker = false // ✅ Fermeture explicite comme dans l'onboarding
+            })
         }
-
+        .sheet(isPresented: $showingLimitedGalleryView) {
+            LimitedGalleryView(assets: limitedPhotoAssets, onImageSelected: handleImageSelection)
+        }
         .sheet(isPresented: $showingLocationPicker) {
             LocationPickerView(selectedLocation: $selectedLocation)
         }
@@ -260,6 +272,16 @@ struct CreateJournalEntryView: View {
         } message: {
             Text(freemiumErrorMessage)
         }
+        .alert(isPresented: $showSettingsAlert) {
+            Alert(
+                title: Text("Autorisation requise"),
+                message: Text(alertMessage),
+                primaryButton: .default(Text("Ouvrir les paramètres")) {
+                    openSettings()
+                },
+                secondaryButton: .cancel(Text("Annuler"))
+            )
+        }
     }
     
     private var formattedEventDate: String {
@@ -322,7 +344,99 @@ struct CreateJournalEntryView: View {
             }
         }
     }
+    
+    // MARK: - Gestion des autorisations photos (copié de ProfilePhotoStepView)
+    
+    private func checkPhotoLibraryPermission() {
+        print("🔐 CreateJournalEntry: Vérification des autorisations de la photothèque")
+        let status = PHPhotoLibrary.authorizationStatus(for: .readWrite)
+        print("📱 CreateJournalEntry: Statut actuel: \(status.toString())")
+        
+        switch status {
+        case .authorized:
+            // ✅ ACCÈS COMPLET
+            print("✅ CreateJournalEntry: Accès complet déjà autorisé")
+            showingImagePicker = true
+            
+        case .limited:
+            // ✅ ACCÈS LIMITÉ - Charger les photos autorisées
+            print("🔍 CreateJournalEntry: Accès limité détecté")
+            loadLimitedAssets { success in
+                DispatchQueue.main.async {
+                    if success {
+                        self.showingLimitedGalleryView = true
+                    } else {
+                        // Fallback vers picker standard si échec
+                        self.showingImagePicker = true
+                    }
+                }
+            }
+            
+        case .notDetermined:
+            // ⏳ PREMIÈRE DEMANDE
+            print("⏳ CreateJournalEntry: Première demande d'autorisation")
+            PHPhotoLibrary.requestAuthorization(for: .readWrite) { newStatus in
+                DispatchQueue.main.async {
+                    print("📱 CreateJournalEntry: Nouveau statut: \(newStatus.toString())")
+                    // Récursion pour traiter le nouveau statut
+                    self.checkPhotoLibraryPermission()
+                }
+            }
+            
+        case .denied, .restricted:
+            // ❌ ACCÈS REFUSÉ - Proposer d'aller aux paramètres
+            print("❌ CreateJournalEntry: Accès refusé")
+            alertMessage = "L'accès à votre galerie est nécessaire pour ajouter une photo. Veuillez l'activer dans les paramètres de votre appareil."
+            showSettingsAlert = true
+            
+        @unknown default:
+            print("❓ CreateJournalEntry: Statut inconnu")
+            alertMessage = "Erreur d'accès à la galerie"
+            showSettingsAlert = true
+        }
+    }
+    
+    private func loadLimitedAssets(completion: @escaping (Bool) -> Void) {
+        print("📸 CreateJournalEntry: Chargement des photos autorisées...")
+        
+        let fetchOptions = PHFetchOptions()
+        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        
+        // ✅ MAGIE iOS : Cette ligne ne retourne QUE les photos autorisées
+        let allPhotos = PHAsset.fetchAssets(with: .image, options: fetchOptions)
+        print("📸 CreateJournalEntry: Nombre de photos accessibles: \(allPhotos.count)")
+        
+        limitedPhotoAssets = []
+        
+        if allPhotos.count > 0 {
+            for i in 0..<allPhotos.count {
+                let asset = allPhotos.object(at: i)
+                limitedPhotoAssets.append(asset)
+            }
+            completion(true)
+        } else {
+            print("❌ CreateJournalEntry: Aucune photo accessible")
+            completion(false)
+        }
+    }
+    
+    private func handleImageSelection(_ imageData: UIImage) {
+        print("✅ CreateJournalEntry: Image sélectionnée")
+        selectedImage = imageData
+        
+        // Fermer la sheet après sélection
+        showingImagePicker = false
+        showingLimitedGalleryView = false
+    }
+    
+    private func openSettings() {
+        if let url = URL(string: UIApplication.openSettingsURLString) {
+            UIApplication.shared.open(url)
+        }
+    }
 }
+
+// Extension déjà définie ailleurs, pas besoin de la redéclarer
 
 struct CreateJournalEntryView_Previews: PreviewProvider {
     static var previews: some View {

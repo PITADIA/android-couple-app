@@ -39,7 +39,7 @@ struct ImagePicker: UIViewControllerRepresentable {
     
     class Coordinator: NSObject, PHPickerViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         let parent: ImagePicker
-        private var currentViewController: UIViewController?
+        weak var currentViewController: UIViewController?
         
         init(_ parent: ImagePicker) {
             self.parent = parent
@@ -85,22 +85,22 @@ struct ImagePicker: UIViewControllerRepresentable {
             return loadingVC
         }
         
-            func createPhotoPickerWithStatus(_ status: PHAuthorizationStatus) -> UIViewController {
-        switch status {
-        case .authorized:
-            print("📸 ImagePicker: Accès complet autorisé - utilisation du picker standard")
-            return createPHPickerViewController()
-        case .limited:
-            print("📸 ImagePicker: Accès limité détecté - utilisation de l'interface personnalisée")
-            return createLimitedAccessViewController()
-        case .denied, .restricted:
-            return createDeniedViewController()
-        case .notDetermined:
-            return createLoadingViewController()
-        @unknown default:
-            return createDeniedViewController()
+        func createPhotoPickerWithStatus(_ status: PHAuthorizationStatus) -> UIViewController {
+            switch status {
+            case .authorized:
+                print("📸 ImagePicker: Accès complet autorisé - utilisation du picker standard")
+                return createPHPickerViewController()
+            case .limited:
+                print("📸 ImagePicker: Accès limité détecté - utilisation de l'interface personnalisée")
+                return createLimitedAccessViewController()
+            case .denied, .restricted:
+                return createDeniedViewController()
+            case .notDetermined:
+                return createLoadingViewController()
+            @unknown default:
+                return createDeniedViewController()
+            }
         }
-    }
         
         func openPhotoPickerWithStatus(_ status: PHAuthorizationStatus) {
             guard let currentVC = currentViewController else { return }
@@ -119,14 +119,14 @@ struct ImagePicker: UIViewControllerRepresentable {
         
         private func createPHPickerViewController() -> UIViewController {
             if #available(iOS 14, *) {
-                var configuration = PHPickerConfiguration()
+                var configuration = PHPickerConfiguration(photoLibrary: .shared())
                 configuration.filter = .images
                 configuration.selectionLimit = 1
                 
                 let picker = PHPickerViewController(configuration: configuration)
                 picker.delegate = self
                 
-                print("📸 ImagePicker: Utilisation de PHPickerViewController")
+                print("📸 ImagePicker: Utilisation de PHPickerViewController avec photoLibrary.shared()")
                 return picker
             } else {
                 return createUIImagePickerController()
@@ -146,10 +146,12 @@ struct ImagePicker: UIViewControllerRepresentable {
         private func createLimitedAccessViewController() -> UIViewController {
             let limitedVC = LimitedAccessViewController()
             limitedVC.onImageSelected = { [weak self] image in
+                print("📸 ImagePicker: Image sélectionnée via LimitedAccessViewController")
                 self?.parent.image = image
                 self?.parent.dismiss()
             }
             limitedVC.onCancel = { [weak self] in
+                print("📸 ImagePicker: Annulation via LimitedAccessViewController")
                 self?.parent.dismiss()
             }
             // Envelopper dans un NavigationController pour la barre de navigation
@@ -235,15 +237,23 @@ struct ImagePicker: UIViewControllerRepresentable {
             }
             
             if result.itemProvider.canLoadObject(ofClass: UIImage.self) {
+                print("📸 ImagePicker: Début du chargement asynchrone de l'image")
                 result.itemProvider.loadObject(ofClass: UIImage.self) { image, error in
                     DispatchQueue.main.async {
                         if let error = error {
                             print("❌ ImagePicker: Erreur chargement image: \(error)")
+                            self.parent.dismiss()
                         } else if let uiImage = image as? UIImage {
                             print("✅ ImagePicker: Image chargée avec succès")
+                            print("📸 ImagePicker: Assignation de l'image au parent")
                             self.parent.image = uiImage
+                            print("📸 ImagePicker: Tentative de fermeture du picker")
+                            self.parent.dismiss()
+                            print("📸 ImagePicker: Commande de fermeture envoyée")
+                        } else {
+                            print("❌ ImagePicker: Image nil après chargement")
+                            self.parent.dismiss()
                         }
-                        self.parent.dismiss()
                     }
                 }
             } else {
@@ -532,6 +542,249 @@ class PhotoCell: UICollectionViewCell {
                     // Image par défaut en cas d'échec
                     self?.imageView.backgroundColor = .systemGray4
                 }
+            }
+        }
+    }
+}
+
+// MARK: - Standard Image Picker (Alternative qui fonctionne)
+struct StandardImagePicker: UIViewControllerRepresentable {
+    @Binding var image: UIImage?
+    @Environment(\.dismiss) private var dismiss
+    
+    func makeUIViewController(context: Context) -> UIViewController {
+        let coordinator = context.coordinator
+        
+        // Vérifier le statut des permissions photos
+        let status = PHPhotoLibrary.authorizationStatus(for: .readWrite)
+        print("📸 StandardImagePicker: Statut permission actuel: \(coordinator.statusDescription(status))")
+        
+        // Si permission pas encore déterminée, la demander explicitement
+        if status == .notDetermined {
+            print("📸 StandardImagePicker: Permission non déterminée - Demande explicite")
+            PHPhotoLibrary.requestAuthorization(for: .readWrite) { newStatus in
+                DispatchQueue.main.async {
+                    print("📸 StandardImagePicker: Nouvelle permission accordée: \(coordinator.statusDescription(newStatus))")
+                    coordinator.openPhotoPickerWithStatus(newStatus)
+                }
+            }
+            // Retourner un contrôleur temporaire en attendant
+            return coordinator.createLoadingViewController()
+        }
+        
+        // Permission déjà déterminée, ouvrir directement le picker approprié
+        return coordinator.createPhotoPickerWithStatus(status)
+    }
+    
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
+    
+    class Coordinator: NSObject, PHPickerViewControllerDelegate {
+        let parent: StandardImagePicker
+        weak var currentViewController: UIViewController?
+        
+        init(_ parent: StandardImagePicker) {
+            self.parent = parent
+        }
+        
+        func statusDescription(_ status: PHAuthorizationStatus) -> String {
+            switch status {
+            case .notDetermined: return "Non déterminé"
+            case .restricted: return "Restreint"
+            case .denied: return "Refusé"
+            case .authorized: return "Autorisé"
+            case .limited: return "Limité"
+            @unknown default: return "Inconnu"
+            }
+        }
+        
+        func createLoadingViewController() -> UIViewController {
+            let loadingVC = UIViewController()
+            loadingVC.view.backgroundColor = .systemBackground
+            
+            let activityIndicator = UIActivityIndicatorView(style: .large)
+            activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+            activityIndicator.startAnimating()
+            
+            loadingVC.view.addSubview(activityIndicator)
+            NSLayoutConstraint.activate([
+                activityIndicator.centerXAnchor.constraint(equalTo: loadingVC.view.centerXAnchor),
+                activityIndicator.centerYAnchor.constraint(equalTo: loadingVC.view.centerYAnchor)
+            ])
+            
+            self.currentViewController = loadingVC
+            return loadingVC
+        }
+        
+        func createPhotoPickerWithStatus(_ status: PHAuthorizationStatus) -> UIViewController {
+            switch status {
+            case .authorized:
+                print("📸 StandardImagePicker: Accès complet autorisé - utilisation du picker standard")
+                return createPHPickerViewController()
+            case .limited:
+                print("📸 StandardImagePicker: Accès limité détecté - utilisation de l'interface personnalisée")
+                return createLimitedAccessViewController()
+            case .denied, .restricted:
+                return createDeniedViewController()
+            case .notDetermined:
+                return createLoadingViewController()
+            @unknown default:
+                return createDeniedViewController()
+            }
+        }
+        
+        func openPhotoPickerWithStatus(_ status: PHAuthorizationStatus) {
+            guard let currentVC = currentViewController else { return }
+            
+            let newVC = createPhotoPickerWithStatus(status)
+            
+            // Remplacer le contrôleur actuel
+            if let navigationController = currentVC.navigationController {
+                navigationController.setViewControllers([newVC], animated: true)
+            } else if let presentingVC = currentVC.presentingViewController {
+                currentVC.dismiss(animated: false) {
+                    presentingVC.present(newVC, animated: true)
+                }
+            }
+        }
+        
+        private func createPHPickerViewController() -> UIViewController {
+            var configuration = PHPickerConfiguration(photoLibrary: .shared())
+            configuration.filter = .images
+            configuration.selectionLimit = 1
+            
+            let picker = PHPickerViewController(configuration: configuration)
+            picker.delegate = self
+            
+            print("📸 StandardImagePicker: Utilisation de PHPickerViewController")
+            return picker
+        }
+        
+        private func createLimitedAccessViewController() -> UIViewController {
+            let limitedVC = LimitedAccessViewController()
+            limitedVC.onImageSelected = { [weak self] image in
+                print("📸 StandardImagePicker: Image sélectionnée via LimitedAccessViewController")
+                self?.parent.image = image
+                self?.parent.dismiss()
+            }
+            limitedVC.onCancel = { [weak self] in
+                print("📸 StandardImagePicker: Annulation via LimitedAccessViewController")
+                self?.parent.dismiss()
+            }
+            // Envelopper dans un NavigationController pour la barre de navigation
+            let navController = UINavigationController(rootViewController: limitedVC)
+            return navController
+        }
+        
+        private func createDeniedViewController() -> UIViewController {
+            let deniedVC = UIViewController()
+            deniedVC.view.backgroundColor = .systemBackground
+            
+            let stackView = UIStackView()
+            stackView.axis = .vertical
+            stackView.spacing = 20
+            stackView.alignment = .center
+            stackView.translatesAutoresizingMaskIntoConstraints = false
+            
+            let iconLabel = UILabel()
+            iconLabel.text = "📸"
+            iconLabel.font = .systemFont(ofSize: 60)
+            
+            let titleLabel = UILabel()
+            titleLabel.text = "Accès aux photos requis"
+            titleLabel.font = .boldSystemFont(ofSize: 20)
+            titleLabel.textAlignment = .center
+            
+            let messageLabel = UILabel()
+            messageLabel.text = "Pour ajouter des photos, veuillez autoriser l'accès dans les Réglages"
+            messageLabel.font = .systemFont(ofSize: 16)
+            messageLabel.textAlignment = .center
+            messageLabel.numberOfLines = 0
+            
+            let settingsButton = UIButton(type: .system)
+            settingsButton.setTitle("Ouvrir les Réglages", for: .normal)
+            settingsButton.titleLabel?.font = .boldSystemFont(ofSize: 16)
+            settingsButton.backgroundColor = .systemBlue
+            settingsButton.setTitleColor(.white, for: .normal)
+            settingsButton.layer.cornerRadius = 8
+            settingsButton.contentEdgeInsets = UIEdgeInsets(top: 12, left: 24, bottom: 12, right: 24)
+            settingsButton.addTarget(self, action: #selector(openSettings), for: .touchUpInside)
+            
+            let cancelButton = UIButton(type: .system)
+            cancelButton.setTitle("Annuler", for: .normal)
+            cancelButton.titleLabel?.font = .systemFont(ofSize: 16)
+            cancelButton.addTarget(self, action: #selector(cancelSelection), for: .touchUpInside)
+            
+            stackView.addArrangedSubview(iconLabel)
+            stackView.addArrangedSubview(titleLabel)
+            stackView.addArrangedSubview(messageLabel)
+            stackView.addArrangedSubview(settingsButton)
+            stackView.addArrangedSubview(cancelButton)
+            
+            deniedVC.view.addSubview(stackView)
+            
+            NSLayoutConstraint.activate([
+                stackView.centerXAnchor.constraint(equalTo: deniedVC.view.centerXAnchor),
+                stackView.centerYAnchor.constraint(equalTo: deniedVC.view.centerYAnchor),
+                stackView.leadingAnchor.constraint(greaterThanOrEqualTo: deniedVC.view.leadingAnchor, constant: 40),
+                stackView.trailingAnchor.constraint(lessThanOrEqualTo: deniedVC.view.trailingAnchor, constant: -40)
+            ])
+            
+            return deniedVC
+        }
+        
+        @objc private func openSettings() {
+            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
+            UIApplication.shared.open(settingsUrl)
+        }
+        
+        @objc private func cancelSelection() {
+            parent.dismiss()
+        }
+        
+        func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+            print("📸 StandardImagePicker: L'utilisateur a sélectionné \(results.count) image(s)")
+            print("📸 StandardImagePicker: Picker reçu: \(picker)")
+            
+            // ✅ SOLUTION: Fermer le picker IMMÉDIATEMENT
+            print("📸 StandardImagePicker: Tentative de fermeture du picker...")
+            picker.dismiss(animated: true) {
+                print("📸 StandardImagePicker: Picker fermé avec succès !")
+            }
+            
+            if results.isEmpty {
+                print("📸 StandardImagePicker: Sélection annulée par l'utilisateur")
+                return
+            }
+            
+            guard let result = results.first else {
+                print("📸 StandardImagePicker: Aucun résultat trouvé")
+                return
+            }
+            
+            print("📸 StandardImagePicker: Début du traitement de l'image...")
+            
+            if result.itemProvider.canLoadObject(ofClass: UIImage.self) {
+                print("📸 StandardImagePicker: ItemProvider peut charger UIImage")
+                result.itemProvider.loadObject(ofClass: UIImage.self) { image, error in
+                    print("📸 StandardImagePicker: Callback loadObject appelé")
+                    DispatchQueue.main.async {
+                        if let error = error {
+                            print("❌ StandardImagePicker: Erreur lors du chargement: \(error.localizedDescription)")
+                        } else if let uiImage = image as? UIImage {
+                            print("✅ StandardImagePicker: Image chargée avec succès - Taille: \(uiImage.size)")
+                            self.parent.image = uiImage
+                            print("📸 StandardImagePicker: Image assignée au parent")
+                        } else {
+                            print("❌ StandardImagePicker: Impossible de convertir en UIImage")
+                        }
+                    }
+                }
+            } else {
+                print("❌ StandardImagePicker: ItemProvider ne peut pas charger UIImage")
             }
         }
     }

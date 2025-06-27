@@ -196,6 +196,11 @@ class PartnerCodeService: ObservableObject {
             // Envoyer les notifications de connexion réussie
             notifyConnectionSuccess(partnerName: partnerName, subscriptionInherited: subscriptionInherited)
             
+            // NOUVEAU: Forcer le rechargement immédiat des données utilisateur
+            // pour que l'interface se mette à jour sans redémarrage de l'app
+            print("🔄 PartnerCodeService: Rechargement immédiat des données utilisateur")
+            FirebaseService.shared.forceRefreshUserData()
+            
             return true
             
         } catch {
@@ -240,7 +245,14 @@ class PartnerCodeService: ObservableObject {
             NotificationCenter.default.post(name: .subscriptionInherited, object: nil)
         }
         
-        // Notifier la connexion réussie
+        // Notifier la connexion réussie - CORRECTION: utiliser .partnerConnected
+        NotificationCenter.default.post(
+            name: .partnerConnected, 
+            object: nil, 
+            userInfo: ["partnerName": partnerName, "isSubscribed": subscriptionInherited]
+        )
+        
+        // Aussi envoyer l'ancienne notification pour compatibilité
         NotificationCenter.default.post(
             name: .partnerConnectionSuccess, 
             object: nil, 
