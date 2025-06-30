@@ -218,13 +218,6 @@ struct JournalMapAnnotationView: View {
                         .multilineTextAlignment(.center)
                         .frame(maxWidth: 100)
                 }
-                
-                // Pin pointer (petite flèche vers le bas)
-                Image(systemName: "arrowtriangle.down.fill")
-                    .font(.system(size: 12))
-                    .foregroundColor(.white)
-                    .shadow(color: .black.opacity(0.3), radius: 2, x: 0, y: 1)
-                    .offset(y: -2)
             }
         }
         .scaleEffect(0.9) // Légèrement plus petit pour ne pas encombrer

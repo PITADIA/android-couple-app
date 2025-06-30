@@ -1,4 +1,5 @@
 import SwiftUI
+import FirebaseAuth
 
 struct JournalEntryDetailView: View {
     let entry: JournalEntry
@@ -6,25 +7,60 @@ struct JournalEntryDetailView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var showingDeleteAlert = false
     @State private var isDeleting = false
+    @ObservedObject private var firebaseService = FirebaseService.shared
     
     private var journalService: JournalService {
         return appState.journalService ?? JournalService.shared
     }
     
     private var isAuthor: Bool {
-        guard let currentUser = FirebaseService.shared.currentUser else { return false }
-        return entry.authorId == currentUser.id
+        // Utiliser l'UID Firebase pour la comparaison (comme dans JournalService)
+        guard let firebaseUID = Auth.auth().currentUser?.uid else { return false }
+        return entry.authorId == firebaseUID
     }
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                // Fond gris clair identique à la page principale
-                Color(red: 0.97, green: 0.97, blue: 0.98)
-                    .ignoresSafeArea()
-                
-                ScrollView {
+        ZStack {
+            // Fond gris clair identique à la page principale
+            Color(red: 0.97, green: 0.97, blue: 0.98)
+                .ignoresSafeArea()
+            
+            ScrollView {
                     VStack(spacing: 24) {
+                        // Header avec boutons intégrés
+                        HStack {
+                            // Bouton fermer (gauche)
+                            Button(action: { dismiss() }) {
+                                Image(systemName: "xmark")
+                                    .font(.system(size: 20, weight: .bold))
+                                    .foregroundColor(.white)
+                                    .padding(12)
+                                    .background(Color.black.opacity(0.6))
+                                    .clipShape(Circle())
+                            }
+                            
+                            Spacer()
+                            
+                            // Bouton supprimer (droite) - seulement pour l'auteur
+                            if isAuthor {
+                                Button(action: { 
+                                    print("🗑️ JournalEntryDetailView: Clic sur bouton suppression")
+                                    showingDeleteAlert = true 
+                                }) {
+                                    Image(systemName: "trash")
+                                        .font(.system(size: 20, weight: .bold))
+                                        .foregroundColor(.white)
+                                        .padding(12)
+                                        .background(Color.black.opacity(0.6))
+                                        .clipShape(Circle())
+                                }
+                                .disabled(isDeleting)
+                                .accessibilityLabel("Supprimer ce souvenir")
+                            }
+                        }
+                        .padding(.horizontal, 20)
+                        .padding(.top, 10)
+                        .padding(.bottom, 10)
                         // Image si présente
                         if let imageURL = entry.imageURL, !imageURL.isEmpty {
                             AsyncImageView(
@@ -127,36 +163,12 @@ struct JournalEntryDetailView: View {
                                         y: 2
                                     )
                             )
-                        }
-                        .padding(.horizontal, 20)
-                        
-                        // Bouton de suppression (seulement pour l'auteur)
-                        if isAuthor {
-                            Button(action: {
-                                showingDeleteAlert = true
-                            }) {
-                                HStack {
-                                    Image(systemName: "trash")
-                                        .font(.system(size: 16, weight: .semibold))
-                                    
-                                    Text("Supprimer ce souvenir")
-                                        .font(.system(size: 16, weight: .semibold))
-                                }
-                                .foregroundColor(.red)
-                                .frame(maxWidth: .infinity)
-                                .frame(height: 50)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 12)
-                                        .stroke(Color.red.opacity(0.3), lineWidth: 1)
-                                )
-                            }
-                            .padding(.horizontal, 20)
-                            .padding(.top, 20)
-                        }
-                        
-                        Spacer(minLength: 40)
-                    }
-                    .padding(.top, 20)
+                                        }
+                .padding(.horizontal, 20)
+                
+                Spacer(minLength: 40)
+            }
+            .padding(.top, 0) // Pas de padding supplémentaire
                 }
                 
                 // Overlay de suppression
@@ -175,20 +187,15 @@ struct JournalEntryDetailView: View {
                             .padding(.top, 8)
                     }
                 }
-            }
+
         }
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button("Fermer") {
-                    dismiss()
-                }
-                .foregroundColor(.black)
-            }
+        .onAppear {
+            print("📄 JournalEntryDetailView: Vue apparue - '\(entry.title)' - isAuthor: \(isAuthor)")
         }
         .alert("Supprimer ce souvenir ?", isPresented: $showingDeleteAlert) {
             Button("Annuler", role: .cancel) { }
             Button("Supprimer", role: .destructive) {
+                print("🗑️ JournalEntryDetailView: Confirmation suppression")
                 deleteEntry()
             }
         } message: {
@@ -218,19 +225,37 @@ struct JournalEntryDetailView: View {
     }
     
     private func deleteEntry() {
+        print("🗑️ JournalEntryDetailView: Début suppression entrée")
+        print("🗑️ JournalEntryDetailView: - ID: \(entry.id)")
+        print("🗑️ JournalEntryDetailView: - Titre: '\(entry.title)'")
+        print("🗑️ JournalEntryDetailView: - Auteur: \(entry.authorName) (\(entry.authorId))")
+        print("🗑️ JournalEntryDetailView: - A une image: \(entry.hasImage)")
+        print("🗑️ JournalEntryDetailView: - Image URL: \(entry.imageURL ?? "nil")")
+        
         isDeleting = true
+        print("🗑️ JournalEntryDetailView: Flag isDeleting = true")
         
         Task {
             do {
+                print("🗑️ JournalEntryDetailView: Appel de journalService.deleteEntry()")
                 try await journalService.deleteEntry(entry)
+                print("✅ JournalEntryDetailView: Suppression réussie !")
                 
                 await MainActor.run {
+                    print("🗑️ JournalEntryDetailView: Fermeture de la vue...")
                     dismiss()
+                    print("✅ JournalEntryDetailView: Vue fermée avec succès")
                 }
                 
             } catch {
+                print("❌ JournalEntryDetailView: Erreur lors de la suppression")
+                print("❌ JournalEntryDetailView: Type d'erreur: \(type(of: error))")
+                print("❌ JournalEntryDetailView: Message: \(error.localizedDescription)")
+                print("❌ JournalEntryDetailView: Détails: \(error)")
+                
                 await MainActor.run {
                     isDeleting = false
+                    print("🗑️ JournalEntryDetailView: Flag isDeleting = false (erreur)")
                     // TODO: Afficher l'erreur à l'utilisateur
                     print("❌ Erreur suppression entrée: \(error)")
                 }

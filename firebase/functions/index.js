@@ -65,8 +65,10 @@ exports.validateAppleReceipt = functions.https.onCall(async (data, context) => {
     );
     appleReceiptVerify.config({
       secret: sharedSecret,
-      environment: [environment],
+      environment: ["sandbox", "production"], // CORRECTION: Essayer les deux environnements
       verbose: true,
+      ignoreExpired: false,
+      extended: true,
     });
 
     // Valider le reçu avec Apple
@@ -133,8 +135,10 @@ exports.validateAppleReceipt = functions.https.onCall(async (data, context) => {
         const userId = context.auth.uid;
         const userRef = admin.firestore().collection("users").doc(userId);
 
+        // CORRECTION: Mise à jour compatible avec le modèle Swift
         await userRef.update({
-          subscription: subscriptionData,
+          isSubscribed: true,
+          subscriptionDetails: subscriptionData, // Optionnel : pour le tracking
         });
 
         console.log(
@@ -171,7 +175,47 @@ exports.validateAppleReceipt = functions.https.onCall(async (data, context) => {
     console.error("🔥 validateAppleReceipt: Type d'erreur:", typeof error);
     console.error("🔥 validateAppleReceipt: Message:", error.message);
     console.error("🔥 validateAppleReceipt: Stack:", error.stack);
-    throw new functions.https.HttpsError("internal", error.message);
+
+    // NOUVEAU: Logging plus détaillé pour identifier la cause
+    if (error.code) {
+      console.error("🔥 validateAppleReceipt: Code d'erreur:", error.code);
+    }
+    if (error.status) {
+      console.error("🔥 validateAppleReceipt: Status HTTP:", error.status);
+    }
+    if (error.response) {
+      console.error(
+        "🔥 validateAppleReceipt: Réponse Apple:",
+        JSON.stringify(error.response, null, 2)
+      );
+    }
+
+    // Envoyer des erreurs spécifiques selon le type
+    if (error.message && error.message.includes("21007")) {
+      // Erreur sandbox vs production
+      throw new functions.https.HttpsError(
+        "failed-precondition",
+        "Environnement Apple incorrect - vérifiez sandbox/production"
+      );
+    } else if (error.message && error.message.includes("receipt")) {
+      // Problème de reçu
+      throw new functions.https.HttpsError(
+        "invalid-argument",
+        "Reçu Apple invalide ou corrompu"
+      );
+    } else if (error.message && error.message.includes("auth")) {
+      // Problème d'authentification
+      throw new functions.https.HttpsError(
+        "unauthenticated",
+        "Problème d'authentification utilisateur"
+      );
+    } else {
+      // Erreur générique avec plus de détails
+      throw new functions.https.HttpsError(
+        "internal",
+        `Erreur validation: ${error.message || "Erreur inconnue"}`
+      );
+    }
   }
 });
 
@@ -246,7 +290,7 @@ async function handleSubscriptionActivation(receiptData) {
         .firestore()
         .collection("users")
         .where(
-          "subscription.originalTransactionId",
+          "subscriptionDetails.originalTransactionId",
           "==",
           originalTransactionId
         )
@@ -266,8 +310,10 @@ async function handleSubscriptionActivation(receiptData) {
           lastValidated: admin.firestore.FieldValue.serverTimestamp(),
         };
 
+        // CORRECTION: Mise à jour compatible avec le modèle Swift
         await userDoc.ref.update({
-          subscription: subscriptionData,
+          isSubscribed: true,
+          subscriptionDetails: subscriptionData,
         });
 
         console.log(
@@ -295,7 +341,7 @@ async function handleSubscriptionExpiration(receiptData) {
         .firestore()
         .collection("users")
         .where(
-          "subscription.originalTransactionId",
+          "subscriptionDetails.originalTransactionId",
           "==",
           originalTransactionId
         )
@@ -304,9 +350,10 @@ async function handleSubscriptionExpiration(receiptData) {
       if (!usersSnapshot.empty) {
         const userDoc = usersSnapshot.docs[0];
 
+        // CORRECTION: Mise à jour compatible avec le modèle Swift
         await userDoc.ref.update({
-          "subscription.isSubscribed": false,
-          "subscription.lastValidated":
+          isSubscribed: false,
+          "subscriptionDetails.lastValidated":
             admin.firestore.FieldValue.serverTimestamp(),
         });
 
@@ -335,7 +382,7 @@ async function handleSubscriptionCancellation(receiptData) {
         .firestore()
         .collection("users")
         .where(
-          "subscription.originalTransactionId",
+          "subscriptionDetails.originalTransactionId",
           "==",
           originalTransactionId
         )
@@ -344,11 +391,12 @@ async function handleSubscriptionCancellation(receiptData) {
       if (!usersSnapshot.empty) {
         const userDoc = usersSnapshot.docs[0];
 
+        // CORRECTION: Mise à jour compatible avec le modèle Swift
         await userDoc.ref.update({
-          "subscription.isSubscribed": false,
-          "subscription.cancelledDate":
+          isSubscribed: false,
+          "subscriptionDetails.cancelledDate":
             admin.firestore.FieldValue.serverTimestamp(),
-          "subscription.lastValidated":
+          "subscriptionDetails.lastValidated":
             admin.firestore.FieldValue.serverTimestamp(),
         });
 
@@ -391,20 +439,20 @@ exports.checkSubscriptionStatus = functions.https.onCall(
       }
 
       const userData = userDoc.data();
-      const subscription = userData.subscription || {};
+      const subscriptionDetails = userData.subscriptionDetails || {};
 
       // Vérifier si l'abonnement est encore valide
       const now = new Date();
-      const expiresDate = subscription.expiresDate
-        ? subscription.expiresDate.toDate()
+      const expiresDate = subscriptionDetails.expiresDate
+        ? subscriptionDetails.expiresDate.toDate()
         : null;
 
       const isActive =
-        subscription.isSubscribed && (!expiresDate || expiresDate > now);
+        userData.isSubscribed && (!expiresDate || expiresDate > now);
 
       return {
         isSubscribed: isActive,
-        subscription: subscription,
+        subscription: subscriptionDetails,
       };
     } catch (error) {
       console.error("🔥 checkSubscriptionStatus: Erreur:", error);
