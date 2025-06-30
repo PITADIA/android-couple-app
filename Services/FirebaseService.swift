@@ -1258,6 +1258,52 @@ class FirebaseService: NSObject, ObservableObject {
         }
     }
     
+    // MARK: - Synchronisation des favoris entre partenaires
+    
+    func syncPartnerFavorites(partnerId: String, completion: @escaping (Bool, String?) -> Void) {
+        print("❤️ FirebaseService: Début synchronisation favoris avec partenaire: \(partnerId)")
+        
+        guard let firebaseUser = Auth.auth().currentUser else {
+            print("❌ FirebaseService: Aucun utilisateur connecté")
+            completion(false, "Utilisateur non connecté")
+            return
+        }
+        
+        let functions = Functions.functions()
+        let syncFunction = functions.httpsCallable("syncPartnerFavorites")
+        
+        syncFunction.call(["partnerId": partnerId]) { result, error in
+            if let error = error {
+                print("❌ FirebaseService: Erreur synchronisation favoris: \(error.localizedDescription)")
+                completion(false, "Erreur lors de la synchronisation: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let data = result?.data as? [String: Any],
+                  let success = data["success"] as? Bool else {
+                print("❌ FirebaseService: Réponse invalide de la fonction")
+                completion(false, "Réponse invalide du serveur")
+                return
+            }
+            
+            if success {
+                let updatedCount = data["updatedFavoritesCount"] as? Int ?? 0
+                let userCount = data["userFavoritesCount"] as? Int ?? 0
+                let partnerCount = data["partnerFavoritesCount"] as? Int ?? 0
+                
+                print("✅ FirebaseService: Synchronisation favoris réussie")
+                print("✅ FirebaseService: \(updatedCount) favoris mis à jour")
+                print("✅ FirebaseService: Favoris utilisateur: \(userCount), Favoris partenaire: \(partnerCount)")
+                
+                completion(true, "Synchronisation réussie: \(updatedCount) favoris mis à jour")
+            } else {
+                let message = data["message"] as? String ?? "Erreur inconnue"
+                print("❌ FirebaseService: Échec synchronisation favoris: \(message)")
+                completion(false, message)
+            }
+        }
+    }
+    
     // MARK: - Public Methods for Data Refresh
     
     func forceRefreshUserData() {

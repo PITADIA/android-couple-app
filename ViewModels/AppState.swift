@@ -63,7 +63,8 @@ class AppState: ObservableObject {
         
         // Initialiser le FavoritesService
         self.favoritesService = FavoritesService()
-        print("🔥 AppState: FavoritesService initialisé")
+        self.favoritesService?.configure(with: self)
+        print("🔥 AppState: FavoritesService initialisé et configuré")
         
         // Initialiser le CategoryProgressService
         self.categoryProgressService = CategoryProgressService.shared
@@ -147,10 +148,11 @@ class AppState: ObservableObject {
                         self?.isOnboardingCompleted = true
                         self?.isOnboardingInProgress = false
                         
-                        // Configurer le FavoritesService avec l'utilisateur
-                        if let favoritesService = self?.favoritesService {
+                        // Configurer le FavoritesService avec l'UID Firebase
+                        if let favoritesService = self?.favoritesService,
+                           let firebaseUID = Auth.auth().currentUser?.uid {
                             Task { @MainActor in
-                                favoritesService.setCurrentUser(user.id)
+                                favoritesService.setCurrentUser(firebaseUID, name: user.name)
                             }
                         }
                         

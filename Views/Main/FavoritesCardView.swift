@@ -16,14 +16,15 @@ struct FavoritesCardView: View {
     
     // Favoris visibles (3 maximum pour la performance)
     private var visibleFavorites: [(Int, FavoriteQuestion)] {
-        guard !favoritesService.favoriteQuestions.isEmpty else { return [] }
+        let allFavorites = favoritesService.getAllFavorites()
+        guard !allFavorites.isEmpty else { return [] }
         
         let startIndex = max(0, currentIndex - 1)
-        let endIndex = min(favoritesService.favoriteQuestions.count - 1, currentIndex + 1)
+        let endIndex = min(allFavorites.count - 1, currentIndex + 1)
         
         var result: [(Int, FavoriteQuestion)] = []
         for i in startIndex...endIndex {
-            result.append((i, favoritesService.favoriteQuestions[i]))
+            result.append((i, allFavorites[i]))
         }
         return result
     }
@@ -40,7 +41,7 @@ struct FavoritesCardView: View {
                     Spacer()
                     
                     // Compteur de favoris
-                    Text("\(currentFavoriteIndex + 1) sur \(favoritesService.favoriteQuestions.count)")
+                    Text("\(currentFavoriteIndex + 1) sur \(favoritesService.getAllFavorites().count)")
                         .font(.system(size: 18, weight: .semibold))
                         .foregroundColor(.black)
                     
@@ -51,7 +52,7 @@ struct FavoritesCardView: View {
                 .padding(.bottom, 40)
                 
                 // Zone des cartes
-                if favoritesService.favoriteQuestions.isEmpty {
+                if favoritesService.getAllFavorites().isEmpty {
                     // État vide
                     VStack(spacing: 30) {
                         Spacer()
@@ -59,7 +60,7 @@ struct FavoritesCardView: View {
                         Text("❤️")
                             .font(.system(size: 80))
                         
-                        Text("Ajoutez des questions en favoris\nen appuyant sur le coeur en-dessous des cartes \npuis vous les verrez apparaître ici")
+                        Text("Ajoutez des questions en favoris en appuyant sur le coeur en-dessous des cartes puis vous les verrez apparaître ici. \nVos questions favorites seront automatiquement partagées avec votre partenaire.")
                             .font(.system(size: 16))
                             .foregroundColor(.black.opacity(0.8))
                             .multilineTextAlignment(.center)
@@ -109,7 +110,7 @@ struct FavoritesCardView: View {
                                             }
                                         } else if value.translation.width < -threshold || velocity < -500 {
                                             // Swipe vers la gauche - favori suivant
-                                            if currentFavoriteIndex < favoritesService.favoriteQuestions.count - 1 {
+                                            if currentFavoriteIndex < favoritesService.getAllFavorites().count - 1 {
                                                 currentIndex += 1
                                             }
                                         }
@@ -125,7 +126,7 @@ struct FavoritesCardView: View {
                 }
                 
                 // Bouton Retirer des favoris (design moderne)
-                if !favoritesService.favoriteQuestions.isEmpty {
+                if !favoritesService.getAllFavorites().isEmpty {
                     Button(action: {
                         showingDeleteAlert = true
                     }) {
@@ -154,13 +155,15 @@ struct FavoritesCardView: View {
         .alert("Supprimer des favoris", isPresented: $showingDeleteAlert) {
             Button("Annuler", role: .cancel) { }
             Button("Supprimer", role: .destructive) {
-                if currentFavoriteIndex < favoritesService.favoriteQuestions.count {
-                    let currentFavorite = favoritesService.favoriteQuestions[currentFavoriteIndex]
+                let allFavorites = favoritesService.getAllFavorites()
+                if currentFavoriteIndex < allFavorites.count {
+                    let currentFavorite = allFavorites[currentFavoriteIndex]
                     Task { @MainActor in
                         favoritesService.removeFavorite(questionId: currentFavorite.questionId)
                         
                         // Ajuster l'index si nécessaire
-                        if currentIndex >= favoritesService.favoriteQuestions.count && currentIndex > 0 {
+                        let updatedFavorites = favoritesService.getAllFavorites()
+                        if currentIndex >= updatedFavorites.count && currentIndex > 0 {
                             currentIndex -= 1
                         }
                         
@@ -173,9 +176,7 @@ struct FavoritesCardView: View {
         }
         .onAppear {
             print("🔥 FavoritesCardView: Vue des cartes favoris apparue")
-            Task { @MainActor in
-                favoritesService.loadFavorites()
-            }
+            // Les favoris sont automatiquement chargés via le listener Firestore
         }
     }
 }

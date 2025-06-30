@@ -28,7 +28,7 @@ struct FavoritesPreviewCard: View {
             }
             
             // Contenu
-            if favoritesService.favoriteQuestions.isEmpty {
+            if favoritesService.getAllFavorites().isEmpty {
                 VStack(spacing: 8) {
                     Text("❤️")
                         .font(.system(size: 24))

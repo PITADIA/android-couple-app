@@ -63,6 +63,9 @@ struct SubscriptionStepView: View {
                         Text("Abonnement pour 2 utilisateurs donc 2,50€ / utilisateur / semaine")
                             .font(.system(size: 12))
                             .foregroundColor(.black.opacity(0.7))
+                            .multilineTextAlignment(.center)
+                            .lineLimit(nil)
+                            .fixedSize(horizontal: false, vertical: true)
                     }
                     .padding(.horizontal, 30)
                     
