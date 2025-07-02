@@ -48,18 +48,20 @@ struct CategoriesPreviewStepView: View {
             
             // Zone blanche collée en bas
             VStack(spacing: 0) {
-                Button("Continuer") {
+                Button(action: {
                     viewModel.nextStep()
+                }) {
+                    Text("Continuer")
+                        .font(.system(size: 18, weight: .semibold))
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 56)
+                        .background(Color(hex: "#FD267A"))
+                        .cornerRadius(28)
                 }
-                .font(.system(size: 18, weight: .bold))
-                .foregroundColor(.white)
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 16)
-                .background(Color(hex: "#FD267A"))
-                .cornerRadius(28)
                 .padding(.horizontal, 30)
-                .padding(.vertical, 30)
             }
+            .padding(.vertical, 30)
             .background(Color.white)
             .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: -5)
         }

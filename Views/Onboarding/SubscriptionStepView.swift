@@ -13,63 +13,108 @@ struct SubscriptionStepView: View {
                 .ignoresSafeArea()
             
             VStack(spacing: 0) {
-                // Espace en haut
-                Spacer()
-                    .frame(height: 80)
+                // Header avec croix collée en haut
+                HStack {
+                    Button(action: {
+                        print("🔥 SubscriptionStepView: Fermeture via croix - continuer sans premium")
+                        NSLog("🔥 SubscriptionStepView: Fermeture via croix - continuer sans premium")
+                        viewModel.skipSubscription()
+                    }) {
+                        Image(systemName: "xmark")
+                            .font(.system(size: 18, weight: .medium))
+                            .foregroundColor(.black)
+                    }
+                    .padding(.leading, 20)
+                    
+                    Spacer()
+                }
+                .padding(.top, 10)
                 
-                // Titre principal
-                Text("Commencez votre essai gratuit de 3 jours dès maintenant")
-                    .font(.system(size: 32, weight: .bold))
-                    .foregroundColor(.black)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 20)
+                // Titre principal collé sous la croix
+                VStack(spacing: 8) {
+                    Text("Choisissez votre plan")
+                        .font(.system(size: 32, weight: .bold))
+                        .foregroundColor(.black)
+                        .multilineTextAlignment(.center)
+                    
+                    // Sous-titre
+                    Text("Votre partenaire n'aura rien à payer")
+                        .font(.system(size: 16))
+                        .foregroundColor(.black.opacity(0.7))
+                        .multilineTextAlignment(.center)
+                }
+                .padding(.horizontal, 20)
+                .padding(.top, 15)
                 
                 Spacer()
+                    .frame(height: 20)
                 
                 // Contenu principal - Nouvelles fonctionnalités
                 VStack(spacing: 25) {
-                    NewFeatureRow(
-                        title: "✓ Apprenez à mieux vous connaître",
-                        subtitle: "Parce qu'aimer, c'est aussi se poser les bonnes questions. Explorez l'univers intérieur de votre partenaire, une question à la fois."
-                    )
-                    
-                    NewFeatureRow(
-                        title: "✓ Resserrez le lien qui vous unit",
-                        subtitle: "Ravivez la flamme avec des échanges sincères, profonds, et pleins de tendresse."
-                    )
-                    
+
                     NewFeatureRow(
                         title: "✓ Aimez-vous encore plus fort",
                         subtitle: "Débloquez nos plus de 2000 questions à la fois fun, profondes, rassurantes, et passez un merveilleux moment ensemble."
                     )
+
+                    NewFeatureRow(
+                        title: "✓ Construisez votre coffre à souvenir",
+                        subtitle: "Parce que chaque souvenir mérite sa place. Rassemblez vos plus beaux moments dans un journal intime, unique et partagé, rien qu'à vous deux."
+                    )
+
+                    NewFeatureRow(
+                        title: "✓ Créez la carte de votre amour",
+                        subtitle: "Retrouvez vos souvenirs sur une carte unique, et revivez les moments qui ont marqué votre amour."
+                    )
+                    
                 }
                 .padding(.horizontal, 25)
                 
                 Spacer()
                 
-                // Section prix et bouton collée en bas
-                VStack(spacing: 15) {
-                    VStack(spacing: 5) {
-                        HStack(spacing: 5) {
-                            Image(systemName: "checkmark")
-                                .font(.system(size: 14, weight: .bold))
-                                .foregroundColor(.black)
-                            
-                            Text("Essai Gratuit de 3 jours, puis 4,99 € / semaine")
-                                .font(.system(size: 14))
-                                .foregroundColor(.black)
-                        }
+                // Garder l'espace entre les boutons de choix et le bouton commencer
+                VStack(spacing: 0) {
+                    // Section de sélection des plans - ORDRE INVERSÉ
+                    VStack(spacing: 8) {
+                        // Plan Hebdomadaire (maintenant en premier)
+                        PlanSelectionCard(
+                            planType: .weekly,
+                            isSelected: receiptService.selectedPlan == .weekly,
+                            onTap: {
+                                receiptService.selectedPlan = .weekly
+                            }
+                        )
                         
-                        Text("Abonnement pour 2 utilisateurs donc 2,50€ / utilisateur / semaine")
-                            .font(.system(size: 12))
-                            .foregroundColor(.black.opacity(0.7))
-                            .multilineTextAlignment(.center)
-                            .lineLimit(nil)
-                            .fixedSize(horizontal: false, vertical: true)
+                        // Plan Mensuel (maintenant en second) sans badge externe
+                        PlanSelectionCard(
+                            planType: .monthly,
+                            isSelected: receiptService.selectedPlan == .monthly,
+                            onTap: {
+                                receiptService.selectedPlan = .monthly
+                            }
+                        )
                     }
-                    .padding(.horizontal, 30)
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 3)
                     
-                    // Bouton principal
+                    Spacer()
+                        .frame(height: 18)
+                    
+                    // Texte informatif - AU-DESSUS DU BOUTON
+                    HStack(spacing: 5) {
+                        Image(systemName: "checkmark")
+                            .font(.system(size: 14, weight: .bold))
+                            .foregroundColor(.black)
+                        
+                        Text(receiptService.selectedPlan == .monthly ? 
+                             "Aucun paiement requis maintenant" : 
+                             "Sans engagement, annuler quand vous voulez")
+                            .font(.system(size: 14))
+                            .foregroundColor(.black)
+                    }
+                    .padding(.bottom, 12)
+                    
+                    // Bouton Commencer l'essai
                     Button(action: {
                         purchaseSubscription()
                     }) {
@@ -95,45 +140,37 @@ struct SubscriptionStepView: View {
                     .disabled(receiptService.isLoading)
                     .padding(.horizontal, 30)
                     
-                    // Bouton "Continuer sans premium"
-                    Button("Continuer sans mon accès Premium") {
-                        print("🔥 SubscriptionStepView: Continuer sans premium")
-                        NSLog("🔥 SubscriptionStepView: Continuer sans premium")
-                        viewModel.skipSubscription()
-                    }
-                    .font(.system(size: 16))
-                    .foregroundColor(.black.opacity(0.6))
-                    .padding(.top, 10)
-                }
-                .padding(.bottom, 20)
-                
-                // Liens légaux et restaurer tout en bas de l'écran
-                HStack(spacing: 15) {
-                    Button("Conditions générales") {
-                        if let url = URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/") {
-                            UIApplication.shared.open(url)
-                        }
-                    }
-                    .font(.system(size: 12))
-                    .foregroundColor(.black.opacity(0.5))
+                    Spacer()
+                        .frame(height: 12)
                     
-                    Button("Politique de confidentialité") {
-                        if let url = URL(string: "https://love2lovesite.onrender.com") {
-                            UIApplication.shared.open(url)
+                    // Section liens légaux - collée en bas
+                    HStack(spacing: 15) {
+                        Button("Conditions générales") {
+                            if let url = URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/") {
+                                UIApplication.shared.open(url)
+                            }
                         }
+                        .font(.system(size: 12))
+                        .foregroundColor(.black.opacity(0.5))
+                        
+                        Button("Politique de confidentialité") {
+                            if let url = URL(string: "https://love2lovesite.onrender.com") {
+                                UIApplication.shared.open(url)
+                            }
+                        }
+                        .font(.system(size: 12))
+                        .foregroundColor(.black.opacity(0.5))
+                        
+                        Button("Restaurer") {
+                            print("🔥 SubscriptionStepView: Tentative de restauration des achats")
+                            NSLog("🔥 SubscriptionStepView: Tentative de restauration des achats")
+                            receiptService.restorePurchases()
+                        }
+                        .font(.system(size: 12))
+                        .foregroundColor(.black.opacity(0.5))
                     }
-                    .font(.system(size: 12))
-                    .foregroundColor(.black.opacity(0.5))
-                    
-                    Button("Restaurer") {
-                        print("🔥 SubscriptionStepView: Tentative de restauration des achats")
-                        NSLog("🔥 SubscriptionStepView: Tentative de restauration des achats")
-                        receiptService.restorePurchases()
-                    }
-                    .font(.system(size: 12))
-                    .foregroundColor(.black.opacity(0.5))
+                    .padding(.bottom, 5)
                 }
-                .padding(.bottom, 30)
             }
             
             // Affichage des erreurs
@@ -184,28 +221,7 @@ struct SubscriptionStepView: View {
     }
 }
 
-// Nouveau composant pour les fonctionnalités avec titre et sous-titre
-struct NewFeatureRow: View {
-    let title: String
-    let subtitle: String
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text(title)
-                .font(.system(size: 18, weight: .bold))
-                .foregroundColor(.black)
-                .multilineTextAlignment(.leading)
-            
-            Text(subtitle)
-                .font(.system(size: 16))
-                .foregroundColor(.black.opacity(0.7))
-                .multilineTextAlignment(.leading)
-                .lineLimit(nil)
-                .fixedSize(horizontal: false, vertical: true)
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-    }
-}
+// NewFeatureRow est défini dans SubscriptionView.swift pour éviter la duplication
 
 // Ancien composant conservé pour compatibilité si nécessaire
 struct FeatureRow: View {

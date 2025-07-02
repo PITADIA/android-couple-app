@@ -11,7 +11,13 @@ const APP_STORE_CONNECT_CONFIG = {
   issuerId: functions.config().apple?.issuer_id || "",
   bundleId: "com.lyes.love2love",
   privateKey: functions.config().apple?.private_key || "",
-  environment: functions.config().apple?.environment || "sandbox", // 'sandbox' ou 'production'
+  environment: "production", // Configuration pour production
+};
+
+// Produits d'abonnement supportés
+const SUBSCRIPTION_PRODUCTS = {
+  WEEKLY: "com.lyes.love2love.subscription.weekly",
+  MONTHLY: "com.lyes.love2love.subscription.monthly",
 };
 
 /**
@@ -28,6 +34,16 @@ exports.validateAppleReceipt = functions.https.onCall(async (data, context) => {
       throw new functions.https.HttpsError(
         "invalid-argument",
         "Données de reçu manquantes"
+      );
+    }
+
+    // Vérifier que le produit est supporté
+    const supportedProducts = Object.values(SUBSCRIPTION_PRODUCTS);
+    if (!supportedProducts.includes(productId)) {
+      console.log("🔥 validateAppleReceipt: Produit non supporté:", productId);
+      throw new functions.https.HttpsError(
+        "invalid-argument",
+        "Produit d'abonnement non supporté"
       );
     }
 

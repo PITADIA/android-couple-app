@@ -8,9 +8,13 @@ class AppleReceiptService: NSObject, ObservableObject {
     @Published var isSubscribed: Bool = false
     @Published var isLoading: Bool = false
     @Published var errorMessage: String?
+    @Published var selectedPlan: SubscriptionPlanType = .monthly // Défaut: mensuel
     
     private let functions = Functions.functions()
-    private let productIdentifier = "com.lyes.love2love.subscription.weekly"
+    private let productIdentifiers = [
+        SubscriptionPlanType.weekly.rawValue,
+        SubscriptionPlanType.monthly.rawValue
+    ]
     
     override init() {
         super.init()
@@ -27,8 +31,8 @@ class AppleReceiptService: NSObject, ObservableObject {
     func purchaseSubscription() {
         print("🔥 AppleReceiptService: Début de l'achat d'abonnement")
         NSLog("🔥 AppleReceiptService: Début de l'achat d'abonnement")
-        print("🔥 AppleReceiptService: Recherche du produit: \(productIdentifier)")
-        NSLog("🔥 AppleReceiptService: Recherche du produit: \(productIdentifier)")
+        print("🔥 AppleReceiptService: Plan sélectionné: \(selectedPlan.rawValue)")
+        NSLog("🔥 AppleReceiptService: Plan sélectionné: \(selectedPlan.rawValue)")
         
         guard SKPaymentQueue.canMakePayments() else {
             print("🔥 AppleReceiptService: Les achats ne sont pas autorisés")
@@ -37,14 +41,14 @@ class AppleReceiptService: NSObject, ObservableObject {
             return
         }
         
-        // Créer une requête de produit
-        let productRequest = SKProductsRequest(productIdentifiers: [productIdentifier])
+        // Créer une requête de produit avec tous les identifiants
+        let productRequest = SKProductsRequest(productIdentifiers: Set(productIdentifiers))
         productRequest.delegate = self
         productRequest.start()
         
         isLoading = true
-        print("🔥 AppleReceiptService: Requête de produit lancée")
-        NSLog("🔥 AppleReceiptService: Requête de produit lancée")
+        print("🔥 AppleReceiptService: Requête de produits lancée")
+        NSLog("🔥 AppleReceiptService: Requête de produits lancée")
     }
     
     func restorePurchases() {
@@ -102,7 +106,7 @@ class AppleReceiptService: NSObject, ObservableObject {
         
         validateReceipt.call([
             "receiptData": receiptString,
-            "productId": productIdentifier
+            "productId": selectedPlan.rawValue
         ]) { [weak self] result, error in
             DispatchQueue.main.async {
                 self?.isLoading = false
@@ -156,15 +160,16 @@ extension AppleReceiptService: SKProductsRequestDelegate {
         }
         
         DispatchQueue.main.async {
-            if let product = response.products.first {
+            // Chercher le produit correspondant au plan sélectionné
+            if let product = response.products.first(where: { $0.productIdentifier == self.selectedPlan.rawValue }) {
                 print("🔥 AppleReceiptService: Lancement de l'achat pour: \(product.productIdentifier)")
                 NSLog("🔥 AppleReceiptService: Lancement de l'achat pour: \(product.productIdentifier)")
                 
                 let payment = SKPayment(product: product)
                 SKPaymentQueue.default().add(payment)
             } else {
-                print("🔥 AppleReceiptService: Aucun produit trouvé")
-                NSLog("🔥 AppleReceiptService: Aucun produit trouvé")
+                print("🔥 AppleReceiptService: Produit non trouvé pour le plan: \(self.selectedPlan.rawValue)")
+                NSLog("🔥 AppleReceiptService: Produit non trouvé pour le plan: \(self.selectedPlan.rawValue)")
                 self.errorMessage = "Produit non disponible"
                 self.isLoading = false
             }

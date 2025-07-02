@@ -97,6 +97,35 @@
           "referenceName" : "Premium Weekly",
           "subscriptionGroupID" : "21482467",
           "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "14.99",
+          "familyShareable" : false,
+          "groupNumber" : 2,
+          "internalID" : "6448963068",
+          "introductoryOffer" : {
+            "internalID" : "70257599",
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P3D"
+          },
+          "localizations" : [
+            {
+              "description" : "Accès illimité aux questions de couple - Formule mensuelle",
+              "displayName" : "Premium Mensuel",
+              "locale" : "fr"
+            }
+          ],
+          "productID" : "com.lyes.love2love.subscription.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Premium Monthly",
+          "subscriptionGroupID" : "21482467",
+          "type" : "RecurringSubscription"
         }
       ]
     }

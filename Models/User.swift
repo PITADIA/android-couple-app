@@ -118,4 +118,60 @@ struct AppUser: Codable, Identifiable, Equatable {
 }
 
 // MARK: - Type Alias pour compatibilité
-typealias User = AppUser 
+typealias User = AppUser
+
+// MARK: - Subscription Models
+
+enum SubscriptionPlanType: String, CaseIterable {
+    case weekly = "com.lyes.love2love.subscription.weekly"
+    case monthly = "com.lyes.love2love.subscription.monthly"
+    
+    var displayName: String {
+        switch self {
+        case .weekly:
+            return "Hebdomadaire"
+        case .monthly:
+            return "Mensuel - 3 jours gratuits"
+        }
+    }
+    
+    var price: String {
+        switch self {
+        case .weekly:
+            return "4,99€"
+        case .monthly:
+            return "14,99€"
+        }
+    }
+    
+    var period: String {
+        switch self {
+        case .weekly:
+            return "semaine"
+        case .monthly:
+            return "mois"
+        }
+    }
+    
+    var pricePerUser: String {
+        switch self {
+        case .weekly:
+            return "2,50€"
+        case .monthly:
+            return "7,50€"
+        }
+    }
+    
+    var hasFreeTrial: Bool {
+        switch self {
+        case .weekly:
+            return true
+        case .monthly:
+            return true
+        }
+    }
+    
+    var freeTrialDays: Int {
+        return 3
+    }
+} 
