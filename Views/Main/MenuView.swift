@@ -2,6 +2,7 @@ import SwiftUI
 import AuthenticationServices
 import PhotosUI
 import Photos
+import SwiftyCrop
 
 struct MenuView: View {
     @EnvironmentObject var appState: AppState
@@ -24,6 +25,11 @@ struct MenuView: View {
     @State private var showSettingsAlert = false          // Alerte paramètres
     @State private var limitedPhotoAssets: [PHAsset] = [] // Photos autorisées
     @State private var alertMessage = ""
+    
+    // MARK: - SwiftyCrop states
+    @State private var selectedImage: UIImage?            // Image sélectionnée avant crop
+    @State private var croppedImage: UIImage?            // Image après crop
+    @State private var showImageCropper = false          // Contrôle SwiftyCrop
 
     var body: some View {
         ScrollView {
@@ -40,6 +46,9 @@ struct MenuView: View {
                 // Section Application
                 applicationSection
                 
+                // SECTION DEBUG TEMPORAIRE - À SUPPRIMER EN PRODUCTION
+                debugSection
+                
                 Spacer(minLength: 40)
             }
         }
@@ -48,6 +57,66 @@ struct MenuView: View {
         }
         .sheet(isPresented: $showingLimitedGalleryView) {
             LimitedGalleryView(assets: limitedPhotoAssets, onImageSelected: handleImageSelection)
+        }
+        .fullScreenCover(isPresented: $showImageCropper) {
+            if let imageToProcess = selectedImage {
+                SwiftyCropView(
+                    imageToCrop: imageToProcess,
+                    maskShape: .circle,
+                    configuration: SwiftyCropConfiguration(
+                        maxMagnificationScale: 4.0,
+                        maskRadius: 150,
+                        cropImageCircular: true,
+                        rotateImage: false,
+                        rotateImageWithButtons: false,
+                        zoomSensitivity: 1.0,
+                        texts: SwiftyCropConfiguration.Texts(
+                            cancelButton: "Annuler",
+                            interactionInstructions: "Ajustez votre photo de profil",
+                            saveButton: "Valider"
+                        )
+                    )
+                ) { resultImage in
+                    print("🔥🔥🔥 MENU_SWIFTYCROP: Callback appelé avec image croppée")
+                    guard let finalImage = resultImage else {
+                        print("❌ MENU_SWIFTYCROP: L'image croppée est nil")
+                        self.showImageCropper = false
+                        return
+                    }
+                    print("🔥🔥🔥 MENU_SWIFTYCROP: Cropped image size = \(finalImage.size)")
+                    self.croppedImage = finalImage
+                    self.profileImage = finalImage
+                    print("🔥🔥🔥 MENU_SWIFTYCROP: Fermeture du cropper...")
+                    self.showImageCropper = false
+                }
+                .onAppear {
+                    print("🔥🔥🔥 MENU_SWIFTYCROP: SwiftyCropView.onAppear() appelé")
+                }
+                .onDisappear {
+                    print("🔥🔥🔥 MENU_SWIFTYCROP: SwiftyCropView.onDisappear() appelé")
+                }
+            } else {
+                // Afficher une vue d'erreur au lieu d'un écran blanc
+                VStack {
+                    Text("Erreur: Image non trouvée")
+                        .font(.title)
+                        .foregroundColor(.red)
+                    
+                    Button("Fermer") {
+                        print("🔥🔥🔥 MENU_SWIFTYCROP: Fermeture forcée du cropper")
+                        self.showImageCropper = false
+                    }
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.blue)
+                    .cornerRadius(10)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color.black)
+                .onAppear {
+                    print("❌❌❌ MENU_SWIFTYCROP: ERREUR - selectedImage est nil!")
+                }
+            }
         }
         .alert(isPresented: $showSettingsAlert) {
             Alert(
@@ -63,6 +132,21 @@ struct MenuView: View {
             if let image = newImage {
                 print("🔥 MenuView: Nouvelle image sélectionnée, démarrage upload")
                 uploadProfileImage(image)
+            }
+        }
+        .onChange(of: showImageCropper) { _, newValue in
+            print("🔥🔥🔥 MENU_SWIFTYCROP: onChange showImageCropper = \(newValue)")
+        }
+        .onChange(of: selectedImage) { _, newImage in
+            print("🔥🔥🔥 MENU_SWIFTYCROP: onChange selectedImage = \(newImage != nil)")
+            if let image = newImage {
+                print("🔥🔥🔥 MENU_SWIFTYCROP: Nouvelle image sélectionnée, size = \(image.size)")
+            }
+        }
+        .onChange(of: croppedImage) { _, newImage in
+            print("🔥🔥🔥 MENU_SWIFTYCROP: onChange croppedImage = \(newImage != nil)")
+            if let image = newImage {
+                print("🔥🔥🔥 MENU_SWIFTYCROP: Nouvelle image croppée, size = \(image.size)")
             }
         }
         .alert("Supprimer le compte", isPresented: $showingDeleteConfirmation) {
@@ -114,7 +198,14 @@ struct MenuView: View {
                         .fill(Color.gray.opacity(0.1))
                         .frame(width: 120, height: 120)
                     
-                    if let imageURL = currentUserImageURL {
+                    if let croppedImage = croppedImage {
+                        // Priorité à l'image croppée récemment
+                        Image(uiImage: croppedImage)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 120, height: 120)
+                            .clipShape(Circle())
+                    } else if let imageURL = currentUserImageURL {
                         AsyncImageView(
                             imageURL: imageURL,
                             width: 120,
@@ -279,6 +370,87 @@ struct MenuView: View {
             )
         }
         .padding(.bottom, 40)
+    }
+    
+    // MARK: - Debug Section
+    
+    @ViewBuilder
+    private var debugSection: some View {
+        VStack(spacing: 0) {
+            // Titre "Debug"
+            HStack {
+                Text("Debug")
+                    .font(.system(size: 22, weight: .semibold))
+                    .foregroundColor(.black)
+                Spacer()
+            }
+            .padding(.horizontal, 20)
+            .padding(.bottom, 20)
+            
+            VStack(spacing: 12) {
+                // Bouton pour forcer le refresh des images de profil
+                Button(action: {
+                    print("🔥 MenuView: Forcer le refresh des images de profil")
+                    appState.widgetService?.forceRefreshProfileImages()
+                }) {
+                    Text("Forcer le refresh des images widget")
+                        .font(.system(size: 16, weight: .semibold))
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 14)
+                        .background(Color.blue)
+                        .cornerRadius(25)
+                }
+                
+                // Bouton pour debug UserDefaults
+                Button(action: {
+                    print("🔥 MenuView: Debug UserDefaults")
+                    appState.widgetService?.debugUserDefaults()
+                }) {
+                    Text("Debug UserDefaults")
+                        .font(.system(size: 16, weight: .semibold))
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 14)
+                        .background(Color.orange)
+                        .cornerRadius(25)
+                }
+                
+                // Bouton pour refresh les données widget
+                Button(action: {
+                    print("🔥 MenuView: Refresh données widget")
+                    appState.widgetService?.refreshData()
+                }) {
+                    Text("Refresh données widget")
+                        .font(.system(size: 16, weight: .semibold))
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 14)
+                        .background(Color.green)
+                        .cornerRadius(25)
+                }
+                
+                // Bouton pour uploader à nouveau la photo de profil
+                Button(action: {
+                    print("🔥 MenuView: Re-upload photo de profil")
+                    if let currentImage = profileImage {
+                        uploadProfileImage(currentImage)
+                    } else {
+                        print("❌ MenuView: Pas d'image de profil à uploader")
+                    }
+                }) {
+                    Text("Re-upload photo de profil")
+                        .font(.system(size: 16, weight: .semibold))
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 14)
+                        .background(Color.purple)
+                        .cornerRadius(25)
+                }
+            }
+        }
+        .padding(24)
+        .background(Color.white)
     }
     
     // MARK: - Computed Properties
@@ -688,15 +860,24 @@ extension MenuView {
     }
     
     private func handleImageSelection(_ imageData: UIImage) {
-        print("✅ MenuView: Image sélectionnée")
-        profileImage = imageData
+        print("✅ MenuView: Image sélectionnée, ouverture du cropper")
+        print("🔥🔥🔥 MENU_SWIFTYCROP: handleImageSelection appelé")
+        print("🔥🔥🔥 MENU_SWIFTYCROP: Image reçue, size = \(imageData.size)")
         
-        // Fermer la sheet après sélection
+        selectedImage = imageData
+        
+        // Fermer la sheet de sélection
         showingGalleryPicker = false
         showingLimitedGalleryView = false
         
-        // Upload de l'image
-        uploadProfileImage(imageData)
+        print("🔥🔥🔥 MENU_SWIFTYCROP: Avant d'activer showImageCropper")
+        
+        // Petit délai pour s'assurer que les sheets sont fermées
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            print("🔥🔥🔥 MENU_SWIFTYCROP: Activation de showImageCropper...")
+            self.showImageCropper = true
+            print("🔥🔥🔥 MENU_SWIFTYCROP: showImageCropper activé = \(self.showImageCropper)")
+        }
     }
     
     private func openSettings() {

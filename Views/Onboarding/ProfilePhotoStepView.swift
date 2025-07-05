@@ -1,12 +1,15 @@
 import SwiftUI
 import PhotosUI
 import Photos
+import SwiftyCrop
 
 struct ProfilePhotoStepView: View {
     @ObservedObject var viewModel: OnboardingViewModel
     @State private var selectedImage: UIImage?
+    @State private var croppedImage: UIImage?
     @State private var showingGalleryPicker = false        // Picker standard (accès complet)
     @State private var showingLimitedGalleryView = false   // Interface personnalisée (accès limité)
+    @State private var showImageCropper = false           // SwiftyCrop
     @State private var showSettingsAlert = false          // Alerte paramètres
     @State private var limitedPhotoAssets: [PHAsset] = [] // Photos autorisées
     @State private var alertMessage = ""
@@ -42,8 +45,8 @@ struct ProfilePhotoStepView: View {
                             .frame(width: 160, height: 160)
                             .shadow(color: Color.black.opacity(0.1), radius: 15, x: 0, y: 8)
                         
-                        if let selectedImage = selectedImage {
-                            Image(uiImage: selectedImage)
+                        if let croppedImage = croppedImage {
+                            Image(uiImage: croppedImage)
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: 160, height: 160)
@@ -70,7 +73,7 @@ struct ProfilePhotoStepView: View {
             // Zone blanche collée en bas
             VStack(spacing: 15) {
                 Button(action: {
-                    if let image = selectedImage {
+                    if let image = croppedImage {
                         viewModel.profileImage = image
                     }
                     viewModel.nextStep()
@@ -104,6 +107,72 @@ struct ProfilePhotoStepView: View {
         .sheet(isPresented: $showingLimitedGalleryView) {
             LimitedGalleryView(assets: limitedPhotoAssets, onImageSelected: handleImageSelection)
         }
+        .fullScreenCover(isPresented: $showImageCropper) {
+            if let imageToProcess = selectedImage {
+                SwiftyCropView(
+                    imageToCrop: imageToProcess,
+                    maskShape: .circle,
+                    configuration: SwiftyCropConfiguration(
+                        maxMagnificationScale: 4.0,
+                        maskRadius: 150,
+                        cropImageCircular: true,
+                        rotateImage: false,
+                        rotateImageWithButtons: false,
+                        zoomSensitivity: 1.0,
+                        texts: SwiftyCropConfiguration.Texts(
+                            cancelButton: "Annuler",
+                            interactionInstructions: "Ajustez votre photo de profil",
+                            saveButton: "Valider"
+                        )
+                    )
+                ) { resultImage in
+                    print("🔥🔥🔥 SWIFTYCROP: Callback appelé avec image croppée (optionnel ?: \(resultImage != nil))")
+                    guard let finalImage = resultImage else {
+                        print("❌ SWIFTYCROP: L'image croppée est nil")
+                        self.showImageCropper = false
+                        return
+                    }
+                    print("🔥🔥🔥 SWIFTYCROP: Cropped image size = \(finalImage.size)")
+                    self.croppedImage = finalImage
+                    self.viewModel.profileImage = finalImage
+                    print("🔥🔥🔥 SWIFTYCROP: Fermeture du cropper...")
+                    self.showImageCropper = false
+                }
+                .onAppear {
+                    print("🔥🔥🔥 SWIFTYCROP: fullScreenCover est en train de s'afficher")
+                    print("🔥🔥🔥 SWIFTYCROP: showImageCropper = \(showImageCropper)")
+                    print("🔥🔥🔥 SWIFTYCROP: selectedImage existe = \(selectedImage != nil)")
+                    if let img = selectedImage {
+                        print("🔥🔥🔥 SWIFTYCROP: Image size = \(img.size)")
+                    }
+                    print("🔥🔥🔥 SWIFTYCROP: SwiftyCropView.onAppear() appelé")
+                }
+                .onDisappear {
+                    print("🔥🔥🔥 SWIFTYCROP: SwiftyCropView.onDisappear() appelé")
+                }
+            } else {
+                // Afficher une vue d'erreur au lieu d'un écran blanc
+                VStack {
+                    Text("Erreur: Image non trouvée")
+                        .font(.title)
+                        .foregroundColor(.red)
+                    
+                    Button("Fermer") {
+                        print("🔥🔥🔥 SWIFTYCROP: Fermeture forcée du cropper")
+                        self.showImageCropper = false
+                    }
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.blue)
+                    .cornerRadius(10)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color.black)
+                .onAppear {
+                    print("❌❌❌ SWIFTYCROP: ERREUR - selectedImage est nil!")
+                }
+            }
+        }
         .alert(isPresented: $showSettingsAlert) {
             Alert(
                 title: Text("Autorisation requise"),
@@ -114,9 +183,13 @@ struct ProfilePhotoStepView: View {
                 secondaryButton: .cancel(Text("Annuler"))
             )
         }
+        .onChange(of: showImageCropper) { _, newValue in
+            print("🔥🔥🔥 SWIFTYCROP: onChange showImageCropper = \(newValue)")
+        }
         .onChange(of: selectedImage) { _, newImage in
+            print("🔥🔥🔥 SWIFTYCROP: onChange selectedImage = \(newImage != nil)")
             if let image = newImage {
-                viewModel.profileImage = image
+                print("🔥🔥🔥 SWIFTYCROP: Nouvelle image sélectionnée, size = \(image.size)")
             }
         }
     }
@@ -197,13 +270,24 @@ struct ProfilePhotoStepView: View {
     }
     
     private func handleImageSelection(_ imageData: UIImage) {
-        print("✅ ProfilePhoto: Image sélectionnée")
-        selectedImage = imageData
-        viewModel.profileImage = imageData
+        print("✅ ProfilePhoto: Image sélectionnée, ouverture du cropper")
+        print("🔥🔥🔥 SWIFTYCROP: handleImageSelection appelé")
+        print("🔥🔥🔥 SWIFTYCROP: Image reçue, size = \(imageData.size)")
         
-        // Fermer la sheet après sélection
+        selectedImage = imageData
+        
+        // Fermer la sheet de sélection
         showingGalleryPicker = false
         showingLimitedGalleryView = false
+        
+        print("🔥🔥🔥 SWIFTYCROP: Avant d'activer showImageCropper")
+        
+        // Petit délai pour s'assurer que les sheets sont fermées
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            print("🔥🔥🔥 SWIFTYCROP: Activation de showImageCropper...")
+            self.showImageCropper = true
+            print("🔥🔥🔥 SWIFTYCROP: showImageCropper activé = \(self.showImageCropper)")
+        }
     }
     
     private func openSettings() {

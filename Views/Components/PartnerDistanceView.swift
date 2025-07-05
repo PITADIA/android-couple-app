@@ -116,47 +116,44 @@ struct PartnerDistanceView: View {
                 size: 80
             )
             
-            Spacer()
-            
-            // Ligne discontinue avec distance au centre
-            HStack(spacing: 8) {
-                // Première partie de la ligne
-                DashedLine()
-                    .stroke(Color.white, style: StrokeStyle(lineWidth: 3, dash: [8, 4]))
-                    .frame(height: 3)
-                    .frame(maxWidth: .infinity)
-                
-                // Distance au centre (cliquable si localisation manquante)
-                Button(action: {
-                    if shouldShowLocationPermissionFlow {
-                        onDistanceTap(shouldShowPartnerLocationMessage)
+            // Ligne discontinue courbe avec distance au centre (sans espacement)
+            GeometryReader { geometry in
+                ZStack {
+                    // Ligne courbe complète en arrière-plan
+                    CurvedDashedLine(screenWidth: geometry.size.width)
+                        .stroke(Color.white, style: StrokeStyle(lineWidth: 3, dash: [8, 4]))
+                        .frame(height: 40)
+                    
+                    // Distance au centre (cliquable si localisation manquante)
+                    HStack {
+                        Spacer()
+                        
+                        Button(action: {
+                            if shouldShowLocationPermissionFlow {
+                                onDistanceTap(shouldShowPartnerLocationMessage)
+                            }
+                        }) {
+                            Text(cachedDistance)
+                                .font(.system(size: 16, weight: .semibold))
+                                .foregroundColor(.black)
+                                .multilineTextAlignment(.center)
+                                .lineLimit(1)
+                                .fixedSize(horizontal: true, vertical: false)
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 10)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 20)
+                                        .fill(Color.white)
+                                )
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        .disabled(!shouldShowLocationPermissionFlow)
+                        
+                        Spacer()
                     }
-                }) {
-                    Text(cachedDistance)
-                        .font(.system(size: 16, weight: .semibold))
-                        .foregroundColor(.black)
-                        .multilineTextAlignment(.center)
-                        .lineLimit(1)
-                        .fixedSize(horizontal: true, vertical: false)
-                        .padding(.horizontal, 20)
-                        .padding(.vertical, 10)
-                        .background(
-                            RoundedRectangle(cornerRadius: 20)
-                                .fill(Color.white)
-                        )
                 }
-                .buttonStyle(PlainButtonStyle())
-                .disabled(!shouldShowLocationPermissionFlow)
-                
-                // Deuxième partie de la ligne
-                DashedLine()
-                    .stroke(Color.white, style: StrokeStyle(lineWidth: 3, dash: [8, 4]))
-                    .frame(height: 3)
-                    .frame(maxWidth: .infinity)
             }
-            .padding(.horizontal, 8)
-            
-            Spacer()
+            .frame(height: 40)
             
             // Photo de profil du partenaire
             Button(action: {
@@ -203,24 +200,24 @@ struct UserProfileImage: View {
     
     var body: some View {
         ZStack {
-            // Cercle de base
-            Circle()
-                .fill(Color(hex: "#FD267A"))
-                .frame(width: size, height: size)
-            
             if let imageURL = imageURL, !imageURL.isEmpty {
-                // Image de profil utilisateur
+                // Image de profil utilisateur (taille complète)
                 AsyncImageView(
                     imageURL: imageURL,
-                    width: size - 4,
-                    height: size - 4,
-                    cornerRadius: (size - 4) / 2
+                    width: size,
+                    height: size,
+                    cornerRadius: size / 2
                 )
             } else {
+                // Cercle de base seulement si pas d'image
+                Circle()
+                    .fill(Color.gray.opacity(0.3))
+                    .frame(width: size, height: size)
+                
                 // Image par défaut
                 Image(systemName: "person.fill")
                     .font(.system(size: size * 0.4))
-                    .foregroundColor(.white)
+                    .foregroundColor(.gray)
             }
             
             // Bordure blanche
@@ -239,27 +236,32 @@ struct PartnerProfileImage: View {
     
     var body: some View {
         ZStack {
-            // Cercle de base
-            Circle()
-                .fill(hasPartner ? Color(hex: "#FD267A") : Color.white.opacity(0.3))
-                .frame(width: size, height: size)
-            
             if hasPartner {
                 if let imageURL = imageURL, !imageURL.isEmpty {
-                    // Image de profil du partenaire
+                    // Image de profil du partenaire (taille complète)
                     AsyncImageView(
                         imageURL: imageURL,
-                        width: size - 4,
-                        height: size - 4,
-                        cornerRadius: (size - 4) / 2
+                        width: size,
+                        height: size,
+                        cornerRadius: size / 2
                     )
                 } else {
+                    // Cercle de base seulement si pas d'image
+                    Circle()
+                        .fill(Color.gray.opacity(0.3))
+                        .frame(width: size, height: size)
+                    
                     // Icône par défaut si pas d'image
                     Image(systemName: "person.fill")
                         .font(.system(size: size * 0.4))
-                        .foregroundColor(.white)
+                        .foregroundColor(.gray)
                 }
             } else {
+                // Cercle de base pour partenaire non connecté
+                Circle()
+                    .fill(Color.white.opacity(0.3))
+                    .frame(width: size, height: size)
+                
                 // Icône de profil vide
                 Image(systemName: "person.fill")
                     .font(.system(size: size * 0.4))
@@ -274,7 +276,33 @@ struct PartnerProfileImage: View {
     }
 }
 
-// MARK: - Dashed Line Shape
+// MARK: - Curved Dashed Line Shape
+struct CurvedDashedLine: Shape {
+    let screenWidth: CGFloat
+    
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        
+        // Calculer la hauteur de la courbe basée sur la largeur de l'écran
+        // Plus l'écran est large, plus la courbe est prononcée
+        let curveHeight = min(screenWidth * 0.03, 15) // Maximum 15 points
+        
+        // Points de départ et d'arrivée
+        let startPoint = CGPoint(x: 0, y: rect.height / 2 + curveHeight)
+        let endPoint = CGPoint(x: rect.width, y: rect.height / 2 + curveHeight)
+        
+        // Point de contrôle au centre pour créer la courbe vers le haut
+        let controlPoint = CGPoint(x: rect.width / 2, y: rect.height / 2 - curveHeight)
+        
+        // Créer la courbe quadratique
+        path.move(to: startPoint)
+        path.addQuadCurve(to: endPoint, control: controlPoint)
+        
+        return path
+    }
+}
+
+// MARK: - Dashed Line Shape (conservé pour compatibilité)
 struct DashedLine: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()

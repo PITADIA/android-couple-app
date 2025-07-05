@@ -117,6 +117,8 @@ struct WidgetData {
             return nil
         }
         
+        print("🔍 Widget: Début chargement données UserDefaults...")
+        
         let daysTotal = sharedDefaults.integer(forKey: "widget_days_total")
         let duration = sharedDefaults.string(forKey: "widget_duration") ?? ""
         let daysToAnniversary = sharedDefaults.integer(forKey: "widget_days_to_anniversary")
@@ -125,9 +127,45 @@ struct WidgetData {
         let userName = sharedDefaults.string(forKey: "widget_user_name")
         let partnerName = sharedDefaults.string(forKey: "widget_partner_name")
         
-        // Récupérer les chemins des images locales ou utiliser les noms de fichiers par défaut
-        let userImageURL = sharedDefaults.string(forKey: "widget_user_image_url") ?? "user_profile_image.jpg"
-        let partnerImageURL = sharedDefaults.string(forKey: "widget_partner_image_url") ?? "partner_profile_image.jpg"
+        // CORRECTION: Ne récupérer les URLs d'images que si elles existent réellement
+        let userImageURL = sharedDefaults.string(forKey: "widget_user_image_url")
+        let partnerImageURL = sharedDefaults.string(forKey: "widget_partner_image_url")
+        
+        print("🔍 Widget: Données récupérées:")
+        print("  - daysTotal: \(daysTotal)")
+        print("  - userName: \(userName ?? "nil")")
+        print("  - partnerName: \(partnerName ?? "nil")")
+        print("  - userImageURL: \(userImageURL ?? "nil")")
+        print("  - partnerImageURL: \(partnerImageURL ?? "nil")")
+        
+        // Vérifier le contenu du dossier App Group
+        if let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.lyes.love2love") {
+            print("🔍 Widget: Container App Group trouvé: \(containerURL.path)")
+            
+            do {
+                let contents = try FileManager.default.contentsOfDirectory(atPath: containerURL.path)
+                print("🔍 Widget: Contenu du container App Group:")
+                for item in contents {
+                    print("  - \(item)")
+                }
+                
+                // Vérifier spécifiquement le dossier ImageCache
+                let imageCacheURL = containerURL.appendingPathComponent("ImageCache")
+                if FileManager.default.fileExists(atPath: imageCacheURL.path) {
+                    let imageContents = try FileManager.default.contentsOfDirectory(atPath: imageCacheURL.path)
+                    print("🔍 Widget: Contenu du dossier ImageCache:")
+                    for item in imageContents {
+                        print("  - \(item)")
+                    }
+                } else {
+                    print("❌ Widget: Dossier ImageCache n'existe pas")
+                }
+            } catch {
+                print("❌ Widget: Erreur lecture container: \(error)")
+            }
+        } else {
+            print("❌ Widget: Container App Group non trouvé")
+        }
         
         let userLatitude = sharedDefaults.object(forKey: "widget_user_latitude") as? Double
         let userLongitude = sharedDefaults.object(forKey: "widget_user_longitude") as? Double
@@ -137,8 +175,11 @@ struct WidgetData {
         
         // Si pas de données importantes, retourner nil
         guard daysTotal > 0 || !duration.isEmpty else {
+            print("❌ Widget: Pas de données importantes trouvées")
             return nil
         }
+        
+        print("✅ Widget: Création WidgetData avec les données récupérées")
         
         return WidgetData(
             daysTotal: daysTotal,
@@ -256,55 +297,139 @@ struct SmallWidgetView: View {
     var body: some View {
         let timeComponents = data.getTimeComponents()
         
-        VStack(spacing: 12) {
-            // Photos de profil avec cœur
-            HStack(spacing: 6) {
-                // Photo utilisateur miniature
+        VStack(spacing: 16) {
+            // Photos de profil côte à côte (sans cœur)
+            HStack(spacing: 12) {
+                // Photo utilisateur
                 ProfileCircleForWidget(
                     imageURL: data.userImageURL,
                     userName: data.userName,
-                    size: 24
+                    size: 50
                 )
                 
-                // Cœur au milieu
-                Image(systemName: "heart.fill")
-                    .font(.system(size: 12))
-                    .foregroundColor(.white)
-                
-                // Photo partenaire miniature
+                // Photo partenaire
                 ProfileCircleForWidget(
                     imageURL: data.partnerImageURL,
                     userName: data.partnerName,
-                    size: 24
+                    size: 50
                 )
             }
             
-            // Titre
-            Text("Ensemble depuis")
-                .font(.system(size: 13, weight: .medium))
-                .foregroundColor(.white.opacity(0.9))
-            
-            // Compteur de jours uniquement
-            VStack(spacing: 4) {
-                Text("\(timeComponents.days)")
-                    .font(.system(size: 28, weight: .bold))
+            // Texte sur deux lignes
+            VStack(spacing: 2) {
+                Text("\(timeComponents.days) jours")
+                    .font(.system(size: 20, weight: .medium))
                     .foregroundColor(.white)
-                Text("JOURS")
-                    .font(.system(size: 10, weight: .medium))
-                    .foregroundColor(.white.opacity(0.8))
+                
+                Text("ensemble")
+                    .font(.system(size: 16, weight: .medium))
+                    .foregroundColor(.white.opacity(0.9))
+            }
+            .multilineTextAlignment(.center)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .contentShape(Rectangle())
+        .background(
+            ZStack {
+                // Fond noir avec effet de flou
+                Color.black
+                    .blur(radius: 10)
+                    .opacity(0.8)
+                
+                // Overlay pour améliorer la lisibilité
+                Color.black.opacity(0.3)
+            }
+        )
+    }
+}
+
+// MARK: - Small Distance Widget (Photos + Distance en km)
+struct SmallDistanceWidgetView: View {
+    let data: WidgetData
+    
+    private var locationStatus: LocationStatus {
+        let hasUserLocation = data.userLatitude != nil && data.userLongitude != nil
+        let hasPartnerLocation = data.partnerLatitude != nil && data.partnerLongitude != nil
+        
+        if hasUserLocation && hasPartnerLocation {
+            return .bothAvailable
+        } else if !hasUserLocation && hasPartnerLocation {
+            return .userMissing
+        } else if hasUserLocation && !hasPartnerLocation {
+            return .partnerMissing
+        } else {
+            return .bothMissing
+        }
+    }
+    
+    private enum LocationStatus {
+        case bothAvailable
+        case userMissing
+        case partnerMissing
+        case bothMissing
+        
+        var message: String {
+            switch self {
+            case .bothAvailable:
+                return ""
+            case .userMissing:
+                return "Activez votre localisation"
+            case .partnerMissing:
+                return "Partenaire doit activer sa localisation"
+            case .bothMissing:
+                return "Activez vos localisations"
+            }
+        }
+        
+        var showDistance: Bool {
+            return self == .bothAvailable
+        }
+    }
+    
+    var body: some View {
+        VStack(spacing: 16) {
+            // Photos de profil côte à côte (comme le widget jours ensemble)
+            HStack(spacing: 12) {
+                // Photo utilisateur
+                ProfileCircleForWidget(
+                    imageURL: data.userImageURL,
+                    userName: data.userName,
+                    size: 50
+                )
+                
+                // Photo partenaire
+                ProfileCircleForWidget(
+                    imageURL: data.partnerImageURL,
+                    userName: data.partnerName,
+                    size: 50
+                )
+            }
+            
+            // Distance ou message d'erreur
+            if locationStatus.showDistance {
+                Text(data.distance ?? "? km")
+                    .font(.system(size: 16, weight: .medium))
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.center)
+            } else {
+                Text(locationStatus.message)
+                    .font(.system(size: 14, weight: .medium))
+                    .foregroundColor(.white.opacity(0.9))
+                    .multilineTextAlignment(.center)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .contentShape(Rectangle())
         .background(
-            LinearGradient(
-                gradient: Gradient(colors: [
-                    Color(red: 0.99, green: 0.15, blue: 0.48), // #FD267A
-                    Color(red: 1.0, green: 0.4, blue: 0.36)    // #FF655B
-                ]),
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
+            ZStack {
+                // Fond noir avec effet de flou
+                Color.black
+                    .blur(radius: 10)
+                    .opacity(0.8)
+                
+                // Overlay pour améliorer la lisibilité
+                Color.black.opacity(0.3)
+            }
         )
     }
 }
@@ -356,19 +481,32 @@ struct MediumWidgetView: View {
         let timeComponents = data.getTimeComponents()
         
         HStack(spacing: 16) {
-            // Section gauche : Compteur de jours
+            // Section gauche : Compteur de jours avec nouveau design
             VStack(spacing: 8) {
-                Text("Ensemble depuis")
-                    .font(.system(size: 14, weight: .medium))
-                    .foregroundColor(.white.opacity(0.9))
+                // Photos de profil miniatures
+                HStack(spacing: 8) {
+                    ProfileCircleForWidget(
+                        imageURL: data.userImageURL,
+                        userName: data.userName,
+                        size: 35
+                    )
+                    
+                    ProfileCircleForWidget(
+                        imageURL: data.partnerImageURL,
+                        userName: data.partnerName,
+                        size: 35
+                    )
+                }
                 
-                VStack(spacing: 4) {
-                    Text("\(timeComponents.days)")
-                        .font(.system(size: 36, weight: .bold))
+                // Texte sur deux lignes comme le petit widget
+                VStack(spacing: 2) {
+                    Text("\(timeComponents.days) jours")
+                        .font(.system(size: 24, weight: .medium))
                         .foregroundColor(.white)
-                    Text("JOURS")
-                        .font(.system(size: 12, weight: .medium))
-                        .foregroundColor(.white.opacity(0.8))
+                    
+                    Text("ensemble")
+                        .font(.system(size: 16, weight: .medium))
+                        .foregroundColor(.white.opacity(0.9))
                 }
             }
             .frame(maxWidth: .infinity)
@@ -379,60 +517,29 @@ struct MediumWidgetView: View {
                 .frame(width: 1)
                 .padding(.vertical, 8)
             
-            // Section droite : Localisation miniature
-            VStack(spacing: 8) {
+            // Section droite : Distance simplifiée
+            VStack(spacing: 12) {
+                // Icône de cœur
+                Image(systemName: "heart.fill")
+                    .font(.system(size: 20))
+                    .foregroundColor(.white.opacity(0.8))
+                
                 // Distance ou message d'erreur
                 if locationStatus.showDistance {
-                    Text(data.distance ?? "? km")
-                        .font(.system(size: 14, weight: .semibold))
-                        .foregroundColor(.white)
+                    VStack(spacing: 2) {
+                        Text(data.distance ?? "? km")
+                            .font(.system(size: 18, weight: .bold))
+                            .foregroundColor(.white)
+                        
+                        Text("de distance")
+                            .font(.system(size: 12, weight: .medium))
+                            .foregroundColor(.white.opacity(0.8))
+                    }
                 } else {
                     Text(locationStatus.message)
-                        .font(.system(size: 10, weight: .medium))
+                        .font(.system(size: 12, weight: .medium))
                         .foregroundColor(.white.opacity(0.8))
                         .multilineTextAlignment(.center)
-                }
-                
-                // Photos miniatures avec cœur
-                HStack(spacing: 8) {
-                    // Photo utilisateur miniature
-                    ProfileCircleForWidget(
-                        imageURL: data.userImageURL,
-                        userName: data.userName,
-                        size: 30
-                    )
-                    
-                    // Traits et cœur miniatures
-                    HStack(spacing: 0) {
-                        // Trait gauche
-                        DashedLineWidget()
-                            .stroke(Color.white.opacity(0.7), style: StrokeStyle(lineWidth: 1.5, dash: [3, 2]))
-                            .frame(height: 1.5)
-                        
-                        // Cœur miniature
-                        ZStack {
-                            Circle()
-                                .fill(Color.white.opacity(0.2))
-                                .frame(width: 20, height: 20)
-                            
-                            Image(systemName: "heart.fill")
-                                .font(.system(size: 8))
-                                .foregroundColor(.white)
-                        }
-                        
-                        // Trait droit
-                        DashedLineWidget()
-                            .stroke(Color.white.opacity(0.7), style: StrokeStyle(lineWidth: 1.5, dash: [3, 2]))
-                            .frame(height: 1.5)
-                    }
-                    .frame(width: 40)
-                    
-                    // Photo partenaire miniature
-                    ProfileCircleForWidget(
-                        imageURL: data.partnerImageURL,
-                        userName: data.partnerName,
-                        size: 30
-                    )
                 }
             }
             .frame(maxWidth: .infinity)
@@ -440,14 +547,15 @@ struct MediumWidgetView: View {
         .padding(16)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(
-            LinearGradient(
-                gradient: Gradient(colors: [
-                    Color(red: 0.99, green: 0.15, blue: 0.48), // #FD267A
-                    Color(red: 1.0, green: 0.4, blue: 0.36)    // #FF655B
-                ]),
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
+            ZStack {
+                // Fond noir avec effet de flou
+                Color.black
+                    .blur(radius: 10)
+                    .opacity(0.8)
+                
+                // Overlay pour améliorer la lisibilité
+                Color.black.opacity(0.3)
+            }
         )
     }
 }
@@ -460,29 +568,19 @@ struct ProfileCircleForWidget: View {
     
     var body: some View {
         ZStack {
-            // Image de profil ou initiale (sans fond ni bordure)
-            if let imagePath = imageURL, !imagePath.isEmpty {
-                // Essayer de charger l'image locale d'abord
-                if let localImage = loadLocalImage(from: imagePath) {
-                    Image(uiImage: localImage)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: size, height: size)
-                        .clipShape(Circle())
-                } else {
-                    // Fallback vers initiale avec fond transparent
-                    ZStack {
-                        Circle()
-                            .fill(Color.white.opacity(0.15))
-                            .frame(width: size, height: size)
-                        
-                        Text(userInitial)
-                            .font(.system(size: size * 0.4, weight: .bold))
-                            .foregroundColor(.white)
-                    }
-                }
+            // Vérifier si on a une vraie image de profil
+            if let imagePath = imageURL, 
+               !imagePath.isEmpty,
+               hasRealProfileImage(imagePath),
+               let localImage = loadLocalImage(from: imagePath) {
+                // Afficher l'image de profil réelle
+                Image(uiImage: localImage)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: size, height: size)
+                    .clipShape(Circle())
             } else {
-                // Initiale du nom avec fond transparent
+                // Afficher l'initiale du nom avec fond transparent
                 ZStack {
                     Circle()
                         .fill(Color.white.opacity(0.15))
@@ -503,20 +601,107 @@ struct ProfileCircleForWidget: View {
         return String(userName.prefix(1)).uppercased()
     }
     
-    // MARK: - Helper pour charger l'image locale
-    private func loadLocalImage(from path: String) -> UIImage? {
-        // Si c'est un chemin de fichier local
-        if path.hasPrefix("/") {
-            return UIImage(contentsOfFile: path)
+    // MARK: - Helper pour vérifier si c'est une vraie image de profil
+    private func hasRealProfileImage(_ imagePath: String) -> Bool {
+        // Les noms de fichiers par défaut utilisés quand il n'y a pas d'image
+        let defaultImageNames = [
+            "user_profile_image.jpg",
+            "partner_profile_image.jpg"
+        ]
+        
+        print("🖼️ Widget: Vérification image profil - Path: \(imagePath)")
+        
+        // Vérifier si le fichier existe dans le dossier App Group
+        guard let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.lyes.love2love") else {
+            print("❌ Widget: Container App Group non trouvé")
+            return false
         }
         
-        // Si c'est juste un nom de fichier, regarder dans le dossier App Group
-        if let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.lyes.love2love") {
-            let imageURL = containerURL.appendingPathComponent(path)
-            return UIImage(contentsOfFile: imageURL.path)
+        let imageCacheURL = containerURL.appendingPathComponent("ImageCache")
+        let imageURL = imageCacheURL.appendingPathComponent(imagePath)
+        
+        let fileExists = FileManager.default.fileExists(atPath: imageURL.path)
+        print("🖼️ Widget: Fichier '\(imagePath)' existe: \(fileExists)")
+        
+        if fileExists {
+            // Vérifier que le fichier n'est pas vide
+            do {
+                let attributes = try FileManager.default.attributesOfItem(atPath: imageURL.path)
+                if let fileSize = attributes[.size] as? NSNumber {
+                    let sizeInBytes = fileSize.intValue
+                    print("🖼️ Widget: Taille du fichier: \(sizeInBytes) bytes")
+                    
+                    if sizeInBytes > 0 {
+                        print("✅ Widget: Fichier valide trouvé")
+                        return true
+                    } else {
+                        print("❌ Widget: Fichier vide")
+                        return false
+                    }
+                }
+            } catch {
+                print("❌ Widget: Erreur lecture attributs fichier: \(error)")
+                return false
+            }
         }
         
-        return nil
+        print("❌ Widget: Pas de fichier image valide trouvé")
+        return false
+    }
+    
+    // MARK: - Helper pour charger une image locale
+    private func loadLocalImage(from imagePath: String) -> UIImage? {
+        print("🖼️ Widget: loadLocalImage appelé avec: \(imagePath)")
+        
+        // Charger directement depuis le container App Group
+        guard let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.lyes.love2love") else {
+            print("❌ Widget: Container App Group non trouvé")
+            return nil
+        }
+        
+        let imageCacheURL = containerURL.appendingPathComponent("ImageCache")
+        let imageURL = imageCacheURL.appendingPathComponent(imagePath)
+        
+        print("🔍 Widget: Tentative chargement depuis: \(imageURL.path)")
+        
+        // Vérifier d'abord si le fichier existe
+        if !FileManager.default.fileExists(atPath: imageURL.path) {
+            print("❌ Widget: Fichier n'existe pas: \(imageURL.path)")
+            return nil
+        }
+        
+        // Vérifier la taille du fichier
+        do {
+            let attributes = try FileManager.default.attributesOfItem(atPath: imageURL.path)
+            if let fileSize = attributes[.size] as? NSNumber {
+                print("🔍 Widget: Taille du fichier: \(fileSize.intValue) bytes")
+                
+                if fileSize.intValue == 0 {
+                    print("❌ Widget: Fichier vide")
+                    return nil
+                }
+            }
+        } catch {
+            print("❌ Widget: Erreur lecture attributs: \(error)")
+        }
+        
+        // Tenter de charger l'image
+        do {
+            let imageData = try Data(contentsOf: imageURL)
+            print("🔍 Widget: Données image chargées: \(imageData.count) bytes")
+            
+            if let image = UIImage(data: imageData) {
+                print("✅ Widget: Image chargée avec succès: \(imagePath)")
+                print("✅ Widget: Taille image: \(image.size)")
+                return image
+            } else {
+                print("❌ Widget: Impossible de créer UIImage à partir des données")
+                return nil
+            }
+        } catch {
+            print("❌ Widget: Erreur chargement données: \(error)")
+            return nil
+        }
     }
 }
 
@@ -530,6 +715,11 @@ struct AccessoryCircularWidgetView: View {
         let timeComponents = data.getTimeComponents()
         
         ZStack {
+            // Fond noir avec effet de flou pour le widget circulaire
+            Circle()
+                .fill(Color.black.opacity(0.6))
+                .blur(radius: 5)
+            
             VStack(spacing: 4) {
                 // Deux cœurs espacés (comme l'émoji 💕)
                 ZStack {
@@ -587,6 +777,24 @@ struct Love2LoveWidget: Widget {
     }
 }
 
+// MARK: - Distance Widget Configuration
+struct Love2LoveDistanceWidget: Widget {
+    let kind: String = "Love2LoveDistanceWidget"
+
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+            SmallDistanceWidgetView(data: entry.widgetData)
+                .containerBackground(.fill.tertiary, for: .widget)
+        }
+        .configurationDisplayName("Love2Love Distance")
+        .description("Affichez la distance qui vous sépare de votre partenaire.")
+        .supportedFamilies([
+            .systemSmall                           // Petit widget uniquement
+        ])
+        .contentMarginsDisabledIfAvailable()
+    }
+}
+
 // MARK: - Previews
 #Preview(as: .systemSmall) {
     Love2LoveWidget()
@@ -602,6 +810,12 @@ struct Love2LoveWidget: Widget {
 
 #Preview(as: .accessoryCircular) {
     Love2LoveWidget()
+} timeline: {
+    SimpleEntry(date: .now, widgetData: .placeholder)
+}
+
+#Preview("Distance Widget", as: .systemSmall) {
+    Love2LoveDistanceWidget()
 } timeline: {
     SimpleEntry(date: .now, widgetData: .placeholder)
 }
@@ -681,15 +895,12 @@ struct MapDistanceRectangularWidgetView: View {
             
             // Section bas : Profils avec lignes pointillées centrés
             HStack(spacing: 0) {
-                // Cercle utilisateur avec initiale
-                Circle()
-                    .fill(Color.white.opacity(0.3))
-                    .frame(width: 28, height: 28)
-                    .overlay(
-                        Text(data.userName?.prefix(1).uppercased() ?? "U")
-                            .font(.system(size: 12, weight: .bold))
-                            .foregroundColor(.white)
-                    )
+                // Photo utilisateur avec ProfileCircleForWidget
+                ProfileCircleForWidget(
+                    imageURL: data.userImageURL,
+                    userName: data.userName,
+                    size: 28
+                )
                 
                 // Ligne pointillée gauche
                 DashedLineWidget()
@@ -712,20 +923,29 @@ struct MapDistanceRectangularWidgetView: View {
                     .stroke(Color.white, style: StrokeStyle(lineWidth: 1, dash: [3, 2]))
                     .frame(width: 25, height: 1)
                 
-                // Cercle partenaire avec initiale
-                Circle()
-                    .fill(Color.white.opacity(0.3))
-                    .frame(width: 28, height: 28)
-                    .overlay(
-                        Text(data.partnerName?.prefix(1).uppercased() ?? "P")
-                            .font(.system(size: 12, weight: .bold))
-                            .foregroundColor(.white)
-                    )
+                // Photo partenaire avec ProfileCircleForWidget
+                ProfileCircleForWidget(
+                    imageURL: data.partnerImageURL,
+                    userName: data.partnerName,
+                    size: 28
+                )
             }
             .frame(maxWidth: .infinity, alignment: .center)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.horizontal, 8)
         .padding(.vertical, 4)
+        .background(
+            ZStack {
+                // Fond noir avec effet de flou pour le widget rectangulaire
+                RoundedRectangle(cornerRadius: 8)
+                    .fill(Color.black.opacity(0.6))
+                    .blur(radius: 5)
+                
+                // Overlay pour améliorer la lisibilité
+                RoundedRectangle(cornerRadius: 8)
+                    .fill(Color.black.opacity(0.2))
+            }
+        )
     }
 }

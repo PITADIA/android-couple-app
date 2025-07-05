@@ -18,6 +18,7 @@
 		1188F9862DF09230005B5328 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1188F9852DF09230005B5328 /* FirebaseAuth */; };
 		1188F9882DF09230005B5328 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1188F9872DF09230005B5328 /* FirebaseFirestore */; };
 		1188F98A2DF09230005B5328 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 1188F9892DF09230005B5328 /* FirebaseFunctions */; };
+		11C684382E16E74400F48062 /* SwiftyCrop in Frameworks */ = {isa = PBXBuildFile; productRef = 11C684372E16E74400F48062 /* SwiftyCrop */; };
 		11FE3CCC2DF0C8B600F58DB2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 11FE3CA92DF0C8B600F58DB2 /* README.md */; };
 		11FE3CCD2DF0C8B600F58DB2 /* CoupleApp.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 11FE3CA02DF0C8B600F58DB2 /* CoupleApp.storekit */; };
 		11FE3CCE2DF0C8B600F58DB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11FE3C9E2DF0C8B600F58DB2 /* Assets.xcassets */; };
@@ -111,6 +112,7 @@
 				114926262DF23223009F7AFA /* RealmSwift in Frameworks */,
 				1188F9862DF09230005B5328 /* FirebaseAuth in Frameworks */,
 				1188F9882DF09230005B5328 /* FirebaseFirestore in Frameworks */,
+				11C684382E16E74400F48062 /* SwiftyCrop in Frameworks */,
 				111C37B32E09E36100FCA06D /* FirebaseStorage in Frameworks */,
 				1149266F2DF241C5009F7AFA /* RealmSwift in Frameworks */,
 				1188F98A2DF09230005B5328 /* FirebaseFunctions in Frameworks */,
@@ -249,6 +251,7 @@
 				1188F9842DF09230005B5328 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				114926242DF23223009F7AFA /* XCRemoteSwiftPackageReference "realm-swift" */,
 				111FEC642DF38CDD00CB1034 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+				11C684362E16E74400F48062 /* XCRemoteSwiftPackageReference "SwiftyCrop" */,
 			);
 			productRefGroup = 1A000032294A1234567890AB /* Products */;
 			projectDirPath = "";
@@ -625,6 +628,14 @@
 				minimumVersion = 11.14.0;
 			};
 		};
+		11C684362E16E74400F48062 /* XCRemoteSwiftPackageReference "SwiftyCrop" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/benedom/SwiftyCrop?tab=readme-ov-file";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -662,6 +673,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1188F9842DF09230005B5328 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFunctions;
+		};
+		11C684372E16E74400F48062 /* SwiftyCrop */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11C684362E16E74400F48062 /* XCRemoteSwiftPackageReference "SwiftyCrop" */;
+			productName = SwiftyCrop;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

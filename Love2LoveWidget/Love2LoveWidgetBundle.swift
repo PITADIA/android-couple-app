@@ -12,6 +12,7 @@ import SwiftUI
 struct Love2LoveWidgetBundle: WidgetBundle {
     var body: some Widget {
         Love2LoveWidget()
+        Love2LoveDistanceWidget()
         Love2LoveMapWidget()
     }
 }

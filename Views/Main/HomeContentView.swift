@@ -58,13 +58,24 @@ struct HomeContentView: View {
                         }
                         .padding(.horizontal, 20)
                         
-                        // Section widgets défilants (en bas des catégories)
-                        WidgetPreviewSection(
-                            onWidgetTap: {
-                                activeSheet = .widgetTutorial
+                        // Section Widgets
+                        VStack(alignment: .leading, spacing: 16) {
+                            // Titre "Widgets" à gauche
+                            HStack {
+                                Text("Widgets")
+                                    .font(.system(size: 22, weight: .bold))
+                                    .foregroundColor(.black)
+                                    .padding(.horizontal, 20)
+                                
+                                Spacer()
                             }
-                        )
-                        .environmentObject(appState)
+                            
+                            // Carte widget (remplace la section widgets défilants)
+                            WidgetPreviewSection(onWidgetTap: {
+                                print("📱 HomeContentView: Carte widget tappée, ouverture de la page widgets")
+                                activeSheet = .widgets
+                            })
+                        }
                     }
                     .padding(.bottom, 100) // Espace pour le menu du bas
                     .background(

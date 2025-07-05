@@ -142,17 +142,39 @@ class ImageCacheService {
     
     /// Méthode compatible avec WidgetService pour unifier les caches
     func cacheImageForWidget(_ image: UIImage, fileName: String) {
+        print("🖼️ ImageCacheService: cacheImageForWidget appelé")
+        print("  - FileName: \(fileName)")
+        print("  - CacheDirectory: \(cacheDirectory.path)")
+        
         let fileURL = cacheDirectory.appendingPathComponent(fileName)
+        print("  - FileURL: \(fileURL.path)")
         
         guard let imageData = image.jpegData(compressionQuality: 0.8) else {
+            print("❌ ImageCacheService: Impossible de convertir l'image en JPEG")
             return
         }
         
+        print("  - ImageData size: \(imageData.count) bytes")
+        
         do {
             try imageData.write(to: fileURL)
-            print("🖼️ ImageCacheService: Image widget sauvée: \(fileName)")
+            print("✅ ImageCacheService: Image widget sauvée: \(fileName)")
+            
+            // Vérifier que le fichier existe bien
+            if FileManager.default.fileExists(atPath: fileURL.path) {
+                print("✅ ImageCacheService: Vérification - Fichier existe: \(fileURL.path)")
+                
+                // Vérifier la taille du fichier
+                if let attributes = try? FileManager.default.attributesOfItem(atPath: fileURL.path),
+                   let fileSize = attributes[.size] as? NSNumber {
+                    print("✅ ImageCacheService: Taille fichier: \(fileSize.intValue) bytes")
+                }
+            } else {
+                print("❌ ImageCacheService: Vérification - Fichier n'existe pas après sauvegarde!")
+            }
         } catch {
             print("❌ ImageCacheService: Erreur sauvegarde widget: \(error)")
+            print("❌ ImageCacheService: Error details: \(error.localizedDescription)")
         }
     }
     

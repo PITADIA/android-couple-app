@@ -7,18 +7,22 @@ struct WidgetTutorialView: View {
     private let tutorialSteps = [
         TutorialStep(
             title: "Restez appuyer sur votre écran d'accueil puis cliquez sur le +",
+            description: "",
             imageName: "imageA"
         ),
         TutorialStep(
             title: "Cliquez sur Ajouter un Widget",
+            description: "",
             imageName: "imageB"
         ),
         TutorialStep(
             title: "Cherchez Love2Love",
+            description: "",
             imageName: "imageC"
         ),
         TutorialStep(
             title: "Sélectionnez le Widget que vous souhaitez puis cliquer sur ajouter",
+            description: "",
             imageName: "imageD"
         )
     ]
@@ -96,11 +100,6 @@ struct WidgetTutorialView: View {
         .background(Color.white)
         .cornerRadius(20)
     }
-}
-
-struct TutorialStep {
-    let title: String
-    let imageName: String
 }
 
 #Preview {

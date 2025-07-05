@@ -60,13 +60,11 @@ struct MainView: View {
                             }
                             .padding(.horizontal, 20)
                             
-                            // Section widgets défilants (en bas des catégories)
-                            WidgetPreviewSection(
-                                onWidgetTap: {
-                                    activeSheet = .widgetTutorial
-                                }
-                            )
-                            .environmentObject(appState)
+                            // Carte widget (remplace la section widgets défilants)
+                            WidgetPreviewSection(onWidgetTap: {
+                                print("📱 MainView: Carte widget tappée, ouverture de la page widgets")
+                                activeSheet = .widgets
+                            })
                         }
                         .padding(.bottom, 100) // Espace pour le menu du bas
                         .background(

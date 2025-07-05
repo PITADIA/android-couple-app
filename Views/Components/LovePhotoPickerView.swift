@@ -283,63 +283,72 @@ struct LimitedGalleryView: View {
     @Environment(\.dismiss) private var dismiss
     
     private let columns = [
-        GridItem(.flexible()),
-        GridItem(.flexible()),
-        GridItem(.flexible())
+        GridItem(.flexible(), spacing: 2),
+        GridItem(.flexible(), spacing: 2),
+        GridItem(.flexible(), spacing: 2)
     ]
     
     var body: some View {
         NavigationView {
-            VStack {
-                if assets.isEmpty {
-                    // Message explicatif + bouton paramètres
-                    VStack(spacing: 20) {
-                        Image(systemName: "photo.badge.exclamationmark")
-                            .font(.system(size: 60))
-                            .foregroundColor(.gray)
-                        
-                        Text("Aucune photo accessible")
-                            .font(.system(size: 20, weight: .semibold))
-                            .foregroundColor(.black)
-                        
-                        Text("Vous pouvez sélectionner plus de photos dans les Réglages")
-                            .font(.system(size: 16))
-                            .foregroundColor(.gray)
-                            .multilineTextAlignment(.center)
-                        
-                        Button("Ouvrir les Réglages") {
-                            openSettings()
-                        }
-                        .foregroundColor(.white)
-                        .padding(.horizontal, 20)
-                        .padding(.vertical, 12)
-                        .background(Color(hex: "#FD267A"))
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                    }
-                    .padding()
-                } else {
-                    ScrollView {
-                        LazyVGrid(columns: columns, spacing: 8) {
-                            ForEach(0..<assets.count, id: \.self) { index in
-                                AssetThumbnailView(
-                                    asset: assets[index],
-                                    onSelected: { image in
-                                        onImageSelected(image)
-                                    }
-                                )
+            ZStack {
+                // Fond similaire à l'interface iOS native
+                Color(UIColor.systemBackground)
+                    .ignoresSafeArea()
+                
+                VStack(spacing: 0) {
+                    if assets.isEmpty {
+                        // Message explicatif + bouton paramètres
+                        VStack(spacing: 20) {
+                            Image(systemName: "photo.badge.exclamationmark")
+                                .font(.system(size: 60))
+                                .foregroundColor(.gray)
+                            
+                            Text("Aucune photo accessible")
+                                .font(.system(size: 20, weight: .semibold))
+                                .foregroundColor(.black)
+                            
+                            Text("Vous pouvez sélectionner plus de photos dans les Réglages")
+                                .font(.system(size: 16))
+                                .foregroundColor(.gray)
+                                .multilineTextAlignment(.center)
+                            
+                            Button("Ouvrir les Réglages") {
+                                openSettings()
                             }
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 20)
+                            .padding(.vertical, 12)
+                            .background(Color(hex: "#FD267A"))
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
                         }
                         .padding()
+                    } else {
+                        ScrollView {
+                            LazyVGrid(columns: columns, spacing: 2) {
+                                ForEach(0..<assets.count, id: \.self) { index in
+                                    AssetThumbnailView(
+                                        asset: assets[index],
+                                        onSelected: { image in
+                                            onImageSelected(image)
+                                            dismiss()
+                                        }
+                                    )
+                                }
+                            }
+                            .padding(.horizontal, 2)
+                            .padding(.top, 2)
+                        }
                     }
                 }
             }
-            .navigationTitle("Photos autorisées")
+            .navigationTitle("Photos")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Annuler") {
                         dismiss()
                     }
+                    .foregroundColor(Color(hex: "#FD267A"))
                 }
             }
         }
@@ -359,14 +368,16 @@ struct AssetThumbnailView: View {
     
     @State private var thumbnail: UIImage?
     @State private var isLoading = false
+    @State private var isPressed = false
     
     var body: some View {
         Button(action: {
             loadFullSizeImage()
         }) {
             ZStack {
+                // Fond avec couleur système
                 Rectangle()
-                    .fill(Color.gray.opacity(0.3))
+                    .fill(Color(UIColor.systemGray6))
                     .aspectRatio(1, contentMode: .fit)
                 
                 if let thumbnail = thumbnail {
@@ -377,14 +388,27 @@ struct AssetThumbnailView: View {
                 } else if isLoading {
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle(tint: Color(hex: "#FD267A")))
+                        .scaleEffect(0.8)
                 } else {
                     Image(systemName: "photo")
-                        .font(.system(size: 30))
-                        .foregroundColor(.gray)
+                        .font(.system(size: 24))
+                        .foregroundColor(Color(UIColor.systemGray3))
+                }
+                
+                // Overlay pour effet de pression
+                if isPressed {
+                    Rectangle()
+                        .fill(Color.black.opacity(0.1))
                 }
             }
-            .clipShape(RoundedRectangle(cornerRadius: 8))
+            .clipShape(Rectangle()) // Pas de coins arrondis comme le picker natif
+            .scaleEffect(isPressed ? 0.95 : 1.0)
+            .animation(.easeInOut(duration: 0.1), value: isPressed)
         }
+        .buttonStyle(PlainButtonStyle())
+        .onLongPressGesture(minimumDuration: 0, maximumDistance: .infinity, pressing: { pressing in
+            isPressed = pressing
+        }, perform: {})
         .onAppear {
             loadThumbnail()
         }
@@ -396,14 +420,17 @@ struct AssetThumbnailView: View {
         let manager = PHImageManager.default()
         let options = PHImageRequestOptions()
         options.isSynchronous = false
-        options.deliveryMode = .opportunistic // Changé de .fastFormat à .opportunistic
+        options.deliveryMode = .opportunistic
         options.resizeMode = .exact
-        options.isNetworkAccessAllowed = false // Pas de téléchargement depuis iCloud pour les miniatures
+        options.isNetworkAccessAllowed = false
         
-        // Essayer d'abord avec une taille standard
+        // Calculer la taille optimale pour l'écran
+        let scale = UIScreen.main.scale
+        let targetSize = CGSize(width: 120 * scale, height: 120 * scale)
+        
         manager.requestImage(
             for: asset, 
-            targetSize: CGSize(width: 150, height: 150), 
+            targetSize: targetSize, 
             contentMode: .aspectFill, 
             options: options
         ) { image, info in
@@ -412,7 +439,7 @@ struct AssetThumbnailView: View {
                     print("✅ AssetThumbnailView: Miniature chargée avec succès")
                     self.thumbnail = image
                 } else {
-                    print("❌ AssetThumbnailView: Échec chargement miniature avec taille 150x150")
+                    print("❌ AssetThumbnailView: Échec chargement miniature")
                     if let info = info {
                         print("❌ Info: \(info)")
                     }
@@ -429,13 +456,13 @@ struct AssetThumbnailView: View {
         let manager = PHImageManager.default()
         let options = PHImageRequestOptions()
         options.isSynchronous = false
-        options.deliveryMode = .fastFormat // Utiliser fastFormat pour le fallback
+        options.deliveryMode = .fastFormat
         options.resizeMode = .fast
         options.isNetworkAccessAllowed = false
         
         manager.requestImage(
             for: asset, 
-            targetSize: CGSize(width: 75, height: 75), // Taille plus petite
+            targetSize: CGSize(width: 75, height: 75),
             contentMode: .aspectFill, 
             options: options
         ) { image, info in
@@ -462,7 +489,7 @@ struct AssetThumbnailView: View {
         options.isSynchronous = false
         options.deliveryMode = .highQualityFormat
         options.resizeMode = .fast
-        options.isNetworkAccessAllowed = true // Autoriser iCloud pour les images haute résolution
+        options.isNetworkAccessAllowed = true
         
         manager.requestImage(
             for: asset, 

@@ -1,5 +1,5 @@
 {
-  "originHash" : "2e0159d8a2a60b5e2f3debb7029308dc6ec369bab3dc4ddcb651415de2ef16b9",
+  "originHash" : "b0a759cef5b3d9f3b8b886d76eb72cc0976c321d56cd40edbd10142bb248a1a6",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -152,6 +152,15 @@
       "state" : {
         "revision" : "102a647b573f60f73afdce5613a51d71349fe507",
         "version" : "1.30.0"
+      }
+    },
+    {
+      "identity" : "swiftycrop?tab=readme-ov-file",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/benedom/SwiftyCrop?tab=readme-ov-file",
+      "state" : {
+        "branch" : "master",
+        "revision" : "ddf6ad7231187134ce132be87c8220a230c51838"
       }
     }
   ],

@@ -4,10 +4,38 @@ import CoreLocation
 import UIKit
 import FirebaseFunctions
 
+// MARK: - Widget Data Model for Main App
+struct WidgetPreviewData {
+    let daysTogetherCount: Int
+    let userName: String?
+    let partnerName: String?
+    let distance: String?
+    let userImageFileName: String?
+    let partnerImageFileName: String?
+    let userCoordinates: (latitude: Double, longitude: Double)?
+    let partnerCoordinates: (latitude: Double, longitude: Double)?
+    let lastUpdate: Date
+    
+    static var placeholder: WidgetPreviewData {
+        WidgetPreviewData(
+            daysTogetherCount: 1,
+            userName: "Alex",
+            partnerName: "Morgan",
+            distance: "3.2 km",
+            userImageFileName: nil,
+            partnerImageFileName: nil,
+            userCoordinates: (48.8566, 2.3522),
+            partnerCoordinates: (43.6047, 1.4442),
+            lastUpdate: Date()
+        )
+    }
+}
+
 class WidgetService: ObservableObject {
     @Published var relationshipStats: RelationshipStats?
     @Published var distanceInfo: DistanceInfo?
     @Published var isLocationUpdateInProgress = false
+    @Published var lastUpdateTime = Date()
     
     private let firebaseService = FirebaseService.shared
     private var cancellables = Set<AnyCancellable>()
@@ -339,8 +367,10 @@ class WidgetService: ObservableObject {
     // MARK: - Public Methods
     
     func refreshData() {
+        print("🔄 WidgetService: refreshData appelé")
         updateRelationshipStats()
         fetchPartnerInfo()
+        lastUpdateTime = Date()
     }
     
     func startLocationUpdates() {
@@ -362,12 +392,64 @@ class WidgetService: ObservableObject {
         if let currentUser = currentUser, let imageURL = currentUser.profileImageURL {
             print("🔄 WidgetService: Téléchargement image utilisateur: \(imageURL)")
             downloadAndCacheImage(from: imageURL, key: "widget_user_image_url", isUser: true)
+        } else {
+            print("❌ WidgetService: Pas d'image utilisateur à télécharger")
         }
         
         // Télécharger l'image partenaire si disponible
         if let partnerUser = partnerUser, let imageURL = partnerUser.profileImageURL {
             print("🔄 WidgetService: Téléchargement image partenaire: \(imageURL)")
             downloadAndCacheImage(from: imageURL, key: "widget_partner_image_url", isUser: false)
+        } else {
+            print("❌ WidgetService: Pas d'image partenaire à télécharger")
+        }
+    }
+    
+    // NOUVEAU: Méthode de debug pour vérifier l'état des UserDefaults
+    func debugUserDefaults() {
+        guard let sharedDefaults = sharedDefaults else {
+            print("❌ WidgetService: Impossible d'accéder aux UserDefaults partagés")
+            return
+        }
+        
+        print("🔍 WidgetService: Debug UserDefaults...")
+        
+        let allKeys = [
+            "widget_days_total", "widget_duration", "widget_days_to_anniversary", "widget_start_date",
+            "widget_distance", "widget_message", "widget_user_name", "widget_partner_name",
+            "widget_user_image_url", "widget_partner_image_url",
+            "widget_user_latitude", "widget_user_longitude", "widget_partner_latitude", "widget_partner_longitude",
+            "widget_last_update"
+        ]
+        
+        for key in allKeys {
+            if let value = sharedDefaults.object(forKey: key) {
+                print("  - \(key): \(value)")
+            } else {
+                print("  - \(key): nil")
+            }
+        }
+        
+        // Vérifier le dossier ImageCache
+        if let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.lyes.love2love") {
+            let imageCacheURL = containerURL.appendingPathComponent("ImageCache")
+            print("🔍 WidgetService: Vérification ImageCache: \(imageCacheURL.path)")
+            
+            do {
+                let contents = try FileManager.default.contentsOfDirectory(atPath: imageCacheURL.path)
+                print("  - Contenu ImageCache:")
+                for item in contents {
+                    let itemURL = imageCacheURL.appendingPathComponent(item)
+                    if let attributes = try? FileManager.default.attributesOfItem(atPath: itemURL.path),
+                       let fileSize = attributes[.size] as? NSNumber {
+                        print("    - \(item): \(fileSize.intValue) bytes")
+                    } else {
+                        print("    - \(item): taille inconnue")
+                    }
+                }
+            } catch {
+                print("  - Erreur lecture ImageCache: \(error)")
+            }
         }
     }
     
@@ -379,37 +461,49 @@ class WidgetService: ObservableObject {
             return
         }
         
+        print("🔄 WidgetService: Sauvegarde des données widget...")
+        
+        // Nettoyer d'abord les UserDefaults pour éviter les erreurs CFPrefs
+        cleanUserDefaults()
+        
         // Sauvegarder les statistiques de relation
         if let stats = relationshipStats {
             sharedDefaults.set(stats.daysTotal, forKey: "widget_days_total")
             sharedDefaults.set(stats.formattedDuration, forKey: "widget_duration")
             sharedDefaults.set(stats.daysToAnniversary, forKey: "widget_days_to_anniversary")
             sharedDefaults.set(stats.startDate.timeIntervalSince1970, forKey: "widget_start_date")
+            print("✅ WidgetService: Stats relation sauvegardées")
         } else {
             // Nettoyer si pas de données
             sharedDefaults.removeObject(forKey: "widget_days_total")
             sharedDefaults.removeObject(forKey: "widget_duration")
             sharedDefaults.removeObject(forKey: "widget_days_to_anniversary")
             sharedDefaults.removeObject(forKey: "widget_start_date")
+            print("🔄 WidgetService: Stats relation nettoyées")
         }
         
         // Sauvegarder les infos de distance
         if let distance = distanceInfo {
             sharedDefaults.set(distance.formattedDistance, forKey: "widget_distance")
             sharedDefaults.set(distance.randomMessage, forKey: "widget_message")
+            print("✅ WidgetService: Distance sauvegardée")
         } else {
             sharedDefaults.removeObject(forKey: "widget_distance")
             sharedDefaults.removeObject(forKey: "widget_message")
+            print("🔄 WidgetService: Distance nettoyée")
         }
         
         // Sauvegarder les noms d'utilisateurs si disponibles
         if let currentUser = currentUser {
             sharedDefaults.set(currentUser.name, forKey: "widget_user_name")
+            print("✅ WidgetService: Nom utilisateur sauvegardé: \(currentUser.name)")
             
             // AMÉLIORÉ: Télécharger et cacher l'image utilisateur localement
             if let imageURL = currentUser.profileImageURL {
+                print("🔄 WidgetService: Téléchargement image utilisateur...")
                 downloadAndCacheImage(from: imageURL, key: "widget_user_image_url", isUser: true)
             } else {
+                print("🔄 WidgetService: Pas d'image utilisateur - Nettoyage")
                 sharedDefaults.removeObject(forKey: "widget_user_image_url")
                 clearCachedImage(key: "user_profile_image.jpg")
             }
@@ -418,19 +512,24 @@ class WidgetService: ObservableObject {
             if let location = currentUser.currentLocation {
                 sharedDefaults.set(location.latitude, forKey: "widget_user_latitude")
                 sharedDefaults.set(location.longitude, forKey: "widget_user_longitude")
+                print("✅ WidgetService: Coordonnées utilisateur sauvegardées")
             } else {
                 sharedDefaults.removeObject(forKey: "widget_user_latitude")
                 sharedDefaults.removeObject(forKey: "widget_user_longitude")
+                print("🔄 WidgetService: Coordonnées utilisateur nettoyées")
             }
         }
         
         if let partnerUser = partnerUser {
             sharedDefaults.set(partnerUser.name, forKey: "widget_partner_name")
+            print("✅ WidgetService: Nom partenaire sauvegardé: \(partnerUser.name)")
             
             // AMÉLIORÉ: Télécharger et cacher l'image partenaire localement
             if let imageURL = partnerUser.profileImageURL {
+                print("🔄 WidgetService: Téléchargement image partenaire...")
                 downloadAndCacheImage(from: imageURL, key: "widget_partner_image_url", isUser: false)
             } else {
+                print("🔄 WidgetService: Pas d'image partenaire - Nettoyage")
                 sharedDefaults.removeObject(forKey: "widget_partner_image_url")
                 clearCachedImage(key: "partner_profile_image.jpg")
             }
@@ -439,16 +538,48 @@ class WidgetService: ObservableObject {
             if let location = partnerUser.currentLocation {
                 sharedDefaults.set(location.latitude, forKey: "widget_partner_latitude")
                 sharedDefaults.set(location.longitude, forKey: "widget_partner_longitude")
+                print("✅ WidgetService: Coordonnées partenaire sauvegardées")
             } else {
                 sharedDefaults.removeObject(forKey: "widget_partner_latitude")
                 sharedDefaults.removeObject(forKey: "widget_partner_longitude")
+                print("🔄 WidgetService: Coordonnées partenaire nettoyées")
             }
         }
         
         // Timestamp de dernière mise à jour
         sharedDefaults.set(Date().timeIntervalSince1970, forKey: "widget_last_update")
         
+        // Forcer la synchronisation
+        sharedDefaults.synchronize()
+        
         print("✅ WidgetService: Données sauvegardées pour le widget")
+        
+        // Notifier les previews de la mise à jour
+        notifyPreviewsUpdated()
+    }
+    
+    // NOUVEAU: Nettoyer les UserDefaults pour éviter les erreurs CFPrefs
+    private func cleanUserDefaults() {
+        guard let sharedDefaults = sharedDefaults else { return }
+        
+        // Lister toutes les clés et les nettoyer si nécessaire
+        let allKeys = [
+            "widget_days_total", "widget_duration", "widget_days_to_anniversary", "widget_start_date",
+            "widget_distance", "widget_message", "widget_user_name", "widget_partner_name",
+            "widget_user_image_url", "widget_partner_image_url",
+            "widget_user_latitude", "widget_user_longitude", "widget_partner_latitude", "widget_partner_longitude",
+            "widget_last_update"
+        ]
+        
+        // Supprimer les clés vides ou corrompues
+        for key in allKeys {
+            if let value = sharedDefaults.object(forKey: key) {
+                // Vérifier si la valeur est valide
+                if let stringValue = value as? String, stringValue.isEmpty {
+                    sharedDefaults.removeObject(forKey: key)
+                }
+            }
+        }
     }
     
     // MARK: - Image Caching pour Widgets
@@ -456,6 +587,12 @@ class WidgetService: ObservableObject {
     private func downloadAndCacheImage(from urlString: String, key: String, isUser: Bool) {
         // Nom du fichier pour le cache local
         let fileName = isUser ? "user_profile_image.jpg" : "partner_profile_image.jpg"
+        
+        print("🔄 WidgetService: downloadAndCacheImage appelé")
+        print("  - URL: \(urlString)")
+        print("  - Key: \(key)")
+        print("  - FileName: \(fileName)")
+        print("  - IsUser: \(isUser)")
         
         // 1. Vérifier d'abord si l'image est déjà en cache
         if let cachedImage = ImageCacheService.shared.getCachedImage(for: urlString) {
@@ -465,9 +602,14 @@ class WidgetService: ObservableObject {
             if let finalImage = resizedImage {
                 ImageCacheService.shared.cacheImageForWidget(finalImage, fileName: fileName)
                 sharedDefaults?.set(fileName, forKey: key) // Juste le nom du fichier
+                print("✅ WidgetService: Image du cache sauvegardée pour widget avec clé: \(key) = \(fileName)")
+            } else {
+                print("❌ WidgetService: Erreur redimensionnement image du cache")
             }
             return
         }
+        
+        print("🔄 WidgetService: Image pas en cache, téléchargement depuis URL...")
         
         // 2. Si pas en cache, télécharger
         guard let url = URL(string: urlString) else {
@@ -484,22 +626,35 @@ class WidgetService: ObservableObject {
                 return
             }
             
+            print("✅ WidgetService: Image téléchargée avec succès (\(data.count) bytes)")
+            
             // 3. Mettre en cache principal
             ImageCacheService.shared.cacheImage(image, for: urlString)
+            print("✅ WidgetService: Image mise en cache principal")
             
             // 4. Redimensionner pour le widget et sauvegarder
             let resizedImage = self.resizeImage(image, to: CGSize(width: 150, height: 150))
             guard let finalImage = resizedImage else {
-                print("❌ WidgetService: Erreur redimensionnement image")
+                print("❌ WidgetService: Erreur redimensionnement image téléchargée")
                 return
             }
             
+            print("✅ WidgetService: Image redimensionnée pour widget")
+            
             // 5. Sauvegarder pour le widget
             ImageCacheService.shared.cacheImageForWidget(finalImage, fileName: fileName)
+            print("✅ WidgetService: Image sauvegardée via ImageCacheService")
             
             DispatchQueue.main.async {
                 self.sharedDefaults?.set(fileName, forKey: key) // Juste le nom du fichier
-                print("✅ WidgetService: Image cachée localement: \(fileName)")
+                print("✅ WidgetService: Clé UserDefaults mise à jour: \(key) = \(fileName)")
+                
+                // Vérifier que la sauvegarde a fonctionné
+                if let savedValue = self.sharedDefaults?.string(forKey: key) {
+                    print("✅ WidgetService: Vérification - Valeur sauvegardée: \(savedValue)")
+                } else {
+                    print("❌ WidgetService: Vérification - Aucune valeur trouvée pour la clé: \(key)")
+                }
             }
         }.resume()
     }
@@ -519,6 +674,77 @@ class WidgetService: ObservableObject {
         let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return resizedImage
+    }
+    
+    // MARK: - Widget Data Access
+    func getWidgetData() -> WidgetPreviewData? {
+        guard let sharedDefaults = sharedDefaults else {
+            print("❌ WidgetService: Impossible d'accéder aux UserDefaults partagés")
+            return nil
+        }
+        
+        print("🔍 WidgetService: Début chargement données UserDefaults...")
+        
+        let daysTotal = sharedDefaults.integer(forKey: "widget_days_total")
+        let userName = sharedDefaults.string(forKey: "widget_user_name")
+        let partnerName = sharedDefaults.string(forKey: "widget_partner_name")
+        let distance = sharedDefaults.string(forKey: "widget_distance")
+        let userImageFileName = sharedDefaults.string(forKey: "widget_user_image_url")
+        let partnerImageFileName = sharedDefaults.string(forKey: "widget_partner_image_url")
+        
+        let userLatitude = sharedDefaults.object(forKey: "widget_user_latitude") as? Double
+        let userLongitude = sharedDefaults.object(forKey: "widget_user_longitude") as? Double
+        let partnerLatitude = sharedDefaults.object(forKey: "widget_partner_latitude") as? Double
+        let partnerLongitude = sharedDefaults.object(forKey: "widget_partner_longitude") as? Double
+        let lastUpdateTimestamp = sharedDefaults.double(forKey: "widget_last_update")
+        
+        print("🔍 WidgetService: Données récupérées:")
+        print("  - daysTotal: \(daysTotal)")
+        print("  - userName: \(userName ?? "nil")")
+        print("  - partnerName: \(partnerName ?? "nil")")
+        print("  - distance: \(distance ?? "nil")")
+        print("  - userImageFileName: \(userImageFileName ?? "nil")")
+        print("  - partnerImageFileName: \(partnerImageFileName ?? "nil")")
+        print("  - userCoordinates: \(userLatitude != nil && userLongitude != nil ? "présentes" : "nil")")
+        print("  - partnerCoordinates: \(partnerLatitude != nil && partnerLongitude != nil ? "présentes" : "nil")")
+        
+        // Construire les coordonnées si disponibles
+        let userCoordinates: (latitude: Double, longitude: Double)? = {
+            if let lat = userLatitude, let lon = userLongitude {
+                return (lat, lon)
+            }
+            return nil
+        }()
+        
+        let partnerCoordinates: (latitude: Double, longitude: Double)? = {
+            if let lat = partnerLatitude, let lon = partnerLongitude {
+                return (lat, lon)
+            }
+            return nil
+        }()
+        
+        let data = WidgetPreviewData(
+            daysTogetherCount: daysTotal,
+            userName: userName,
+            partnerName: partnerName,
+            distance: distance,
+            userImageFileName: userImageFileName,
+            partnerImageFileName: partnerImageFileName,
+            userCoordinates: userCoordinates,
+            partnerCoordinates: partnerCoordinates,
+            lastUpdate: Date(timeIntervalSince1970: lastUpdateTimestamp)
+        )
+        
+        print("✅ WidgetService: WidgetPreviewData créé avec succès")
+        return data
+    }
+    
+    // MARK: - Preview Notification System
+    private func notifyPreviewsUpdated() {
+        print("📢 WidgetService: Notification de mise à jour des previews")
+        DispatchQueue.main.async {
+            NotificationCenter.default.post(name: NSNotification.Name("WidgetDataUpdated"), object: nil)
+        }
     }
 }
 

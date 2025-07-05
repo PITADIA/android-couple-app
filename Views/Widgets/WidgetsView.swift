@@ -3,9 +3,12 @@ import MapKit
 
 struct WidgetsView: View {
     @EnvironmentObject var appState: AppState
+    @Environment(\.dismiss) private var dismiss
     @State private var selectedWidget: WidgetType = .countdown
     @State private var currentMessageIndex = 0
     @State private var timer: Timer?
+    @State private var showLockScreenTutorial = false
+    @State private var showHomeScreenTutorial = false
     
     // Utiliser le WidgetService global d'AppState
     private var widgetService: WidgetService? {
@@ -37,81 +40,201 @@ struct WidgetsView: View {
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 0) {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 16) {
-                        ForEach(WidgetType.allCases, id: \.self) { type in
-                            WidgetSelectorButton(
-                                type: type,
-                                isSelected: selectedWidget == type,
-                                canAccess: !type.requiresPremium || canAccessPremiumWidgets
-                            ) {
-                                if type.requiresPremium && !canAccessPremiumWidgets {
-                                    print("🔒 WidgetsView: Accès widget premium bloqué - Affichage paywall")
-                                    appState.freemiumManager?.handleDistanceWidgetAccess {
-                                        selectedWidget = type
-                                    }
-                                } else {
-                                    selectedWidget = type
-                                }
-                            }
-                        }
-                    }
-                    .padding(.horizontal, 20)
-                }
-                .padding(.vertical, 16)
-                .padding(.top, 20)
+            ZStack {
+                // Même fond que la page principale
+                Color(red: 0.97, green: 0.97, blue: 0.98)
+                    .ignoresSafeArea(.all)
                 
                 ScrollView {
-                    VStack(spacing: 20) {
-                        switch selectedWidget {
-                        case .countdown:
-                            CountdownWidgetView(stats: widgetService?.relationshipStats)
-                        case .daysTotal:
-                            DaysTotalWidgetView(stats: widgetService?.relationshipStats)
+                    VStack(spacing: 30) {
+                        // Header avec titre et bouton retour
+                        HStack {
+                            Button(action: {
+                                dismiss()
+                            }) {
+                                ZStack {
+                                    Circle()
+                                        .fill(Color.white.opacity(0.9))
+                                        .frame(width: 40, height: 40)
+                                    
+                                    Image(systemName: "chevron.left")
+                                        .font(.system(size: 16, weight: .medium))
+                                        .foregroundColor(.black)
+                                }
+                            }
+                            
+                            Spacer()
+                            
+                            Text("Widgets")
+                                .font(.system(size: 28, weight: .bold))
+                                .foregroundColor(.black)
+                            
+                            Spacer()
+                            
+                            // Espace pour équilibrer le bouton retour
+                            Color.clear
+                                .frame(width: 40, height: 40)
+                        }
+                        .padding(.horizontal, 20)
+                        .padding(.top, 20)
+                        .padding(.bottom, 20)
+                        
+                        // Section Écran verrouillé
+                        VStack(alignment: .leading, spacing: 16) {
+                            Text("Écran verrouillé")
+                                .font(.system(size: 22, weight: .bold))
+                                .foregroundColor(.black)
+                                .padding(.horizontal, 20)
+                            
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(spacing: 16) {
+                                    LockScreenWidgetPreview(title: "Distance", subtitle: "Notre distance", widgetType: .distance, widgetService: widgetService, appState: appState)
+                                    LockScreenWidgetPreview(title: "Jours ensemble", subtitle: "1 jours", widgetType: .days, widgetService: widgetService, appState: appState)
+                                }
+                                .padding(.horizontal, 20)
+                            }
                         }
                         
-                        Spacer(minLength: 100)
+                        // Section Écran d'accueil
+                        VStack(alignment: .leading, spacing: 16) {
+                            Text("Écran d'accueil")
+                                .font(.system(size: 22, weight: .bold))
+                                .foregroundColor(.black)
+                                .padding(.horizontal, 20)
+                            
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(spacing: 16) {
+                                    HomeScreenWidgetPreview(title: "Jours ensemble", subtitle: "Petit widget", isMain: true, widgetService: widgetService, appState: appState)
+                                    HomeScreenWidgetPreview(title: "Distance", subtitle: "Petit widget", isMain: false, widgetService: widgetService, appState: appState)
+                                    HomeScreenWidgetPreview(title: "Complet", subtitle: "Grand widget", isMain: false, widgetService: widgetService, appState: appState)
+                                }
+                                .padding(.horizontal, 20)
+                            }
+                        }
+                        
+                        // Section Comment ajouter
+                        VStack(alignment: .leading, spacing: 16) {
+                            Text("Comment les ajouter ?")
+                                .font(.system(size: 22, weight: .bold))
+                                .foregroundColor(.black)
+                                .padding(.horizontal, 20)
+                            
+                            VStack(spacing: 12) {
+                                // Card pour widgets écran verrouillé
+                                Button(action: {
+                                    showLockScreenTutorial = true
+                                }) {
+                                    HStack(spacing: 16) {
+                                        VStack(alignment: .leading, spacing: 6) {
+                                            Text("Widget écran de verrouillage")
+                                                .font(.system(size: 18, weight: .bold))
+                                                .foregroundColor(.black)
+                                                .multilineTextAlignment(.leading)
+                                            
+                                            Text("Guide complet")
+                                                .font(.system(size: 14))
+                                                .foregroundColor(.gray)
+                                                .multilineTextAlignment(.leading)
+                                        }
+                                        
+                                        Spacer()
+                                        
+                                        Image(systemName: "chevron.right")
+                                            .font(.system(size: 14))
+                                            .foregroundColor(.black.opacity(0.5))
+                                    }
+                                    .padding(.horizontal, 24)
+                                    .padding(.vertical, 20)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 16)
+                                            .fill(Color.white.opacity(0.95))
+                                            .shadow(color: Color.black.opacity(0.1), radius: 8, x: 0, y: 2)
+                                    )
+                                }
+                                .buttonStyle(PlainButtonStyle())
+                                
+                                // Card pour widgets écran d'accueil
+                                Button(action: {
+                                    showHomeScreenTutorial = true
+                                }) {
+                                    HStack(spacing: 16) {
+                                        VStack(alignment: .leading, spacing: 6) {
+                                            Text("Widget écran d'accueil")
+                                                .font(.system(size: 18, weight: .bold))
+                                                .foregroundColor(.black)
+                                                .multilineTextAlignment(.leading)
+                                            
+                                            Text("Guide complet")
+                                                .font(.system(size: 14))
+                                                .foregroundColor(.gray)
+                                                .multilineTextAlignment(.leading)
+                                        }
+                                        
+                                        Spacer()
+                                        
+                                        Image(systemName: "chevron.right")
+                                            .font(.system(size: 14))
+                                            .foregroundColor(.black.opacity(0.5))
+                                    }
+                                    .padding(.horizontal, 24)
+                                    .padding(.vertical, 20)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 16)
+                                            .fill(Color.white.opacity(0.95))
+                                            .shadow(color: Color.black.opacity(0.1), radius: 8, x: 0, y: 2)
+                                    )
+                                }
+                                .buttonStyle(PlainButtonStyle())
+                            }
+                            .padding(.horizontal, 20)
+                        }
                     }
-                    .padding(.horizontal, 20)
-                }
-            }
-            .background(
-                // Fond gris clair identique à l'app avec dégradé rose doux en arrière-plan
-                ZStack {
-                    Color(red: 0.97, green: 0.97, blue: 0.98)
-                        .ignoresSafeArea(.all)
-                    
-                    LinearGradient(
-                        gradient: Gradient(colors: [
-                            Color(hex: "#FD267A").opacity(0.03),
-                            Color(hex: "#FF655B").opacity(0.02)
-                        ]),
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
+                    .padding(.bottom, 30) // Padding minimal en bas
+                    .background(
+                        // Même dégradé rose que la page principale
+                        VStack {
+                            LinearGradient(
+                                gradient: Gradient(colors: [
+                                    Color(hex: "#FD267A").opacity(0.3),
+                                    Color(hex: "#FD267A").opacity(0.1),
+                                    Color.white.opacity(0)
+                                ]),
+                                startPoint: .top,
+                                endPoint: .bottom
+                            )
+                            .frame(height: 350)
+                            .ignoresSafeArea(edges: .top)
+                            
+                            Spacer()
+                        }
+                        , alignment: .top
                     )
-                    .ignoresSafeArea()
                 }
-            )
-            .navigationTitle("Widgets")
-            .navigationBarTitleDisplayMode(.large)
-            .foregroundColor(.black)
-            .onAppear {
-                widgetService?.refreshData()
-                startMessageRotation()
-                
-                if selectedWidget.requiresPremium && !canAccessPremiumWidgets {
-                    selectedWidget = .countdown
-                }
+                .ignoresSafeArea(edges: .top)
             }
-            .onDisappear {
-                timer?.invalidate()
+        }
+        .navigationBarHidden(true)
+        .onAppear {
+            widgetService?.refreshData()
+            startMessageRotation()
+            
+            if selectedWidget.requiresPremium && !canAccessPremiumWidgets {
+                selectedWidget = .countdown
             }
-            .onChange(of: canAccessPremiumWidgets) { _, hasAccess in
-                if !hasAccess && selectedWidget.requiresPremium {
-                    selectedWidget = .countdown
-                }
+        }
+        .onDisappear {
+            timer?.invalidate()
+        }
+        .onChange(of: canAccessPremiumWidgets) { _, hasAccess in
+            if !hasAccess && selectedWidget.requiresPremium {
+                selectedWidget = .countdown
             }
+        }
+        .fullScreenCover(isPresented: $showLockScreenTutorial) {
+            LockScreenWidgetTutorialView()
+        }
+        .fullScreenCover(isPresented: $showHomeScreenTutorial) {
+            HomeScreenWidgetTutorialView()
         }
     }
     
@@ -128,100 +251,274 @@ struct WidgetsView: View {
     }
 }
 
-struct PremiumBlockedWidgetView: View {
-    let widgetType: WidgetsView.WidgetType
-    let onPremiumTap: () -> Void
+struct LockScreenWidgetPreview: View {
+    let title: String
+    let subtitle: String
+    let widgetType: WidgetType
+    let widgetService: WidgetService?
+    let appState: AppState
+    
+    enum WidgetType {
+        case distance, days
+    }
     
     var body: some View {
-        VStack(spacing: 24) {
-            VStack(spacing: 16) {
-                ZStack {
-                    Circle()
-                        .fill(Color.gray.opacity(0.2))
-                        .frame(width: 80, height: 80)
-                    
-                    Image(systemName: "lock.fill")
-                        .font(.system(size: 40))
-                        .foregroundColor(.gray)
-                }
-                
+        // Aperçu du widget avec fond blanc élégant (sans titre/sous-titre)
+        ZStack {
+            RoundedRectangle(cornerRadius: 16)
+                .fill(Color.white.opacity(0.95))
+                .shadow(color: Color.black.opacity(0.1), radius: 8, x: 0, y: 2)
+                .frame(width: widgetType == .distance ? 200 : 140, height: 120)
+            
+            if widgetType == .distance {
                 VStack(spacing: 8) {
-                    Text("Widget Premium")
-                        .font(.system(size: 24, weight: .bold))
+                    if let distanceInfo = widgetService?.distanceInfo {
+                        Text("Notre distance: \(distanceInfo.formattedDistance)")
+                            .font(.system(size: 12, weight: .medium))
+                            .foregroundColor(.black)
+                            .multilineTextAlignment(.center)
+                        
+                        HStack(spacing: 8) {
+                            Circle()
+                                .fill(Color.gray.opacity(0.2))
+                                .frame(width: 24, height: 24)
+                                .overlay(
+                                    Text(String(appState.currentUser?.name.first ?? "Y"))
+                                        .font(.system(size: 10, weight: .medium))
+                                        .foregroundColor(.black)
+                                )
+                            
+                            Text("----")
+                                .font(.system(size: 12))
+                                .foregroundColor(.gray)
+                            
+                            Image(systemName: "heart.fill")
+                                .font(.system(size: 12))
+                                .foregroundColor(.red)
+                            
+                            Text("----")
+                                .font(.system(size: 12))
+                                .foregroundColor(.gray)
+                            
+                            Circle()
+                                .fill(Color.gray.opacity(0.2))
+                                .frame(width: 24, height: 24)
+                                .overlay(
+                                    Text(String(appState.partnerLocationService?.partnerName?.first ?? "L"))
+                                        .font(.system(size: 10, weight: .medium))
+                                        .foregroundColor(.black)
+                                )
+                        }
+                    } else {
+                        Text("Notre distance: -- m")
+                            .font(.system(size: 12, weight: .medium))
+                            .foregroundColor(.black)
+                            .multilineTextAlignment(.center)
+                        
+                        HStack(spacing: 8) {
+                            Circle()
+                                .fill(Color.gray.opacity(0.2))
+                                .frame(width: 24, height: 24)
+                                .overlay(
+                                    Text("Y")
+                                        .font(.system(size: 10, weight: .medium))
+                                        .foregroundColor(.black)
+                                )
+                            
+                            Text("----")
+                                .font(.system(size: 12))
+                                .foregroundColor(.gray)
+                            
+                            Image(systemName: "heart.fill")
+                                .font(.system(size: 12))
+                                .foregroundColor(.red)
+                            
+                            Text("----")
+                                .font(.system(size: 12))
+                                .foregroundColor(.gray)
+                            
+                            Circle()
+                                .fill(Color.gray.opacity(0.2))
+                                .frame(width: 24, height: 24)
+                                .overlay(
+                                    Text("L")
+                                        .font(.system(size: 10, weight: .medium))
+                                        .foregroundColor(.black)
+                                )
+                        }
+                    }
+                }
+            } else {
+                VStack(spacing: 8) {
+                    Text("💕")
+                        .font(.system(size: 20))
+                    
+                    if let relationshipStats = widgetService?.relationshipStats {
+                        Text("\(relationshipStats.daysTotal)")
+                            .font(.system(size: 24, weight: .bold))
+                            .foregroundColor(.black)
+                    } else {
+                        Text("--")
+                            .font(.system(size: 24, weight: .bold))
+                            .foregroundColor(.black)
+                    }
+                    
+                    Text("jours")
+                        .font(.system(size: 14, weight: .medium))
                         .foregroundColor(.black)
-                    
-                    Text("Ce widget nécessite un abonnement premium")
-                        .font(.system(size: 16))
-                        .foregroundColor(.black.opacity(0.7))
-                        .multilineTextAlignment(.center)
                 }
-            }
-            
-            VStack(spacing: 12) {
-                Text("Avec Premium, vous pourrez :")
-                    .font(.system(size: 14, weight: .medium))
-                    .foregroundColor(.black.opacity(0.8))
-                
-                VStack(alignment: .leading, spacing: 8) {
-                    HStack {
-                        Image(systemName: "checkmark.circle.fill")
-                            .foregroundColor(.green)
-                        Text("Voir votre distance en temps réel")
-                            .font(.system(size: 14))
-                            .foregroundColor(.black.opacity(0.7))
-                    }
-                    
-                    HStack {
-                        Image(systemName: "checkmark.circle.fill")
-                            .foregroundColor(.green)
-                        Text("Visualiser vos positions sur une carte")
-                            .font(.system(size: 14))
-                            .foregroundColor(.black.opacity(0.7))
-                    }
-                    
-                    HStack {
-                        Image(systemName: "checkmark.circle.fill")
-                            .foregroundColor(.green)
-                        Text("Recevoir des messages personnalisés")
-                            .font(.system(size: 14))
-                            .foregroundColor(.black.opacity(0.7))
-                    }
-                }
-            }
-            
-            Button(action: onPremiumTap) {
-                HStack {
-                    Image(systemName: "crown.fill")
-                        .font(.system(size: 16))
-                    
-                    Text("Débloquer Premium")
-                        .font(.system(size: 18, weight: .semibold))
-                }
-                .foregroundColor(.white)
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 16)
-                .background(
-                    LinearGradient(
-                        gradient: Gradient(colors: [
-                            Color(hex: "#FD267A"),
-                            Color(hex: "#FF6B9D")
-                        ]),
-                        startPoint: .leading,
-                        endPoint: .trailing
-                    )
-                )
-                .cornerRadius(25)
             }
         }
-        .frame(maxWidth: .infinity)
-        .padding(.vertical, 32)
-        .padding(.horizontal, 24)
-        .background(
-            RoundedRectangle(cornerRadius: 24)
-                .fill(Color.white)
-                .shadow(color: Color.black.opacity(0.08), radius: 8, x: 0, y: 4)
-                .shadow(color: Color.black.opacity(0.04), radius: 1, x: 0, y: 1)
-        )
+    }
+}
+
+struct HomeScreenWidgetPreview: View {
+    let title: String
+    let subtitle: String
+    let isMain: Bool
+    let widgetService: WidgetService?
+    let appState: AppState
+    
+    var body: some View {
+        // Aperçu du widget avec fond blanc comme les widgets d'écran verrouillé (sans titre/sous-titre)
+        ZStack {
+            RoundedRectangle(cornerRadius: 16)
+                .fill(Color.white.opacity(0.95))
+                .shadow(color: Color.black.opacity(0.1), radius: 8, x: 0, y: 2)
+                .frame(width: isMain ? 160 : 140, height: 120)
+            
+            if title == "Jours ensemble" {
+                VStack(spacing: 8) {
+                    Text("💕")
+                        .font(.system(size: 24))
+                    
+                    if let relationshipStats = widgetService?.relationshipStats {
+                        Text("\(relationshipStats.daysTotal) jours")
+                            .font(.system(size: 16, weight: .medium))
+                            .foregroundColor(.black)
+                    } else {
+                        Text("-- jours")
+                            .font(.system(size: 16, weight: .medium))
+                            .foregroundColor(.black)
+                    }
+                    
+                    HStack(spacing: 8) {
+                        Circle()
+                            .fill(Color.gray.opacity(0.2))
+                            .frame(width: 24, height: 24)
+                            .overlay(
+                                Text(String(appState.currentUser?.name.first ?? "Y"))
+                                    .font(.system(size: 10, weight: .medium))
+                                    .foregroundColor(.black)
+                            )
+                        Circle()
+                            .fill(Color.gray.opacity(0.2))
+                            .frame(width: 24, height: 24)
+                            .overlay(
+                                Text(String(appState.partnerLocationService?.partnerName?.first ?? "L"))
+                                    .font(.system(size: 10, weight: .medium))
+                                    .foregroundColor(.black)
+                            )
+                    }
+                }
+            } else if title == "Distance" {
+                VStack(spacing: 8) {
+                    HStack(spacing: 8) {
+                        Circle()
+                            .fill(Color.gray.opacity(0.2))
+                            .frame(width: 24, height: 24)
+                            .overlay(
+                                Text(String(appState.currentUser?.name.first ?? "Y"))
+                                    .font(.system(size: 10, weight: .medium))
+                                    .foregroundColor(.black)
+                            )
+                        Circle()
+                            .fill(Color.gray.opacity(0.2))
+                            .frame(width: 24, height: 24)
+                            .overlay(
+                                Text(String(appState.partnerLocationService?.partnerName?.first ?? "L"))
+                                    .font(.system(size: 10, weight: .medium))
+                                    .foregroundColor(.black)
+                            )
+                    }
+                    
+                    if let distanceInfo = widgetService?.distanceInfo {
+                        Text(distanceInfo.formattedDistance)
+                            .font(.system(size: 16, weight: .medium))
+                            .foregroundColor(.black)
+                    } else {
+                        Text("-- km")
+                            .font(.system(size: 16, weight: .medium))
+                            .foregroundColor(.black)
+                    }
+                    
+                    Text("de distance")
+                        .font(.system(size: 12))
+                        .foregroundColor(.black.opacity(0.6))
+                }
+            } else {
+                HStack(spacing: 12) {
+                    VStack(spacing: 6) {
+                        HStack(spacing: 6) {
+                            Circle()
+                                .fill(Color.gray.opacity(0.2))
+                                .frame(width: 20, height: 20)
+                                .overlay(
+                                    Text(String(appState.currentUser?.name.first ?? "Y"))
+                                        .font(.system(size: 8, weight: .medium))
+                                        .foregroundColor(.black)
+                                )
+                            Circle()
+                                .fill(Color.gray.opacity(0.2))
+                                .frame(width: 20, height: 20)
+                                .overlay(
+                                    Text(String(appState.partnerLocationService?.partnerName?.first ?? "L"))
+                                        .font(.system(size: 8, weight: .medium))
+                                        .foregroundColor(.black)
+                                )
+                        }
+                        
+                        if let relationshipStats = widgetService?.relationshipStats {
+                            Text("\(relationshipStats.daysTotal) jours")
+                                .font(.system(size: 12, weight: .medium))
+                                .foregroundColor(.black)
+                        } else {
+                            Text("-- jours")
+                                .font(.system(size: 12, weight: .medium))
+                                .foregroundColor(.black)
+                        }
+                        
+                        Text("ensemble")
+                            .font(.system(size: 10))
+                            .foregroundColor(.black.opacity(0.6))
+                    }
+                    
+                    Rectangle()
+                        .fill(Color.gray.opacity(0.2))
+                        .frame(width: 1, height: 50)
+                    
+                    VStack(spacing: 4) {
+                        Image(systemName: "heart.fill")
+                            .font(.system(size: 16))
+                            .foregroundColor(.red)
+                        
+                        if let distanceInfo = widgetService?.distanceInfo {
+                            Text(distanceInfo.formattedDistance)
+                                .font(.system(size: 12, weight: .medium))
+                                .foregroundColor(.black)
+                        } else {
+                            Text("-- km")
+                                .font(.system(size: 12, weight: .medium))
+                                .foregroundColor(.black)
+                        }
+                        
+                        Text("de distance")
+                            .font(.system(size: 8))
+                            .foregroundColor(.black.opacity(0.6))
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -374,8 +671,6 @@ struct DaysTotalWidgetView: View {
     }
 }
 
-
-
 extension DateFormatter {
     static let anniversaryFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -392,6 +687,9 @@ extension DateFormatter {
     }()
 }
 
-#Preview {
-    WidgetsView()
+struct WidgetsView_Previews: PreviewProvider {
+    static var previews: some View {
+        WidgetsView()
+            .environmentObject(AppState())
+    }
 } 
