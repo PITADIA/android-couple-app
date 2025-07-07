@@ -20,186 +20,188 @@ struct JournalEntryDetailView: View {
     }
     
     var body: some View {
-        ZStack {
-            // Fond gris clair identique à la page principale
+        ZStack(alignment: .top) {
+            // Fond
             Color(red: 0.97, green: 0.97, blue: 0.98)
                 .ignoresSafeArea()
             
+            // Contenu scrollable
             ScrollView {
-                    VStack(spacing: 24) {
-                        // Header avec boutons intégrés
-                        HStack {
-                            // Bouton fermer (gauche)
-                            Button(action: { dismiss() }) {
-                                Image(systemName: "xmark")
-                                    .font(.system(size: 20, weight: .bold))
-                                    .foregroundColor(.white)
-                                    .padding(12)
-                                    .background(Color.black.opacity(0.6))
-                                    .clipShape(Circle())
-                            }
-                            
-                            Spacer()
-                            
-                            // Bouton supprimer (droite) - seulement pour l'auteur
-                            if isAuthor {
-                                Button(action: { 
-                                    print("🗑️ JournalEntryDetailView: Clic sur bouton suppression")
-                                    showingDeleteAlert = true 
-                                }) {
-                                    Image(systemName: "trash")
-                                        .font(.system(size: 20, weight: .bold))
-                                        .foregroundColor(.white)
-                                        .padding(12)
-                                        .background(Color.black.opacity(0.6))
-                                        .clipShape(Circle())
-                                }
-                                .disabled(isDeleting)
-                                .accessibilityLabel("Supprimer ce souvenir")
-                            }
-                        }
-                        .padding(.horizontal, 20)
-                        .padding(.top, 10)
-                        .padding(.bottom, 10)
-                        // Image si présente
-                        if let imageURL = entry.imageURL, !imageURL.isEmpty {
-                            AsyncImageView(
-                                imageURL: imageURL,
-                                width: nil,
-                                height: 250,
-                                cornerRadius: 16
-                            )
-                            .padding(.horizontal, 20)
-                        }
-                        
-                        // Contenu
-                        VStack(alignment: .leading, spacing: 20) {
-                            // Grande card titre + description avec effet sophistiqué
-                            VStack(alignment: .leading, spacing: 16) {
-                                // Titre
-                                Text(entry.title)
-                                    .font(.system(size: 28, weight: .bold))
-                                    .foregroundColor(.black)
-                                
-                                // Date
-                                Text(entry.formattedEventDate)
-                                    .font(.system(size: 16))
-                                    .foregroundColor(.black.opacity(0.6))
-                                
-                                // Description si présente
-                                if !entry.description.isEmpty {
-                                    Divider()
-                                        .background(Color.black.opacity(0.1))
-                                        .padding(.vertical, 4)
-                                    
-                                    Text(entry.description)
-                                        .font(.system(size: 16))
-                                        .foregroundColor(.black.opacity(0.8))
-                                        .lineSpacing(4)
-                                }
-                            }
-                            .padding(24)
-                            .background(
-                                RoundedRectangle(cornerRadius: 20)
-                                    .fill(Color.white)
-                                    .shadow(
-                                        color: Color.black.opacity(0.08),
-                                        radius: 20,
-                                        x: 0,
-                                        y: 8
-                                    )
-                                    .shadow(
-                                        color: Color.black.opacity(0.04),
-                                        radius: 6,
-                                        x: 0,
-                                        y: 2
-                                    )
-                            )
-                            
-                            // Card métadonnées avec effet sophistiqué
-                            VStack(alignment: .leading, spacing: 12) {
-                                VStack(spacing: 8) {
-                                    InfoRow(
-                                        icon: "calendar",
-                                        title: "Date de l'événement",
-                                        value: formattedEventDate
-                                    )
-                                    
-                                    InfoRow(
-                                        icon: "clock",
-                                        title: "Heure",
-                                        value: formattedEventTime
-                                    )
-                                    
-                                    InfoRow(
-                                        icon: "person.circle",
-                                        title: "Créé par",
-                                        value: entry.authorName
-                                    )
-                                    
-                                    if let location = entry.location {
-                                        InfoRow(
-                                            icon: "location",
-                                            title: "Lieu",
-                                            value: location.displayName
-                                        )
-                                    }
-                                }
-                            }
-                            .padding(24)
-                            .background(
-                                RoundedRectangle(cornerRadius: 20)
-                                    .fill(Color.white)
-                                    .shadow(
-                                        color: Color.black.opacity(0.08),
-                                        radius: 20,
-                                        x: 0,
-                                        y: 8
-                                    )
-                                    .shadow(
-                                        color: Color.black.opacity(0.04),
-                                        radius: 6,
-                                        x: 0,
-                                        y: 2
-                                    )
-                            )
-                                        }
-                .padding(.horizontal, 20)
-                
-                Spacer(minLength: 40)
-            }
-            .padding(.top, 0) // Pas de padding supplémentaire
-                }
-                
-                // Overlay de suppression
-                if isDeleting {
-                    Color.black.opacity(0.5)
-                        .ignoresSafeArea()
+                VStack(spacing: 24) {
+                    Spacer().frame(height: 80) // Espace pour le header fixé
                     
-                    VStack {
-                        ProgressView()
-                            .progressViewStyle(CircularProgressViewStyle(tint: .white))
-                            .scaleEffect(1.2)
+                    // Image si présente
+                    if let imageURL = entry.imageURL, !imageURL.isEmpty {
+                        AsyncImageView(
+                            imageURL: imageURL,
+                            width: nil,
+                            height: 250,
+                            cornerRadius: 16
+                        )
+                        .padding(.horizontal, 20)
+                    }
+                    
+                    // Contenu
+                    VStack(alignment: .leading, spacing: 20) {
+                        // Grande card titre + description avec effet sophistiqué
+                        VStack(alignment: .leading, spacing: 16) {
+                            // Titre
+                            Text(entry.title)
+                                .font(.system(size: 28, weight: .bold))
+                                .foregroundColor(.black)
+                            
+                            // Date
+                            Text(entry.formattedEventDate)
+                                .font(.system(size: 16))
+                                .foregroundColor(.black.opacity(0.6))
+                            
+                            // Description si présente
+                            if !entry.description.isEmpty {
+                                Divider()
+                                    .background(Color.black.opacity(0.1))
+                                    .padding(.vertical, 4)
+                                
+                                Text(entry.description)
+                                    .font(.system(size: 16))
+                                    .foregroundColor(.black.opacity(0.8))
+                                    .lineSpacing(4)
+                            }
+                        }
+                        .padding(24)
+                        .background(
+                            RoundedRectangle(cornerRadius: 20)
+                                .fill(Color.white)
+                                .shadow(
+                                    color: Color.black.opacity(0.08),
+                                    radius: 20,
+                                    x: 0,
+                                    y: 8
+                                )
+                                .shadow(
+                                    color: Color.black.opacity(0.04),
+                                    radius: 6,
+                                    x: 0,
+                                    y: 2
+                                )
+                        )
                         
-                        Text("Suppression...")
-                            .font(.system(size: 16))
-                            .foregroundColor(.white)
-                            .padding(.top, 8)
+                        // Card métadonnées avec effet sophistiqué
+                        VStack(alignment: .leading, spacing: 12) {
+                            VStack(spacing: 8) {
+                                InfoRow(
+                                    icon: "calendar",
+                                    title: "Date de l'événement",
+                                    value: formattedEventDate
+                                )
+                                
+                                InfoRow(
+                                    icon: "clock",
+                                    title: "Heure",
+                                    value: formattedEventTime
+                                )
+                                
+                                InfoRow(
+                                    icon: "person.circle",
+                                    title: "Créé par",
+                                    value: entry.authorName
+                                )
+                                
+                                if let location = entry.location {
+                                    InfoRow(
+                                        icon: "location",
+                                        title: "Lieu",
+                                        value: location.displayName
+                                    )
+                                }
+                            }
+                        }
+                        .padding(24)
+                        .background(
+                            RoundedRectangle(cornerRadius: 20)
+                                .fill(Color.white)
+                                .shadow(
+                                    color: Color.black.opacity(0.08),
+                                    radius: 20,
+                                    x: 0,
+                                    y: 8
+                                )
+                                .shadow(
+                                    color: Color.black.opacity(0.04),
+                                    radius: 6,
+                                    x: 0,
+                                    y: 2
+                                )
+                        )
                     }
                 }
-
+                .padding(.horizontal, 20)
+                .padding(.bottom, 40)
+            }
+            
+            // HEADER FIXE
+            HStack {
+                // Fermer
+                Button(action: {
+                    print("❌ JournalEntryDetailView: Fermer détecté")
+                    dismiss()
+                }) {
+                    Image(systemName: "xmark")
+                        .font(.system(size: 20, weight: .bold))
+                        .foregroundColor(.white)
+                        .padding(12)
+                        .background(Color.black.opacity(0.6))
+                        .clipShape(Circle())
+                }
+                .padding(.leading, 20)
+                
+                Spacer()
+                
+                // Supprimer si auteur
+                if isAuthor {
+                    Button(action: {
+                        print("🗑️ JournalEntryDetailView: Supprimer détecté")
+                        showingDeleteAlert = true
+                    }) {
+                        Image(systemName: "trash")
+                            .font(.system(size: 20, weight: .bold))
+                            .foregroundColor(.white)
+                            .padding(12)
+                            .background(Color.black.opacity(0.6))
+                            .clipShape(Circle())
+                    }
+                    .padding(.trailing, 20)
+                    .disabled(isDeleting)
+                }
+            }
+            .padding(.top, 20) // espace distance top safe area
         }
         .onAppear {
             print("📄 JournalEntryDetailView: Vue apparue - '\(entry.title)' - isAuthor: \(isAuthor)")
+            print("📄 JournalEntryDetailView: entry.id: \(entry.id)")
+            print("📄 JournalEntryDetailView: entry.authorId: \(entry.authorId)")
+            print("📄 JournalEntryDetailView: currentUser.uid: \(Auth.auth().currentUser?.uid ?? "nil")")
+            print("📄 JournalEntryDetailView: AppState présent: \(appState != nil)")
+            print("📄 JournalEntryDetailView: JournalService présent: \(journalService != nil)")
+        }
+        .onDisappear {
+            print("📄 JournalEntryDetailView: Vue disparue - '\(entry.title)'")
         }
         .alert("Supprimer ce souvenir ?", isPresented: $showingDeleteAlert) {
-            Button("Annuler", role: .cancel) { }
+            Button("Annuler", role: .cancel) { 
+                print("🗑️ JournalEntryDetailView: Suppression annulée")
+            }
             Button("Supprimer", role: .destructive) {
                 print("🗑️ JournalEntryDetailView: Confirmation suppression")
                 deleteEntry()
             }
         } message: {
             Text("Cette action est irréversible. Le souvenir sera supprimé définitivement.")
+        }
+        .onChange(of: showingDeleteAlert) { newValue in
+            print("🗑️ JournalEntryDetailView: showingDeleteAlert changé: \(newValue)")
+        }
+        .onChange(of: isDeleting) { newValue in
+            print("🗑️ JournalEntryDetailView: isDeleting changé: \(newValue)")
         }
     }
     
@@ -231,6 +233,7 @@ struct JournalEntryDetailView: View {
         print("🗑️ JournalEntryDetailView: - Auteur: \(entry.authorName) (\(entry.authorId))")
         print("🗑️ JournalEntryDetailView: - A une image: \(entry.hasImage)")
         print("🗑️ JournalEntryDetailView: - Image URL: \(entry.imageURL ?? "nil")")
+        print("🗑️ JournalEntryDetailView: - JournalService disponible: \(journalService != nil)")
         
         isDeleting = true
         print("🗑️ JournalEntryDetailView: Flag isDeleting = true")
@@ -243,6 +246,7 @@ struct JournalEntryDetailView: View {
                 
                 await MainActor.run {
                     print("🗑️ JournalEntryDetailView: Fermeture de la vue...")
+                    isDeleting = false
                     dismiss()
                     print("✅ JournalEntryDetailView: Vue fermée avec succès")
                 }

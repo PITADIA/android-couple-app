@@ -76,6 +76,15 @@ struct JournalCalendarView: View {
         }
         .sheet(item: $selectedEntry) { entry in
             JournalEntryDetailView(entry: entry)
+                .onAppear {
+                    print("🔍 JournalCalendarView: Présentation JournalEntryDetailView pour: '\(entry.title)' (ID: \(entry.id))")
+                    print("🔍 JournalCalendarView: JournalEntryDetailView sheet est apparue")
+                }
+                .onDisappear {
+                    print("🔍 JournalCalendarView: JournalEntryDetailView sheet a disparu")
+                    selectedEntry = nil
+                    print("🔍 JournalCalendarView: selectedEntry remis à nil")
+                }
         }
     }
     

@@ -210,23 +210,56 @@ class JournalService: ObservableObject {
     }
     
     func deleteEntry(_ entry: JournalEntry) async throws {
-        guard Auth.auth().currentUser?.uid == entry.authorId else {
+        print("🗑️ JournalService: === DÉBUT SUPPRESSION ENTRÉE ===")
+        print("🗑️ JournalService: Entry ID: \(entry.id)")
+        print("🗑️ JournalService: Entry titre: '\(entry.title)'")
+        print("🗑️ JournalService: Entry authorId: \(entry.authorId)")
+        
+        guard let currentUserUID = Auth.auth().currentUser?.uid else {
+            print("❌ JournalService: Utilisateur non connecté (Auth.auth().currentUser?.uid = nil)")
+            throw JournalError.userNotAuthenticated
+        }
+        
+        print("🗑️ JournalService: Current user UID: \(currentUserUID)")
+        
+        guard currentUserUID == entry.authorId else {
+            print("❌ JournalService: Pas autorisé - Current user: \(currentUserUID), Entry author: \(entry.authorId)")
             throw JournalError.notAuthorized
         }
         
-        print("🔥 JournalService: Suppression de l'entrée: \(entry.id)")
+        print("✅ JournalService: Autorisation vérifiée - utilisateur est l'auteur")
         
         // Supprimer l'image du Storage si elle existe
-        if let imageURL = entry.imageURL {
-            try? await deleteImage(from: imageURL)
+        if let imageURL = entry.imageURL, !imageURL.isEmpty {
+            print("🗑️ JournalService: Suppression de l'image: \(imageURL)")
+            do {
+                try await deleteImage(from: imageURL)
+                print("✅ JournalService: Image supprimée avec succès")
+            } catch {
+                print("⚠️ JournalService: Erreur suppression image (continuons): \(error)")
+                // On continue même si l'image ne peut pas être supprimée
+            }
+        } else {
+            print("🗑️ JournalService: Aucune image à supprimer")
         }
         
         // Supprimer l'entrée de Firestore
-        try await db.collection("journalEntries")
-            .document(entry.id)
-            .delete()
+        print("🗑️ JournalService: Suppression de l'entrée Firestore: \(entry.id)")
+        print("🗑️ JournalService: Collection: journalEntries, Document: \(entry.id)")
         
-        print("✅ JournalService: Entrée supprimée avec succès")
+        do {
+            try await db.collection("journalEntries")
+                .document(entry.id)
+                .delete()
+            print("✅ JournalService: Entrée Firestore supprimée avec succès")
+        } catch {
+            print("❌ JournalService: Erreur suppression Firestore: \(error)")
+            print("❌ JournalService: Type d'erreur: \(type(of: error))")
+            print("❌ JournalService: Message: \(error.localizedDescription)")
+            throw error
+        }
+        
+        print("🗑️ JournalService: === FIN SUPPRESSION ENTRÉE (SUCCÈS) ===")
     }
     
     // MARK: - Image Management

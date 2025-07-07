@@ -56,19 +56,31 @@ struct FavoritesCardView: View {
                     // État vide
                     VStack(spacing: 30) {
                         Spacer()
+                            .frame(height: 20)
                         
-                        Text("❤️")
-                            .font(.system(size: 80))
+                        Image("mili")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 240, height: 240)
                         
-                        Text("Ajoutez des questions en favoris en appuyant sur le coeur en-dessous des cartes puis vous les verrez apparaître ici. \nVos questions favorites seront automatiquement partagées avec votre partenaire.")
-                            .font(.system(size: 16))
-                            .foregroundColor(.black.opacity(0.8))
-                            .multilineTextAlignment(.center)
-                            .padding(.horizontal, 40)
+                        VStack(spacing: 12) {
+                            Text("Ajoutez vos questions préférées en favoris.")
+                                .font(.system(size: 22, weight: .medium))
+                                .foregroundColor(.black)
+                                .multilineTextAlignment(.center)
+                            
+                            Text("Ajoutez des questions en favoris en appuyant sur le coeur en-dessous des cartes puis vous les verrez apparaître ici. \n\nVos questions favorites seront automatiquement partagées avec votre partenaire.")
+                                .font(.system(size: 16))
+                                .foregroundColor(.black.opacity(0.7))
+                                .multilineTextAlignment(.center)
+                                .lineLimit(nil)
+                                .padding(.horizontal, 20)
+                        }
                         
                         Spacer()
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .padding(.horizontal, 40)
                 } else {
                     // Cartes de favoris avec le même design
                     GeometryReader { geometry in

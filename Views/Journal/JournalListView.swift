@@ -41,9 +41,9 @@ struct JournalListView: View {
                 // Liste des entrées
                 ScrollView {
                     LazyVStack(spacing: 16) {
-                        ForEach(groupedEntries.keys.sorted(by: >), id: \.self) { monthYear in
+                        ForEach(sortedMonthGroups, id: \.key) { monthGroup in
                             Section {
-                                ForEach(groupedEntries[monthYear] ?? []) { entry in
+                                ForEach(monthGroup.value) { entry in
                                     JournalEntryCardView(
                                         entry: entry,
                                         isUserEntry: isUserEntry(entry),
@@ -54,7 +54,7 @@ struct JournalListView: View {
                                 }
                             } header: {
                                 HStack {
-                                    Text(monthYear)
+                                    Text(monthGroup.key)
                                         .font(.system(size: 18, weight: .semibold))
                                         .foregroundColor(.black)
                                     
@@ -88,6 +88,22 @@ struct JournalListView: View {
         }
         .sheet(item: $selectedEntry) { entry in
             JournalEntryDetailView(entry: entry)
+                .onAppear {
+                    print("🔍 JournalListView: Présentation JournalEntryDetailView pour: '\(entry.title)' (ID: \(entry.id))")
+                    print("🔍 JournalListView: JournalEntryDetailView sheet est apparue")
+                }
+                .onDisappear {
+                    print("🔍 JournalListView: JournalEntryDetailView sheet a disparu")
+                    selectedEntry = nil
+                    print("🔍 JournalListView: selectedEntry remis à nil")
+                }
+        }
+        .onChange(of: selectedEntry) { newValue in
+            if let entry = newValue {
+                print("🔍 JournalListView: selectedEntry changé vers: '\(entry.title)' (ID: \(entry.id))")
+            } else {
+                print("🔍 JournalListView: selectedEntry remis à nil")
+            }
         }
     }
     
@@ -106,6 +122,20 @@ struct JournalListView: View {
             return formatter.string(from: entry.eventDate)
         }
     }
+    
+    // NOUVEAU: Trier les groupes par date du plus récent au plus ancien
+    private var sortedMonthGroups: [(key: String, value: [JournalEntry])] {
+        return groupedEntries
+            .map { (key: $0.key, value: $0.value.sorted { $0.eventDate > $1.eventDate }) }
+            .sorted { monthGroup1, monthGroup2 in
+                // Créer des dates pour comparison basée sur le premier événement de chaque groupe
+                guard let date1 = monthGroup1.value.first?.eventDate,
+                      let date2 = monthGroup2.value.first?.eventDate else {
+                    return false
+                }
+                return date1 > date2
+            }
+    }
 }
 
 // MARK: - Empty State Views
@@ -122,9 +152,19 @@ struct EmptyJournalStateView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 240, height: 240)
             
-            Text(hasReachedLimit && !isSubscribed ? "Limite atteinte" : "Ton journal est vide")
-                .font(.system(size: 22, weight: .medium))
-                .foregroundColor(.black)
+            VStack(spacing: 12) {
+                Text(hasReachedLimit && !isSubscribed ? "Limite atteinte" : "Votre journal à souvenir est vide")
+                    .font(.system(size: 22, weight: .medium))
+                    .foregroundColor(.black)
+                    .multilineTextAlignment(.center)
+                
+                Text("Conservez ici vos plus beaux souvenirs passé ensemble pour vous sentir encore plus proches l'un de l'autre. \n\nVotre partenaire pourra voir les souvenirs que vous avez créés.")
+                    .font(.system(size: 16))
+                    .foregroundColor(.black.opacity(0.7))
+                    .multilineTextAlignment(.center)
+                    .lineLimit(nil)
+                    .padding(.horizontal, 20)
+            }
             
             // Bouton Créer (style moderne rose, plus petit)
             Button(action: onCreateEntry) {
@@ -237,7 +277,12 @@ struct JournalEntryCardView: View {
     let onTap: () -> Void
     
     var body: some View {
-        Button(action: onTap) {
+        Button(action: {
+            print("🔍 JournalEntryCardView: Clic sur carte - '\(entry.title)' (ID: \(entry.id))")
+            print("🔍 JournalEntryCardView: isUserEntry: \(isUserEntry)")
+            print("🔍 JournalEntryCardView: Appel onTap()")
+            onTap()
+        }) {
             HStack(spacing: 16) {
                 // Date
                 VStack(spacing: 4) {
@@ -304,6 +349,9 @@ struct JournalEntryCardView: View {
             .padding(.horizontal, 20)
         }
         .buttonStyle(PlainButtonStyle())
+        .onTapGesture {
+            print("🔍 JournalEntryCardView: onTapGesture détecté sur carte - '\(entry.title)'")
+        }
     }
     
     private var monthAbbreviation: String {

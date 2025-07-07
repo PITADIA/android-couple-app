@@ -419,7 +419,7 @@ class WidgetService: ObservableObject {
             "widget_distance", "widget_message", "widget_user_name", "widget_partner_name",
             "widget_user_image_url", "widget_partner_image_url",
             "widget_user_latitude", "widget_user_longitude", "widget_partner_latitude", "widget_partner_longitude",
-            "widget_last_update"
+            "widget_has_subscription", "widget_last_update"
         ]
         
         for key in allKeys {
@@ -498,6 +498,10 @@ class WidgetService: ObservableObject {
             sharedDefaults.set(currentUser.name, forKey: "widget_user_name")
             print("✅ WidgetService: Nom utilisateur sauvegardé: \(currentUser.name)")
             
+            // NOUVEAU: Sauvegarder le statut d'abonnement pour les widgets
+            sharedDefaults.set(currentUser.isSubscribed, forKey: "widget_has_subscription")
+            print("🔒 WidgetService: Statut abonnement sauvegardé: \(currentUser.isSubscribed)")
+            
             // AMÉLIORÉ: Télécharger et cacher l'image utilisateur localement
             if let imageURL = currentUser.profileImageURL {
                 print("🔄 WidgetService: Téléchargement image utilisateur...")
@@ -568,7 +572,7 @@ class WidgetService: ObservableObject {
             "widget_distance", "widget_message", "widget_user_name", "widget_partner_name",
             "widget_user_image_url", "widget_partner_image_url",
             "widget_user_latitude", "widget_user_longitude", "widget_partner_latitude", "widget_partner_longitude",
-            "widget_last_update"
+            "widget_has_subscription", "widget_last_update"
         ]
         
         // Supprimer les clés vides ou corrompues

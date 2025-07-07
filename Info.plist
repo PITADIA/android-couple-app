@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.4</string>
+	<string>1.5</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -57,5 +57,16 @@
 	<string>Love2Love utilise votre localisation pour calculer la distance entre vous et votre partenaire, et pour vous permettre d'ajouter des lieux à vos souvenirs partagés.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Love2Love a besoin d'accéder à vos photos pour vous permettre de personnaliser votre profil et d'ajouter des images à vos souvenirs partagés dans le journal de couple.</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.lyes.love2love.url</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>coupleapp</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist> 

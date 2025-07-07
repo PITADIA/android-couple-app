@@ -46,9 +46,6 @@ struct MenuView: View {
                 // Section Application
                 applicationSection
                 
-                // SECTION DEBUG TEMPORAIRE - À SUPPRIMER EN PRODUCTION
-                debugSection
-                
                 Spacer(minLength: 40)
             }
         }
@@ -372,86 +369,7 @@ struct MenuView: View {
         .padding(.bottom, 40)
     }
     
-    // MARK: - Debug Section
-    
-    @ViewBuilder
-    private var debugSection: some View {
-        VStack(spacing: 0) {
-            // Titre "Debug"
-            HStack {
-                Text("Debug")
-                    .font(.system(size: 22, weight: .semibold))
-                    .foregroundColor(.black)
-                Spacer()
-            }
-            .padding(.horizontal, 20)
-            .padding(.bottom, 20)
-            
-            VStack(spacing: 12) {
-                // Bouton pour forcer le refresh des images de profil
-                Button(action: {
-                    print("🔥 MenuView: Forcer le refresh des images de profil")
-                    appState.widgetService?.forceRefreshProfileImages()
-                }) {
-                    Text("Forcer le refresh des images widget")
-                        .font(.system(size: 16, weight: .semibold))
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 14)
-                        .background(Color.blue)
-                        .cornerRadius(25)
-                }
-                
-                // Bouton pour debug UserDefaults
-                Button(action: {
-                    print("🔥 MenuView: Debug UserDefaults")
-                    appState.widgetService?.debugUserDefaults()
-                }) {
-                    Text("Debug UserDefaults")
-                        .font(.system(size: 16, weight: .semibold))
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 14)
-                        .background(Color.orange)
-                        .cornerRadius(25)
-                }
-                
-                // Bouton pour refresh les données widget
-                Button(action: {
-                    print("🔥 MenuView: Refresh données widget")
-                    appState.widgetService?.refreshData()
-                }) {
-                    Text("Refresh données widget")
-                        .font(.system(size: 16, weight: .semibold))
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 14)
-                        .background(Color.green)
-                        .cornerRadius(25)
-                }
-                
-                // Bouton pour uploader à nouveau la photo de profil
-                Button(action: {
-                    print("🔥 MenuView: Re-upload photo de profil")
-                    if let currentImage = profileImage {
-                        uploadProfileImage(currentImage)
-                    } else {
-                        print("❌ MenuView: Pas d'image de profil à uploader")
-                    }
-                }) {
-                    Text("Re-upload photo de profil")
-                        .font(.system(size: 16, weight: .semibold))
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 14)
-                        .background(Color.purple)
-                        .cornerRadius(25)
-                }
-            }
-        }
-        .padding(24)
-        .background(Color.white)
-    }
+
     
     // MARK: - Computed Properties
     

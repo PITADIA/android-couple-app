@@ -64,7 +64,7 @@ struct CreateJournalEntryView: View {
                 VStack(spacing: 20) {
                     // Titre
                     VStack(alignment: .leading, spacing: 8) {
-                        TextField("Titre de la mémoire", text: $title)
+                        TextField("Titre de votre souvenir", text: $title)
                             .font(.system(size: 24, weight: .medium))
                             .foregroundColor(.black)
                             .textFieldStyle(PlainTextFieldStyle())
@@ -90,7 +90,7 @@ struct CreateJournalEntryView: View {
                     
                     // Description
                     VStack(alignment: .leading, spacing: 8) {
-                        TextField("Écris quelques mots sur ce souvenir", text: $description, axis: .vertical)
+                        TextField("Écrivez quelques mots sur ce souvenir", text: $description, axis: .vertical)
                             .font(.system(size: 16))
                             .foregroundColor(.black.opacity(0.7))
                             .textFieldStyle(PlainTextFieldStyle())

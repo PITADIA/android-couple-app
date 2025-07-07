@@ -1,34 +1,80 @@
 import SwiftUI
 import MapKit
 
+// NOUVEAU: Structure pour gérer les clusters d'événements avec ID stable
+struct JournalCluster: Identifiable, Equatable {
+    let id: String // ID stable basé sur les entrées
+    let coordinate: CLLocationCoordinate2D
+    let entries: [JournalEntry]
+    
+    var count: Int { entries.count }
+    var isCluster: Bool { count > 1 }
+    var firstEntry: JournalEntry { entries.first! }
+    
+    // Créer un ID stable basé sur les IDs des entrées
+    static func createId(from entries: [JournalEntry]) -> String {
+        let sortedIds = entries.map { $0.id }.sorted()
+        return sortedIds.joined(separator: "-")
+    }
+    
+    // Equatable pour éviter les recréations inutiles
+    static func == (lhs: JournalCluster, rhs: JournalCluster) -> Bool {
+        lhs.id == rhs.id
+    }
+}
+
 struct JournalMapView: View {
     @EnvironmentObject var appState: AppState
     @Environment(\.dismiss) private var dismiss
     @State private var selectedEntry: JournalEntry?
+    @State private var selectedCluster: JournalCluster?
     @State private var mapRegion = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 46.2276, longitude: 2.2137), // Centre de la France
         span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10)
     )
     @State private var showingEntryDetail = false
+    @State private var showingClusterDetail = false
     @State private var isCardHovered = false
+    
+    // NOUVEAU: Paramètre pour contrôler l'affichage du bouton retour
+    let showBackButton: Bool
     
     // NOUVEAU: Observer directement le JournalService
     @ObservedObject private var journalService = JournalService.shared
+    
+    // NOUVEAU: Initializer avec paramètre par défaut
+    init(showBackButton: Bool = true) {
+        self.showBackButton = showBackButton
+    }
     
     // Filtrer les entrées qui ont une localisation
     private var entriesWithLocation: [JournalEntry] {
         journalService.entries.filter { $0.location != nil }
     }
     
+    // NOUVEAU: Calculer les clusters de manière stable sans effet de bord
+    private var clusters: [JournalCluster] {
+        createStableClusters(from: entriesWithLocation, zoomLevel: mapRegion.span.latitudeDelta)
+    }
+    
     var body: some View {
         ZStack {
-            // Carte en plein écran
+            // Carte en plein écran avec clustering
             Map(coordinateRegion: $mapRegion, 
-                annotationItems: entriesWithLocation) { entry in
-                MapAnnotation(coordinate: entry.location!.coordinate) {
-                    JournalMapAnnotationView(entry: entry) {
-                        selectedEntry = entry
-                        showingEntryDetail = true
+                annotationItems: clusters) { cluster in
+                MapAnnotation(coordinate: cluster.coordinate) {
+                    if cluster.isCluster {
+                        // Affichage du cluster avec compteur
+                        OptimizedClusterAnnotationView(cluster: cluster) {
+                            selectedCluster = cluster
+                            showingClusterDetail = true
+                        }
+                    } else {
+                        // Affichage d'un événement unique
+                        OptimizedJournalMapAnnotationView(entry: cluster.firstEntry) {
+                            selectedEntry = cluster.firstEntry
+                            showingEntryDetail = true
+                        }
                     }
                 }
             }
@@ -39,35 +85,37 @@ struct JournalMapView: View {
                 }
             }
             
-            // Overlay pour le bouton retour en haut
-            VStack {
-                HStack {
-                    Button(action: {
-                        dismiss()
-                    }) {
-                        HStack(spacing: 8) {
-                            Image(systemName: "chevron.left")
-                                .font(.system(size: 18, weight: .semibold))
-                                .foregroundColor(.white)
-                            
-                            Text("Retour")
-                                .font(.system(size: 16, weight: .medium))
-                                .foregroundColor(.white)
+            // Overlay pour le bouton retour en haut (conditionnel)
+            if showBackButton {
+                VStack {
+                    HStack {
+                        Button(action: {
+                            dismiss()
+                        }) {
+                            HStack(spacing: 8) {
+                                Image(systemName: "chevron.left")
+                                    .font(.system(size: 18, weight: .semibold))
+                                    .foregroundColor(.white)
+                                
+                                Text("Retour")
+                                    .font(.system(size: 16, weight: .medium))
+                                    .foregroundColor(.white)
+                            }
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 10)
+                            .background(
+                                RoundedRectangle(cornerRadius: 20)
+                                    .fill(Color.black.opacity(0.7))
+                            )
                         }
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 10)
-                        .background(
-                            RoundedRectangle(cornerRadius: 20)
-                                .fill(Color.black.opacity(0.7))
-                        )
+                        
+                        Spacer()
                     }
+                    .padding(.horizontal, 20)
+                    .padding(.top, 60) // Espace pour la status bar
                     
                     Spacer()
                 }
-                .padding(.horizontal, 20)
-                .padding(.top, 60) // Espace pour la status bar
-                
-                Spacer()
             }
             
             // Message d'aide si aucune entrée (centré sur la carte)
@@ -118,6 +166,22 @@ struct JournalMapView: View {
         .navigationBarHidden(true)
         .sheet(item: $selectedEntry) { entry in
             JournalEntryDetailView(entry: entry)
+                .onAppear {
+                    print("🔍 JournalMapView: Présentation JournalEntryDetailView pour: '\(entry.title)' (ID: \(entry.id))")
+                    print("🔍 JournalMapView: JournalEntryDetailView sheet est apparue")
+                }
+                .onDisappear {
+                    print("🔍 JournalMapView: JournalEntryDetailView sheet a disparu")
+                    selectedEntry = nil
+                    print("🔍 JournalMapView: selectedEntry remis à nil")
+                }
+        }
+        .sheet(item: $selectedCluster) { cluster in
+            ClusterDetailView(cluster: cluster) { entry in
+                selectedCluster = nil
+                selectedEntry = entry
+                showingEntryDetail = true
+            }
         }
     }
     
@@ -161,10 +225,81 @@ struct JournalMapView: View {
             )
         }
     }
+    
+    // MARK: - Stable Clustering Logic (Sans effets de bord)
+    
+    private func createStableClusters(from entries: [JournalEntry], zoomLevel: Double) -> [JournalCluster] {
+        guard !entries.isEmpty else { return [] }
+        
+        // Distance de clustering basée sur le niveau de zoom avec hystérésis pour éviter les changements constants
+        let clusterDistance: Double = {
+            if zoomLevel > 10.0 { return 0.005 } // Zoom très faible = très petite distance
+            else if zoomLevel > 5.0 { return 0.02 } // Zoom faible
+            else if zoomLevel > 2.0 { return 0.08 } // Zoom moyen-faible
+            else if zoomLevel > 1.0 { return 0.15 } // Zoom moyen
+            else if zoomLevel > 0.5 { return 0.25 } // Zoom élevé
+            else if zoomLevel > 0.2 { return 0.4 } // Zoom très élevé
+            else { return 0.6 } // Très zoomé = grande distance de clustering
+        }()
+        
+        var clusters: [JournalCluster] = []
+        var processedEntries: Set<String> = []
+        
+        for entry in entries {
+            guard !processedEntries.contains(entry.id),
+                  let location = entry.location else { continue }
+            
+            // Trouver tous les événements proches de celui-ci
+            var nearbyEntries: [JournalEntry] = [entry]
+            processedEntries.insert(entry.id)
+            
+            for otherEntry in entries {
+                guard !processedEntries.contains(otherEntry.id),
+                      let otherLocation = otherEntry.location else { continue }
+                
+                let distance = location.coordinate.distance(to: otherLocation.coordinate)
+                
+                if distance < clusterDistance {
+                    nearbyEntries.append(otherEntry)
+                    processedEntries.insert(otherEntry.id)
+                }
+            }
+            
+            // Créer le cluster avec la position centrale et ID stable
+            let centerCoordinate = calculateCenterCoordinate(for: nearbyEntries)
+            let stableId = JournalCluster.createId(from: nearbyEntries)
+            
+            let cluster = JournalCluster(
+                id: stableId,
+                coordinate: centerCoordinate,
+                entries: nearbyEntries.sorted { $0.eventDate > $1.eventDate } // Plus récents en premier
+            )
+            
+            clusters.append(cluster)
+        }
+        
+        return clusters
+    }
+    
+    private func calculateCenterCoordinate(for entries: [JournalEntry]) -> CLLocationCoordinate2D {
+        let coordinates = entries.compactMap { $0.location?.coordinate }
+        
+        if coordinates.count == 1 {
+            return coordinates.first!
+        }
+        
+        let totalLat = coordinates.reduce(0) { $0 + $1.latitude }
+        let totalLon = coordinates.reduce(0) { $0 + $1.longitude }
+        
+        return CLLocationCoordinate2D(
+            latitude: totalLat / Double(coordinates.count),
+            longitude: totalLon / Double(coordinates.count)
+        )
+    }
 }
 
-// MARK: - Journal Map Annotation View (pour les pins sur la carte)
-struct JournalMapAnnotationView: View {
+// MARK: - Optimized Journal Map Annotation View
+struct OptimizedJournalMapAnnotationView: View {
     let entry: JournalEntry
     let onTap: () -> Void
     
@@ -174,18 +309,13 @@ struct JournalMapAnnotationView: View {
                 // Image ou icône avec titre
                 VStack(spacing: 6) {
                     if let imageURL = entry.imageURL, !imageURL.isEmpty {
-                        // Affichage avec image
-                        AsyncImageView(
-                            imageURL: imageURL,
-                            width: 60,
-                            height: 60,
-                            cornerRadius: 8
-                        )
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 8)
-                                .stroke(Color.white, lineWidth: 2)
-                        )
-                        .shadow(color: .black.opacity(0.3), radius: 4, x: 0, y: 2)
+                        // Version ultra-optimisée pour les cartes
+                        CachedMapImageView(imageURL: imageURL, size: 60)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(Color.white, lineWidth: 2)
+                            )
+                            .shadow(color: .black.opacity(0.3), radius: 4, x: 0, y: 2)
                     } else {
                         // Affichage sans image (juste icône)
                         RoundedRectangle(cornerRadius: 8)
@@ -221,6 +351,282 @@ struct JournalMapAnnotationView: View {
             }
         }
         .scaleEffect(0.9) // Légèrement plus petit pour ne pas encombrer
+    }
+}
+
+// MARK: - Optimized Cluster Annotation View
+struct OptimizedClusterAnnotationView: View {
+    let cluster: JournalCluster
+    let onTap: () -> Void
+    
+    var body: some View {
+        Button(action: onTap) {
+            ZStack {
+                // Images empilées des événements (effet de superposition)
+                ForEach(Array(cluster.entries.prefix(2).enumerated()), id: \.element.id) { index, entry in
+                    if let imageURL = entry.imageURL, !imageURL.isEmpty {
+                        // Version optimisée pour les clusters
+                        CachedMapImageView(imageURL: imageURL, size: 50)
+                            .offset(x: CGFloat(index * 8), y: CGFloat(-index * 8))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(Color.white, lineWidth: 2)
+                                    .offset(x: CGFloat(index * 8), y: CGFloat(-index * 8))
+                            )
+                    } else {
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color(hex: "#FD267A"))
+                            .frame(width: 50, height: 50)
+                            .overlay(
+                                Image(systemName: "heart.fill")
+                                    .font(.system(size: 20))
+                                    .foregroundColor(.white)
+                            )
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(Color.white, lineWidth: 2)
+                            )
+                            .offset(x: CGFloat(index * 8), y: CGFloat(-index * 8))
+                    }
+                }
+                
+                // Badge avec le nombre d'événements
+                VStack {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        Text("\(cluster.count)")
+                            .font(.system(size: 14, weight: .bold))
+                            .foregroundColor(.white)
+                            .frame(width: 24, height: 24)
+                            .background(
+                                Circle()
+                                    .fill(Color(hex: "#FD267A"))
+                                    .overlay(
+                                        Circle()
+                                            .stroke(Color.white, lineWidth: 2)
+                                    )
+                            )
+                            .offset(x: 8, y: 8)
+                    }
+                }
+                .frame(width: 58, height: 58) // Taille ajustée pour l'offset
+            }
+            .shadow(color: .black.opacity(0.3), radius: 4, x: 0, y: 2)
+        }
+    }
+}
+
+// MARK: - Ultra-optimized Cached Map Image View
+struct CachedMapImageView: View {
+    let imageURL: String
+    let size: CGFloat
+    
+    @State private var image: UIImage?
+    @State private var isLoading = false
+    
+    private let cacheKey: String
+    
+    init(imageURL: String, size: CGFloat) {
+        self.imageURL = imageURL
+        self.size = size
+        self.cacheKey = imageURL
+        
+        // ✅ NOUVEAU: Initialisation synchrone du cache dans init
+        self._image = State(initialValue: ImageCacheService.shared.getCachedImage(for: imageURL))
+    }
+    
+    var body: some View {
+        Group {
+            if let image = image {
+                Image(uiImage: image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: size, height: size)
+                    .clipped()
+                    .cornerRadius(8)
+            } else if isLoading {
+                RoundedRectangle(cornerRadius: 8)
+                    .fill(Color.gray.opacity(0.3))
+                    .frame(width: size, height: size)
+                    .overlay(
+                        ProgressView()
+                            .scaleEffect(0.7)
+                    )
+            } else {
+                RoundedRectangle(cornerRadius: 8)
+                    .fill(Color.gray.opacity(0.2))
+                    .frame(width: size, height: size)
+                    .overlay(
+                        Image(systemName: "photo")
+                            .font(.title2)
+                            .foregroundColor(.gray)
+                    )
+            }
+        }
+        .task {
+            // ✅ NOUVEAU: Utiliser task au lieu de onAppear
+            await loadImageIfNeeded()
+        }
+        .id(cacheKey) // Assurer la stabilité de l'ID
+    }
+    
+    private func loadImageIfNeeded() async {
+        // ✅ Si l'image est déjà chargée (depuis le cache synchrone), ne rien faire
+        guard image == nil, !isLoading else { return }
+        
+        // ✅ NOUVEAU: Vérification asynchrone du cache
+        if let cachedImage = ImageCacheService.shared.getCachedImage(for: cacheKey) {
+            await MainActor.run {
+                self.image = cachedImage
+            }
+            return
+        }
+        
+        // Charger une seule fois
+        await MainActor.run {
+            self.isLoading = true
+        }
+        
+        do {
+            let loadedImage = try await loadImageDirect(from: imageURL)
+            
+            await MainActor.run {
+                self.image = loadedImage
+                self.isLoading = false
+                // Mettre en cache
+                ImageCacheService.shared.cacheImage(loadedImage, for: cacheKey)
+            }
+        } catch {
+            await MainActor.run {
+                self.isLoading = false
+            }
+        }
+    }
+    
+    private func loadImageDirect(from urlString: String) async throws -> UIImage {
+        guard let url = URL(string: urlString) else {
+            throw AsyncImageError.invalidData
+        }
+        
+        let (data, _) = try await URLSession.shared.data(from: url)
+        
+        guard let image = UIImage(data: data) else {
+            throw AsyncImageError.invalidData
+        }
+        
+        return image
+    }
+}
+
+// MARK: - Cluster Detail View (liste des événements du cluster)
+struct ClusterDetailView: View {
+    let cluster: JournalCluster
+    let onSelectEntry: (JournalEntry) -> Void
+    
+    var body: some View {
+        NavigationView {
+            VStack(spacing: 0) {
+                // Header
+                VStack(spacing: 8) {
+                    Text("\(cluster.count) événements")
+                        .font(.system(size: 24, weight: .bold))
+                        .foregroundColor(.black)
+                    
+                    if let location = cluster.entries.first?.location {
+                        Text("\(location.city ?? ""), \(location.country ?? "")")
+                            .font(.system(size: 16))
+                            .foregroundColor(.black.opacity(0.7))
+                    }
+                }
+                .padding(.vertical, 20)
+                
+                // Liste des événements
+                ScrollView {
+                    LazyVStack(spacing: 16) {
+                        ForEach(cluster.entries) { entry in
+                            Button(action: {
+                                onSelectEntry(entry)
+                            }) {
+                                HStack(spacing: 16) {
+                                    // Image ou icône
+                                    if let imageURL = entry.imageURL, !imageURL.isEmpty {
+                                        AsyncImageView(
+                                            imageURL: imageURL,
+                                            width: 60,
+                                            height: 60,
+                                            cornerRadius: 8
+                                        )
+                                    } else {
+                                        RoundedRectangle(cornerRadius: 8)
+                                            .fill(Color(hex: "#FD267A"))
+                                            .frame(width: 60, height: 60)
+                                            .overlay(
+                                                Image(systemName: "heart.fill")
+                                                    .font(.system(size: 20))
+                                                    .foregroundColor(.white)
+                                            )
+                                    }
+                                    
+                                    // Informations
+                                    VStack(alignment: .leading, spacing: 4) {
+                                        Text(entry.title)
+                                            .font(.system(size: 18, weight: .semibold))
+                                            .foregroundColor(.black)
+                                            .lineLimit(1)
+                                        
+                                        if !entry.description.isEmpty {
+                                            Text(entry.description)
+                                                .font(.system(size: 14))
+                                                .foregroundColor(.black.opacity(0.7))
+                                                .lineLimit(2)
+                                        }
+                                        
+                                        Text(entry.eventDate.formatted(date: .abbreviated, time: .shortened))
+                                            .font(.system(size: 12))
+                                            .foregroundColor(.black.opacity(0.5))
+                                    }
+                                    
+                                    Spacer()
+                                    
+                                    Image(systemName: "chevron.right")
+                                        .font(.system(size: 14))
+                                        .foregroundColor(.black.opacity(0.3))
+                                }
+                                .padding(16)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .fill(Color.white)
+                                        .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 2)
+                                )
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 20)
+                }
+            }
+            .background(Color(red: 0.97, green: 0.97, blue: 0.98))
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Fermer") {
+                        // La fermeture est gérée par le parent
+                    }
+                }
+            }
+        }
+    }
+}
+
+// MARK: - Extensions
+
+extension CLLocationCoordinate2D {
+    func distance(to coordinate: CLLocationCoordinate2D) -> Double {
+        let location1 = CLLocation(latitude: self.latitude, longitude: self.longitude)
+        let location2 = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        return location1.distance(from: location2) / 1000.0 // Retourner en kilomètres
     }
 }
 

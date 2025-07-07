@@ -132,6 +132,7 @@ struct PartnerDistanceView: View {
                             if shouldShowLocationPermissionFlow {
                                 onDistanceTap(shouldShowPartnerLocationMessage)
                             }
+                            // Ne rien faire si pas cliquable, mais pas de .disabled()
                         }) {
                             Text(cachedDistance)
                                 .font(.system(size: 16, weight: .semibold))
@@ -143,11 +144,12 @@ struct PartnerDistanceView: View {
                                 .padding(.vertical, 10)
                                 .background(
                                     RoundedRectangle(cornerRadius: 20)
-                                        .fill(Color.white)
+                                        .fill(Color.white.opacity(0.95))
+                                        .shadow(color: Color.black.opacity(0.1), radius: 8, x: 0, y: 2)
                                 )
                         }
                         .buttonStyle(PlainButtonStyle())
-                        .disabled(!shouldShowLocationPermissionFlow)
+                        .allowsHitTesting(shouldShowLocationPermissionFlow) // Contrôle de l'interactivité sans effet visuel
                         
                         Spacer()
                     }
@@ -200,6 +202,12 @@ struct UserProfileImage: View {
     
     var body: some View {
         ZStack {
+            // Léger effet de surbrillance autour
+            Circle()
+                .fill(Color.white.opacity(0.35))
+                .frame(width: size + 12, height: size + 12)
+                .blur(radius: 6)
+            
             if let imageURL = imageURL, !imageURL.isEmpty {
                 // Image de profil utilisateur (taille complète)
                 AsyncImageView(
@@ -236,6 +244,12 @@ struct PartnerProfileImage: View {
     
     var body: some View {
         ZStack {
+            // Léger effet de surbrillance autour
+            Circle()
+                .fill(Color.white.opacity(hasPartner ? 0.35 : 0.2))
+                .frame(width: size + 12, height: size + 12)
+                .blur(radius: 6)
+            
             if hasPartner {
                 if let imageURL = imageURL, !imageURL.isEmpty {
                     // Image de profil du partenaire (taille complète)

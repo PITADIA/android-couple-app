@@ -122,6 +122,16 @@ class AppState: ObservableObject {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] (user: AppUser?) in
                 print("AppState: User changé: \(user?.name ?? "nil")")
+                
+                // NOUVEAU: Détecter les changements d'abonnement
+                if let oldUser = self?.currentUser, let newUser = user {
+                    if oldUser.isSubscribed != newUser.isSubscribed {
+                        print("🔒 AppState: Changement d'abonnement détecté: \(oldUser.isSubscribed) -> \(newUser.isSubscribed)")
+                        // Mettre à jour les widgets avec le nouveau statut
+                        self?.widgetService?.refreshData()
+                    }
+                }
+                
                 self?.currentUser = user
                 
                 // MODIFIÉ: Marquer que Firebase a terminé, mais ne pas arrêter le chargement directement
@@ -226,6 +236,14 @@ class AppState: ObservableObject {
             .sink { [weak self] _ in
                 print("📱 AppState: Partenaire déconnecté - Rechargement données utilisateur")
                 self?.refreshCurrentUserData()
+            }
+            .store(in: &cancellables)
+        
+        // NOUVEAU: Observer les changements d'abonnement pour mettre à jour les widgets
+        NotificationCenter.default.publisher(for: .subscriptionUpdated)
+            .sink { [weak self] _ in
+                print("🔒 AppState: Abonnement mis à jour - Rafraîchissement des données widget")
+                self?.widgetService?.refreshData()
             }
             .store(in: &cancellables)
     }

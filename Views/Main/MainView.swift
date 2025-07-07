@@ -247,7 +247,7 @@ struct MainView: View {
                     }
                 
             case .eventsMap:
-                JournalMapView()
+                JournalMapView(showBackButton: false)
                     .environmentObject(appState)
                     .onAppear {
                         print("🗺️ MainView: JournalMapView apparue dans la sheet")

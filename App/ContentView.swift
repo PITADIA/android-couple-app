@@ -51,6 +51,10 @@ struct ContentView: View {
         .onChange(of: appState.isLoading) { _, isLoading in
             print("ContentView: Changement chargement: \(isLoading)")
         }
+        .onOpenURL { url in
+            print("🔗 ContentView: URL reçue: \(url)")
+            handleDeepLink(url)
+        }
     }
     
     private func setupObservers() {
@@ -70,6 +74,27 @@ struct ContentView: View {
                     self.isTransitioning = false
                 }
             }
+        }
+    }
+    
+    private func handleDeepLink(_ url: URL) {
+        print("🔗 ContentView: Traitement deep link: \(url.absoluteString)")
+        
+        guard url.scheme == "coupleapp" else {
+            print("❌ ContentView: Scheme non reconnu: \(url.scheme ?? "nil")")
+            return
+        }
+        
+        switch url.host {
+        case "subscription":
+            print("🔗 ContentView: Redirection vers abonnement depuis widget")
+            // Ouvrir la vue d'abonnement
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.appState.freemiumManager?.showingSubscription = true
+            }
+            
+        default:
+            print("❌ ContentView: Host non reconnu: \(url.host ?? "nil")")
         }
     }
 }

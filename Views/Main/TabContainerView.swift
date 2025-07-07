@@ -16,7 +16,7 @@ struct TabContainerView: View {
                     JournalPageView()
                 case 2:
                     // Carte des événements
-                    JournalMapView()
+                    JournalMapView(showBackButton: false)
                         .environmentObject(appState)
                 case 3:
                     FavoritesView()
@@ -206,7 +206,7 @@ struct TabContainerView: View {
                     }
                 
             case .eventsMap:
-                JournalMapView()
+                JournalMapView(showBackButton: false)
                     .environmentObject(appState)
                     .onAppear {
                         print("🗺️ TabContainer: JournalMapView apparue dans la sheet")

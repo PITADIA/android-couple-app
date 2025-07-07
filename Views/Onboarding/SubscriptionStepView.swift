@@ -127,7 +127,7 @@ struct SubscriptionStepView: View {
                                     Text("CHARGEMENT...")
                                 }
                             } else {
-                                Text("COMMENCER L'ESSAI")
+                                Text(receiptService.selectedPlan == .weekly ? "CONTINUER" : "COMMENCER L'ESSAI")
                             }
                         }
                         .font(.system(size: 18, weight: .bold))

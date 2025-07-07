@@ -52,6 +52,7 @@ struct WidgetData {
     let userLongitude: Double?
     let partnerLatitude: Double?
     let partnerLongitude: Double?
+    let hasSubscription: Bool
     let lastUpdate: Date
     
     static var placeholder: WidgetData {
@@ -69,6 +70,7 @@ struct WidgetData {
             userLongitude: 2.3522,
             partnerLatitude: 43.6047,
             partnerLongitude: 1.4442,
+            hasSubscription: true,
             lastUpdate: Date()
         )
     }
@@ -88,6 +90,7 @@ struct WidgetData {
             userLongitude: nil,
             partnerLatitude: 43.6047,
             partnerLongitude: 1.4442,
+            hasSubscription: false,
             lastUpdate: Date()
         )
     }
@@ -107,6 +110,7 @@ struct WidgetData {
             userLongitude: 2.3522,
             partnerLatitude: nil,
             partnerLongitude: nil,
+            hasSubscription: false,
             lastUpdate: Date()
         )
     }
@@ -127,6 +131,9 @@ struct WidgetData {
         let userName = sharedDefaults.string(forKey: "widget_user_name")
         let partnerName = sharedDefaults.string(forKey: "widget_partner_name")
         
+        // NOUVEAU: Récupérer le statut d'abonnement
+        let hasSubscription = sharedDefaults.bool(forKey: "widget_has_subscription")
+        
         // CORRECTION: Ne récupérer les URLs d'images que si elles existent réellement
         let userImageURL = sharedDefaults.string(forKey: "widget_user_image_url")
         let partnerImageURL = sharedDefaults.string(forKey: "widget_partner_image_url")
@@ -137,6 +144,7 @@ struct WidgetData {
         print("  - partnerName: \(partnerName ?? "nil")")
         print("  - userImageURL: \(userImageURL ?? "nil")")
         print("  - partnerImageURL: \(partnerImageURL ?? "nil")")
+        print("  - hasSubscription: \(hasSubscription)")
         
         // Vérifier le contenu du dossier App Group
         if let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.lyes.love2love") {
@@ -195,6 +203,7 @@ struct WidgetData {
             userLongitude: userLongitude,
             partnerLatitude: partnerLatitude,
             partnerLongitude: partnerLongitude,
+            hasSubscription: hasSubscription,
             lastUpdate: Date(timeIntervalSince1970: lastUpdateTimestamp)
         )
     }
@@ -215,6 +224,11 @@ struct Provider: TimelineProvider {
     func getTimeline(in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> ()) {
         let widgetData = WidgetData.loadFromUserDefaults() ?? .placeholder
         let currentDate = Date()
+        
+        // NOUVEAU: Logs pour debug abonnement
+        print("🔒 Widget Timeline: Statut abonnement: \(widgetData.hasSubscription)")
+        print("🔒 Widget Timeline: Données utilisateur: \(widgetData.userName ?? "nil")")
+        print("🔒 Widget Timeline: Famille de widget: \(context.family)")
         
         // Créer plusieurs entrées pour mise à jour plus fréquente (toutes les minutes pour les secondes)
         var entries: [SimpleEntry] = []
@@ -250,7 +264,20 @@ struct Love2LoveWidgetEntryView: View {
         case .systemSmall:
             SmallWidgetView(data: entry.widgetData)
         case .systemMedium:
-            MediumWidgetView(data: entry.widgetData)
+            // Vérifier si l'utilisateur a un abonnement pour le grand widget
+            if entry.widgetData.hasSubscription {
+                MediumWidgetView(data: entry.widgetData)
+                    .onAppear {
+                        print("✅ Medium Widget: Abonnement valide - Affichage widget normal")
+                        print("🔒 Medium Widget: Utilisateur: \(entry.widgetData.userName ?? "nil")")
+                    }
+            } else {
+                PremiumBlockedWidgetView(widgetType: "Complet")
+                    .onAppear {
+                        print("❌ Medium Widget: Pas d'abonnement - Affichage widget bloqué")
+                        print("🔒 Medium Widget: Utilisateur: \(entry.widgetData.userName ?? "nil")")
+                    }
+            }
         case .accessoryCircular:
             AccessoryCircularWidgetView(data: entry.widgetData)
         default:
@@ -603,12 +630,6 @@ struct ProfileCircleForWidget: View {
     
     // MARK: - Helper pour vérifier si c'est une vraie image de profil
     private func hasRealProfileImage(_ imagePath: String) -> Bool {
-        // Les noms de fichiers par défaut utilisés quand il n'y a pas d'image
-        let defaultImageNames = [
-            "user_profile_image.jpg",
-            "partner_profile_image.jpg"
-        ]
-        
         print("🖼️ Widget: Vérification image profil - Path: \(imagePath)")
         
         // Vérifier si le fichier existe dans le dossier App Group
@@ -768,7 +789,7 @@ struct Love2LoveWidget: Widget {
                 .containerBackground(.fill.tertiary, for: .widget)
         }
         .configurationDisplayName("Love2Love")
-        .description("Suivez votre relation avec votre partenaire.")
+        .description("Suivez votre relation avec votre partenaire. Le grand widget nécessite un abonnement.")
         .supportedFamilies([
             .systemSmall, .systemMedium,           // Écran d'accueil
             .accessoryCircular                     // Lock screen - circulaire seulement
@@ -783,8 +804,22 @@ struct Love2LoveDistanceWidget: Widget {
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            SmallDistanceWidgetView(data: entry.widgetData)
-                .containerBackground(.fill.tertiary, for: .widget)
+            // Vérifier si l'utilisateur a un abonnement
+            if entry.widgetData.hasSubscription {
+                SmallDistanceWidgetView(data: entry.widgetData)
+                    .containerBackground(.fill.tertiary, for: .widget)
+                    .onAppear {
+                        print("✅ Distance Widget: Abonnement valide - Affichage widget normal")
+                        print("🔒 Distance Widget: Utilisateur: \(entry.widgetData.userName ?? "nil")")
+                    }
+            } else {
+                PremiumBlockedWidgetView(widgetType: "Distance")
+                    .containerBackground(.fill.tertiary, for: .widget)
+                    .onAppear {
+                        print("❌ Distance Widget: Pas d'abonnement - Affichage widget bloqué")
+                        print("🔒 Distance Widget: Utilisateur: \(entry.widgetData.userName ?? "nil")")
+                    }
+            }
         }
         .configurationDisplayName("Love2Love Distance")
         .description("Affichez la distance qui vous sépare de votre partenaire.")
@@ -852,8 +887,22 @@ struct Love2LoveMapWidget: Widget {
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            MapDistanceWidgetEntryView(entry: entry)
-                .containerBackground(.clear, for: .widget)
+            // Vérifier si l'utilisateur a un abonnement
+            if entry.widgetData.hasSubscription {
+                MapDistanceWidgetEntryView(entry: entry)
+                    .containerBackground(.clear, for: .widget)
+                    .onAppear {
+                        print("✅ Map Widget: Abonnement valide - Affichage widget normal")
+                        print("🔒 Map Widget: Utilisateur: \(entry.widgetData.userName ?? "nil")")
+                    }
+            } else {
+                PremiumBlockedLockScreenWidgetView(widgetType: "Distance")
+                    .containerBackground(.clear, for: .widget)
+                    .onAppear {
+                        print("❌ Map Widget: Pas d'abonnement - Affichage widget bloqué")
+                        print("🔒 Map Widget: Utilisateur: \(entry.widgetData.userName ?? "nil")")
+                    }
+            }
         }
         .configurationDisplayName("Distance Love2Love")
         .description("Ce Widget nécessite la localisation activée des deux partenaires.")
@@ -885,6 +934,22 @@ struct MapDistanceWidgetEntryView: View {
 struct MapDistanceRectangularWidgetView: View {
     let data: WidgetData
     
+    // Fonction helper pour obtenir l'initiale de l'utilisateur
+    private func getUserInitial(from userName: String?) -> String {
+        guard let userName = userName, !userName.isEmpty else {
+            return "?"
+        }
+        return String(userName.prefix(1)).uppercased()
+    }
+    
+    // Fonction helper pour obtenir l'initiale du partenaire
+    private func getPartnerInitial(from partnerName: String?) -> String {
+        guard let partnerName = partnerName, !partnerName.isEmpty else {
+            return "?"
+        }
+        return String(partnerName.prefix(1)).uppercased()
+    }
+    
     var body: some View {
         VStack(spacing: 6) {
             // Section haut : "Notre distance" centrée
@@ -893,14 +958,18 @@ struct MapDistanceRectangularWidgetView: View {
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity, alignment: .center)
             
-            // Section bas : Profils avec lignes pointillées centrés
+            // Section bas : Initiales avec lignes pointillées centrés
             HStack(spacing: 0) {
-                // Photo utilisateur avec ProfileCircleForWidget
-                ProfileCircleForWidget(
-                    imageURL: data.userImageURL,
-                    userName: data.userName,
-                    size: 28
-                )
+                // Initiale utilisateur
+                ZStack {
+                    Circle()
+                        .fill(Color.white.opacity(0.15))
+                        .frame(width: 28, height: 28)
+                    
+                    Text(getUserInitial(from: data.userName))
+                        .font(.system(size: 12, weight: .bold))
+                        .foregroundColor(.white)
+                }
                 
                 // Ligne pointillée gauche
                 DashedLineWidget()
@@ -923,12 +992,16 @@ struct MapDistanceRectangularWidgetView: View {
                     .stroke(Color.white, style: StrokeStyle(lineWidth: 1, dash: [3, 2]))
                     .frame(width: 25, height: 1)
                 
-                // Photo partenaire avec ProfileCircleForWidget
-                ProfileCircleForWidget(
-                    imageURL: data.partnerImageURL,
-                    userName: data.partnerName,
-                    size: 28
-                )
+                // Initiale partenaire
+                ZStack {
+                    Circle()
+                        .fill(Color.white.opacity(0.15))
+                        .frame(width: 28, height: 28)
+                    
+                    Text(getPartnerInitial(from: data.partnerName))
+                        .font(.system(size: 12, weight: .bold))
+                        .foregroundColor(.white)
+                }
             }
             .frame(maxWidth: .infinity, alignment: .center)
         }
@@ -947,5 +1020,92 @@ struct MapDistanceRectangularWidgetView: View {
                     .fill(Color.black.opacity(0.2))
             }
         )
+    }
+}
+
+// MARK: - Premium Blocked Widget Views
+
+// Widget bloqué pour écran d'accueil
+struct PremiumBlockedWidgetView: View {
+    let widgetType: String
+    
+    var body: some View {
+        Link(destination: URL(string: "coupleapp://subscription")!) {
+            VStack(spacing: 8) {
+                // Icône de cadenas
+                Image(systemName: "lock.fill")
+                    .font(.system(size: widgetType == "Complet" ? 32 : 24))
+                    .foregroundColor(.white.opacity(0.8))
+                
+                // Texte principal
+                Text("Nécessite un abonnement")
+                    .font(.system(size: widgetType == "Complet" ? 16 : 14, weight: .semibold))
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.center)
+                
+                // Texte secondaire
+                Text("Toucher pour débloquer")
+                    .font(.system(size: widgetType == "Complet" ? 12 : 10))
+                    .foregroundColor(.white.opacity(0.8))
+                    .multilineTextAlignment(.center)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(
+                ZStack {
+                    // Même fond noir avec effet de flou que les widgets normaux
+                    Color.black
+                        .blur(radius: 10)
+                        .opacity(0.8)
+                    
+                    // Overlay pour améliorer la lisibilité
+                    Color.black.opacity(0.3)
+                }
+            )
+        }
+    }
+}
+
+// Widget bloqué pour écran de verrouillage
+struct PremiumBlockedLockScreenWidgetView: View {
+    let widgetType: String
+    
+    var body: some View {
+        Link(destination: URL(string: "coupleapp://subscription")!) {
+            VStack(spacing: 4) {
+                // Icône de cadenas
+                Image(systemName: "lock.fill")
+                    .font(.system(size: 14))
+                    .foregroundColor(.white)
+                
+                // Texte
+                Text("Nécessite un abonnement")
+                    .font(.system(size: 10, weight: .medium))
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.center)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding(.horizontal, 8)
+            .padding(.vertical, 4)
+            .background(
+                ZStack {
+                    // Fond dégradé premium pour lock screen
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(
+                            LinearGradient(
+                                gradient: Gradient(colors: [
+                                    Color(hex: "#FD267A"),
+                                    Color(hex: "#FF655B")
+                                ]),
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        )
+                    
+                    // Overlay pour améliorer la lisibilité
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Color.black.opacity(0.2))
+                }
+            )
+        }
     }
 }
