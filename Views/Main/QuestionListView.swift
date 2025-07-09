@@ -111,8 +111,7 @@ struct QuestionListView: View {
                 questionKey = "QUESTIONS PROFONDES"
             case "Tu préfères quoi ?":
                 questionKey = "TU PRÉFÈRES ?"
-            case "En famille":
-                questionKey = "EN FAMILLE"
+
             case "En date":
                 questionKey = "POUR UN DATE"
             case "En couple":

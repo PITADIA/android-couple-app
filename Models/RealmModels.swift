@@ -213,7 +213,8 @@ class QuestionCacheManager: ObservableObject {
             let essentialCategories = [
                 ("EN COUPLE", "En couple"),
                 ("TU PRÉFÈRES ?", "Tu préfères quoi ?"),
-                ("QUESTIONS PROFONDES", "Des questions profondes")
+                ("QUESTIONS PROFONDES", "Des questions profondes"),
+                ("LES PLUS HOTS", "Désirs Inavoués")
             ]
             
             for (key, displayName) in essentialCategories {
