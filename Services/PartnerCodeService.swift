@@ -105,8 +105,9 @@ class PartnerCodeService: ObservableObject {
             
             print("✅ PartnerCodeService: Code créé en base avec succès")
             
+            let capturedCode = code
             await MainActor.run {
-                self.generatedCode = code
+                self.generatedCode = capturedCode
                 self.isLoading = false
             }
             
@@ -176,6 +177,9 @@ class PartnerCodeService: ObservableObject {
             print("✅ PartnerCodeService: Connexion réussie - Partenaire: \(partnerName)")
             print("✅ PartnerCodeService: Abonnement hérité: \(subscriptionInherited)")
             
+            // NOUVEAU: Tracker la connexion partenaire pour les reviews
+            ReviewRequestService.shared.trackPartnerConnected()
+            
             // Mettre à jour l'interface utilisateur
             await MainActor.run {
                 self.isConnected = true
@@ -228,8 +232,9 @@ class PartnerCodeService: ObservableObject {
                 }
             }
             
+            let capturedErrorMessage = errorMessage
             await MainActor.run {
-                self.errorMessage = errorMessage
+                self.errorMessage = capturedErrorMessage
                 self.isLoading = false
             }
             return false

@@ -190,7 +190,17 @@ struct ImagePicker: UIViewControllerRepresentable {
             settingsButton.backgroundColor = .systemBlue
             settingsButton.setTitleColor(.white, for: .normal)
             settingsButton.layer.cornerRadius = 8
-            settingsButton.contentEdgeInsets = UIEdgeInsets(top: 12, left: 24, bottom: 12, right: 24)
+            if #available(iOS 15.0, *) {
+                var config = UIButton.Configuration.filled()
+                config.title = "Ouvrir les Réglages"
+                config.baseBackgroundColor = .systemBlue
+                config.baseForegroundColor = .white
+                config.cornerStyle = .medium
+                config.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 24, bottom: 12, trailing: 24)
+                settingsButton.configuration = config
+            } else {
+                settingsButton.contentEdgeInsets = UIEdgeInsets(top: 12, left: 24, bottom: 12, right: 24)
+            }
             settingsButton.addTarget(self, action: #selector(openSettings), for: .touchUpInside)
             
             let cancelButton = UIButton(type: .system)
@@ -393,7 +403,17 @@ class LimitedAccessViewController: UIViewController {
         settingsButton.backgroundColor = .systemBlue
         settingsButton.setTitleColor(.white, for: .normal)
         settingsButton.layer.cornerRadius = 8
-        settingsButton.contentEdgeInsets = UIEdgeInsets(top: 12, left: 24, bottom: 12, right: 24)
+        if #available(iOS 15.0, *) {
+            var config = UIButton.Configuration.filled()
+            config.title = "Ouvrir les Réglages"
+            config.baseBackgroundColor = .systemBlue
+            config.baseForegroundColor = .white
+            config.cornerStyle = .medium
+            config.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 24, bottom: 12, trailing: 24)
+            settingsButton.configuration = config
+        } else {
+            settingsButton.contentEdgeInsets = UIEdgeInsets(top: 12, left: 24, bottom: 12, right: 24)
+        }
         settingsButton.addTarget(self, action: #selector(openSettings), for: .touchUpInside)
         
         stackView.addArrangedSubview(iconLabel)
@@ -710,7 +730,17 @@ struct StandardImagePicker: UIViewControllerRepresentable {
             settingsButton.backgroundColor = .systemBlue
             settingsButton.setTitleColor(.white, for: .normal)
             settingsButton.layer.cornerRadius = 8
-            settingsButton.contentEdgeInsets = UIEdgeInsets(top: 12, left: 24, bottom: 12, right: 24)
+            if #available(iOS 15.0, *) {
+                var config = UIButton.Configuration.filled()
+                config.title = "Ouvrir les Réglages"
+                config.baseBackgroundColor = .systemBlue
+                config.baseForegroundColor = .white
+                config.cornerStyle = .medium
+                config.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 24, bottom: 12, trailing: 24)
+                settingsButton.configuration = config
+            } else {
+                settingsButton.contentEdgeInsets = UIEdgeInsets(top: 12, left: 24, bottom: 12, right: 24)
+            }
             settingsButton.addTarget(self, action: #selector(openSettings), for: .touchUpInside)
             
             let cancelButton = UIButton(type: .system)

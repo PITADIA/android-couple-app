@@ -161,9 +161,9 @@ extension AuthenticationService: ASAuthorizationControllerDelegate {
             }
             
             // Créer les credentials Firebase
-            let credential = OAuthProvider.credential(withProviderID: "apple.com",
-                                                    idToken: idTokenString,
-                                                    rawNonce: nonce)
+            let credential = OAuthProvider.credential(providerID: AuthProviderID.apple,
+                                                      idToken: idTokenString,
+                                                      rawNonce: nonce)
             
             // Se connecter à Firebase
             Auth.auth().signIn(with: credential) { [weak self] result, error in

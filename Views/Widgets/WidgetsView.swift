@@ -53,7 +53,7 @@ struct WidgetsView: View {
                 
                 ScrollView {
                     VStack(spacing: 30) {
-                        // Header avec titre et bouton retour
+                        // Header avec bouton retour
                         HStack {
                             Button(action: {
                                 dismiss()
@@ -70,16 +70,6 @@ struct WidgetsView: View {
                             }
                             
                             Spacer()
-                            
-                            Text("Widgets")
-                                .font(.system(size: 28, weight: .bold))
-                                .foregroundColor(.black)
-                            
-                            Spacer()
-                            
-                            // Espace pour équilibrer le bouton retour
-                            Color.clear
-                                .frame(width: 40, height: 40)
                         }
                         .padding(.horizontal, 20)
                         .padding(.top, 20)

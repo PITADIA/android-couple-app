@@ -90,33 +90,17 @@ struct TabContainerView: View {
                     Button(action: {
                         selectedTab = 3
                     }) {
-                        ZStack {
-                            Image("heart")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(
-                                    width: selectedTab == 3 ? 34 : 30,
-                                    height: selectedTab == 3 ? 28 : 24
-                                )
-                                .foregroundColor(selectedTab == 3 ? Color(hex: "#FD267A") : .gray)
-                                .fontWeight(selectedTab == 3 ? .bold : .regular)
-                                .scaleEffect(selectedTab == 3 ? 1.1 : 1.0)
-                                .animation(.easeInOut(duration: 0.2), value: selectedTab)
-                            
-                            // Badge avec le nombre de favoris
-                            if let favoritesService = appState.favoritesService, favoritesService.getFavoritesCount() > 0 {
-                                Text("\(favoritesService.getFavoritesCount())")
-                                    .font(.system(size: 10, weight: .bold))
-                                    .foregroundColor(.white)
-                                    .frame(width: 16, height: 16)
-                                    .background(Color.red)
-                                    .clipShape(Circle())
-                                    .offset(
-                                        x: selectedTab == 3 ? 15 : 13,
-                                        y: selectedTab == 3 ? -15 : -13
-                                    )
-                            }
-                        }
+                        Image("heart")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(
+                                width: selectedTab == 3 ? 34 : 30,
+                                height: selectedTab == 3 ? 28 : 24
+                            )
+                            .foregroundColor(selectedTab == 3 ? Color(hex: "#FD267A") : .gray)
+                            .fontWeight(selectedTab == 3 ? .bold : .regular)
+                            .scaleEffect(selectedTab == 3 ? 1.1 : 1.0)
+                            .animation(.easeInOut(duration: 0.2), value: selectedTab)
                     }
                     .frame(maxWidth: .infinity)
                     
@@ -140,11 +124,7 @@ struct TabContainerView: View {
                 }
                 .padding(.horizontal, 20)
                 .padding(.vertical, 12)
-                .background(
-                    Color.white.opacity(0.95)
-                        .blur(radius: 10)
-                )
-                .background(Color.white.opacity(0.9))
+                .background(Color.white)
             }
         }
         .navigationBarHidden(true)
@@ -210,6 +190,17 @@ struct TabContainerView: View {
                     .environmentObject(appState)
                     .onAppear {
                         print("🗺️ TabContainer: JournalMapView apparue dans la sheet")
+                    }
+                
+            case .locationTutorial:
+                LocationPermissionFlow()
+                    .onAppear {
+                        print("📍 TabContainer: LocationPermissionFlow apparue depuis le menu")
+                    }
+                    .onDisappear {
+                        print("📍 TabContainer: LocationPermissionFlow disparue depuis le menu")
+                        // Démarrer immédiatement les mises à jour de localisation
+                        appState.locationService?.startLocationUpdatesIfAuthorized()
                     }
                 
             default:

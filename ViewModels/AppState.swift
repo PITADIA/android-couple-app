@@ -43,6 +43,9 @@ class AppState: ObservableObject {
     // NOUVEAU: Location Service (pour sauvegarder automatiquement la localisation)
     @Published var locationService: LocationService?
     
+    // NOUVEAU: Review Request Service
+    @Published var reviewService: ReviewRequestService?
+    
     // Flag pour savoir si l'utilisateur est en cours d'onboarding
     @Published var isOnboardingInProgress: Bool = false
     
@@ -98,6 +101,10 @@ class AppState: ObservableObject {
         // NOUVEAU: Initialiser le LocationService
         self.locationService = LocationService.shared
         print("🔥 AppState: LocationService initialisé")
+        
+        // NOUVEAU: Initialiser le ReviewRequestService
+        self.reviewService = ReviewRequestService.shared
+        print("🔥 AppState: ReviewRequestService initialisé")
         
         // NOUVEAU: Délai minimum pour l'écran de chargement (1.0 seconde)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
@@ -228,6 +235,10 @@ class AppState: ObservableObject {
         NotificationCenter.default.publisher(for: .partnerConnected)
             .sink { [weak self] _ in
                 print("📱 AppState: Partenaire connecté - Rechargement données utilisateur")
+                
+                // NOUVEAU: Tracker la connexion partenaire pour les reviews
+                ReviewRequestService.shared.trackPartnerConnected()
+                
                 self?.refreshCurrentUserData()
             }
             .store(in: &cancellables)

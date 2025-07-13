@@ -247,9 +247,9 @@ extension AccountDeletionService: ASAuthorizationControllerDelegate, ASAuthoriza
         }
         
         // Créer les credentials Firebase avec le nouveau token
-        let credential = OAuthProvider.credential(withProviderID: "apple.com",
-                                                idToken: idTokenString,
-                                                accessToken: nil)
+                        let credential = OAuthProvider.credential(providerID: AuthProviderID.apple,
+                                                          idToken: idTokenString,
+                                                          accessToken: nil)
         
         // Ré-authentifier l'utilisateur Firebase
         user.reauthenticate(with: credential) { [weak self] result, error in

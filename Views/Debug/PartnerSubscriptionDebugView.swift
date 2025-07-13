@@ -311,14 +311,16 @@ struct PartnerSubscriptionDebugView: View {
         
         Task {
             do {
+                let updateData: [String: Any] = [
+                    "isSubscribed": true,
+                    "subscriptionType": "direct",
+                    "subscriptionStartedAt": Timestamp(date: Date())
+                ]
+                
                 try await Firestore.firestore()
                     .collection("users")
                     .document(currentUser.uid)
-                    .updateData([
-                        "isSubscribed": true,
-                        "subscriptionType": "direct",
-                        "subscriptionStartedAt": Timestamp(date: Date())
-                    ])
+                    .updateData(updateData)
                 
                 await MainActor.run {
                     self.isLoading = false
@@ -343,14 +345,16 @@ struct PartnerSubscriptionDebugView: View {
         
         Task {
             do {
+                let updateData: [String: Any] = [
+                    "isSubscribed": false,
+                    "subscriptionType": FieldValue.delete(),
+                    "subscriptionExpiredAt": Timestamp(date: Date())
+                ]
+                
                 try await Firestore.firestore()
                     .collection("users")
                     .document(currentUser.uid)
-                    .updateData([
-                        "isSubscribed": false,
-                        "subscriptionType": FieldValue.delete(),
-                        "subscriptionExpiredAt": Timestamp(date: Date())
-                    ])
+                    .updateData(updateData)
                 
                 await MainActor.run {
                     self.isLoading = false

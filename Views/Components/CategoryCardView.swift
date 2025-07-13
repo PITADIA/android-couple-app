@@ -15,7 +15,7 @@ struct CategoryCardView: View {
             // Utiliser le FreemiumManager pour gérer le tap
             if let freemiumManager = appState.freemiumManager {
                 print("🔥🔥🔥 CATEGORY TAP: APPEL handleCategoryTap")
-                print("🔥🔥🔥 CATEGORY TAP: FreemiumManager trouvé: \(freemiumManager)")
+                print("🔥🔥🔥 CATEGORY TAP: FreemiumManager trouvé: \(String(describing: freemiumManager))")
                 print("🔥🔥🔥 CATEGORY TAP: Avant appel handleCategoryTap")
                 
                 freemiumManager.handleCategoryTap(category) {
@@ -27,7 +27,7 @@ struct CategoryCardView: View {
             } else {
                 print("🔥🔥🔥 CATEGORY TAP: FREEMIUM MANAGER MANQUANT - FALLBACK")
                 print("🔥🔥🔥 CATEGORY TAP: appState: \(appState)")
-                print("🔥🔥🔥 CATEGORY TAP: appState.freemiumManager: \(appState.freemiumManager)")
+                print("🔥🔥🔥 CATEGORY TAP: appState.freemiumManager: \(String(describing: appState.freemiumManager))")
                 // Fallback si FreemiumManager n'est pas disponible
                 action()
             }

@@ -62,11 +62,11 @@ struct LocationServiceExplanationView: View {
     var body: some View {
         VStack(spacing: 30) {
             VStack(spacing: 16) {
-                Text("Service de localisation")
+                Text("Localisation")
                     .font(.system(size: 28, weight: .bold))
                     .foregroundColor(.black)
                 
-                Text("Les services de localisation sont nécessaires pour que l'appli puisse calculer la distance entre toi et ton partenaire.")
+                Text("Les services de localisation sont nécessaires pour que l'appli puisse calculer la distance entre vous et votre partenaire.")
                     .font(.system(size: 16))
                     .foregroundColor(.black.opacity(0.8))
                     .multilineTextAlignment(.center)
@@ -85,7 +85,7 @@ struct LocationServiceExplanationView: View {
                     .background(Color.blue)
                     .clipShape(RoundedRectangle(cornerRadius: 12))
                 
-                Text("Service de localisation")
+                Text("Localisation")
                     .font(.system(size: 18, weight: .medium))
                     .foregroundColor(.black)
                 
@@ -182,7 +182,7 @@ struct LocationPermissionView: View {
                     .font(.system(size: 28, weight: .bold))
                     .foregroundColor(.black)
                 
-                Text("Les services de localisation sont nécessaires pour que l'appli puisse calculer la distance entre toi et ton partenaire.")
+                Text("Les services de localisation sont nécessaires pour que l'appli puisse calculer la distance entre vous et votre partenaire.")
                     .font(.system(size: 16))
                     .foregroundColor(.black.opacity(0.8))
                     .multilineTextAlignment(.center)
@@ -224,7 +224,7 @@ struct LocationPermissionView: View {
             
             // Instructions
             VStack(alignment: .leading, spacing: 12) {
-                Text("Comment obtenir la permission")
+                Text("Comment activer la localisation")
                     .font(.system(size: 20, weight: .bold))
                     .foregroundColor(.black)
                 
@@ -236,7 +236,7 @@ struct LocationPermissionView: View {
                         .background(Color.orange.opacity(0.1))
                         .clipShape(Circle())
                     
-                    Text("Appuyer sur Autoriser")
+                    Text("Appuyez sur Autoriser")
                         .font(.system(size: 16))
                         .foregroundColor(.black)
                 }
@@ -249,7 +249,7 @@ struct LocationPermissionView: View {
                         .background(Color.green.opacity(0.1))
                         .clipShape(Circle())
                     
-                    Text("Sélectionner Autoriser lorsque l'app est active")
+                    Text("Sélectionnez Autoriser lorsque l'app est active")
                         .font(.system(size: 16))
                         .foregroundColor(.black)
                 }
@@ -294,11 +294,11 @@ struct LocationPartnerExplanationView: View {
     var body: some View {
         VStack(spacing: 30) {
             VStack(spacing: 16) {
-                Text("Au tour de ton partenaire")
+                Text("Au tour de votre partenaire")
                     .font(.system(size: 28, weight: .bold))
                     .foregroundColor(.black)
                 
-                Text("Demande à ton partenaire de faire la même démarche et d'ajouter le widget sur son écran, sinon ton widget de distance ne fonctionnera pas correctement.")
+                Text("Demandez à votre partenaire de faire la même démarche pour activer sa localisation, sinon la distance entre vous ne pourra pas être calculée.")
                     .font(.system(size: 16))
                     .foregroundColor(.black.opacity(0.8))
                     .multilineTextAlignment(.center)
@@ -308,36 +308,11 @@ struct LocationPartnerExplanationView: View {
             
             Spacer().frame(height: 50)
             
-            // Widget preview simple sans ouioui
-            VStack(spacing: 24) {
-                // Titre du widget
-                Text("Widget Love2Love")
-                    .font(.system(size: 18, weight: .semibold))
-                    .foregroundColor(.black)
-                
-                // Simple preview sans l'image ouioui
-                VStack(spacing: 8) {
-                    Text("Ensemble depuis")
-                        .font(.system(size: 14, weight: .medium))
-                        .foregroundColor(.white.opacity(0.9))
-                    
-                    Text("365 JOURS")
-                        .font(.system(size: 24, weight: .bold))
-                        .foregroundColor(.white)
-                }
-                .frame(width: 280, height: 172)
-                .background(
-                    LinearGradient(
-                        gradient: Gradient(colors: [
-                            Color(red: 0.99, green: 0.15, blue: 0.48),
-                            Color(red: 1.0, green: 0.4, blue: 0.36)
-                        ]),
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    )
-                )
-                .cornerRadius(16)
-            }
+            // Logo de localisation iOS centré
+            Image(systemName: "location.fill")
+                .font(.system(size: 80, weight: .medium))
+                .foregroundColor(.black)
+                .frame(width: 120, height: 120)
             
             Spacer()
             

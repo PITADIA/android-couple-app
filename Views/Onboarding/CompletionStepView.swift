@@ -29,7 +29,6 @@ struct CompletionStepView: View {
                                 .font(.system(size: 12, weight: .bold))
                                 .foregroundColor(.white)
                         }
-                        .scaleEffect(confettiCounter > 0 ? 1.2 : 1.0)
                         
                         Text("Tout est terminé")
                             .font(.system(size: 18, weight: .medium))
@@ -60,13 +59,6 @@ struct CompletionStepView: View {
                         .multilineTextAlignment(.center)
                         .lineSpacing(4)
                         .padding(.horizontal, 40)
-                    
-                    // Point invisible pour les confettis au niveau du texte
-                    Rectangle()
-                        .fill(Color.clear)
-                        .frame(width: 1, height: 1)
-                        .confettiCannon(trigger: $confettiCounter, num: 200, radius: 500)
-                        .padding(.top, 30)
                 }
                 
                 // Deuxième Spacer pour pousser la zone bouton vers le bas
@@ -90,10 +82,13 @@ struct CompletionStepView: View {
                 .padding(.vertical, 30)
                 .background(Color.white)
             }
+            
+
         }
+        .confettiCannon(trigger: $confettiCounter, num: 50, openingAngle: Angle(degrees: 0), closingAngle: Angle(degrees: 360), radius: 200)
         .onAppear {
             print("🔥 CompletionStepView: Vue de completion apparue")
-            // Déclencher l'animation des confettis immédiatement
+            // Déclencher l'explosion de confettis immédiatement sans délai
             confettiCounter += 1
         }
     }

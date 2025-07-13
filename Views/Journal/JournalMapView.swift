@@ -36,6 +36,9 @@ struct JournalMapView: View {
     @State private var showingClusterDetail = false
     @State private var isCardHovered = false
     
+    // NOUVEAU: Contrôler le recentrage automatique
+    @State private var hasInitializedMap = false
+    
     // NOUVEAU: Paramètre pour contrôler l'affichage du bouton retour
     let showBackButton: Bool
     
@@ -52,6 +55,18 @@ struct JournalMapView: View {
         journalService.entries.filter { $0.location != nil }
     }
     
+    // NOUVEAU: Calculer le nombre de pays uniques
+    private var uniqueCountriesCount: Int {
+        let countries = Set(entriesWithLocation.compactMap { $0.location?.country })
+        return countries.count
+    }
+    
+    // NOUVEAU: Calculer le nombre de villes uniques
+    private var uniqueCitiesCount: Int {
+        let cities = Set(entriesWithLocation.compactMap { $0.location?.city })
+        return cities.count
+    }
+    
     // NOUVEAU: Calculer les clusters de manière stable sans effet de bord
     private var clusters: [JournalCluster] {
         createStableClusters(from: entriesWithLocation, zoomLevel: mapRegion.span.latitudeDelta)
@@ -60,34 +75,63 @@ struct JournalMapView: View {
     var body: some View {
         ZStack {
             // Carte en plein écran avec clustering
-            Map(coordinateRegion: $mapRegion, 
-                annotationItems: clusters) { cluster in
-                MapAnnotation(coordinate: cluster.coordinate) {
-                    if cluster.isCluster {
-                        // Affichage du cluster avec compteur
-                        OptimizedClusterAnnotationView(cluster: cluster) {
-                            selectedCluster = cluster
-                            showingClusterDetail = true
+            Group {
+                if #available(iOS 17.0, *) {
+                    // iOS 17+ : Nouvelle API avec MapContentBuilder
+                    Map(position: .constant(.region(mapRegion))) {
+                        ForEach(clusters) { cluster in
+                            Annotation(cluster.isCluster ? "Cluster" : cluster.firstEntry.title, 
+                                     coordinate: cluster.coordinate) {
+                                if cluster.isCluster {
+                                    OptimizedClusterAnnotationView(cluster: cluster) {
+                                        selectedCluster = cluster
+                                        showingClusterDetail = true
+                                    }
+                                } else {
+                                    OptimizedJournalMapAnnotationView(entry: cluster.firstEntry) {
+                                        selectedEntry = cluster.firstEntry
+                                        showingEntryDetail = true
+                                    }
+                                }
+                            }
                         }
-                    } else {
-                        // Affichage d'un événement unique
-                        OptimizedJournalMapAnnotationView(entry: cluster.firstEntry) {
-                            selectedEntry = cluster.firstEntry
-                            showingEntryDetail = true
+                    }
+                } else {
+                    // Fallback pour iOS 16 et antérieur
+                    Map(coordinateRegion: $mapRegion, 
+                        annotationItems: clusters) { cluster in
+                        MapAnnotation(coordinate: cluster.coordinate) {
+                            if cluster.isCluster {
+                                // Affichage du cluster avec compteur
+                                OptimizedClusterAnnotationView(cluster: cluster) {
+                                    selectedCluster = cluster
+                                    showingClusterDetail = true
+                                }
+                            } else {
+                                // Affichage d'un événement unique
+                                OptimizedJournalMapAnnotationView(entry: cluster.firstEntry) {
+                                    selectedEntry = cluster.firstEntry
+                                    showingEntryDetail = true
+                                }
+                            }
                         }
                     }
                 }
             }
             .ignoresSafeArea(.all) // Plein écran
             .onAppear {
-                if !entriesWithLocation.isEmpty {
+                // MODIFICATION: Ne centrer automatiquement qu'au premier chargement
+                if !hasInitializedMap && !entriesWithLocation.isEmpty {
                     adjustRegionToShowAllEntries()
+                    hasInitializedMap = true
+                    print("🗺️ JournalMapView: Centrage automatique initial effectué")
                 }
             }
             
-            // Overlay pour le bouton retour en haut (conditionnel)
-            if showBackButton {
-                VStack {
+            // Overlay pour les contrôles en haut
+            VStack {
+                // Boutons de navigation avec bulles intégrées (conditionnel)
+                if showBackButton {
                     HStack {
                         Button(action: {
                             dismiss()
@@ -110,12 +154,60 @@ struct JournalMapView: View {
                         }
                         
                         Spacer()
+                        
+                        // NOUVEAU: Bulles d'information à droite du bouton retour (verticales)
+                        if !entriesWithLocation.isEmpty {
+                            VStack(spacing: 6) {
+                                // Bulle pays en haut
+                                if uniqueCountriesCount > 0 {
+                                    LocationInfoBubble(
+                                        count: uniqueCountriesCount,
+                                        label: uniqueCountriesCount == 1 ? "pays" : "pays"
+                                    )
+                                }
+                                
+                                // Bulle villes en dessous
+                                if uniqueCitiesCount > 0 {
+                                    LocationInfoBubble(
+                                        count: uniqueCitiesCount,
+                                        label: uniqueCitiesCount == 1 ? "ville" : "villes"
+                                    )
+                                }
+                            }
+                        }
                     }
                     .padding(.horizontal, 20)
                     .padding(.top, 60) // Espace pour la status bar
-                    
-                    Spacer()
+                } else {
+                    // Quand pas de bouton retour, bulles en haut à droite
+                    if !entriesWithLocation.isEmpty {
+                        HStack {
+                            Spacer()
+                            
+                            VStack(spacing: 6) {
+                                // Bulle pays en haut
+                                if uniqueCountriesCount > 0 {
+                                    LocationInfoBubble(
+                                        count: uniqueCountriesCount,
+                                        label: uniqueCountriesCount == 1 ? "pays" : "pays"
+                                    )
+                                }
+                                
+                                // Bulle villes en dessous
+                                if uniqueCitiesCount > 0 {
+                                    LocationInfoBubble(
+                                        count: uniqueCitiesCount,
+                                        label: uniqueCitiesCount == 1 ? "ville" : "villes"
+                                    )
+                                }
+                            }
+                        }
+                        .padding(.horizontal, 20)
+                        .padding(.top, 60) // Espace pour la status bar
+                    }
                 }
+                
+                Spacer()
             }
             
             // Message d'aide si aucune entrée (centré sur la carte)
@@ -231,19 +323,28 @@ struct JournalMapView: View {
     private func createStableClusters(from entries: [JournalEntry], zoomLevel: Double) -> [JournalCluster] {
         guard !entries.isEmpty else { return [] }
         
-        // Distance de clustering basée sur le niveau de zoom avec hystérésis pour éviter les changements constants
+        // Distance de clustering basée sur le niveau de zoom - LOGIQUE CORRIGÉE
+        // Plus on zoome (zoomLevel petit), plus la distance doit être petite
         let clusterDistance: Double = {
-            if zoomLevel > 10.0 { return 0.005 } // Zoom très faible = très petite distance
-            else if zoomLevel > 5.0 { return 0.02 } // Zoom faible
-            else if zoomLevel > 2.0 { return 0.08 } // Zoom moyen-faible
-            else if zoomLevel > 1.0 { return 0.15 } // Zoom moyen
-            else if zoomLevel > 0.5 { return 0.25 } // Zoom élevé
-            else if zoomLevel > 0.2 { return 0.4 } // Zoom très élevé
-            else { return 0.6 } // Très zoomé = grande distance de clustering
+            if zoomLevel > 15.0 { return 2.0 }      // Vue monde = clustering maximal (continents)
+            else if zoomLevel > 10.0 { return 1.2 } // Vue pays = clustering très large
+            else if zoomLevel > 5.0 { return 0.6 }  // Vue région = clustering large  
+            else if zoomLevel > 2.0 { return 0.2 }  // Vue ville = clustering moyen
+            else if zoomLevel > 1.0 { return 0.08 } // Vue quartier = clustering réduit
+            else if zoomLevel > 0.5 { return 0.03 } // Vue rue = clustering très réduit
+            else if zoomLevel > 0.2 { return 0.015 }// Vue détaillée = clustering minimal
+            else { return 0.008 }                   // Zoom maximum = presque pas de clustering
         }()
+        
+        print("🗺️ Clustering: zoomLevel = \(zoomLevel), distance = \(clusterDistance)")
         
         var clusters: [JournalCluster] = []
         var processedEntries: Set<String> = []
+        
+        // NOUVEAU: Pour les vues très dézoomées, utiliser un clustering par zone géographique
+        if zoomLevel > 8.0 {
+            return createGeographicalClusters(from: entries, zoomLevel: zoomLevel)
+        }
         
         for entry in entries {
             guard !processedEntries.contains(entry.id),
@@ -276,6 +377,43 @@ struct JournalMapView: View {
             )
             
             clusters.append(cluster)
+        }
+        
+        return clusters
+    }
+    
+    // NOUVEAU: Clustering géographique intelligent pour les vues très dézoomées
+    private func createGeographicalClusters(from entries: [JournalEntry], zoomLevel: Double) -> [JournalCluster] {
+        guard !entries.isEmpty else { return [] }
+        
+        print("🌍 Clustering géographique activé pour zoomLevel = \(zoomLevel)")
+        
+        // Grouper par pays d'abord
+        let entriesByCountry = Dictionary(grouping: entries.filter { $0.location != nil }) { entry in
+            entry.location?.country ?? "Inconnu"
+        }
+        
+        var clusters: [JournalCluster] = []
+        
+        for (country, countryEntries) in entriesByCountry {
+            // MODIFICATION: Toujours grouper par ville, même en vue monde
+            // Cela permet de voir la répartition géographique même quand on dézoome
+            let entriesByCity = Dictionary(grouping: countryEntries) { entry in
+                entry.location?.city ?? "Ville inconnue"
+            }
+            
+            for (city, cityEntries) in entriesByCity {
+                let centerCoordinate = calculateCenterCoordinate(for: cityEntries)
+                let stableId = JournalCluster.createId(from: cityEntries)
+                
+                let cluster = JournalCluster(
+                    id: stableId,
+                    coordinate: centerCoordinate,
+                    entries: cityEntries.sorted { $0.eventDate > $1.eventDate }
+                )
+                clusters.append(cluster)
+                print("🏙️ Cluster ville créé: \(city), \(country) avec \(cityEntries.count) événements")
+            }
         }
         
         return clusters
@@ -627,6 +765,31 @@ extension CLLocationCoordinate2D {
         let location1 = CLLocation(latitude: self.latitude, longitude: self.longitude)
         let location2 = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
         return location1.distance(from: location2) / 1000.0 // Retourner en kilomètres
+    }
+}
+
+// MARK: - Location Info Bubble Component
+struct LocationInfoBubble: View {
+    let count: Int
+    let label: String
+    
+    var body: some View {
+        HStack(spacing: 6) {
+            Text("\(count)")
+                .font(.system(size: 16, weight: .bold))
+                .foregroundColor(.black)
+            
+            Text(label)
+                .font(.system(size: 14, weight: .medium))
+                .foregroundColor(.black)
+        }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 8)
+        .background(
+            RoundedRectangle(cornerRadius: 20)
+                .fill(Color.white.opacity(0.95))
+                .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 2)
+        )
     }
 }
 

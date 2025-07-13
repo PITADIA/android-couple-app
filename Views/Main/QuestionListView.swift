@@ -105,6 +105,8 @@ struct QuestionListView: View {
             switch category.title {
             case "Désirs Inavoués":
                 questionKey = "LES PLUS HOTS"
+            case "Pour rigoler à deux":
+                questionKey = "POUR RIRE À DEUX"
             case "À travers la distance":
                 questionKey = "À DISTANCE"
             case "Des questions profondes":

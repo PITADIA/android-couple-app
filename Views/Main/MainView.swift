@@ -65,6 +65,11 @@ struct MainView: View {
                                 print("📱 MainView: Carte widget tappée, ouverture de la page widgets")
                                 activeSheet = .widgets
                             })
+                            
+                            // Section Statistiques sur le couple
+                            CoupleStatisticsView()
+                                .environmentObject(appState)
+                                .padding(.top, 30)
                         }
                         .padding(.bottom, 100) // Espace pour le menu du bas
                         .background(
@@ -125,24 +130,11 @@ struct MainView: View {
                             activeSheet = .favorites
                             print("🔥 MainView: Ouverture des favoris")
                         }) {
-                            ZStack {
-                                Image("heart")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 30, height: 24)
-                                    .foregroundColor(.gray)
-                                
-                                // Badge avec le nombre de favoris
-                                if let favoritesService = appState.favoritesService, favoritesService.getFavoritesCount() > 0 {
-                                    Text("\(favoritesService.getFavoritesCount())")
-                                        .font(.system(size: 10, weight: .bold))
-                                        .foregroundColor(.white)
-                                        .frame(width: 16, height: 16)
-                                        .background(Color.red)
-                                        .clipShape(Circle())
-                                        .offset(x: 13, y: -13)
-                                }
-                            }
+                            Image("heart")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 30, height: 24)
+                                .foregroundColor(.gray)
                         }
                         .frame(maxWidth: .infinity)
                         
@@ -160,11 +152,7 @@ struct MainView: View {
                     }
                     .padding(.horizontal, 20)
                     .padding(.vertical, 12)
-                    .background(
-                        Color.white.opacity(0.95)
-                            .blur(radius: 10)
-                    )
-                    .background(Color.white.opacity(0.9))
+                    .background(Color.white)
                 }
             }
         }
@@ -178,7 +166,14 @@ struct MainView: View {
             }
                 
             case .menu:
-                MenuView()
+                MenuView(
+                    onLocationTutorialTap: {
+                        activeSheet = .locationTutorial
+                    },
+                    onWidgetsTap: {
+                        activeSheet = .widgets
+                    }
+                )
                     .environmentObject(appState)
                     .onAppear {
                         print("🔥 MainView: MenuView apparue dans la sheet")
@@ -251,6 +246,17 @@ struct MainView: View {
                     .environmentObject(appState)
                     .onAppear {
                         print("🗺️ MainView: JournalMapView apparue dans la sheet")
+                    }
+                
+            case .locationTutorial:
+                LocationPermissionFlow()
+                    .onAppear {
+                        print("📍 MainView: LocationPermissionFlow apparue depuis le menu")
+                    }
+                    .onDisappear {
+                        print("📍 MainView: LocationPermissionFlow disparue depuis le menu")
+                        // Démarrer immédiatement les mises à jour de localisation
+                        appState.locationService?.startLocationUpdatesIfAuthorized()
                     }
                 }
         }

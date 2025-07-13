@@ -2,6 +2,7 @@ import SwiftUI
 
 struct MenuContentView: View {
     @EnvironmentObject var appState: AppState
+    @State private var activeSheet: SheetType?
     
     var body: some View {
         NavigationView {
@@ -12,7 +13,14 @@ struct MenuContentView: View {
                 
                 // ScrollView avec le même style que HomeContentView
                 ScrollView {
-                    MenuView()
+                    MenuView(
+                        onLocationTutorialTap: {
+                            activeSheet = .locationTutorial
+                        },
+                        onWidgetsTap: {
+                            activeSheet = .widgets
+                        }
+                    )
                         .environmentObject(appState)
                         .padding(.bottom, 100) // Espace pour le menu du bas
                         .background(
@@ -39,5 +47,22 @@ struct MenuContentView: View {
             }
         }
         .navigationBarHidden(true)
+        .sheet(item: $activeSheet) { sheetType in
+            switch sheetType {
+            case .locationTutorial:
+                LocationPermissionFlow()
+                    .onAppear {
+                        print("📍 MenuContentView: LocationPermissionFlow apparue depuis le menu")
+                    }
+            case .widgets:
+                WidgetsView()
+                    .environmentObject(appState)
+                    .onAppear {
+                        print("📱 MenuContentView: WidgetsView apparue depuis le menu")
+                    }
+            default:
+                EmptyView()
+            }
+        }
     }
 } 

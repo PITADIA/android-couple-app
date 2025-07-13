@@ -67,29 +67,18 @@ struct PartnerDistanceView: View {
     
     // Vérifier si la localisation est manquante pour afficher le flow de permission
     private var shouldShowLocationPermissionFlow: Bool {
-        guard let currentUser = appState.currentUser else { return false }
-        
-        // Si pas de localisation actuelle OU pas de partenaire connecté
-        if currentUser.currentLocation == nil {
-            return true
-        }
-        
-        // Si partenaire connecté mais pas de localisation partenaire
-        if let partnerId = currentUser.partnerId, !partnerId.isEmpty {
-            return partnerLocationService.partnerLocation == nil
-        }
-        
-        return false
+        // Si on affiche "km ?", alors le tutoriel doit être disponible
+        return cachedDistance == "km ?"
     }
     
     // Vérifier si on doit afficher directement l'écran partenaire
     private var shouldShowPartnerLocationMessage: Bool {
         guard let currentUser = appState.currentUser else { return false }
         
-        // Si on a notre localisation ET un partenaire connecté mais qu'on voit toujours "km ?"
+        // Si on a un partenaire connecté ET notre localisation (Firebase ou service) mais qu'on voit toujours "km ?"
         if let partnerId = currentUser.partnerId, 
            !partnerId.isEmpty,
-           currentUser.currentLocation != nil,
+           (currentUser.currentLocation != nil || appState.locationService?.currentLocation != nil),
            cachedDistance == "km ?" {
             return true
         }
@@ -180,13 +169,13 @@ struct PartnerDistanceView: View {
                 partnerLocationService.configureListener(for: partnerId)
             }
         }
-        .onChange(of: appState.locationService?.currentLocation) { _ in
+        .onChange(of: appState.locationService?.currentLocation) { oldValue, newValue in
             updateCacheIfNeeded()
         }
-        .onChange(of: partnerLocationService.partnerLocation) { _ in
+        .onChange(of: partnerLocationService.partnerLocation) { oldValue, newValue in
             updateCacheIfNeeded()
         }
-        .onChange(of: appState.currentUser?.partnerId) { _ in
+        .onChange(of: appState.currentUser?.partnerId) { oldValue, newValue in
             updateCacheIfNeeded()
         }
         .onReceive(Timer.publish(every: 30, on: .main, in: .common).autoconnect()) { _ in

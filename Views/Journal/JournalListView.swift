@@ -98,7 +98,7 @@ struct JournalListView: View {
                     print("🔍 JournalListView: selectedEntry remis à nil")
                 }
         }
-        .onChange(of: selectedEntry) { newValue in
+        .onChange(of: selectedEntry) { oldValue, newValue in
             if let entry = newValue {
                 print("🔍 JournalListView: selectedEntry changé vers: '\(entry.title)' (ID: \(entry.id))")
             } else {

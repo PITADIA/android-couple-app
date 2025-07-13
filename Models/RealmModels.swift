@@ -214,7 +214,8 @@ class QuestionCacheManager: ObservableObject {
                 ("EN COUPLE", "En couple"),
                 ("TU PRÉFÈRES ?", "Tu préfères quoi ?"),
                 ("QUESTIONS PROFONDES", "Des questions profondes"),
-                ("LES PLUS HOTS", "Désirs Inavoués")
+                ("LES PLUS HOTS", "Désirs Inavoués"),
+                ("POUR RIRE À DEUX", "Pour rigoler à deux")
             ]
             
             for (key, displayName) in essentialCategories {

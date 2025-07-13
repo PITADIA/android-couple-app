@@ -197,10 +197,10 @@ struct JournalEntryDetailView: View {
         } message: {
             Text("Cette action est irréversible. Le souvenir sera supprimé définitivement.")
         }
-        .onChange(of: showingDeleteAlert) { newValue in
+        .onChange(of: showingDeleteAlert) { oldValue, newValue in
             print("🗑️ JournalEntryDetailView: showingDeleteAlert changé: \(newValue)")
         }
-        .onChange(of: isDeleting) { newValue in
+        .onChange(of: isDeleting) { oldValue, newValue in
             print("🗑️ JournalEntryDetailView: isDeleting changé: \(newValue)")
         }
     }

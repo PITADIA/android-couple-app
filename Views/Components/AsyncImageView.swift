@@ -72,7 +72,7 @@ struct AsyncImageView: View {
         .onAppear {
             loadImageIfNeeded()
         }
-        .onChange(of: imageURL) { _ in
+        .onChange(of: imageURL) { oldValue, newValue in
             loadImageIfNeeded()
         }
     }

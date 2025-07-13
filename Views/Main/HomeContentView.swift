@@ -76,6 +76,11 @@ struct HomeContentView: View {
                                 activeSheet = .widgets
                             })
                         }
+                        
+                        // Section Statistiques sur le couple
+                        CoupleStatisticsView()
+                            .environmentObject(appState)
+                            .padding(.top, 30)
                     }
                     .padding(.bottom, 100) // Espace pour le menu du bas
                     .background(

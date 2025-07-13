@@ -7,6 +7,8 @@ import SwiftyCrop
 struct MenuView: View {
     @EnvironmentObject var appState: AppState
     @Environment(\.dismiss) private var dismiss
+    var onLocationTutorialTap: (() -> Void)?
+    var onWidgetsTap: (() -> Void)?
 
     @State private var showingDeleteConfirmation = false
     @State private var isDeleting = false
@@ -15,6 +17,8 @@ struct MenuView: View {
     @State private var showingPartnerCode = false
     @State private var showingNameEdit = false
     @State private var showingRelationshipEdit = false
+    @State private var showingLocationTutorial = false
+    @State private var showingWidgets = false
 
     @State private var editedName = ""
     @State private var editedRelationshipStart = ""
@@ -74,23 +78,13 @@ struct MenuView: View {
                         )
                     )
                 ) { resultImage in
-                    print("🔥🔥🔥 MENU_SWIFTYCROP: Callback appelé avec image croppée")
                     guard let finalImage = resultImage else {
-                        print("❌ MENU_SWIFTYCROP: L'image croppée est nil")
                         self.showImageCropper = false
                         return
                     }
-                    print("🔥🔥🔥 MENU_SWIFTYCROP: Cropped image size = \(finalImage.size)")
                     self.croppedImage = finalImage
                     self.profileImage = finalImage
-                    print("🔥🔥🔥 MENU_SWIFTYCROP: Fermeture du cropper...")
                     self.showImageCropper = false
-                }
-                .onAppear {
-                    print("🔥🔥🔥 MENU_SWIFTYCROP: SwiftyCropView.onAppear() appelé")
-                }
-                .onDisappear {
-                    print("🔥🔥🔥 MENU_SWIFTYCROP: SwiftyCropView.onDisappear() appelé")
                 }
             } else {
                 // Afficher une vue d'erreur au lieu d'un écran blanc
@@ -100,7 +94,6 @@ struct MenuView: View {
                         .foregroundColor(.red)
                     
                     Button("Fermer") {
-                        print("🔥🔥🔥 MENU_SWIFTYCROP: Fermeture forcée du cropper")
                         self.showImageCropper = false
                     }
                     .foregroundColor(.white)
@@ -110,9 +103,7 @@ struct MenuView: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color.black)
-                .onAppear {
-                    print("❌❌❌ MENU_SWIFTYCROP: ERREUR - selectedImage est nil!")
-                }
+
             }
         }
         .alert(isPresented: $showSettingsAlert) {
@@ -127,23 +118,7 @@ struct MenuView: View {
         }
         .onChange(of: profileImage) { _, newImage in
             if let image = newImage {
-                print("🔥 MenuView: Nouvelle image sélectionnée, démarrage upload")
                 uploadProfileImage(image)
-            }
-        }
-        .onChange(of: showImageCropper) { _, newValue in
-            print("🔥🔥🔥 MENU_SWIFTYCROP: onChange showImageCropper = \(newValue)")
-        }
-        .onChange(of: selectedImage) { _, newImage in
-            print("🔥🔥🔥 MENU_SWIFTYCROP: onChange selectedImage = \(newImage != nil)")
-            if let image = newImage {
-                print("🔥🔥🔥 MENU_SWIFTYCROP: Nouvelle image sélectionnée, size = \(image.size)")
-            }
-        }
-        .onChange(of: croppedImage) { _, newImage in
-            print("🔥🔥🔥 MENU_SWIFTYCROP: onChange croppedImage = \(newImage != nil)")
-            if let image = newImage {
-                print("🔥🔥🔥 MENU_SWIFTYCROP: Nouvelle image croppée, size = \(image.size)")
             }
         }
         .alert("Supprimer le compte", isPresented: $showingDeleteConfirmation) {
@@ -173,6 +148,13 @@ struct MenuView: View {
             .presentationDetents([.height(350)])
             .presentationDragIndicator(.visible)
         }
+        .sheet(isPresented: $showingLocationTutorial) {
+            LocationPermissionFlow()
+        }
+        .sheet(isPresented: $showingWidgets) {
+            WidgetsView()
+                .environmentObject(appState)
+        }
 
 
         .onAppear {
@@ -191,9 +173,11 @@ struct MenuView: View {
                     checkPhotoLibraryPermission() // ✅ Même comportement que l'onboarding
                 }) {
                 ZStack {
+                    // Léger effet de surbrillance autour (identique à PartnerDistanceView)
                     Circle()
-                        .fill(Color.gray.opacity(0.1))
-                        .frame(width: 120, height: 120)
+                        .fill(Color.white.opacity(0.35))
+                        .frame(width: 120 + 12, height: 120 + 12)
+                        .blur(radius: 6)
                     
                     if let croppedImage = croppedImage {
                         // Priorité à l'image croppée récemment
@@ -225,6 +209,11 @@ struct MenuView: View {
                                     .foregroundColor(.gray)
                             )
                     }
+                    
+                    // Bordure blanche (identique à PartnerDistanceView)
+                    Circle()
+                        .stroke(Color.white, lineWidth: 3)
+                        .frame(width: 120, height: 120)
                 }
             }
             .buttonStyle(PlainButtonStyle())
@@ -278,6 +267,53 @@ struct MenuView: View {
                 }
             )
             
+            // Tutoriel de localisation
+            ProfileRowView(
+                title: "Tutoriel de localisation",
+                value: "",
+                showChevron: true,
+                action: {
+                    if let onLocationTutorialTap = onLocationTutorialTap {
+                        onLocationTutorialTap()
+                    } else {
+                        showingLocationTutorial = true
+                    }
+                }
+            )
+            
+            // Laissez nous un avis
+            ProfileRowView(
+                title: "Laissez nous un avis",
+                value: "",
+                showChevron: true,
+                action: {
+                    openAppStoreReview()
+                }
+            )
+            
+            // Widgets
+            ProfileRowView(
+                title: "Widgets",
+                value: "",
+                showChevron: true,
+                action: {
+                    if let onWidgetsTap = onWidgetsTap {
+                        onWidgetsTap()
+                    } else {
+                        showingWidgets = true
+                    }
+                }
+            )
+            
+            // Gérer son abonnement
+            ProfileRowView(
+                title: "Gérer son abonnement",
+                value: "",
+                showChevron: true,
+                action: {
+                    openSubscriptionSettings()
+                }
+            )
 
         }
         .padding(.bottom, 30)
@@ -319,16 +355,6 @@ struct MenuView: View {
                 }
             )
             
-            // Aidez-nous à améliorer l'app
-            ProfileRowView(
-                title: "Une recommandation ?",
-                value: "",
-                showChevron: true,
-                action: {
-                    openSupportEmail()
-                }
-            )
-            
             // CGV
             ProfileRowView(
                 title: "Conditions générales d'utilisation",
@@ -355,12 +381,12 @@ struct MenuView: View {
                 }
             )
             
-            // Supprimer le compte (en rouge)
+            // Supprimer le compte
             ProfileRowView(
                 title: isDeleting ? "Suppression en cours..." : "Supprimer le compte",
                 value: "",
                 showChevron: false,
-                isDestructive: true,
+                isDestructive: false,
                 action: {
                     showingDeleteConfirmation = true
                 }
@@ -404,31 +430,17 @@ struct MenuView: View {
     // L'upload vers Firebase se fait maintenant via onChange de profileImage
     
     private func uploadProfileImage(_ image: UIImage) {
-        print("🔥 MenuView: uploadProfileImage appelé - Taille image: \(image.size)")
-        
         guard let currentUser = appState.currentUser else {
-            print("❌ MenuView: Aucun utilisateur connecté pour l'upload")
             return
         }
         
-        print("🔥 MenuView: Utilisateur trouvé: \(currentUser.name) (ID: \(currentUser.id))")
-        
         // Afficher l'image temporairement
         profileImage = image
-        print("🔥 MenuView: Image temporaire mise à jour dans l'interface")
         
         // Utiliser la nouvelle méthode dédiée à l'upload d'image de profil
-        print("🔥 MenuView: Appel updateProfileImage pour upload image")
         FirebaseService.shared.updateProfileImage(image) { [weak appState] success, imageURL in
             DispatchQueue.main.async {
-                print("🔥 MenuView: Callback updateProfileImage - Success: \(success)")
-                print("🔥 MenuView: URL image: \(imageURL ?? "nil")")
-                
-                if success {
-                    print("✅ MenuView: Image de profil mise à jour avec succès")
-                    // L'utilisateur sera mis à jour automatiquement dans FirebaseService
-                } else {
-                    print("❌ MenuView: Erreur lors de la mise à jour de l'image")
+                if !success {
                     // Réinitialiser l'image temporaire en cas d'erreur
                     self.profileImage = nil
                 }
@@ -447,7 +459,6 @@ struct MenuView: View {
         // Sauvegarder dans Firebase
                  FirebaseService.shared.updateUserName(newName) { success in
              if !success {
-                 print("❌ Erreur lors de la mise à jour du nom")
                  // Rollback en cas d'erreur
                  DispatchQueue.main.async {
                      self.appState.currentUser = currentUser
@@ -463,11 +474,8 @@ struct MenuView: View {
         formatter.locale = Locale(identifier: "fr_FR")
         
         guard let date = formatter.date(from: newDateString) else {
-            print("❌ Erreur conversion date: \(newDateString)")
             return
         }
-        
-        print("🔥 Mise à jour date relation: \(date)")
         
         // Mettre à jour localement d'abord
         if var currentUser = appState.currentUser {
@@ -479,7 +487,6 @@ struct MenuView: View {
          FirebaseService.shared.updateRelationshipStartDate(date) { success in
              DispatchQueue.main.async {
                  if !success {
-                     print("❌ Erreur lors de la mise à jour de la date de relation")
                      // Rollback en cas d'erreur
                      if let originalUser = self.appState.currentUser {
                          var rollbackUser = originalUser
@@ -500,6 +507,23 @@ struct MenuView: View {
         }
     }
     
+    private func openAppStoreReview() {
+        print("🔥 MenuView: Ouverture de la page App Store pour avis")
+        // URL pour ouvrir directement la page de rédaction d'avis sur l'App Store
+        // Remplacez YOUR_APP_ID par l'ID réel de votre app sur l'App Store
+        if let url = URL(string: "https://apps.apple.com/app/id6746807184?action=write-review") {
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    private func openSubscriptionSettings() {
+        print("🔥 MenuView: Ouverture des réglages d'abonnement")
+        // URL pour ouvrir directement les réglages d'abonnement dans l'app Réglages
+        if let url = URL(string: "https://apps.apple.com/account/subscriptions") {
+            UIApplication.shared.open(url)
+        }
+    }
+    
          private func deleteAccount() {
          isDeleting = true
          
@@ -509,7 +533,7 @@ struct MenuView: View {
                  if success {
                      print("✅ Compte supprimé avec succès")
                      self.appState.deleteAccount()
-                 } else {
+                 } else { 
                      print("❌ Erreur lors de la suppression du compte")
                  }
              }
@@ -574,6 +598,8 @@ struct ProfileRowView: View {
             }
             .padding(.horizontal, 20)
             .padding(.vertical, 16)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .contentShape(Rectangle())
         }
         .buttonStyle(PlainButtonStyle())
     }
