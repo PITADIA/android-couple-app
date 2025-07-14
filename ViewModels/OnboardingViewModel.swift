@@ -40,21 +40,25 @@ class OnboardingViewModel: ObservableObject {
     private var isCompletingSubscription = false
     
     // Options pour les objectifs de relation
-    let relationshipGoals = [
-        "💌 Créer une vraie connexion",
-        "🔥 Parler enfin des sujets qu'on évite",
-        "🌶️ Faire monter la passion entre nous",
-        "🎉 Partager plus de rires ensemble",
-        "💕 Retrouver une vraie complicité"
-    ]
+    var relationshipGoals: [String] {
+        [
+            "goal_create_connection".localized,
+            "goal_talk_avoided_subjects".localized,
+            "goal_increase_passion".localized,
+            "goal_share_more_laughs".localized,
+            "goal_find_complicity".localized
+        ]
+    }
 
     // Options pour l'amélioration de la relation
-    let relationshipImprovements = [
-        "✨ Créer un moment fort à deux",
-        "💕 Raviver notre connexion",
-        "🔄 Sortir de la routine",
-        "🤍 Se dire ce qu'on n'a jamais dit"
-    ]
+    var relationshipImprovements: [String] {
+        [
+            "improvement_create_strong_moment".localized,
+            "improvement_revive_connection".localized,
+            "improvement_break_routine".localized,
+            "improvement_say_unsaid".localized
+        ]
+    }
     
     // Options pour le mode de questions
     let questionModes = [

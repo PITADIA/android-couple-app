@@ -15,7 +15,7 @@ struct CategoriesPreviewStepView: View {
             
             // Titre centré à gauche
             HStack {
-                Text("Plus de 2000 questions à poser à votre âme sœur")
+                Text("more_than_2000_questions".localized)
                     .font(.system(size: 36, weight: .bold))
                     .foregroundColor(.black)
                     .multilineTextAlignment(.leading)
@@ -51,7 +51,7 @@ struct CategoriesPreviewStepView: View {
                 Button(action: {
                     viewModel.nextStep()
                 }) {
-                    Text("Continuer")
+                    Text("continue".localized)
                         .font(.system(size: 18, weight: .semibold))
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)

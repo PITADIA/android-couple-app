@@ -32,7 +32,7 @@ class PartnerCodeService: ObservableObject {
         guard let currentUser = Auth.auth().currentUser else {
             print("❌ PartnerCodeService: Utilisateur non connecté")
             await MainActor.run {
-                self.errorMessage = "Utilisateur non connecté"
+                self.errorMessage = NSLocalizedString("user_not_connected", comment: "User not connected error")
             }
             return nil
         }
@@ -155,7 +155,7 @@ class PartnerCodeService: ObservableObject {
             guard let data = result.data as? [String: Any] else {
                 print("❌ PartnerCodeService: Réponse de connexion invalide")
                 await MainActor.run {
-                    self.errorMessage = "Erreur lors de la connexion"
+                    self.errorMessage = NSLocalizedString("connection_error", comment: "Connection error")
                     self.isLoading = false
                 }
                 return false
@@ -164,7 +164,7 @@ class PartnerCodeService: ObservableObject {
             guard let success = data["success"] as? Bool, success else {
                 print("❌ PartnerCodeService: Connexion échouée")
                 await MainActor.run {
-                    self.errorMessage = "Erreur lors de la connexion"
+                    self.errorMessage = NSLocalizedString("connection_error", comment: "Connection error")
                     self.isLoading = false
                 }
                 return false

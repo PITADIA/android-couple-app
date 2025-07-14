@@ -20,7 +20,7 @@ struct PartnerStatusCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack {
-                Text("👥 Statut Partenaires")
+                Text("partner_status_title".localized)
                     .font(.headline.bold())
                     .foregroundColor(.primary)
                 
@@ -37,7 +37,7 @@ struct PartnerStatusCard: View {
                 HStack(spacing: 15) {
                     // Utilisateur actuel
                     UserStatusView(
-                        title: "Vous",
+                        title: "you".localized,
                         userInfo: currentUserInfo,
                         isCurrentUser: true
                     )
@@ -52,7 +52,7 @@ struct PartnerStatusCard: View {
                     
                     // Partenaire
                     UserStatusView(
-                        title: "Partenaire",
+                        title: "partner".localized,
                         userInfo: partnerInfo,
                         isCurrentUser: false
                     )
@@ -70,8 +70,9 @@ struct PartnerStatusCard: View {
                     HStack {
                         Image(systemName: "person.slash")
                             .foregroundColor(.gray)
-                        Text("Aucun partenaire connecté")
-                            .foregroundColor(.secondary)
+                        Text("no_partner_connected".localized)
+                            .font(.system(size: 16))
+                            .foregroundColor(.black.opacity(0.7))
                         Spacer()
                     }
                     
@@ -115,9 +116,9 @@ struct PartnerStatusCard: View {
                 .background(Color.white.opacity(0.3))
             
             HStack {
-                Text("🎯 Accès Premium:")
-                    .font(.caption.bold())
-                    .foregroundColor(.secondary)
+                Text(NSLocalizedString("premium_access_label", comment: "Premium access label"))
+                    .font(.system(size: 14, weight: .medium))
+                    .foregroundColor(.black)
                 
                 Spacer()
                 
@@ -128,8 +129,8 @@ struct PartnerStatusCard: View {
                         Image(systemName: "checkmark.circle.fill")
                             .foregroundColor(.green)
                             .font(.caption)
-                        Text("Les deux ont accès")
-                            .font(.caption.bold())
+                        Text(NSLocalizedString("both_have_access", comment: "Both have access status"))
+                            .font(.system(size: 14))
                             .foregroundColor(.green)
                     }
                 } else if currentUserInfo?.isSubscribed == true || partnerInfo?.isSubscribed == true {
@@ -137,7 +138,7 @@ struct PartnerStatusCard: View {
                         Image(systemName: "exclamationmark.triangle.fill")
                             .foregroundColor(.orange)
                             .font(.caption)
-                        Text("Synchronisation en cours...")
+                        Text(NSLocalizedString("syncing", comment: "Syncing status"))
                             .font(.caption.bold())
                             .foregroundColor(.orange)
                     }
@@ -146,8 +147,8 @@ struct PartnerStatusCard: View {
                         Image(systemName: "xmark.circle.fill")
                             .foregroundColor(.red)
                             .font(.caption)
-                        Text("Aucun accès premium")
-                            .font(.caption.bold())
+                        Text(NSLocalizedString("no_premium_access", comment: "No premium access status"))
+                            .font(.system(size: 14))
                             .foregroundColor(.red)
                     }
                 }
@@ -160,7 +161,7 @@ struct PartnerStatusCard: View {
             Divider()
                 .background(Color.white.opacity(0.3))
             
-            Text("⚡️ Actions Rapides")
+            Text(NSLocalizedString("quick_actions", comment: "Quick actions title"))
                 .font(.caption.bold())
                 .foregroundColor(.secondary)
             
@@ -172,7 +173,7 @@ struct PartnerStatusCard: View {
                     HStack(spacing: 4) {
                         Image(systemName: "plus.circle.fill")
                             .font(.caption)
-                        Text("S'abonner")
+                        Text(NSLocalizedString("subscribe_button", comment: "Subscribe button"))
                             .font(.caption.bold())
                     }
                     .foregroundColor(.white)
@@ -190,8 +191,9 @@ struct PartnerStatusCard: View {
                     HStack(spacing: 4) {
                         Image(systemName: "minus.circle.fill")
                             .font(.caption)
-                        Text("Résilier")
-                            .font(.caption.bold())
+                        Text(NSLocalizedString("cancel_subscription", comment: "Cancel subscription button"))
+                            .font(.system(size: 14, weight: .medium))
+                            .foregroundColor(.red)
                     }
                     .foregroundColor(.white)
                     .padding(.horizontal, 12)
@@ -420,7 +422,7 @@ struct UserStatusView: View {
                 }
             } else {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("...")
+                    Text(NSLocalizedString("ellipsis", comment: "Ellipsis"))
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                     
@@ -428,7 +430,7 @@ struct UserStatusView: View {
                         Circle()
                             .fill(.gray)
                             .frame(width: 8, height: 8)
-                        Text("Chargement...")
+                        Text(NSLocalizedString("loading_simple", comment: "Loading status"))
                             .font(.caption)
                             .foregroundColor(.secondary)
                     }

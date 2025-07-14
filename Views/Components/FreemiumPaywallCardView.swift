@@ -17,21 +17,21 @@ struct FreemiumPaywallCardView: View {
                         .font(.system(size: 60))
                         .padding(.bottom, 10)
                     
-                    Text("Félicitation")
-                        .font(.system(size: 28, weight: .bold))
+                    Text("congratulations".localized)
+                        .font(.system(size: 32, weight: .bold))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
+                        .padding(.horizontal, 30)
                     
-                    Text("Récupérez votre accès à toutes les autres questions et catégories")
-                        .font(.system(size: 20, weight: .semibold))
-                        .foregroundColor(.white)
+                    Text("recover_access_message".localized)
+                        .font(.system(size: 18))
+                        .foregroundColor(.white.opacity(0.9))
                         .multilineTextAlignment(.center)
-                        .padding(.horizontal, 20)
-                        .padding(.top, 10)
+                        .padding(.horizontal, 30)
                     
                     // Bouton d'action
                     HStack(spacing: 8) {
-                        Text("✨ Continuer")
+                        Text("continue_special".localized)
                             .font(.system(size: 18, weight: .bold))
                             .foregroundColor(.white)
                         
@@ -64,7 +64,7 @@ struct FreemiumPaywallCardView: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 24, height: 24)
                     
-                    Text("Love2Love")
+                    Text("app_name".localized)
                         .font(.system(size: 16, weight: .semibold))
                         .foregroundColor(.white.opacity(0.9))
                 }

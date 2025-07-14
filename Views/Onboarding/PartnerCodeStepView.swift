@@ -17,7 +17,7 @@ struct PartnerCodeStepView: View {
                 
                 VStack(spacing: 40) {
                     // Titre principal
-                    Text("Connecte-toi avec ton partenaire")
+                    Text("connect_with_partner".localized)
                         .font(.system(size: 28, weight: .bold))
                         .foregroundColor(.black)
                         .multilineTextAlignment(.center)
@@ -26,7 +26,7 @@ struct PartnerCodeStepView: View {
                         .padding(.horizontal, 30)
                     
                     // Sous-titre
-                    Text("Connecte-toi avec ton partenaire pour partager ton journal avec lui, et profiter de tous les avantages de l'application.")
+                    Text("connect_partner_description".localized)
                         .font(.system(size: 16))
                         .foregroundColor(.black.opacity(0.7))
                         .multilineTextAlignment(.center)
@@ -57,7 +57,7 @@ struct PartnerCodeStepView: View {
                     Button(action: {
                         viewModel.nextStep()
                     }) {
-                        Text("Continuer")
+                        Text("continue".localized)
                             .font(.system(size: 18, weight: .semibold))
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity)
@@ -131,9 +131,9 @@ struct PartnerCodeStepView: View {
     
     private var loadingCodeSection: some View {
         VStack(spacing: 20) {
-            Text("Génération du code...")
+            Text("code_generation".localized)
                 .font(.system(size: 16))
-                .foregroundColor(.black)
+                .foregroundColor(.black.opacity(0.6))
             
             ProgressView()
                 .progressViewStyle(CircularProgressViewStyle(tint: .black))
@@ -144,9 +144,9 @@ struct PartnerCodeStepView: View {
     
     private var errorCodeSection: some View {
         VStack(spacing: 20) {
-            Text("Erreur lors de la génération")
+            Text("generation_error".localized)
                 .font(.system(size: 16))
-                .foregroundColor(.black)
+                .foregroundColor(.red)
             
             if let errorMessage = partnerCodeService.errorMessage {
                 Text(errorMessage)
@@ -155,7 +155,7 @@ struct PartnerCodeStepView: View {
                     .multilineTextAlignment(.center)
             }
             
-            Button("Réessayer") {
+            Button("retry".localized) {
                 Task {
                     await partnerCodeService.generatePartnerCode()
                 }
@@ -176,9 +176,9 @@ struct PartnerCodeStepView: View {
     
     private func generatedCodeSection(code: String) -> some View {
         VStack(spacing: 20) {
-            Text("Envoie ce code à ton partenaire")
+            Text("send_code_to_partner".localized)
                 .font(.system(size: 16))
-                .foregroundColor(.black)
+                .foregroundColor(.black.opacity(0.7))
                 .multilineTextAlignment(.center)
             
             // Code avec style adapté au fond gris
@@ -197,7 +197,7 @@ struct PartnerCodeStepView: View {
             )
             
             // Bouton "Envoyer le code"
-            Button("Envoyer le code") {
+            Button("send_code".localized) {
                 shareCode(code)
             }
             .font(.system(size: 16, weight: .medium))
@@ -216,12 +216,12 @@ struct PartnerCodeStepView: View {
     
     private var enterCodeSection: some View {
         VStack(spacing: 20) {
-            Text("Saisis le code de ton partenaire")
+            Text("enter_partner_code".localized)
                 .font(.system(size: 16))
                 .foregroundColor(.black)
             
             // Champ de saisie adapté au fond gris
-            TextField("Saisis le code", text: $enteredCode)
+            TextField("enter_code_placeholder".localized, text: $enteredCode)
                 .font(.system(size: 18, weight: .medium))
                 .foregroundColor(.black)
                 .multilineTextAlignment(.center)
@@ -256,9 +256,9 @@ struct PartnerCodeStepView: View {
                         ProgressView()
                             .progressViewStyle(CircularProgressViewStyle(tint: Color(hex: "#FD267A")))
                             .scaleEffect(0.8)
-                        Text("Connexion...")
+                        Text("connecting_status".localized)
                     } else {
-                        Text("Connecter")
+                        Text("connect".localized)
                     }
                 }
                 .font(.system(size: 18, weight: .bold))
@@ -293,7 +293,7 @@ struct PartnerCodeStepView: View {
     }
     
     private func createShareMessage(code: String) -> String {
-        "Voici mon code partenaire Love2Love: \(code)"
+        "share_partner_code_message".localized.replacingOccurrences(of: "{code}", with: code)
     }
 }
 

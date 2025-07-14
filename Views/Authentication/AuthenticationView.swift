@@ -24,7 +24,7 @@ struct AuthenticationView: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 40, height: 40)
                         
-                        Text("Love2Love")
+                        Text("app_name".localized)
                             .font(.system(size: 50, weight: .bold))
                             .foregroundColor(.black)
                     }
@@ -36,7 +36,7 @@ struct AuthenticationView: View {
                 
                 // Titre principal centré - directement sur le background
                 VStack(spacing: 20) {
-                    Text("L'application qui vous rapproche")
+                    Text("app_tagline".localized)
                         .font(.system(size: 36, weight: .bold))
                         .foregroundColor(.black)
                         .multilineTextAlignment(.center)
@@ -45,7 +45,7 @@ struct AuthenticationView: View {
                         .padding(.horizontal, 30)
                     
                     // Sous-titre
-                    Text("Redécouvrez-vous à travers des questions qui raviveront votre amour et sauvegardez les moments passés ensemble.")
+                    Text("app_description".localized)
                         .font(.system(size: 18))
                         .foregroundColor(.black.opacity(0.7))
                         .multilineTextAlignment(.center)
@@ -63,7 +63,7 @@ struct AuthenticationView: View {
                     Button(action: {
                         startOnboarding()
                     }) {
-                        Text("Commencer Gratuitement")
+                        Text("start_free".localized)
                             .font(.system(size: 18, weight: .semibold))
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity)
@@ -78,7 +78,7 @@ struct AuthenticationView: View {
                         print("🔥 AuthenticationView: Bouton 'J'ai déjà un compte' pressé")
                         performAppleSignIn()
                     }) {
-                        Text("J'ai déjà un compte")
+                        Text("already_have_account".localized)
                             .font(.system(size: 16))
                             .foregroundColor(.black.opacity(0.6))
                             .underline()

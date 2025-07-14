@@ -62,7 +62,7 @@ struct HomeContentView: View {
                         VStack(alignment: .leading, spacing: 16) {
                             // Titre "Widgets" à gauche
                             HStack {
-                                Text("Widgets")
+                                Text(NSLocalizedString("widgets", comment: "Widgets title"))
                                     .font(.system(size: 22, weight: .bold))
                                     .foregroundColor(.black)
                                     .padding(.horizontal, 20)

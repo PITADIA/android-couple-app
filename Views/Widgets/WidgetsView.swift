@@ -11,6 +11,11 @@ struct WidgetsView: View {
     @State private var showHomeScreenTutorial = false
     @State private var showSubscriptionSheet = false
     
+    // Helper pour localisation UI
+    private func ui(_ key: String) -> String {
+        return LocalizationService.ui(key)
+    }
+    
     // Utiliser le WidgetService global d'AppState
     private var widgetService: WidgetService? {
         return appState.widgetService
@@ -22,8 +27,8 @@ struct WidgetsView: View {
     }
     
     enum WidgetType: String, CaseIterable {
-        case countdown = "Compteur"
-        case daysTotal = "Jours ensemble"
+        case countdown = "countdown"
+        case daysTotal = "daysTotal"
         
         var icon: String {
             switch self {
@@ -77,17 +82,18 @@ struct WidgetsView: View {
                         
                         // Section Écran verrouillé
                         VStack(alignment: .leading, spacing: 16) {
-                            Text("Écran verrouillé")
-                                .font(.system(size: 22, weight: .bold))
+                            Text("lock_screen".localized)
+                                .font(.system(size: 24, weight: .bold))
                                 .foregroundColor(.black)
+                                .multilineTextAlignment(.center)
                                 .padding(.horizontal, 20)
                             
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 16) {
-                                    LockScreenWidgetPreview(title: "Distance", subtitle: "Notre distance", widgetType: .distance, widgetService: widgetService, appState: appState, hasSubscription: hasSubscription, onPremiumTap: {
-                                        showSubscriptionSheet = true
-                                    })
-                                    LockScreenWidgetPreview(title: "Jours ensemble", subtitle: "1 jours", widgetType: .days, widgetService: widgetService, appState: appState, hasSubscription: hasSubscription, onPremiumTap: {
+                                                    LockScreenWidgetPreview(title: ui("widget_distance_title"), subtitle: ui("widget_distance_subtitle"), widgetType: .distance, widgetService: widgetService, appState: appState, hasSubscription: hasSubscription, onPremiumTap: {
+                    showSubscriptionSheet = true
+                })
+                LockScreenWidgetPreview(title: ui("widget_days_total_title"), subtitle: ui("widget_days_subtitle"), widgetType: .days, widgetService: widgetService, appState: appState, hasSubscription: hasSubscription, onPremiumTap: {
                                         showSubscriptionSheet = true
                                     })
                                 }
@@ -97,20 +103,21 @@ struct WidgetsView: View {
                         
                         // Section Écran d'accueil
                         VStack(alignment: .leading, spacing: 16) {
-                            Text("Écran d'accueil")
-                                .font(.system(size: 22, weight: .bold))
+                            Text("home_screen".localized)
+                                .font(.system(size: 24, weight: .bold))
                                 .foregroundColor(.black)
+                                .multilineTextAlignment(.center)
                                 .padding(.horizontal, 20)
                             
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack(spacing: 16) {
-                                    HomeScreenWidgetPreview(title: "Jours ensemble", subtitle: "Petit widget", isMain: true, widgetService: widgetService, appState: appState, hasSubscription: hasSubscription, onPremiumTap: {
-                                        showSubscriptionSheet = true
-                                    })
-                                    HomeScreenWidgetPreview(title: "Distance", subtitle: "Petit widget", isMain: false, widgetService: widgetService, appState: appState, hasSubscription: hasSubscription, onPremiumTap: {
-                                        showSubscriptionSheet = true
-                                    })
-                                    HomeScreenWidgetPreview(title: "Complet", subtitle: "Grand widget", isMain: false, widgetService: widgetService, appState: appState, hasSubscription: hasSubscription, onPremiumTap: {
+                                                    HomeScreenWidgetPreview(title: ui("widget_days_total_title"), subtitle: ui("widget_small_subtitle"), isMain: true, widgetService: widgetService, appState: appState, hasSubscription: hasSubscription, onPremiumTap: {
+                    showSubscriptionSheet = true
+                })
+                HomeScreenWidgetPreview(title: ui("widget_distance_title"), subtitle: ui("widget_small_subtitle"), isMain: false, widgetService: widgetService, appState: appState, hasSubscription: hasSubscription, onPremiumTap: {
+                    showSubscriptionSheet = true
+                })
+                HomeScreenWidgetPreview(title: ui("widget_complete_title"), subtitle: ui("widget_large_subtitle"), isMain: false, widgetService: widgetService, appState: appState, hasSubscription: hasSubscription, onPremiumTap: {
                                         showSubscriptionSheet = true
                                     })
                     }
@@ -120,9 +127,10 @@ struct WidgetsView: View {
                         
                         // Section Comment ajouter
                         VStack(alignment: .leading, spacing: 16) {
-                            Text("Comment les ajouter ?")
-                                .font(.system(size: 22, weight: .bold))
+                            Text("how_to_add".localized)
+                                .font(.system(size: 24, weight: .bold))
                                 .foregroundColor(.black)
+                                .multilineTextAlignment(.center)
                                 .padding(.horizontal, 20)
                 
                             VStack(spacing: 12) {
@@ -132,15 +140,15 @@ struct WidgetsView: View {
                                 }) {
                                     HStack(spacing: 16) {
                                         VStack(alignment: .leading, spacing: 6) {
-                                            Text("Widget écran de verrouillage")
-                                                .font(.system(size: 18, weight: .bold))
+                                            Text("lock_screen_widget".localized)
+                                                .font(.system(size: 18, weight: .semibold))
                                                 .foregroundColor(.black)
-                                                .multilineTextAlignment(.leading)
+                                                .multilineTextAlignment(.center)
                                             
-                                            Text("Guide complet")
+                                            Text("complete_guide".localized)
                                                 .font(.system(size: 14))
-                                                .foregroundColor(.gray)
-                                                .multilineTextAlignment(.leading)
+                                                .foregroundColor(.black.opacity(0.7))
+                                                .multilineTextAlignment(.center)
                                         }
                                         
                                         Spacer()
@@ -165,15 +173,15 @@ struct WidgetsView: View {
                                 }) {
                                     HStack(spacing: 16) {
                                         VStack(alignment: .leading, spacing: 6) {
-                                            Text("Widget écran d'accueil")
-                                                .font(.system(size: 18, weight: .bold))
+                                            Text("home_screen_widget".localized)
+                                                .font(.system(size: 18, weight: .semibold))
                                                 .foregroundColor(.black)
-                                                .multilineTextAlignment(.leading)
+                                                .multilineTextAlignment(.center)
                                             
-                                            Text("Guide complet")
+                                            Text("complete_guide".localized)
                                                 .font(.system(size: 14))
-                                                .foregroundColor(.gray)
-                                                .multilineTextAlignment(.leading)
+                                                .foregroundColor(.black.opacity(0.7))
+                                                .multilineTextAlignment(.center)
                         }
                         
                                         Spacer()
@@ -295,7 +303,7 @@ struct LockScreenWidgetPreview: View {
             if widgetType == .distance {
                 VStack(spacing: 8) {
                     if let distanceInfo = widgetService?.distanceInfo {
-                        Text("Notre distance: \(distanceInfo.formattedDistance)")
+                        Text("our_distance".localized + " " + distanceInfo.formattedDistance)
                             .font(.system(size: 12, weight: .medium))
                             .foregroundColor(.black)
                             .multilineTextAlignment(.center)
@@ -310,7 +318,7 @@ struct LockScreenWidgetPreview: View {
                                         .foregroundColor(.black)
                                 )
                             
-                            Text("----")
+                            Text("dash_placeholder".localized)
                                 .font(.system(size: 12))
                                 .foregroundColor(.gray)
                             
@@ -318,7 +326,7 @@ struct LockScreenWidgetPreview: View {
                                 .font(.system(size: 12))
                                 .foregroundColor(.red)
                             
-                            Text("----")
+                            Text("dash_placeholder".localized)
                                 .font(.system(size: 12))
                                 .foregroundColor(.gray)
                             
@@ -332,7 +340,7 @@ struct LockScreenWidgetPreview: View {
                                 )
                         }
                     } else {
-                        Text("Notre distance: -- m")
+                        Text("our_distance".localized + " " + "widget_dash_m".localized)
                             .font(.system(size: 12, weight: .medium))
                             .foregroundColor(.black)
                             .multilineTextAlignment(.center)
@@ -347,7 +355,7 @@ struct LockScreenWidgetPreview: View {
                                         .foregroundColor(.black)
                                 )
                             
-                            Text("----")
+                            Text("dash_placeholder".localized)
                                 .font(.system(size: 12))
                                 .foregroundColor(.gray)
                     
@@ -355,7 +363,7 @@ struct LockScreenWidgetPreview: View {
                                 .font(.system(size: 12))
                                 .foregroundColor(.red)
                             
-                            Text("----")
+                            Text("dash_placeholder".localized)
                                 .font(.system(size: 12))
                         .foregroundColor(.gray)
                             
@@ -380,12 +388,12 @@ struct LockScreenWidgetPreview: View {
                             .font(.system(size: 24, weight: .bold))
                             .foregroundColor(.black)
                     } else {
-                        Text("--")
+                        Text("dash_separator".localized)
                         .font(.system(size: 24, weight: .bold))
                         .foregroundColor(.black)
                     }
                     
-                    Text("jours")
+                    Text("days".localized)
                         .font(.system(size: 14, weight: .medium))
                         .foregroundColor(.black)
                 }
@@ -396,7 +404,7 @@ struct LockScreenWidgetPreview: View {
                 VStack {
                     HStack {
                         Spacer()
-                        Text("🔒")
+                        Text("locked_icon".localized)
                             .font(.system(size: 16))
                             .padding(.top, 8)
                             .padding(.trailing, 8)
@@ -422,7 +430,7 @@ struct HomeScreenWidgetPreview: View {
     
     // Déterminer si ce widget nécessite un abonnement premium
     private var isPremium: Bool {
-        return title == "Distance" || title == "Complet" // Widgets distance et complet sont premium
+        return title == LocalizationService.ui("widget_distance_title") || title == LocalizationService.ui("widget_complete_title") // Widgets distance et complet sont premium
     }
     
     var body: some View {
@@ -438,17 +446,17 @@ struct HomeScreenWidgetPreview: View {
                     .shadow(color: Color.black.opacity(0.1), radius: 8, x: 0, y: 2)
                     .frame(width: isMain ? 160 : 140, height: 120)
             
-            if title == "Jours ensemble" {
+            if title == LocalizationService.ui("widget_days_total_title") {
                 VStack(spacing: 8) {
                     Text("💕")
                         .font(.system(size: 24))
                     
                     if let relationshipStats = widgetService?.relationshipStats {
-                        Text("\(relationshipStats.daysTotal) jours")
+                        Text("\(relationshipStats.daysTotal) " + "widget_days_text".localized)
                             .font(.system(size: 16, weight: .medium))
                             .foregroundColor(.black)
                     } else {
-                        Text("-- jours")
+                        Text(ui: "widget_dash_jours", comment: "Widget dash jours")
                             .font(.system(size: 16, weight: .medium))
                             .foregroundColor(.black)
                     }
@@ -472,7 +480,7 @@ struct HomeScreenWidgetPreview: View {
                             )
                     }
                 }
-            } else if title == "Distance" {
+            } else if title == LocalizationService.ui("widget_distance_title") {
                 VStack(spacing: 8) {
                     HStack(spacing: 8) {
                         Circle()
@@ -498,12 +506,12 @@ struct HomeScreenWidgetPreview: View {
                             .font(.system(size: 16, weight: .medium))
                             .foregroundColor(.black)
                     } else {
-                        Text("-- km")
+                        Text(ui: "widget_dash_km", comment: "Widget dash km")
                             .font(.system(size: 16, weight: .medium))
                             .foregroundColor(.black)
                     }
                     
-                    Text("de distance")
+                    Text(ui: "widget_distance_text", comment: "Widget distance text")
                         .font(.system(size: 12))
                         .foregroundColor(.black.opacity(0.6))
                 }
@@ -530,16 +538,16 @@ struct HomeScreenWidgetPreview: View {
                         }
                         
                         if let relationshipStats = widgetService?.relationshipStats {
-                            Text("\(relationshipStats.daysTotal) jours")
+                            Text("\(relationshipStats.daysTotal) " + "widget_days_text".localized)
                                 .font(.system(size: 12, weight: .medium))
                                 .foregroundColor(.black)
                         } else {
-                            Text("-- jours")
+                            Text(ui: "widget_dash_jours", comment: "Widget dash jours")
                                 .font(.system(size: 12, weight: .medium))
                                 .foregroundColor(.black)
                         }
                         
-                        Text("ensemble")
+                        Text(ui: "widget_together_text", comment: "Widget together text")
                             .font(.system(size: 10))
                             .foregroundColor(.black.opacity(0.6))
                     }
@@ -558,12 +566,12 @@ struct HomeScreenWidgetPreview: View {
                                 .font(.system(size: 12, weight: .medium))
                                 .foregroundColor(.black)
                         } else {
-                            Text("-- km")
+                            Text(ui: "widget_dash_km", comment: "Widget dash km")
                                 .font(.system(size: 12, weight: .medium))
                                 .foregroundColor(.black)
                         }
                         
-                        Text("de distance")
+                        Text(ui: "widget_distance_text", comment: "Widget distance text")
                             .font(.system(size: 8))
                             .foregroundColor(.black.opacity(0.6))
                     }
@@ -575,7 +583,7 @@ struct HomeScreenWidgetPreview: View {
                 VStack {
                 HStack {
                         Spacer()
-                        Text("🔒")
+                        Text("locked_widget".localized)
                         .font(.system(size: 16))
                             .padding(.top, 8)
                             .padding(.trailing, 8)
@@ -626,7 +634,7 @@ struct CountdownWidgetView: View {
         VStack(spacing: 24) {
             if let stats = stats {
                 VStack(spacing: 8) {
-                    Text("Temps ensemble")
+                    Text("time_together".localized)
                         .font(.system(size: 18, weight: .medium))
                         .foregroundColor(.black.opacity(0.8))
                     
@@ -636,10 +644,10 @@ struct CountdownWidgetView: View {
                         .monospaced()
                     
                     HStack(spacing: 20) {
-                        Text("jours")
-                        Text("heures")
-                        Text("minutes")
-                        Text("secondes")
+                        Text("days".localized)
+                        Text("hours".localized)
+                        Text("minutes".localized)
+                        Text("seconds".localized)
                     }
                     .font(.system(size: 12, weight: .medium))
                     .foregroundColor(.black.opacity(0.6))
@@ -651,12 +659,12 @@ struct CountdownWidgetView: View {
                         .foregroundColor(.black)
                     
                     if stats.daysToAnniversary > 0 {
-                        Text("Plus que \(stats.daysToAnniversary) jours avant votre prochain anniversaire")
+                        Text("more_than_days".localized + " \(stats.daysToAnniversary) " + "days_before_anniversary".localized)
                             .font(.system(size: 14))
                             .foregroundColor(.black.opacity(0.6))
                             .multilineTextAlignment(.center)
                     } else {
-                        Text("Joyeux anniversaire ! 🎉")
+                        Text("happy_anniversary".localized)
                             .font(.system(size: 16, weight: .medium))
                             .foregroundColor(Color(hex: "#FD267A"))
                     }
@@ -667,11 +675,12 @@ struct CountdownWidgetView: View {
                         .font(.system(size: 60))
                         .foregroundColor(.black.opacity(0.3))
                     
-                    Text("Aucune date de relation définie")
-                        .font(.system(size: 18, weight: .medium))
+                    Text("no_relationship_date".localized)
+                        .font(.system(size: 16))
                         .foregroundColor(.black.opacity(0.7))
+                        .multilineTextAlignment(.center)
                     
-                    Text("Ajoutez votre date de début de relation dans les paramètres")
+                    Text("add_relationship_date".localized)
                         .font(.system(size: 14))
                         .foregroundColor(.black.opacity(0.5))
                         .multilineTextAlignment(.center)
@@ -697,16 +706,16 @@ struct DaysTotalWidgetView: View {
         VStack(spacing: 24) {
             if let stats = stats {
                 VStack(spacing: 8) {
-                    Text("\(stats.daysTotal) jours")
+                    Text("\(stats.daysTotal) " + "days".localized)
                         .font(.system(size: 48, weight: .bold))
                         .foregroundColor(.black)
                     
-                    Text("ensemble")
+                    Text("together".localized)
                         .font(.system(size: 24, weight: .medium))
                         .foregroundColor(.black.opacity(0.8))
                 }
                 
-                Text("Depuis le \(DateFormatter.longDateFormatter.string(from: stats.startDate))")
+                Text("since_date".localized + " \(DateFormatter.longDateFormatter.string(from: stats.startDate))")
                     .font(.system(size: 16))
                     .foregroundColor(.black.opacity(0.6))
                     .multilineTextAlignment(.center)
@@ -716,11 +725,12 @@ struct DaysTotalWidgetView: View {
                         .font(.system(size: 60))
                         .foregroundColor(.black.opacity(0.3))
                     
-                    Text("Aucune date de relation définie")
-                        .font(.system(size: 18, weight: .medium))
+                    Text("no_relationship_date".localized)
+                        .font(.system(size: 16))
                         .foregroundColor(.black.opacity(0.7))
+                        .multilineTextAlignment(.center)
                     
-                    Text("Ajoutez votre date de début de relation dans les paramètres")
+                    Text("add_relationship_date".localized)
                         .font(.system(size: 14))
                         .foregroundColor(.black.opacity(0.5))
                         .multilineTextAlignment(.center)
@@ -743,14 +753,14 @@ extension DateFormatter {
     static let anniversaryFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
-        formatter.locale = Locale(identifier: "fr_FR")
+        formatter.locale = Locale.current
         return formatter
     }()
     
     static let longDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
-        formatter.locale = Locale(identifier: "fr_FR")
+        formatter.locale = Locale.current
         return formatter
     }()
 }

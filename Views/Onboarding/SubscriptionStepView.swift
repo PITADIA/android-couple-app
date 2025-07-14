@@ -32,13 +32,13 @@ struct SubscriptionStepView: View {
                 
                 // Titre principal collé sous la croix
                 VStack(spacing: 8) {
-                    Text("Choisissez votre plan")
+                    Text("choose_plan".localized)
                         .font(.system(size: 32, weight: .bold))
                         .foregroundColor(.black)
                         .multilineTextAlignment(.center)
                     
                     // Sous-titre
-                    Text("Votre partenaire n'aura rien à payer")
+                    Text("partner_no_payment".localized)
                         .font(.system(size: 16))
                         .foregroundColor(.black.opacity(0.7))
                         .multilineTextAlignment(.center)
@@ -53,18 +53,18 @@ struct SubscriptionStepView: View {
                 VStack(spacing: 25) {
 
                     NewFeatureRow(
-                        title: "✓ Aimez-vous encore plus fort",
-                        subtitle: "Débloquez nos plus de 2000 questions à la fois fun, profondes, rassurantes, et passez un merveilleux moment ensemble."
+                        title: "feature_love_stronger".localized,
+                        subtitle: "feature_love_stronger_description".localized
                     )
 
                     NewFeatureRow(
-                        title: "✓ Construisez votre coffre à souvenir",
-                        subtitle: "Parce que chaque souvenir mérite sa place. Rassemblez vos plus beaux moments dans un journal intime, unique et partagé, rien qu'à vous deux."
+                        title: "feature_memory_chest".localized,
+                        subtitle: "feature_memory_chest_description".localized
                     )
 
                     NewFeatureRow(
-                        title: "✓ Créez la carte de votre amour",
-                        subtitle: "Retrouvez vos souvenirs sur une carte unique, et revivez les moments qui ont marqué votre amour."
+                        title: "feature_love_map".localized,
+                        subtitle: "feature_love_map_description".localized
                     )
                     
                 }
@@ -107,8 +107,8 @@ struct SubscriptionStepView: View {
                             .foregroundColor(.black)
                         
                         Text(receiptService.selectedPlan == .monthly ? 
-                             "Aucun paiement requis maintenant" : 
-                             "Sans engagement, annuler quand vous voulez")
+                             "no_payment_required_now".localized : 
+                             "no_commitment_cancel_anytime".localized)
                             .font(.system(size: 14))
                             .foregroundColor(.black)
                     }
@@ -124,10 +124,10 @@ struct SubscriptionStepView: View {
                                     ProgressView()
                                         .progressViewStyle(CircularProgressViewStyle(tint: .white))
                                         .scaleEffect(0.8)
-                                    Text("CHARGEMENT...")
+                                    Text("loading_caps".localized)
                                 }
                             } else {
-                                Text(receiptService.selectedPlan == .weekly ? "CONTINUER" : "COMMENCER L'ESSAI")
+                                Text(receiptService.selectedPlan == .weekly ? "continue".localized.uppercased() : "start_trial".localized)
                             }
                         }
                         .font(.system(size: 18, weight: .bold))
@@ -145,7 +145,7 @@ struct SubscriptionStepView: View {
                     
                     // Section liens légaux - collée en bas
                     HStack(spacing: 15) {
-                        Button("Conditions générales") {
+                        Button("terms".localized) {
                             if let url = URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/") {
                                 UIApplication.shared.open(url)
                             }
@@ -153,7 +153,7 @@ struct SubscriptionStepView: View {
                         .font(.system(size: 12))
                         .foregroundColor(.black.opacity(0.5))
                         
-                        Button("Politique de confidentialité") {
+                        Button("privacy_policy".localized) {
                             if let url = URL(string: "https://love2lovesite.onrender.com") {
                                 UIApplication.shared.open(url)
                             }
@@ -161,7 +161,7 @@ struct SubscriptionStepView: View {
                         .font(.system(size: 12))
                         .foregroundColor(.black.opacity(0.5))
                         
-                        Button("Restaurer") {
+                        Button("restore".localized) {
                             print("🔥 SubscriptionStepView: Tentative de restauration des achats")
                             NSLog("🔥 SubscriptionStepView: Tentative de restauration des achats")
                             receiptService.restorePurchases()

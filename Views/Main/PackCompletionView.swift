@@ -16,17 +16,19 @@ struct PackCompletionView: View {
                 
                 // Titre principal
                 VStack(spacing: 15) {
-                    Text("Bravo !")
+                    Text(NSLocalizedString("congratulations_pack", comment: "Congratulations pack title"))
                         .font(.system(size: 36, weight: .bold))
                         .foregroundColor(.white)
                     
-                    Text("Tu as terminé")
-                        .font(.system(size: 32, weight: .bold))
+                    Text(NSLocalizedString("pack_completed", comment: "Pack completed text"))
+                        .font(.system(size: 28, weight: .medium))
                         .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
                     
-                    Text("le pack...")
-                        .font(.system(size: 32, weight: .bold))
+                    Text(NSLocalizedString("pack_name", comment: "Pack name text"))
+                        .font(.system(size: 28, weight: .medium))
                         .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
                 }
                 .multilineTextAlignment(.center)
                 
@@ -49,21 +51,24 @@ struct PackCompletionView: View {
                 
                 // Message d'interaction
                 VStack(spacing: 10) {
-                    Text("Tape")
-                        .font(.system(size: 20, weight: .semibold))
-                        .foregroundColor(Color(red: 1.0, green: 0.4, blue: 0.6))
-                    + Text(" sur moi")
-                        .font(.system(size: 20, weight: .semibold))
+                    Text(NSLocalizedString("tap_on_me", comment: "Tap on me text"))
+                        .font(.system(size: 24, weight: .medium))
                         .foregroundColor(.white)
                     
-                    Text("pour une ")
-                        .font(.system(size: 20, weight: .semibold))
+                    + Text(NSLocalizedString("on_me", comment: "On me text"))
+                        .font(.system(size: 24, weight: .bold))
                         .foregroundColor(.white)
-                    + Text("surprise")
-                        .font(.system(size: 20, weight: .semibold))
-                        .foregroundColor(Color(red: 1.0, green: 0.4, blue: 0.6))
-                    + Text(" !")
-                        .font(.system(size: 20, weight: .semibold))
+                    
+                    Text(NSLocalizedString("for_surprise", comment: "For surprise text"))
+                        .font(.system(size: 24, weight: .medium))
+                        .foregroundColor(.white)
+                    
+                    + Text(NSLocalizedString("surprise", comment: "Surprise text"))
+                        .font(.system(size: 24, weight: .bold))
+                        .foregroundColor(.white)
+                    
+                    + Text(NSLocalizedString("exclamation", comment: "Exclamation text"))
+                        .font(.system(size: 24, weight: .medium))
                         .foregroundColor(.white)
                 }
                 .multilineTextAlignment(.center)
@@ -107,17 +112,20 @@ struct NewPackRevealView: View {
                 
                 // Message principal
                 VStack(spacing: 20) {
-                    Text("On vient de t'ajouter \(questionsCount) nouvelles cartes")
-                        .font(.system(size: 32, weight: .bold))
+                    Text(NSLocalizedString("new_cards_added", comment: "New cards added text"))
+                        .font(.system(size: 20, weight: .medium))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
-                        .opacity(showContent ? 1.0 : 0.0)
                     
-                    Text("Profites-en")
-                        .font(.system(size: 20))
-                        .foregroundColor(.white.opacity(0.9))
+                    Text("\(questionsCount) " + NSLocalizedString("new_cards", comment: "New cards text"))
+                        .font(.system(size: 20, weight: .bold))
+                        .foregroundColor(.white)
                         .multilineTextAlignment(.center)
-                        .opacity(showContent ? 1.0 : 0.0)
+                    
+                    Text(NSLocalizedString("enjoy_it", comment: "Enjoy it text"))
+                        .font(.system(size: 20, weight: .medium))
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
                 }
                 
                 Spacer()
@@ -126,7 +134,7 @@ struct NewPackRevealView: View {
                 Button(action: {
                     onContinue()
                 }) {
-                    Text("C'est parti !")
+                    Text(NSLocalizedString("lets_go", comment: "Lets go button"))
                         .font(.system(size: 22, weight: .bold))
                         .foregroundColor(Color(red: 0.6, green: 0.0, blue: 0.2))
                         .frame(maxWidth: .infinity)

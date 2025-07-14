@@ -183,7 +183,7 @@ class QuestionCacheManager: ObservableObject {
         return realmCategory?.isPopulated ?? false
     }
     
-    // MARK: - Smart Loading
+    // MARK: - Smart Loading (OPTIMISÉ)
     
     func getQuestionsWithSmartCache(for category: String, fallback: () -> [Question]) -> [Question] {
         // 1. Essayer le cache d'abord
@@ -193,41 +193,107 @@ class QuestionCacheManager: ObservableObject {
             return cachedQuestions
         }
         
-        // 2. Si pas de cache, utiliser le fallback et cacher
-        let freshQuestions = fallback()
+        // 2. Utiliser le nouveau QuestionDataManager
+        let freshQuestions = QuestionDataManager.shared.loadQuestions(for: category)
         
         if !freshQuestions.isEmpty {
             cacheQuestions(for: category, questions: freshQuestions)
+            return freshQuestions
         }
         
-        return freshQuestions
+        // 3. Fallback seulement si le nouveau système échoue
+        let fallbackQuestions = fallback()
+        
+        if !fallbackQuestions.isEmpty {
+            cacheQuestions(for: category, questions: fallbackQuestions)
+        }
+        
+        return fallbackQuestions
     }
     
-    // MARK: - Preloading OPTIMISÉ
+    // MARK: - Preloading ULTRA-OPTIMISÉ
     
     func preloadAllCategories() {
         Task {
             isLoading = true
             
-            // OPTIMISATION: Précharger seulement les catégories essentielles
-            let essentialCategories = [
-                ("EN COUPLE", "En couple"),
-                ("TU PRÉFÈRES ?", "Tu préfères quoi ?"),
-                ("QUESTIONS PROFONDES", "Des questions profondes"),
-                ("LES PLUS HOTS", "Désirs Inavoués"),
-                ("POUR RIRE À DEUX", "Pour rigoler à deux")
+            // MIGRATION: Nettoyer l'ancien cache avec les titres localisés
+            migrateOldCacheKeys()
+            
+            // OPTIMISATION EXTRÊME: Précharger seulement la première catégorie
+            let priorityCategories = [
+                ("EN COUPLE", "en-couple") // Seule la catégorie gratuite
             ]
             
-            for (key, displayName) in essentialCategories {
-                if !isCategoryPopulated(displayName) {
-                    if let questions = Question.sampleQuestions[key] {
-                        cacheQuestions(for: displayName, questions: questions)
-                    }
+            for (_, categoryId) in priorityCategories {
+                if !isCategoryPopulated(categoryId) {
+                    let questions = QuestionDataManager.shared.loadQuestions(for: categoryId)
+                    // Limiter encore plus : seulement les 32 premières questions
+                    let limitedQuestions = Array(questions.prefix(32))
+                    cacheQuestions(for: categoryId, questions: limitedQuestions)
                 }
             }
             
             isLoading = false
-            print("RealmManager: Préchargement terminé (mode optimisé)")
+            print("RealmManager: Préchargement ultra-rapide terminé (\(priorityCategories.count) catégorie)")
+        }
+    }
+    
+    // NOUVEAU: Préchargement à la demande
+    func preloadCategory(_ categoryId: String) {
+        Task {
+            guard !isCategoryPopulated(categoryId) else { return }
+            
+            let questions = QuestionDataManager.shared.loadQuestions(for: categoryId)
+            if !questions.isEmpty {
+                cacheQuestions(for: categoryId, questions: questions)
+                print("RealmManager: Catégorie '\(categoryId)' préchargée à la demande")
+            }
+        }
+    }
+    
+    // MARK: - Migration
+    
+    private func migrateOldCacheKeys() {
+        guard let realm = realm else { return }
+        
+        // Anciennes clés (titres localisés français) -> nouvelles clés (IDs)
+        let keyMigration = [
+            "En couple": "en-couple",
+            "Désirs Inavoués": "les-plus-hots",
+            "Pour rigoler à deux": "pour-rire-a-deux",
+            "Des questions profondes": "questions-profondes",
+            "À travers la distance": "a-distance",
+            "Tu préfères quoi ?": "tu-preferes",
+            "Réparer notre amour": "mieux-ensemble",
+            "En date": "pour-un-date"
+        ]
+        
+        do {
+            try realm.write {
+                for (oldKey, newKey) in keyMigration {
+                    // Migrer les questions
+                    let oldQuestions = realm.objects(RealmQuestion.self).filter("category == %@", oldKey)
+                    for question in oldQuestions {
+                        question.category = newKey
+                    }
+                    
+                    // Migrer les catégories
+                    if let oldCategory = realm.object(ofType: RealmCategory.self, forPrimaryKey: oldKey) {
+                        let newCategory = RealmCategory()
+                        newCategory.title = newKey
+                        newCategory.questionsCount = oldCategory.questionsCount
+                        newCategory.isPopulated = oldCategory.isPopulated
+                        newCategory.lastUpdated = oldCategory.lastUpdated
+                        
+                        realm.add(newCategory, update: .modified)
+                        realm.delete(oldCategory)
+                    }
+                }
+            }
+            print("RealmManager: Migration du cache terminée")
+        } catch {
+            print("⚠️ RealmManager: Erreur migration: \(error)")
         }
     }
     

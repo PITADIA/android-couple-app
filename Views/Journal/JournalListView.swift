@@ -77,9 +77,9 @@ struct JournalListView: View {
                         .progressViewStyle(CircularProgressViewStyle(tint: .white))
                         .scaleEffect(1.2)
                     
-                    Text("Chargement...")
+                    Text("loading".localized)
                         .font(.system(size: 16))
-                        .foregroundColor(.white.opacity(0.7))
+                        .foregroundColor(.gray)
                         .padding(.top, 8)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -118,7 +118,7 @@ struct JournalListView: View {
         Dictionary(grouping: journalService.entries) { entry in
             let formatter = DateFormatter()
             formatter.dateFormat = "MMMM yyyy"
-            formatter.locale = Locale(identifier: "fr_FR")
+            formatter.locale = Locale.current
             return formatter.string(from: entry.eventDate)
         }
     }
@@ -153,17 +153,16 @@ struct EmptyJournalStateView: View {
                 .frame(width: 240, height: 240)
             
             VStack(spacing: 12) {
-                Text(hasReachedLimit && !isSubscribed ? "Limite atteinte" : "Votre journal à souvenir est vide")
+                Text(hasReachedLimit && !isSubscribed ? "limit_reached".localized : "empty_journal_message".localized)
                     .font(.system(size: 22, weight: .medium))
                     .foregroundColor(.black)
                     .multilineTextAlignment(.center)
                 
-                Text("Conservez ici vos plus beaux souvenirs passé ensemble pour vous sentir encore plus proches l'un de l'autre. \n\nVotre partenaire pourra voir les souvenirs que vous avez créés.")
+                Text(ui: "journal_description", comment: "Journal description")
                     .font(.system(size: 16))
                     .foregroundColor(.black.opacity(0.7))
                     .multilineTextAlignment(.center)
-                    .lineLimit(nil)
-                    .padding(.horizontal, 20)
+                    .padding(.horizontal, 30)
             }
             
             // Bouton Créer (style moderne rose, plus petit)
@@ -173,7 +172,7 @@ struct EmptyJournalStateView: View {
                         .font(.system(size: 14, weight: .semibold))
                         .foregroundColor(.white)
                     
-                    Text("Créer")
+                    Text(ui: "create", comment: "Create button")
                         .font(.system(size: 16, weight: .semibold))
                         .foregroundColor(.white)
                 }
@@ -185,7 +184,7 @@ struct EmptyJournalStateView: View {
             }
             
             if hasReachedLimit && !isSubscribed {
-                Button("Débloquer Premium") {
+                Button("unlock_premium_button".localized) {
                     // Déclencher le paywall
                     // Cette action sera gérée par le parent
                 }
@@ -220,24 +219,25 @@ struct FreemiumEncouragementView: View {
                 Image(systemName: "star.fill")
                     .foregroundColor(.yellow)
                 
-                Text("Plus que \(remainingEntries) entrée\(remainingEntries > 1 ? "s" : "") gratuite\(remainingEntries > 1 ? "s" : "") !")
+                Text(String(format: "remaining_entries_message".localized, remainingEntries, remainingEntries > 1 ? "s" : "", remainingEntries > 1 ? "s" : ""))
                     .font(.system(size: 16, weight: .semibold))
                     .foregroundColor(.white)
                 
                 Spacer()
             }
             
-            Text("Passe à Premium pour créer des souvenirs illimités avec ton partenaire")
-                .font(.system(size: 14))
-                .foregroundColor(.white.opacity(0.8))
-                .multilineTextAlignment(.leading)
+                            Text("premium_unlimited".localized)
+                .font(.system(size: 16))
+                .foregroundColor(.black.opacity(0.7))
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 30)
             
             Button(action: onUpgrade) {
                 HStack {
                     Image(systemName: "crown.fill")
                         .font(.system(size: 14))
                     
-                    Text("Débloquer Premium")
+                    Text("unlock_premium_button".localized)
                         .font(.system(size: 16, weight: .semibold))
                 }
                 .foregroundColor(.white)
@@ -357,7 +357,7 @@ struct JournalEntryCardView: View {
     private var monthAbbreviation: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM"
-        formatter.locale = Locale(identifier: "fr_FR")
+        formatter.locale = Locale.current
         return formatter.string(from: entry.eventDate)
     }
     

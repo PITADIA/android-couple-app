@@ -61,7 +61,7 @@ struct JournalView: View {
                         
                         // Titre
                         VStack(spacing: 4) {
-                            Text("Notre journal")
+                            Text(ui: "our_journal", comment: "Our journal title")
                                 .font(.system(size: 28, weight: .bold))
                                 .foregroundColor(.black)
                         }

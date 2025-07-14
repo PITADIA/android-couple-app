@@ -6,9 +6,9 @@ struct LoadingStepView: View {
     @State private var loadingTimer: Timer?
     
     private let loadingMessages = [
-        "Préparation de votre profil...",
-        "Analyse de vos préférences...",
-        "Personnalisation de votre expérience..."
+        "loading_profile".localized,
+        "loading_preferences".localized,
+        "loading_experience".localized
     ]
     
     var body: some View {

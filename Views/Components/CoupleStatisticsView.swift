@@ -9,9 +9,10 @@ struct CoupleStatisticsView: View {
         VStack(alignment: .leading, spacing: 16) {
             // Titre de la section
             HStack {
-                Text("Statistiques de votre couple")
-                    .font(.system(size: 22, weight: .bold))
+                Text("couple_statistics".localized)
+                    .font(.system(size: 22, weight: .semibold))
                     .foregroundColor(.black)
+                    .multilineTextAlignment(.center)
                     .padding(.horizontal, 20)
                 
                 Spacer()
@@ -25,7 +26,7 @@ struct CoupleStatisticsView: View {
                 
                 // Jours ensemble
                 StatisticCardView(
-                    title: "Jours\nensemble",
+                    title: "days_together".localized,
                     value: "\(daysTogetherCount)",
                     icon: "jours",
                     iconColor: Color(hex: "#feb5c8"),
@@ -35,7 +36,7 @@ struct CoupleStatisticsView: View {
                 
                 // Pourcentage de questions ouvertes
                 StatisticCardView(
-                    title: "Réponses\naux questions",
+                    title: "questions_answered".localized,
                     value: "\(Int(questionsProgressPercentage))%",
                     icon: "qst",
                     iconColor: Color(hex: "#fed397"),
@@ -45,7 +46,7 @@ struct CoupleStatisticsView: View {
                 
                 // Villes visitées
                 StatisticCardView(
-                    title: "Villes\nvisitées",
+                    title: "cities_visited".localized,
                     value: "\(citiesVisitedCount)",
                     icon: "ville",
                     iconColor: Color(hex: "#b0d6fe"),
@@ -55,7 +56,7 @@ struct CoupleStatisticsView: View {
                 
                 // Pays visités
                 StatisticCardView(
-                    title: "Pays\nvisités",
+                    title: "countries_visited".localized,
                     value: "\(countriesVisitedCount)",
                     icon: "pays",
                     iconColor: Color(hex: "#ead3f6"),
@@ -87,7 +88,7 @@ struct CoupleStatisticsView: View {
         var totalProgress = 0
         
         for category in categories {
-            let questions = getQuestionsForCategory(category.title)
+            let questions = getQuestionsForCategory(category.id)
             let currentIndex = categoryProgressService.getCurrentIndex(for: category.title)
             
             totalQuestions += questions.count
@@ -119,45 +120,17 @@ struct CoupleStatisticsView: View {
     // MARK: - Helper Methods
     
     /// Récupère les questions pour une catégorie donnée via les données statiques
-    private func getQuestionsForCategory(_ categoryTitle: String) -> [Question] {
+    private func getQuestionsForCategory(_ categoryId: String) -> [Question] {
         // Pour l'instant, utiliser les données statiques directement
         // TODO: Intégrer avec QuestionCacheManager quand la hiérarchie EnvironmentObject sera correcte
-        return getQuestionsSampleForCategory(categoryTitle)
+        return getQuestionsSampleForCategory(categoryId)
     }
     
-    /// Fallback vers les questions samples basé sur la structure existante
-    private func getQuestionsSampleForCategory(_ categoryTitle: String) -> [Question] {
-        switch categoryTitle {
-        case "Désirs Inavoués":
-            return Question.sampleQuestions["LES PLUS HOTS"] ?? []
-        case "Pour rigoler à deux":
-            return Question.sampleQuestions["POUR RIRE À DEUX"] ?? []
-        case "En couple":
-            // Estimation réaliste pour les autres catégories (à remplacer quand les vraies questions seront ajoutées)
-            return generatePlaceholderQuestions(count: 80, categoryTitle: categoryTitle)
-        case "Des questions profondes":
-            return generatePlaceholderQuestions(count: 90, categoryTitle: categoryTitle)
-        case "À travers la distance":
-            return generatePlaceholderQuestions(count: 70, categoryTitle: categoryTitle)
-        case "Tu préfères quoi ?":
-            return generatePlaceholderQuestions(count: 85, categoryTitle: categoryTitle)
-        case "Réparer notre amour":
-            return generatePlaceholderQuestions(count: 75, categoryTitle: categoryTitle)
-        case "En date":
-            return generatePlaceholderQuestions(count: 60, categoryTitle: categoryTitle)
-        default:
-            return []
-        }
+    /// Charge les questions pour une catégorie via le nouveau QuestionDataManager
+    private func getQuestionsSampleForCategory(_ categoryId: String) -> [Question] {
+        return QuestionDataManager.shared.loadQuestions(for: categoryId)
     }
-    
-    /// Génère des questions placeholder pour les catégories non encore implémentées
-    private func generatePlaceholderQuestions(count: Int, categoryTitle: String) -> [Question] {
-        return Array(0..<count).map { index in
-            Question(id: "placeholder-\(categoryTitle.lowercased().replacingOccurrences(of: " ", with: "-"))-\(index)", 
-                    text: "Question \(index + 1) pour \(categoryTitle)", 
-                    category: categoryTitle)
-        }
-    }
+
 }
 
 // MARK: - Carte de statistique individuelle

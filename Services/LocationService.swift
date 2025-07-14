@@ -193,15 +193,15 @@ extension LocationService {
         case .notDetermined:
             return "Non déterminé"
         case .restricted:
-            return "Restreint"
+            return NSLocalizedString("restricted", comment: "Restricted location status")
         case .denied:
             return "Refusé"
         case .authorizedAlways:
-            return "Autorisé toujours"
+            return NSLocalizedString("always_authorized", comment: "Always authorized location status")
         case .authorizedWhenInUse:
-            return "Autorisé en utilisation"
+            return NSLocalizedString("when_in_use_authorized", comment: "When in use authorized location status")
         @unknown default:
-            return "Inconnu"
+            return NSLocalizedString("unknown", comment: "Unknown location status")
         }
     }
 } 

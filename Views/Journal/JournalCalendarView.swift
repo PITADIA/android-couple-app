@@ -33,7 +33,7 @@ struct JournalCalendarView: View {
             // Entrées pour la date sélectionnée
             VStack(alignment: .leading, spacing: 16) {
                 HStack {
-                    Text("Événements du \(formattedSelectedDate)")
+                    Text(NSLocalizedString("events_of_date", comment: "Events of date text") + " \(formattedSelectedDate)")
                         .font(.system(size: 18, weight: .semibold))
                         .foregroundColor(.black)
                     
@@ -49,9 +49,11 @@ struct JournalCalendarView: View {
                             .font(.system(size: 40))
                             .foregroundColor(.black.opacity(0.3))
                         
-                        Text("Aucun événement ce jour")
+                        Text(NSLocalizedString("no_events_today", comment: "No events today message"))
                             .font(.system(size: 16))
-                            .foregroundColor(.black.opacity(0.6))
+                            .foregroundColor(.gray)
+                            .padding(.horizontal, 20)
+                            .padding(.top, 20)
                     }
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 40)
@@ -91,7 +93,7 @@ struct JournalCalendarView: View {
     private var formattedSelectedDate: String {
         let formatter = DateFormatter()
         formatter.dateStyle = .full
-        formatter.locale = Locale(identifier: "fr_FR")
+        formatter.locale = Locale.current
         return formatter.string(from: selectedDate)
     }
 }
@@ -106,7 +108,7 @@ struct CalendarGridView: View {
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM yyyy"
-        formatter.locale = Locale(identifier: "fr_FR")
+        formatter.locale = Locale.current
         return formatter
     }()
     
@@ -137,7 +139,15 @@ struct CalendarGridView: View {
             
             // Jours de la semaine
             HStack {
-                ForEach(["LUN", "MAR", "MER", "JEU", "VEN", "SAM", "DIM"], id: \.self) { day in
+                ForEach([
+                    NSLocalizedString("calendar_monday", comment: "Monday abbreviation"),
+                    NSLocalizedString("calendar_tuesday", comment: "Tuesday abbreviation"),
+                    NSLocalizedString("calendar_wednesday", comment: "Wednesday abbreviation"),
+                    NSLocalizedString("calendar_thursday", comment: "Thursday abbreviation"),
+                    NSLocalizedString("calendar_friday", comment: "Friday abbreviation"),
+                    NSLocalizedString("calendar_saturday", comment: "Saturday abbreviation"),
+                    NSLocalizedString("calendar_sunday", comment: "Sunday abbreviation")
+                ], id: \.self) { day in
                     Text(day)
                         .font(.system(size: 12, weight: .semibold))
                         .foregroundColor(.black.opacity(0.6))

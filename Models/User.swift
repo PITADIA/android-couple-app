@@ -129,36 +129,36 @@ enum SubscriptionPlanType: String, CaseIterable {
     var displayName: String {
         switch self {
         case .weekly:
-            return "Hebdomadaire"
+            return "plan_weekly".localized
         case .monthly:
-            return "Mensuel - 3 jours gratuits"
+            return "plan_monthly_free_trial".localized
         }
     }
     
     var price: String {
         switch self {
         case .weekly:
-            return "4,99€"
+            return "plan_weekly_price".localized
         case .monthly:
-            return "14,99€"
+            return "plan_monthly_price".localized
         }
     }
     
     var period: String {
         switch self {
         case .weekly:
-            return "semaine"
+            return "period_week".localized
         case .monthly:
-            return "mois"
+            return "period_month".localized
         }
     }
     
     var pricePerUser: String {
         switch self {
         case .weekly:
-            return "2,50€"
+            return "plan_weekly_price_per_user".localized
         case .monthly:
-            return "7,50€"
+            return "plan_monthly_price_per_user".localized
         }
     }
     

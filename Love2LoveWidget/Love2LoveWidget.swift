@@ -1038,13 +1038,13 @@ struct PremiumBlockedWidgetView: View {
                     .foregroundColor(.white.opacity(0.8))
                 
                 // Texte principal
-                Text("Nécessite un abonnement")
+                Text(NSLocalizedString("requires_subscription", comment: "Requires subscription message"))
                     .font(.system(size: widgetType == "Complet" ? 16 : 14, weight: .semibold))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
                 
                 // Texte secondaire
-                Text("Toucher pour débloquer")
+                Text(NSLocalizedString("tap_to_unlock", comment: "Tap to unlock message"))
                     .font(.system(size: widgetType == "Complet" ? 12 : 10))
                     .foregroundColor(.white.opacity(0.8))
                     .multilineTextAlignment(.center)
@@ -1078,7 +1078,7 @@ struct PremiumBlockedLockScreenWidgetView: View {
                     .foregroundColor(.white)
                 
                 // Texte
-                Text("Nécessite un abonnement")
+                Text(NSLocalizedString("requires_subscription", comment: "Requires subscription message"))
                     .font(.system(size: 10, weight: .medium))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)

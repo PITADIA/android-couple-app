@@ -77,7 +77,7 @@ struct SharedFavoriteQuestion: Codable, Identifiable, Equatable {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeStyle = .short
-        formatter.locale = Locale(identifier: "fr_FR")
+        formatter.locale = Locale.current
         return formatter.string(from: dateAdded)
     }
     

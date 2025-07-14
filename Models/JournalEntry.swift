@@ -87,20 +87,28 @@ struct JournalEntry: Codable, Identifiable, Equatable {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeStyle = .short
-        formatter.locale = Locale(identifier: "fr_FR")
+        formatter.locale = Locale.current
         return formatter.string(from: eventDate)
     }
     
     var dayOfMonth: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "d"
+        formatter.locale = Locale.current
+        return formatter.string(from: eventDate)
+    }
+    
+    var monthAbbreviation: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM"
+        formatter.locale = Locale.current
         return formatter.string(from: eventDate)
     }
     
     var monthYear: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM yyyy"
-        formatter.locale = Locale(identifier: "fr_FR")
+        formatter.locale = Locale.current
         return formatter.string(from: eventDate)
     }
     

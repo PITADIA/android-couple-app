@@ -66,7 +66,7 @@ struct LocationPickerView: View {
             Image(systemName: "magnifyingglass")
                 .foregroundColor(.white.opacity(0.6))
             
-            TextField("Rechercher...", text: $searchText)
+            TextField("search_placeholder".localized, text: $searchText)
                 .foregroundColor(.white)
                 .onSubmit {
                     searchLocation()
@@ -147,9 +147,11 @@ struct LocationPickerView: View {
                 Spacer()
                 
                 VStack(spacing: 8) {
-                    Text("Localisation sélectionnée")
-                        .font(.system(size: 12))
-                        .foregroundColor(.white.opacity(0.7))
+                    Text("selected_location".localized)
+                        .font(.system(size: 16, weight: .medium))
+                        .foregroundColor(.black)
+                        .padding(.horizontal, 20)
+                        .padding(.top, 10)
                     
                     Text(currentLocationName)
                         .font(.system(size: 16, weight: .medium))
@@ -175,36 +177,38 @@ struct LocationPickerView: View {
         VStack {
             Spacer()
             
-            Button(action: confirmSelection) {
-                Text("Sélectionner")
-                    .font(.system(size: 18, weight: .semibold))
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 56)
-                    .background(
-                        RoundedRectangle(cornerRadius: 28)
-                            .fill(Color(hex: "#FD267A"))
-                    )
+            Button("select".localized) {
+                confirmSelection()
             }
+            .font(.system(size: 18, weight: .semibold))
+            .foregroundColor(.white)
+            .frame(maxWidth: .infinity)
+            .frame(height: 56)
+            .background(
+                RoundedRectangle(cornerRadius: 28)
+                    .fill(selectedCoordinate != nil ? Color(hex: "#FD267A") : Color.gray.opacity(0.3))
+            )
             .disabled(selectedCoordinate == nil)
             .padding(.horizontal, 20)
-            .padding(.bottom, 40)
+            .padding(.bottom, 20)
         }
     }
     
     @ToolbarContentBuilder
     private var toolbarContent: some ToolbarContent {
         ToolbarItem(placement: .navigationBarLeading) {
-            Button("Annuler") {
+            Button("cancel".localized) {
                 dismiss()
             }
             .foregroundColor(.white)
         }
         
         ToolbarItem(placement: .principal) {
-            Text("Choisir un lieu")
-                .font(.system(size: 18, weight: .semibold))
-                .foregroundColor(.white)
+            Text("choose_location".localized)
+                .font(.system(size: 20, weight: .bold))
+                .foregroundColor(.black)
+                .padding(.horizontal, 20)
+                .padding(.top, 20)
         }
         
         ToolbarItem(placement: .navigationBarTrailing) {
@@ -265,7 +269,7 @@ struct LocationPickerView: View {
         let coordinate = item.placemark.coordinate
         region.center = coordinate
         selectedCoordinate = coordinate
-        currentLocationName = item.name ?? item.placemark.title ?? "Lieu sélectionné"
+                        currentLocationName = item.name ?? item.placemark.title ?? "selected_location_custom".localized
         searchResults = []
         searchText = ""
     }
@@ -318,7 +322,7 @@ struct LocationPickerView: View {
                     
                     self.currentLocationName = components.joined(separator: ", ")
                 } else {
-                    self.currentLocationName = "Localisation personnalisée"
+                    self.currentLocationName = "custom_location".localized
                 }
             }
         }
@@ -363,7 +367,7 @@ struct SearchResultRow: View {
         Button(action: onTap) {
             HStack {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(item.name ?? "Lieu")
+                    Text(item.name ?? "location_place".localized)
                         .font(.system(size: 16, weight: .medium))
                         .foregroundColor(.white)
                     

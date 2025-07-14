@@ -28,13 +28,14 @@ struct CoupleApp: App {
                     // Démarrer le monitoring de performance
                     performanceMonitor.startMonitoring()
                     
-                    // OPTIMISATION: Préchargement en arrière-plan avec délai
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                    // OPTIMISATION: Préchargement ultra-rapide avec le nouveau système
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                        print("CoupleApp: Début préchargement ultra-optimisé")
+                        QuestionDataManager.shared.preloadEssentialCategories()
+                        
+                        // Préchargement en arrière-plan pour les anciennes données (compatibilité)
                         Task {
-                            print("CoupleApp: Début préchargement optimisé")
                             await questionCacheManager.preloadAllCategories()
-                            
-                            // Nettoyage mémoire après préchargement
                             questionCacheManager.optimizeMemoryUsage()
                         }
                     }

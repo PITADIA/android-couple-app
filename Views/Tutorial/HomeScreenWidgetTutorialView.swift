@@ -6,18 +6,18 @@ struct HomeScreenWidgetTutorialView: View {
     
     private let steps = [
         TutorialStep(
-            title: "Appuie et maintiens n'importe où sur ton écran d'accueil",
-            description: "Maintiens ton doigt appuyé sur un espace vide de l'écran d'accueil pour entrer en mode édition.",
+            title: "hold_home_screen".localized,
+            description: "hold_description".localized,
             imageName: "etape5"
         ),
         TutorialStep(
-            title: "Appuie sur le bouton +",
-            description: "Touche le bouton + en haut à gauche pour ajouter un nouveau widget.",
+            title: "tap_plus_button".localized,
+            description: "plus_description".localized,
             imageName: "etape6"
         ),
         TutorialStep(
-            title: "Recherche Love2Love",
-            description: "Recherche Love2Love dans la barre de recherche puis choisis le widget que tu souhaite.",
+            title: "search_love2love_home".localized,
+            description: "search_home_description".localized,
             imageName: "etape7"
         )
     ]
@@ -32,9 +32,10 @@ struct HomeScreenWidgetTutorialView: View {
                 VStack(spacing: 0) {
                     // Header sans bouton retour
                     VStack(spacing: 0) {
-                        Text("Widget Écran d'Accueil")
+                        Text(ui: "home_screen_widget", comment: "Home screen widget title")
                             .font(.system(size: 24, weight: .bold))
                             .foregroundColor(.black)
+                            .multilineTextAlignment(.center)
                             .padding(.top, 40)
                     }
                     
@@ -67,7 +68,7 @@ struct HomeScreenWidgetTutorialView: View {
                                     currentStep -= 1
                                 }
                             }) {
-                                Text("Précédent")
+                                Text("previous".localized)
                                     .font(.system(size: 16, weight: .medium))
                                     .foregroundColor(Color(hex: "#FD267A"))
                                     .frame(maxWidth: .infinity)
@@ -90,7 +91,7 @@ struct HomeScreenWidgetTutorialView: View {
                                 dismiss()
                             }
                         }) {
-                            Text(currentStep < steps.count - 1 ? "Continuer" : "Terminer")
+                            Text(currentStep < steps.count - 1 ? "continue".localized : "done".localized)
                                 .font(.system(size: 16, weight: .semibold))
                                 .foregroundColor(.white)
                                 .frame(maxWidth: .infinity)

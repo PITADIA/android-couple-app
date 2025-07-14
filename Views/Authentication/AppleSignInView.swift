@@ -63,12 +63,12 @@ struct AppleSignInView: View {
                 VStack(spacing: 30) {
                     // Titre principal
                     VStack(spacing: 15) {
-                        Text("PLUS QU'UNE ÉTAPE !")
+                        Text(NSLocalizedString("one_more_step", comment: "One more step title"))
                             .font(.system(size: 28, weight: .bold))
                             .foregroundColor(.white)
                             .multilineTextAlignment(.center)
                         
-                        Text("SÉCURISE TON COMPTE")
+                        Text(NSLocalizedString("secure_account", comment: "Secure account title"))
                             .font(.system(size: 28, weight: .bold))
                             .foregroundColor(.white)
                             .multilineTextAlignment(.center)
@@ -76,7 +76,7 @@ struct AppleSignInView: View {
                     .padding(.horizontal, 30)
                     
                     // Description
-                    Text("Crée un compte pour garder l'historique de tes activités et retrouver facilement tes conversations préférées à tout moment !")
+                    Text(NSLocalizedString("create_account_description", comment: "Create account description"))
                         .font(.system(size: 16))
                         .foregroundColor(.white.opacity(0.9))
                         .multilineTextAlignment(.center)
@@ -152,7 +152,7 @@ struct AppleSignInView: View {
                                 .progressViewStyle(CircularProgressViewStyle(tint: .white))
                                 .scaleEffect(1.5)
                             
-                            Text("Connexion en cours...")
+                            Text(NSLocalizedString("connecting", comment: "Connecting message"))
                                 .font(.system(size: 16))
                                 .foregroundColor(.white)
                         }

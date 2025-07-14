@@ -52,7 +52,7 @@ struct AsyncImageView: View {
                             Image(systemName: "photo")
                                 .font(.title2)
                                 .foregroundColor(.gray)
-                            Text("Image non disponible")
+                            Text(NSLocalizedString("image_not_available", comment: "Image not available message"))
                                 .font(.caption)
                                 .foregroundColor(.gray)
                         }

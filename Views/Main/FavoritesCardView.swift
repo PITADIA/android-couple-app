@@ -41,7 +41,7 @@ struct FavoritesCardView: View {
                     Spacer()
                     
                     // Compteur de favoris
-                    Text("\(currentFavoriteIndex + 1) sur \(favoritesService.getAllFavorites().count)")
+                    Text("\(currentFavoriteIndex + 1) " + "on_count".localized + " \(favoritesService.getAllFavorites().count)")
                         .font(.system(size: 18, weight: .semibold))
                         .foregroundColor(.black)
                     
@@ -64,12 +64,12 @@ struct FavoritesCardView: View {
                             .frame(width: 240, height: 240)
                         
                         VStack(spacing: 12) {
-                            Text("Ajoutez vos questions préférées en favoris.")
+                            Text("add_favorite_questions".localized)
                                 .font(.system(size: 22, weight: .medium))
                                 .foregroundColor(.black)
                                 .multilineTextAlignment(.center)
                             
-                            Text("Ajoutez des questions en favoris en appuyant sur le coeur en-dessous des cartes puis vous les verrez apparaître ici. \n\nVos questions favorites seront automatiquement partagées avec votre partenaire.")
+                            Text("add_favorites_description".localized)
                                 .font(.system(size: 16))
                                 .foregroundColor(.black.opacity(0.7))
                                 .multilineTextAlignment(.center)
@@ -139,10 +139,9 @@ struct FavoritesCardView: View {
                 
                 // Bouton Retirer des favoris (design moderne)
                 if !favoritesService.getAllFavorites().isEmpty {
-                    Button(action: {
+                    Button("remove_from_favorites".localized) {
                         showingDeleteAlert = true
-                    }) {
-                        Text("Retirer des favoris")
+                    }
                             .font(.system(size: 18, weight: .semibold))
                             .foregroundColor(.white)
                         .frame(width: UIScreen.main.bounds.width - 40) // Même largeur que les cartes
@@ -152,7 +151,6 @@ struct FavoritesCardView: View {
                             Color(red: 1.0, green: 0.4, blue: 0.6)
                         )
                         .cornerRadius(28)
-                    }
                     .padding(.top, 40) // Ajout d'espace au-dessus du bouton
                     .padding(.bottom, 50)
                 }
@@ -164,9 +162,9 @@ struct FavoritesCardView: View {
                 .environmentObject(appState)
                 .environmentObject(favoritesService)
         }
-        .alert("Supprimer des favoris", isPresented: $showingDeleteAlert) {
-            Button("Annuler", role: .cancel) { }
-            Button("Supprimer", role: .destructive) {
+        .alert("remove_from_favorites".localized, isPresented: $showingDeleteAlert) {
+            Button("cancel".localized, role: .cancel) { }
+            Button("remove".localized, role: .destructive) {
                 let allFavorites = favoritesService.getAllFavorites()
                 if currentFavoriteIndex < allFavorites.count {
                     let currentFavorite = allFavorites[currentFavoriteIndex]
@@ -184,7 +182,7 @@ struct FavoritesCardView: View {
                 }
             }
         } message: {
-            Text("Voulez-vous supprimer cette question de vos favoris ?")
+            Text("remove_favorite_confirmation".localized)
         }
         .onAppear {
             print("🔥 FavoritesCardView: Vue des cartes favoris apparue")

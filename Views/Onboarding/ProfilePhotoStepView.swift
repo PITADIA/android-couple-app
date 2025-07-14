@@ -22,7 +22,7 @@ struct ProfilePhotoStepView: View {
             
             // Titre centré à gauche
             HStack {
-                Text("Ajoute ta photo de profil")
+                Text("add_profile_photo".localized)
                     .font(.system(size: 36, weight: .bold))
                     .foregroundColor(.black)
                     .multilineTextAlignment(.leading)
@@ -57,7 +57,7 @@ struct ProfilePhotoStepView: View {
                                     .font(.system(size: 40))
                                     .foregroundColor(.black.opacity(0.3))
                                 
-                                Text("Ajouter une photo")
+                                Text("add_photo".localized)
                                     .font(.system(size: 14))
                                     .foregroundColor(.black.opacity(0.6))
                             }
@@ -78,7 +78,7 @@ struct ProfilePhotoStepView: View {
                     }
                     viewModel.nextStep()
                 }) {
-                    Text("Continuer")
+                                            Text("continue".localized)
                         .font(.system(size: 18, weight: .semibold))
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
@@ -92,7 +92,7 @@ struct ProfilePhotoStepView: View {
                 Button(action: {
                     viewModel.nextStep()
                 }) {
-                    Text("Passer cette étape")
+                    Text("skip_step".localized)
                         .font(.system(size: 16))
                         .foregroundColor(.black.opacity(0.6))
                         .underline()
@@ -120,9 +120,9 @@ struct ProfilePhotoStepView: View {
                         rotateImageWithButtons: false,
                         zoomSensitivity: 1.0,
                         texts: SwiftyCropConfiguration.Texts(
-                            cancelButton: "Annuler",
-                            interactionInstructions: "Ajustez votre photo de profil",
-                            saveButton: "Valider"
+                                            cancelButton: "cancel".localized,
+                interactionInstructions: "crop_photo_instructions".localized,
+                saveButton: "validate".localized
                         )
                     )
                 ) { resultImage in
@@ -153,11 +153,11 @@ struct ProfilePhotoStepView: View {
             } else {
                 // Afficher une vue d'erreur au lieu d'un écran blanc
                 VStack {
-                    Text("Erreur: Image non trouvée")
+                    Text("error_image_not_found".localized)
                         .font(.title)
                         .foregroundColor(.red)
                     
-                    Button("Fermer") {
+                    Button("close".localized) {
                         print("🔥🔥🔥 SWIFTYCROP: Fermeture forcée du cropper")
                         self.showImageCropper = false
                     }
@@ -175,12 +175,12 @@ struct ProfilePhotoStepView: View {
         }
         .alert(isPresented: $showSettingsAlert) {
             Alert(
-                title: Text("Autorisation requise"),
+                                    title: Text(NSLocalizedString("authorization_required", comment: "Authorization required title")),
                 message: Text(alertMessage),
-                primaryButton: .default(Text("Ouvrir les paramètres")) {
+                primaryButton: .default(Text(NSLocalizedString("open_settings_button", comment: "Open settings button"))) {
                     openSettings()
                 },
-                secondaryButton: .cancel(Text("Annuler"))
+                                    secondaryButton: .cancel(Text(NSLocalizedString("cancel", comment: "Cancel button")))
             )
         }
         .onChange(of: showImageCropper) { _, newValue in
@@ -235,12 +235,12 @@ struct ProfilePhotoStepView: View {
         case .denied, .restricted:
             // ❌ ACCÈS REFUSÉ - Proposer d'aller aux paramètres
             print("❌ ProfilePhoto: Accès refusé")
-            alertMessage = "L'accès à votre galerie est nécessaire pour ajouter une photo de profil. Veuillez l'activer dans les paramètres de votre appareil."
+            alertMessage = "photo_access_denied_message".localized
             showSettingsAlert = true
             
         @unknown default:
             print("❓ ProfilePhoto: Statut inconnu")
-            alertMessage = "Erreur d'accès à la galerie"
+            alertMessage = "photo_access_error_generic".localized
             showSettingsAlert = true
         }
     }

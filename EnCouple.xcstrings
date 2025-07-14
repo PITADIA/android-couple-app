@@ -1,0 +1,4353 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "ec_1" : {
+      "comment" : "Questions \"As a Couple\" - As a Couple",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you feel like you can be completely honest with me?"
+          }
+        }
+      }
+    },
+    "ec_2" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there something you'd like to do as a couple that we haven't done yet?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il quelque chose que tu aimerais faire en couple et que nous n'avons pas encore fait ?"
+          }
+        }
+      }
+    },
+    "ec_3" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there a topic you feel we don't talk about enough?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il un sujet dont tu penses que nous ne parlons pas assez ?"
+          }
+        }
+      }
+    },
+    "ec_4" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you feel like we're growing together or growing apart?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As-tu l'impression que nous évoluons ensemble ou que nous nous éloignons ?"
+          }
+        }
+      }
+    },
+    "ec_5" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What fears do you have when you think about our future?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelles peurs ressens-tu quand tu penses à notre avenir ?"
+          }
+        }
+      }
+    },
+    "ec_6" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you feel truly heard and understood in our relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Est-ce que tu te sens vraiment écouté(e) et compris(e) dans notre relation ?"
+          }
+        }
+      }
+    },
+    "ec_7" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What kind of words or gestures would really help you, coming from me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel genre de mots ou gestes te ferait vraiment du bien venant de moi ?"
+          }
+        }
+      }
+    },
+    "ec_8" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you feel like something is missing in our relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As-tu l'impression qu'il manque quelque chose dans notre relation ?"
+          }
+        }
+      }
+    },
+    "ec_9" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What strength or character trait in me inspires you the most?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle force ou trait de caractère chez moi t'inspire le plus ?"
+          }
+        }
+      }
+    },
+    "ec_10" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What little things make you feel deeply loved by me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelles petites choses te font sentir profondément aimé(e) par moi ?"
+          }
+        }
+      }
+    },
+    "ec_11" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there something you'd need more of from me emotionally?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il quelque chose dont tu aurais besoin davantage de ma part sur le plan émotionnel ?"
+          }
+        }
+      }
+    },
+    "ec_12" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is your biggest fear for our relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est ta plus grande peur pour notre couple ?"
+          }
+        }
+      }
+    },
+    "ec_13" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you appreciate about the way we communicate?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu apprécies dans notre façon de communiquer ?"
+          }
+        }
+      }
+    },
+    "ec_14" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could relive one moment with me, which would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais revivre un moment avec moi, lequel choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "ec_15" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What makes you proud of us?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce qui te rend fier(ère) de nous ?"
+          }
+        }
+      }
+    },
+    "ec_16" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there something you hesitate to tell me about your family?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est une chose que tu hésites à me dire à propos de ta famille ?"
+          }
+        }
+      }
+    },
+    "ec_17" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What would you like to improve in our relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu aimerais améliorer dans notre relation ?"
+          }
+        }
+      }
+    },
+    "ec_18" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you feel when we hold each other?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu ressens quand on se prend dans les bras ?"
+          }
+        }
+      }
+    },
+    "ec_19" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there a habit I have that you find adorable?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il une habitude que j'ai et que tu trouves adorable ?"
+          }
+        }
+      }
+    },
+    "ec_20" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "When did you know you were in love?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quand as-tu su que tu étais amoureux(se) ?"
+          }
+        }
+      }
+    },
+    "ec_21" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If we wrote a book about our story, what would the title be?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si on écrivait un livre sur notre histoire, quel serait le titre ?"
+          }
+        }
+      }
+    },
+    "ec_22" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What song makes you think of us?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle chanson te fait penser à nous ?"
+          }
+        }
+      }
+    },
+    "ec_23" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think we mutually support each other's dreams?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penses-tu que nous soutenons mutuellement nos rêves ?"
+          }
+        }
+      }
+    },
+    "ec_24" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What small gesture from me particularly touches you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel petit geste de ma part te touche particulièrement ?"
+          }
+        }
+      }
+    },
+    "ec_25" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is your definition of a happy couple?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est ta définition d'un couple heureux ?"
+          }
+        }
+      }
+    },
+    "ec_26" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you feel like we have enough fun together?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As-tu l'impression qu'on s'amuse assez ensemble ?"
+          }
+        }
+      }
+    },
+    "ec_27" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What has our relationship taught you about yourself?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que notre couple t'a appris sur toi-même ?"
+          }
+        }
+      }
+    },
+    "ec_28" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you have a romantic fantasy you'd like to share with me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As-tu un fantasme amoureux ou romantique que tu aimerais partager avec moi ?"
+          }
+        }
+      }
+    },
+    "ec_29" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there a part of your past you're afraid to share with me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il une partie de ton passé que tu as peur de partager avec moi ?"
+          }
+        }
+      }
+    },
+    "ec_30" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you think about how we manage our social life as a couple?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que penses-tu de la façon dont nous gérons notre vie sociale en couple ?"
+          }
+        }
+      }
+    },
+    "ec_31" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is the most beautiful proof of love you've received from me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la plus belle preuve d'amour que tu aies reçue de ma part ?"
+          }
+        }
+      }
+    },
+    "ec_32" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is your favorite moment of our daily routine together?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est ton moment préféré de notre quotidien ensemble ?"
+          }
+        }
+      }
+    },
+    "ec_33" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What would you like me to understand better about you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu aimerais que je comprenne mieux à propos de toi ?"
+          }
+        }
+      }
+    },
+    "ec_34" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If we made a promise today, which would be the most important to you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si on faisait une promesse aujourd'hui, laquelle serait la plus importante pour toi ?"
+          }
+        }
+      }
+    },
+    "ec_35" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you sometimes feel like I'm not listening to you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As-tu parfois l'impression que je ne t'écoute pas ?"
+          }
+        }
+      }
+    },
+    "ec_36" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there something you'd like to do as a couple that we haven't done yet?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il quelque chose que tu aimerais faire en couple et que nous n'avons pas encore fait ?"
+          }
+        }
+      }
+    },
+    "ec_37" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is the most beautiful compliment you've received from me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le plus beau compliment que tu aies reçu de ma part ?"
+          }
+        }
+      }
+    },
+    "ec_38" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to describe me to a stranger, what would you say?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais me décrire à un inconnu, que dirais-tu ?"
+          }
+        }
+      }
+    },
+    "ec_39" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What would you like us to try together to break out of routine?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu aimerais qu'on essaie ensemble pour sortir de la routine ?"
+          }
+        }
+      }
+    },
+    "ec_40" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there a difficult moment we went through together that you're proud of?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il un moment difficile qu'on a traversé ensemble dont tu es fier(ère) ?"
+          }
+        }
+      }
+    },
+    "ec_41" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you find most beautiful about our story?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu trouves le plus beau dans notre histoire ?"
+          }
+        }
+      }
+    },
+    "ec_42" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is something you think we don't talk about enough?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est une chose dont tu penses que nous ne parlons pas assez ?"
+          }
+        }
+      }
+    },
+    "ec_43" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you feel like we have enough deep conversations?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As-tu l'impression que nous avons suffisamment de conversations profondes ?"
+          }
+        }
+      }
+    },
+    "ec_44" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there something you're afraid of losing by being in this relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il quelque chose que tu as peur de perdre en étant dans cette relation ?"
+          }
+        }
+      }
+    },
+    "ec_45" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is something you think we need to work on as a couple?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est une chose sur laquelle tu penses que nous devons travailler en tant que couple ?"
+          }
+        }
+      }
+    },
+    "ec_46" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What new couple habit would you like us to establish?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle nouvelle habitude de couple aimerais-tu qu'on instaure ?"
+          }
+        }
+      }
+    },
+    "ec_47" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there something you'd like to dare to tell me but never have?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il quelque chose que tu aimerais oser me dire mais que tu n'as jamais osé ?"
+          }
+        }
+      }
+    },
+    "ec_48" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you feel like our relationship is balanced between what we give and receive?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As-tu l'impression que notre relation est équilibrée entre ce que l'on donne et ce que l'on reçoit ?"
+          }
+        }
+      }
+    },
+    "ec_49" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is something you'd like me to change about myself?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est une chose que tu aimerais que je change chez moi ?"
+          }
+        }
+      }
+    },
+    "ec_50" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What gesture or word gives you confidence in our love again?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel geste ou mot te redonne confiance en notre amour ?"
+          }
+        }
+      }
+    },
+    "ec_51" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there a movie or series that makes you think of our relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il un film ou une série qui te fait penser à notre relation ?"
+          }
+        }
+      }
+    },
+    "ec_52" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What would you like us to build together in the coming year?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'aimerais-tu qu'on construise ensemble dans l'année à venir ?"
+          }
+        }
+      }
+    },
+    "ec_53" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there something I do that makes you feel unloved?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Est-ce qu'il y a quelque chose que je fais qui te fait te sentir non aimé(e) ?"
+          }
+        }
+      }
+    },
+    "ec_54" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What are the little daily things that nourish our love?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelles sont les petites choses du quotidien qui nourrissent notre amour ?"
+          }
+        }
+      }
+    },
+    "ec_55" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How do you feel about our future together?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que ressens-tu à propos de notre avenir ensemble ?"
+          }
+        }
+      }
+    },
+    "ec_56" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What would you like me to understand without you having to say it?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'aimerais-tu que je comprenne sans que tu aies besoin de le dire ?"
+          }
+        }
+      }
+    },
+    "ec_57" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is your vision of a fulfilled long-term couple?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est ta vision d'un couple épanoui sur le long terme ?"
+          }
+        }
+      }
+    },
+    "ec_58" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What question would you like me to ask you more often?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle question aimerais-tu que je te pose plus souvent ?"
+          }
+        }
+      }
+    },
+    "ec_59" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is the most beautiful gift you'd like to receive from me (non-material)?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le plus beau cadeau que tu aimerais recevoir de moi (non matériel) ?"
+          }
+        }
+      }
+    },
+    "ec_60" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If we had a whole day without any constraints, what would you want us to do?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si on avait une journée entière sans aucune contrainte, que voudrais-tu qu'on fasse ?"
+          }
+        }
+      }
+    },
+    "ec_61" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How do you know I love you, even when I don't say it?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment sais-tu que je t'aime, même quand je ne le dis pas ?"
+          }
+        }
+      }
+    },
+    "ec_62" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is a bad habit I have that affects our relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la mauvaise habitude que j'ai et qui affecte notre relation ?"
+          }
+        }
+      }
+    },
+    "ec_63" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you sometimes feel like you can't be yourself with me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Est-ce qu'il t'arrive de sentir que tu ne peux pas être toi-même avec moi ?"
+          }
+        }
+      }
+    },
+    "ec_64" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there a way I could better support you in your personal goals?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il une façon dont je pourrais mieux te soutenir dans tes objectifs personnels ?"
+          }
+        }
+      }
+    },
+    "ec_65" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you love about how we take care of each other?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'aimes-tu dans la façon dont on prend soin l'un de l'autre ?"
+          }
+        }
+      }
+    },
+    "ec_66" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is the most beautiful romantic moment we've shared together?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le plus beau moment romantique qu'on ait vécu ensemble ?"
+          }
+        }
+      }
+    },
+    "ec_67" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How could I make you feel even more loved?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment pourrais-je te faire sentir encore plus aimé(e) ?"
+          }
+        }
+      }
+    },
+    "ec_68" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How do you feel about the current state of our relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que ressens-tu par rapport à l'état actuel de notre relation ?"
+          }
+        }
+      }
+    },
+    "ec_69" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How loved and appreciated do you feel by me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "À quel point te sens-tu aimé(e) et apprécié(e) de ma part ?"
+          }
+        }
+      }
+    },
+    "ec_70" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What are your expectations of me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelles sont tes attentes envers moi ?"
+          }
+        }
+      }
+    },
+    "ec_71" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you love most about our relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'aimes-tu le plus dans notre relation ?"
+          }
+        }
+      }
+    },
+    "ec_72" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What activities do you prefer to do with me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelles activités préfères-tu faire avec moi ?"
+          }
+        }
+      }
+    },
+    "ec_73" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Realistically, how do you see our future together?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De manière réaliste, comment vois-tu notre avenir ensemble ?"
+          }
+        }
+      }
+    },
+    "ec_74" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What are your dreams and goals for us as a couple?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quels sont tes rêves et objectifs pour nous en tant que couple ?"
+          }
+        }
+      }
+    },
+    "ec_75" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What would you like us to do more often together?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'aimerais-tu que nous fassions plus souvent ensemble ?"
+          }
+        }
+      }
+    },
+    "ec_76" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you think is our greatest strength as a couple?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selon toi, quelle est notre plus grande force en tant que couple ?"
+          }
+        }
+      }
+    },
+    "ec_77" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is your most beautiful memory of our first date?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est ton plus beau souvenir de notre premier date ?"
+          }
+        }
+      }
+    },
+    "ec_78" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to define our relationship in three words, which would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais définir notre couple en trois mots, lesquels choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "ec_79" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What makes our relationship unique in your eyes?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce qui rend notre relation unique à tes yeux ?"
+          }
+        }
+      }
+    },
+    "ec_80" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there a trip we haven't taken yet but you dream of taking with me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il un voyage qu'on n'a pas encore fait mais que tu rêves de faire avec moi ?"
+          }
+        }
+      }
+    },
+    "ec_81" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How would you spend an ideal weekend with me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment passerais-tu un week-end idéal avec moi ?"
+          }
+        }
+      }
+    },
+    "ec_82" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think infidelity is always a point of no return, regardless of circumstances?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penses-tu que l'infidélité est toujours un point de non-retour, peu importe les circonstances ?"
+          }
+        }
+      }
+    },
+    "ec_83" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What part of me do you find most beautiful (physically or internally)?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle partie de moi trouves-tu la plus belle (physiquement ou intérieurement) ?"
+          }
+        }
+      }
+    },
+    "ec_84" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there a gesture from me you'd like us to make a bit more regular?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il un geste de ma part que tu aimerais qu'on rende un peu plus régulier ?"
+          }
+        }
+      }
+    },
+    "ec_85" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you want to protect at all costs in our relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que veux-tu protéger à tout prix dans notre relation ?"
+          }
+        }
+      }
+    },
+    "ec_86" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What place does humor take in our relationship according to you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle place prend l'humour dans notre couple selon toi ?"
+          }
+        }
+      }
+    },
+    "ec_87" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Who is more inclined to trust, you or me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qui est le plus enclin à faire confiance, toi ou moi ?"
+          }
+        }
+      }
+    },
+    "ec_88" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What makes you happiest when we're together?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce qui te rend le plus heureux(se) quand on est ensemble ?"
+          }
+        }
+      }
+    },
+    "ec_89" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What part of our daily routine seems magical to you, even if it's simple?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle partie de notre quotidien te semble magique, même si elle est simple ?"
+          }
+        }
+      }
+    },
+    "ec_90" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If our love were a color, what would it be and why?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si notre amour était une couleur, laquelle serait-elle et pourquoi ?"
+          }
+        }
+      }
+    },
+    "ec_91" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Who is more likely to be jealous, you or me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qui est le plus susceptible d'être jaloux(se), toi ou moi ?"
+          }
+        }
+      }
+    },
+    "ec_92" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What advice would you give to a couple just starting out, based on our experience?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel conseil donnérais-tu à un couple qui débute, à partir de notre expérience ?"
+          }
+        }
+      }
+    },
+    "ec_93" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there a moment with me you'd like to engrave forever?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il un moment avec moi que tu aimerais graver pour toujours ?"
+          }
+        }
+      }
+    },
+    "ec_94" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is the first thing you found attractive about me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la première chose que tu as trouvée attirante chez moi ?"
+          }
+        }
+      }
+    },
+    "ec_95" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What has our relationship overcome that you're proud of?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que notre couple a surmonté et dont tu es fier(ère) ?"
+          }
+        }
+      }
+    },
+    "ec_96" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How do you hide your anger when you don't want to show it?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment fais-tu pour cacher ta colère quand tu ne veux pas la montrer ?"
+          }
+        }
+      }
+    },
+    "ec_97" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you feel when you think about me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu ressens quand tu penses à moi ?"
+          }
+        }
+      }
+    },
+    "ec_98" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What would you like to learn from me or with me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu aimerais apprendre de moi ou avec moi ?"
+          }
+        }
+      }
+    },
+    "ec_99" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is the little thing you do for me without me realizing it?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la petite chose que tu fais pour moi sans que je m'en rende compte ?"
+          }
+        }
+      }
+    },
+    "ec_100" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you find me grateful enough?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Me trouves-tu assez reconnaissant(e) ?"
+          }
+        }
+      }
+    },
+    "ec_101" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Who takes more risks between you and me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qui prend le plus de risques entre toi et moi ?"
+          }
+        }
+      }
+    },
+    "ec_102" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What are the most important values for you in a relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelles sont les valeurs les plus importantes pour toi dans un couple ?"
+          }
+        }
+      }
+    },
+    "ec_103" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If a movie were made about your life, which actor would you choose to play your role?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si un film était réalisé sur ta vie, quel acteur choisirais-tu pour jouer ton rôle ?"
+          }
+        }
+      }
+    },
+    "ec_104" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Would you like me to listen to you a bit more?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aimerais-tu que je sois un peu plus à ton écoute ?"
+          }
+        }
+      }
+    },
+    "ec_105" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How do you feel when we disagree?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment te sens-tu lorsque nous sommes en désaccord ?"
+          }
+        }
+      }
+    },
+    "ec_106" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there something from your romantic past that still influences our relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il quelque chose de ton passé amoureux qui influence encore notre relation ?"
+          }
+        }
+      }
+    },
+    "ec_107" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is something you don't like doing but do for me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu n'aimes pas faire mais que tu fais pour moi ?"
+          }
+        }
+      }
+    },
+    "ec_108" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you consider yourself optimistic or pessimistic?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Te considères-tu comme optimiste ou pessimiste ?"
+          }
+        }
+      }
+    },
+    "ec_109" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you believe everything happens for a reason?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crois-tu que tout arrive pour une raison ?"
+          }
+        }
+      }
+    },
+    "ec_110" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is something you're afraid to tell me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est une chose que tu as peur de me dire ?"
+          }
+        }
+      }
+    },
+    "ec_111" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you have physical complexes that affect your confidence in our relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As-tu des complexes physiques qui affectent ta confiance en toi dans notre relation ?"
+          }
+        }
+      }
+    },
+    "ec_112" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are there moments in our relationship when you feel uncertain or unsure about what I feel for you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il des moments dans notre relation où tu te sens incertain(e) ou pas sûr(e) de ce que je ressens pour toi ?"
+          }
+        }
+      }
+    },
+    "ec_113" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Have you ever felt not good enough for me or thought I deserved better?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "T'est-il déjà arrivé de te sentir pas assez bien pour moi ou de penser que je méritais mieux ?"
+          }
+        }
+      }
+    },
+    "ec_114" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What surprised you most about our relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce qui t'a le plus surpris dans notre relation ?"
+          }
+        }
+      }
+    },
+    "ec_115" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you afraid our differences might become a problem in the future?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As-tu peur que nos différences deviennent un problème à l'avenir ?"
+          }
+        }
+      }
+    },
+    "ec_116" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What would you like me to understand about your way of loving?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu aimerais que je comprenne à propos de ta manière d'aimer ?"
+          }
+        }
+      }
+    },
+    "ec_117" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What role would you like to have in our relationship in 10 years?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel rôle aimerais-tu avoir dans notre vie de couple dans 10 ans ?"
+          }
+        }
+      }
+    },
+    "ec_118" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you like my love language?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aimes-tu mon love language ?"
+          }
+        }
+      }
+    },
+    "ec_119" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there a secret or something unsaid you'd like to reveal to me someday?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il un secret ou un non-dit que tu voudrais un jour me révéler ?"
+          }
+        }
+      }
+    },
+    "ec_120" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you knew everything you know today, would you still choose me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu savais tout ce que tu sais aujourd'hui, me choisirait-tu encore ?"
+          }
+        }
+      }
+    },
+    "ec_121" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you feel when I'm not doing well?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu ressens lorsque je ne vais pas bien ?"
+          }
+        }
+      }
+    },
+    "ec_122" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was there a moment when you didn't feel heard by me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il un moment où tu ne t'es pas senti(e) écouté(e) par moi ?"
+          }
+        }
+      }
+    },
+    "ec_123" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is the biggest misunderstanding we've had according to you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le plus grand malentendu qu'on a eu selon toi ?"
+          }
+        }
+      }
+    },
+    "ec_124" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What have you learned about love thanks to me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu as appris sur l'amour grâce à moi ?"
+          }
+        }
+      }
+    },
+    "ec_125" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What past wound would you like me to know better to understand you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle blessure du passé aimerais-tu que je connaisse mieux pour te comprendre ?"
+          }
+        }
+      }
+    },
+    "ec_126" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you feel when I succeed or have success?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu ressens lorsque je réussis ou que j'ai du succès ?"
+          }
+        }
+      }
+    },
+    "ec_127" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is one of the most difficult experiences you've been through?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est l'une des expériences les plus difficiles que tu aies traversées ?"
+          }
+        }
+      }
+    },
+    "ec_128" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are there topics you voluntarily avoid with me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il des sujets que tu évites volontairement avec moi ?"
+          }
+        }
+      }
+    },
+    "ec_129" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How has your past influenced your way of communicating with me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment ton passé a-t-il influencé ta manière de communiquer avec moi ?"
+          }
+        }
+      }
+    },
+    "ec_130" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What has been the biggest change in your life since we've been together?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel a été le plus grand changement dans ta vie depuis qu'on est ensemble ?"
+          }
+        }
+      }
+    },
+    "ec_131" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are there specific things you'd like me to be attentive to because of what you've experienced?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il des choses précises sur lesquelles tu aimerais que je sois attentif(ve) à cause de ce que tu as vécu ?"
+          }
+        }
+      }
+    },
+    "ec_132" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How would you define the balance between giving and receiving in our relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment définirais-tu l'équilibre entre donner et recevoir dans notre relation ?"
+          }
+        }
+      }
+    },
+    "ec_133" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Have you ever found yourself unable to fully trust me because of your past? Do you think we could talk about it?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "T'est-il déjà arrivé de ne pas réussir à me faire pleinement confiance à cause de ton passé ? Penses-tu qu'on pourrait en parler ?"
+          }
+        }
+      }
+    },
+    "ec_134" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you want to preserve at all costs between us?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu veux préserver coûte que coûte entre nous ?"
+          }
+        }
+      }
+    },
+    "ec_135" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is your greatest hope for our future?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est ton plus grand espoir pour notre futur ?"
+          }
+        }
+      }
+    },
+    "ec_136" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What makes you sometimes doubt us?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce qui te fait douter parfois de nous ?"
+          }
+        }
+      }
+    },
+    "ec_137" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is something you only do with me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose que tu fais uniquement avec moi ?"
+          }
+        }
+      }
+    },
+    "ec_138" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is the most beautiful sacrifice you've made out of love for me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le plus beau sacrifice que tu aies fait par amour pour moi ?"
+          }
+        }
+      }
+    },
+    "ec_139" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there a part of your personality you hide for fear I won't love you anymore?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il une partie de ta personnalité que tu caches par peur que je ne t'aime plus ?"
+          }
+        }
+      }
+    },
+    "ec_140" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is the emotion you have the most trouble sharing with me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est l'émotion que tu as le plus de mal à partager avec moi ?"
+          }
+        }
+      }
+    },
+    "ec_141" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How has your upbringing influenced your vision of love and relationships?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment ton éducation a-t-elle influencé ta vision de l'amour et des relations ?"
+          }
+        }
+      }
+    },
+    "ec_142" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What importance do you place on honesty and communication in a relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle importance accordes-tu à l'honnêteté et à la communication dans une relation ?"
+          }
+        }
+      }
+    },
+    "ec_143" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you believe in forgiveness in a relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crois-tu au pardon dans une relation ?"
+          }
+        }
+      }
+    },
+    "ec_144" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What sometimes blocks you in our communication?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce qui te bloque parfois dans notre communication ?"
+          }
+        }
+      }
+    },
+    "ec_145" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think it's healthy to have separate interests in a relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penses-tu qu'il est sain d'avoir des centres d'intérêt séparés dans un couple ?"
+          }
+        }
+      }
+    },
+    "ec_146" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think we should spend a bit more time apart to miss each other better?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penses-tu que nous devrions passé un peu plus de temps séparé pour mieux se manquer ?"
+          }
+        }
+      }
+    },
+    "ec_147" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Where do you see our relationship in five years?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Où vois-tu notre relation dans cinq ans ?"
+          }
+        }
+      }
+    },
+    "ec_148" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there a difficult truth you'd like to hear from me, even if it hurts?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il une vérité difficile que tu aimerais entendre de moi, même si elle fait mal ?"
+          }
+        }
+      }
+    },
+    "ec_149" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What have you never told me because you didn't know how to phrase it?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu ne m'as jamais dit parce que tu ne savais pas comment le formuler ?"
+          }
+        }
+      }
+    },
+    "ec_150" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is something you'd like us to do more often as a couple?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est une chose que tu aimerais que l'on fasse plus souvent en tant que couple ?"
+          }
+        }
+      }
+    },
+    "ec_151" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you appreciate about our relationship but have never told me before?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu apprécies dans notre relation mais que tu ne m'as jamais dit auparavant ?"
+          }
+        }
+      }
+    },
+    "ec_152" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are there qualities in you that you'd like me to validate more?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il des qualités chez toi que tu voudrais que je valide davantage ?"
+          }
+        }
+      }
+    },
+    "ec_153" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is the novelty you'd like to try in our relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la nouveauté que tu aimerais essayer dans notre relation ?"
+          }
+        }
+      }
+    },
+    "ec_154" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How could we better support each other in our personal goals?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment pourrions-nous mieux nous soutenir mutuellement dans nos objectifs personnels ?"
+          }
+        }
+      }
+    },
+    "ec_155" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What would be a meaningful way to celebrate the major milestones of our relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle serait une manière significative de célébrer les grandes étapes de notre relation ?"
+          }
+        }
+      }
+    },
+    "ec_156" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are there words I say that mark you more than I think?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il des mots que je dis qui te marquent plus que je ne le pense ?"
+          }
+        }
+      }
+    },
+    "ec_157" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is the most important thing to say but we don't say often enough?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus importante à dire mais qu'on ne dit pas assez souvent ?"
+          }
+        }
+      }
+    },
+    "ec_158" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is a new way we could express our love and appreciation for each other?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est une nouvelle façon dont nous pourrions exprimer notre amour et notre reconnaissance l'un envers l'autre ?"
+          }
+        }
+      }
+    },
+    "ec_159" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is something you'd like me to notice more often about you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est une chose que tu aimerais que je remarque plus souvent chez toi ?"
+          }
+        }
+      }
+    },
+    "ec_160" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there a gesture or phrase that hurt you that we never talked about again?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il un geste ou une phrase qui t'a blessé et dont on n'a jamais reparlé ?"
+          }
+        }
+      }
+    },
+    "ec_161" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is a song that instantly reminds you of a special moment we shared?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est une chanson qui te rappelle instantanément un moment spécial que nous avons partagé ?"
+          }
+        }
+      }
+    },
+    "ec_162" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What does vulnerability mean to you in a relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que signifie pour toi la vulnérabilité dans une relation ?"
+          }
+        }
+      }
+    },
+    "ec_163" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If we had to be locked in a store for one night, which would we choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si nous devions être enfermés dans un magasin pour une nuit, lequel choisirions-nous ?"
+          }
+        }
+      }
+    },
+    "ec_164" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there something you regret not telling me earlier?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il quelque chose que tu regrettes de ne pas m'avoir dit plus tôt ?"
+          }
+        }
+      }
+    },
+    "ec_165" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How do you feel when you don't hear from me for a while?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment te sens-tu quand tu n'as pas de nouvelles de moi pendant un moment ?"
+          }
+        }
+      }
+    },
+    "ec_166" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is something you think about often, but keep to yourself?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est une chose à laquelle tu penses souvent, mais que tu gardes pour toi ?"
+          }
+        }
+      }
+    },
+    "ec_167" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How do you want us to support each other in our moments of weakness?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment veux-tu qu'on se soutienne mutuellement dans nos momens de faiblesses ?"
+          }
+        }
+      }
+    },
+    "ec_168" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If I could make one fear or doubt in you disappear, what would it be?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si je pouvais faire disparaître une peur ou un doute en toi, lequel ce serait ?"
+          }
+        }
+      }
+    },
+    "ec_169" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If we had to put a label on our relationship, what would it say?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si nous devions coller une étiquette sur notre couple, elle dirait quoi ?"
+          }
+        }
+      }
+    },
+    "ec_170" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What aspect of your personality would you like me to accept more?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel aspect de ta personnalité aimerais-tu que j'accepte davantage ?"
+          }
+        }
+      }
+    },
+    "ec_171" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How is our relationship different from your parents'?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En quoi notre relation est-elle différente de celle de tes parents ?"
+          }
+        }
+      }
+    },
+    "ec_172" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there something you feel but don't want to impose on me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il quelque chose que tu ressens mais que tu ne veux pas m'imposer ?"
+          }
+        }
+      }
+    },
+    "ec_173" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How do you think we balance each other out?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En quoi penses-tu que nous nous équilibrons l'un l'autre ?"
+          }
+        }
+      }
+    },
+    "ec_174" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is your favorite way to relax after a long day?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est ta façon préférée de te détendre après une longue journée ?"
+          }
+        }
+      }
+    },
+    "ec_175" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What helps you forgive when I hurt you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce qui t'aide à pardonner quand je te blesse ?"
+          }
+        }
+      }
+    },
+    "ec_176" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If we could create a new romantic tradition, what would it be?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si nous pouvions créer une nouvelle tradition romantique, laquelle serait-ce ?"
+          }
+        }
+      }
+    },
+    "ec_177" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you secretly love about our routine?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu aimes secrètement dans notre routine ?"
+          }
+        }
+      }
+    },
+    "ec_178" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there something you're afraid to tell me for fear of my reaction?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il quelque chose que tu crains de me dire par peur de ma réaction ?"
+          }
+        }
+      }
+    },
+    "ec_179" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is something you'd never want me to trivialize in your life?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose que tu ne voudrais jamais que je banalise dans ta vie ?"
+          }
+        }
+      }
+    },
+    "ec_180" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is something silly we should do at least once just for the story?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est une bêtise qu'on devrait faire au moins une fois juste pour l'histoire ?"
+          }
+        }
+      }
+    },
+    "ec_181" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If we had to summarize our love story in three emojis, which would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si on devait résumer notre histoire d'amour en trois émojis, lesquels choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "ec_182" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If we had to invent a challenge for each other, what would you suggest?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si on devait inventer un défi l'un pour l'autre, que proposerais-tu ?"
+          }
+        }
+      }
+    },
+    "ec_183" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If we had to get matching tattoos, what design would we choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si on devait se faire des tatouages assortis, quel design choisirions-nous ?"
+          }
+        }
+      }
+    },
+    "ec_184" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If we had to summarize our love story in one sentence, what would it say?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si nous devions résumer notre histoire d'amour en une seule phrase, que dirait-elle ?"
+          }
+        }
+      }
+    },
+    "ec_185" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is the compliment from me you'll never forget?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le compliment que tu n'oublieras jamais de ma part ?"
+          }
+        }
+      }
+    },
+    "ec_186" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If we created a memory jar, what would be the first thing we'd write on a little paper?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si on créait un bocal à souvenirs, quelle serait la première chose qu'on écrirait sur un petit papier ?"
+          }
+        }
+      }
+    },
+    "ec_187" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If we made a playlist for a road trip, what would be the first song we'd put on it?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si on faisait une playlist pour un road trip, quelle serait la première chanson qu'on y mettrait ?"
+          }
+        }
+      }
+    },
+    "ec_188" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "When did you feel like we formed a real team?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quand as-tu senti qu'on formait une vraie équipe ?"
+          }
+        }
+      }
+    },
+    "ec_189" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If we had to write each other's dating profile, what would you put in it?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si nous devions écrire le profil de rencontre de l'autre, que mettrais-tu dedans ?"
+          }
+        }
+      }
+    },
+    "ec_190" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If we could relive one perfect day of our relationship, which would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si nous pouvions revivre une journée parfaite de notre relation, laquelle choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "ec_191" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you feel like we spend enough time together?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As-tu l'impression que nous passons suffisamment de temps ensemble ?"
+          }
+        }
+      }
+    },
+    "ec_192" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there something bothering you right now that we haven't talked about yet?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il quelque chose qui te dérange en ce moment mais dont nous n'avons pas encore parlé ?"
+          }
+        }
+      }
+    },
+    "ec_193" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What are the things I've done this month (or this week) that you appreciated or that made you feel loved?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelles sont les choses que j'ai faites ce mois-ci (ou cette semaine) que tu as appréciées ou qui t'ont fait te sentir aimé(e) ?"
+          }
+        }
+      }
+    },
+    "ec_194" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What would you like us to work on together?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sur quoi aimerais-tu que nous travaillions ensemble ?"
+          }
+        }
+      }
+    },
+    "ec_195" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is your favorite way to receive love in my gestures?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est ta manière préférée de recevoir de l'amour dans mes gestes ?"
+          }
+        }
+      }
+    },
+    "ec_196" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are there new experiences you'd like to have with me soon?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il de nouvelles expériences que tu aimerais vivre avec moi bientôt ?"
+          }
+        }
+      }
+    },
+    "ec_197" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What are your personal goals for this month, and how can I help you achieve them?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quels sont tes objectifs personnels pour ce mois-ci, et comment puis-je t'aider à les atteindre ?"
+          }
+        }
+      }
+    },
+    "ec_198" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What would you like me to protect in you, even when you doubt?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu aimerais que je protège en toi, même quand tu doutes ?"
+          }
+        }
+      }
+    },
+    "ec_199" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What memory of us would you like to relive once more?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel souvenir de nous aimerais-tu revivre encore une fois ?"
+          }
+        }
+      }
+    },
+    "ec_200" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there something you need that I'm not giving you right now?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il quelque chose dont tu aurais besoin et que je ne t'apporte pas en ce moment ?"
+          }
+        }
+      }
+    },
+    "ec_201" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "When did you feel like I really understood you without you saying a word?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quand as-tu eu l'impression que je t'ai vraiment compris(e) sans que tu dises un mot ?"
+          }
+        }
+      }
+    },
+    "ec_202" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What can I do to make your days more pleasant or easier?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que puis-je faire pour rendre tes journées plus agréables ou plus faciles ?"
+          }
+        }
+      }
+    },
+    "ec_203" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there a moment in our relationship that you sometimes relive in your thoughts?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il un moment de notre relation que tu revis parfois en pensée ?"
+          }
+        }
+      }
+    },
+    "ec_204" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How could I better respond to your emotional needs?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment pourrais-je mieux répondre à tes besoins émotionnels ?"
+          }
+        }
+      }
+    },
+    "ec_205" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If we could talk to each other without filter, what would you want us to talk about today?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si on pouvait se parler sans filtre, de quoi voudrais-tu qu'on parle aujourd'hui ?"
+          }
+        }
+      }
+    },
+    "ec_206" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What am I doing right now that you particularly love or appreciate?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que je fais en ce moment que tu aimes ou apprécies particulièrement ?"
+          }
+        }
+      }
+    },
+    "ec_207" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What are, according to you, my biggest areas for improvement?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quels sont, selon toi, mes plus grands axes d'amélioration ?"
+          }
+        }
+      }
+    },
+    "ec_208" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there something I used to do at the beginning of our relationship that I don't do as much anymore, that you'd like to see return?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il une chose que je faisais au début de notre relation et que je ne fais plus autant, que tu aimerais retrouver ?"
+          }
+        }
+      }
+    },
+    "ec_209" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think I take you for granted?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penses-tu que je te considère comme acquis(e) ?"
+          }
+        }
+      }
+    },
+    "ec_210" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there something stressful in your life right now that I should know about?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il quelque chose de stressant en ce moment dans ta vie que je devrais savoir ?"
+          }
+        }
+      }
+    },
+    "ec_211" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Have you felt generally happy lately?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "T'es-tu senti(e) globalement heureux(se) ces derniers temps ?"
+          }
+        }
+      }
+    },
+    "ec_212" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How can I better support your personal growth?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment puis-je mieux accompagner ton évolution personnelle ?"
+          }
+        }
+      }
+    },
+    "ec_213" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there something you'd like us to do differently or try in our intimacy?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il quelque chose que tu aimerais faire différemment ou essayer dans notre intimité ?"
+          }
+        }
+      }
+    },
+    "ec_214" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What would you like us to say to each other more often?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'aimerais-tu qu'on se dise plus souvent ?"
+          }
+        }
+      }
+    },
+    "ec_215" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What are you looking forward to this week / this month?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu attends avec impatience cette semaine / ce mois-ci ?"
+          }
+        }
+      }
+    },
+    "ec_216" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If we had to reinvent ourselves as a couple, what would you absolutely keep?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si on devait se réinventer en tant que couple, que garderais-tu absolument ?"
+          }
+        }
+      }
+    },
+    "ec_217" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there a promise you'd like us to make to each other?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il une promesse que tu aimerais qu'on se fasse ?"
+          }
+        }
+      }
+    },
+    "ec_218" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Would you like us to talk about our future goals? Are there things to update, adjust or discuss?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Souhaites-tu que l'on parle de nos objectifs d'avenir ? Y a-t-il des choses à mettre à jour, à ajuster ou à discuter ?"
+          }
+        }
+      }
+    },
+    "ec_219" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What are ways we could have more fun together in our relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelles sont les façons dont on pourrait s'amuser davantage ensemble dans notre relation ?"
+          }
+        }
+      }
+    },
+    "ec_220" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there something I do that pushes you away without me realizing it?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il une chose que je fais qui t'éloigne sans que je m'en rende compte ?"
+          }
+        }
+      }
+    },
+    "ec_221" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If our relationship were a quote, what would it be?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si notre relation était une citation, quelle serait-elle ?"
+          }
+        }
+      }
+    },
+    "ec_222" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "When do you feel like our relationship is growing?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quand sens-tu que notre couple grandit ?"
+          }
+        }
+      }
+    },
+    "ec_223" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are there important dates coming up that I should know about?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il des dates importantes à venir que je devrais connaître ?"
+          }
+        }
+      }
+    },
+    "ec_224" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think we share the same vision of our future?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penses-tu que nous partageons la même vision de notre avenir ?"
+          }
+        }
+      }
+    },
+    "ec_225" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What attracts you most about me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce qui t'attire le plus chez moi ?"
+          }
+        }
+      }
+    },
+    "ec_226" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could choose one word to symbolize our relationship, what would it be?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais choisir un mot pour symboliser notre relation, lequel ce serait ?"
+          }
+        }
+      }
+    },
+    "ec_227" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there a conflict we never really resolved according to you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il un conflit qu'on n'a jamais vraiment résolu selon toi ?"
+          }
+        }
+      }
+    },
+    "ec_228" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you think is one of my best qualities?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selon toi, quelle est l'une de mes meilleures qualités ?"
+          }
+        }
+      }
+    },
+    "ec_229" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is the first thing you noticed about me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la première chose que tu as remarquée chez moi ?"
+          }
+        }
+      }
+    },
+    "ec_230" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If our relationship were a work of art, what would it look like?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si notre couple était une œuvre d'art, à quoi ressemblerait-elle ?"
+          }
+        }
+      }
+    },
+    "ec_231" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What would be the ideal place for you to retire?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel serait pour toi l'endroit idéal pour prendre ta retraite ?"
+          }
+        }
+      }
+    },
+    "ec_232" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What overcome difficulty in our relationship strengthened your love for me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle difficulté surmontée de notre couple a renforcé ton amour pour moi ?"
+          }
+        }
+      }
+    },
+    "ec_233" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What would an ideal date look like according to you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "À quoi ressemblerait un date idéal selon toi ?"
+          }
+        }
+      }
+    },
+    "ec_234" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What part of your story would you like me to know better?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle partie de ton histoire aimerais-tu que je connaisse mieux ?"
+          }
+        }
+      }
+    },
+    "ec_235" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What helps you stay committed to our relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce qui t'aide à rester engagé(e) dans notre relation ?"
+          }
+        }
+      }
+    },
+    "ec_236" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is the number one thing on your dream gift list?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose numéro un sur ta liste de cadeaux rêvés ?"
+          }
+        }
+      }
+    },
+    "ec_237" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there something about me you'd like to be able to change?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il quelque chose chez moi que tu aimerais pouvoir changer ?"
+          }
+        }
+      }
+    },
+    "ec_238" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you happy in this relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Es-tu heureux(se) dans cette relation ?"
+          }
+        }
+      }
+    },
+    "ec_239" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is the most beautiful thing our relationship has revealed to you about yourself?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la plus belle chose que notre couple t'a révélée sur toi-même ?"
+          }
+        }
+      }
+    },
+    "ec_240" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How do you want us to love each other in 10 years?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment veux-tu qu'on s'aime dans 10 ans ?"
+          }
+        }
+      }
+    },
+    "ec_241" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think our relationship is moving in the right direction?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penses-tu que notre relation avance dans la bonne direction ?"
+          }
+        }
+      }
+    },
+    "ec_242" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What small daily ritual would strengthen our bond?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel petit rituel quotidien renforcerait notre complicité ?"
+          }
+        }
+      }
+    },
+    "ec_243" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are there boundaries you'd like to set?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il des limites que tu souhaiterais poser ?"
+          }
+        }
+      }
+    },
+    "ec_244" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could confide one thing to me without fear of being judged, what would it be?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais me confier une chose sans crainte d'être jugé(e), ce serait quoi ?"
+          }
+        }
+      }
+    },
+    "ec_245" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What importance do you place on forgiveness in our relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle importance accordes-tu au pardon dans notre relation ?"
+          }
+        }
+      }
+    },
+    "ec_246" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How do our personalities complement each other?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En quoi nos personnalités se complètent-elles ?"
+          }
+        }
+      }
+    },
+    "ec_247" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What legacy would you like us to build together?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel héritage aimerais-tu que nous construisions ensemble ?"
+          }
+        }
+      }
+    },
+    "ec_248" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you believe we were meant to be together?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crois-tu que nous étions destinés à être ensemble ?"
+          }
+        }
+      }
+    },
+    "ec_249" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you think will be the biggest challenges we'll have to face in our shared future?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quels seront, selon toi, les plus grands défis que nous aurons à relever dans notre avenir commun ?"
+          }
+        }
+      }
+    },
+    "ec_250" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What does being a good partner mean to you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que signifie, selon toi, être un(e) bon(ne) partenaire ?"
+          }
+        }
+      }
+    },
+    "ec_251" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How do you like to make peace after an argument?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment aimes-tu faire la paix après une dispute ?"
+          }
+        }
+      }
+    },
+    "ec_252" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you think is the most important thing for a long-term relationship to work?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est, selon toi, la chose la plus importante pour qu'une relation à long terme fonctionne ?"
+          }
+        }
+      }
+    },
+    "ec_253" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How could we strengthen trust between us?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment pourrions-nous renforcer la confiance entre nous ?"
+          }
+        }
+      }
+    },
+    "ec_254" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name 3 things you're grateful for regarding me"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cites 3 choses pour lesquelles tu es reconnaissant(e) vis à vis de moi"
+          }
+        }
+      }
+    },
+    "ec_255" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Can you tell me you love me right now?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peux-tu me dire que tu m'aimes maintenant ?"
+          }
+        }
+      }
+    },
+    "ec_256" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there anything else you'd like us to talk about?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il autre chose dont tu aimerais qu'on parle ?"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

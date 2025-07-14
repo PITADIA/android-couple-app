@@ -11,7 +11,7 @@ struct FitnessIntroStepView: View {
             
             // Titre centré à gauche
             HStack {
-                Text("Sauvegardez vos moments passés ensemble")
+                Text("save_moments_together".localized)
                     .font(.system(size: 36, weight: .bold))
                     .foregroundColor(.black)
                     .multilineTextAlignment(.leading)
@@ -38,7 +38,7 @@ struct FitnessIntroStepView: View {
                 Button(action: {
                     viewModel.nextStep()
                 }) {
-                    Text("Continuer")
+                    Text("continue".localized)
                         .font(.system(size: 18, weight: .semibold))
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)

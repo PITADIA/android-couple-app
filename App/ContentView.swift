@@ -112,9 +112,9 @@ struct LoadingTransitionView: View {
                     .foregroundColor(.green)
                     .padding()
                 
-                Text("Connexion réussie...")
-                    .font(.title2)
-                    .fontWeight(.semibold)
+                Text(NSLocalizedString("connection_successful_status", comment: "Connection successful status"))
+                    .font(.system(size: 18, weight: .medium))
+                    .foregroundColor(.black)
                 
                 Spacer()
             }

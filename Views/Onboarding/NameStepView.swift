@@ -12,7 +12,7 @@ struct NameStepView: View {
             
             // Titre centré à gauche
             HStack {
-                Text("Comment tu t'appelles ?")
+                Text("name_step_title".localized)
                     .font(.system(size: 36, weight: .bold))
                     .foregroundColor(.black)
                     .multilineTextAlignment(.leading)
@@ -26,7 +26,7 @@ struct NameStepView: View {
             // Contenu principal centré
             VStack(spacing: 30) {
                 // Sous-titre
-                Text("Cette information nous permettra de personnaliser ton expérience.")
+                Text("name_step_description".localized)
                     .font(.system(size: 18))
                     .foregroundColor(.black.opacity(0.7))
                     .multilineTextAlignment(.center)
@@ -39,7 +39,7 @@ struct NameStepView: View {
                 VStack(spacing: 0) {
                     ZStack(alignment: .leading) {
                         if viewModel.userName.isEmpty {
-                            Text("Entrez votre prénom")
+                            Text("name_placeholder".localized)
                                 .foregroundColor(.black.opacity(0.5))
                                 .font(.system(size: 18))
                                 .padding(.horizontal, 20)
@@ -72,7 +72,7 @@ struct NameStepView: View {
                         viewModel.nextStep()
                     }
                 }) {
-                    Text("Continuer")
+                                            Text("continue".localized)
                         .font(.system(size: 18, weight: .semibold))
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)

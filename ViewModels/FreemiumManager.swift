@@ -63,7 +63,7 @@ class FreemiumManager: ObservableObject {
         }
         
         // Pour la catégorie "En couple" gratuite, limiter à 2 packs (64 questions)
-        if category.title == "En couple" {
+        if category.id == "en-couple" {
             let maxFreeQuestions = freePacksLimit * questionsPerPack // 2 * 32 = 64
             return index < maxFreeQuestions
         }
@@ -188,7 +188,7 @@ class FreemiumManager: ObservableObject {
             return 0 // Aucune question gratuite pour les catégories premium
         }
         
-        if category.title == "En couple" {
+        if category.id == "en-couple" {
             return freePacksLimit * questionsPerPack // 64 questions
         }
         

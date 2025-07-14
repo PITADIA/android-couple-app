@@ -141,7 +141,7 @@ struct JournalMapView: View {
                                     .font(.system(size: 18, weight: .semibold))
                                     .foregroundColor(.white)
                                 
-                                Text("Retour")
+                                Text("back".localized)
                                     .font(.system(size: 16, weight: .medium))
                                     .foregroundColor(.white)
                             }
@@ -162,7 +162,7 @@ struct JournalMapView: View {
                                 if uniqueCountriesCount > 0 {
                                     LocationInfoBubble(
                                         count: uniqueCountriesCount,
-                                        label: uniqueCountriesCount == 1 ? "pays" : "pays"
+                                        label: uniqueCountriesCount == 1 ? "country".localized : "countries".localized
                                     )
                                 }
                                 
@@ -170,7 +170,7 @@ struct JournalMapView: View {
                                 if uniqueCitiesCount > 0 {
                                     LocationInfoBubble(
                                         count: uniqueCitiesCount,
-                                        label: uniqueCitiesCount == 1 ? "ville" : "villes"
+                                        label: uniqueCitiesCount == 1 ? "city".localized : "cities".localized
                                     )
                                 }
                             }
@@ -189,7 +189,7 @@ struct JournalMapView: View {
                                 if uniqueCountriesCount > 0 {
                                     LocationInfoBubble(
                                         count: uniqueCountriesCount,
-                                        label: uniqueCountriesCount == 1 ? "pays" : "pays"
+                                        label: uniqueCountriesCount == 1 ? "country".localized : "countries".localized
                                     )
                                 }
                                 
@@ -197,7 +197,7 @@ struct JournalMapView: View {
                                 if uniqueCitiesCount > 0 {
                                     LocationInfoBubble(
                                         count: uniqueCitiesCount,
-                                        label: uniqueCitiesCount == 1 ? "ville" : "villes"
+                                        label: uniqueCitiesCount == 1 ? "city".localized : "cities".localized
                                     )
                                 }
                             }
@@ -219,16 +219,16 @@ struct JournalMapView: View {
                     VStack(spacing: 16) {
                         // Contenu textuel centré
                         VStack(spacing: 8) {
-                            Text("Ajoutez des événements à votre journal")
-                                .font(.system(size: 20, weight: .bold))
+                            Text("add_journal_events".localized)
+                                .font(.system(size: 20, weight: .semibold))
                                 .foregroundColor(.black)
                                 .multilineTextAlignment(.center)
                             
-                            Text("Tous vos souvenirs passés ensemble apparaîtront sur cette carte")
-                                .font(.system(size: 14))
-                                .foregroundColor(.gray)
+                            Text("memories_appear_map".localized)
+                                .font(.system(size: 16))
+                                .foregroundColor(.black.opacity(0.7))
                                 .multilineTextAlignment(.center)
-                                .lineLimit(nil)
+                                .padding(.horizontal, 30)
                         }
                     }
                     .padding(.horizontal, 24)
@@ -390,7 +390,7 @@ struct JournalMapView: View {
         
         // Grouper par pays d'abord
         let entriesByCountry = Dictionary(grouping: entries.filter { $0.location != nil }) { entry in
-            entry.location?.country ?? "Inconnu"
+                            entry.location?.country ?? "unknown_location".localized
         }
         
         var clusters: [JournalCluster] = []
@@ -399,7 +399,7 @@ struct JournalMapView: View {
             // MODIFICATION: Toujours grouper par ville, même en vue monde
             // Cela permet de voir la répartition géographique même quand on dézoome
             let entriesByCity = Dictionary(grouping: countryEntries) { entry in
-                entry.location?.city ?? "Ville inconnue"
+                entry.location?.city ?? "unknown_city".localized
             }
             
             for (city, cityEntries) in entriesByCity {
@@ -533,7 +533,7 @@ struct OptimizedClusterAnnotationView: View {
                     Spacer()
                     HStack {
                         Spacer()
-                        Text("\(cluster.count)")
+                        Text("\(cluster.count) " + "events_count".localized)
                             .font(.system(size: 14, weight: .bold))
                             .foregroundColor(.white)
                             .frame(width: 24, height: 24)
@@ -667,7 +667,7 @@ struct ClusterDetailView: View {
             VStack(spacing: 0) {
                 // Header
                 VStack(spacing: 8) {
-                    Text("\(cluster.count) événements")
+                    Text("\(cluster.count) " + "events_count".localized)
                         .font(.system(size: 24, weight: .bold))
                         .foregroundColor(.black)
                     
@@ -749,7 +749,7 @@ struct ClusterDetailView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Fermer") {
+                    Button("close".localized) {
                         // La fermeture est gérée par le parent
                     }
                 }

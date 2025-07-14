@@ -19,7 +19,7 @@ struct PartnerSubscriptionDebugView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
-                Text("🔄 Debug - Synchronisation Abonnements")
+                Text(NSLocalizedString("debug_sync_subscriptions", comment: "Debug sync subscriptions title"))
                     .font(.largeTitle.bold())
                     .padding(.bottom, 20)
                 
@@ -46,17 +46,17 @@ struct PartnerSubscriptionDebugView: View {
     
     private var userSection: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("👤 Utilisateur Actuel")
+            Text(NSLocalizedString("current_user", comment: "Current user title"))
                 .font(.title2.bold())
                 .foregroundColor(.blue)
             
             if let user = userInfo {
                 VStack(alignment: .leading, spacing: 5) {
-                    Text("ID: \(user.id)")
+                    Text(NSLocalizedString("id_label", comment: "ID label") + " \(user.id)")
                         .font(.caption.monospaced())
                         .foregroundColor(.secondary)
                     
-                    Text("Nom: \(user.name)")
+                    Text(NSLocalizedString("name_label", comment: "Name label") + " \(user.name)")
                         .font(.headline)
                     
                     HStack {
@@ -79,7 +79,7 @@ struct PartnerSubscriptionDebugView: View {
                     }
                     
                     if let sharedFrom = user.sharedFrom {
-                        Text("Partagé par: \(sharedFrom)")
+                        Text(String(format: NSLocalizedString("user_shared_by", comment: "User shared by message"), sharedFrom))
                             .font(.caption)
                             .foregroundColor(.orange)
                     }
@@ -96,7 +96,7 @@ struct PartnerSubscriptionDebugView: View {
     
     private var partnerSection: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("👥 Partenaire Connecté")
+            Text(NSLocalizedString("partner_connected_status", comment: "Partner connected status"))
                 .font(.title2.bold())
                 .foregroundColor(.purple)
             
@@ -106,8 +106,9 @@ struct PartnerSubscriptionDebugView: View {
                         .font(.caption.monospaced())
                         .foregroundColor(.secondary)
                     
-                    Text("Nom: \(partner.name)")
+                    Text(NSLocalizedString("partner_connected_status", comment: "Partner connected status"))
                         .font(.headline)
+                        .foregroundColor(.green)
                     
                     HStack {
                         Circle()
@@ -129,18 +130,18 @@ struct PartnerSubscriptionDebugView: View {
                     }
                     
                     if let sharedFrom = partner.sharedFrom {
-                        Text("Partagé par: \(sharedFrom)")
+                        Text(String(format: NSLocalizedString("partner_shared_by", comment: "Partner shared by message"), sharedFrom))
                             .font(.caption)
-                            .foregroundColor(.orange)
+                            .foregroundColor(.green)
                     }
                 }
                 .padding()
                 .background(Color.gray.opacity(0.1))
                 .cornerRadius(12)
             } else {
-                Text("Aucun partenaire connecté")
-                    .font(.caption)
-                    .foregroundColor(.secondary)
+                Text(NSLocalizedString("no_partner_connected", comment: "No partner connected status"))
+                    .font(.headline)
+                    .foregroundColor(.red)
                     .padding()
             }
         }
@@ -148,7 +149,7 @@ struct PartnerSubscriptionDebugView: View {
     
     private var testActionsSection: some View {
         VStack(alignment: .leading, spacing: 15) {
-            Text("⚡️ Actions de Test")
+            Text(NSLocalizedString("test_actions", comment: "Test actions title"))
                 .font(.title2.bold())
                 .foregroundColor(.orange)
             
@@ -156,7 +157,7 @@ struct PartnerSubscriptionDebugView: View {
                 Button {
                     simulateSubscription()
                 } label: {
-                    Text("🔥 Simuler Abonnement")
+                    Text(NSLocalizedString("simulate_subscription", comment: "Simulate subscription button"))
                         .foregroundColor(.white)
                         .padding()
                         .background(Color.blue)
@@ -167,7 +168,8 @@ struct PartnerSubscriptionDebugView: View {
                 Button {
                     simulateUnsubscription()
                 } label: {
-                    Text("❌ Simuler Résiliation")
+                    Text(NSLocalizedString("simulate_revocation", comment: "Simulate revocation button"))
+                        .font(.system(size: 16, weight: .medium))
                         .foregroundColor(.white)
                         .padding()
                         .background(Color.red)
@@ -178,7 +180,7 @@ struct PartnerSubscriptionDebugView: View {
                 Button {
                     loadUserData()
                 } label: {
-                    Text("🔄 Actualiser")
+                    Text(NSLocalizedString("refresh", comment: "Refresh button"))
                         .foregroundColor(.white)
                         .padding()
                         .background(Color.gray)
@@ -189,7 +191,7 @@ struct PartnerSubscriptionDebugView: View {
                 Button {
                     cleanupOrphanedCodes()
                 } label: {
-                    Text("🧹 Nettoyer codes orphelins")
+                    Text(NSLocalizedString("clean_orphan_codes", comment: "Clean orphan codes button"))
                         .foregroundColor(.white)
                         .padding()
                         .background(Color.orange)

@@ -6,23 +6,23 @@ struct LockScreenWidgetTutorialView: View {
     
     private let steps = [
         TutorialStep(
-            title: "Swipe vers le bas",
-            description: "Swipe vers le bas pour faire apparaître ton écran de verrouillage puis maintiens ton doigt appuyé dessus.",
+            title: "swipe_down".localized,
+            description: "swipe_description".localized,
             imageName: "etape1"
         ),
         TutorialStep(
-            title: "Appuie sur le bouton Personnaliser",
-            description: "Touche le bouton 'Personnaliser' pour configurer tes widgets.",
+            title: "tap_customize".localized,
+            description: "customize_description".localized,
             imageName: "etape2"
         ),
         TutorialStep(
-            title: "Sélectionne ton écran de verrouillage",
-            description: "Appuie sur l'écran de verrouillage pour entrer en mode édition.",
+            title: "select_lock_screen".localized,
+            description: "lock_screen_description".localized,
             imageName: "etape3"
         ),
         TutorialStep(
-            title: "Recherche love2love",
-            description: "Recherche Love2Love dans la barre de recherche puis choisis le widget que tu veux.",
+            title: "search_love2love".localized,
+            description: "search_description".localized,
             imageName: "etape4"
         )
     ]
@@ -37,9 +37,10 @@ struct LockScreenWidgetTutorialView: View {
                 VStack(spacing: 0) {
                     // Header sans bouton retour
                     VStack(spacing: 0) {
-                        Text("Widget Écran Verrouillé")
+                        Text(ui: "lock_screen_widget", comment: "Lock screen widget title")
                             .font(.system(size: 24, weight: .bold))
                             .foregroundColor(.black)
+                            .multilineTextAlignment(.center)
                             .padding(.top, 40)
                     }
                     
@@ -72,7 +73,7 @@ struct LockScreenWidgetTutorialView: View {
                                     currentStep -= 1
                                 }
                             }) {
-                                Text("Précédent")
+                                Text("previous".localized)
                                     .font(.system(size: 16, weight: .medium))
                                     .foregroundColor(Color(hex: "#FD267A"))
                                     .frame(maxWidth: .infinity)
@@ -95,7 +96,7 @@ struct LockScreenWidgetTutorialView: View {
                                 dismiss()
                             }
                         }) {
-                            Text(currentStep < steps.count - 1 ? "Continuer" : "Terminer")
+                            Text(currentStep < steps.count - 1 ? "continue".localized : "done".localized)
                                 .font(.system(size: 16, weight: .semibold))
                                 .foregroundColor(.white)
                                 .frame(maxWidth: .infinity)

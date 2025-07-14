@@ -126,7 +126,7 @@ class PartnerSubscriptionNotificationService: ObservableObject {
     private func handleSubscriptionRevoked() async {
         // Pour les révocations, on peut utiliser un nom générique ou récupérer depuis l'historique
         await MainActor.run {
-            self.revokedPartnerName = "ton partenaire" // Nom générique pour l'instant
+            self.revokedPartnerName = NSLocalizedString("generic_partner", comment: "Generic partner name")
             self.shouldShowSubscriptionRevokedMessage = true
             print("🔒 PartnerSubscriptionNotificationService: Affichage message révocation")
         }

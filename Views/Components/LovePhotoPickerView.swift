@@ -37,15 +37,14 @@ struct LovePhotoPickerView: View {
                         .font(.system(size: 60))
                         .foregroundColor(Color(hex: "#FD267A"))
                     
-                    Text("Choisir une photo")
+                    Text("choose_photo".localized)
                         .font(.system(size: 24, weight: .bold))
                         .foregroundColor(.black)
                     
-                    Text("Love2Love accédera uniquement aux photos que vous autorisez")
-                        .font(.system(size: 16))
-                        .foregroundColor(.black.opacity(0.8))
+                    Text("photo_access_description".localized)
+                        .font(.system(size: 13))
+                        .foregroundColor(.gray)
                         .multilineTextAlignment(.center)
-                        .padding(.horizontal, 20)
                 }
                 .padding(.top, 40)
                 
@@ -66,7 +65,7 @@ struct LovePhotoPickerView: View {
                                 .font(.system(size: 20))
                         }
                         
-                        Text(isLoading ? "Chargement..." : "Accéder aux photos")
+                        Text(isLoading ? "loading_photos".localized : "access_photos".localized)
                             .font(.system(size: 18, weight: .semibold))
                     }
                     .foregroundColor(.white)
@@ -81,7 +80,7 @@ struct LovePhotoPickerView: View {
                 Button(action: {
                     dismiss()
                 }) {
-                    Text("Annuler")
+                    Text("cancel".localized)
                         .font(.system(size: 16))
                         .foregroundColor(.black.opacity(0.6))
                 }
@@ -95,13 +94,17 @@ struct LovePhotoPickerView: View {
         .sheet(isPresented: $showingLimitedGalleryView) {
             LimitedGalleryView(assets: limitedPhotoAssets, onImageSelected: handleImageSelection)
         }
-        .alert("Accès aux photos requis", isPresented: $showSettingsAlert) {
-            Button("Annuler", role: .cancel) { }
-            Button("Ouvrir les Réglages") {
+        .alert("photo_access_required".localized, isPresented: $showSettingsAlert) {
+            Button("cancel".localized, role: .cancel) { }
+            Button("open_settings_button".localized) {
                 openSettings()
             }
         } message: {
-            Text("Pour utiliser cette fonctionnalité, veuillez autoriser l'accès aux photos dans les Réglages.")
+            Text("photo_permission_message".localized)
+                .font(.system(size: 16))
+                .foregroundColor(.black.opacity(0.8))
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 20)
         }
     }
     
@@ -303,16 +306,16 @@ struct LimitedGalleryView: View {
                                 .font(.system(size: 60))
                                 .foregroundColor(.gray)
                             
-                            Text("Aucune photo accessible")
+                            Text("no_accessible_photos".localized)
                                 .font(.system(size: 20, weight: .semibold))
                                 .foregroundColor(.black)
                             
-                            Text("Vous pouvez sélectionner plus de photos dans les Réglages")
-                                .font(.system(size: 16))
+                            Text("select_more_photos".localized)
+                                .font(.system(size: 14))
                                 .foregroundColor(.gray)
                                 .multilineTextAlignment(.center)
                             
-                            Button("Ouvrir les Réglages") {
+                            Button("open_settings_button".localized) {
                                 openSettings()
                             }
                             .foregroundColor(.white)
@@ -343,9 +346,9 @@ struct LimitedGalleryView: View {
             }
             .navigationTitle("Photos")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
+                        .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Annuler") {
+                    Button("cancel".localized) {
                         dismiss()
                     }
                     .foregroundColor(Color(hex: "#FD267A"))
@@ -531,12 +534,12 @@ struct AssetThumbnailView: View {
                         .fill(Color.gray.opacity(0.3))
                         .frame(width: 200, height: 200)
                         .overlay(
-                            Text("Aucune image")
+                                                        Text("no_image".localized)
                                 .foregroundColor(.gray)
                         )
                 }
                 
-                Button("Sélectionner une photo") {
+                Button("select_photo".localized) {
                     showingPicker = true
                 }
                 .padding()

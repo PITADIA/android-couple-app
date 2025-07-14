@@ -174,25 +174,25 @@ struct ImagePicker: UIViewControllerRepresentable {
             iconLabel.font = .systemFont(ofSize: 60)
             
             let titleLabel = UILabel()
-            titleLabel.text = "Accès aux photos requis"
+            titleLabel.text = LocalizationService.ui("photo_access_required")
             titleLabel.font = .boldSystemFont(ofSize: 20)
             titleLabel.textAlignment = .center
             
             let messageLabel = UILabel()
-            messageLabel.text = "Pour ajouter des photos, veuillez autoriser l'accès dans les Réglages"
+            messageLabel.text = LocalizationService.ui("photo_access_add_photos")
             messageLabel.font = .systemFont(ofSize: 16)
             messageLabel.textAlignment = .center
             messageLabel.numberOfLines = 0
             
             let settingsButton = UIButton(type: .system)
-            settingsButton.setTitle("Ouvrir les Réglages", for: .normal)
+            settingsButton.setTitle(LocalizationService.ui("open_settings_button"), for: .normal)
             settingsButton.titleLabel?.font = .boldSystemFont(ofSize: 16)
             settingsButton.backgroundColor = .systemBlue
             settingsButton.setTitleColor(.white, for: .normal)
             settingsButton.layer.cornerRadius = 8
             if #available(iOS 15.0, *) {
                 var config = UIButton.Configuration.filled()
-                config.title = "Ouvrir les Réglages"
+                config.title = LocalizationService.ui("open_settings_button")
                 config.baseBackgroundColor = .systemBlue
                 config.baseForegroundColor = .white
                 config.cornerStyle = .medium
@@ -204,7 +204,7 @@ struct ImagePicker: UIViewControllerRepresentable {
             settingsButton.addTarget(self, action: #selector(openSettings), for: .touchUpInside)
             
             let cancelButton = UIButton(type: .system)
-            cancelButton.setTitle("Annuler", for: .normal)
+            cancelButton.setTitle(LocalizationService.ui("cancel"), for: .normal)
             cancelButton.titleLabel?.font = .systemFont(ofSize: 16)
             cancelButton.addTarget(self, action: #selector(cancelSelection), for: .touchUpInside)
             
@@ -386,26 +386,26 @@ class LimitedAccessViewController: UIViewController {
         iconLabel.font = .systemFont(ofSize: 60)
         
         let titleLabel = UILabel()
-        titleLabel.text = "Aucune photo accessible"
+        titleLabel.text = LocalizationService.ui("no_accessible_photos_title")
         titleLabel.font = .boldSystemFont(ofSize: 20)
         titleLabel.textAlignment = .center
         
         let messageLabel = UILabel()
-        messageLabel.text = "Vous pouvez sélectionner plus de photos dans les Réglages"
+        messageLabel.text = LocalizationService.ui("select_more_photos_settings")
         messageLabel.font = .systemFont(ofSize: 16)
         messageLabel.textColor = .secondaryLabel
         messageLabel.textAlignment = .center
         messageLabel.numberOfLines = 0
         
         let settingsButton = UIButton(type: .system)
-        settingsButton.setTitle("Ouvrir les Réglages", for: .normal)
+        settingsButton.setTitle(LocalizationService.ui("open_settings_button"), for: .normal)
         settingsButton.titleLabel?.font = .boldSystemFont(ofSize: 16)
         settingsButton.backgroundColor = .systemBlue
         settingsButton.setTitleColor(.white, for: .normal)
         settingsButton.layer.cornerRadius = 8
         if #available(iOS 15.0, *) {
             var config = UIButton.Configuration.filled()
-            config.title = "Ouvrir les Réglages"
+            config.title = LocalizationService.ui("open_settings_button")
             config.baseBackgroundColor = .systemBlue
             config.baseForegroundColor = .white
             config.cornerStyle = .medium
@@ -714,25 +714,25 @@ struct StandardImagePicker: UIViewControllerRepresentable {
             iconLabel.font = .systemFont(ofSize: 60)
             
             let titleLabel = UILabel()
-            titleLabel.text = "Accès aux photos requis"
+            titleLabel.text = LocalizationService.ui("photo_access_required")
             titleLabel.font = .boldSystemFont(ofSize: 20)
             titleLabel.textAlignment = .center
             
             let messageLabel = UILabel()
-            messageLabel.text = "Pour ajouter des photos, veuillez autoriser l'accès dans les Réglages"
+            messageLabel.text = LocalizationService.ui("photo_access_add_photos")
             messageLabel.font = .systemFont(ofSize: 16)
             messageLabel.textAlignment = .center
             messageLabel.numberOfLines = 0
             
             let settingsButton = UIButton(type: .system)
-            settingsButton.setTitle("Ouvrir les Réglages", for: .normal)
+            settingsButton.setTitle(LocalizationService.ui("open_settings_button"), for: .normal)
             settingsButton.titleLabel?.font = .boldSystemFont(ofSize: 16)
             settingsButton.backgroundColor = .systemBlue
             settingsButton.setTitleColor(.white, for: .normal)
             settingsButton.layer.cornerRadius = 8
             if #available(iOS 15.0, *) {
                 var config = UIButton.Configuration.filled()
-                config.title = "Ouvrir les Réglages"
+                config.title = LocalizationService.ui("open_settings_button")
                 config.baseBackgroundColor = .systemBlue
                 config.baseForegroundColor = .white
                 config.cornerStyle = .medium
@@ -744,7 +744,7 @@ struct StandardImagePicker: UIViewControllerRepresentable {
             settingsButton.addTarget(self, action: #selector(openSettings), for: .touchUpInside)
             
             let cancelButton = UIButton(type: .system)
-            cancelButton.setTitle("Annuler", for: .normal)
+            cancelButton.setTitle(LocalizationService.ui("cancel"), for: .normal)
             cancelButton.titleLabel?.font = .systemFont(ofSize: 16)
             cancelButton.addTarget(self, action: #selector(cancelSelection), for: .touchUpInside)
             

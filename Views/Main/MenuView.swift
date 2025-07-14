@@ -89,11 +89,11 @@ struct MenuView: View {
             } else {
                 // Afficher une vue d'erreur au lieu d'un écran blanc
                 VStack {
-                    Text("Erreur: Image non trouvée")
+                    Text("error_image_not_found".localized)
                         .font(.title)
                         .foregroundColor(.red)
                     
-                    Button("Fermer") {
+                    Button("close".localized) {
                         self.showImageCropper = false
                     }
                     .foregroundColor(.white)
@@ -108,12 +108,12 @@ struct MenuView: View {
         }
         .alert(isPresented: $showSettingsAlert) {
             Alert(
-                title: Text("Autorisation requise"),
+                title: Text("authorization_required".localized),
                 message: Text(alertMessage),
-                primaryButton: .default(Text("Ouvrir les paramètres")) {
+                primaryButton: .default(Text("open_settings_button".localized)) {
                     openSettings()
                 },
-                secondaryButton: .cancel(Text("Annuler"))
+                secondaryButton: .cancel(Text("cancel".localized))
             )
         }
         .onChange(of: profileImage) { _, newImage in
@@ -121,13 +121,13 @@ struct MenuView: View {
                 uploadProfileImage(image)
             }
         }
-        .alert("Supprimer le compte", isPresented: $showingDeleteConfirmation) {
-            Button("Annuler", role: .cancel) { }
-            Button("Supprimer définitivement", role: .destructive) {
+        .alert("delete_account".localized, isPresented: $showingDeleteConfirmation) {
+            Button("cancel".localized, role: .cancel) { }
+            Button("delete_account".localized, role: .destructive) {
                 deleteAccount()
             }
         } message: {
-            Text("Cette action est irréversible. Toutes vos données seront supprimées définitivement.\n\nApple pourrait vous demander de vous ré-authentifier pour confirmer cette action.")
+            Text("delete_account_confirmation".localized)
         }
 
         .sheet(isPresented: $showingPartnerCode) {
@@ -229,7 +229,7 @@ struct MenuView: View {
         VStack(spacing: 0) {
             // Titre "À propos de moi"
                          HStack {
-                 Text("À propos de moi")
+                 Text("about_me".localized)
                      .font(.system(size: 22, weight: .semibold))
                      .foregroundColor(.black)
                  Spacer()
@@ -239,7 +239,7 @@ struct MenuView: View {
             
             // Nom
             ProfileRowView(
-                title: "Nom",
+                title: "name".localized,
                 value: currentUserName,
                 showChevron: true,
                 action: {
@@ -249,7 +249,7 @@ struct MenuView: View {
             
             // En couple depuis
             ProfileRowView(
-                title: "En couple depuis",
+                title: "in_relationship_since".localized,
                 value: currentRelationshipStart,
                 showChevron: true,
                 action: {
@@ -259,7 +259,7 @@ struct MenuView: View {
             
             // Code partenaire
             ProfileRowView(
-                title: "Code partenaire",
+                title: "partner_code".localized,
                 value: "",
                 showChevron: true,
                 action: {
@@ -269,7 +269,7 @@ struct MenuView: View {
             
             // Tutoriel de localisation
             ProfileRowView(
-                title: "Tutoriel de localisation",
+                title: "location_tutorial".localized,
                 value: "",
                 showChevron: true,
                 action: {
@@ -283,7 +283,7 @@ struct MenuView: View {
             
             // Laissez nous un avis
             ProfileRowView(
-                title: "Laissez nous un avis",
+                title: "leave_review".localized,
                 value: "",
                 showChevron: true,
                 action: {
@@ -293,7 +293,7 @@ struct MenuView: View {
             
             // Widgets
             ProfileRowView(
-                title: "Widgets",
+                title: "widgets".localized,
                 value: "",
                 showChevron: true,
                 action: {
@@ -307,7 +307,7 @@ struct MenuView: View {
             
             // Gérer son abonnement
             ProfileRowView(
-                title: "Gérer son abonnement",
+                title: "manage_subscription".localized,
                 value: "",
                 showChevron: true,
                 action: {
@@ -337,7 +337,7 @@ struct MenuView: View {
         VStack(spacing: 0) {
             // Titre "Application"
                          HStack {
-                 Text("Application")
+                 Text("application".localized)
                      .font(.system(size: 22, weight: .semibold))
                      .foregroundColor(.black)
                  Spacer()
@@ -347,7 +347,7 @@ struct MenuView: View {
             
             // Contactez-nous
             ProfileRowView(
-                title: "Contactez-nous",
+                title: "contact_us".localized,
                 value: "",
                 showChevron: true,
                 action: {
@@ -357,7 +357,7 @@ struct MenuView: View {
             
             // CGV
             ProfileRowView(
-                title: "Conditions générales d'utilisation",
+                title: "terms_conditions".localized,
                 value: "",
                 showChevron: true,
                 action: {
@@ -371,7 +371,7 @@ struct MenuView: View {
             
             // Politique de confidentialité
             ProfileRowView(
-                title: "Politique de confidentialité",
+                title: "privacy_policy".localized,
                 value: "",
                 showChevron: true,
                 action: {
@@ -383,7 +383,7 @@ struct MenuView: View {
             
             // Supprimer le compte
             ProfileRowView(
-                title: isDeleting ? "Suppression en cours..." : "Supprimer le compte",
+                title: isDeleting ? "deleting_account".localized : "delete_account".localized,
                 value: "",
                 showChevron: false,
                 isDestructive: false,
@@ -417,12 +417,27 @@ struct MenuView: View {
         
         let formatter = DateFormatter()
         formatter.dateStyle = .long
-        formatter.locale = Locale(identifier: "fr_FR")
+        formatter.locale = Locale.current
         return formatter.string(from: startDate)
     }
     
     private var hasConnectedPartner: Bool {
         appState.currentUser?.partnerId != nil
+    }
+    
+    private var formattedRelationshipDate: String {
+        guard let date = appState.currentUser?.relationshipStartDate else { return "" }
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.locale = Locale.current
+        return formatter.string(from: date)
+    }
+    
+    private func formatDate(_ date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.locale = Locale.current
+        return formatter.string(from: date)
     }
     
     // MARK: - Actions
@@ -471,7 +486,7 @@ struct MenuView: View {
         // Convertir la string en Date (format reçu du DatePicker)
         let formatter = DateFormatter()
         formatter.dateStyle = .long
-        formatter.locale = Locale(identifier: "fr_FR")
+        formatter.locale = Locale.current
         
         guard let date = formatter.date(from: newDateString) else {
             return
@@ -638,7 +653,7 @@ struct EditNameView: View {
                 onSave(newName)
                 dismiss()
             }) {
-                Text("Enregistrer")
+                Text("save".localized)
                     .font(.system(size: 16, weight: .semibold))
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity)
@@ -676,7 +691,7 @@ struct EditRelationshipView: View {
         // Initialiser la date sélectionnée avec la date actuelle
         let formatter = DateFormatter()
         formatter.dateStyle = .long
-        formatter.locale = Locale(identifier: "fr_FR")
+        formatter.locale = Locale.current
         if let date = formatter.date(from: currentDate) {
             self._selectedDate = State(initialValue: date)
         } else {
@@ -694,17 +709,17 @@ struct EditRelationshipView: View {
             )
             .datePickerStyle(WheelDatePickerStyle())
             .labelsHidden()
-            .environment(\.locale, Locale(identifier: "fr_FR"))
+            .environment(\.locale, Locale.current)
             
             // Bouton Enregistrer
             Button(action: {
                 let formatter = DateFormatter()
                 formatter.dateStyle = .long
-                formatter.locale = Locale(identifier: "fr_FR")
+                formatter.locale = Locale.current
                 onSave(formatter.string(from: selectedDate))
                 dismiss()
             }) {
-                Text("Enregistrer")
+                Text("save".localized)
                     .font(.system(size: 16, weight: .semibold))
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity)
@@ -769,12 +784,12 @@ extension MenuView {
         case .denied, .restricted:
             // ❌ ACCÈS REFUSÉ - Proposer d'aller aux paramètres
             print("❌ MenuView: Accès refusé")
-            alertMessage = "L'accès à votre galerie est nécessaire pour changer votre photo de profil. Veuillez l'activer dans les paramètres de votre appareil."
+            alertMessage = "photo_access_denied_message_menu".localized
             showSettingsAlert = true
             
         @unknown default:
             print("❓ MenuView: Statut inconnu")
-            alertMessage = "Erreur d'accès à la galerie"
+            alertMessage = "photo_access_error_generic".localized
             showSettingsAlert = true
         }
     }

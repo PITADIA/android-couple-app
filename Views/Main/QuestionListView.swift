@@ -95,36 +95,15 @@ struct QuestionListView: View {
     private func loadQuestions() {
         guard !isQuestionsLoaded else { return }
         
-        // SUPPRESSION DES LOGS EXCESSIFS - Garder seulement l'essentiel
-        print("QuestionListView: Chargement catégorie '\(category.title)'")
+        print("QuestionListView: Chargement catégorie '\(category.id)'")
         
-        // Utilisation du cache intelligent Realm
-        let questions = questionCacheManager.getQuestionsWithSmartCache(for: category.title) {
-            // Fallback: mapping vers les clés originales si pas de cache
-            let questionKey: String
-            switch category.title {
-            case "Désirs Inavoués":
-                questionKey = "LES PLUS HOTS"
-            case "Pour rigoler à deux":
-                questionKey = "POUR RIRE À DEUX"
-            case "À travers la distance":
-                questionKey = "À DISTANCE"
-            case "Des questions profondes":
-                questionKey = "QUESTIONS PROFONDES"
-            case "Tu préfères quoi ?":
-                questionKey = "TU PRÉFÈRES ?"
-
-            case "En date":
-                questionKey = "POUR UN DATE"
-            case "En couple":
-                questionKey = "EN COUPLE"
-            case "Réparer notre amour":
-                questionKey = "MIEUX ENSEMBLE"
-            default:
-                questionKey = category.title
-            }
-            
-            return Question.sampleQuestions[questionKey] ?? []
+        // OPTIMISATION: Précharger la catégorie à la demande
+        questionCacheManager.preloadCategory(category.id)
+        
+        // Utilisation du cache intelligent Realm (utiliser l'ID constant au lieu du titre localisé)
+        let questions = questionCacheManager.getQuestionsWithSmartCache(for: category.id) {
+            // Fallback: utiliser le nouveau QuestionDataManager
+            return QuestionDataManager.shared.loadQuestions(for: category.id)
         }
         
         cachedQuestions = questions
@@ -181,7 +160,7 @@ struct QuestionListView: View {
                     Spacer()
                     
                     // Compteur de questions
-                    Text("\(currentQuestionIndex + 1) sur \(totalItems)")
+                    Text("\(currentQuestionIndex + 1) " + "on_count".localized + " \(totalItems)")
                         .font(.system(size: 18, weight: .semibold))
                         .foregroundColor(.white)
                     
@@ -221,15 +200,15 @@ struct QuestionListView: View {
                         Text("🔒")
                             .font(.system(size: 60))
                         
-                        Text("Contenu Premium")
+                        Text(NSLocalizedString("locked_content", comment: "Locked content text"))
                             .font(.system(size: 24, weight: .bold))
                             .foregroundColor(.white)
                         
-                        Text("Abonnez-vous pour accéder à toutes les questions")
-                            .font(.system(size: 16))
-                            .foregroundColor(.white.opacity(0.8))
+                        Text(NSLocalizedString("subscribe_access_questions", comment: "Subscribe to access questions message"))
+                            .font(.system(size: 18, weight: .semibold))
+                            .foregroundColor(.white)
                             .multilineTextAlignment(.center)
-                            .padding(.horizontal, 40)
+                            .padding(.horizontal, 30)
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 } else {
@@ -371,7 +350,7 @@ struct QuestionListView: View {
                         let isCurrentlyFavorite = currentQuestion != nil ? favoritesService.isFavorite(questionId: currentQuestion!.id) : false
                         
                         HStack(spacing: 12) {
-                            Text(isCurrentlyFavorite ? "Retirer des favoris" : "Ajouter en favoris")
+                            Text(isCurrentlyFavorite ? "remove_from_favorites".localized : "add_to_favorites".localized)
                                 .font(.system(size: 18, weight: .semibold))
                                 .foregroundColor(.white)
                             
@@ -496,14 +475,14 @@ struct PackCompletionCardView: View {
                 Spacer()
                 
                 VStack(spacing: 20) {
-                    Text("Félicitation !")
+                    Text(NSLocalizedString("congratulations_pack", comment: "Congratulations pack completion"))
                         .font(.system(size: 36, weight: .bold))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                     
-                    Text("Tu as terminé le pack.")
-                        .font(.system(size: 32, weight: .bold))
-                        .foregroundColor(.white)
+                    Text(NSLocalizedString("pack_completed", comment: "Pack completed message"))
+                        .font(.system(size: 18))
+                        .foregroundColor(.white.opacity(0.9))
                         .multilineTextAlignment(.center)
                     
                     // Flamme avec animation améliorée
@@ -522,8 +501,8 @@ struct PackCompletionCardView: View {
                             }
                         }
                     
-                    Text("Tape sur moi pour débloquer une surprise")
-                        .font(.system(size: 24, weight: .bold))
+                    Text(NSLocalizedString("tap_unlock_surprise", comment: "Tap to unlock surprise message"))
+                        .font(.system(size: 16, weight: .medium))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 20)

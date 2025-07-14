@@ -13,18 +13,18 @@ struct FavoritesPreviewCard: View {
                         .font(.system(size: 16))
                         .foregroundColor(.red)
                     
-                    Text("Mes Favoris")
+                    Text(NSLocalizedString("my_favorites", comment: "My favorites title"))
                         .font(.system(size: 16, weight: .semibold))
                         .foregroundColor(.black)
                 }
                 
                 Spacer()
                 
-                Button("Voir tout") {
+                Button(NSLocalizedString("view_all", comment: "View all button")) {
                     onTapViewAll()
                 }
-                .font(.system(size: 14))
-                .foregroundColor(.orange)
+                .font(.system(size: 16))
+                .foregroundColor(Color(hex: "#FD267A"))
             }
             
             // Contenu
@@ -33,9 +33,9 @@ struct FavoritesPreviewCard: View {
                     Text("❤️")
                         .font(.system(size: 24))
                     
-                    Text("Aucun favori pour le moment")
-                        .font(.system(size: 14))
-                        .foregroundColor(.black.opacity(0.7))
+                    Text(NSLocalizedString("no_favorites_yet", comment: "No favorites yet message"))
+                        .font(.system(size: 16))
+                        .foregroundColor(.black.opacity(0.6))
                         .multilineTextAlignment(.center)
                 }
                 .frame(maxWidth: .infinity)
@@ -57,7 +57,7 @@ struct FavoritesPreviewCard: View {
                     }
                     
                     if favoritesService.getFavoritesCount() > 3 {
-                        Text("et \(favoritesService.getFavoritesCount() - 3) autres...")
+                        Text(NSLocalizedString("and_others", comment: "And others text") + " \(favoritesService.getFavoritesCount() - 3) " + NSLocalizedString("others", comment: "Others text"))
                             .font(.system(size: 11))
                             .foregroundColor(.black.opacity(0.6))
                             .frame(maxWidth: .infinity, alignment: .leading)

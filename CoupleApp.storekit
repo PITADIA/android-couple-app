@@ -1,4 +1,14 @@
 {
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+      {
+        "locale" : "en_US",
+        "policyText" : "",
+        "policyURL" : ""
+      }
+    ]
+  },
   "identifier" : "B8A7F8E2",
   "nonRenewingSubscriptions" : [
 
@@ -10,8 +20,8 @@
     "_applicationInternalID" : "6448963066",
     "_developerTeamID" : "VOTRE_VRAI_TEAM_ID",
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 748094400.0,
-    "_locale" : "fr_FR",
+    "_lastSynchronizedDate" : 748094400,
+    "_locale" : "en_US",
     "_storefront" : "FRA",
     "_storeKitErrors" : [
       {
@@ -96,7 +106,10 @@
           "recurringSubscriptionPeriod" : "P1W",
           "referenceName" : "Premium Weekly",
           "subscriptionGroupID" : "21482467",
-          "type" : "RecurringSubscription"
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
         },
         {
           "adHocOffers" : [
@@ -125,13 +138,16 @@
           "recurringSubscriptionPeriod" : "P1M",
           "referenceName" : "Premium Monthly",
           "subscriptionGroupID" : "21482467",
-          "type" : "RecurringSubscription"
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
         }
       ]
     }
   ],
   "version" : {
-    "major" : 3,
+    "major" : 4,
     "minor" : 0
   }
-} 
+}

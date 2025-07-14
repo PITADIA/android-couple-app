@@ -24,13 +24,13 @@ struct DaysTogetherCard: View {
                 
                 // Texte "Jours ensemble"
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("Jours")
-                        .font(.system(size: 18, weight: .medium))
-                        .foregroundColor(Color(hex: "#FD267A"))
+                    Text("days".localized)
+                        .font(.system(size: 16, weight: .medium))
+                        .foregroundColor(.black)
                     
-                    Text("ensemble")
-                        .font(.system(size: 18, weight: .medium))
-                        .foregroundColor(Color(hex: "#FD267A"))
+                    Text("together".localized)
+                        .font(.system(size: 16, weight: .medium))
+                        .foregroundColor(.black)
                 }
             }
             

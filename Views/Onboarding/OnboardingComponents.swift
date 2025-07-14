@@ -12,7 +12,7 @@ struct OnboardingProgressBar: View {
     var body: some View {
         VStack(spacing: 8) {
             HStack {
-                Text("Étape \(currentStep) sur \(totalSteps)")
+                Text(String(format: "step_counter".localized, currentStep, totalSteps))
                     .font(.system(size: 14, weight: .medium))
                     .foregroundColor(.white.opacity(0.8))
                 
@@ -57,7 +57,7 @@ struct OnboardingBackButton: View {
                 Image(systemName: "chevron.left")
                     .font(.system(size: 16, weight: .semibold))
                 
-                Text("Retour")
+                                    Text("back".localized)
                     .font(.system(size: 16, weight: .medium))
             }
             .foregroundColor(.white.opacity(0.8))
@@ -77,7 +77,7 @@ struct OnboardingNextButton: View {
     let action: () -> Void
     let title: String
     
-    init(isEnabled: Bool = true, title: String = "Continuer", action: @escaping () -> Void) {
+    init(isEnabled: Bool = true, title: String = "continue".localized, action: @escaping () -> Void) {
         self.isEnabled = isEnabled
         self.title = title
         self.action = action

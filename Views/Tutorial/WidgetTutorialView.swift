@@ -86,7 +86,7 @@ struct WidgetTutorialView: View {
             Button(action: {
                 presentationMode.wrappedValue.dismiss()
             }) {
-                Text("Compris !")
+                                    Text(NSLocalizedString("understood", comment: "Understood button"))
                     .font(.system(size: 18, weight: .semibold))
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity)

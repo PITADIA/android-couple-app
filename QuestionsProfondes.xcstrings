@@ -1,0 +1,4342 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "qp_2" : {
+      "comment" : "Questions \"Deep Questions\" - Deep Questions \"qp_1\" = \"What would you like people to finally understand about you, without you having to explain it?\";",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could free yourself from an inner burden today, which one would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais te libérer d'un poids intérieur aujourd'hui, lequel choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "qp_3" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In your opinion, have the Internet, smartphones, and new technologies made the world better or worse?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "À ton avis, Internet, les smartphones et les nouvelles technologies ont-ils rendu le monde meilleur ou pire ?"
+          }
+        }
+      }
+    },
+    "qp_4" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What truth about yourself still scares you a bit to face?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle vérité sur toi-même t'effraie encore un peu d'affronter ?"
+          }
+        }
+      }
+    },
+    "qp_5" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How would your life be different if you were born the opposite gender?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment ta vie serait-elle différente si tu étais né(e) dans l'autre genre ?"
+          }
+        }
+      }
+    },
+    "qp_6" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What part of your past have you learned to love, despite the pain?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle partie de ton passé as-tu appris à aimer, malgré la douleur ?"
+          }
+        }
+      }
+    },
+    "qp_7" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you hide behind the mask you wear in public?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu caches derrière ton masque que tu portes en public ?"
+          }
+        }
+      }
+    },
+    "qp_8" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What buried emotion still tries to resurface sometimes?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle émotion enfouie essaie encore de ressurgir parfois ?"
+          }
+        }
+      }
+    },
+    "qp_9" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to start your life over tomorrow, what would you do differently from the beginning?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais recommencer ta vie demain, que ferais-tu différemment dès le début ?"
+          }
+        }
+      }
+    },
+    "qp_10" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think you can be friends with someone you're attracted to?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penses-tu qu'on peut être ami avec quelqu'un qui nous attire ?"
+          }
+        }
+      }
+    },
+    "qp_11" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What emotional wound are you still trying to heal today?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle blessure émotionnelle essaie-tu encore de guérir aujourd'hui ?"
+          }
+        }
+      }
+    },
+    "qp_12" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there a moment in your life when you felt completely lost?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il un moment de ta vie où tu t'es senti(e) complètement perdu(e) ?"
+          }
+        }
+      }
+    },
+    "qp_13" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What person has had the greatest impact on your life?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle personne a eu le plus grand impact sur ta vie ?"
+          }
+        }
+      }
+    },
+    "qp_14" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If there was a subject to remove from school, which would you choose, and what would you replace it with? Why?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "S'il y avait un sujet à retirer de l'école, lequel choisirais-tu, et par quoi le remplacerais-tu ? Pourquoi ?"
+          }
+        }
+      }
+    },
+    "qp_15" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What have you never dared to say to your parents that you would have liked to say?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu n'as jamais osé dire à tes parents alors que tu aurais aimé le dire ?"
+          }
+        }
+      }
+    },
+    "qp_16" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In your opinion, what will matter most for our society in the next 50 years: preserving our traditions or changing them?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "D'après toi, qu'est-ce qui comptera le plus pour notre société dans les 50 prochaines années : préserver nos traditions ou les changer ?"
+          }
+        }
+      }
+    },
+    "qp_17" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What have you learned about yourself through love?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu as appris sur toi à travers l'amour ?"
+          }
+        }
+      }
+    },
+    "qp_18" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What would you like to be remembered for after your death?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu aimerais qu'on retienne de toi après ta mort ?"
+          }
+        }
+      }
+    },
+    "qp_19" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the biggest mistake you've made that taught you something?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la plus grande erreur que tu aies faite et qui t'a appris quelque chose ?"
+          }
+        }
+      }
+    },
+    "qp_20" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Who was the person in your past who turned into a lesson?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qui a été la personne dans ton passé qui s'est transformé en leçon ?"
+          }
+        }
+      }
+    },
+    "qp_21" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "When did you last feel shame?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quand as-tu ressenti de la honte pour la dernière fois ?"
+          }
+        }
+      }
+    },
+    "qp_22" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If there's one year of your life you could relive over and over, which would it be?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "S'il y a une année de ta vie que tu pourrais revivre encore et encore, ce serait laquelle ?"
+          }
+        }
+      }
+    },
+    "qp_23" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What character trait from your childhood have you kept until today?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel trait de caractère de ton enfance as-tu gardé jusqu'à aujourd'hui ?"
+          }
+        }
+      }
+    },
+    "qp_24" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you think about astrology and horoscopes?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que penses-tu de l'astrologie et des horoscopes ?"
+          }
+        }
+      }
+    },
+    "qp_25" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the thing that makes you most proud of yourself?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'elle est la chose qui te rend le plus fière de toi ?"
+          }
+        }
+      }
+    },
+    "qp_26" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What aspect of yourself makes you suffer most in silence?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel aspect de toi te fait le plus souffrir en silence ?"
+          }
+        }
+      }
+    },
+    "qp_27" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the inner battle you're fighting without talking to anyone about it?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le combat intérieur que tu mènes sans en parler à personne ?"
+          }
+        }
+      }
+    },
+    "qp_28" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What does friendship represent to you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que l'amitié représente pour toi ?"
+          }
+        }
+      }
+    },
+    "qp_29" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you think about male/female friendship? Is it sincerely possible?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que penses-tu de l'amitié homme/femme ? Est-elle sincèrement possible ?"
+          }
+        }
+      }
+    },
+    "qp_30" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Looking at these past ten years, how have you changed? And are you happy with this evolution?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En regardant ces dix dernières années, comment as-tu changé ? Et es-tu content de cette évolution ?"
+          }
+        }
+      }
+    },
+    "qp_31" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How would you like to feel in ten years, emotionally or internally?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment aimerais-tu te sentir dans dix ans, émotionnellement ou intérieurement ?"
+          }
+        }
+      }
+    },
+    "qp_32" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's your greatest success and your biggest failure?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est ta plus grande réussite et ton plus gros échec ?"
+          }
+        }
+      }
+    },
+    "qp_33" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What person has had the strongest impact on your way of seeing life?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle personne a eu l'impact le plus fort sur ta manière de voir la vie ?"
+          }
+        }
+      }
+    },
+    "qp_34" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What mistake taught you the most in life?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle erreur t'a le plus appris dans la vie ?"
+          }
+        }
+      }
+    },
+    "qp_35" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you really expect from a romantic relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu attends vraiment d'une relation amoureuse ?"
+          }
+        }
+      }
+    },
+    "qp_36" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How would you like to be seen or perceived by others?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment aimerais-tu être vu ou perçu par les autres ?"
+          }
+        }
+      }
+    },
+    "qp_37" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What are the biggest challenges you're going through right now?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quels sont les plus gros défis que tu traverses en ce moment ?"
+          }
+        }
+      }
+    },
+    "qp_38" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Have you ever been your own enemy? In what context?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As-tu déjà été ton propre ennemi ? Dans quel contexte ?"
+          }
+        }
+      }
+    },
+    "qp_39" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there something you dream of doing, but don't dare to start?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il quelque chose que tu rêves de faire, mais que tu n'oses pas commencer ?"
+          }
+        }
+      }
+    },
+    "qp_40" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What are you most grateful for in your life today?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De quoi es-tu le plus reconnaissant dans ta vie aujourd'hui ?"
+          }
+        }
+      }
+    },
+    "qp_41" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there a subject or concept you have trouble understanding or even imagining?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il un sujet ou un concept que tu as du mal à comprendre ou même à imaginer ?"
+          }
+        }
+      }
+    },
+    "qp_42" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What truth do you refuse to admit about yourself?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle vérité refuses-tu d'admettre sur toi-même ?"
+          }
+        }
+      }
+    },
+    "qp_43" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How do you handle your passing sadnesses?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment gères-tu tes tristesses passagères ?"
+          }
+        }
+      }
+    },
+    "qp_44" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the memory that marked you most with your father or mother?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le souvenir qui t'a le plus marqué avec ton père ou ta mère ?"
+          }
+        }
+      }
+    },
+    "qp_45" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could erase one memory, which would it be?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais effacer un souvenir, lequel ce serait ?"
+          }
+        }
+      }
+    },
+    "qp_46" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How do you define success? And when did you feel you had truly succeeded?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment définis-tu la réussite ? Et quand as-tu eu le sentiment d'avoir vraiment réussi ?"
+          }
+        }
+      }
+    },
+    "qp_47" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What difficult choice have you had to make in your life?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel choix difficile as-tu dû faire dans ta vie ?"
+          }
+        }
+      }
+    },
+    "qp_48" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What annoys you or easily makes you angry?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce qui t'énerve ou te met facilement en colère ?"
+          }
+        }
+      }
+    },
+    "qp_49" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What quest or goal obsessed you for a long time, but you eventually gave up?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle quête ou objectif t'as longtemps obsédé, mais que tu as fini par laisser tomber ?"
+          }
+        }
+      }
+    },
+    "qp_50" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What occupies your mind and sometimes prevents you from sleeping?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce qui occupe ton esprit et t'empêche parfois de dormir ?"
+          }
+        }
+      }
+    },
+    "qp_51" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think you really know yourself?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penses-tu réellement te connaitre toi même ?"
+          }
+        }
+      }
+    },
+    "qp_52" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "For you, what is true love?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pour toi, c'est quoi le véritable amour ?"
+          }
+        }
+      }
+    },
+    "qp_53" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there a character trait in me that you don't understand yet, but would like to better grasp?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il un trait de caractère chez moi que tu ne comprends pas encore, mais que tu aimerais mieux saisir ?"
+          }
+        }
+      }
+    },
+    "qp_54" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How has your first impression of me evolved since we met?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment ta première impression de moi a-t-elle évolué depuis notre rencontre ?"
+          }
+        }
+      }
+    },
+    "qp_55" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you refuse to reproduce in your life that your parents did?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu refuses de reproduire dans ta vie, que tes parents ont fait ?"
+          }
+        }
+      }
+    },
+    "qp_56" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "According to you, what does it mean to succeed in life?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selon toi, c'est quoi réussir sa vie ?"
+          }
+        }
+      }
+    },
+    "qp_57" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What did you miss most in your childhood?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De quoi as-tu le plus manqué dans ton enfance ?"
+          }
+        }
+      }
+    },
+    "qp_58" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What drove you to seek a relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce qui t'a poussé à chercher une relation ?"
+          }
+        }
+      }
+    },
+    "qp_59" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think the duration of a relationship makes one more inclined to forgive infidelity?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selon toi, est-ce que la durée d'une relation rend plus enclin à pardonner une infidélité ?"
+          }
+        }
+      }
+    },
+    "qp_60" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Have you changed since we've been a couple? And do you find these changes positive?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Est-ce que tu as changé depuis qu'on est en couple ? Et trouves-tu que ces changements sont positifs ?"
+          }
+        }
+      }
+    },
+    "qp_61" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What are, in your opinion, the three biggest things we have in common?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quels sont, selon toi, les trois plus grands points communs qu'on partage ?"
+          }
+        }
+      }
+    },
+    "qp_62" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's our biggest difference according to you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est notre plus grande différence selon toi ?"
+          }
+        }
+      }
+    },
+    "qp_63" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you believe some things are written in advance, like destiny?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crois-tu que certaines choses sont écrites d'avance, comme le destin ?"
+          }
+        }
+      }
+    },
+    "qp_64" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you feel when you think about the future? Do you feel stressed?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu ressens quand tu penses à l'avenir ? Te sens tu stressé ?"
+          }
+        }
+      }
+    },
+    "qp_65" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you someone who's afraid of others' judgment?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Es-tu quelqu'un qui a peur du jugement des autres ?"
+          }
+        }
+      }
+    },
+    "qp_66" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What moment we lived together still makes you smile? What made it so special?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel moment qu'on a vécu ensemble te fait toujours sourire ? Qu'est-ce qui l'a rendu si spécial ?"
+          }
+        }
+      }
+    },
+    "qp_67" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In a relationship, what space of freedom is essential for you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dans une relation, quel espace de liberté est essentiel pour toi ?"
+          }
+        }
+      }
+    },
+    "qp_68" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's your definition of inner peace?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est ta définition de la paix intérieure ?"
+          }
+        }
+      }
+    },
+    "qp_69" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you consider us as a family? If not, what does family represent to you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Est-ce que tu nous considères comme une famille ? Si non, que représente la famille pour toi ?"
+          }
+        }
+      }
+    },
+    "qp_70" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the moment when you felt like you were reborn?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le moment où tu as eu l'impression de renaître ?"
+          }
+        }
+      }
+    },
+    "qp_71" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Have you ever been afraid of loving too hard?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As-tu déjà eu peur d'aimer trop fort ?"
+          }
+        }
+      }
+    },
+    "qp_72" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Surprise me: tell me something about yourself that I don't know yet."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Surprends-moi : dis-moi quelque chose sur toi que je ne sais pas encore."
+          }
+        }
+      }
+    },
+    "qp_73" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the message you would give to all of humanity if you had a giant microphone?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le message que tu donnerais à l'humanité entière si tu avais un micro géant ?"
+          }
+        }
+      }
+    },
+    "qp_74" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name three things that happened to you last week for which you feel gratitude."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cite trois choses qui te sont arrivées la semaine dernière et pour lesquelles tu ressens de la gratitude."
+          }
+        }
+      }
+    },
+    "qp_75" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you more of a giver, receiver, or a balance between both? What influences your behavior?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Es-tu plutôt du genre à donner, à recevoir, ou un équilibre entre les deux ? Qu'est-ce qui influence ton comportement ?"
+          }
+        }
+      }
+    },
+    "qp_76" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What are five important things you'd like to accomplish before you die?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelles sont cinq choses importantes que tu aimerais accomplir avant de mourir ?"
+          }
+        }
+      }
+    },
+    "qp_77" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What makes you cry but you hide from others?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce qui te fait pleurer mais que tu caches aux autres ?"
+          }
+        }
+      }
+    },
+    "qp_78" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Who do you really trust around you today?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "À qui fais-tu vraiment confiance aujourd'hui autour de toi ?"
+          }
+        }
+      }
+    },
+    "qp_79" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What emotion crosses you most often these days?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle émotion te traverse le plus souvent ces derniers temps ?"
+          }
+        }
+      }
+    },
+    "qp_80" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What role does communication play in a couple according to you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel rôle joue la communication au sein d'un couple selon toi ?"
+          }
+        }
+      }
+    },
+    "qp_81" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could press a 'life reset' button, would you do it?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais appuyer sur un bouton 'reset de ta vie', le ferais-tu ?"
+          }
+        }
+      }
+    },
+    "qp_82" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's something you know to be true, even if you can't prove it?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose que tu sais être vraie, même si tu ne peux pas la prouver ?"
+          }
+        }
+      }
+    },
+    "qp_83" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could travel through time, what era would you go to?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais voyager dans le temps, à quelle époque irais-tu ?"
+          }
+        }
+      }
+    },
+    "qp_84" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Can you tell me the story of your life in 4 minutes, with as much detail as possible?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peux-tu me raconter l'histoire de ta vie en 4 minutes, avec le plus de détails possible ?"
+          }
+        }
+      }
+    },
+    "qp_85" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the thought that comes back most often when you're alone?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la pensée qui revient le plus souvent quand tu es seul(e) ?"
+          }
+        }
+      }
+    },
+    "qp_86" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Have you ever felt like you didn't deserve to be loved?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As-tu déjà senti que tu ne méritais pas d'être aimé(e) ?"
+          }
+        }
+      }
+    },
+    "qp_87" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How about we do a round of qualities each: tell me three qualities you see in me."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Et si on faisait un tour de qualité chacun : dis-moi trois qualités que tu vois en moi."
+          }
+        }
+      }
+    },
+    "qp_88" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What was your favorite place as a child, and what made it special?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel était ton endroit préféré quand tu étais enfant, et qu'est-ce qui le rendait spécial ?"
+          }
+        }
+      }
+    },
+    "qp_89" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If your heart could speak, what would it say?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si ton cœur pouvait parler, que dirait-il ?"
+          }
+        }
+      }
+    },
+    "qp_90" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Who is the person you admire most?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qui est la personne que tu admires le plus ?"
+          }
+        }
+      }
+    },
+    "qp_91" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there a period of your life you'd like to relive to repair it?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il une période de ta vie que tu aimerais revivre pour la réparer ?"
+          }
+        }
+      }
+    },
+    "qp_92" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What would a truly perfect day look like for you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "À quoi ressemblerait pour toi une journée vraiment parfaite ?"
+          }
+        }
+      }
+    },
+    "qp_93" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had €100,000 to give to a cause, which would you choose, and why?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu avais 100 000 € à donner à une cause, laquelle choisirais-tu, et pourquoi ?"
+          }
+        }
+      }
+    },
+    "qp_94" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tell me about a day you'll never forget. Whether good or bad"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parle-moi d'un jour que tu n'oublieras jamais. Qu'il soit bon ou mauvais"
+          }
+        }
+      }
+    },
+    "qp_95" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think your entourage really understands you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penses-tu que ton entourage te comprends vraiment ?"
+          }
+        }
+      }
+    },
+    "qp_96" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the thing that gives you most pleasure when someone says it to you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose qui te fait le plus plaisir lorsqu'on te le dit ?"
+          }
+        }
+      }
+    },
+    "qp_97" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How would you describe emotional intelligence?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment décrirais-tu l'intelligence émotionelle ?"
+          }
+        }
+      }
+    },
+    "qp_98" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Who is the person you count on most?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la personne sur qui tu comptes le plus ?"
+          }
+        }
+      }
+    },
+    "qp_99" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had a diary, what would you write on the first page?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu avais un journal intime, qu'est-ce que tu écrirais dans la première page ?"
+          }
+        }
+      }
+    },
+    "qp_100" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could show your inner world in images, what would it look like?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais montrer ton monde intérieur en images, à quoi ressemblerait-il ?"
+          }
+        }
+      }
+    },
+    "qp_101" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think you have self-confidence?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penses-tu avoir confiance en toi ?"
+          }
+        }
+      }
+    },
+    "qp_102" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What injustice have you experienced that you've never forgotten?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle injustice as-tu déjà vécu et que tu n'as jamais oubliée ?"
+          }
+        }
+      }
+    },
+    "qp_103" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think the universe gives us what we deserve?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penses-tu que l'univers nous donne ce que l'on mérite ?"
+          }
+        }
+      }
+    },
+    "qp_104" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think life is fair or unfair?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penses-tu que la vie est juste ou injuste ?"
+          }
+        }
+      }
+    },
+    "qp_105" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think the experiences we live are there to teach us things we need to learn?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penses-tu que les expériences que l'on vit sont là pour nous enseigner des choses que l'on a besoin d'apprendre ?"
+          }
+        }
+      }
+    },
+    "qp_106" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Have you ever felt like no one really understood you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As-tu déjà eu l'impression que personne ne te comprenait vraiment ?"
+          }
+        }
+      }
+    },
+    "qp_107" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could repair just one thing from your past, what would you change as a priority?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais réparer une seule chose de ton passé, que changerais-tu en priorité ?"
+          }
+        }
+      }
+    },
+    "qp_108" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think the music we listen to can influence our mood?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penses-tu que les musiques que l'on écoute peuvent influencer notre mood ?"
+          }
+        }
+      }
+    },
+    "qp_109" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "When was the last time you were angry at yourself? And why?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quand était la dernière fois ou tu étais en colère contre toi même ? et pourquoi ?"
+          }
+        }
+      }
+    },
+    "qp_110" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's something you'd like to improve about yourself?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose que tu aimerais améliorer chez toi ?"
+          }
+        }
+      }
+    },
+    "qp_111" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you feel when you're facing your reflection in the mirror?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que ressens-tu quand tu es face à ton reflet dans le miroir ?"
+          }
+        }
+      }
+    },
+    "qp_112" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you think about the working world, is it made for you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que penses-tu du monde du travail, est-il fait pour toi ?"
+          }
+        }
+      }
+    },
+    "qp_113" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What would you have liked to hear more often in your childhood?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu aurais aimé entendre plus souvent dans ton enfance ?"
+          }
+        }
+      }
+    },
+    "qp_114" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What impact does the parent/child relationship have on an adult's life according to you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel impact à la relation parent/enfant dans la vie d'un adulte selon toi ?"
+          }
+        }
+      }
+    },
+    "qp_115" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had children, what's the first thing you would teach them?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu avais des enfants, quelle est la chose que tu leur apprendrais en premier ?"
+          }
+        }
+      }
+    },
+    "qp_116" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think you're fully exploiting your potential?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penses-tu exploiter pleinement ton potentiel ?"
+          }
+        }
+      }
+    },
+    "qp_117" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you think about new generations? Was it better before?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que penses-tu des nouvelles générations ? Était-ce mieux avant ?"
+          }
+        }
+      }
+    },
+    "qp_118" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's more important in a couple according to you, love or honesty?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce qui est plus important dans un couple selon toi, l'amour ou l'honnêteté ?"
+          }
+        }
+      }
+    },
+    "qp_119" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Would you describe yourself as someone sensitive?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Te décrirais-tu comme quelqu'un de sensible ?"
+          }
+        }
+      }
+    },
+    "qp_120" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to choose one word to summarize your past, which would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais choisir un mot pour résumer ton passé, lequel choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "qp_121" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the greatest life lesson you learned last year?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la plus grande leçon de vie que tu as appris l'année dernière ?"
+          }
+        }
+      }
+    },
+    "qp_122" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's something you'd like to leave behind once and for all?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose que tu aimerais laisser derrière toi une bonne fois pour toutes ?"
+          }
+        }
+      }
+    },
+    "qp_123" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Would you like to change your current life? If yes, what bothers you most today?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Souhaiterais-tu changer ta vie actuelle ? Si oui qu'est-ce qui te dérange le plus aujourd'hui ?"
+          }
+        }
+      }
+    },
+    "qp_124" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you sometimes find yourself in depression?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "T'arrives-tu parfois d'être en depression ?"
+          }
+        }
+      }
+    },
+    "qp_125" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What pain have you normalized over time?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle douleur as-tu normalisée avec le temps ?"
+          }
+        }
+      }
+    },
+    "qp_126" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Who is the person who makes you happiest currently?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qui est la personne qui te rend le plus heureux(se) actuellement"
+          }
+        }
+      }
+    },
+    "qp_127" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think sessions with a psychologist would do you good?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penses-tu que des séances chez le psychologue te ferait du bien ?"
+          }
+        }
+      }
+    },
+    "qp_128" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's your way of getting through your inner storms?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est ta façon à toi de traverser tes tempêtes intérieures ?"
+          }
+        }
+      }
+    },
+    "qp_129" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are your inner thoughts often with you or against you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tes pensées intérieurs sont-elles souvent avec toi ou contre toi ?"
+          }
+        }
+      }
+    },
+    "qp_130" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you consider yourself someone who has succeeded?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Est-ce que tu te considères comme quelqu'un qui a réussi ?"
+          }
+        }
+      }
+    },
+    "qp_131" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How have your parents influenced your vision of love and relationships?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment tes parents ont-ils influencé ta vision de l'amour et des relations ?"
+          }
+        }
+      }
+    },
+    "qp_132" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you think happens after death?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que penses-tu qu'il se passe après la mort ?"
+          }
+        }
+      }
+    },
+    "qp_133" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think lying can be acceptable? In what cases?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penses-tu que mentir peut être acceptable ? Dans quels cas ?"
+          }
+        }
+      }
+    },
+    "qp_134" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's something you had never noticed about yourself before someone pointed it out?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est une chose que tu n'avais jamais remarquée sur toi avant que quelqu'un te le fasse remarquer ?"
+          }
+        }
+      }
+    },
+    "qp_135" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Does the fact of aging scare you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le fait de vieillir te fait-il peur ?"
+          }
+        }
+      }
+    },
+    "qp_136" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If we ever argue by message, do you prefer to resolve it right away or wait to see each other face to face?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si jamais on se dispute par message, préfères-tu régler ça tout de suite ou attendre de se voir en face à face ?"
+          }
+        }
+      }
+    },
+    "qp_137" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How did others treat you in high school?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment les autres te traitaient-ils au lycée ?"
+          }
+        }
+      }
+    },
+    "qp_138" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Would you be ready to give up some of your dreams or professional goals for love?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serais-tu prêt(e) à renoncer à certains de tes rêves ou objectifs professionnels par amour ?"
+          }
+        }
+      }
+    },
+    "qp_139" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Would you tell me if I said or did something that hurt you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Me dirais-tu si je disais ou faisais quelque chose qui t'a blessé(e) ?"
+          }
+        }
+      }
+    },
+    "qp_140" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How do you cope with difficult moments?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment fais-tu pour faire face aux moments difficiles ?"
+          }
+        }
+      }
+    },
+    "qp_141" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you believe in love at first sight?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crois-tu au coup de foudre ?"
+          }
+        }
+      }
+    },
+    "qp_142" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Where should we go on vacation next time?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Où devrions-nous partir en vacances la prochaine fois ?"
+          }
+        }
+      }
+    },
+    "qp_143" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you like about being in a relationship with me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu aimes dans le fait d'être en couple avec moi ?"
+          }
+        }
+      }
+    },
+    "qp_144" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you feel like you've become a better version of yourself over time?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As-tu l'impression d'être devenu(e) une meilleure version de toi-même avec le temps ?"
+          }
+        }
+      }
+    },
+    "qp_145" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do we spend enough time together according to you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Passons-nous assez de temps ensemble selon toi ?"
+          }
+        }
+      }
+    },
+    "qp_146" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Have you ever felt like you were running late on your own life?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As-tu déjà eu l'impression d'être en retard sur ta propre vie ?"
+          }
+        }
+      }
+    },
+    "qp_147" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think spending time together is as important as spending it separately?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penses-tu que passer du temps ensemble est aussi important que d'en passer séparer ?"
+          }
+        }
+      }
+    },
+    "qp_148" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the phrase that could summarize what you're feeling right now?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la phrase qui pourrait résumer ce que tu ressens en ce moment ?"
+          }
+        }
+      }
+    },
+    "qp_149" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you have a belief that keeps you standing despite everything?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As-tu une croyance qui te tient debout malgré tout ?"
+          }
+        }
+      }
+    },
+    "qp_150" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If someone entered your inner world, what would they discover first?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si quelqu'un entrait dans ton monde intérieur, que découvrirait-il en premier ?"
+          }
+        }
+      }
+    },
+    "qp_151" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you feel heard when we're together?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Est-ce que tu te sens écouté(e) quand on est ensemble ?"
+          }
+        }
+      }
+    },
+    "qp_152" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What part of you would you like to see evolve in the coming years?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle partie de toi aimerais-tu voir évoluer dans les années à venir ?"
+          }
+        }
+      }
+    },
+    "qp_153" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think jealousy is proof of love in a couple?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penses-tu que la jalousie est une preuve d'amour dans un couple ?"
+          }
+        }
+      }
+    },
+    "qp_154" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you the same person as 5 years ago? If not, what has changed about you since?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Es-tu la même personne qu'il y'a 5 ans ? Si non, qu'est-ce qui a changé chez toi depuis ?"
+          }
+        }
+      }
+    },
+    "qp_155" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What habit protects you but might prevent you from moving forward?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle habitude te protège mais t'empêche peut-être d'avancer ?"
+          }
+        }
+      }
+    },
+    "qp_156" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could ask your future self a question, what would you ask?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais poser une question à ton futur toi, que lui demanderais-tu ?"
+          }
+        }
+      }
+    },
+    "qp_157" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you prefer planned or impromptu romantic evenings?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu préfères les soirées en amoureux planifiées ou improvisées ?"
+          }
+        }
+      }
+    },
+    "qp_158" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "According to you, how can we keep the flame alive in our relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "D'après toi, comment peut-on entretenir la flamme dans notre relation ?"
+          }
+        }
+      }
+    },
+    "qp_159" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you believe in destiny?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crois-tu au destin ?"
+          }
+        }
+      }
+    },
+    "qp_160" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you have confidence when you think about your future?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As-tu confiance quand tu penses à ton futur ?"
+          }
+        }
+      }
+    },
+    "qp_161" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How would you describe your love language to a stranger?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment décrirais-tu ton love langage à un(e) inconnu ?"
+          }
+        }
+      }
+    },
+    "qp_162" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think some people are made for each other?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penses-tu que certaines personnes sont faites l'une pour l'autre ?"
+          }
+        }
+      }
+    },
+    "qp_163" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you and I were proof of something, what would we be proof of?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si toi et moi étions la preuve de quelque chose, on serait la preuve de quoi ?"
+          }
+        }
+      }
+    },
+    "qp_164" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's your favorite movie for a romantic evening?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est ton film préféré pour une soirée en amoureux ?"
+          }
+        }
+      }
+    },
+    "qp_165" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Can you really keep a secret?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arrives-tu vraiment à garder un secret ?"
+          }
+        }
+      }
+    },
+    "qp_166" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you think about public displays of affection?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que penses-tu des démonstrations d'affection en public ?"
+          }
+        }
+      }
+    },
+    "qp_167" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you wish to get married someday?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Souhaites-tu te marier un jour ?"
+          }
+        }
+      }
+    },
+    "qp_168" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you think about solitude? Is it the same thing as isolation according to you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que penses-tu de la solitude ? Est-ce la même chose que l'isolement selon toi ?"
+          }
+        }
+      }
+    },
+    "qp_169" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Have you ever needed to take distance so as not to lose yourself in a relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As-tu déjà eu besoin de prendre de la distance pour ne pas te perdre dans une relation ?"
+          }
+        }
+      }
+    },
+    "qp_170" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How do you describe me to your friends?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment me décris-tu à tes amis ?"
+          }
+        }
+      }
+    },
+    "qp_171" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there something I used to do that you miss today?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il quelque chose que je faisais avant et qui te manque aujourd'hui ?"
+          }
+        }
+      }
+    },
+    "qp_172" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What does falling in love mean to you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tomber amoureux(se) signifie pour toi ?"
+          }
+        }
+      }
+    },
+    "qp_173" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How would you tell our love story?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment raconterais-tu notre histoire d'amour ?"
+          }
+        }
+      }
+    },
+    "qp_174" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you value most in a relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu valorises le plus dans une relation ?"
+          }
+        }
+      }
+    },
+    "qp_175" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Have you ever changed for someone else, to the point of not recognizing yourself?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As-tu déjà changé pour quelqu'un d'autre, au point de ne plus te reconnaître ?"
+          }
+        }
+      }
+    },
+    "qp_176" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "When you're having a bad day, what can I do to help you feel better?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quand tu passes une mauvaise journée, qu'est-ce que je peux faire pour t'aider à aller mieux ?"
+          }
+        }
+      }
+    },
+    "qp_177" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you believe in soulmates?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crois-tu aux âmes sœurs ?"
+          }
+        }
+      }
+    },
+    "qp_178" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think negative experiences can transform us into better people?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penses-tu que les expériences négatives peuvent nous transformer en personne meilleur ?"
+          }
+        }
+      }
+    },
+    "qp_179" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What are things you wish you had learned earlier in life?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelles sont les choses que tu aurais aimé apprendre plus tôt dans la vie ?"
+          }
+        }
+      }
+    },
+    "qp_180" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "When did you feel you were starting to fall in love with me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quand as-tu senti que tu commençais à tomber amoureux(se) de moi ?"
+          }
+        }
+      }
+    },
+    "qp_181" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most memorable gesture I've made for you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le geste le plus mémorable que j'ai fait pour toi ?"
+          }
+        }
+      }
+    },
+    "qp_182" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the part of your story you rarely tell?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la partie de ton histoire que tu racontes rarement ?"
+          }
+        }
+      }
+    },
+    "qp_183" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What moment of your life would deserve to be told in a book?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel moment de ta vie mériterait d'être raconté dans un livre ?"
+          }
+        }
+      }
+    },
+    "qp_184" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What are truly romantic vacations for you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "C'est quoi, pour toi, des vacances vraiment romantiques ?"
+          }
+        }
+      }
+    },
+    "qp_185" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What promise did you make one day, but didn't keep? And why?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle promesse as-tu faite un jour, mais que tu n'as pas tenue ? et pourquoi ?"
+          }
+        }
+      }
+    },
+    "qp_186" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How do you imagine our future together?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment imagines-tu notre avenir ensemble ?"
+          }
+        }
+      }
+    },
+    "qp_187" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's your favorite part of our relationship? And the one you like least?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est ta partie préférée de notre relation ? Et celle que tu aimes le moins ?"
+          }
+        }
+      }
+    },
+    "qp_188" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Have you ever lied to me when answering these questions?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "M'as-tu déjà menti en répondant à ces questions ?"
+          }
+        }
+      }
+    },
+    "qp_189" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Have you ever run away from a situation? How did it go?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "T'es-tu déjà enfui(e) d'une situation ? Comment ça s'est passé ?"
+          }
+        }
+      }
+    },
+    "qp_190" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are there signs that show you're not doing well, that I should learn to spot?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il des signes qui montrent que tu ne vas pas bien, que je devrais apprendre à repérer ?"
+          }
+        }
+      }
+    },
+    "qp_191" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you prefer about yourself?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu préfères chez toi ?"
+          }
+        }
+      }
+    },
+    "qp_192" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How do you let off steam or release pressure?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment fais-tu pour te défouler ou relâcher la pression ?"
+          }
+        }
+      }
+    },
+    "qp_193" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are there specific qualities you look for in your friends?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il des qualités précises que tu recherches chez tes amis ?"
+          }
+        }
+      }
+    },
+    "qp_194" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How do you define a solid relationship?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment définis-tu une relation solide ?"
+          }
+        }
+      }
+    },
+    "qp_195" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What emotion have you learned to hide over time?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle émotion as-tu appris à cacher avec le temps ?"
+          }
+        }
+      }
+    },
+    "qp_196" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could live one moment again, without changing it, which would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais vivre un instant encore une fois, sans le changer, lequel choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "qp_197" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think it's important to wear a mask in public or should we be fully ourselves?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penses-tu qu'il est important de porter un masque en public ou faut-il être pleinement soi même ?"
+          }
+        }
+      }
+    },
+    "qp_198" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most beautiful compliment I could give you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le plus beau compliment que je pourrais te faire ?"
+          }
+        }
+      }
+    },
+    "qp_199" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think I'm grateful enough with you? And that I show it?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penses-tu que je suis assez reconnaissant(e) avec toi ? et que je te le montre ?"
+          }
+        }
+      }
+    },
+    "qp_200" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What importance do you place on family?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle importance accordes-tu à la famille ?"
+          }
+        }
+      }
+    },
+    "qp_201" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What importance do you place on religion?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle importance accordes-tu à la religion ?"
+          }
+        }
+      }
+    },
+    "qp_202" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you prefer a lie that feels good or a truth that hurts?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu préfères un mensonge qui fait du bien ou une vérité qui blesse ?"
+          }
+        }
+      }
+    },
+    "qp_203" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What wound has shaped part of your personality?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle blessure a formé une partie de ta personnalité ?"
+          }
+        }
+      }
+    },
+    "qp_204" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What would you like to pass on to a child you would raise?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu aimerais transmettre à un enfant que tu élèverais ?"
+          }
+        }
+      }
+    },
+    "qp_205" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Have you ever given up a relationship out of love for yourself?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As-tu déjà renoncé à une relation par amour de toi-même ?"
+          }
+        }
+      }
+    },
+    "qp_206" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you feel like I prevent you from doing certain things? If yes, do you think it's a good thing?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Est-ce que tu as l'impression que je t'empêche de faire certaines choses ? Si oui, penses-tu que c'est une bonne chose ?"
+          }
+        }
+      }
+    },
+    "qp_207" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you believe in luck?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crois-tu en la chance ?"
+          }
+        }
+      }
+    },
+    "qp_208" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How would your exes describe you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment tes ex te décriraient-ils/elles ?"
+          }
+        }
+      }
+    },
+    "qp_209" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What forms of non-sexual intimacy do you particularly appreciate?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelles formes d'intimité non sexuelles apprécies-tu particulièrement ?"
+          }
+        }
+      }
+    },
+    "qp_210" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you want to live in another city someday?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As-tu envie de vivre un jour dans une autre ville ?"
+          }
+        }
+      }
+    },
+    "qp_211" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "For you, at what point do you know you need to break up with someone?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pour toi, à quel moment sait-on qu'il faut rompre avec quelqu'un ?"
+          }
+        }
+      }
+    },
+    "qp_212" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What are your reflexes when you're stressed?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quels sont tes réflexes quand tu es stressé(e) ?"
+          }
+        }
+      }
+    },
+    "qp_213" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could write a letter to your future self, what would it contain?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais écrire une lettre à ton futur toi, que contiendrait-elle ?"
+          }
+        }
+      }
+    },
+    "qp_214" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most meaningful conversation you've had?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la conversation la plus marquante que tu aies eue ?"
+          }
+        }
+      }
+    },
+    "qp_215" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you consider yourself a good person?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Est-ce que tu te considères comme une bonne personne ?"
+          }
+        }
+      }
+    },
+    "qp_216" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's your defense mechanism that few people notice?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est ton mécanisme de défense que peu de gens remarquent ?"
+          }
+        }
+      }
+    },
+    "qp_217" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you feel when you look at the sky at night?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu ressens quand tu regardes le ciel la nuit ?"
+          }
+        }
+      }
+    },
+    "qp_218" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Have you ever wanted to disappear to see who would look for you first?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As-tu déjà eu envie de disparaître pour voir qui te chercherait en premier ?"
+          }
+        }
+      }
+    },
+    "qp_219" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What ordinary thing touches you deeply without you knowing why?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle chose banale te touche profondément sans que tu ne saches pourquoi ?"
+          }
+        }
+      }
+    },
+    "qp_220" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think mistakes are important for one's own development?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penses-tu que les erreurs sont importantes pour son propre développement ?"
+          }
+        }
+      }
+    },
+    "qp_221" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you hope from yourself for the coming years?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'espères-tu de toi même pour les prochaines années ?"
+          }
+        }
+      }
+    },
+    "qp_222" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Who was the most benevolent person with you during your childhood?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qui a été la personne la plus bienveillante avec toi durant ton enfance ?"
+          }
+        }
+      }
+    },
+    "qp_223" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How would you describe your relationship with your grandparents?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment décrirais-tu ta relation avec tes grands-parents ?"
+          }
+        }
+      }
+    },
+    "qp_224" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's most important in a couple according to you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce qui est le plus important selon toi dans un couple ?"
+          }
+        }
+      }
+    },
+    "qp_225" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What quality should a man have according to you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la qualité qu'un homme devrait avoir selon toi ?"
+          }
+        }
+      }
+    },
+    "qp_226" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What quality should a woman have according to you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la qualité qu'une femme devrait avoir selon toi ?"
+          }
+        }
+      }
+    },
+    "qp_227" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you need to often spend time alone, with yourself?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As-tu besoin de souvent passer du temps seul, avec toi même ?"
+          }
+        }
+      }
+    },
+    "qp_228" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you think about vulgarity in a couple?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que penses-tu de la vulgarité dans un couple ?"
+          }
+        }
+      }
+    },
+    "qp_229" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think our ancestors watch over us?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penses-tu que nos ancêtres nous observe ?"
+          }
+        }
+      }
+    },
+    "qp_230" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the historical event you like most?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est l'évènement historique que tu aimes le plus ?"
+          }
+        }
+      }
+    },
+    "qp_231" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Have you ever loved someone with a love you didn't understand yourself?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As-tu déjà aimé quelqu'un d'un amour que tu ne comprenais pas toi-même ?"
+          }
+        }
+      }
+    },
+    "qp_232" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you feel at peace with your past?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Te sens-tu en paix avec ton passé ?"
+          }
+        }
+      }
+    },
+    "qp_233" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had past demons to fight, could you describe them to me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu avais des démons du passé à combattre, pourrais-tu me les décrire ?"
+          }
+        }
+      }
+    },
+    "qp_234" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to describe yourself to a stranger but without any filter, what would you say?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais te décrire à un inconnu mais sans aucun filtre, que dirais-tu ?"
+          }
+        }
+      }
+    },
+    "qp_235" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What truth do you want to scream but still keep inside you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle vérité as-tu envie de crier mais que tu gardes encore en toi ?"
+          }
+        }
+      }
+    },
+    "qp_236" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What about you deserves to be recognized more?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce qui, chez toi, mérite d'être reconnu davantage ?"
+          }
+        }
+      }
+    },
+    "qp_237" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you feel understood by your parents?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Te sens-tu compris(e) par tes parents ?"
+          }
+        }
+      }
+    },
+    "qp_238" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Who's the last person you were afraid of losing?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qui est la dernière personne que tu as eu peur de perdre ?"
+          }
+        }
+      }
+    },
+    "qp_239" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Describe to me what I could do to make you even happier"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Décris-moi ce que je pourrais faire pour te rendre encore plus heureux(se)"
+          }
+        }
+      }
+    },
+    "qp_240" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What would you like people to finally understand about you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu aimerais qu'on comprenne enfin sur toi ?"
+          }
+        }
+      }
+    },
+    "qp_241" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the question you often ask others but avoid yourself?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la question que tu poses souvent aux autres mais que tu fuis toi-même ?"
+          }
+        }
+      }
+    },
+    "qp_242" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most beautiful risk you've taken in your life?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le plus beau risque que tu aies pris dans ta vie ?"
+          }
+        }
+      }
+    },
+    "qp_243" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Have you ever felt a love stronger than reason?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As-tu déjà ressenti un amour plus fort que la raison ?"
+          }
+        }
+      }
+    },
+    "qp_244" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think love is essential to have a fulfilling life?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penses-tu que l'amour est indispensable pour avoir une vie épanouie ?"
+          }
+        }
+      }
+    },
+    "qp_245" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What would you like to learn to love about yourself?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu aimerais apprendre à aimer en toi ?"
+          }
+        }
+      }
+    },
+    "qp_246" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you proud of the person you're becoming?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Es-tu fière de la personne que tu deviens ?"
+          }
+        }
+      }
+    },
+    "qp_247" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What could we do together to help us understand each other even more?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est ce que nous pourrions faire ensemble pour s'aider à se comprendre encore plus ?"
+          }
+        }
+      }
+    },
+    "qp_248" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could give advice to all the teenagers in the world, what would you say?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais donner un conseil à tous les adolescent(e)s du monde, que dirais-tu ?"
+          }
+        }
+      }
+    },
+    "qp_249" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you respect most about me?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est ce que tu respectes le plus chez moi ?"
+          }
+        }
+      }
+    },
+    "qp_250" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had the power to change one thing in this world, what would you change?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu avais le pouvoir de changer une chose dans ce monde, tu changerais quoi ?"
+          }
+        }
+      }
+    },
+    "qp_251" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think shared moments of silence in a couple are important?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penses-tu que les moments de silences partagés dans un couple sont important ?"
+          }
+        }
+      }
+    },
+    "qp_252" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the part of you that has evolved most in recent years?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la part de toi qui a le plus évolué ces dernières années ?"
+          }
+        }
+      }
+    },
+    "qp_253" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think boredom is a good thing for a child's development?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penses-tu que l'ennuie est une bonne chose pour le développement d'un enfant ?"
+          }
+        }
+      }
+    },
+    "qp_254" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What could emotionally free you if you finally expressed it?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce qui pourrait te libérer émotionnellement si tu l'exprimais enfin ?"
+          }
+        }
+      }
+    },
+    "qp_255" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Have you ever felt like your heart spoke a language no one understood?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As-tu déjà ressenti que ton cœur parlait un langage que personne ne comprenait ?"
+          }
+        }
+      }
+    },
+    "qp_256" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the question you'd never want to be asked? Why?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la question que tu n'aimerais jamais qu'on te pose ? Pourquoi ?"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

@@ -54,9 +54,9 @@
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Love2Love utilise votre localisation pour calculer la distance entre vous et votre partenaire, et pour vous permettre d'ajouter des lieux à vos souvenirs partagés.</string>
+	<string>NSLocationWhenInUseUsageDescription</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Love2Love a besoin d'accéder à vos photos pour vous permettre de personnaliser votre profil et d'ajouter des images à vos souvenirs partagés dans le journal de couple.</string>
+	<string>NSPhotoLibraryUsageDescription</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>

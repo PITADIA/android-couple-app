@@ -12,21 +12,28 @@ struct CacheManagementView: View {
             List {
                 Section("📊 Statistiques du Cache") {
                     HStack {
-                        Text("Questions en cache")
+                        Text(NSLocalizedString("questions_cached", comment: "Questions cached label"))
+                            .font(.system(size: 16))
+                            .foregroundColor(.black)
+                        
                         Spacer()
+                        
                         Text("\(cacheStats.totalQuestions)")
-                            .foregroundColor(.secondary)
+                            .font(.system(size: 16, weight: .semibold))
+                            .foregroundColor(.black)
                     }
                     
                     HStack {
-                        Text("Catégories")
+                        Text(NSLocalizedString("categories", comment: "Categories label"))
+                            .font(.system(size: 16))
+                            .foregroundColor(.black)
                         Spacer()
                         Text("\(cacheStats.categories)")
                             .foregroundColor(.secondary)
                     }
                     
                     HStack {
-                        Text("Taille du cache")
+                        Text(NSLocalizedString("cache_size", comment: "Cache size text"))
                         Spacer()
                         Text(cacheStats.cacheSize)
                             .foregroundColor(.secondary)
@@ -42,7 +49,7 @@ struct CacheManagementView: View {
                     }) {
                         HStack {
                             Image(systemName: "arrow.clockwise")
-                            Text("Recharger le cache")
+                            Text(NSLocalizedString("reload_cache", comment: "Reload cache button"))
                         }
                     }
                     .disabled(questionCacheManager.isLoading)
@@ -52,7 +59,7 @@ struct CacheManagementView: View {
                     }) {
                         HStack {
                             Image(systemName: "trash")
-                            Text("Vider le cache")
+                            Text(NSLocalizedString("clear_cache", comment: "Clear cache button"))
                         }
                         .foregroundColor(.red)
                     }
@@ -63,7 +70,7 @@ struct CacheManagementView: View {
                         HStack {
                             ProgressView()
                                 .scaleEffect(0.8)
-                            Text("Chargement en cours...")
+                            Text(NSLocalizedString("loading_simple", comment: "Loading status"))
                                 .foregroundColor(.secondary)
                         }
                     }
@@ -73,7 +80,7 @@ struct CacheManagementView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Fermer") {
+                    Button(NSLocalizedString("close", comment: "Close button")) {
                         dismiss()
                     }
                 }
@@ -89,7 +96,11 @@ struct CacheManagementView: View {
                 updateStats()
             }
         } message: {
-            Text("Cette action supprimera toutes les questions en cache. Elles seront rechargées automatiquement lors de la prochaine utilisation.")
+            Text(NSLocalizedString("cache_clear_confirmation", comment: "Cache clear confirmation message"))
+                .font(.system(size: 16))
+                .foregroundColor(.black.opacity(0.7))
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 20)
         }
     }
     

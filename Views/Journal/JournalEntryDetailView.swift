@@ -90,26 +90,26 @@ struct JournalEntryDetailView: View {
                             VStack(spacing: 8) {
                                 InfoRow(
                                     icon: "calendar",
-                                    title: "Date de l'événement",
+                                    title: NSLocalizedString("event_date", comment: "Event date label"),
                                     value: formattedEventDate
                                 )
                                 
                                 InfoRow(
                                     icon: "clock",
-                                    title: "Heure",
+                                    title: NSLocalizedString("event_time", comment: "Event time label"),
                                     value: formattedEventTime
                                 )
                                 
                                 InfoRow(
                                     icon: "person.circle",
-                                    title: "Créé par",
+                                    title: NSLocalizedString("created_by", comment: "Created by label"),
                                     value: entry.authorName
                                 )
                                 
                                 if let location = entry.location {
                                     InfoRow(
                                         icon: "location",
-                                        title: "Lieu",
+                                        title: NSLocalizedString("location", comment: "Location label"),
                                         value: location.displayName
                                     )
                                 }
@@ -195,7 +195,7 @@ struct JournalEntryDetailView: View {
                 deleteEntry()
             }
         } message: {
-            Text("Cette action est irréversible. Le souvenir sera supprimé définitivement.")
+            Text(NSLocalizedString("irreversible_action", comment: "Irreversible action message"))
         }
         .onChange(of: showingDeleteAlert) { oldValue, newValue in
             print("🗑️ JournalEntryDetailView: showingDeleteAlert changé: \(newValue)")
@@ -208,7 +208,7 @@ struct JournalEntryDetailView: View {
     private var formattedEventDate: String {
         let formatter = DateFormatter()
         formatter.dateStyle = .full
-        formatter.locale = Locale(identifier: "fr_FR")
+        formatter.locale = Locale.current
         return formatter.string(from: entry.eventDate)
     }
     
@@ -222,7 +222,7 @@ struct JournalEntryDetailView: View {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeStyle = .short
-        formatter.locale = Locale(identifier: "fr_FR")
+        formatter.locale = Locale.current
         return formatter.string(from: entry.createdAt)
     }
     

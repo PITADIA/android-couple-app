@@ -11,7 +11,7 @@ struct FitnessIntro2StepView: View {
             
             // Titre centré à gauche
             HStack {
-                Text("Créez votre carte à souvenirs")
+                Text("create_memory_card".localized)
                     .font(.system(size: 36, weight: .bold))
                     .foregroundColor(.black)
                     .multilineTextAlignment(.leading)
@@ -39,7 +39,7 @@ struct FitnessIntro2StepView: View {
                 Button(action: {
                     viewModel.nextStep()
                 }) {
-                    Text("Continuer")
+                    Text("continue".localized)
                         .font(.system(size: 18, weight: .semibold))
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)

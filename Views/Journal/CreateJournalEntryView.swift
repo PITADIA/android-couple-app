@@ -64,7 +64,7 @@ struct CreateJournalEntryView: View {
                 VStack(spacing: 20) {
                     // Titre
                     VStack(alignment: .leading, spacing: 8) {
-                        TextField("Titre de votre souvenir", text: $title)
+                        TextField("memory_title_placeholder".localized, text: $title)
                             .font(.system(size: 24, weight: .medium))
                             .foregroundColor(.black)
                             .textFieldStyle(PlainTextFieldStyle())
@@ -90,7 +90,7 @@ struct CreateJournalEntryView: View {
                     
                     // Description
                     VStack(alignment: .leading, spacing: 8) {
-                        TextField("Écrivez quelques mots sur ce souvenir", text: $description, axis: .vertical)
+                        TextField("memory_description_placeholder".localized, text: $description, axis: .vertical)
                             .font(.system(size: 16))
                             .foregroundColor(.black.opacity(0.7))
                             .textFieldStyle(PlainTextFieldStyle())
@@ -177,7 +177,7 @@ struct CreateJournalEntryView: View {
                                     .scaleEffect(0.8)
                             }
                             
-                            Text(isCreating ? "Enregistrement..." : "Enregistrer")
+                            Text(isCreating ? "saving".localized : "save".localized)
                                 .font(.system(size: 16, weight: .semibold))
                         }
                         .foregroundColor(.white)
@@ -210,23 +210,23 @@ struct CreateJournalEntryView: View {
         .sheet(isPresented: $showingDatePicker) {
             NavigationView {
                 VStack {
-                    DatePicker("Date de l'événement", selection: $eventDate, displayedComponents: [.date])
+                    DatePicker("event_date_picker".localized, selection: $eventDate, displayedComponents: [.date])
                         .datePickerStyle(GraphicalDatePickerStyle())
-                        .environment(\.locale, Locale(identifier: "fr_FR"))
+                        .environment(\.locale, Locale.current)
                         .padding()
                     
                     Spacer()
                 }
-                .navigationTitle("Choisir la date")
+                .navigationTitle("choose_date".localized)
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
-                        Button("Annuler") {
+                        Button("cancel".localized) {
                             showingDatePicker = false
                         }
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button("OK") {
+                        Button("ok".localized) {
                             showingDatePicker = false
                         }
                     }
@@ -243,23 +243,23 @@ struct CreateJournalEntryView: View {
                         Spacer()
                         DatePicker("", selection: $eventDate, displayedComponents: [.hourAndMinute])
                             .datePickerStyle(WheelDatePickerStyle())
-                            .environment(\.locale, Locale(identifier: "fr_FR"))
+                            .environment(\.locale, Locale.current)
                         Spacer()
                     }
                     .padding()
                     
                     Spacer()
                 }
-                .navigationTitle("Choisir l'heure")
+                .navigationTitle("choose_time".localized)
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
-                        Button("Annuler") {
+                        Button("cancel".localized) {
                             showingTimePicker = false
                         }
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button("OK") {
+                        Button("ok".localized) {
                             showingTimePicker = false
                         }
                     }
@@ -267,19 +267,19 @@ struct CreateJournalEntryView: View {
             }
             .presentationDetents([.medium])
         }
-        .alert("Erreur", isPresented: $showingFreemiumAlert) {
-            Button("OK") { }
+        .alert("error".localized, isPresented: $showingFreemiumAlert) {
+            Button("ok".localized) { }
         } message: {
             Text(freemiumErrorMessage)
         }
         .alert(isPresented: $showSettingsAlert) {
             Alert(
-                title: Text("Autorisation requise"),
+                title: Text("authorization_required".localized),
                 message: Text(alertMessage),
-                primaryButton: .default(Text("Ouvrir les paramètres")) {
+                primaryButton: .default(Text("open_settings_button".localized)) {
                     openSettings()
                 },
-                secondaryButton: .cancel(Text("Annuler"))
+                secondaryButton: .cancel(Text("cancel".localized))
             )
         }
     }
@@ -288,7 +288,7 @@ struct CreateJournalEntryView: View {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
         formatter.timeStyle = .short
-        formatter.locale = Locale(identifier: "fr_FR")
+        formatter.locale = Locale.current
         return formatter.string(from: eventDate)
     }
     
@@ -386,12 +386,12 @@ struct CreateJournalEntryView: View {
         case .denied, .restricted:
             // ❌ ACCÈS REFUSÉ - Proposer d'aller aux paramètres
             print("❌ CreateJournalEntry: Accès refusé")
-            alertMessage = "L'accès à votre galerie est nécessaire pour ajouter une photo. Veuillez l'activer dans les paramètres de votre appareil."
+            alertMessage = "gallery_access_required".localized
             showSettingsAlert = true
             
         @unknown default:
             print("❓ CreateJournalEntry: Statut inconnu")
-            alertMessage = "Erreur d'accès à la galerie"
+            alertMessage = "gallery_access_error".localized
             showSettingsAlert = true
         }
     }

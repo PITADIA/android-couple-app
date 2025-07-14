@@ -37,7 +37,7 @@ class AppleReceiptService: NSObject, ObservableObject {
         guard SKPaymentQueue.canMakePayments() else {
             print("🔥 AppleReceiptService: Les achats ne sont pas autorisés")
             NSLog("🔥 AppleReceiptService: Les achats ne sont pas autorisés")
-            errorMessage = "Les achats ne sont pas autorisés sur cet appareil"
+            errorMessage = NSLocalizedString("purchases_not_authorized", comment: "Purchases not authorized error")
             return
         }
         
@@ -93,7 +93,7 @@ class AppleReceiptService: NSObject, ObservableObject {
               let receiptData = try? Data(contentsOf: receiptURL) else {
             print("🔥 AppleReceiptService: Impossible de lire le reçu local")
             NSLog("🔥 AppleReceiptService: Impossible de lire le reçu local")
-            errorMessage = "Impossible de lire le reçu d'achat"
+                            errorMessage = NSLocalizedString("cannot_read_receipt", comment: "Cannot read receipt error")
             isLoading = false
             return
         }
@@ -133,7 +133,7 @@ class AppleReceiptService: NSObject, ObservableObject {
                 } else {
                     print("🔥 AppleReceiptService: ❌ Validation échouée")
                     NSLog("🔥 AppleReceiptService: ❌ Validation échouée")
-                    self?.errorMessage = "Validation du reçu échouée"
+                    self?.errorMessage = NSLocalizedString("receipt_validation_failed", comment: "Receipt validation failed error")
                 }
             }
         }
@@ -170,7 +170,7 @@ extension AppleReceiptService: SKProductsRequestDelegate {
             } else {
                 print("🔥 AppleReceiptService: Produit non trouvé pour le plan: \(self.selectedPlan.rawValue)")
                 NSLog("🔥 AppleReceiptService: Produit non trouvé pour le plan: \(self.selectedPlan.rawValue)")
-                self.errorMessage = "Produit non disponible"
+                self.errorMessage = NSLocalizedString("product_not_available", comment: "Product not available error")
                 self.isLoading = false
             }
         }
@@ -181,7 +181,7 @@ extension AppleReceiptService: SKProductsRequestDelegate {
         NSLog("🔥 AppleReceiptService: Erreur de requête produit: \(error.localizedDescription)")
         
         DispatchQueue.main.async {
-            self.errorMessage = "Erreur lors du chargement du produit"
+            self.errorMessage = NSLocalizedString("product_loading_error", comment: "Product loading error")
             self.isLoading = false
         }
     }
@@ -278,7 +278,7 @@ extension AppleReceiptService: SKPaymentTransactionObserver {
         DispatchQueue.main.async {
             self.isLoading = false
             if queue.transactions.isEmpty {
-                self.errorMessage = "Aucun achat à restaurer"
+                self.errorMessage = NSLocalizedString("no_purchase_to_restore", comment: "No purchase to restore error")
             } else {
                 print("🔥 AppleReceiptService: Transactions restaurées, vérification du statut d'onboarding")
                 

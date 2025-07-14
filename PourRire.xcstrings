@@ -1,0 +1,2149 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "prad_2" : {
+      "comment" : "Questions \"For Laughs\" - To laugh together \"prad_1\" = \"If you could have a conversation with your pet, what would their first complaint be?\";",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most ridiculous thing you've done to avoid an awkward conversation?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus ridicule que tu aies faite pour éviter une conversation gênante ?"
+          }
+        }
+      }
+    },
+    "prad_3" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to create a perfume that smells like your personality, what would it smell like?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais créer un parfum qui sent comme ta personnalité, quelle serait son odeur ?"
+          }
+        }
+      }
+    },
+    "prad_4" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most absurd lie you told as a child and believed wholeheartedly?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le mensonge le plus absurde que tu aies dit enfant et auquel tu croyais dur comme fer ?"
+          }
+        }
+      }
+    },
+    "prad_5" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could replace all car horns with any sound, which one would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais remplacer tous les klaxons de voiture par n'importe quel son, lequel choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "prad_6" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the strangest thing you've found in your fridge that you don't remember putting there?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus étrange que tu aies trouvée dans ton frigo et dont tu ne te souviens pas l'avoir mise ?"
+          }
+        }
+      }
+    },
+    "prad_7" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to survive a week with only the objects currently in your pocket/bag, how would you manage?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais survivre une semaine avec seulement les objets qui sont actuellement dans ta poche/sac, comment t'en sortirais-tu ?"
+          }
+        }
+      }
+    },
+    "prad_8" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the weirdest dream you've had that you still remember?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le rêve le plus bizarre que tu aies fait et dont tu te souviens encore ?"
+          }
+        }
+      }
+    },
+    "prad_9" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could make one food scream when eaten, which one would you choose to create the most chaos?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais faire en sorte qu'un aliment crie quand on le mange, lequel choisirais-tu pour créer le plus de chaos ?"
+          }
+        }
+      }
+    },
+    "prad_10" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the stupidest thing you've done out of laziness?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus stupide que tu aies faite par flemme ?"
+          }
+        }
+      }
+    },
+    "prad_11" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to create a new dance based on a daily activity, which one would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais créer une nouvelle danse basée sur une activité quotidienne, laquelle choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "prad_12" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most embarrassing moment you were caught talking to yourself?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le moment le plus gênant où tu as été pris(e) en train de parler tout(e) seul(e) ?"
+          }
+        }
+      }
+    },
+    "prad_13" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could have any animal as a means of transportation, which one would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais avoir n'importe quel animal comme moyen de transport, lequel choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "prad_14" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most ridiculous thing you've bought online at 3 AM?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus ridicule que tu aies achetée en ligne à 3h du matin ?"
+          }
+        }
+      }
+    },
+    "prad_15" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to create a new sport using everyday objects, what would it look like?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais créer un nouveau sport avec des objets du quotidien, à quoi ressemblerait-il ?"
+          }
+        }
+      }
+    },
+    "prad_16" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most creative lie you've invented to avoid a social event?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le mensonge le plus créatif que tu aies inventé pour éviter un événement social ?"
+          }
+        }
+      }
+    },
+    "prad_17" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could replace your voice with anyone else's for a day, who would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais remplacer ta voix par celle de n'importe qui pendant une journée, qui choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "prad_18" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the strangest thing you've done when you thought you were alone?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus étrange que tu aies faite quand tu pensais être seul(e) ?"
+          }
+        }
+      }
+    },
+    "prad_19" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to create a new emoji, what would it look like?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais créer un nouveau emoji, à quoi ressemblerait-il ?"
+          }
+        }
+      }
+    },
+    "prad_20" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most absurd moment you burst out laughing?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le moment le plus absurde où tu as éclaté de rire ?"
+          }
+        }
+      }
+    },
+    "prad_21" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could make one inanimate object able to talk, which one would you choose and why?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais faire en sorte qu'un objet inanimé puisse parler, lequel choisirais-tu et pourquoi ?"
+          }
+        }
+      }
+    },
+    "prad_22" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most ridiculous thing you've done to impress someone?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus ridicule que tu aies faite pour impressionner quelqu'un ?"
+          }
+        }
+      }
+    },
+    "prad_23" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to create a completely absurd new TV game show, what would be the main rule?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais créer un nouveau jeu télévisé complètement absurde, quelle en serait la règle principale ?"
+          }
+        }
+      }
+    },
+    "prad_24" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most embarrassing moment you confused someone with someone else?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le moment le plus gênant où tu as confondu quelqu'un avec quelqu'un d'autre ?"
+          }
+        }
+      }
+    },
+    "prad_25" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could have any useless but impressive skill, which one would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais avoir n'importe quelle compétence inutile mais impressionnante, laquelle choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "prad_26" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the strangest thing you've done out of habit without realizing it?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus étrange que tu aies faite par habitude sans t'en rendre compte ?"
+          }
+        }
+      }
+    },
+    "prad_27" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to create a completely useless new job, what would it be?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais créer un nouveau métier complètement inutile, quel serait-il ?"
+          }
+        }
+      }
+    },
+    "prad_28" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most absurd moment you tried to pretend you knew something you didn't?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le moment le plus absurde où tu as essayé de faire semblant de savoir quelque chose que tu ne savais pas ?"
+          }
+        }
+      }
+    },
+    "prad_29" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could replace all elevators with any other means of transportation, which one would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais remplacer tous les ascenseurs par n'importe quel autre moyen de transport, lequel choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "prad_30" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most ridiculous thing you've done when you were sick?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus ridicule que tu aies faite quand tu étais malade ?"
+          }
+        }
+      }
+    },
+    "prad_31" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to create a completely absurd new family tradition, what would it be?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais créer une nouvelle tradition familiale complètement absurde, quelle serait-elle ?"
+          }
+        }
+      }
+    },
+    "prad_32" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most embarrassing moment you mispronounced a word in front of many people?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le moment le plus gênant où tu as mal prononcé un mot devant plein de monde ?"
+          }
+        }
+      }
+    },
+    "prad_33" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could make a sound follow someone you don't like everywhere, what sound would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais faire en sorte qu'un bruit suive partout une personne que tu n'aimes pas, quel bruit choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "prad_34" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the stupidest thing you've done trying to appear intelligent?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus stupide que tu aies faite en essayant de paraître intelligent(e) ?"
+          }
+        }
+      }
+    },
+    "prad_35" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to create a new type of restaurant with a completely crazy concept, what would it be?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais créer un nouveau type de restaurant avec un concept complètement fou, quel serait-il ?"
+          }
+        }
+      }
+    },
+    "prad_36" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most absurd moment you tried to lie to your parents?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le moment le plus absurde où tu as essayé de mentir à tes parents ?"
+          }
+        }
+      }
+    },
+    "prad_37" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could replace all door handles with anything else, what would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais remplacer toutes les poignées de porte par n'importe quoi d'autre, que choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "prad_38" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most ridiculous thing you've done thinking no one was watching?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus ridicule que tu aies faite en pensant que personne ne te regardait ?"
+          }
+        }
+      }
+    },
+    "prad_39" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to create a new type of public transportation, what would it look like?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais créer un nouveau type de transport en commun, à quoi ressemblerait-il ?"
+          }
+        }
+      }
+    },
+    "prad_40" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most embarrassing moment you were caught procrastinating red-handed?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le moment le plus gênant où tu as été pris(e) en flagrant délit de procrastination ?"
+          }
+        }
+      }
+    },
+    "prad_41" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could make one everyday object huge, which one would you choose to create the most chaos?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais faire en sorte qu'un objet du quotidien devienne énorme, lequel choisirais-tu pour créer le plus de chaos ?"
+          }
+        }
+      }
+    },
+    "prad_42" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most absurd thing you've done to avoid cleaning?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus absurde que tu aies faite pour éviter de faire le ménage ?"
+          }
+        }
+      }
+    },
+    "prad_43" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to create a new type of exercise based on a ridiculous activity, what would it be?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais créer un nouveau type d'exercice physique basé sur une activité ridicule, quel serait-il ?"
+          }
+        }
+      }
+    },
+    "prad_44" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the stupidest moment you tried to do something you saw in a movie?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le moment le plus stupide où tu as essayé de faire quelque chose que tu avais vu dans un film ?"
+          }
+        }
+      }
+    },
+    "prad_45" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could replace all traffic lights with anything else, what would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais remplacer tous les feux de circulation par n'importe quoi d'autre, que choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "prad_46" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most ridiculous thing you've done while half asleep?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus ridicule que tu aies faite en étant à moitié endormi(e) ?"
+          }
+        }
+      }
+    },
+    "prad_47" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to create a completely absurd new contest, what would be the main challenge?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais créer un nouveau type de concours complètement absurde, quelle en serait l'épreuve principale ?"
+          }
+        }
+      }
+    },
+    "prad_48" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most embarrassing moment you tried to be cool but everything went wrong?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le moment le plus gênant où tu as essayé d'être cool mais où tout a mal tourné ?"
+          }
+        }
+      }
+    },
+    "prad_49" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could make one food have a completely different texture, which one would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais faire en sorte qu'un aliment ait une texture complètement différente, lequel choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "prad_50" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the stupidest thing you've done trying to save money?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus stupide que tu aies faite en essayant d'économiser de l'argent ?"
+          }
+        }
+      }
+    },
+    "prad_51" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to create a new type of store with a completely crazy concept, what would it be?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais créer un nouveau type de magasin avec un concept complètement fou, quel serait-il ?"
+          }
+        }
+      }
+    },
+    "prad_52" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most absurd moment you tried to fix something and broke everything?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le moment le plus absurde où tu as essayé de réparer quelque chose et où tu as tout cassé ?"
+          }
+        }
+      }
+    },
+    "prad_53" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could replace all phones with any other object to communicate, which one would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais remplacer tous les téléphones par n'importe quel autre objet pour communiquer, lequel choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "prad_54" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most ridiculous thing you've done trying to impress your friends?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus ridicule que tu aies faite en essayant d'impressionner tes amis ?"
+          }
+        }
+      }
+    },
+    "prad_55" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to create a new type of entertainment based on a boring activity, what would it be?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais créer un nouveau type de divertissement basé sur une activité ennuyeuse, quel serait-il ?"
+          }
+        }
+      }
+    },
+    "prad_56" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most embarrassing moment you confused two people on the phone?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le moment le plus gênant où tu as confondu deux personnes au téléphone ?"
+          }
+        }
+      }
+    },
+    "prad_57" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could make a piece of clothing have a completely useless function, which one would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais faire en sorte qu'un vêtement ait une fonction complètement inutile, laquelle choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "prad_58" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most absurd thing you've done trying to get noticed?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus absurde que tu aies faite en essayant de te faire remarquer ?"
+          }
+        }
+      }
+    },
+    "prad_59" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to create a new type of board game with completely crazy rules, what would it be?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais créer un nouveau type de jeu de société avec des règles complètement folles, quel serait-il ?"
+          }
+        }
+      }
+    },
+    "prad_60" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the stupidest moment you tried to do something romantic but it backfired?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le moment le plus stupide où tu as essayé de faire quelque chose de romantique mais où ça a foiré ?"
+          }
+        }
+      }
+    },
+    "prad_61" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could replace all mirrors with anything else, what would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais remplacer tous les miroirs par n'importe quoi d'autre, que choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "prad_62" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most ridiculous thing you've done trying to get revenge on someone?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus ridicule que tu aies faite en essayant de te venger de quelqu'un ?"
+          }
+        }
+      }
+    },
+    "prad_63" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to create a completely useless new course, what would it be?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais créer un nouveau type de cours complètement inutile, quel serait-il ?"
+          }
+        }
+      }
+    },
+    "prad_64" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most embarrassing moment you tried to pretend to like something you hated?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le moment le plus gênant où tu as essayé de faire semblant d'aimer quelque chose que tu détestais ?"
+          }
+        }
+      }
+    },
+    "prad_65" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could make a piece of furniture have a completely different function, which one would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais faire en sorte qu'un meuble ait une fonction complètement différente, lequel choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "prad_66" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most absurd thing you've done trying to get forgiveness?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus absurde que tu aies faite en essayant de te faire pardonner ?"
+          }
+        }
+      }
+    },
+    "prad_67" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to create a new type of festival with a completely crazy theme, what would it be?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais créer un nouveau type de festival avec un thème complètement fou, quel serait-il ?"
+          }
+        }
+      }
+    },
+    "prad_68" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the stupidest moment you tried to do something creative but it was a disaster?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le moment le plus stupide où tu as essayé de faire quelque chose de créatif mais où c'était un désastre ?"
+          }
+        }
+      }
+    },
+    "prad_69" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could replace all chairs with any other type of seat, which one would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais remplacer toutes les chaises par n'importe quel autre type de siège, lequel choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "prad_70" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most ridiculous thing you've done trying to avoid someone?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus ridicule que tu aies faite en essayant d'éviter quelqu'un ?"
+          }
+        }
+      }
+    },
+    "prad_71" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to create a new type of therapy based on a ridiculous activity, what would it be?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais créer un nouveau type de thérapie basée sur une activité ridicule, quelle serait-elle ?"
+          }
+        }
+      }
+    },
+    "prad_72" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most embarrassing moment you tried to make a joke that fell flat?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le moment le plus gênant où tu as essayé de faire une blague qui est tombée à plat ?"
+          }
+        }
+      }
+    },
+    "prad_73" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could make a household appliance have a personality, which one would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais faire en sorte qu'un appareil électroménager ait une personnalité, lequel choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "prad_74" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most absurd thing you've done trying to relax?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus absurde que tu aies faite en essayant de te détendre ?"
+          }
+        }
+      }
+    },
+    "prad_75" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to create a new type of competition with completely crazy rules, what would it be?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais créer un nouveau type de compétition avec des règles complètement folles, quelle serait-elle ?"
+          }
+        }
+      }
+    },
+    "prad_76" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the stupidest moment you tried to do something heroic but failed?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le moment le plus stupide où tu as essayé de faire quelque chose d'héroïque mais où tu as échoué ?"
+          }
+        }
+      }
+    },
+    "prad_77" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could replace all stairs with any other way to go up, which one would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais remplacer tous les escaliers par n'importe quel autre moyen de monter, lequel choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "prad_78" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most ridiculous thing you've done trying to make friends?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus ridicule que tu aies faite en essayant de te faire des amis ?"
+          }
+        }
+      }
+    },
+    "prad_79" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to create a new type of music based on everyday sounds, what would it sound like?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais créer un nouveau type de musique basée sur des bruits du quotidien, à quoi ressemblerait-elle ?"
+          }
+        }
+      }
+    },
+    "prad_80" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most embarrassing moment you tried to dance and everyone stared at you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le moment le plus gênant où tu as essayé de danser et où tout le monde t'a regardé ?"
+          }
+        }
+      }
+    },
+    "prad_81" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could make an office object have a completely different function, which one would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais faire en sorte qu'un objet de bureau ait une fonction complètement différente, lequel choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "prad_82" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most absurd thing you've done trying to educate yourself?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus absurde que tu aies faite en essayant de te cultiver ?"
+          }
+        }
+      }
+    },
+    "prad_83" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to create a new type of vacation with a completely crazy concept, what would it be?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais créer un nouveau type de vacances avec un concept complètement fou, quel serait-il ?"
+          }
+        }
+      }
+    },
+    "prad_84" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the stupidest moment you tried to do something sophisticated but failed?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le moment le plus stupide où tu as essayé de faire quelque chose de sophistiqué mais où tu as échoué ?"
+          }
+        }
+      }
+    },
+    "prad_85" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could replace all doors with any other type of entrance, which one would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais remplacer toutes les portes par n'importe quel autre type d'entrée, lequel choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "prad_86" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most ridiculous thing you've done trying to save time?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus ridicule que tu aies faite en essayant d'économiser du temps ?"
+          }
+        }
+      }
+    },
+    "prad_87" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to create a completely useless new hobby, what would it be?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais créer un nouveau type de hobby complètement inutile, quel serait-il ?"
+          }
+        }
+      }
+    },
+    "prad_88" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most embarrassing moment you tried to pretend to understand something you didn't understand?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le moment le plus gênant où tu as essayé de faire semblant de comprendre quelque chose que tu ne comprenais pas ?"
+          }
+        }
+      }
+    },
+    "prad_89" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could make a pet have a human skill, which one would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais faire en sorte qu'un animal domestique ait une compétence humaine, laquelle choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "prad_90" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most absurd thing you've done trying to motivate yourself?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus absurde que tu aies faite en essayant de te motiver ?"
+          }
+        }
+      }
+    },
+    "prad_91" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to create a new type of restaurant where everything is upside down, what would it look like?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais créer un nouveau type de restaurant où tout est à l'envers, à quoi ressemblerait-il ?"
+          }
+        }
+      }
+    },
+    "prad_92" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the stupidest moment you tried to do something romantic for yourself?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le moment le plus stupide où tu as essayé de faire quelque chose de romantique pour toi-même ?"
+          }
+        }
+      }
+    },
+    "prad_93" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could replace all beds with any other type of sleeping arrangement, which one would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais remplacer tous les lits par n'importe quel autre type de couchage, lequel choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "prad_94" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most ridiculous thing you've done trying to get your crush to notice you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus ridicule que tu aies faite en essayant de te faire remarquer par ton crush ?"
+          }
+        }
+      }
+    },
+    "prad_95" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to create a new type of sport where you have to be as slow as possible, what would it look like?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais créer un nouveau type de sport où il faut être le plus lent possible, à quoi ressemblerait-il ?"
+          }
+        }
+      }
+    },
+    "prad_96" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most embarrassing moment you tried to do something cool in front of your parents?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le moment le plus gênant où tu as essayé de faire quelque chose de cool devant tes parents ?"
+          }
+        }
+      }
+    },
+    "prad_97" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could make a vegetable taste like a dessert, which one would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais faire en sorte qu'un légume ait le goût d'un dessert, lequel choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "prad_98" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most absurd thing you've done trying to avoid doing something important?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus absurde que tu aies faite en essayant d'éviter de faire quelque chose d'important ?"
+          }
+        }
+      }
+    },
+    "prad_99" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to create a new type of transportation that runs on emotion, how would it work?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais créer un nouveau type de transport qui marche à l'émotion, comment fonctionnerait-il ?"
+          }
+        }
+      }
+    },
+    "prad_100" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the stupidest moment you tried to do something mature but acted like a child?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le moment le plus stupide où tu as essayé de faire quelque chose de mature mais où tu as agi comme un enfant ?"
+          }
+        }
+      }
+    },
+    "prad_101" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could replace all windows with anything else, what would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais remplacer toutes les fenêtres par n'importe quoi d'autre, que choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "prad_102" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most ridiculous thing you've done trying to get your pet to forgive you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus ridicule que tu aies faite en essayant de te faire pardonner par ton animal de compagnie ?"
+          }
+        }
+      }
+    },
+    "prad_103" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to create a new type of cooking class with completely crazy ingredients, what would it be?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais créer un nouveau type de cours de cuisine avec des ingrédients complètement fous, quel serait-il ?"
+          }
+        }
+      }
+    },
+    "prad_104" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most embarrassing moment you tried to do something artistic but it was a disaster?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le moment le plus gênant où tu as essayé de faire quelque chose d'artistique mais où c'était un désastre ?"
+          }
+        }
+      }
+    },
+    "prad_105" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could make a bathroom object have a completely different function, which one would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais faire en sorte qu'un objet de la salle de bain ait une fonction complètement différente, lequel choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "prad_106" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most absurd thing you've done trying to stand out in a crowd?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus absurde que tu aies faite en essayant de te faire remarquer dans une foule ?"
+          }
+        }
+      }
+    },
+    "prad_107" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to create a new type of theater where actors can only whisper, what would it look like?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais créer un nouveau type de théâtre où les acteurs ne peuvent que chuchoter, à quoi ressemblerait-il ?"
+          }
+        }
+      }
+    },
+    "prad_108" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the stupidest moment you tried to do something generous but it went wrong?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le moment le plus stupide où tu as essayé de faire quelque chose de généreux mais où ça a mal tourné ?"
+          }
+        }
+      }
+    },
+    "prad_109" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could replace all faucets with any other way to get water, which one would you choose?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais remplacer tous les robinets par n'importe quel autre moyen d'avoir de l'eau, lequel choisirais-tu ?"
+          }
+        }
+      }
+    },
+    "prad_110" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most ridiculous thing you've done trying to make memories?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus ridicule que tu aies faite en essayant de te faire des souvenirs ?"
+          }
+        }
+      }
+    },
+    "prad_111" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had to create a new type of library with a completely crazy concept, what would it be?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu devais créer un nouveau type de bibliothèque avec un concept complètement fou, quel serait-il ?"
+          }
+        }
+      }
+    },
+    "prad_112" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most embarrassing moment you tried to do something spontaneous but planned everything?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le moment le plus gênant où tu as essayé de faire quelque chose de spontané mais où tu as tout planifié ?"
+          }
+        }
+      }
+    },
+    "prad_113" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If your life had a blooper reel, what would be the highlight moment?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si ta vie avait un bêtisier, quel serait le moment phare ?"
+          }
+        }
+      }
+    },
+    "prad_114" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could have a conversation with an object, which one would you choose and why?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais avoir une conversation avec un objet, lequel choisirais-tu et pourquoi ?"
+          }
+        }
+      }
+    },
+    "prad_115" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could create a new ice cream flavor inspired by your personality, what would it be called?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais créer une nouvelle saveur de glace inspirée de ta personnalité, comment s'appellerait-elle ?"
+          }
+        }
+      }
+    },
+    "prad_116" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could have a fictional character as a roommate, who would you choose and why?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais avoir un personnage fictif comme colocataire, qui choisirais-tu et pourquoi ?"
+          }
+        }
+      }
+    },
+    "prad_117" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What animal sound can you make the best? I want to hear it!!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est le bruit d'animal que tu sais mieux faire ? Je veux l'entendre !!"
+          }
+        }
+      }
+    },
+    "prad_118" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the most ridiculous reason you burst out laughing in a serious situation?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la raison la plus ridicule pour laquelle tu as éclaté de rire dans une situation sérieuse ?"
+          }
+        }
+      }
+    },
+    "prad_119" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you could talk to your past self, what hilarious advice would they give you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu pouvais parler avec ton \"toi\" du passé, quel conseil hilarant te donnerait-il ?"
+          }
+        }
+      }
+    },
+    "prad_120" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What song lyric did you mishear and sing confidently?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la parole de chanson que tu as mal entendue et chantée avec assurance ?"
+          }
+        }
+      }
+    },
+    "prad_121" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's the funniest thing I've done since we've been together?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle est la chose la plus marrante que j'ai fait depuis que l'on est ensemble ?"
+          }
+        }
+      }
+    },
+    "prad_122" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If I were a pizza, what would be my topping? And why?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si j'étais une pizza, quelle serait ma garniture ? Et pourquoi ?"
+          }
+        }
+      }
+    },
+    "prad_123" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If I were an object, which one would I be and why?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si j'étais un objet, lequel serais-je et pourquoi ?"
+          }
+        }
+      }
+    },
+    "prad_124" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Have you ever had a dream so funny that you woke up laughing?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As-tu déjà fait un rêve tellement drôle que tu t'es réveillé(e) en riant ?"
+          }
+        }
+      }
+    },
+    "prad_125" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tell me about the worst haircut you've ever had."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raconte-moi la pire coupe de cheveux que tu aies jamais eue."
+          }
+        }
+      }
+    },
+    "prad_126" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tell me about a time you tried to be discreet and got caught."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raconte-moi une fois où tu as essayé d'être discret(ète) et où tu t'es fait(e) prendre."
+          }
+        }
+      }
+    },
+    "prad_127" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tell me about a time you laughed when you absolutely weren't supposed to."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raconte-moi une fois où tu as ri alors que tu n'étais absolument pas censé(e) le faire."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

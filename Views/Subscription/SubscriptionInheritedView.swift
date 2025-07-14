@@ -49,27 +49,24 @@ struct SubscriptionInheritedView: View {
                     }
                     
                     // Titre premium
-                    Text("🎉 Premium débloqué !")
-                        .font(.system(size: 32, weight: .bold))
+                    Text("premium_unlocked".localized)
+                        .font(.system(size: 28, weight: .bold))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
-                        .opacity(showAnimation ? 1.0 : 0.0)
-                        .animation(.easeInOut(duration: 1.0).delay(0.5), value: showAnimation)
+                        .padding(.horizontal, 30)
                     
                     // Message avec nom du partenaire
-                    Text("\(partnerName) a partagé son abonnement Premium avec toi !\n\nTu as maintenant accès à toutes les fonctionnalités premium.")
+                    Text(String(format: "premium_shared_message".localized, partnerName))
                         .font(.system(size: 18))
-                        .foregroundColor(.white.opacity(0.95))
+                        .foregroundColor(.white.opacity(0.9))
                         .multilineTextAlignment(.center)
-                        .padding(.horizontal, 40)
-                        .opacity(showAnimation ? 1.0 : 0.0)
-                        .animation(.easeInOut(duration: 1.0).delay(1.0), value: showAnimation)
+                        .padding(.horizontal, 30)
                     
                     // Liste des avantages
                     VStack(spacing: 12) {
-                        premiumFeatureRow(icon: "🔓", text: "Toutes les catégories débloquées")
-                        premiumFeatureRow(icon: "🔥", text: "Questions illimitées")
-                        premiumFeatureRow(icon: "💎", text: "Contenu premium exclusif")
+                                            premiumFeatureRow(icon: "🔓", text: "premium_features_unlocked".localized)
+                    premiumFeatureRow(icon: "🔥", text: "unlimited_questions".localized)
+                    premiumFeatureRow(icon: "💎", text: "exclusive_premium_content".localized)
                     }
                     .opacity(showAnimation ? 1.0 : 0.0)
                     .animation(.easeInOut(duration: 1.0).delay(1.5), value: showAnimation)
@@ -82,9 +79,9 @@ struct SubscriptionInheritedView: View {
                     print("🎁 SubscriptionInheritedView: Bouton Continuer pressé")
                     onContinue()
                 }) {
-                    Text("Découvrir Premium")
-                        .font(.system(size: 18, weight: .semibold))
-                        .foregroundColor(Color(hex: "#FFD700"))
+                    Text("discover_premium".localized)
+                        .font(.system(size: 18, weight: .bold))
+                        .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 18)
                         .background(Color.white)

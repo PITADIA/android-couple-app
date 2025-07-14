@@ -145,7 +145,7 @@ extension AuthenticationService: ASAuthorizationControllerDelegate {
                 NSLog("🔥 AuthenticationService: Erreur - Token Apple ID manquant")
                 DispatchQueue.main.async {
                     self.isLoading = false
-                    self.errorMessage = "Token d'authentification manquant"
+                    self.errorMessage = NSLocalizedString("missing_auth_token", comment: "Missing auth token error")
                 }
                 return
             }
@@ -155,7 +155,7 @@ extension AuthenticationService: ASAuthorizationControllerDelegate {
                 NSLog("🔥 AuthenticationService: Erreur - Impossible de sérialiser le token")
                 DispatchQueue.main.async {
                     self.isLoading = false
-                    self.errorMessage = "Erreur de sérialisation du token"
+                    self.errorMessage = NSLocalizedString("token_serialization_error", comment: "Token serialization error")
                 }
                 return
             }

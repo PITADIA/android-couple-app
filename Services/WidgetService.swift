@@ -769,14 +769,19 @@ struct RelationshipStats {
     var formattedDuration: String {
         if years > 0 {
             if months > 0 {
-                return "\(years) an\(years > 1 ? "s" : "") et \(months) mois"
+                let yearsText = years > 1 ? "years_plural".localized : "years_singular".localized
+                let monthsText = months > 1 ? "months_plural".localized : "months_singular".localized
+                return "\(years) \(yearsText) \("and_conjunction".localized) \(months) \(monthsText)"
             } else {
-                return "\(years) an\(years > 1 ? "s" : "")"
+                let yearsText = years > 1 ? "years_plural".localized : "years_singular".localized
+                return "\(years) \(yearsText)"
             }
         } else if months > 0 {
-            return "\(months) mois"
+            let monthsText = months > 1 ? "months_plural".localized : "months_singular".localized
+            return "\(months) \(monthsText)"
         } else {
-            return "\(days) jour\(days > 1 ? "s" : "")"
+            let daysText = days > 1 ? "days_plural".localized : "days_singular".localized
+            return "\(days) \(daysText)"
         }
     }
     
@@ -805,6 +810,6 @@ struct DistanceInfo {
     }
     
     var randomMessage: String {
-        messages.randomElement() ?? "💕 Je pense à toi"
+        messages.randomElement() ?? "default_love_message".localized
     }
 } 

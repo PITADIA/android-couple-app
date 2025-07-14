@@ -11,7 +11,7 @@ struct RelationshipImprovementStepView: View {
             
             // Titre centré à gauche
             HStack {
-                Text("Qu'aimeriez-vous améliorer dans votre relation ?")
+                Text("relationship_improvement_question".localized)
                     .font(.system(size: 36, weight: .bold))
                     .foregroundColor(.black)
                     .multilineTextAlignment(.leading)
@@ -67,7 +67,7 @@ struct RelationshipImprovementStepView: View {
                 Button(action: {
                     viewModel.nextStep()
                 }) {
-                    Text("Continuer")
+                    Text("continue".localized)
                         .font(.system(size: 18, weight: .semibold))
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)

@@ -48,27 +48,24 @@ struct SubscriptionRevokedView: View {
                     }
                     
                     // Titre de révocation
-                    Text("Accès Premium perdu")
-                        .font(.system(size: 32, weight: .bold))
+                    Text("premium_access_lost".localized)
+                        .font(.system(size: 28, weight: .bold))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
-                        .opacity(showAnimation ? 1.0 : 0.0)
-                        .animation(.easeInOut(duration: 1.0).delay(0.5), value: showAnimation)
+                        .padding(.horizontal, 30)
                     
                     // Message d'explication avec nom du partenaire
-                    Text("\(partnerName) a résilié son abonnement Premium.\n\nTu as maintenant accès aux fonctionnalités gratuites uniquement.")
+                    Text(String(format: "subscription_revoked_message".localized, partnerName))
                         .font(.system(size: 18))
-                        .foregroundColor(.white.opacity(0.95))
+                        .foregroundColor(.white.opacity(0.9))
                         .multilineTextAlignment(.center)
-                        .padding(.horizontal, 40)
-                        .opacity(showAnimation ? 1.0 : 0.0)
-                        .animation(.easeInOut(duration: 1.0).delay(1.0), value: showAnimation)
+                        .padding(.horizontal, 30)
                     
                     // Liste des limitations
                     VStack(spacing: 12) {
-                        limitationRow(icon: "🔒", text: "Catégories premium verrouillées")
-                        limitationRow(icon: "📊", text: "64 questions max (catégorie gratuite)")
-                        limitationRow(icon: "💡", text: "Contenu premium non accessible")
+                                            limitationRow(icon: "🔒", text: "premium_categories_locked".localized)
+                    limitationRow(icon: "📊", text: "max_64_questions".localized)
+                    limitationRow(icon: "💡", text: "premium_content_unavailable".localized)
                     }
                     .opacity(showAnimation ? 1.0 : 0.0)
                     .animation(.easeInOut(duration: 1.0).delay(1.5), value: showAnimation)
@@ -84,7 +81,7 @@ struct SubscriptionRevokedView: View {
                         // Ici on pourrait ouvrir la page d'abonnement
                         onContinue()
                     }) {
-                        Text("Obtenir Premium")
+                        Text("get_premium".localized)
                             .font(.system(size: 18, weight: .semibold))
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity)
@@ -107,7 +104,7 @@ struct SubscriptionRevokedView: View {
                         print("🔒 SubscriptionRevokedView: Bouton Continuer gratuit pressé")
                         onContinue()
                     }) {
-                        Text("Continuer en version gratuite")
+                        Text("continue_free_version".localized)
                             .font(.system(size: 16))
                             .foregroundColor(.white.opacity(0.8))
                     }

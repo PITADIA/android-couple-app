@@ -62,15 +62,15 @@ struct LocationServiceExplanationView: View {
     var body: some View {
         VStack(spacing: 30) {
             VStack(spacing: 16) {
-                Text("Localisation")
+                Text("location_permission".localized)
                     .font(.system(size: 28, weight: .bold))
                     .foregroundColor(.black)
                 
-                Text("Les services de localisation sont nécessaires pour que l'appli puisse calculer la distance entre vous et votre partenaire.")
+                Text("location_services_needed".localized)
                     .font(.system(size: 16))
-                    .foregroundColor(.black.opacity(0.8))
+                    .foregroundColor(.black.opacity(0.7))
                     .multilineTextAlignment(.center)
-                    .padding(.horizontal, 20)
+                    .padding(.horizontal, 30)
             }
             .padding(.top, 60)
             
@@ -85,7 +85,7 @@ struct LocationServiceExplanationView: View {
                     .background(Color.blue)
                     .clipShape(RoundedRectangle(cornerRadius: 12))
                 
-                Text("Localisation")
+                Text("location_status".localized)
                     .font(.system(size: 18, weight: .medium))
                     .foregroundColor(.black)
                 
@@ -108,7 +108,7 @@ struct LocationServiceExplanationView: View {
             
             // Bouton Continuer
             Button(action: onContinue) {
-                Text("Continuer")
+                Text("continue_button".localized)
                     .font(.system(size: 18, weight: .semibold))
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity)
@@ -130,13 +130,13 @@ struct LocationPermissionView: View {
     private var buttonText: String {
         switch locationManager.authorizationStatus {
         case .notDetermined:
-            return "Autoriser"
+            return "authorize_button".localized
         case .denied, .restricted:
-            return "Ouvrir les Réglages"
+            return "open_settings_button".localized
         case .authorizedWhenInUse, .authorizedAlways:
-            return "Continuer"
+            return "continue_button".localized
         @unknown default:
-            return "Autoriser"
+            return "authorize_button".localized
         }
     }
     
@@ -178,15 +178,15 @@ struct LocationPermissionView: View {
     var body: some View {
         VStack(spacing: 30) {
             VStack(spacing: 16) {
-                Text("Permission")
+                Text("permission".localized)
                     .font(.system(size: 28, weight: .bold))
                     .foregroundColor(.black)
                 
-                Text("Les services de localisation sont nécessaires pour que l'appli puisse calculer la distance entre vous et votre partenaire.")
+                Text("location_services_needed".localized)
                     .font(.system(size: 16))
-                    .foregroundColor(.black.opacity(0.8))
+                    .foregroundColor(.black.opacity(0.7))
                     .multilineTextAlignment(.center)
-                    .padding(.horizontal, 20)
+                    .padding(.horizontal, 30)
             }
             .padding(.top, 60)
             
@@ -201,7 +201,7 @@ struct LocationPermissionView: View {
                     .background(Color.blue)
                     .clipShape(RoundedRectangle(cornerRadius: 12))
                 
-                Text("Autorisations d'accéder à la position")
+                Text("location_access_permission".localized)
                     .font(.system(size: 18, weight: .medium))
                     .foregroundColor(.black)
                 
@@ -224,7 +224,7 @@ struct LocationPermissionView: View {
             
             // Instructions
             VStack(alignment: .leading, spacing: 12) {
-                Text("Comment activer la localisation")
+                Text("how_to_enable_location".localized)
                     .font(.system(size: 20, weight: .bold))
                     .foregroundColor(.black)
                 
@@ -236,7 +236,7 @@ struct LocationPermissionView: View {
                         .background(Color.orange.opacity(0.1))
                         .clipShape(Circle())
                     
-                    Text("Appuyez sur Autoriser")
+                    Text("tap_authorize".localized)
                         .font(.system(size: 16))
                         .foregroundColor(.black)
                 }
@@ -249,7 +249,7 @@ struct LocationPermissionView: View {
                         .background(Color.green.opacity(0.1))
                         .clipShape(Circle())
                     
-                    Text("Sélectionnez Autoriser lorsque l'app est active")
+                    Text("select_allow_when_active".localized)
                         .font(.system(size: 16))
                         .foregroundColor(.black)
                 }
@@ -294,15 +294,15 @@ struct LocationPartnerExplanationView: View {
     var body: some View {
         VStack(spacing: 30) {
             VStack(spacing: 16) {
-                Text("Au tour de votre partenaire")
+                Text("partner_turn".localized)
                     .font(.system(size: 28, weight: .bold))
                     .foregroundColor(.black)
                 
-                Text("Demandez à votre partenaire de faire la même démarche pour activer sa localisation, sinon la distance entre vous ne pourra pas être calculée.")
+                Text("partner_location_request".localized)
                     .font(.system(size: 16))
-                    .foregroundColor(.black.opacity(0.8))
+                    .foregroundColor(.black.opacity(0.7))
                     .multilineTextAlignment(.center)
-                    .padding(.horizontal, 20)
+                    .padding(.horizontal, 30)
             }
             .padding(.top, 60)
             
@@ -318,7 +318,7 @@ struct LocationPartnerExplanationView: View {
             
             // Bouton Continuer
             Button(action: onContinue) {
-                Text("Continuer")
+                Text("continue_button".localized)
                     .font(.system(size: 18, weight: .semibold))
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity)

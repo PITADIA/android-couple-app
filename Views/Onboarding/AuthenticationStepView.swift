@@ -23,7 +23,7 @@ struct AuthenticationStepView: View {
                 // Contenu en haut
                 VStack(spacing: 40) {
                     // Titre
-                    Text("Crée ton compte et sécurise tes données")
+                    Text("create_secure_account".localized)
                         .font(.system(size: 36, weight: .bold))
                         .foregroundColor(.black)
                         .multilineTextAlignment(.center)
@@ -41,7 +41,7 @@ struct AuthenticationStepView: View {
                     HStack {
                         Image(systemName: "applelogo")
                             .font(.system(size: 20, weight: .medium))
-                        Text("Continuer avec Apple")
+                        Text("continue_with_apple".localized)
                             .font(.system(size: 18, weight: .semibold))
                     }
                     .foregroundColor(.black)

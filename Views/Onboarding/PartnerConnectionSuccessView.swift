@@ -24,13 +24,13 @@ struct PartnerConnectionSuccessView: View {
             
             VStack(spacing: 30) {
                 VStack(spacing: 16) {
-                    Text("Connexion réussie !")
+                    Text("connection_successful".localized)
                         .font(.system(size: 28, weight: .bold))
                         .foregroundColor(.black)
                         .opacity(showAnimation ? 1.0 : 0.0)
                         .animation(.easeInOut(duration: 1.0).delay(0.5), value: showAnimation)
                     
-                    Text("Félicitations, tu as réussi à te connecter avec \(partnerName). Vous pouvez maintenant partager vos questions favorites et voir votre distance en temps réel.")
+                    Text(String(format: "congratulations_connection".localized, partnerName))
                         .font(.system(size: 16))
                         .foregroundColor(.black.opacity(0.8))
                         .multilineTextAlignment(.center)
@@ -51,7 +51,7 @@ struct PartnerConnectionSuccessView: View {
                         .background(Color(hex: "#FD267A"))
                         .clipShape(RoundedRectangle(cornerRadius: 12))
                     
-                    Text("Connecté avec \(partnerName)")
+                    Text(String(format: "connected_with".localized, partnerName))
                         .font(.system(size: 18, weight: .medium))
                         .foregroundColor(.black)
                     
@@ -76,42 +76,43 @@ struct PartnerConnectionSuccessView: View {
                 
                 // Instructions sur les nouvelles fonctionnalités
                 VStack(alignment: .leading, spacing: 12) {
-                    Text("Nouvelles fonctionnalités débloquées")
-                        .font(.system(size: 20, weight: .bold))
+                    Text("new_features_unlocked".localized)
+                        .font(.system(size: 20, weight: .semibold))
                         .foregroundColor(.black)
+                        .padding(.bottom, 16)
                     
                     HStack(spacing: 12) {
                         Text("💕")
                             .font(.system(size: 24))
                         
-                        Text("Questions favorites partagées")
+                        Text("shared_favorite_questions".localized)
                             .font(.system(size: 16))
-                            .foregroundColor(.black)
+                            .foregroundColor(.black.opacity(0.8))
                     }
                     
                     HStack(spacing: 12) {
                         Text("📍")
                             .font(.system(size: 24))
                         
-                        Text("Distance en temps réel")
+                        Text("real_time_distance".localized)
                             .font(.system(size: 16))
-                            .foregroundColor(.black)
+                            .foregroundColor(.black.opacity(0.8))
                     }
                     
                     HStack(spacing: 12) {
                         Text("⭐")
                             .font(.system(size: 24))
                         
-                        Text("Journal partagé")
+                        Text("shared_journal".localized)
                             .font(.system(size: 16))
-                            .foregroundColor(.black)
+                            .foregroundColor(.black.opacity(0.8))
                     }
                     
                     HStack(spacing: 12) {
                         Text("📱")
                             .font(.system(size: 24))
                         
-                        Text("Widgets disponibles")
+                        Text("widgets_available".localized)
                             .font(.system(size: 16))
                             .foregroundColor(.black)
                     }
@@ -127,7 +128,7 @@ struct PartnerConnectionSuccessView: View {
                     print("🎉 PartnerConnectionSuccessView: Bouton Continuer pressé")
                     onContinue()
                 }) {
-                    Text("Continuer")
+                    Text("continue".localized)
                         .font(.system(size: 18, weight: .semibold))
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)

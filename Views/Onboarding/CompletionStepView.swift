@@ -30,19 +30,19 @@ struct CompletionStepView: View {
                                 .foregroundColor(.white)
                         }
                         
-                        Text("Tout est terminé")
+                        Text("all_completed".localized)
                             .font(.system(size: 18, weight: .medium))
                             .foregroundColor(.gray)
                     }
                     
                     // Grand titre "Merci de nous faire confiance."
                     VStack(spacing: 2) {
-                        Text("Merci de nous")
+                        Text("thank_you_for".localized)
                             .font(.system(size: 48, weight: .bold))
                             .foregroundColor(.black)
                             .multilineTextAlignment(.center)
                         
-                        Text("faire confiance.")
+                        Text("trusting_us".localized)
                             .font(.system(size: 48, weight: .bold))
                             .foregroundColor(.black)
                             .multilineTextAlignment(.center)
@@ -53,7 +53,7 @@ struct CompletionStepView: View {
                         .frame(height: 15)
                     
                     // Sous-titre gris
-                    Text("Nous promettons de toujours garder vos informations personnelles privées et sécurisées.")
+                    Text("privacy_promise".localized)
                         .font(.system(size: 16))
                         .foregroundColor(.gray)
                         .multilineTextAlignment(.center)
@@ -69,7 +69,7 @@ struct CompletionStepView: View {
                     Button(action: {
                         viewModel.nextStep()
                     }) {
-                        Text("Continuer")
+                        Text("continue".localized)
                             .font(.system(size: 18, weight: .semibold))
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity)

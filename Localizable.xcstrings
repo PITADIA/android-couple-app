@@ -1,0 +1,760 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "%@" : {
+
+    },
+    "%@ / %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ / %2$@"
+          }
+        }
+      }
+    },
+    "%@, %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@, %2$@"
+          }
+        }
+      }
+    },
+    "%lld" : {
+
+    },
+    "%lld jours" : {
+
+    },
+    "• %@" : {
+
+    },
+    "❤️" : {
+
+    },
+    "⭐" : {
+
+    },
+    "💌" : {
+
+    },
+    "💕" : {
+
+    },
+    "📊 Statistiques du Cache" : {
+
+    },
+    "📍" : {
+
+    },
+    "📱" : {
+
+    },
+    "🔄 Actions" : {
+
+    },
+    "🔒" : {
+
+    },
+    "🔥" : {
+
+    },
+    "add_1_favorite" : {
+      "comment" : "Add 1 favorite button"
+    },
+    "add_5_favorites" : {
+      "comment" : "Add 5 favorites button"
+    },
+    "Affichez la distance qui vous sépare de votre partenaire." : {
+
+    },
+    "always_authorized" : {
+      "comment" : "Always authorized location status"
+    },
+    "and_others" : {
+      "comment" : "And others text"
+    },
+    "Année" : {
+
+    },
+    "Annuler" : {
+
+    },
+    "authorization_required" : {
+      "comment" : "Authorization required title"
+    },
+    "both_have_access" : {
+      "comment" : "Both have access status"
+    },
+    "cache_clear_confirmation" : {
+      "comment" : "Cache clear confirmation message"
+    },
+    "cache_size" : {
+      "comment" : "Cache size text"
+    },
+    "calendar_friday" : {
+      "comment" : "Friday abbreviation"
+    },
+    "calendar_monday" : {
+      "comment" : "Monday abbreviation"
+    },
+    "calendar_saturday" : {
+      "comment" : "Saturday abbreviation"
+    },
+    "calendar_sunday" : {
+      "comment" : "Sunday abbreviation"
+    },
+    "calendar_thursday" : {
+      "comment" : "Thursday abbreviation"
+    },
+    "calendar_tuesday" : {
+      "comment" : "Tuesday abbreviation"
+    },
+    "calendar_wednesday" : {
+      "comment" : "Wednesday abbreviation"
+    },
+    "can_request_review" : {
+      "comment" : "Can request review text"
+    },
+    "cancel" : {
+      "comment" : "Cancel button"
+    },
+    "cancel_subscription" : {
+      "comment" : "Cancel subscription button"
+    },
+    "cannot_read_receipt" : {
+      "comment" : "Cannot read receipt error"
+    },
+    "categories" : {
+      "comment" : "Categories label"
+    },
+    "category_a_distance_subtitle" : {
+      "comment" : "Subtitle for Through Distance category",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Far from the eyes, close to the heart."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loin des yeux près du coeur."
+          }
+        }
+      }
+    },
+    "category_a_distance_title" : {
+      "comment" : "Title for Through Distance category",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Across the Distance"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "À travers la distance"
+          }
+        }
+      }
+    },
+    "category_desirs_inavoues_subtitle" : {
+      "comment" : "Subtitle for Unspoken Desires category",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reveal your desires to better understand each other."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dévoilez vos envies pour mieux vous comprendre."
+          }
+        }
+      }
+    },
+    "category_desirs_inavoues_title" : {
+      "comment" : "Title for Unspoken Desires category",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hidden Desires"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Désirs Inavoués"
+          }
+        }
+      }
+    },
+    "category_en_couple_subtitle" : {
+      "comment" : "Subtitle for In a Relationship category",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Questions to remember what unites us."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Des questions pour se rappeler ce qui nous unit."
+          }
+        }
+      }
+    },
+    "category_en_couple_title" : {
+      "comment" : "Title for In a Relationship category",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As a Couple"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En couple"
+          }
+        }
+      }
+    },
+    "category_mieux_ensemble_subtitle" : {
+      "comment" : "Subtitle for Healing Our Love category",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To love is also to learn to heal."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "S'aimer, c'est aussi apprendre à se réparer."
+          }
+        }
+      }
+    },
+    "category_mieux_ensemble_title" : {
+      "comment" : "Title for Healing Our Love category",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Healing Our Love"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réparer notre amour"
+          }
+        }
+      }
+    },
+    "category_pour_rire_subtitle" : {
+      "comment" : "Subtitle for Laugh Together category",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Because loving means having fun together too"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parceque s'aimer c'est aussi s'amuser ensemble"
+          }
+        }
+      }
+    },
+    "category_pour_rire_title" : {
+      "comment" : "Title for Laugh Together category",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "For Laughs Together"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pour rigoler à deux"
+          }
+        }
+      }
+    },
+    "category_pour_un_date_subtitle" : {
+      "comment" : "Subtitle for On a Date category",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Questions to see each other beyond appearances."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Des questions pour voir l'autre au-delà des apparences."
+          }
+        }
+      }
+    },
+    "category_pour_un_date_title" : {
+      "comment" : "Title for On a Date category",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "On a Date"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En date"
+          }
+        }
+      }
+    },
+    "category_questions_profondes_subtitle" : {
+      "comment" : "Subtitle for Deep Questions category",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To explore what we keep inside, in silence."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pour explorer ce que l'on garde en soi, en silence."
+          }
+        }
+      }
+    },
+    "category_questions_profondes_title" : {
+      "comment" : "Title for Deep Questions category",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deep Questions"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Des questions profondes"
+          }
+        }
+      }
+    },
+    "category_tu_preferes_subtitle" : {
+      "comment" : "Subtitle for Would You Rather category",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Questions that touch on what defines you."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Des questions qui touchent à ce qui te définit."
+          }
+        }
+      }
+    },
+    "category_tu_preferes_title" : {
+      "comment" : "Title for Would You Rather category",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What Do You Prefer?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu préfères quoi ?"
+          }
+        }
+      }
+    },
+    "Ce Widget nécessite la localisation activée des deux partenaires." : {
+
+    },
+    "Chargement..." : {
+
+    },
+    "clean_orphan_codes" : {
+      "comment" : "Clean orphan codes button"
+    },
+    "clear_cache" : {
+      "comment" : "Clear cache button"
+    },
+    "close" : {
+      "comment" : "Close button"
+    },
+    "congratulations_connection" : {
+      "comment" : "Congratulations connection message"
+    },
+    "congratulations_pack" : {
+      "comment" : "Congratulations pack completion\nCongratulations pack title"
+    },
+    "connected_with" : {
+      "comment" : "Connected with partner"
+    },
+    "connecting" : {
+      "comment" : "Connecting message"
+    },
+    "connection_error" : {
+      "comment" : "Connection error"
+    },
+    "connection_successful" : {
+      "comment" : "Connection successful title"
+    },
+    "connection_successful_status" : {
+      "comment" : "Connection successful status"
+    },
+    "continue" : {
+      "comment" : "Continue button"
+    },
+    "create_account_description" : {
+      "comment" : "Create account description"
+    },
+    "created_by" : {
+      "comment" : "Created by label"
+    },
+    "current_status" : {
+      "comment" : "Current status text"
+    },
+    "current_user" : {
+      "comment" : "Current user title"
+    },
+    "de distance" : {
+
+    },
+    "debug_review_system" : {
+      "comment" : "Debug review system title"
+    },
+    "debug_sync_subscriptions" : {
+      "comment" : "Debug sync subscriptions title"
+    },
+    "Déconnecter" : {
+
+    },
+    "Déconnecter le partenaire" : {
+
+    },
+    "Distance Love2Love" : {
+
+    },
+    "ellipsis" : {
+      "comment" : "Ellipsis"
+    },
+    "enjoy_it" : {
+      "comment" : "Enjoy it text"
+    },
+    "ensemble" : {
+
+    },
+    "Erreur" : {
+
+    },
+    "event_date" : {
+      "comment" : "Event date label"
+    },
+    "event_time" : {
+      "comment" : "Event time label"
+    },
+    "events_of_date" : {
+      "comment" : "Events of date text"
+    },
+    "exclamation" : {
+      "comment" : "Exclamation text"
+    },
+    "favorites_count" : {
+      "comment" : "Favorites count text"
+    },
+    "for_surprise" : {
+      "comment" : "For surprise text"
+    },
+    "generic_partner" : {
+      "comment" : "Generic partner name"
+    },
+    "Gestion du Cache" : {
+
+    },
+    "Gratuit" : {
+
+    },
+    "id_label" : {
+      "comment" : "ID label"
+    },
+    "ID: %@" : {
+
+    },
+    "image_not_available" : {
+      "comment" : "Image not available message"
+    },
+    "irreversible_action" : {
+      "comment" : "Irreversible action message"
+    },
+    "Jour" : {
+
+    },
+    "jours" : {
+
+    },
+    "L" : {
+
+    },
+    "lets_go" : {
+      "comment" : "Lets go button"
+    },
+    "loading_simple" : {
+      "comment" : "Loading status"
+    },
+    "location" : {
+      "comment" : "Location label"
+    },
+    "locked_content" : {
+      "comment" : "Locked content text"
+    },
+    "Love2Love" : {
+
+    },
+    "Love2Love Distance" : {
+
+    },
+    "missing_auth_token" : {
+      "comment" : "Missing auth token error"
+    },
+    "Mois" : {
+
+    },
+    "my_favorites" : {
+      "comment" : "My favorites title"
+    },
+    "name_label" : {
+      "comment" : "Name label"
+    },
+    "new_cards" : {
+      "comment" : "New cards text"
+    },
+    "new_cards_added" : {
+      "comment" : "New cards added text"
+    },
+    "no_events_today" : {
+      "comment" : "No events today message"
+    },
+    "no_favorites_yet" : {
+      "comment" : "No favorites yet message"
+    },
+    "no_partner_connected" : {
+      "comment" : "No partner connected status"
+    },
+    "no_premium_access" : {
+      "comment" : "No premium access status"
+    },
+    "no_purchase_to_restore" : {
+      "comment" : "No purchase to restore error"
+    },
+    "Notre distance: %@" : {
+
+    },
+    "OK" : {
+
+    },
+    "on_me" : {
+      "comment" : "On me text"
+    },
+    "one_more_step" : {
+      "comment" : "One more step title"
+    },
+    "open_settings_button" : {
+      "comment" : "Open settings button"
+    },
+    "others" : {
+      "comment" : "Others text"
+    },
+    "pack_completed" : {
+      "comment" : "Pack completed message\nPack completed text"
+    },
+    "pack_name" : {
+      "comment" : "Pack name text"
+    },
+    "partner_connected" : {
+      "comment" : "Partner connected text"
+    },
+    "partner_connected_status" : {
+      "comment" : "Partner connected status"
+    },
+    "partner_shared_by" : {
+      "comment" : "Partner shared by message"
+    },
+    "Photos" : {
+
+    },
+    "Premium" : {
+
+    },
+    "Premium (Solo)" : {
+
+    },
+    "premium_access_label" : {
+      "comment" : "Premium access label"
+    },
+    "product_loading_error" : {
+      "comment" : "Product loading error"
+    },
+    "product_not_available" : {
+      "comment" : "Product not available error"
+    },
+    "purchases_not_authorized" : {
+      "comment" : "Purchases not authorized error"
+    },
+    "questions_cached" : {
+      "comment" : "Questions cached label"
+    },
+    "quick_actions" : {
+      "comment" : "Quick actions title"
+    },
+    "receipt_validation_failed" : {
+      "comment" : "Receipt validation failed error"
+    },
+    "refresh" : {
+      "comment" : "Refresh button"
+    },
+    "reload_cache" : {
+      "comment" : "Reload cache button"
+    },
+    "remove_1_favorite" : {
+      "comment" : "Remove 1 favorite button"
+    },
+    "requires_subscription" : {
+      "comment" : "Requires subscription message"
+    },
+    "reset" : {
+      "comment" : "Reset button"
+    },
+    "restricted" : {
+      "comment" : "Restricted location status"
+    },
+    "secure_account" : {
+      "comment" : "Secure account title"
+    },
+    "simulate_partner_connection" : {
+      "comment" : "Simulate partner connection button"
+    },
+    "simulate_revocation" : {
+      "comment" : "Simulate revocation button"
+    },
+    "simulate_subscription" : {
+      "comment" : "Simulate subscription button"
+    },
+    "subscribe_access_questions" : {
+      "comment" : "Subscribe to access questions message"
+    },
+    "subscribe_button" : {
+      "comment" : "Subscribe button"
+    },
+    "Suivez votre relation avec votre partenaire. Le grand widget nécessite un abonnement." : {
+
+    },
+    "Supprimer" : {
+
+    },
+    "Supprimer ce souvenir ?" : {
+
+    },
+    "surprise" : {
+      "comment" : "Surprise text"
+    },
+    "syncing" : {
+      "comment" : "Syncing status"
+    },
+    "tap_on_me" : {
+      "comment" : "Tap on me text"
+    },
+    "tap_to_unlock" : {
+      "comment" : "Tap to unlock message"
+    },
+    "tap_unlock_surprise" : {
+      "comment" : "Tap to unlock surprise message"
+    },
+    "test_actions" : {
+      "comment" : "Test actions title"
+    },
+    "token_serialization_error" : {
+      "comment" : "Token serialization error"
+    },
+    "Type: %@" : {
+
+    },
+    "understood" : {
+      "comment" : "Understood button"
+    },
+    "unknown" : {
+      "comment" : "Unknown location status"
+    },
+    "user_not_connected" : {
+      "comment" : "User not connected error"
+    },
+    "user_shared_by" : {
+      "comment" : "User shared by message"
+    },
+    "Vider" : {
+
+    },
+    "Vider le cache" : {
+
+    },
+    "view_all" : {
+      "comment" : "View all button"
+    },
+    "Votre nom" : {
+
+    },
+    "when_in_use_authorized" : {
+      "comment" : "When in use authorized location status"
+    },
+    "widgets" : {
+      "comment" : "Widgets title"
+    },
+    "widgets_available" : {
+      "comment" : "Widgets available feature"
+    },
+    "Y" : {
+
+    }
+  },
+  "version" : "1.0"
+}

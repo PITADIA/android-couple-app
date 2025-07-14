@@ -12,7 +12,7 @@ struct RelationshipDateStepView: View {
             
             // Titre centré à gauche
             HStack {
-                Text("Depuis quand êtes-vous ensemble ?")
+                Text("relationship_duration_question".localized)
                     .font(.system(size: 36, weight: .bold))
                     .foregroundColor(.black)
                     .multilineTextAlignment(.leading)
@@ -39,7 +39,7 @@ struct RelationshipDateStepView: View {
                     viewModel.relationshipStartDate = selectedDate
                     viewModel.nextStep()
                 }) {
-                    Text("Continuer")
+                    Text("continue".localized)
                         .font(.system(size: 18, weight: .semibold))
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
@@ -70,10 +70,22 @@ struct DatePickerCarousel: View {
     @State private var selectedMonth = 1
     @State private var selectedYear = 2000
     
-    private let months = [
-        "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
-        "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
-    ]
+    private var months: [String] {
+        [
+            "month_january".localized,
+            "month_february".localized,
+            "month_march".localized,
+            "month_april".localized,
+            "month_may".localized,
+            "month_june".localized,
+            "month_july".localized,
+            "month_august".localized,
+            "month_september".localized,
+            "month_october".localized,
+            "month_november".localized,
+            "month_december".localized
+        ]
+    }
     
     private let days = Array(1...31)
     private let years = Array(1990...2025).reversed()

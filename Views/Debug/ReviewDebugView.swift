@@ -5,30 +5,30 @@ struct ReviewDebugView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            Text("Debug Review System")
+            Text(NSLocalizedString("debug_review_system", comment: "Debug review system title"))
                 .font(.title)
                 .padding()
             
             VStack(alignment: .leading, spacing: 10) {
-                Text("Status actuel:")
+                Text(NSLocalizedString("current_status", comment: "Current status text"))
                     .font(.headline)
                 
-                Text("Partenaire connecté: \(reviewStatus.hasPartner ? "✅" : "❌")")
-                Text("Favoris: \(reviewStatus.favoritesCount)/20")
-                Text("Peut demander review: \(reviewStatus.canRequest ? "✅" : "❌")")
+                Text(NSLocalizedString("partner_connected", comment: "Partner connected text") + " \(reviewStatus.hasPartner ? "✅" : "❌")")
+                Text(NSLocalizedString("favorites_count", comment: "Favorites count text") + " \(reviewStatus.favoritesCount)/20")
+                Text(NSLocalizedString("can_request_review", comment: "Can request review text") + " \(reviewStatus.canRequest ? "✅" : "❌")")
             }
             .padding()
             .background(Color.gray.opacity(0.1))
             .cornerRadius(10)
             
             VStack(spacing: 15) {
-                Button("Simuler connexion partenaire") {
+                Button(NSLocalizedString("simulate_partner_connection", comment: "Simulate partner connection button")) {
                     ReviewRequestService.shared.trackPartnerConnected()
                     updateStatus()
                 }
                 .buttonStyle(.borderedProminent)
                 
-                Button("Ajouter 5 favoris") {
+                Button(NSLocalizedString("add_5_favorites", comment: "Add 5 favorites button")) {
                     for _ in 0..<5 {
                         ReviewRequestService.shared.trackFavoriteAdded()
                     }
@@ -36,19 +36,19 @@ struct ReviewDebugView: View {
                 }
                 .buttonStyle(.bordered)
                 
-                Button("Ajouter 1 favori") {
+                Button(NSLocalizedString("add_1_favorite", comment: "Add 1 favorite button")) {
                     ReviewRequestService.shared.trackFavoriteAdded()
                     updateStatus()
                 }
                 .buttonStyle(.bordered)
                 
-                Button("Supprimer 1 favori") {
+                Button(NSLocalizedString("remove_1_favorite", comment: "Remove 1 favorite button")) {
                     ReviewRequestService.shared.trackFavoriteRemoved()
                     updateStatus()
                 }
                 .buttonStyle(.bordered)
                 
-                Button("Réinitialiser") {
+                Button(NSLocalizedString("reset", comment: "Reset button")) {
                     ReviewRequestService.shared.resetReviewStatus()
                     updateStatus()
                 }

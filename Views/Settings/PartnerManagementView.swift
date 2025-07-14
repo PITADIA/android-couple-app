@@ -29,13 +29,13 @@ struct PartnerManagementView: View {
                     VStack(spacing: 40) {
                         // Titre principal - conditionnel selon l'état de connexion
                         if partnerCodeService.isConnected {
-                            Text("Vous êtes connecté 💞")
+                            Text("connected_with_partner".localized)
                                 .font(.system(size: 28, weight: .bold))
                                 .foregroundColor(.black)
                                 .multilineTextAlignment(.center)
                         } else {
                             VStack(spacing: 20) {
-                                Text("Connecte-toi avec ton partenaire")
+                                Text("connect_with_partner".localized)
                                     .font(.system(size: 28, weight: .bold))
                                     .foregroundColor(.black)
                                     .multilineTextAlignment(.center)
@@ -43,7 +43,7 @@ struct PartnerManagementView: View {
                                     .fixedSize(horizontal: false, vertical: true)
                                 
                                 // Sous-titre seulement si pas connecté
-                                Text("Connecte-toi avec ton partenaire pour partager ton journal avec lui, et profiter de tous les avantages de l'application.")
+                                Text("connect_partner_description".localized)
                                     .font(.system(size: 16))
                                     .foregroundColor(.black.opacity(0.7))
                                     .multilineTextAlignment(.center)
@@ -80,7 +80,7 @@ struct PartnerManagementView: View {
                 }
             }
         } message: {
-            Text("Êtes-vous sûr de vouloir vous déconnecter de votre partenaire ? Cette action supprimera le partage de vos données.")
+            Text("disconnect_confirmation".localized)
         }
         // NOUVEAU: Overlay pour le message de connexion partenaire
         .overlay(
@@ -106,12 +106,12 @@ struct PartnerManagementView: View {
             // Informations du partenaire - centré
             if let partnerInfo = partnerCodeService.partnerInfo {
                 VStack(spacing: 15) {
-                    Text("Partenaire: \(partnerInfo.name)")
-                        .font(.system(size: 18, weight: .medium))
+                    Text("partner_name".localized + " \(partnerInfo.name)")
+                        .font(.system(size: 16, weight: .medium))
                         .foregroundColor(.black)
                         .multilineTextAlignment(.center)
                     
-                    Text("Connecté le \(formatDate(partnerInfo.connectedAt))")
+                    Text("connected_on".localized + " \(formatDate(partnerInfo.connectedAt))")
                         .font(.system(size: 14))
                         .foregroundColor(.black.opacity(0.7))
                         .multilineTextAlignment(.center)
@@ -120,7 +120,7 @@ struct PartnerManagementView: View {
                         HStack {
                             Image(systemName: "crown.fill")
                                 .foregroundColor(.yellow)
-                            Text("Abonnement Premium partagé")
+                            Text("shared_premium".localized)
                                 .font(.system(size: 14, weight: .medium))
                                 .foregroundColor(.black)
                         }
@@ -139,7 +139,7 @@ struct PartnerManagementView: View {
             }
             
             // Bouton de déconnexion avec effet de carte
-            Button("Déconnecter") {
+            Button("disconnect".localized) {
                 showingDisconnectAlert = true
             }
             .font(.system(size: 16, weight: .medium))
@@ -180,11 +180,11 @@ struct PartnerManagementView: View {
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle(tint: .black))
                         .scaleEffect(0.8)
-                    Text("Génération...")
+                    Text("generating".localized)
                         .font(.system(size: 16))
                         .foregroundColor(.black)
                 } else {
-                    Text("Envoyer un code à ton partenaire")
+                    Text("send_partner_code".localized)
                         .font(.system(size: 16))
                         .foregroundColor(.black)
                 }
@@ -203,7 +203,7 @@ struct PartnerManagementView: View {
     
     private func generatedCodeSection(code: String) -> some View {
         VStack(spacing: 20) {
-            Text("Envoie ce code à ton partenaire")
+            Text("send_code_to_partner".localized)
                 .font(.system(size: 16))
                 .foregroundColor(.black)
                 .multilineTextAlignment(.center)
@@ -224,7 +224,7 @@ struct PartnerManagementView: View {
             )
             
             // Bouton "Envoyer son code" avec effet de carte
-            Button("Envoyer son code") {
+            Button("send_partner_code".localized) {
                 shareCode(code)
             }
             .font(.system(size: 16, weight: .medium))
@@ -249,12 +249,12 @@ struct PartnerManagementView: View {
     
     private var enterCodeSection: some View {
         VStack(spacing: 20) {
-            Text("Saisis le code de ton partenaire")
+            Text("enter_partner_code".localized)
                 .font(.system(size: 16))
                 .foregroundColor(.black)
             
             // Champ de saisie avec effet de carte sophistiqué
-            TextField("Saisis le code", text: $enteredCode)
+            TextField("enter_code".localized, text: $enteredCode)
                 .font(.system(size: 18, weight: .medium))
                 .foregroundColor(.black)
                 .multilineTextAlignment(.center)
@@ -286,9 +286,9 @@ struct PartnerManagementView: View {
                         ProgressView()
                             .progressViewStyle(CircularProgressViewStyle(tint: .white))
                             .scaleEffect(0.8)
-                        Text("Connexion...")
+                        Text("connecting_status".localized)
                     } else {
-                        Text("Connecter")
+                        Text("connect".localized)
                     }
                 }
                 .font(.system(size: 18, weight: .bold))
@@ -358,9 +358,8 @@ struct PartnerManagementView: View {
     
     private func formatDate(_ date: Date) -> String {
         let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-        formatter.locale = Locale(identifier: "fr_FR")
+        formatter.dateStyle = .long
+        formatter.locale = Locale.current
         return formatter.string(from: date)
     }
 }
