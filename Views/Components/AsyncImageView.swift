@@ -1,6 +1,7 @@
 import SwiftUI
 import FirebaseStorage
 import FirebaseFunctions
+import FirebaseAuth
 
 struct AsyncImageView: View {
     let imageURL: String?
@@ -186,9 +187,20 @@ struct AsyncImageView: View {
             // Image de profil - extraire l'ID utilisateur
             let pathComponents = filePath.components(separatedBy: "/")
             if pathComponents.count >= 2 {
-                let userId = pathComponents[1]
-                print("🔧 AsyncImageView: Image de profil détectée pour utilisateur: \(userId)")
-                return try await loadProfileImageViaCloudFunction(userId: userId)
+                let imageUserId = pathComponents[1]
+                print("🔧 AsyncImageView: Image de profil détectée pour utilisateur: \(imageUserId)")
+                
+                // 🔧 CORRECTION: Vérifier si c'est l'image de l'utilisateur actuel ou d'un partenaire
+                let currentUserId = Auth.auth().currentUser?.uid
+                if let currentUserId = currentUserId, imageUserId == currentUserId {
+                    // C'est l'image de l'utilisateur actuel → utiliser téléchargement direct
+                    print("🔧 AsyncImageView: Image de l'utilisateur actuel → téléchargement direct")
+                    return try await loadFromFirebaseStorageDirect(urlString: urlString)
+                } else {
+                    // C'est l'image d'un partenaire → utiliser Cloud Function
+                    print("🔧 AsyncImageView: Image d'un partenaire → Cloud Function")
+                    return try await loadProfileImageViaCloudFunction(userId: imageUserId)
+                }
             }
         } else if filePath.hasPrefix("journal_images/") {
             // Image du journal - utiliser URL signée générique

@@ -10,6 +10,12 @@
             "state" : "translated",
             "value" : "Do you feel like you can be completely honest with me?"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As-tu l'impression que tu peux être complètement honnête avec moi ?"
+          }
         }
       }
     },
@@ -104,13 +110,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What kind of words or gestures would really help you, coming from me?"
+            "value" : "What kind of words or gestures from me would truly comfort you?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quel genre de mots ou gestes te ferait vraiment du bien venant de moi ?"
+            "value" : "Quel genre de mots ou gestes de ma part te rendraient vraiment du bien ?"
           }
         }
       }
@@ -308,7 +314,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Is there a habit I have that you find adorable?"
+            "value" : "Is there a habit of mine that you find adorable?"
           }
         },
         "fr" : {
@@ -393,7 +399,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What small gesture from me particularly touches you?"
+            "value" : "What small gesture from me touches you the most?"
           }
         },
         "fr" : {
@@ -937,7 +943,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What would you like me to understand without you having to say it?"
+            "value" : "What would you like me to understand without you having to say a word?"
           }
         },
         "fr" : {
@@ -1073,7 +1079,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Is there a way I could better support you in your personal goals?"
+            "value" : "Is there a way I could support you better in your personal goals?"
           }
         },
         "fr" : {
@@ -1158,7 +1164,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "How loved and appreciated do you feel by me?"
+            "value" : "How loved and appreciated do you feel by me, truly?"
           }
         },
         "fr" : {
@@ -1413,7 +1419,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Is there a gesture from me you'd like us to make a bit more regular?"
+            "value" : "Is there a gesture from me you'd like to become a little ritual between us?"
           }
         },
         "fr" : {
@@ -1668,7 +1674,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What is the little thing you do for me without me realizing it?"
+            "value" : "What is a little thing you do for me without me realizing it?"
           }
         },
         "fr" : {
@@ -1957,13 +1963,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What would you like me to understand about your way of loving?"
+            "value" : "What would you like me to understand about your way of loving, deep down?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Qu'est-ce que tu aimerais que je comprenne à propos de ta manière d'aimer ?"
+            "value" : "Qu'est-ce que tu aimerais que je comprenne à propos de ta manière d'aimer, profondément ?"
           }
         }
       }
@@ -2433,7 +2439,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What sometimes blocks you in our communication?"
+            "value" : "What sometimes holds you back in our communication?"
           }
         },
         "fr" : {
@@ -2586,7 +2592,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What is the novelty you'd like to try in our relationship?"
+            "value" : "What new thing would you like to try in our relationship?"
           }
         },
         "fr" : {
@@ -2637,7 +2643,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Are there words I say that mark you more than I think?"
+            "value" : "Are there words I say that affect you more than I realize?"
           }
         },
         "fr" : {

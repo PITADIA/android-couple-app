@@ -200,14 +200,20 @@ struct MenuView: View {
                             .frame(width: 120, height: 120)
                             .clipShape(Circle())
                     } else {
-                        Circle()
-                            .fill(Color.gray.opacity(0.3))
-                            .frame(width: 120, height: 120)
-                            .overlay(
-                                Image(systemName: "person.fill")
-                                    .font(.system(size: 50))
-                                    .foregroundColor(.gray)
-                            )
+                        // Afficher les initiales avec fond coloré si pas d'image
+                        if !currentUserName.isEmpty && currentUserName != "Non défini" {
+                            UserInitialsView(name: currentUserName, size: 120)
+                        } else {
+                            // Fallback vers l'icône grise si pas de nom
+                            Circle()
+                                .fill(Color.gray.opacity(0.3))
+                                .frame(width: 120, height: 120)
+                                .overlay(
+                                    Image(systemName: "person.fill")
+                                        .font(.system(size: 50))
+                                        .foregroundColor(.gray)
+                                )
+                        }
                     }
                     
                     // Bordure blanche (identique à PartnerDistanceView)
@@ -281,15 +287,7 @@ struct MenuView: View {
                 }
             )
             
-            // Laissez nous un avis
-            ProfileRowView(
-                title: "leave_review".localized,
-                value: "",
-                showChevron: true,
-                action: {
-                    openAppStoreReview()
-                }
-            )
+
             
             // Widgets
             ProfileRowView(
@@ -375,7 +373,11 @@ struct MenuView: View {
                 value: "",
                 showChevron: true,
                 action: {
-                    if let url = URL(string: "https://love2lovesite.onrender.com") {
+                    let privacyUrl = Locale.preferredLanguages.first?.hasPrefix("fr") == true 
+                        ? "https://love2lovesite.onrender.com"
+                        : "https://love2lovesite.onrender.com/privacy-policy.html"
+                    
+                    if let url = URL(string: privacyUrl) {
                         UIApplication.shared.open(url)
                     }
                 }
@@ -522,14 +524,7 @@ struct MenuView: View {
         }
     }
     
-    private func openAppStoreReview() {
-        print("🔥 MenuView: Ouverture de la page App Store pour avis")
-        // URL pour ouvrir directement la page de rédaction d'avis sur l'App Store
-        // Remplacez YOUR_APP_ID par l'ID réel de votre app sur l'App Store
-        if let url = URL(string: "https://apps.apple.com/app/id6746807184?action=write-review") {
-            UIApplication.shared.open(url)
-        }
-    }
+
     
     private func openSubscriptionSettings() {
         print("🔥 MenuView: Ouverture des réglages d'abonnement")

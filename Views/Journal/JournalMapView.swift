@@ -29,7 +29,7 @@ struct JournalMapView: View {
     @State private var selectedEntry: JournalEntry?
     @State private var selectedCluster: JournalCluster?
     @State private var mapRegion = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 46.2276, longitude: 2.2137), // Centre de la France
+        center: CLLocationCoordinate2D(latitude: 46.2276, longitude: 2.2137), // Sera remplacé par getDefaultMapRegion()
         span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10)
     )
     @State private var showingEntryDetail = false
@@ -70,6 +70,127 @@ struct JournalMapView: View {
     // NOUVEAU: Calculer les clusters de manière stable sans effet de bord
     private var clusters: [JournalCluster] {
         createStableClusters(from: entriesWithLocation, zoomLevel: mapRegion.span.latitudeDelta)
+    }
+    
+    // NOUVEAU: Logique intelligente pour la région par défaut
+    private func getDefaultMapRegion() -> MKCoordinateRegion {
+        // 1. Priorité : Utiliser la localisation actuelle si disponible
+        if let currentLocation = appState.locationService?.currentLocation {
+            print("🗺️ JournalMapView: Utilisation localisation actuelle: \(currentLocation.displayName)")
+            return MKCoordinateRegion(
+                center: currentLocation.coordinate,
+                span: MKCoordinateSpan(latitudeDelta: 5.0, longitudeDelta: 5.0)
+            )
+        }
+        
+        // 2. Fallback : Utiliser la locale/région du téléphone
+        let locale = Locale.current
+        let languageCode = locale.languageCode ?? "en"
+        let regionCode = locale.regionCode ?? "US"
+        
+        print("🗺️ JournalMapView: Locale détectée - Langue: \(languageCode), Région: \(regionCode)")
+        
+        let defaultRegion: MKCoordinateRegion
+        
+        switch (languageCode, regionCode) {
+        // États-Unis
+        case ("en", "US"):
+            defaultRegion = MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: 39.8283, longitude: -98.5795), // Centre des États-Unis
+                span: MKCoordinateSpan(latitudeDelta: 25.0, longitudeDelta: 25.0)
+            )
+            print("🇺🇸 JournalMapView: Région par défaut - États-Unis")
+            
+        // Canada
+        case ("en", "CA"), ("fr", "CA"):
+            defaultRegion = MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: 56.1304, longitude: -106.3468), // Centre du Canada
+                span: MKCoordinateSpan(latitudeDelta: 30.0, longitudeDelta: 30.0)
+            )
+            print("🇨🇦 JournalMapView: Région par défaut - Canada")
+            
+        // Royaume-Uni
+        case ("en", "GB"):
+            defaultRegion = MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: 55.3781, longitude: -3.4360), // Centre du Royaume-Uni
+                span: MKCoordinateSpan(latitudeDelta: 8.0, longitudeDelta: 8.0)
+            )
+            print("🇬🇧 JournalMapView: Région par défaut - Royaume-Uni")
+            
+        // Australie
+        case ("en", "AU"):
+            defaultRegion = MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: -25.2744, longitude: 133.7751), // Centre de l'Australie
+                span: MKCoordinateSpan(latitudeDelta: 30.0, longitudeDelta: 30.0)
+            )
+            print("🇦🇺 JournalMapView: Région par défaut - Australie")
+            
+        // France
+        case ("fr", _):
+            defaultRegion = MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: 46.2276, longitude: 2.2137), // Centre de la France
+                span: MKCoordinateSpan(latitudeDelta: 8.0, longitudeDelta: 8.0)
+            )
+            print("🇫🇷 JournalMapView: Région par défaut - France")
+            
+        // Espagne
+        case ("es", "ES"):
+            defaultRegion = MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: 40.4637, longitude: -3.7492), // Centre de l'Espagne
+                span: MKCoordinateSpan(latitudeDelta: 8.0, longitudeDelta: 8.0)
+            )
+            print("🇪🇸 JournalMapView: Région par défaut - Espagne")
+            
+        // Allemagne
+        case ("de", "DE"):
+            defaultRegion = MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: 51.1657, longitude: 10.4515), // Centre de l'Allemagne
+                span: MKCoordinateSpan(latitudeDelta: 8.0, longitudeDelta: 8.0)
+            )
+            print("🇩🇪 JournalMapView: Région par défaut - Allemagne")
+            
+        // Italie
+        case ("it", "IT"):
+            defaultRegion = MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: 41.8719, longitude: 12.5674), // Centre de l'Italie
+                span: MKCoordinateSpan(latitudeDelta: 10.0, longitudeDelta: 8.0)
+            )
+            print("🇮🇹 JournalMapView: Région par défaut - Italie")
+            
+        // Japon
+        case ("ja", "JP"):
+            defaultRegion = MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: 36.2048, longitude: 138.2529), // Centre du Japon
+                span: MKCoordinateSpan(latitudeDelta: 12.0, longitudeDelta: 10.0)
+            )
+            print("🇯🇵 JournalMapView: Région par défaut - Japon")
+            
+        // Brésil
+        case ("pt", "BR"):
+            defaultRegion = MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: -14.2350, longitude: -51.9253), // Centre du Brésil
+                span: MKCoordinateSpan(latitudeDelta: 25.0, longitudeDelta: 25.0)
+            )
+            print("🇧🇷 JournalMapView: Région par défaut - Brésil")
+            
+        // Europe par défaut (pour les autres pays européens)
+        case (_, let region) where ["BE", "NL", "CH", "AT", "PT", "DK", "SE", "NO", "FI"].contains(region):
+            defaultRegion = MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: 54.5260, longitude: 15.2551), // Centre de l'Europe
+                span: MKCoordinateSpan(latitudeDelta: 15.0, longitudeDelta: 15.0)
+            )
+            print("🇪🇺 JournalMapView: Région par défaut - Europe")
+            
+        // Vue monde par défaut pour les autres cas
+        default:
+            defaultRegion = MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: 20.0, longitude: 0.0), // Vue monde centrée
+                span: MKCoordinateSpan(latitudeDelta: 120.0, longitudeDelta: 120.0)
+            )
+            print("🌍 JournalMapView: Région par défaut - Monde")
+        }
+        
+        return defaultRegion
     }
     
     var body: some View {
@@ -120,11 +241,18 @@ struct JournalMapView: View {
             }
             .ignoresSafeArea(.all) // Plein écran
             .onAppear {
-                // MODIFICATION: Ne centrer automatiquement qu'au premier chargement
-                if !hasInitializedMap && !entriesWithLocation.isEmpty {
-                    adjustRegionToShowAllEntries()
+                // MODIFICATION: Initialisation intelligente de la carte
+                if !hasInitializedMap {
+                    if !entriesWithLocation.isEmpty {
+                        // Si des événements existent, centrer sur eux
+                        adjustRegionToShowAllEntries()
+                        print("🗺️ JournalMapView: Centrage sur les événements existants")
+                    } else {
+                        // Sinon, utiliser la région par défaut intelligente
+                        mapRegion = getDefaultMapRegion()
+                        print("🗺️ JournalMapView: Utilisation région par défaut intelligente")
+                    }
                     hasInitializedMap = true
-                    print("🗺️ JournalMapView: Centrage automatique initial effectué")
                 }
             }
             

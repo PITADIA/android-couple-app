@@ -10,17 +10,19 @@ struct WidgetPreviewSection: View {
                 VStack(alignment: .leading, spacing: 6) {
                     // Titre principal
                     Text(ui: "add_widgets", comment: "Add widgets title")
-                        .font(.system(size: 22, weight: .semibold))
+                        .font(.system(size: 18, weight: .semibold))
                         .foregroundColor(.black)
-                        .multilineTextAlignment(.center)
-                        .padding(.horizontal, 20)
+                        .multilineTextAlignment(.leading)
+                        .minimumScaleFactor(0.7)
+                        .lineLimit(2)
                     
                     // Sous-titre
                     Text(ui: "feel_closer_partner", comment: "Feel closer partner subtitle")
-                        .font(.system(size: 16))
+                        .font(.system(size: 14))
                         .foregroundColor(.black.opacity(0.7))
-                        .multilineTextAlignment(.center)
-                        .padding(.horizontal, 20)
+                        .multilineTextAlignment(.leading)
+                        .minimumScaleFactor(0.8)
+                        .lineLimit(3)
                 }
                 
                 Spacer()

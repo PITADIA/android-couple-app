@@ -204,21 +204,27 @@ class PartnerLocationService: ObservableObject {
     
     func calculateDistance(from userLocation: UserLocation) -> String {
         guard let partnerLocation = partnerLocation else {
-            return "? km"
+            return "? km".convertedForLocale()
         }
         
         let distance = userLocation.distance(to: partnerLocation)
         
+        // ✅ NOUVEAU : Si distance < 1 km → afficher "ensemble / together"
         if distance < 1 {
-            // Moins d'1 km, afficher en mètres
-            return "\(Int(distance * 1000)) m"
-        } else if distance < 10 {
+            return "widget_together_text".localized.capitalized
+        }
+        
+        let baseDistance: String
+        if distance < 10 {
             // Moins de 10 km, afficher avec 1 décimale
-            return String(format: "%.1f km", distance)
+            baseDistance = String(format: "%.1f km", distance)
         } else {
             // Plus de 10 km, afficher en entier
-            return "\(Int(distance)) km"
+            baseDistance = "\(Int(distance)) km"
         }
+        
+        // Appliquer la conversion selon la locale
+        return baseDistance.convertedForLocale()
     }
     
     // MARK: - Clear Partner Data

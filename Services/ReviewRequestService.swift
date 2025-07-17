@@ -6,12 +6,10 @@ class ReviewRequestService: ObservableObject {
     static let shared = ReviewRequestService()
     
     private let userDefaults = UserDefaults.standard
-    private let favoritesThreshold = 20
+    private let viewedQuestionsThreshold = 120  // 120 questions vues
     private let cooldownDays = 90
     
     // Clés UserDefaults
-    private let hasPartnerConnectedKey = "hasPartnerConnected"
-    private let favoritesCountKey = "favoritesCount"
     private let lastReviewRequestKey = "lastReviewRequest"
     private let hasRequestedReviewKey = "hasRequestedReview"
     
@@ -19,108 +17,112 @@ class ReviewRequestService: ObservableObject {
     
     // MARK: - Public Methods
     
-    func trackPartnerConnected() {
-        print("🌟 ReviewRequestService: Partenaire connecté")
-        userDefaults.set(true, forKey: hasPartnerConnectedKey)
-        checkForReviewRequest()
-    }
-    
-    func trackFavoriteAdded() {
-        let currentCount = userDefaults.integer(forKey: favoritesCountKey)
-        let newCount = currentCount + 1
-        userDefaults.set(newCount, forKey: favoritesCountKey)
+    /// NOUVEAU: Vérifier si on doit demander un avis basé sur les questions vues
+    func checkForReviewRequest() {
+        print("🌟 ReviewRequestService: Vérification des conditions pour demande d'avis...")
         
-        print("🌟 ReviewRequestService: Favoris ajouté (\(newCount)/\(favoritesThreshold))")
-        checkForReviewRequest()
-    }
-    
-    func trackFavoriteRemoved() {
-        let currentCount = userDefaults.integer(forKey: favoritesCountKey)
-        let newCount = max(0, currentCount - 1)
-        userDefaults.set(newCount, forKey: favoritesCountKey)
+        // Condition 1: 120 questions vues
+        let totalViewedQuestions = getTotalViewedQuestions()
+        print("🌟 ReviewRequestService: - Questions vues: \(totalViewedQuestions)/\(viewedQuestionsThreshold)")
         
-        print("🌟 ReviewRequestService: Favoris supprimé (\(newCount)/\(favoritesThreshold))")
-    }
-    
-    func syncFavoritesCount(actualCount: Int) {
-        let storedCount = userDefaults.integer(forKey: favoritesCountKey)
-        if storedCount != actualCount {
-            print("🌟 ReviewRequestService: Synchronisation compteur favoris: \(storedCount) → \(actualCount)")
-            userDefaults.set(actualCount, forKey: favoritesCountKey)
+        // Condition 2: Première demande
+        let hasRequested = userDefaults.bool(forKey: hasRequestedReviewKey)
+        print("🌟 ReviewRequestService: - Première demande: \(!hasRequested)")
+        
+        // Condition 3: Cooldown respecté
+        let canRequest = canRequestReview()
+        print("🌟 ReviewRequestService: - Cooldown respecté: \(canRequest)")
+        
+        // Vérifier toutes les conditions (plus besoin de partenaire connecté)
+        if totalViewedQuestions >= viewedQuestionsThreshold && !hasRequested && canRequest {
+            print("🌟 ReviewRequestService: ✅ TOUTES LES CONDITIONS REMPLIES - DEMANDE D'AVIS!")
+            requestReview()
+        } else {
+            print("🌟 ReviewRequestService: ❌ Conditions non remplies pour la demande d'avis")
         }
     }
     
-    // MARK: - Private Methods
-    
-    private func checkForReviewRequest() {
-        guard shouldRequestReview() else { return }
+    /// Calculer le total de questions vues (réutilise la logique de CoupleStatisticsView)
+    private func getTotalViewedQuestions() -> Int {
+        let categories = QuestionCategory.categories
+        var totalProgress = 0
         
-        print("🌟 ReviewRequestService: Conditions remplies - Demande de review")
+        // Utiliser CategoryProgressService pour obtenir les indices actuels
+        let categoryProgressService = CategoryProgressService.shared
         
-        DispatchQueue.main.async {
-            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-                SKStoreReviewController.requestReview(in: windowScene)
-                self.recordReviewRequest()
-            }
+        for category in categories {
+            let questions = getQuestionsForCategory(category.id)
+            let currentIndex = categoryProgressService.getCurrentIndex(for: category.id)
+            
+            // +1 car l'index commence à 0, et on compte les questions vues
+            totalProgress += min(currentIndex + 1, questions.count)
         }
+        
+        return totalProgress
     }
     
-    private func shouldRequestReview() -> Bool {
-        // Vérifier si déjà demandé
-        if userDefaults.bool(forKey: hasRequestedReviewKey) {
-            print("🌟 ReviewRequestService: Review déjà demandée")
-            return false
-        }
-        
-        // Vérifier le cooldown
-        if hasRequestedReviewRecently() {
-            print("🌟 ReviewRequestService: Cooldown actif")
-            return false
-        }
-        
-        // Vérifier les conditions
-        let hasPartner = userDefaults.bool(forKey: hasPartnerConnectedKey)
-        let favoritesCount = userDefaults.integer(forKey: favoritesCountKey)
-        
-        let conditionsMet = hasPartner && favoritesCount >= favoritesThreshold
-        
-        print("🌟 ReviewRequestService: Partenaire connecté: \(hasPartner)")
-        print("🌟 ReviewRequestService: Favoris: \(favoritesCount)/\(favoritesThreshold)")
-        print("🌟 ReviewRequestService: Conditions remplies: \(conditionsMet)")
-        
-        return conditionsMet
+    /// Récupère les questions pour une catégorie donnée
+    private func getQuestionsForCategory(_ categoryId: String) -> [Question] {
+        return QuestionDataManager.shared.loadQuestions(for: categoryId)
     }
     
-    private func hasRequestedReviewRecently() -> Bool {
-        guard let lastRequest = userDefaults.object(forKey: lastReviewRequestKey) as? Date else {
-            return false
+    // MARK: - Private Methods (conservées)
+    
+    private func canRequestReview() -> Bool {
+        guard let lastRequestDate = userDefaults.object(forKey: lastReviewRequestKey) as? Date else {
+            return true // Aucune demande précédente
         }
         
-        let daysSinceLastRequest = Calendar.current.dateComponents([.day], from: lastRequest, to: Date()).day ?? 0
-        return daysSinceLastRequest < cooldownDays
+        let daysSinceLastRequest = Calendar.current.dateComponents([.day], from: lastRequestDate, to: Date()).day ?? 0
+        return daysSinceLastRequest >= cooldownDays
     }
     
-    private func recordReviewRequest() {
-        userDefaults.set(Date(), forKey: lastReviewRequestKey)
+    private func requestReview() {
+        guard let windowScene = UIApplication.shared.connectedScenes
+            .compactMap({ $0 as? UIWindowScene })
+            .first else {
+            print("❌ ReviewRequestService: Impossible de trouver windowScene")
+            return
+        }
+        
+        print("🌟 ReviewRequestService: 🎉 DEMANDE D'AVIS APPLE DÉCLENCHÉE!")
+        
+        // Demander l'avis avec l'API Apple
+        SKStoreReviewController.requestReview(in: windowScene)
+        
+        // Marquer comme demandé
         userDefaults.set(true, forKey: hasRequestedReviewKey)
-        print("🌟 ReviewRequestService: Review demandée et enregistrée")
+        userDefaults.set(Date(), forKey: lastReviewRequestKey)
+        
+        print("🌟 ReviewRequestService: ✅ Demande d'avis enregistrée")
     }
     
     // MARK: - Debug Methods
     
-    func resetReviewStatus() {
-        userDefaults.removeObject(forKey: hasPartnerConnectedKey)
-        userDefaults.removeObject(forKey: favoritesCountKey)
+    /// Pour debug/test - réinitialiser les compteurs
+    func resetForTesting() {
         userDefaults.removeObject(forKey: lastReviewRequestKey)
         userDefaults.removeObject(forKey: hasRequestedReviewKey)
-        print("🌟 ReviewRequestService: Statut de review réinitialisé")
+        print("🌟 ReviewRequestService: 🔄 Compteurs réinitialisés pour test")
     }
     
-    func getCurrentStatus() -> (hasPartner: Bool, favoritesCount: Int, canRequest: Bool) {
-        let hasPartner = userDefaults.bool(forKey: hasPartnerConnectedKey)
-        let favoritesCount = userDefaults.integer(forKey: favoritesCountKey)
-        let canRequest = shouldRequestReview()
+    /// Pour debug - forcer une vérification
+    func forceCheck() {
+        print("🌟 ReviewRequestService: 🔍 Vérification forcée...")
+        checkForReviewRequest()
+    }
+    
+    /// Obtenir le statut actuel pour debug
+    func getDebugStatus() -> String {
+        let totalViewed = getTotalViewedQuestions()
+        let hasRequested = userDefaults.bool(forKey: hasRequestedReviewKey)
+        let canRequest = canRequestReview()
         
-        return (hasPartner, favoritesCount, canRequest)
+        return """
+        📊 Statut ReviewRequestService:
+        - Questions vues: \(totalViewed)/\(viewedQuestionsThreshold) \(totalViewed >= viewedQuestionsThreshold ? "✅" : "❌")
+        - Première demande: \(!hasRequested ? "✅" : "❌")
+        - Cooldown respecté: \(canRequest ? "✅" : "❌")
+        """
     }
 } 

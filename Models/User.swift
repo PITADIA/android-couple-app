@@ -136,12 +136,8 @@ enum SubscriptionPlanType: String, CaseIterable {
     }
     
     var price: String {
-        switch self {
-        case .weekly:
-            return "plan_weekly_price".localized
-        case .monthly:
-            return "plan_monthly_price".localized
-        }
+        // Utiliser les prix dynamiques StoreKit en priorité
+        return StoreKitPricingService.shared.getLocalizedPrice(for: self)
     }
     
     var period: String {
@@ -154,12 +150,8 @@ enum SubscriptionPlanType: String, CaseIterable {
     }
     
     var pricePerUser: String {
-        switch self {
-        case .weekly:
-            return "plan_weekly_price_per_user".localized
-        case .monthly:
-            return "plan_monthly_price_per_user".localized
-        }
+        // Utiliser les prix dynamiques StoreKit calculés automatiquement (prix / 2)
+        return StoreKitPricingService.shared.getPricePerUser(for: self)
     }
     
     var hasFreeTrial: Bool {

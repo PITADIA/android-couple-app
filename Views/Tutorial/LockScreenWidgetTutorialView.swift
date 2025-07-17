@@ -4,28 +4,35 @@ struct LockScreenWidgetTutorialView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var currentStep = 0
     
-    private let steps = [
-        TutorialStep(
-            title: "swipe_down".localized,
-            description: "swipe_description".localized,
-            imageName: "etape1"
-        ),
-        TutorialStep(
-            title: "tap_customize".localized,
-            description: "customize_description".localized,
-            imageName: "etape2"
-        ),
-        TutorialStep(
-            title: "select_lock_screen".localized,
-            description: "lock_screen_description".localized,
-            imageName: "etape3"
-        ),
-        TutorialStep(
-            title: "search_love2love".localized,
-            description: "search_description".localized,
-            imageName: "etape4"
-        )
-    ]
+    private var steps: [TutorialStep] {
+        // Détecter la langue pour les étapes localisées
+        let languageCode = Locale.current.language.languageCode?.identifier ?? "fr"
+        let etape2ImageName = languageCode == "fr" ? "etape2" : "etape2en"
+        let etape3ImageName = languageCode == "fr" ? "etape3" : "etape3en"
+        
+        return [
+            TutorialStep(
+                title: "swipe_down".localized,
+                description: "swipe_description".localized,
+                imageName: "etape1"
+            ),
+            TutorialStep(
+                title: "tap_customize".localized,
+                description: "customize_description".localized,
+                imageName: etape2ImageName
+            ),
+            TutorialStep(
+                title: "select_lock_screen".localized,
+                description: "lock_screen_description".localized,
+                imageName: etape3ImageName
+            ),
+            TutorialStep(
+                title: "search_love2love".localized,
+                description: "search_description".localized,
+                imageName: "etape4"
+            )
+        ]
+    }
     
     var body: some View {
         NavigationView {

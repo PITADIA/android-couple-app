@@ -226,8 +226,7 @@ class FavoritesService: ObservableObject {
                 print("✅ FavoritesService: Favori partagé ajouté: \(question.text.prefix(50))...")
                 print("✅ FavoritesService: Document Firestore créé avec succès")
                 
-                // NOUVEAU: Tracker l'ajout de favoris pour les reviews
-                ReviewRequestService.shared.trackFavoriteAdded()
+                // Plus besoin de tracker les favoris - on se base maintenant sur les questions vues
                 
                 await MainActor.run {
                     self.isLoading = false
@@ -282,8 +281,7 @@ class FavoritesService: ObservableObject {
                         
                         print("✅ FavoritesService: Favori partagé supprimé de Firestore")
                         
-                        // NOUVEAU: Tracker la suppression de favoris pour les reviews
-                        ReviewRequestService.shared.trackFavoriteRemoved()
+                        // Plus besoin de tracker la suppression de favoris pour les reviews
                     } else {
                         print("❌ FavoritesService: Impossible de supprimer - Permissions insuffisantes")
                         await MainActor.run {
@@ -414,8 +412,7 @@ class FavoritesService: ObservableObject {
         
         print("🔥 FavoritesService: \(favoriteQuestions.count) favoris locaux chargés")
         
-        // NOUVEAU: Synchroniser le compteur de favoris pour les reviews
-        ReviewRequestService.shared.syncFavoritesCount(actualCount: favoriteQuestions.count)
+        // Plus besoin de synchroniser le compteur de favoris pour les reviews
     }
     
     private func syncToLocalCache() {

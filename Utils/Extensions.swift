@@ -36,17 +36,74 @@ extension Color {
 extension String {
     /// Localise une chaîne en utilisant UI.xcstrings par défaut
     var localized: String {
-        return LocalizationService.ui(self)
+        return NSLocalizedString(self, tableName: "UI", comment: "")
     }
     
     /// Localise une chaîne avec un commentaire spécifique
     func localized(comment: String = "") -> String {
-        return LocalizationService.ui(self, comment: comment)
+        return NSLocalizedString(self, tableName: "UI", comment: comment)
     }
     
     /// Localise une chaîne avec une table spécifique
     func localized(tableName: String, comment: String = "") -> String {
-        return LocalizationService.shared.localizedString(for: self, tableName: tableName, comment: comment)
+        return NSLocalizedString(self, tableName: tableName, comment: comment)
+    }
+    
+    /// Convertit une distance en km vers miles pour la localisation anglaise
+    func convertedForLocale() -> String {
+        // Déterminer la langue courante
+        let currentLanguage = Locale.current.languageCode ?? "en"
+        
+        // Si c'est déjà en anglais et contient "km", convertir en miles
+        if currentLanguage == "en" {
+            return self.convertKmToMiles()
+        }
+        
+        return self
+    }
+    
+    /// Convertit une chaîne contenant des km en miles
+    private func convertKmToMiles() -> String {
+        // Cas spécial « ? km »
+        if self.trimmingCharacters(in: .whitespaces) == "? km" {
+            return self.replacingOccurrences(of: "? km", with: "? mi")
+        }
+
+        // Regex pour km ou m
+        let kmPattern = #"([0-9]+(?:\.[0-9]+)?)\s*km"#
+        let mPattern  = #"([0-9]+)\s*m"#
+        
+        // Vérifier d'abord le format kilomètres
+        if let regex = try? NSRegularExpression(pattern: kmPattern, options: []),
+           let match = regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: self.count)),
+           let kmRange = Range(match.range(at: 1), in: self),
+           let kmValue = Double(self[kmRange]) {
+            let milesValue = kmValue * 0.621371
+            return replaceWithMiles(originalKmString: String(self[kmRange]) + " km", milesValue: milesValue)
+        }
+        
+        // Vérifier le format mètres (ex : "750 m")
+        if let regex = try? NSRegularExpression(pattern: mPattern, options: []),
+           let match = regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: self.count)),
+           let mRange = Range(match.range(at: 1), in: self),
+           let meters = Double(self[mRange]) {
+            let milesValue = meters / 1609.34
+            return replaceWithMiles(originalKmString: String(self[mRange]) + " m", milesValue: milesValue)
+        }
+        
+        // Aucun format reconnu -> retourner la chaîne d'origine
+        return self
+    }
+    
+    /// Helper pour formater les miles et remplacer la sous-chaîne d'origine
+    private func replaceWithMiles(originalKmString: String, milesValue: Double) -> String {
+        let formatted: String
+        if milesValue < 10 {
+            formatted = String(format: "%.1f mi", milesValue)
+        } else {
+            formatted = "\(Int(milesValue)) mi"
+        }
+        return self.replacingOccurrences(of: originalKmString, with: formatted)
     }
 }
 

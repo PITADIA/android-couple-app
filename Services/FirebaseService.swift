@@ -585,11 +585,7 @@ class FirebaseService: NSObject, ObservableObject {
                 self?.isAuthenticated = true
                 print("✅ Données utilisateur chargées depuis Apple ID")
                 
-                // NOUVEAU: Vérifier si l'utilisateur a un partenaire connecté pour tracker les reviews
-                if let partnerId = user.partnerId, !partnerId.isEmpty {
-                    print("🌟 FirebaseService: Utilisateur a un partenaire connecté - Tracker pour reviews")
-                    ReviewRequestService.shared.trackPartnerConnected()
-                }
+                // Plus besoin de tracker la connexion partenaire pour les reviews
                 
                 // NOUVEAU: Démarrer l'écoute des changements d'abonnement
                 self?.startListeningForSubscriptionChanges()

@@ -19,13 +19,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What is something I say that turns you on instantly?"
+            "value" : "What is something I say that instantly turns you on?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quelle est la chose que je dit qui te chauffe instantanément ?"
+            "value" : "Quelle est la chose que je dis qui t'excite instantanément ?"
           }
         }
       }
@@ -87,7 +87,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What is a moment when I turned you on without me knowing it?"
+            "value" : "What is a moment when I turned you on without even realizing it?"
           }
         },
         "fr" : {
@@ -257,7 +257,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What type of massage turns you on without necessarily seeming like it?"
+            "value" : "What type of massage turns you on, even if it doesn't seem like it?"
           }
         },
         "fr" : {
@@ -308,13 +308,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What is the simplest thing I can do that makes you want me?"
+            "value" : "What is the simplest thing I can do that makes you want me, even just a little?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quelle est la chose la plus simple que je puisse faire qui te donne envie de moi ?"
+            "value" : "Quelle est la chose la plus simple que je puisse faire qui te donne envie de moi, même juste un peu ?"
           }
         }
       }
@@ -359,7 +359,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Do you think we share enough intimacy together?"
+            "value" : "Do you think we share enough moments making love together?"
           }
         },
         "fr" : {
@@ -478,7 +478,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What is my underwear that you like most?"
+            "value" : "Which of my underwear do you like the most?"
           }
         },
         "fr" : {
@@ -512,13 +512,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What would you like me to whisper to you during our lovemaking?"
+            "value" : "What would you like me to whisper to you during our intimate moments?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Qu'aimerais-tu que je te murmure durant nos ébats ?"
+            "value" : "Qu'aimerais-tu que je te murmure durant nos moments intimes ?"
           }
         }
       }
@@ -1005,13 +1005,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What are the things you'd like me to say to you during our lovemaking?"
+            "value" : "What are some things you'd like me to say to you during our intimate moments?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quels sont les choses que tu aimerais que je te dises durant nos ébats ?"
+            "value" : "Quels sont les choses que tu aimerais que je te dises durant nos moments intimes ?"
           }
         }
       }
@@ -1039,7 +1039,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "When you think about us in an intimate moment, what is the detail that often comes back?"
+            "value" : "When you think about us making love, what is the detail that often comes back?"
           }
         },
         "fr" : {
@@ -1107,13 +1107,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What is your definition of a perfect kiss?"
+            "value" : "What is a gesture or word from me that always makes you feel desired?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quel est ta définition d'un bisou parfait ?"
+            "value" : "Quel est le geste ou le mot de moi qui te fait toujours sentir désiré(e) ?"
           }
         }
       }
@@ -1175,13 +1175,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What is the non-sexual thing that still makes you want me?"
+            "value" : "What is the most unexpected place where you've ever wanted me?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quelle est la chose non sexuelle qui te donne pourtant envie de moi ?"
+            "value" : "Quel est le lieu le plus inattendu où tu as jamais voulu me voir ?"
           }
         }
       }
@@ -1362,13 +1362,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What is the most unexpected thing you find sensual about me?"
+            "value" : "What is a look or touch from me that you find irresistible?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quelle est la chose la plus inattendue que tu trouves sensuelle chez moi ?"
+            "value" : "Quel est le regard ou le contact de moi que tu trouves irrésistible ?"
           }
         }
       }
@@ -1651,7 +1651,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Do you prefer to plan our intimacy or make it more spontaneous?"
+            "value" : "Do you prefer to plan when we do it or make it more spontaneous?"
           }
         },
         "fr" : {
@@ -1668,13 +1668,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What is your preferred method of contraception?"
+            "value" : "What is the most subtle way I can show you my desire for you?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quelle est ta méthode de contraception préférée ?"
+            "value" : "Quel est le moyen le plus subtil que je puisse te montrer mon désir pour toi ?"
           }
         }
       }
@@ -2025,13 +2025,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Are there things you don't like me to do during our intimacy?"
+            "value" : "What is a word or phrase that instantly awakens your desire?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Y a-t-il des choses que tu n'aimes pas que je fasse pendant nos rapports ?"
+            "value" : "Quel est le mot ou la phrase qui t'éveille immédiatement ton désir ?"
           }
         }
       }
@@ -2229,13 +2229,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "How would you describe the evolution of your desires and sexual preferences over time?"
+            "value" : "What is the most sensual compliment I could give you?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Comment décrirais-tu l'évolution de tes désirs et préférences sexuelles au fil du temps ?"
+            "value" : "Quel est le compliment le plus sensuel que je puisse te faire ?"
           }
         }
       }
@@ -2382,13 +2382,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "How do you prefer us to initiate a moment of intimacy?"
+            "value" : "How do you prefer us to initiate making love?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Comment préfères-tu que l'on initie un moment d'intimité ?"
+            "value" : "Comment préfères-tu qu'on commence à faire l'amour ?"
           }
         }
       }
@@ -2416,13 +2416,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What is the exact time of day when you feel most inclined to intimacy?"
+            "value" : "At what exact time of day do you feel most drawn to making love?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quelle est l'heure exacte de la journée où tu te sens le plus enclin(e) à l'intimité ?"
+            "value" : "À quelle heure précise de la journée te sens-tu le plus attiré(e) pour faire l'amour ?"
           }
         }
       }
@@ -2450,13 +2450,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What type of music or sound ambiance puts you in the mood for intimacy?"
+            "value" : "What type of music or sound ambiance puts you in the mood to make love?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quel type de musique ou ambiance sonore te met dans l'ambiance pour l'intimité ?"
+            "value" : "Quel type de musique ou ambiance sonore te met dans l'ambiance pour faire l'amour ?"
           }
         }
       }
@@ -2501,13 +2501,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "How do you like us to communicate during intimacy?"
+            "value" : "How do you like us to communicate when we make love?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Comment aimes-tu que l'on communique pendant l'intimité ?"
+            "value" : "Comment aimes-tu qu'on communique quand on fait l'amour ?"
           }
         }
       }
@@ -2637,13 +2637,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What, in an intimate moment, makes you want to slow down time?"
+            "value" : "During the moment we make love, what makes you want to slow down time?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Qu'est-ce qui, dans un moment intime, te donne envie de ralentir le temps ?"
+            "value" : "Quand on fait l'amour, qu'est-ce qui te donne envie de ralentir le temps ?"
           }
         }
       }
@@ -2671,13 +2671,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "How do you like us to end a moment of intimacy?"
+            "value" : "How do you like us to end when we make love?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Comment aimes-tu que l'on termine un moment d'intimité ?"
+            "value" : "Comment aimes-tu qu'on termine quand on fait l'amour ?"
           }
         }
       }
@@ -2796,7 +2796,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Y a-t-il des mots ou des phrases qui te mettent mal à l'aise pendant l'intimité ?"
+            "value" : "Y a-t-il des mots ou des phrases qui te mettent mal à l'aise quand on fait l'amour ?"
           }
         }
       }
@@ -2949,7 +2949,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Y a-t-il des aspects de notre intimité que tu aimerais approfondir ou modifier pour te sentir plus à l'aise ?"
+            "value" : "Y a-t-il des aspects de notre façon de faire l'amour que tu aimerais approfondir ou modifier pour te sentir plus à l'aise ?"
           }
         }
       }
@@ -3249,7 +3249,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What is your favorite way to tell me you want me, without verbalizing it?"
+            "value" : "What is your favorite way to let me know you want me, without saying a word?"
           }
         },
         "fr" : {
@@ -3997,7 +3997,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What is your favorite form of contact: hands, skin, breath...?"
+            "value" : "What is your favorite form of touch: hands, skin, breath...?"
           }
         },
         "fr" : {
@@ -4252,7 +4252,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Do you prefer foreplay to be the main course or just a precursor?"
+            "value" : "Do you prefer foreplay to be the main event or just a prelude?"
           }
         },
         "fr" : {

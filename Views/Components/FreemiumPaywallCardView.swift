@@ -23,7 +23,7 @@ struct FreemiumPaywallCardView: View {
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 30)
                     
-                    Text("recover_access_message".localized)
+                    Text("keep_going_unlock_all".localized)
                         .font(.system(size: 18))
                         .foregroundColor(.white.opacity(0.9))
                         .multilineTextAlignment(.center)
@@ -31,7 +31,7 @@ struct FreemiumPaywallCardView: View {
                     
                     // Bouton d'action
                     HStack(spacing: 8) {
-                        Text("continue_special".localized)
+                        Text("continue".localized)
                             .font(.system(size: 18, weight: .bold))
                             .foregroundColor(.white)
                         
@@ -59,7 +59,7 @@ struct FreemiumPaywallCardView: View {
                 
                 // Logo/Branding en bas
                 HStack(spacing: 8) {
-                    Image("Leetchi2")
+                    Image("leetchi2")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 24, height: 24)

@@ -16,29 +16,29 @@ class CategoryProgressService: ObservableObject {
     // MARK: - Public Methods
     
     /// Sauvegarder la position actuelle dans une catégorie
-    func saveCurrentIndex(_ index: Int, for categoryTitle: String) {
-        categoryProgress[categoryTitle] = index
+    func saveCurrentIndex(_ index: Int, for categoryId: String) {
+        categoryProgress[categoryId] = index
         saveProgress()
-        print("🔥 CategoryProgressService: Position \(index) sauvegardée pour '\(categoryTitle)'")
+        print("🔥 CategoryProgressService: Position \(index) sauvegardée pour '\(categoryId)'")
     }
     
     /// Récupérer la dernière position dans une catégorie
-    func getCurrentIndex(for categoryTitle: String) -> Int {
-        let savedIndex = categoryProgress[categoryTitle] ?? 0
-        print("🔥 CategoryProgressService: Position récupérée pour '\(categoryTitle)': \(savedIndex)")
+    func getCurrentIndex(for categoryId: String) -> Int {
+        let savedIndex = categoryProgress[categoryId] ?? 0
+        print("🔥 CategoryProgressService: Position récupérée pour '\(categoryId)': \(savedIndex)")
         return savedIndex
     }
     
     /// Vérifier si une catégorie a une position sauvegardée
-    func hasProgress(for categoryTitle: String) -> Bool {
-        return categoryProgress[categoryTitle] != nil
+    func hasProgress(for categoryId: String) -> Bool {
+        return categoryProgress[categoryId] != nil
     }
     
     /// Réinitialiser la progression d'une catégorie
-    func resetProgress(for categoryTitle: String) {
-        categoryProgress[categoryTitle] = 0
+    func resetProgress(for categoryId: String) {
+        categoryProgress[categoryId] = 0
         saveProgress()
-        print("🔥 CategoryProgressService: Progression réinitialisée pour '\(categoryTitle)'")
+        print("🔥 CategoryProgressService: Progression réinitialisée pour '\(categoryId)'")
     }
     
     /// Réinitialiser toute la progression
@@ -78,23 +78,23 @@ class CategoryProgressService: ObservableObject {
 
 extension CategoryProgressService {
     /// Obtenir des informations formatées pour l'affichage
-    func getProgressInfo(for categoryTitle: String, totalQuestions: Int) -> (currentIndex: Int, percentage: Double) {
-        let currentIndex = getCurrentIndex(for: categoryTitle)
+    func getProgressInfo(for categoryId: String, totalQuestions: Int) -> (currentIndex: Int, percentage: Double) {
+        let currentIndex = getCurrentIndex(for: categoryId)
         let percentage = totalQuestions > 0 ? Double(currentIndex + 1) / Double(totalQuestions) * 100.0 : 0.0
         return (currentIndex: currentIndex, percentage: percentage)
     }
     
     /// Avancer à la question suivante
-    func moveToNext(for categoryTitle: String, maxIndex: Int) {
-        let currentIndex = getCurrentIndex(for: categoryTitle)
+    func moveToNext(for categoryId: String, maxIndex: Int) {
+        let currentIndex = getCurrentIndex(for: categoryId)
         let nextIndex = min(currentIndex + 1, maxIndex)
-        saveCurrentIndex(nextIndex, for: categoryTitle)
+        saveCurrentIndex(nextIndex, for: categoryId)
     }
     
     /// Reculer à la question précédente
-    func moveToPrevious(for categoryTitle: String) {
-        let currentIndex = getCurrentIndex(for: categoryTitle)
+    func moveToPrevious(for categoryId: String) {
+        let currentIndex = getCurrentIndex(for: categoryId)
         let previousIndex = max(currentIndex - 1, 0)
-        saveCurrentIndex(previousIndex, for: categoryTitle)
+        saveCurrentIndex(previousIndex, for: categoryId)
     }
 } 

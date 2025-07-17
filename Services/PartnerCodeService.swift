@@ -177,8 +177,7 @@ class PartnerCodeService: ObservableObject {
             print("✅ PartnerCodeService: Connexion réussie - Partenaire: \(partnerName)")
             print("✅ PartnerCodeService: Abonnement hérité: \(subscriptionInherited)")
             
-            // NOUVEAU: Tracker la connexion partenaire pour les reviews
-            ReviewRequestService.shared.trackPartnerConnected()
+            // Plus besoin de tracker la connexion partenaire pour les reviews
             
             // Mettre à jour l'interface utilisateur
             await MainActor.run {

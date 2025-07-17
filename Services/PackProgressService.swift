@@ -17,20 +17,20 @@ class PackProgressService: ObservableObject {
     // MARK: - Public Methods
     
     /// Obtenir le nombre de packs débloqués pour une catégorie
-    func getUnlockedPacks(for categoryTitle: String) -> Int {
-        return packProgress[categoryTitle] ?? 1 // Au minimum 1 pack débloqué
+    func getUnlockedPacks(for categoryId: String) -> Int {
+        return packProgress[categoryId] ?? 1 // Au minimum 1 pack débloqué
     }
     
     /// Obtenir le nombre total de questions disponibles pour une catégorie
-    func getAvailableQuestionsCount(for categoryTitle: String) -> Int {
-        let unlockedPacks = getUnlockedPacks(for: categoryTitle)
+    func getAvailableQuestionsCount(for categoryId: String) -> Int {
+        let unlockedPacks = getUnlockedPacks(for: categoryId)
         return unlockedPacks * questionsPerPack
     }
     
     /// Vérifier si l'utilisateur a terminé un pack
-    func checkPackCompletion(categoryTitle: String, currentIndex: Int) -> Bool {
+    func checkPackCompletion(categoryId: String, currentIndex: Int) -> Bool {
         let currentPack = getCurrentPack(for: currentIndex)
-        let unlockedPacks = getUnlockedPacks(for: categoryTitle)
+        let unlockedPacks = getUnlockedPacks(for: categoryId)
         
         // L'utilisateur a terminé un pack s'il est à la dernière question d'un pack débloqué
         let isLastQuestionOfPack = (currentIndex + 1) % questionsPerPack == 0
@@ -40,12 +40,12 @@ class PackProgressService: ObservableObject {
     }
     
     /// Débloquer le pack suivant pour une catégorie
-    func unlockNextPack(for categoryTitle: String) {
-        let currentUnlockedPacks = getUnlockedPacks(for: categoryTitle)
-        packProgress[categoryTitle] = currentUnlockedPacks + 1
+    func unlockNextPack(for categoryId: String) {
+        let currentUnlockedPacks = getUnlockedPacks(for: categoryId)
+        packProgress[categoryId] = currentUnlockedPacks + 1
         saveProgress()
         
-        print("🔥 PackProgressService: Pack \(currentUnlockedPacks + 1) débloqué pour \(categoryTitle)")
+        print("🔥 PackProgressService: Pack \(currentUnlockedPacks + 1) débloqué pour \(categoryId)")
     }
     
     /// Obtenir le numéro du pack actuel basé sur l'index de la question
@@ -54,23 +54,23 @@ class PackProgressService: ObservableObject {
     }
     
     /// Vérifier si une question est accessible (dans un pack débloqué)
-    func isQuestionAccessible(categoryTitle: String, questionIndex: Int) -> Bool {
+    func isQuestionAccessible(categoryId: String, questionIndex: Int) -> Bool {
         let questionPack = getCurrentPack(for: questionIndex)
-        let unlockedPacks = getUnlockedPacks(for: categoryTitle)
+        let unlockedPacks = getUnlockedPacks(for: categoryId)
         return questionPack <= unlockedPacks
     }
     
     /// Obtenir les questions accessibles pour une catégorie
-    func getAccessibleQuestions(from allQuestions: [Question], categoryTitle: String) -> [Question] {
-        let availableCount = getAvailableQuestionsCount(for: categoryTitle)
+    func getAccessibleQuestions(from allQuestions: [Question], categoryId: String) -> [Question] {
+        let availableCount = getAvailableQuestionsCount(for: categoryId)
         return Array(allQuestions.prefix(availableCount))
     }
     
     /// Réinitialiser la progression pour une catégorie (pour les tests)
-    func resetProgress(for categoryTitle: String) {
-        packProgress[categoryTitle] = 1
+    func resetProgress(for categoryId: String) {
+        packProgress[categoryId] = 1
         saveProgress()
-        print("🔥 PackProgressService: Progression réinitialisée pour \(categoryTitle)")
+        print("🔥 PackProgressService: Progression réinitialisée pour \(categoryId)")
     }
     
     /// Réinitialiser toute la progression (pour les tests)
@@ -105,15 +105,15 @@ class PackProgressService: ObservableObject {
 
 extension PackProgressService {
     /// Obtenir des informations de progression formatées pour l'affichage
-    func getProgressInfo(for categoryTitle: String) -> (unlockedPacks: Int, totalQuestions: Int) {
-        let unlockedPacks = getUnlockedPacks(for: categoryTitle)
-        let totalQuestions = getAvailableQuestionsCount(for: categoryTitle)
+    func getProgressInfo(for categoryId: String) -> (unlockedPacks: Int, totalQuestions: Int) {
+        let unlockedPacks = getUnlockedPacks(for: categoryId)
+        let totalQuestions = getAvailableQuestionsCount(for: categoryId)
         return (unlockedPacks: unlockedPacks, totalQuestions: totalQuestions)
     }
     
     /// Obtenir le pourcentage de progression
-    func getProgressPercentage(for categoryTitle: String, totalQuestions: Int) -> Double {
-        let availableQuestions = getAvailableQuestionsCount(for: categoryTitle)
+    func getProgressPercentage(for categoryId: String, totalQuestions: Int) -> Double {
+        let availableQuestions = getAvailableQuestionsCount(for: categoryId)
         guard totalQuestions > 0 else { return 0 }
         return Double(availableQuestions) / Double(totalQuestions) * 100.0
     }

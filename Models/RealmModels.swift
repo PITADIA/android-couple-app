@@ -189,8 +189,14 @@ class QuestionCacheManager: ObservableObject {
         // 1. Essayer le cache d'abord
         let cachedQuestions = getCachedQuestions(for: category)
         
+        // Si le cache existe mais est incomplet (moins de 64 questions pour la catégorie gratuite),
+        // rafraîchir pour garantir le bon fonctionnement du paywall/packs.
         if !cachedQuestions.isEmpty {
-            return cachedQuestions
+            if category == "en-couple" && cachedQuestions.count < 64 {
+                print("⚠️ QuestionCacheManager: Cache incomplet (\(cachedQuestions.count) questions) pour 'en-couple' – rafraîchissement…")
+            } else {
+                return cachedQuestions
+            }
         }
         
         // 2. Utiliser le nouveau QuestionDataManager

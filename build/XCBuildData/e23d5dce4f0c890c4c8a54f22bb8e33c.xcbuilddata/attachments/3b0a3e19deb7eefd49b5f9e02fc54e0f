@@ -1,0 +1,38 @@
+{
+  "" : {
+    "diagnostics" : "/Users/lyes/Desktop/CoupleApp/build/CoupleApp.build/Debug-iphonesimulator/Love2LoveWidgetExtension.build/Objects-normal/arm64/Love2LoveWidgetExtension-master.dia",
+    "emit-module-dependencies" : "/Users/lyes/Desktop/CoupleApp/build/CoupleApp.build/Debug-iphonesimulator/Love2LoveWidgetExtension.build/Objects-normal/arm64/Love2LoveWidgetExtension-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/lyes/Desktop/CoupleApp/build/CoupleApp.build/Debug-iphonesimulator/Love2LoveWidgetExtension.build/Objects-normal/arm64/Love2LoveWidgetExtension-master-emit-module.dia",
+    "swift-dependencies" : "/Users/lyes/Desktop/CoupleApp/build/CoupleApp.build/Debug-iphonesimulator/Love2LoveWidgetExtension.build/Objects-normal/arm64/Love2LoveWidgetExtension-master.swiftdeps"
+  },
+  "/Users/lyes/Desktop/CoupleApp/Love2LoveWidget/Love2LoveWidget.swift" : {
+    "const-values" : "/Users/lyes/Desktop/CoupleApp/build/CoupleApp.build/Debug-iphonesimulator/Love2LoveWidgetExtension.build/Objects-normal/arm64/Love2LoveWidget.swiftconstvalues",
+    "dependencies" : "/Users/lyes/Desktop/CoupleApp/build/CoupleApp.build/Debug-iphonesimulator/Love2LoveWidgetExtension.build/Objects-normal/arm64/Love2LoveWidget.d",
+    "diagnostics" : "/Users/lyes/Desktop/CoupleApp/build/CoupleApp.build/Debug-iphonesimulator/Love2LoveWidgetExtension.build/Objects-normal/arm64/Love2LoveWidget.dia",
+    "index-unit-output-path" : "/CoupleApp.build/Debug-iphonesimulator/Love2LoveWidgetExtension.build/Objects-normal/arm64/Love2LoveWidget.o",
+    "llvm-bc" : "/Users/lyes/Desktop/CoupleApp/build/CoupleApp.build/Debug-iphonesimulator/Love2LoveWidgetExtension.build/Objects-normal/arm64/Love2LoveWidget.bc",
+    "object" : "/Users/lyes/Desktop/CoupleApp/build/CoupleApp.build/Debug-iphonesimulator/Love2LoveWidgetExtension.build/Objects-normal/arm64/Love2LoveWidget.o",
+    "swift-dependencies" : "/Users/lyes/Desktop/CoupleApp/build/CoupleApp.build/Debug-iphonesimulator/Love2LoveWidgetExtension.build/Objects-normal/arm64/Love2LoveWidget.swiftdeps",
+    "swiftmodule" : "/Users/lyes/Desktop/CoupleApp/build/CoupleApp.build/Debug-iphonesimulator/Love2LoveWidgetExtension.build/Objects-normal/arm64/Love2LoveWidget~partial.swiftmodule"
+  },
+  "/Users/lyes/Desktop/CoupleApp/Love2LoveWidget/Love2LoveWidgetBundle.swift" : {
+    "const-values" : "/Users/lyes/Desktop/CoupleApp/build/CoupleApp.build/Debug-iphonesimulator/Love2LoveWidgetExtension.build/Objects-normal/arm64/Love2LoveWidgetBundle.swiftconstvalues",
+    "dependencies" : "/Users/lyes/Desktop/CoupleApp/build/CoupleApp.build/Debug-iphonesimulator/Love2LoveWidgetExtension.build/Objects-normal/arm64/Love2LoveWidgetBundle.d",
+    "diagnostics" : "/Users/lyes/Desktop/CoupleApp/build/CoupleApp.build/Debug-iphonesimulator/Love2LoveWidgetExtension.build/Objects-normal/arm64/Love2LoveWidgetBundle.dia",
+    "index-unit-output-path" : "/CoupleApp.build/Debug-iphonesimulator/Love2LoveWidgetExtension.build/Objects-normal/arm64/Love2LoveWidgetBundle.o",
+    "llvm-bc" : "/Users/lyes/Desktop/CoupleApp/build/CoupleApp.build/Debug-iphonesimulator/Love2LoveWidgetExtension.build/Objects-normal/arm64/Love2LoveWidgetBundle.bc",
+    "object" : "/Users/lyes/Desktop/CoupleApp/build/CoupleApp.build/Debug-iphonesimulator/Love2LoveWidgetExtension.build/Objects-normal/arm64/Love2LoveWidgetBundle.o",
+    "swift-dependencies" : "/Users/lyes/Desktop/CoupleApp/build/CoupleApp.build/Debug-iphonesimulator/Love2LoveWidgetExtension.build/Objects-normal/arm64/Love2LoveWidgetBundle.swiftdeps",
+    "swiftmodule" : "/Users/lyes/Desktop/CoupleApp/build/CoupleApp.build/Debug-iphonesimulator/Love2LoveWidgetExtension.build/Objects-normal/arm64/Love2LoveWidgetBundle~partial.swiftmodule"
+  },
+  "/Users/lyes/Desktop/CoupleApp/build/CoupleApp.build/Debug-iphonesimulator/Love2LoveWidgetExtension.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/lyes/Desktop/CoupleApp/build/CoupleApp.build/Debug-iphonesimulator/Love2LoveWidgetExtension.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/lyes/Desktop/CoupleApp/build/CoupleApp.build/Debug-iphonesimulator/Love2LoveWidgetExtension.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/lyes/Desktop/CoupleApp/build/CoupleApp.build/Debug-iphonesimulator/Love2LoveWidgetExtension.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/CoupleApp.build/Debug-iphonesimulator/Love2LoveWidgetExtension.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/lyes/Desktop/CoupleApp/build/CoupleApp.build/Debug-iphonesimulator/Love2LoveWidgetExtension.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/lyes/Desktop/CoupleApp/build/CoupleApp.build/Debug-iphonesimulator/Love2LoveWidgetExtension.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/lyes/Desktop/CoupleApp/build/CoupleApp.build/Debug-iphonesimulator/Love2LoveWidgetExtension.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/lyes/Desktop/CoupleApp/build/CoupleApp.build/Debug-iphonesimulator/Love2LoveWidgetExtension.build/Objects-normal/arm64/GeneratedAssetSymbols~partial.swiftmodule"
+  }
+}

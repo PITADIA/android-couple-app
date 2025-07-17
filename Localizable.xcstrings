@@ -17,6 +17,16 @@
         }
       }
     },
+    "%@ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        }
+      }
+    },
     "%@, %@" : {
       "localizations" : {
         "en" : {
@@ -28,9 +38,6 @@
       }
     },
     "%lld" : {
-
-    },
-    "%lld jours" : {
 
     },
     "• %@" : {
@@ -64,15 +71,6 @@
 
     },
     "🔥" : {
-
-    },
-    "add_1_favorite" : {
-      "comment" : "Add 1 favorite button"
-    },
-    "add_5_favorites" : {
-      "comment" : "Add 5 favorites button"
-    },
-    "Affichez la distance qui vous sépare de votre partenaire." : {
 
     },
     "always_authorized" : {
@@ -119,9 +117,6 @@
     },
     "calendar_wednesday" : {
       "comment" : "Wednesday abbreviation"
-    },
-    "can_request_review" : {
-      "comment" : "Can request review text"
     },
     "cancel" : {
       "comment" : "Cancel button"
@@ -175,7 +170,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Reveal your desires to better understand each other."
+            "value" : "Share your desires and discover each other more deeply."
           }
         },
         "fr" : {
@@ -243,7 +238,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "To love is also to learn to heal."
+            "value" : "Loving also means learning to heal."
           }
         },
         "fr" : {
@@ -277,7 +272,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Because loving means having fun together too"
+            "value" : "Because love also means laughing together."
           }
         },
         "fr" : {
@@ -345,7 +340,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "To explore what we keep inside, in silence."
+            "value" : "Discover the thoughts you don’t always say out loud."
           }
         },
         "fr" : {
@@ -379,7 +374,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Questions that touch on what defines you."
+            "value" : "Questions that reveal what really matters to you."
           }
         },
         "fr" : {
@@ -407,9 +402,6 @@
         }
       }
     },
-    "Ce Widget nécessite la localisation activée des deux partenaires." : {
-
-    },
     "Chargement..." : {
 
     },
@@ -422,29 +414,14 @@
     "close" : {
       "comment" : "Close button"
     },
-    "congratulations_connection" : {
-      "comment" : "Congratulations connection message"
-    },
-    "congratulations_pack" : {
-      "comment" : "Congratulations pack completion\nCongratulations pack title"
-    },
-    "connected_with" : {
-      "comment" : "Connected with partner"
-    },
     "connecting" : {
       "comment" : "Connecting message"
     },
     "connection_error" : {
       "comment" : "Connection error"
     },
-    "connection_successful" : {
-      "comment" : "Connection successful title"
-    },
     "connection_successful_status" : {
       "comment" : "Connection successful status"
-    },
-    "continue" : {
-      "comment" : "Continue button"
     },
     "create_account_description" : {
       "comment" : "Create account description"
@@ -452,17 +429,8 @@
     "created_by" : {
       "comment" : "Created by label"
     },
-    "current_status" : {
-      "comment" : "Current status text"
-    },
     "current_user" : {
       "comment" : "Current user title"
-    },
-    "de distance" : {
-
-    },
-    "debug_review_system" : {
-      "comment" : "Debug review system title"
     },
     "debug_sync_subscriptions" : {
       "comment" : "Debug sync subscriptions title"
@@ -473,17 +441,8 @@
     "Déconnecter le partenaire" : {
 
     },
-    "Distance Love2Love" : {
-
-    },
     "ellipsis" : {
       "comment" : "Ellipsis"
-    },
-    "enjoy_it" : {
-      "comment" : "Enjoy it text"
-    },
-    "ensemble" : {
-
     },
     "Erreur" : {
 
@@ -496,15 +455,6 @@
     },
     "events_of_date" : {
       "comment" : "Events of date text"
-    },
-    "exclamation" : {
-      "comment" : "Exclamation text"
-    },
-    "favorites_count" : {
-      "comment" : "Favorites count text"
-    },
-    "for_surprise" : {
-      "comment" : "For surprise text"
     },
     "generic_partner" : {
       "comment" : "Generic partner name"
@@ -530,14 +480,8 @@
     "Jour" : {
 
     },
-    "jours" : {
-
-    },
     "L" : {
 
-    },
-    "lets_go" : {
-      "comment" : "Lets go button"
     },
     "loading_simple" : {
       "comment" : "Loading status"
@@ -545,13 +489,7 @@
     "location" : {
       "comment" : "Location label"
     },
-    "locked_content" : {
-      "comment" : "Locked content text"
-    },
     "Love2Love" : {
-
-    },
-    "Love2Love Distance" : {
 
     },
     "missing_auth_token" : {
@@ -565,12 +503,6 @@
     },
     "name_label" : {
       "comment" : "Name label"
-    },
-    "new_cards" : {
-      "comment" : "New cards text"
-    },
-    "new_cards_added" : {
-      "comment" : "New cards added text"
     },
     "no_events_today" : {
       "comment" : "No events today message"
@@ -587,14 +519,8 @@
     "no_purchase_to_restore" : {
       "comment" : "No purchase to restore error"
     },
-    "Notre distance: %@" : {
-
-    },
     "OK" : {
 
-    },
-    "on_me" : {
-      "comment" : "On me text"
     },
     "one_more_step" : {
       "comment" : "One more step title"
@@ -605,14 +531,8 @@
     "others" : {
       "comment" : "Others text"
     },
-    "pack_completed" : {
-      "comment" : "Pack completed message\nPack completed text"
-    },
-    "pack_name" : {
-      "comment" : "Pack name text"
-    },
-    "partner_connected" : {
-      "comment" : "Partner connected text"
+    "Partner must\nenable location" : {
+
     },
     "partner_connected_status" : {
       "comment" : "Partner connected status"
@@ -656,23 +576,11 @@
     "reload_cache" : {
       "comment" : "Reload cache button"
     },
-    "remove_1_favorite" : {
-      "comment" : "Remove 1 favorite button"
-    },
-    "requires_subscription" : {
-      "comment" : "Requires subscription message"
-    },
-    "reset" : {
-      "comment" : "Reset button"
-    },
     "restricted" : {
       "comment" : "Restricted location status"
     },
     "secure_account" : {
       "comment" : "Secure account title"
-    },
-    "simulate_partner_connection" : {
-      "comment" : "Simulate partner connection button"
     },
     "simulate_revocation" : {
       "comment" : "Simulate revocation button"
@@ -680,14 +588,8 @@
     "simulate_subscription" : {
       "comment" : "Simulate subscription button"
     },
-    "subscribe_access_questions" : {
-      "comment" : "Subscribe to access questions message"
-    },
     "subscribe_button" : {
       "comment" : "Subscribe button"
-    },
-    "Suivez votre relation avec votre partenaire. Le grand widget nécessite un abonnement." : {
-
     },
     "Supprimer" : {
 
@@ -695,20 +597,8 @@
     "Supprimer ce souvenir ?" : {
 
     },
-    "surprise" : {
-      "comment" : "Surprise text"
-    },
     "syncing" : {
       "comment" : "Syncing status"
-    },
-    "tap_on_me" : {
-      "comment" : "Tap on me text"
-    },
-    "tap_to_unlock" : {
-      "comment" : "Tap to unlock message"
-    },
-    "tap_unlock_surprise" : {
-      "comment" : "Tap to unlock surprise message"
     },
     "test_actions" : {
       "comment" : "Test actions title"
@@ -748,9 +638,6 @@
     },
     "widgets" : {
       "comment" : "Widgets title"
-    },
-    "widgets_available" : {
-      "comment" : "Widgets available feature"
     },
     "Y" : {
 

@@ -9,6 +9,76 @@ import WidgetKit
 import SwiftUI
 import MapKit
 
+// MARK: - String Localization Extensions pour les widgets
+
+extension String {
+    /// Localise une chaîne en utilisant UI.xcstrings par défaut pour les widgets
+    var localized: String {
+        return NSLocalizedString(self, tableName: "UI", comment: "")
+    }
+    
+    /// Localise une chaîne avec un commentaire spécifique pour les widgets
+    func localized(comment: String = "") -> String {
+        return NSLocalizedString(self, tableName: "UI", comment: comment)
+    }
+    
+    /// Localise une chaîne avec une table spécifique pour les widgets
+    func localized(tableName: String, comment: String = "") -> String {
+        return NSLocalizedString(self, tableName: tableName, comment: comment)
+    }
+}
+
+// MARK: - Distance Formatting Extensions pour les widgets
+
+extension String {
+    /// Convertit une distance en km vers miles pour la localisation anglaise
+    func convertedForLocale() -> String {
+        let currentLanguage = Locale.current.languageCode ?? "en"
+        if currentLanguage == "en" {
+            return self.convertKmToMiles()
+        }
+        return self
+    }
+    
+    /// Convertit km (ou mètres) en miles
+    private func convertKmToMiles() -> String {
+        // Cas spécial « ? km »
+        if self.trimmingCharacters(in: .whitespaces) == "? km" {
+            return self.replacingOccurrences(of: "? km", with: "? mi")
+        }
+
+        let kmPattern = #"([0-9]+(?:\.[0-9]+)?)\s*km"#
+        let mPattern  = #"([0-9]+)\s*m"#
+        
+        if let regex = try? NSRegularExpression(pattern: kmPattern),
+           let match = regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: self.count)),
+           let kmRange = Range(match.range(at: 1), in: self),
+           let kmValue = Double(self[kmRange]) {
+            let milesValue = kmValue * 0.621371
+            return replaceWithMiles(originalUnitString: String(self[kmRange]) + " km", milesValue: milesValue)
+        }
+        
+        if let regex = try? NSRegularExpression(pattern: mPattern),
+           let match = regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: self.count)),
+           let mRange = Range(match.range(at: 1), in: self),
+           let meters = Double(self[mRange]) {
+            let milesValue = meters / 1609.34
+            return replaceWithMiles(originalUnitString: String(self[mRange]) + " m", milesValue: milesValue)
+        }
+        return self
+    }
+    
+    private func replaceWithMiles(originalUnitString: String, milesValue: Double) -> String {
+        let formatted: String
+        if milesValue < 10 {
+            formatted = String(format: "%.1f mi", milesValue)
+        } else {
+            formatted = "\(Int(milesValue)) mi"
+        }
+        return self.replacingOccurrences(of: originalUnitString, with: formatted)
+    }
+}
+
 // MARK: - Color Extension pour les widgets
 extension Color {
     init(hex: String) {
@@ -344,11 +414,11 @@ struct SmallWidgetView: View {
             
             // Texte sur deux lignes
             VStack(spacing: 2) {
-                Text("\(timeComponents.days) jours")
+                Text("\(timeComponents.days) " + "widget_days_label".localized)
                     .font(.system(size: 20, weight: .medium))
                     .foregroundColor(.white)
                 
-                Text("ensemble")
+                Text("widget_together_text".localized)
                     .font(.system(size: 16, weight: .medium))
                     .foregroundColor(.white.opacity(0.9))
             }
@@ -373,6 +443,15 @@ struct SmallWidgetView: View {
 // MARK: - Small Distance Widget (Photos + Distance en km)
 struct SmallDistanceWidgetView: View {
     let data: WidgetData
+    
+    // Helper pour formater la distance selon les règles (majuscule + inversion FR)
+    private func formattedDistanceText() -> String {
+        let raw = (data.distance ?? "? km").convertedForLocale()
+        if raw.lowercased() == "ensemble" || raw.lowercased() == "together" {
+            return raw.capitalized
+        }
+        return raw
+    }
     
     private var locationStatus: LocationStatus {
         let hasUserLocation = data.userLatitude != nil && data.userLongitude != nil
@@ -400,11 +479,11 @@ struct SmallDistanceWidgetView: View {
             case .bothAvailable:
                 return ""
             case .userMissing:
-                return "Activez votre localisation"
+                return "widget_enable_your_location".localized
             case .partnerMissing:
-                return "Partenaire doit activer sa localisation"
+                return "widget_partner_enable_location".localized
             case .bothMissing:
-                return "Activez vos localisations"
+                return "widget_enable_your_locations".localized
             }
         }
         
@@ -434,7 +513,7 @@ struct SmallDistanceWidgetView: View {
             
             // Distance ou message d'erreur
             if locationStatus.showDistance {
-                Text(data.distance ?? "? km")
+                Text(formattedDistanceText())
                     .font(.system(size: 16, weight: .medium))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
@@ -465,6 +544,14 @@ struct SmallDistanceWidgetView: View {
 struct MediumWidgetView: View {
     let data: WidgetData
     
+    private func formattedDistanceText() -> String {
+        let raw = (data.distance ?? "? km").convertedForLocale()
+        if raw.lowercased() == "ensemble" || raw.lowercased() == "together" {
+            return raw.capitalized
+        }
+        return raw
+    }
+    
     private var locationStatus: LocationStatus {
         let hasUserLocation = data.userLatitude != nil && data.userLongitude != nil
         let hasPartnerLocation = data.partnerLatitude != nil && data.partnerLongitude != nil
@@ -491,11 +578,11 @@ struct MediumWidgetView: View {
             case .bothAvailable:
                 return ""
             case .userMissing:
-                return "Activez votre localisation"
+                return "widget_enable_your_location".localized
             case .partnerMissing:
-                return "Partenaire doit activer sa localisation"
+                return "widget_partner_enable_location".localized
             case .bothMissing:
-                return "Activez vos localisations"
+                return "widget_enable_your_locations".localized
             }
         }
         
@@ -527,11 +614,11 @@ struct MediumWidgetView: View {
                 
                 // Texte sur deux lignes comme le petit widget
                 VStack(spacing: 2) {
-                    Text("\(timeComponents.days) jours")
+                    Text("\(timeComponents.days) " + "widget_days_label".localized)
                         .font(.system(size: 24, weight: .medium))
                         .foregroundColor(.white)
                     
-                    Text("ensemble")
+                    Text("widget_together_text".localized)
                         .font(.system(size: 16, weight: .medium))
                         .foregroundColor(.white.opacity(0.9))
                 }
@@ -553,15 +640,10 @@ struct MediumWidgetView: View {
                 
                 // Distance ou message d'erreur
                 if locationStatus.showDistance {
-                    VStack(spacing: 2) {
-                        Text(data.distance ?? "? km")
-                            .font(.system(size: 18, weight: .bold))
-                            .foregroundColor(.white)
-                        
-                        Text("de distance")
-                            .font(.system(size: 12, weight: .medium))
-                            .foregroundColor(.white.opacity(0.8))
-                    }
+                    // Affichage distance sans label supplémentaire
+                    Text(formattedDistanceText())
+                        .font(.system(size: 18, weight: .bold))
+                        .foregroundColor(.white)
                 } else {
                     Text(locationStatus.message)
                         .font(.system(size: 12, weight: .medium))
@@ -732,6 +814,11 @@ struct ProfileCircleForWidget: View {
 struct AccessoryCircularWidgetView: View {
     let data: WidgetData
     
+    // Vérifier si l'utilisateur a un partenaire connecté
+    private var hasPartner: Bool {
+        return data.partnerName != nil && !data.partnerName!.isEmpty
+    }
+    
     var body: some View {
         let timeComponents = data.getTimeComponents()
         
@@ -742,26 +829,34 @@ struct AccessoryCircularWidgetView: View {
                 .blur(radius: 5)
             
             VStack(spacing: 4) {
-                // Deux cœurs espacés (comme l'émoji 💕)
-                ZStack {
+                // Cœurs : deux si partenaire connecté, un seul sinon
+                if hasPartner {
+                    // Deux cœurs espacés (comme l'émoji 💕)
+                    ZStack {
+                        Image(systemName: "heart.fill")
+                            .font(.system(size: 14, weight: .bold))
+                            .foregroundColor(.white)
+                            .offset(x: -4, y: -2)
+                        
+                        Image(systemName: "heart.fill")
+                            .font(.system(size: 12, weight: .bold))
+                            .foregroundColor(.white)
+                            .offset(x: 4, y: 2)
+                    }
+                } else {
+                    // Un seul cœur pour mode solo
                     Image(systemName: "heart.fill")
-                        .font(.system(size: 14, weight: .bold))
+                        .font(.system(size: 16, weight: .bold))
                         .foregroundColor(.white)
-                        .offset(x: -4, y: -2)
-                    
-                    Image(systemName: "heart.fill")
-                        .font(.system(size: 12, weight: .bold))
-                        .foregroundColor(.white)
-                        .offset(x: 4, y: 2)
                 }
                 
-                // Nombre de jours
+                // TOUJOURS afficher le nombre de jours (comme l'écran d'accueil)
                 Text("\(timeComponents.days)")
                     .font(.system(size: 20, weight: .bold))
                     .foregroundColor(.white)
                 
-                // Label "days" en français
-                Text("jours")
+                // TOUJOURS afficher le label "days" 
+                Text("widget_days_label".localized)
                     .font(.system(size: 10, weight: .medium))
                     .foregroundColor(.white)
             }
@@ -788,8 +883,8 @@ struct Love2LoveWidget: Widget {
             Love2LoveWidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
-        .configurationDisplayName("Love2Love")
-        .description("Suivez votre relation avec votre partenaire. Le grand widget nécessite un abonnement.")
+        .configurationDisplayName("widget_main_display_name".localized)
+        .description("widget_main_description".localized)
         .supportedFamilies([
             .systemSmall, .systemMedium,           // Écran d'accueil
             .accessoryCircular                     // Lock screen - circulaire seulement
@@ -821,8 +916,8 @@ struct Love2LoveDistanceWidget: Widget {
                     }
             }
         }
-        .configurationDisplayName("Love2Love Distance")
-        .description("Affichez la distance qui vous sépare de votre partenaire.")
+        .configurationDisplayName("widget_distance_display_name".localized)
+        .description("widget_distance_description".localized)
         .supportedFamilies([
             .systemSmall                           // Petit widget uniquement
         ])
@@ -904,8 +999,8 @@ struct Love2LoveMapWidget: Widget {
                     }
             }
         }
-        .configurationDisplayName("Distance Love2Love")
-        .description("Ce Widget nécessite la localisation activée des deux partenaires.")
+        .configurationDisplayName("widget_map_display_name".localized)
+        .description("widget_map_description".localized)
         .supportedFamilies([
             .accessoryRectangular                  // Lock screen uniquement
         ])
@@ -934,6 +1029,51 @@ struct MapDistanceWidgetEntryView: View {
 struct MapDistanceRectangularWidgetView: View {
     let data: WidgetData
     
+    // Vérifier si l'utilisateur a un partenaire connecté
+    private var hasPartner: Bool {
+        return data.partnerName != nil && !data.partnerName!.isEmpty
+    }
+    
+    // Calculer le statut de localisation
+    private var locationStatus: LocationStatus {
+        let hasUserLocation = data.userLatitude != nil && data.userLongitude != nil
+        let hasPartnerLocation = data.partnerLatitude != nil && data.partnerLongitude != nil
+        
+        if hasUserLocation && hasPartnerLocation {
+            return .bothAvailable
+        } else if !hasUserLocation && hasPartnerLocation {
+            return .userMissing
+        } else if hasUserLocation && !hasPartnerLocation {
+            return .partnerMissing
+        } else {
+            return .bothMissing
+        }
+    }
+    
+    private enum LocationStatus {
+        case bothAvailable
+        case userMissing
+        case partnerMissing
+        case bothMissing
+        
+        var message: String {
+            switch self {
+            case .bothAvailable:
+                return ""
+            case .userMissing:
+                return "widget_enable_your_location".localized
+            case .partnerMissing:
+                return "widget_partner_enable_location".localized
+            case .bothMissing:
+                return "widget_enable_your_locations".localized
+            }
+        }
+        
+        var showDistance: Bool {
+            return self == .bothAvailable
+        }
+    }
+    
     // Fonction helper pour obtenir l'initiale de l'utilisateur
     private func getUserInitial(from userName: String?) -> String {
         guard let userName = userName, !userName.isEmpty else {
@@ -952,58 +1092,104 @@ struct MapDistanceRectangularWidgetView: View {
     
     var body: some View {
         VStack(spacing: 6) {
-            // Section haut : "Notre distance" centrée
-            Text("Notre distance: \(data.distance ?? "? km")")
-                .font(.system(size: 13, weight: .medium))
-                .foregroundColor(.white)
+            if !hasPartner {
+                // Mode solo : Pas de partenaire connecté
+                VStack(spacing: 4) {
+                    Image(systemName: "person.fill")
+                        .font(.system(size: 16))
+                        .foregroundColor(.white)
+                    
+                    Text("Partner must\nenable location")
+                        .font(.system(size: 11, weight: .medium))
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+                        .lineLimit(2)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            } else if locationStatus.showDistance {
+                // Mode couple avec localisation : Affichage complet
+                // Section haut : Affichage conditionnel sans préfixe si Ensemble/Together
+                let distanceTextRaw = (data.distance ?? "? km").convertedForLocale()
+                // Appliquer la même fonction helper que ci‐dessus
+                let distanceText: String = {
+                    if distanceTextRaw.lowercased() == "ensemble" || distanceTextRaw.lowercased() == "together" {
+                        return distanceTextRaw.capitalized
+                    }
+                    return distanceTextRaw
+                }()
+                if distanceText.lowercased() == "ensemble" || distanceText.lowercased() == "together" {
+                    Text(distanceText.capitalized)
+                        .font(.system(size: 13, weight: .medium))
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                } else {
+                    Text("\("widget_our_distance".localized) \(distanceText)")
+                        .font(.system(size: 13, weight: .medium))
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                }
+                
+                // Section bas : Initiales avec lignes pointillées centrés
+                HStack(spacing: 0) {
+                    // Initiale utilisateur
+                    ZStack {
+                        Circle()
+                            .fill(Color.white.opacity(0.15))
+                            .frame(width: 28, height: 28)
+                        
+                        Text(getUserInitial(from: data.userName))
+                            .font(.system(size: 12, weight: .bold))
+                            .foregroundColor(.white)
+                    }
+                    
+                    // Ligne pointillée gauche
+                    DashedLineWidget()
+                        .stroke(Color.white, style: StrokeStyle(lineWidth: 1, dash: [3, 2]))
+                        .frame(width: 25, height: 1)
+                    
+                    // Cœur au centre
+                    ZStack {
+                        Circle()
+                            .fill(Color.white.opacity(0.3))
+                            .frame(width: 20, height: 20)
+                        
+                        Image(systemName: "heart.fill")
+                            .font(.system(size: 10))
+                            .foregroundColor(.white)
+                    }
+                    
+                    // Ligne pointillée droite
+                    DashedLineWidget()
+                        .stroke(Color.white, style: StrokeStyle(lineWidth: 1, dash: [3, 2]))
+                        .frame(width: 25, height: 1)
+                    
+                    // Initiale partenaire
+                    ZStack {
+                        Circle()
+                            .fill(Color.white.opacity(0.15))
+                            .frame(width: 28, height: 28)
+                        
+                        Text(getPartnerInitial(from: data.partnerName))
+                            .font(.system(size: 12, weight: .bold))
+                            .foregroundColor(.white)
+                    }
+                }
                 .frame(maxWidth: .infinity, alignment: .center)
-            
-            // Section bas : Initiales avec lignes pointillées centrés
-            HStack(spacing: 0) {
-                // Initiale utilisateur
-                ZStack {
-                    Circle()
-                        .fill(Color.white.opacity(0.15))
-                        .frame(width: 28, height: 28)
-                    
-                    Text(getUserInitial(from: data.userName))
-                        .font(.system(size: 12, weight: .bold))
+            } else {
+                // Mode couple sans localisation : Message d'erreur de localisation
+                VStack(spacing: 4) {
+                    Image(systemName: "location.slash")
+                        .font(.system(size: 16))
                         .foregroundColor(.white)
-                }
-                
-                // Ligne pointillée gauche
-                DashedLineWidget()
-                    .stroke(Color.white, style: StrokeStyle(lineWidth: 1, dash: [3, 2]))
-                    .frame(width: 25, height: 1)
-                
-                // Cœur au centre
-                ZStack {
-                    Circle()
-                        .fill(Color.white.opacity(0.3))
-                        .frame(width: 20, height: 20)
                     
-                    Image(systemName: "heart.fill")
-                        .font(.system(size: 10))
+                    Text(locationStatus.message)
+                        .font(.system(size: 11, weight: .medium))
                         .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+                        .lineLimit(2)
                 }
-                
-                // Ligne pointillée droite
-                DashedLineWidget()
-                    .stroke(Color.white, style: StrokeStyle(lineWidth: 1, dash: [3, 2]))
-                    .frame(width: 25, height: 1)
-                
-                // Initiale partenaire
-                ZStack {
-                    Circle()
-                        .fill(Color.white.opacity(0.15))
-                        .frame(width: 28, height: 28)
-                    
-                    Text(getPartnerInitial(from: data.partnerName))
-                        .font(.system(size: 12, weight: .bold))
-                        .foregroundColor(.white)
-                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
-            .frame(maxWidth: .infinity, alignment: .center)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.horizontal, 8)
@@ -1038,13 +1224,13 @@ struct PremiumBlockedWidgetView: View {
                     .foregroundColor(.white.opacity(0.8))
                 
                 // Texte principal
-                Text(NSLocalizedString("requires_subscription", comment: "Requires subscription message"))
+                Text("requires_subscription".localized)
                     .font(.system(size: widgetType == "Complet" ? 16 : 14, weight: .semibold))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
                 
                 // Texte secondaire
-                Text(NSLocalizedString("tap_to_unlock", comment: "Tap to unlock message"))
+                Text("tap_to_unlock".localized)
                     .font(.system(size: widgetType == "Complet" ? 12 : 10))
                     .foregroundColor(.white.opacity(0.8))
                     .multilineTextAlignment(.center)
@@ -1078,7 +1264,7 @@ struct PremiumBlockedLockScreenWidgetView: View {
                     .foregroundColor(.white)
                 
                 // Texte
-                Text(NSLocalizedString("requires_subscription", comment: "Requires subscription message"))
+                Text("requires_subscription".localized)
                     .font(.system(size: 10, weight: .medium))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)

@@ -76,7 +76,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Add your favorite questions to favorites."
+            "value" : "Save your favorite questions"
           }
         },
         "fr" : {
@@ -93,7 +93,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Add questions to favorites by tapping the heart below the cards and you'll see them appear here. \n\nYour favorite questions will be automatically shared with your partner."
+            "value" : "Tap the heart below a card to save it here, your partner will see them too."
           }
         },
         "fr" : {
@@ -110,7 +110,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Add events to your journal"
+            "value" : "Add memories to your journal"
           }
         },
         "fr" : {
@@ -264,7 +264,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Rediscover each other through questions that will rekindle your love and save the moments spent together."
+            "value" : "Deepen your bond through fun and intimate questions."
           }
         },
         "fr" : {
@@ -1272,7 +1272,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Create your memory card"
+            "value" : "Create your memory map"
           }
         },
         "fr" : {
@@ -1358,7 +1358,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tap the 'Customize' button to configure your widgets."
+            "value" : "Tap ‘Customize' to set up your widgets."
           }
         },
         "fr" : {
@@ -1939,13 +1939,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "To feel even closer to your partner"
+            "value" : "To feel even closer to your partner."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pour vous sentir encore plus proches de votre partenaire"
+            "value" : "Pour vous sentir encore plus proches de votre partenaire."
           }
         }
       }
@@ -1956,7 +1956,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "✓ Love each other even stronger"
+            "value" : "✓ Deepen your connection"
           }
         },
         "fr" : {
@@ -1973,13 +1973,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Unlock our 2000+ questions that are fun, deep, reassuring, and have a wonderful time together."
+            "value" : "Get access to 1800+ questions to laugh, open up, and grow closer together."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Débloquez nos plus de 2000 questions à la fois fun, profondes, rassurantes, et passez un merveilleux moment ensemble."
+            "value" : "Débloquez nos plus de 1800 questions à la fois fun, profondes, rassurantes, et passez un merveilleux moment ensemble."
           }
         }
       }
@@ -1990,7 +1990,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "✓ Build your memory chest"
+            "value" : "✓ Keep your best memories in one place"
           }
         },
         "fr" : {
@@ -2007,7 +2007,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Because every memory deserves its place. Gather your most beautiful moments in an intimate, unique and shared journal, just for you two."
+            "value" : "Because every moment deserves a special place. Keep your most beautiful memories in a shared journal made just for the two of you."
           }
         },
         "fr" : {
@@ -2041,7 +2041,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Find your memories on a unique map, and relive the moments that marked your love."
+            "value" : "See your memories on a unique map, and relive every moment that made your love special."
           }
         },
         "fr" : {
@@ -2058,7 +2058,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "💌 Create a real connection"
+            "value" : "💌 Build a deeper connection"
           }
         },
         "fr" : {
@@ -2075,7 +2075,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "🔥 Finally talk about subjects we avoid"
+            "value" : "🔥 Talk about what we usually avoid"
           }
         },
         "fr" : {
@@ -2126,7 +2126,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "💕 Find a real complicity again"
+            "value" : "💕 Feel close again, like before"
           }
         },
         "fr" : {
@@ -2143,7 +2143,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "✨ Create a strong moment for two"
+            "value" : "✨ Share something meaningful together"
           }
         },
         "fr" : {
@@ -2194,7 +2194,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "🤍 Say what we've never said"
+            "value" : "🤍 Open up like never before"
           }
         },
         "fr" : {
@@ -2841,7 +2841,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hold your finger on an empty space on the home screen to enter edit mode."
+            "value" : "Touch and hold an empty area to enter edit mode."
           }
         },
         "fr" : {
@@ -2858,7 +2858,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hold anywhere on your home screen"
+            "value" : "Touch and hold anywhere on your home screen"
           }
         },
         "fr" : {
@@ -3011,7 +3011,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "In a relationship since"
+            "value" : "Together since"
           }
         },
         "fr" : {
@@ -3098,7 +3098,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Keep your most beautiful memories together here to feel even closer to each other. \n\nYour partner will be able to see the memories you have created."
+            "value" : "Start saving your favorite moments here and feel even closer together. \n\nYour partner will be able to see everything you add."
           }
         },
         "fr" : {
@@ -3406,7 +3406,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tap the lock screen to enter edit mode."
+            "value" : "Tap your lock screen to start editing."
           }
         },
         "fr" : {
@@ -3577,7 +3577,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "All your shared memories will appear on this map"
+            "value" : "All your special moments will appear here on the map."
           }
         },
         "fr" : {
@@ -3679,13 +3679,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "More than 2000 questions to ask your soulmate"
+            "value" : "More than 1800 questions to ask your soulmate"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Plus de 2000 questions à poser à votre âme sœur"
+            "value" : "Plus de 1800 questions à poser à votre âme sœur"
           }
         }
       }
@@ -4002,7 +4002,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "No payment required now"
+            "value" : "Start your trial — no charge today"
           }
         },
         "fr" : {
@@ -5401,7 +5401,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Save your moments spent together"
+            "value" : "Save your favorite moments together"
           }
         },
         "fr" : {
@@ -5622,7 +5622,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Write a few words about this memory"
+            "value" : "Describe what made this moment special"
           }
         },
         "fr" : {
@@ -5707,7 +5707,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Search Love2Love in the search bar then choose the widget you want."
+            "value" : "Search for 'Love2Love', then pick the widget you want."
           }
         },
         "fr" : {
@@ -5724,7 +5724,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Search Love2Love in the search bar then choose the widget you want."
+            "value" : "Search for 'Love2Love', then pick the widget you want."
           }
         },
         "fr" : {
@@ -6592,7 +6592,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Start For Free"
+            "value" : "Try For Free"
           }
         },
         "fr" : {
@@ -6762,7 +6762,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Swipe down to display your lock screen then hold your finger on it."
+            "value" : "Swipe down to show your lock screen, then press and hold."
           }
         },
         "fr" : {
@@ -7638,6 +7638,227 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu me manques"
+          }
+        }
+      }
+    },
+    "widget_main_description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Track your relationship with your partner. The large widget requires a subscription."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suivez votre relation avec votre partenaire. Le grand widget nécessite un abonnement."
+          }
+        }
+      }
+    },
+    "widget_distance_description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Display the distance between you and your partner."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Affichez la distance qui vous sépare de votre partenaire."
+          }
+        }
+      }
+    },
+    "widget_map_description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This widget requires location enabled for both partners."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ce Widget nécessite la localisation activée des deux partenaires."
+          }
+        }
+      }
+    },
+    "widget_main_display_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Love2Love"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Love2Love"
+          }
+        }
+      }
+    },
+    "widget_distance_display_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Love2Love Distance"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Love2Love Distance"
+          }
+        }
+      }
+    },
+    "widget_map_display_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Distance Love2Love"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Distance Love2Love"
+          }
+        }
+      }
+    },
+    "widget_days_label" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "days"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "jours"
+          }
+        }
+      }
+    },
+    "widget_our_distance" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Our distance:"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notre distance:"
+          }
+        }
+      }
+    },
+    "widget_distance_label" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "away"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "de distance"
+          }
+        }
+      }
+    },
+    "widget_enable_your_location" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enable your location"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activez votre localisation"
+          }
+        }
+      }
+    },
+    "widget_partner_enable_location" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Partner must enable location"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Partenaire doit activer sa localisation"
+          }
+        }
+      }
+    },
+    "widget_enable_your_locations" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enable your locations"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activez vos localisations"
+          }
+        }
+      }
+    },
+    "keep_going_unlock_all" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep going and unlock all other questions and categories."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuez et débloquez toutes les autres questions et catégories."
           }
         }
       }

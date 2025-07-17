@@ -16,16 +16,16 @@ struct PackCompletionView: View {
                 
                 // Titre principal
                 VStack(spacing: 15) {
-                    Text(NSLocalizedString("congratulations_pack", comment: "Congratulations pack title"))
+                    Text("congratulations_pack".localized)
                         .font(.system(size: 36, weight: .bold))
                         .foregroundColor(.white)
                     
-                    Text(NSLocalizedString("pack_completed", comment: "Pack completed text"))
+                    Text("pack_completed".localized)
                         .font(.system(size: 28, weight: .medium))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                     
-                    Text(NSLocalizedString("pack_name", comment: "Pack name text"))
+                    Text("pack_name".localized)
                         .font(.system(size: 28, weight: .medium))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
@@ -51,23 +51,23 @@ struct PackCompletionView: View {
                 
                 // Message d'interaction
                 VStack(spacing: 10) {
-                    Text(NSLocalizedString("tap_on_me", comment: "Tap on me text"))
+                    Text("tap_on_me".localized)
                         .font(.system(size: 24, weight: .medium))
                         .foregroundColor(.white)
                     
-                    + Text(NSLocalizedString("on_me", comment: "On me text"))
+                    + Text("on_me".localized)
                         .font(.system(size: 24, weight: .bold))
                         .foregroundColor(.white)
                     
-                    Text(NSLocalizedString("for_surprise", comment: "For surprise text"))
+                    Text("for_surprise".localized)
                         .font(.system(size: 24, weight: .medium))
                         .foregroundColor(.white)
                     
-                    + Text(NSLocalizedString("surprise", comment: "Surprise text"))
+                    + Text("surprise".localized)
                         .font(.system(size: 24, weight: .bold))
                         .foregroundColor(.white)
                     
-                    + Text(NSLocalizedString("exclamation", comment: "Exclamation text"))
+                    + Text("exclamation".localized)
                         .font(.system(size: 24, weight: .medium))
                         .foregroundColor(.white)
                 }
@@ -112,17 +112,17 @@ struct NewPackRevealView: View {
                 
                 // Message principal
                 VStack(spacing: 20) {
-                    Text(NSLocalizedString("new_cards_added", comment: "New cards added text"))
+                    Text("new_cards_added".localized)
                         .font(.system(size: 20, weight: .medium))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                     
-                    Text("\(questionsCount) " + NSLocalizedString("new_cards", comment: "New cards text"))
+                    Text("\(questionsCount) " + "new_cards".localized)
                         .font(.system(size: 20, weight: .bold))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                     
-                    Text(NSLocalizedString("enjoy_it", comment: "Enjoy it text"))
+                    Text("enjoy_it".localized)
                         .font(.system(size: 20, weight: .medium))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
@@ -134,7 +134,7 @@ struct NewPackRevealView: View {
                 Button(action: {
                     onContinue()
                 }) {
-                    Text(NSLocalizedString("lets_go", comment: "Lets go button"))
+                    Text("lets_go".localized)
                         .font(.system(size: 22, weight: .bold))
                         .foregroundColor(Color(red: 0.6, green: 0.0, blue: 0.2))
                         .frame(maxWidth: .infinity)

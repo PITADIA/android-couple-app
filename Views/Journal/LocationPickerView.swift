@@ -7,7 +7,7 @@ struct LocationPickerView: View {
     @Binding var selectedLocation: JournalLocation?
     
     @State private var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 48.8566, longitude: 2.3522), // Paris par défaut
+        center: CLLocationCoordinate2D(latitude: 48.8566, longitude: 2.3522), // Sera remplacé par getDefaultPickerRegion()
         span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
     )
     @State private var searchText = ""
@@ -38,9 +38,14 @@ struct LocationPickerView: View {
         .onAppear {
             setupLocationManager()
             if let existingLocation = selectedLocation {
+                // Si une location existe déjà, l'utiliser
                 region.center = existingLocation.coordinate
                 selectedCoordinate = existingLocation.coordinate
                 currentLocationName = existingLocation.displayName
+            } else {
+                // Sinon, utiliser la région par défaut intelligente
+                region = getDefaultPickerRegion()
+                print("📍 LocationPicker: Région par défaut appliquée")
             }
         }
     }
@@ -224,8 +229,104 @@ struct LocationPickerView: View {
     
     // MARK: - Methods
     
+    // NOUVEAU: Logique intelligente pour la région par défaut du picker
+    private func getDefaultPickerRegion() -> MKCoordinateRegion {
+        // 1. Priorité : Utiliser la localisation actuelle si disponible
+        if let currentLocation = locationManager.location {
+            print("📍 LocationPicker: Utilisation localisation actuelle")
+            return MKCoordinateRegion(
+                center: currentLocation.coordinate,
+                span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+            )
+        }
+        
+        // 2. Fallback : Utiliser la locale/région du téléphone
+        let locale = Locale.current
+        let languageCode = locale.languageCode ?? "en"
+        let regionCode = locale.regionCode ?? "US"
+        
+        print("📍 LocationPicker: Locale - Langue: \(languageCode), Région: \(regionCode)")
+        
+        let defaultRegion: MKCoordinateRegion
+        
+        switch (languageCode, regionCode) {
+        // États-Unis
+        case ("en", "US"):
+            defaultRegion = MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: 39.8283, longitude: -98.5795), // Centre des États-Unis
+                span: MKCoordinateSpan(latitudeDelta: 10.0, longitudeDelta: 10.0)
+            )
+            
+        // Canada
+        case ("en", "CA"), ("fr", "CA"):
+            defaultRegion = MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: 56.1304, longitude: -106.3468), // Centre du Canada
+                span: MKCoordinateSpan(latitudeDelta: 10.0, longitudeDelta: 10.0)
+            )
+            
+        // Royaume-Uni
+        case ("en", "GB"):
+            defaultRegion = MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: 55.3781, longitude: -3.4360), // Centre du Royaume-Uni
+                span: MKCoordinateSpan(latitudeDelta: 2.0, longitudeDelta: 2.0)
+            )
+            
+        // Australie
+        case ("en", "AU"):
+            defaultRegion = MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: -25.2744, longitude: 133.7751), // Centre de l'Australie
+                span: MKCoordinateSpan(latitudeDelta: 10.0, longitudeDelta: 10.0)
+            )
+            
+        // France
+        case ("fr", _):
+            defaultRegion = MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: 46.2276, longitude: 2.2137), // Centre de la France
+                span: MKCoordinateSpan(latitudeDelta: 2.0, longitudeDelta: 2.0)
+            )
+            
+        // Espagne
+        case ("es", "ES"):
+            defaultRegion = MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: 40.4637, longitude: -3.7492), // Centre de l'Espagne
+                span: MKCoordinateSpan(latitudeDelta: 2.0, longitudeDelta: 2.0)
+            )
+            
+        // Allemagne
+        case ("de", "DE"):
+            defaultRegion = MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: 51.1657, longitude: 10.4515), // Centre de l'Allemagne
+                span: MKCoordinateSpan(latitudeDelta: 2.0, longitudeDelta: 2.0)
+            )
+            
+        // Europe par défaut (pour les autres pays européens)
+        case (_, let regionCodeValue) where ["BE", "NL", "CH", "AT", "PT", "DK", "SE", "NO", "FI", "IT"].contains(regionCodeValue):
+            defaultRegion = MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: 54.5260, longitude: 15.2551), // Centre de l'Europe
+                span: MKCoordinateSpan(latitudeDelta: 5.0, longitudeDelta: 5.0)
+            )
+            
+        // Vue monde par défaut pour les autres cas
+        default:
+            defaultRegion = MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: 20.0, longitude: 0.0), // Vue monde centrée
+                span: MKCoordinateSpan(latitudeDelta: 30.0, longitudeDelta: 30.0)
+            )
+        }
+        
+        return defaultRegion
+    }
+    
     private func setupLocationManager() {
         locationManager.requestWhenInUseAuthorization()
+        
+        // Si l'autorisation est déjà accordée, utiliser immédiatement la localisation actuelle
+        if locationManager.authorizationStatus == .authorizedWhenInUse || 
+           locationManager.authorizationStatus == .authorizedAlways {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.requestCurrentLocation()
+            }
+        }
     }
     
     private func requestCurrentLocation() {
@@ -429,6 +530,20 @@ struct MapViewRepresentable: UIViewRepresentable {
                 self.parent.region = mapView.region
                 self.parent.onRegionChange(mapView.region)
             }
+        }
+    }
+}
+
+// MARK: - Extensions pour améliorer la lisibilité des logs
+extension CLAuthorizationStatus {
+    var localizedDescription: String {
+        switch self {
+        case .notDetermined: return "Non déterminé"
+        case .restricted: return "Restreint"
+        case .denied: return "Refusé"
+        case .authorizedAlways: return "Autorisé (toujours)"
+        case .authorizedWhenInUse: return "Autorisé (en utilisation)"
+        @unknown default: return "Statut inconnu"
         }
     }
 }

@@ -4,6 +4,7 @@ import StoreKit
 struct SubscriptionView: View {
     @EnvironmentObject var appState: AppState
     @StateObject private var receiptService = AppleReceiptService.shared
+    @StateObject private var pricingService = StoreKitPricingService.shared
     @Environment(\.dismiss) private var dismiss
     @State private var showingAppleSignIn = false
     @State private var showingSuccessMessage = false
@@ -156,7 +157,11 @@ struct SubscriptionView: View {
                         .foregroundColor(.black.opacity(0.5))
                         
                         Button("privacy_policy".localized) {
-                            if let url = URL(string: "https://love2lovesite.onrender.com") {
+                            let privacyUrl = Locale.preferredLanguages.first?.hasPrefix("fr") == true 
+                                ? "https://love2lovesite.onrender.com"
+                                : "https://love2lovesite.onrender.com/privacy-policy.html"
+                            
+                            if let url = URL(string: privacyUrl) {
                                 UIApplication.shared.open(url)
                             }
                         }
@@ -192,6 +197,13 @@ struct SubscriptionView: View {
         .navigationBarHidden(true)
         .onAppear {
             print("🔥 SubscriptionView: Vue apparue")
+            
+            // Force le rechargement des prix si ils ne sont pas disponibles
+            if !pricingService.hasDynamicPrices {
+                print("💰 SubscriptionView: Rechargement des prix StoreKit...")
+                pricingService.refreshPrices()
+            }
+            
             // Analytics - tracker l'affichage de la vue subscription
             appState.freemiumManager?.trackUpgradePromptShown()
         }

@@ -178,7 +178,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Describe your love language to me"
+            "value" : "Describe your love language to me."
           }
         },
         "fr" : {
@@ -246,7 +246,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What would you do differently in your last relationship?"
+            "value" : "What would you do differently in your last relationship, if you could?"
           }
         },
         "fr" : {
@@ -535,7 +535,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What's your vision of a perfect evening for two?"
+            "value" : "What's your idea of a perfect evening for two?"
           }
         },
         "fr" : {
@@ -569,13 +569,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What personality trait makes you melt?"
+            "value" : "What personality trait makes you melt for someone?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quel trait de personnalité te fait fondre ?"
+            "value" : "Quel trait de personnalité te fait fondre pour quelqu'un ?"
           }
         }
       }
@@ -603,7 +603,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What's the most important thing in a first impression?"
+            "value" : "What's the most important thing when making a first impression?"
           }
         },
         "fr" : {
@@ -875,7 +875,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Are you the type to believe in signs of destiny?"
+            "value" : "Are you the type of person who believes in signs of destiny?"
           }
         },
         "fr" : {
@@ -926,7 +926,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What other job do you think you'd love to do?"
+            "value" : "What other job do you think you would love to do?"
           }
         },
         "fr" : {
@@ -1113,7 +1113,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What do you feel you're best at?"
+            "value" : "What do you feel you are best at?"
           }
         },
         "fr" : {
@@ -1181,7 +1181,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Do you prefer complicit looks or long conversations?"
+            "value" : "Do you prefer meaningful glances or long conversations?"
           }
         },
         "fr" : {
@@ -1283,7 +1283,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What part of your body do you physically prefer?"
+            "value" : "What part of your body do you like most physically?"
           }
         },
         "fr" : {
@@ -1521,7 +1521,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What values are essential for you in a relationship?"
+            "value" : "What values are essential to you in a relationship?"
           }
         },
         "fr" : {
@@ -1742,7 +1742,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What simple gesture can convey a lot of love according to you?"
+            "value" : "What simple gesture do you think can convey a lot of love?"
           }
         },
         "fr" : {
@@ -2439,7 +2439,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What tiny detail can make you fall in love?"
+            "value" : "What tiny detail can make you fall in love with someone?"
           }
         },
         "fr" : {
@@ -2609,7 +2609,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What's your most beautiful way of saying 'I care about you' without words?"
+            "value" : "What's your most beautiful way of showing 'I care about you' without words?"
           }
         },
         "fr" : {
@@ -2711,7 +2711,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What do you think tells a lot about a person you're dating?"
+            "value" : "What do you think reveals a lot about a person you're dating?"
           }
         },
         "fr" : {
@@ -3289,7 +3289,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Are you more about declarations or discreet gestures in love?"
+            "value" : "Are you more into declarations or discreet gestures in love?"
           }
         },
         "fr" : {
@@ -3884,7 +3884,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What's your favorite way of saying 'you matter to me'?"
+            "value" : "What's your favorite way to say 'you matter to me'?"
           }
         },
         "fr" : {

@@ -236,8 +236,7 @@ class AppState: ObservableObject {
             .sink { [weak self] _ in
                 print("📱 AppState: Partenaire connecté - Rechargement données utilisateur")
                 
-                // NOUVEAU: Tracker la connexion partenaire pour les reviews
-                ReviewRequestService.shared.trackPartnerConnected()
+                // Plus besoin de tracker la connexion partenaire pour les reviews
                 
                 self?.refreshCurrentUserData()
             }

@@ -31,21 +31,23 @@ struct PartnerDistanceView: View {
         // Si pas de partenaire connecté
         guard let partnerId = currentUser.partnerId,
               !partnerId.isEmpty else {
-            return "km ?"
+            // Si pas de partenaire, retourner unité locale inconnue
+            if Locale.current.languageCode == "en" {
+                return "? mi"
+            } else {
+                return "km ?"
+            }
         }
         
         // Calculer la distance avec le service
         let distance = partnerLocationService.calculateDistance(from: currentLocation)
         
-        // Reformater pour avoir "km X" au lieu de "X km"
+        // Reformater uniquement pour la locale française
         let formattedDistance: String
-        if distance == "? km" {
-            formattedDistance = "km ?"
-        } else if distance.hasSuffix(" km") {
-            let number = distance.replacingOccurrences(of: " km", with: "")
-            formattedDistance = "km \(number)"
+        if distance.lowercased() == "ensemble" || distance.lowercased() == "together" {
+            formattedDistance = distance.capitalized
         } else {
-            formattedDistance = distance
+            formattedDistance = distance // valeur avant l'unité pour toutes les langues
         }
         
         return formattedDistance
@@ -102,6 +104,7 @@ struct PartnerDistanceView: View {
             // Photo de profil utilisateur actuel
             UserProfileImage(
                 imageURL: appState.currentUser?.profileImageURL,
+                userName: appState.currentUser?.name ?? "",
                 size: 80
             )
             
@@ -156,6 +159,7 @@ struct PartnerDistanceView: View {
                 PartnerProfileImage(
                     hasPartner: hasConnectedPartner,
                     imageURL: partnerImageURL,
+                    partnerName: partnerLocationService.partnerName ?? "",
                     size: 80
                 )
             }
@@ -187,6 +191,7 @@ struct PartnerDistanceView: View {
 // MARK: - User Profile Image
 struct UserProfileImage: View {
     let imageURL: String?
+    let userName: String
     let size: CGFloat
     
     var body: some View {
@@ -206,15 +211,19 @@ struct UserProfileImage: View {
                     cornerRadius: size / 2
                 )
             } else {
-                // Cercle de base seulement si pas d'image
-                Circle()
-                    .fill(Color.gray.opacity(0.3))
-                    .frame(width: size, height: size)
-                
-                // Image par défaut
-                Image(systemName: "person.fill")
-                    .font(.system(size: size * 0.4))
-                    .foregroundColor(.gray)
+                // Afficher les initiales avec fond coloré si pas d'image
+                if !userName.isEmpty {
+                    UserInitialsView(name: userName, size: size)
+                } else {
+                    // Fallback vers l'icône grise si pas de nom
+                    Circle()
+                        .fill(Color.gray.opacity(0.3))
+                        .frame(width: size, height: size)
+                    
+                    Image(systemName: "person.fill")
+                        .font(.system(size: size * 0.4))
+                        .foregroundColor(.gray)
+                }
             }
             
             // Bordure blanche
@@ -229,6 +238,7 @@ struct UserProfileImage: View {
 struct PartnerProfileImage: View {
     let hasPartner: Bool
     let imageURL: String?
+    let partnerName: String
     let size: CGFloat
     
     var body: some View {
@@ -249,15 +259,19 @@ struct PartnerProfileImage: View {
                         cornerRadius: size / 2
                     )
                 } else {
-                    // Cercle de base seulement si pas d'image
-                    Circle()
-                        .fill(Color.gray.opacity(0.3))
-                        .frame(width: size, height: size)
-                    
-                    // Icône par défaut si pas d'image
-                    Image(systemName: "person.fill")
-                        .font(.system(size: size * 0.4))
-                        .foregroundColor(.gray)
+                    // Afficher les initiales avec fond coloré si partenaire connecté et pas d'image
+                    if !partnerName.isEmpty {
+                        UserInitialsView(name: partnerName, size: size)
+                    } else {
+                        // Fallback vers l'icône grise si pas de nom
+                        Circle()
+                            .fill(Color.gray.opacity(0.3))
+                            .frame(width: size, height: size)
+                        
+                        Image(systemName: "person.fill")
+                            .font(.system(size: size * 0.4))
+                            .foregroundColor(.gray)
+                    }
                 }
             } else {
                 // Cercle de base pour partenaire non connecté

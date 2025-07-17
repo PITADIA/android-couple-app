@@ -58,22 +58,66 @@ struct QuestionListView: View {
         return showPackCompletionCard && currentIndex >= accessibleQuestions.count
     }
     
-    // NOUVEAU: Vérifier si on doit afficher la carte de paywall freemium
-    private var shouldShowFreemiumPaywall: Bool {
+    // Vérifier si on doit afficher la carte paywall freemium (visible dès qu'on atteint la limite)
+    private var shouldShowFreemiumPaywallPreview: Bool {
         guard let freemiumManager = appState.freemiumManager else { return false }
         let maxFreeQuestions = freemiumManager.getMaxFreeQuestions(for: category)
+        let isSubscribed = appState.currentUser?.isSubscribed ?? false
+        
+        // Afficher la carte paywall si:
+        // 1. L'utilisateur n'est pas abonné
+        // 2. Ce n'est pas une catégorie premium
+        // 3. Il y a plus de questions que la limite gratuite
+        // 4. On a au moins atteint la limite (pour qu'elle soit visible au swipe)
+        return !isSubscribed && 
+               !category.isPremium && 
+               cachedQuestions.count > maxFreeQuestions &&
+               accessibleQuestions.count >= maxFreeQuestions
+    }
+    
+    // NOUVEAU: Vérifier si on doit afficher la carte de paywall freemium
+    private var shouldShowFreemiumPaywall: Bool {
+        guard let freemiumManager = appState.freemiumManager else { 
+            print("🔍 DEBUG shouldShowFreemiumPaywall: FreemiumManager manquant")
+            return false 
+        }
+        let maxFreeQuestions = freemiumManager.getMaxFreeQuestions(for: category)
         let isUserSubscribed = appState.currentUser?.isSubscribed ?? false
+        
+        print("🔍 DEBUG shouldShowFreemiumPaywall: ===== DEBUT VERIFICATION =====")
+        print("🔍 DEBUG shouldShowFreemiumPaywall: - Langue: \(Locale.current.languageCode ?? "unknown")")
+        print("🔍 DEBUG shouldShowFreemiumPaywall: - Catégorie ID: \(category.id)")
+        print("🔍 DEBUG shouldShowFreemiumPaywall: - Catégorie titre: \(category.title)")
+        print("🔍 DEBUG shouldShowFreemiumPaywall: - isPremium: \(category.isPremium)")
+        print("🔍 DEBUG shouldShowFreemiumPaywall: - isUserSubscribed: \(isUserSubscribed)")
+        print("🔍 DEBUG shouldShowFreemiumPaywall: - currentIndex: \(currentIndex)")
+        print("🔍 DEBUG shouldShowFreemiumPaywall: - maxFreeQuestions: \(maxFreeQuestions)")
+        print("🔍 DEBUG shouldShowFreemiumPaywall: - cachedQuestions.count: \(cachedQuestions.count)")
         
         // Afficher le paywall si:
         // 1. L'utilisateur n'est pas abonné
         // 2. Ce n'est pas une catégorie premium (car premium = paywall immédiat)
         // 3. On a atteint la limite de questions gratuites
         // 4. Il y a plus de questions disponibles que la limite gratuite
-        return !isUserSubscribed && 
-               !category.isPremium && 
-               currentIndex >= maxFreeQuestions && 
-               cachedQuestions.count > maxFreeQuestions
+        let condition1 = !isUserSubscribed
+        let condition2 = !category.isPremium
+        let condition3 = currentIndex >= maxFreeQuestions
+        let condition4 = cachedQuestions.count > maxFreeQuestions
+        
+        print("🔍 DEBUG shouldShowFreemiumPaywall: - Condition 1 (!isUserSubscribed): \(condition1)")
+        print("🔍 DEBUG shouldShowFreemiumPaywall: - Condition 2 (!category.isPremium): \(condition2)")
+        print("🔍 DEBUG shouldShowFreemiumPaywall: - Condition 3 (currentIndex >= maxFreeQuestions): \(condition3)")
+        print("🔍 DEBUG shouldShowFreemiumPaywall: - Condition 4 (cachedQuestions.count > maxFreeQuestions): \(condition4)")
+        
+        let result = condition1 && condition2 && condition3 && condition4
+        print("🔍 DEBUG shouldShowFreemiumPaywall: - RESULTAT FINAL: \(result)")
+        print("🔍 DEBUG shouldShowFreemiumPaywall: ===== FIN VERIFICATION =====")
+        
+        return result
     }
+    
+    // NOUVEAU: État pour contrôler l'affichage de la carte paywall
+    @State private var showFreemiumPaywallCard = false
     
     // Nombre total d'éléments (questions + carte de fin éventuelle + paywall éventuel)
     private var totalItems: Int {
@@ -85,9 +129,9 @@ struct QuestionListView: View {
         }
         
         if showPackCompletionCard { count += 1 }
-        if shouldShowFreemiumPaywall { count += 1 }
+        if shouldShowFreemiumPaywallPreview { count += 1 }
         
-        print("🔍 DEBUG totalItems: accessibleQuestions.count=\(accessibleQuestions.count), cachedQuestions.count=\(cachedQuestions.count), showPackCompletionCard=\(showPackCompletionCard), shouldShowFreemiumPaywall=\(shouldShowFreemiumPaywall), total=\(count)")
+        print("🔍 DEBUG totalItems: accessibleQuestions.count=\(accessibleQuestions.count), cachedQuestions.count=\(cachedQuestions.count), showPackCompletionCard=\(showPackCompletionCard), shouldShowFreemiumPaywallPreview=\(shouldShowFreemiumPaywallPreview), total=\(count)")
         
         return count
     }
@@ -111,13 +155,13 @@ struct QuestionListView: View {
         // Utiliser le système de packs original avec limitation freemium
         accessibleQuestions = packProgressService.getAccessibleQuestions(
             from: questions, 
-            categoryTitle: category.title
+            categoryId: category.id
         )
         
 
         
         // 🔥 NOUVEAU: Restaurer la position sauvegardée
-        let savedIndex = categoryProgressService.getCurrentIndex(for: category.title)
+        let savedIndex = categoryProgressService.getCurrentIndex(for: category.id)
         if savedIndex < accessibleQuestions.count {
             currentIndex = savedIndex
             print("🔥 QuestionListView: Position restaurée à l'index \(savedIndex) pour '\(category.title)'")
@@ -173,13 +217,13 @@ struct QuestionListView: View {
                         showPackCompletionCard = false
                         
                         // 🔥 RESET COMPLET pour debug
-                        packProgressService.resetProgress(for: category.title)
-                        categoryProgressService.saveCurrentIndex(0, for: category.title)
+                        packProgressService.resetProgress(for: category.id)
+                        categoryProgressService.saveCurrentIndex(0, for: category.id)
                         
                         // Recharger les questions
                         accessibleQuestions = packProgressService.getAccessibleQuestions(
                             from: cachedQuestions, 
-                            categoryTitle: category.title
+                            categoryId: category.id
                         )
                         
                         print("🔄 RESET COMPLET: Progression réinitialisée pour \(category.title)")
@@ -200,11 +244,11 @@ struct QuestionListView: View {
                         Text("🔒")
                             .font(.system(size: 60))
                         
-                        Text(NSLocalizedString("locked_content", comment: "Locked content text"))
+                        Text("locked_content".localized)
                             .font(.system(size: 24, weight: .bold))
                             .foregroundColor(.white)
                         
-                        Text(NSLocalizedString("subscribe_access_questions", comment: "Subscribe to access questions message"))
+                        Text("subscribe_access_questions".localized)
                             .font(.system(size: 18, weight: .semibold))
                             .foregroundColor(.white)
                             .multilineTextAlignment(.center)
@@ -236,7 +280,7 @@ struct QuestionListView: View {
                             }
                             
                             // NOUVEAU: Afficher la carte de paywall freemium si nécessaire
-                            if shouldShowFreemiumPaywall {
+                            if shouldShowFreemiumPaywallPreview {
                                 let paywallIndex = accessibleQuestions.count
                                 let offset = CGFloat(paywallIndex - currentQuestionIndex)
                                 let xPosition = offset * (cardWidth + cardSpacing) + dragOffset.width
@@ -291,7 +335,10 @@ struct QuestionListView: View {
                                             if currentQuestionIndex > 0 {
                                                 currentIndex -= 1
                                                 // 🔥 NOUVEAU: Sauvegarder la position actuelle
-                                                categoryProgressService.saveCurrentIndex(currentIndex, for: category.title)
+                                                categoryProgressService.saveCurrentIndex(currentIndex, for: category.id)
+                                                
+                                                // 🌟 NOUVEAU: Vérifier si on doit demander un avis (basé sur questions vues)
+                                                ReviewRequestService.shared.checkForReviewRequest()
                                             }
                                         } else if value.translation.width < -threshold || velocity < -500 {
                                             // Swipe vers la gauche - question suivante
@@ -304,14 +351,17 @@ struct QuestionListView: View {
                                                 
                                                 currentIndex = nextIndex
                                                 // 🔥 NOUVEAU: Sauvegarder la position actuelle
-                                                categoryProgressService.saveCurrentIndex(currentIndex, for: category.title)
+                                                categoryProgressService.saveCurrentIndex(currentIndex, for: category.id)
+                                                
+                                                // 🌟 NOUVEAU: Vérifier si on doit demander un avis (basé sur questions vues)
+                                                ReviewRequestService.shared.checkForReviewRequest()
                                                 
                                                 print("🔍 SWIPE GAUCHE: Après mise à jour currentIndex=\(currentIndex)")
                                                 
                                                 // Vérifier si on a terminé un pack (mais ne pas afficher automatiquement)
                                                 checkForPackCompletionCard()
+                                                checkForFreemiumPaywallCard()
                                                 
-                                                                                // NOUVEAU: Vérifier si on doit afficher le paywall freemium
                                 if let freemiumManager = appState.freemiumManager {
                                     let maxFreeQuestions = freemiumManager.getMaxFreeQuestions(for: category)
                                     if nextIndex >= maxFreeQuestions && !category.isPremium && !(appState.currentUser?.isSubscribed ?? false) {
@@ -335,8 +385,8 @@ struct QuestionListView: View {
                     .padding(.horizontal, 20)
                 }
                 
-                // Bouton Ajouter en favoris (seulement pour les questions, pas pour la carte de fin)
-                if !shouldShowCompletionCard && !shouldShowFreemiumPaywall {
+                // Bouton Ajouter en favoris (seulement pour les questions normales, pas pour les cartes spéciales)
+                if currentIndex < accessibleQuestions.count {
                     Button(action: {
                         if currentQuestionIndex < accessibleQuestions.count {
                             let currentQuestion = accessibleQuestions[currentQuestionIndex]
@@ -379,6 +429,9 @@ struct QuestionListView: View {
         .navigationBarHidden(true)
         .onAppear {
             loadQuestions()
+            
+            // 🌟 NOUVEAU: Vérifier si on doit demander un avis dès l'ouverture d'une catégorie
+            ReviewRequestService.shared.checkForReviewRequest()
         }
         .sheet(isPresented: $showNewPackReveal) {
             NewPackRevealView(packNumber: completedPackNumber + 1) {
@@ -405,11 +458,15 @@ struct QuestionListView: View {
         private func checkForPackCompletionCard() {
         print("🔍 DEBUG checkForPackCompletionCard: currentIndex=\(currentIndex), accessibleQuestions.count=\(accessibleQuestions.count)")
         print("🔍 DEBUG checkForPackCompletionCard: cachedQuestions.count=\(cachedQuestions.count), showPackCompletionCard=\(showPackCompletionCard)")
+        print("🔍 DEBUG checkForPackCompletionCard: category.id=\(category.id), category.title=\(category.title)")
+        print("🔍 DEBUG checkForPackCompletionCard: current language=\(Locale.current.languageCode ?? "unknown")")
         
         // NOUVELLE LOGIQUE: Vérifier d'abord si on a atteint la limite freemium
         if let freemiumManager = appState.freemiumManager {
             let maxFreeQuestions = freemiumManager.getMaxFreeQuestions(for: category)
             let isSubscribed = appState.currentUser?.isSubscribed ?? false
+            
+            print("🔍 DEBUG freemium check: maxFreeQuestions=\(maxFreeQuestions), isSubscribed=\(isSubscribed), category.isPremium=\(category.isPremium)")
             
             // Si on a atteint la limite freemium ET qu'on n'est pas abonné, ne pas afficher la carte de déblocage
             if accessibleQuestions.count >= maxFreeQuestions && !category.isPremium && !isSubscribed {
@@ -428,8 +485,11 @@ struct QuestionListView: View {
             let questionsPerPack = 32
             completedPackNumber = (accessibleQuestions.count - 1) / questionsPerPack + 1
             showPackCompletionCard = true
+
+            // SUPPRIMÉ: Plus de swipe automatique - l'utilisateur reste sur la question 32
+            // et peut voir qu'il y a une carte suivante qu'il peut atteindre en swipant
             
-            print("🎉 Pack \(completedPackNumber) bientôt terminé pour \(category.title)! Affichage de la carte de déblocage.")
+            print("🎉 Pack \(completedPackNumber) terminé pour \(category.title)! Carte de déblocage disponible au swipe suivant.")
             print("🔍 DEBUG: currentIndex=\(currentIndex), accessibleQuestions.count=\(accessibleQuestions.count), cachedQuestions.count=\(cachedQuestions.count)")
             return
         }
@@ -442,19 +502,46 @@ struct QuestionListView: View {
             let questionsPerPack = 32
             completedPackNumber = (accessibleQuestions.count - 1) / questionsPerPack + 1
             showPackCompletionCard = true
+
+            // SUPPRIMÉ: Plus de positionnement automatique sur la carte
             
-            print("🎉 Pack \(completedPackNumber) terminé pour \(category.title)! Affichage de la carte de fin (fallback).")
+            print("🎉 Pack \(completedPackNumber) terminé pour \(category.title)! Carte de déblocage disponible (fallback).")
             print("🔍 DEBUG: currentIndex=\(currentIndex), accessibleQuestions.count=\(accessibleQuestions.count), cachedQuestions.count=\(cachedQuestions.count)")
+        }
+    }
+    
+    private func checkForFreemiumPaywallCard() {
+        print("🔍 DEBUG checkForFreemiumPaywallCard: currentIndex=\(currentIndex)")
+        print("🔍 DEBUG checkForFreemiumPaywallCard: showFreemiumPaywallCard=\(showFreemiumPaywallCard)")
+        
+        guard let freemiumManager = appState.freemiumManager else { return }
+        let maxFreeQuestions = freemiumManager.getMaxFreeQuestions(for: category)
+        let isSubscribed = appState.currentUser?.isSubscribed ?? false
+        
+        // Ne plus activer prématurément - on laisse la logique de fallback s'en charger
+        // quand l'utilisateur swipe vraiment au-delà de la limite
+        
+        // Logique de fallback si on atteint vraiment la limite
+        if !isSubscribed && 
+           !category.isPremium &&
+           currentIndex >= maxFreeQuestions && 
+           cachedQuestions.count > maxFreeQuestions &&
+           !showFreemiumPaywallCard {
+            
+            showFreemiumPaywallCard = true
+            
+            print("🔥🔥🔥 FREEMIUM PAYWALL: Limite freemium atteinte (fallback)! Carte paywall disponible.")
+            print("🔍 DEBUG: currentIndex=\(currentIndex), maxFreeQuestions=\(maxFreeQuestions), cachedQuestions.count=\(cachedQuestions.count)")
         }
     }
      
      private func unlockNextPack() {
-         packProgressService.unlockNextPack(for: category.title)
+         packProgressService.unlockNextPack(for: category.id)
          
          // Recharger les questions accessibles
          accessibleQuestions = packProgressService.getAccessibleQuestions(
              from: cachedQuestions, 
-             categoryTitle: category.title
+             categoryId: category.id
          )
          
          print("🔓 Nouveau pack débloqué ! \(accessibleQuestions.count) questions maintenant disponibles")
@@ -475,12 +562,12 @@ struct PackCompletionCardView: View {
                 Spacer()
                 
                 VStack(spacing: 20) {
-                    Text(NSLocalizedString("congratulations_pack", comment: "Congratulations pack completion"))
+                    Text("congratulations_pack".localized)
                         .font(.system(size: 36, weight: .bold))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                     
-                    Text(NSLocalizedString("pack_completed", comment: "Pack completed message"))
+                    Text("pack_completed".localized)
                         .font(.system(size: 18))
                         .foregroundColor(.white.opacity(0.9))
                         .multilineTextAlignment(.center)
@@ -501,7 +588,7 @@ struct PackCompletionCardView: View {
                             }
                         }
                     
-                    Text(NSLocalizedString("tap_unlock_surprise", comment: "Tap to unlock surprise message"))
+                    Text("tap_unlock_surprise".localized)
                         .font(.system(size: 16, weight: .medium))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)

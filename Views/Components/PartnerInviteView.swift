@@ -27,15 +27,18 @@ struct PartnerInviteView: View {
                 // Texte d'invitation
                 VStack(alignment: .leading, spacing: 4) {
                     Text("invite_partner".localized)
-                        .font(.system(size: 22, weight: .semibold))
+                        .font(.system(size: 18, weight: .semibold))
                         .foregroundColor(.black)
-                        .multilineTextAlignment(.center)
+                        .multilineTextAlignment(.leading)
+                        .minimumScaleFactor(0.7)
+                        .lineLimit(2)
                     
                     Text("invite_partner_description".localized)
-                        .font(.system(size: 16))
+                        .font(.system(size: 14))
                         .foregroundColor(.black.opacity(0.7))
-                        .multilineTextAlignment(.center)
-                        .padding(.horizontal, 20)
+                        .multilineTextAlignment(.leading)
+                        .minimumScaleFactor(0.8)
+                        .lineLimit(3)
                 }
                 
                 Spacer()

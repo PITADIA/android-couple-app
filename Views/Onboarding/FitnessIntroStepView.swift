@@ -22,13 +22,18 @@ struct FitnessIntroStepView: View {
             // Premier Spacer pour centrer le contenu
             Spacer()
             
-            // Image de Marie centrée
-            Image("marie")
+            // Image localisée selon la langue
+            Image(LocalizationService.localizedImageName(frenchImage: "marie", defaultImage: "macafee"))
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(maxWidth: .infinity, maxHeight: 700)
                 .cornerRadius(20)
                 .padding(.horizontal, 15)
+                .onAppear {
+                    let selectedImage = LocalizationService.localizedImageName(frenchImage: "marie", defaultImage: "macafee")
+                    print("🖼️ FitnessIntroStepView: Vue apparue - Affichage de l'image: \(selectedImage)")
+                    print("🖼️ FitnessIntroStepView: Titre de la page: \"save_moments_together\"")
+                }
             
             // Deuxième Spacer pour pousser la zone bouton vers le bas
             Spacer()
@@ -51,6 +56,13 @@ struct FitnessIntroStepView: View {
             .padding(.vertical, 30)
             .background(Color.white)
             .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: -5)
+        }
+        .onAppear {
+            print("🖼️ FitnessIntroStepView: 📱 Étape d'onboarding 'save_moments_together' affichée")
+            print("🖼️ FitnessIntroStepView: 🌍 Paramètres système:")
+            print("🖼️ FitnessIntroStepView:   - Langue: \(Locale.current.language.languageCode?.identifier ?? "inconnue")")
+            print("🖼️ FitnessIntroStepView:   - Région: \(Locale.current.region?.identifier ?? "inconnue")")
+            print("🖼️ FitnessIntroStepView:   - Devise: \(Locale.current.currency?.identifier ?? "inconnue")")
         }
     }
 }

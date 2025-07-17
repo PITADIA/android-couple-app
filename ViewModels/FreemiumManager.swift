@@ -180,18 +180,29 @@ class FreemiumManager: ObservableObject {
     
     /// NOUVEAU: Retourne le nombre maximum de questions gratuites pour une catégorie
     func getMaxFreeQuestions(for category: QuestionCategory) -> Int {
+        print("🔍 DEBUG getMaxFreeQuestions: ===== DEBUT =====")
+        print("🔍 DEBUG getMaxFreeQuestions: - Langue: \(Locale.current.languageCode ?? "unknown")")
+        print("🔍 DEBUG getMaxFreeQuestions: - Catégorie ID: \(category.id)")
+        print("🔍 DEBUG getMaxFreeQuestions: - Catégorie titre: \(category.title)")
+        print("🔍 DEBUG getMaxFreeQuestions: - isPremium: \(category.isPremium)")
+        
         if appState?.currentUser?.isSubscribed ?? false {
+            print("🔍 DEBUG getMaxFreeQuestions: - Utilisateur abonné -> Int.max")
             return Int.max // Illimité pour les abonnés
         }
         
         if category.isPremium {
+            print("🔍 DEBUG getMaxFreeQuestions: - Catégorie premium -> 0")
             return 0 // Aucune question gratuite pour les catégories premium
         }
         
         if category.id == "en-couple" {
-            return freePacksLimit * questionsPerPack // 64 questions
+            let result = freePacksLimit * questionsPerPack // 64 questions
+            print("🔍 DEBUG getMaxFreeQuestions: - Catégorie en-couple -> \(result) questions")
+            return result
         }
         
+        print("🔍 DEBUG getMaxFreeQuestions: - Autre catégorie gratuite -> Int.max")
         return Int.max // Autres catégories gratuites (si elles existent)
     }
     

@@ -548,6 +548,13 @@ class WidgetService: ObservableObject {
                 sharedDefaults.removeObject(forKey: "widget_partner_longitude")
                 print("🔄 WidgetService: Coordonnées partenaire nettoyées")
             }
+        } else {
+            // Partenaire déconnecté → nettoyage des clés liées au partenaire
+            sharedDefaults.removeObject(forKey: "widget_partner_name")
+            sharedDefaults.removeObject(forKey: "widget_partner_image_url")
+            sharedDefaults.removeObject(forKey: "widget_partner_latitude")
+            sharedDefaults.removeObject(forKey: "widget_partner_longitude")
+            print("🔄 WidgetService: Partenaire absent - Clés partenaire nettoyées")
         }
         
         // Timestamp de dernière mise à jour
@@ -802,11 +809,20 @@ struct DistanceInfo {
     let lastUpdated: Date
     
     var formattedDistance: String {
+        // ✅ NOUVEAU : Si distance < 1 km → afficher "ensemble / together"
         if distance < 1 {
-            return "\(Int(distance * 1000)) m"
-        } else {
-            return "\(Int(distance)) km"
+            return "widget_together_text".localized.capitalized
         }
+        
+        let baseDistance: String
+        if distance < 10 {
+            baseDistance = String(format: "%.1f km", distance)
+        } else {
+            baseDistance = "\(Int(distance)) km"
+        }
+        
+        // Appliquer la conversion selon la locale
+        return baseDistance.convertedForLocale()
     }
     
     var randomMessage: String {

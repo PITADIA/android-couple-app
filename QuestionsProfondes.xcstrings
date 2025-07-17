@@ -59,13 +59,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "How would your life be different if you were born the opposite gender?"
+            "value" : "How would your life be different if you had been born as the other gender?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Comment ta vie serait-elle différente si tu étais né(e) dans l'autre genre ?"
+            "value" : "Comment ta vie serait-elle différente si tu avais été né dans l'autre genre ?"
           }
         }
       }
@@ -229,7 +229,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What have you never dared to say to your parents that you would have liked to say?"
+            "value" : "What have you never dared to say to your parents, but wish you had?"
           }
         },
         "fr" : {
@@ -331,7 +331,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "When did you last feel shame?"
+            "value" : "When was the last time you felt ashamed?"
           }
         },
         "fr" : {
@@ -399,7 +399,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What's the thing that makes you most proud of yourself?"
+            "value" : "What is the thing you are most proud of about yourself?"
           }
         },
         "fr" : {
@@ -433,7 +433,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What's the inner battle you're fighting without talking to anyone about it?"
+            "value" : "What inner battle are you fighting without telling anyone?"
           }
         },
         "fr" : {
@@ -484,7 +484,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Looking at these past ten years, how have you changed? And are you happy with this evolution?"
+            "value" : "Looking back over the past ten years, how have you changed? And are you happy with this evolution?"
           }
         },
         "fr" : {
@@ -518,7 +518,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What's your greatest success and your biggest failure?"
+            "value" : "What is your greatest success, and your biggest failure?"
           }
         },
         "fr" : {
@@ -535,7 +535,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What person has had the strongest impact on your way of seeing life?"
+            "value" : "Who has had the greatest impact on the way you see life?"
           }
         },
         "fr" : {
@@ -705,7 +705,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "How do you handle your passing sadnesses?"
+            "value" : "How do you handle your moments of sadness?"
           }
         },
         "fr" : {
@@ -722,7 +722,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What's the memory that marked you most with your father or mother?"
+            "value" : "What is the memory that has marked you the most with your father or mother?"
           }
         },
         "fr" : {
@@ -841,7 +841,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Do you think you really know yourself?"
+            "value" : "Do you think you truly know yourself?"
           }
         },
         "fr" : {
@@ -858,7 +858,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "For you, what is true love?"
+            "value" : "What does true love mean to you?"
           }
         },
         "fr" : {
@@ -875,7 +875,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Is there a character trait in me that you don't understand yet, but would like to better grasp?"
+            "value" : "Is there a character trait in me that you don't yet understand, but would like to?"
           }
         },
         "fr" : {
@@ -892,7 +892,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "How has your first impression of me evolved since we met?"
+            "value" : "How has your first impression of me changed since we met?"
           }
         },
         "fr" : {
@@ -909,13 +909,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What do you refuse to reproduce in your life that your parents did?"
+            "value" : "What is something your parents did that you refuse to repeat in your own life?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Qu'est-ce que tu refuses de reproduire dans ta vie, que tes parents ont fait ?"
+            "value" : "Qu'est-ce que tes parents ont fait que tu refuses de reproduire dans ta vie ?"
           }
         }
       }
@@ -926,7 +926,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "According to you, what does it mean to succeed in life?"
+            "value" : "In your opinion, what does it mean to succeed in life?"
           }
         },
         "fr" : {
@@ -943,7 +943,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What did you miss most in your childhood?"
+            "value" : "What did you lack most in your childhood?"
           }
         },
         "fr" : {
@@ -960,7 +960,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What drove you to seek a relationship?"
+            "value" : "What made you want to seek a relationship?"
           }
         },
         "fr" : {
@@ -977,7 +977,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Do you think the duration of a relationship makes one more inclined to forgive infidelity?"
+            "value" : "Do you think the length of a relationship makes it easier to forgive infidelity?"
           }
         },
         "fr" : {
@@ -994,7 +994,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Have you changed since we've been a couple? And do you find these changes positive?"
+            "value" : "Do you think you have changed since we became a couple? And do you think these changes are positive?"
           }
         },
         "fr" : {
@@ -1011,7 +1011,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What are, in your opinion, the three biggest things we have in common?"
+            "value" : "In your opinion, what are the three biggest things we have in common?"
           }
         },
         "fr" : {
@@ -1028,7 +1028,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What's our biggest difference according to you?"
+            "value" : "In your opinion, what is our biggest difference?"
           }
         },
         "fr" : {
@@ -1453,13 +1453,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "How about we do a round of qualities each: tell me three qualities you see in me."
+            "value" : "How about we each share three qualities we see in each other?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Et si on faisait un tour de qualité chacun : dis-moi trois qualités que tu vois en moi."
+            "value" : "Et si on partage chacun trois qualités que nous voyons en l'autre ?"
           }
         }
       }
@@ -1572,13 +1572,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tell me about a day you'll never forget. Whether good or bad"
+            "value" : "Tell me about a day you'll never forget—whether it was good or bad."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Parle-moi d'un jour que tu n'oublieras jamais. Qu'il soit bon ou mauvais"
+            "value" : "Parle-moi d'un jour que tu n'oublieras jamais—qu'il soit bon ou mauvais."
           }
         }
       }
@@ -1878,13 +1878,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What do you think about the working world, is it made for you?"
+            "value" : "What do you think about the world of work—do you feel it's made for you?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Que penses-tu du monde du travail, est-il fait pour toi ?"
+            "value" : "Que penses-tu du monde du travail—est-il fait pour toi ?"
           }
         }
       }
@@ -2082,7 +2082,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Do you sometimes find yourself in depression?"
+            "value" : "Do you ever find yourself feeling depressed?"
           }
         },
         "fr" : {
@@ -2116,7 +2116,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Who is the person who makes you happiest currently?"
+            "value" : "Who is the person who makes you happiest right now?"
           }
         },
         "fr" : {
@@ -2167,7 +2167,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Are your inner thoughts often with you or against you?"
+            "value" : "Are your thoughts more often on your side, or against you?"
           }
         },
         "fr" : {
@@ -2473,7 +2473,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Do you think spending time together is as important as spending it separately?"
+            "value" : "Do you think spending time together is as important as spending time apart?"
           }
         },
         "fr" : {
@@ -2830,7 +2830,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What do you think about solitude? Is it the same thing as isolation according to you?"
+            "value" : "What do you think about solitude? Is it the same as isolation, in your view?"
           }
         },
         "fr" : {
@@ -2847,7 +2847,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Have you ever needed to take distance so as not to lose yourself in a relationship?"
+            "value" : "Have you ever needed to take a step back so you wouldn't lose yourself in a relationship?"
           }
         },
         "fr" : {
@@ -2881,7 +2881,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Is there something I used to do that you miss today?"
+            "value" : "Is there something I used to do that you miss now?"
           }
         },
         "fr" : {
@@ -3119,7 +3119,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What promise did you make one day, but didn't keep? And why?"
+            "value" : "What promise did you once make but didn't keep? And why?"
           }
         },
         "fr" : {
@@ -3204,7 +3204,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Are there signs that show you're not doing well, that I should learn to spot?"
+            "value" : "Are there signs that show you're not doing well, that I should learn to recognize?"
           }
         },
         "fr" : {
@@ -3357,7 +3357,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Do you think I'm grateful enough with you? And that I show it?"
+            "value" : "Do you think I'm grateful enough with you? And do I show it?"
           }
         },
         "fr" : {
@@ -3561,7 +3561,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "For you, at what point do you know you need to break up with someone?"
+            "value" : "For you, when do you know it's time to break up with someone?"
           }
         },
         "fr" : {
@@ -3833,7 +3833,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Do you need to often spend time alone, with yourself?"
+            "value" : "Do you often need to spend time alone, just with yourself?"
           }
         },
         "fr" : {
@@ -4037,7 +4037,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Describe to me what I could do to make you even happier"
+            "value" : "Describe what I could do to make you even happier"
           }
         },
         "fr" : {
@@ -4173,7 +4173,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What could we do together to help us understand each other even more?"
+            "value" : "What could we do together to help us understand each other even better?"
           }
         },
         "fr" : {

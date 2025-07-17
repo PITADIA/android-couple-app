@@ -1062,7 +1062,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What importance do you place on personal growth in a relationship?"
+            "value" : "How important is personal growth to you in a relationship?"
           }
         },
         "fr" : {
@@ -1164,7 +1164,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Is there something you're trying to accomplish that we haven't talked about yet?"
+            "value" : "Is there something you're working toward that we haven't talked about yet?"
           }
         },
         "fr" : {
@@ -1198,7 +1198,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What are the ways you use to handle loneliness when we can't be together?"
+            "value" : "What do you do to cope with loneliness when we can't be together?"
           }
         },
         "fr" : {
@@ -1232,7 +1232,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "How do you handle days when you miss me too much?"
+            "value" : "How do you get through days when you miss me too much?"
           }
         },
         "fr" : {
@@ -1521,7 +1521,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "How do you feel about keeping small objects or mementos of each other to feel more connected?"
+            "value" : "How do you feel about keeping little objects or mementos from each other to feel more connected?"
           }
         },
         "fr" : {
@@ -1555,7 +1555,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What could I do to make you feel more understood during conflicts?"
+            "value" : "What could I do to help you feel more understood during conflicts?"
           }
         },
         "fr" : {
@@ -1657,7 +1657,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What voice message from me has marked you the most?"
+            "value" : "What voice message from me has stayed with you the most?"
           }
         },
         "fr" : {
@@ -2541,7 +2541,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What words of mine have marked you and that you sometimes remember in your head?"
+            "value" : "What words of mine have stayed with you and that you sometimes recall in your mind?"
           }
         },
         "fr" : {
@@ -2694,7 +2694,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What's special about me that no one else knows, but that you appreciate?"
+            "value" : "What's something special about me that no one else knows, but you appreciate?"
           }
         },
         "fr" : {
@@ -2745,7 +2745,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Do you have a recent anecdote where someone made you think of me?"
+            "value" : "Do you have a recent story where someone made you think of me?"
           }
         },
         "fr" : {
@@ -2864,7 +2864,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What do you think is the most important element for maintaining a long-distance relationship?"
+            "value" : "What do you think is the most important thing for keeping a long-distance relationship strong?"
           }
         },
         "fr" : {
@@ -2932,7 +2932,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What's the message you reread when you miss me too much?"
+            "value" : "What's the message you reread when you miss me a lot?"
           }
         },
         "fr" : {
@@ -3442,13 +3442,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What's one thing I do that makes you feel loved, even from afar?"
+            "value" : "What's one thing I do that makes you feel loved, even from far away?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quelle est une chose que je fais qui te fait te sentir aimé(e), même de loin "
+            "value" : "Quelle est une chose que je fais qui te fait te sentir aimé(e), même de loin ? "
           }
         }
       }

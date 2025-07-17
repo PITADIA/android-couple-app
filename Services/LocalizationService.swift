@@ -4,42 +4,151 @@ import Foundation
 class LocalizationService {
     static let shared = LocalizationService()
     
+    // Variable statique pour éviter les logs répétitifs
+    private static var lastLoggedLanguage: String = ""
+    
     private init() {}
     
-    /// Obtient une chaîne localisée avec un fallback en anglais
+    /// Obtient une chaîne localisée avec String Catalogs
     func localizedString(for key: String, tableName: String? = nil, comment: String = "") -> String {
         let tableName = tableName ?? "UI" // Par défaut, utiliser UI.xcstrings
         
-        // Première tentative avec la langue courante
+        // Utiliser NSLocalizedString directement avec String Catalogs
         let translation = NSLocalizedString(key, tableName: tableName, comment: comment)
-        if translation != key {
-            return translation
-        }
-        
-        // Fallback : essayer dans le bundle Anglais si disponible
-        if let enPath = Bundle.main.path(forResource: "en", ofType: "lproj"),
-           let enBundle = Bundle(path: enPath) {
-            let fallback = NSLocalizedString(key, tableName: tableName, bundle: enBundle, value: key, comment: comment)
-            return fallback
-        }
-        
-        return key // dernier recours : retourner la clé
+        return translation
     }
     
     /// Helper spécifique pour les textes d'interface utilisateur (utilise UI.xcstrings)
     static func ui(_ key: String, comment: String = "") -> String {
-        return shared.localizedString(for: key, tableName: "UI", comment: comment)
+        return NSLocalizedString(key, tableName: "UI", comment: comment)
     }
     
     /// Helper pour les catégories (utilise Categories.xcstrings)
     static func category(_ key: String, comment: String = "") -> String {
-        return shared.localizedString(for: key, tableName: "Categories", comment: comment)
+        return NSLocalizedString(key, tableName: "Categories", comment: comment)
     }
     
-    /// Obtient une chaîne localisée avec un fallback en anglais (méthode générique)
+    /// Obtient une chaîne localisée avec String Catalogs (méthode générique)
     func localizedString(for key: String, comment: String = "") -> String {
-        let translation = NSLocalizedString(key, comment: "")
-        return translation != key ? translation : key
+        return NSLocalizedString(key, comment: comment)
+    }
+    
+    /// Change le symbole de devise selon la région du téléphone (garde le même prix)
+    /// ⚠️ DEPRECATED: Utilisé uniquement comme fallback si StoreKit n'est pas disponible
+    static func localizedCurrencySymbol(for priceString: String) -> String {
+        // Utiliser la région système plutôt que la devise locale de l'App Store
+        let regionCode = Locale.current.region?.identifier ?? "FR"
+        let languageCode = Locale.current.language.languageCode?.identifier ?? "fr"
+        
+        // Extraire le prix numérique (ex: "4,99€" -> "4,99")
+        let numericPrice = priceString.replacingOccurrences(of: "€", with: "")
+        
+        // Déterminer la devise selon la région/langue
+        let currencySymbol: String
+        
+        // Prioriser la langue d'interface si elle est anglaise
+        if languageCode == "en" {
+            switch regionCode {
+            case "US":
+                currencySymbol = "$"
+            case "GB":
+                currencySymbol = "£"
+            case "CA":
+                currencySymbol = "CAD$"
+            case "AU":
+                currencySymbol = "AUD$"
+            default:
+                currencySymbol = "$" // Par défaut dollar pour interface anglaise
+            }
+        } else {
+            // Sinon utiliser la région
+            switch regionCode {
+            case "US", "PR", "VI", "GU", "AS", "MP":
+                currencySymbol = "$"
+            case "GB", "IM", "JE", "GG":
+                currencySymbol = "£"
+            case "CA":
+                currencySymbol = "CAD$"
+            case "CH", "LI":
+                currencySymbol = "CHF"
+            case "JP":
+                currencySymbol = "¥"
+            case "AU":
+                currencySymbol = "AUD$"
+            default:
+                currencySymbol = "€"
+            }
+        }
+        
+        // Formater selon le symbole
+        if currencySymbol.contains("$") && !currencySymbol.contains("CAD") && !currencySymbol.contains("AUD") {
+            return "$\(numericPrice)" // Dollar avant
+        } else if currencySymbol == "£" {
+            return "£\(numericPrice)" // Livre avant
+        } else if currencySymbol == "¥" {
+            return "¥\(numericPrice)" // Yen avant
+        } else if currencySymbol.contains("CAD") || currencySymbol.contains("AUD") || currencySymbol.contains("CHF") {
+            return "\(numericPrice) \(currencySymbol)" // Après pour CAD, AUD, CHF
+        } else {
+            return priceString // Garder € par défaut
+        }
+    }
+    
+    /// Divise un prix formaté par 2 pour calculer le prix par utilisateur
+    /// Utilisé par StoreKitPricingService pour maintenir la cohérence avec l'ancien système
+    static func dividePrice(formattedPrice: String, by divisor: Double = 2.0) -> String {
+        // Extraire le prix numérique du string formaté
+        let cleanPrice = formattedPrice.replacingOccurrences(of: "[^0-9.,]", with: "", options: .regularExpression)
+        
+        if let price = Double(cleanPrice.replacingOccurrences(of: ",", with: ".")), price > 0 {
+            let dividedPrice = price / divisor
+            
+            // Réappliquer le format original
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .currency
+            formatter.currencyCode = getCurrencyCode(from: formattedPrice)
+            formatter.locale = Locale.current
+            
+            return formatter.string(from: NSNumber(value: dividedPrice)) ?? formattedPrice
+        }
+        
+        return formattedPrice
+    }
+    
+    /// Extrait le code de devise d'un prix formaté
+    private static func getCurrencyCode(from formattedPrice: String) -> String {
+        if formattedPrice.contains("$") {
+            return "USD"
+        } else if formattedPrice.contains("£") {
+            return "GBP"
+        } else if formattedPrice.contains("€") {
+            return "EUR"
+        } else if formattedPrice.contains("¥") {
+            return "JPY"
+        } else if formattedPrice.contains("CHF") {
+            return "CHF"
+        } else {
+            return "EUR" // Par défaut
+        }
+    }
+    
+    /// Retourne le nom de l'image localisée selon la langue du téléphone
+    static func localizedImageName(frenchImage: String, defaultImage: String) -> String {
+        let languageCode = Locale.current.language.languageCode?.identifier ?? "en"
+        
+        // 🔇 Log réduit : seulement lors du premier appel ou changement de langue
+        if lastLoggedLanguage != languageCode {
+            print("🖼️ LocalizationService: Langue système détectée: \(languageCode)")
+            lastLoggedLanguage = languageCode
+        }
+        
+        // Si la langue est française, utiliser l'image française
+        if languageCode == "fr" {
+            return frenchImage
+        } else {
+            // Pour toutes les autres langues (anglais, etc.), utiliser l'image par défaut
+            return defaultImage
+        }
     }
 }
 
@@ -48,20 +157,21 @@ class LocalizationService {
 extension Question {
     /// Version optimisée qui utilise le service de localisation
     var optimizedLocalizedText: String {
-        // Avec le nouveau système QuestionDataManager, le texte est déjà localisé
+        // Avec le nouveau système String Catalogs, le texte est déjà localisé
         return text
     }
 }
 
-// MARK: - Extension pour QuestionCategory
+// MARK: - Extensions pour l'UI
 
-extension QuestionCategory {
-    /// Version optimisée des catégories avec lazy loading
-    var optimizedTitle: String {
-        return LocalizationService.shared.localizedString(for: "category_\(id)_title", comment: "Category title")
+extension String {
+    /// Helper pour obtenir le texte localisé depuis UI.xcstrings
+    var localizedUI: String {
+        return LocalizationService.ui(self)
     }
     
-    var optimizedSubtitle: String {
-        return LocalizationService.shared.localizedString(for: "category_\(id)_subtitle", comment: "Category subtitle")
+    /// Helper pour obtenir le texte localisé depuis Categories.xcstrings  
+    var localizedCategory: String {
+        return LocalizationService.category(self)
     }
 } 

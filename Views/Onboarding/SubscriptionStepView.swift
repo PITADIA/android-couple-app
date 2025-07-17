@@ -4,6 +4,7 @@ import StoreKit
 struct SubscriptionStepView: View {
     @ObservedObject var viewModel: OnboardingViewModel
     @StateObject private var receiptService = AppleReceiptService.shared
+    @StateObject private var pricingService = StoreKitPricingService.shared
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
@@ -154,7 +155,11 @@ struct SubscriptionStepView: View {
                         .foregroundColor(.black.opacity(0.5))
                         
                         Button("privacy_policy".localized) {
-                            if let url = URL(string: "https://love2lovesite.onrender.com") {
+                            let privacyUrl = Locale.preferredLanguages.first?.hasPrefix("fr") == true 
+                                ? "https://love2lovesite.onrender.com"
+                                : "https://love2lovesite.onrender.com/privacy-policy.html"
+                            
+                            if let url = URL(string: privacyUrl) {
                                 UIApplication.shared.open(url)
                             }
                         }
@@ -191,6 +196,13 @@ struct SubscriptionStepView: View {
         .onAppear {
             print("🔥 SubscriptionStepView: Vue apparue")
             NSLog("🔥 SubscriptionStepView: Vue apparue")
+            
+            // Force le rechargement des prix si ils ne sont pas disponibles
+            if !pricingService.hasDynamicPrices {
+                print("💰 SubscriptionStepView: Rechargement des prix StoreKit...")
+                pricingService.refreshPrices()
+            }
+            
             print("🔥 SubscriptionStepView: Statut d'abonnement actuel: \(receiptService.isSubscribed)")
             NSLog("🔥 SubscriptionStepView: Statut d'abonnement actuel: \(receiptService.isSubscribed)")
         }
