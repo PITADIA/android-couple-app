@@ -10,9 +10,6 @@ struct LocationPickerView: View {
         center: CLLocationCoordinate2D(latitude: 48.8566, longitude: 2.3522), // Sera remplacé par getDefaultPickerRegion()
         span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
     )
-    @State private var searchText = ""
-    @State private var isSearching = false
-    @State private var searchResults: [MKMapItem] = []
     @State private var selectedCoordinate: CLLocationCoordinate2D?
     @State private var locationManager = CLLocationManager()
     @State private var currentLocationName = ""
@@ -24,7 +21,6 @@ struct LocationPickerView: View {
                 backgroundView
                 
                 VStack(spacing: 0) {
-                    searchSection
                     mapSection
                 }
                 
@@ -55,60 +51,6 @@ struct LocationPickerView: View {
     private var backgroundView: some View {
         Color(red: 0.1, green: 0.02, blue: 0.05)
             .ignoresSafeArea()
-    }
-    
-    private var searchSection: some View {
-        VStack(spacing: 12) {
-            searchBar
-            searchResultsList
-        }
-        .padding(.horizontal, 20)
-        .padding(.top, 20)
-    }
-    
-    private var searchBar: some View {
-        HStack {
-            Image(systemName: "magnifyingglass")
-                .foregroundColor(.white.opacity(0.6))
-            
-            TextField("search_placeholder".localized, text: $searchText)
-                .foregroundColor(.white)
-                .onSubmit {
-                    searchLocation()
-                }
-            
-            if !searchText.isEmpty {
-                Button(action: {
-                    searchText = ""
-                    searchResults = []
-                }) {
-                    Image(systemName: "xmark.circle.fill")
-                        .foregroundColor(.white.opacity(0.6))
-                }
-            }
-        }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 12)
-        .background(
-            RoundedRectangle(cornerRadius: 12)
-                .fill(Color.white.opacity(0.1))
-        )
-    }
-    
-    @ViewBuilder
-    private var searchResultsList: some View {
-        if !searchResults.isEmpty {
-            ScrollView {
-                VStack(spacing: 8) {
-                    ForEach(searchResults, id: \.self) { item in
-                        SearchResultRow(item: item) {
-                            selectSearchResult(item)
-                        }
-                    }
-                }
-            }
-            .frame(maxHeight: 200)
-        }
     }
     
     private var mapSection: some View {
@@ -343,38 +285,6 @@ struct LocationPickerView: View {
         }
     }
     
-    private func searchLocation() {
-        guard !searchText.isEmpty else { return }
-        
-        isSearching = true
-        
-        let request = MKLocalSearch.Request()
-        request.naturalLanguageQuery = searchText
-        request.region = region
-        
-        let search = MKLocalSearch(request: request)
-        search.start { response, error in
-            DispatchQueue.main.async {
-                self.isSearching = false
-                
-                if let response = response {
-                    self.searchResults = response.mapItems
-                } else {
-                    self.searchResults = []
-                }
-            }
-        }
-    }
-    
-    private func selectSearchResult(_ item: MKMapItem) {
-        let coordinate = item.placemark.coordinate
-        region.center = coordinate
-        selectedCoordinate = coordinate
-                        currentLocationName = item.name ?? item.placemark.title ?? "selected_location_custom".localized
-        searchResults = []
-        searchText = ""
-    }
-    
     private func selectCoordinate(_ coordinate: CLLocationCoordinate2D) {
         selectedCoordinate = coordinate
         reverseGeocode(coordinate: coordinate)
@@ -459,39 +369,7 @@ struct LocationPickerView: View {
     }
 }
 
-// MARK: - Search Result Row
-struct SearchResultRow: View {
-    let item: MKMapItem
-    let onTap: () -> Void
-    
-    var body: some View {
-        Button(action: onTap) {
-            HStack {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(item.name ?? "location_place".localized)
-                        .font(.system(size: 16, weight: .medium))
-                        .foregroundColor(.white)
-                    
-                    if let address = item.placemark.title {
-                        Text(address)
-                            .font(.system(size: 14))
-                            .foregroundColor(.white.opacity(0.7))
-                    }
-                }
-                
-                Spacer()
-                
-                Image(systemName: "location")
-                    .foregroundColor(Color(hex: "#FD267A"))
-            }
-            .padding(12)
-            .background(
-                RoundedRectangle(cornerRadius: 8)
-                    .fill(Color.white.opacity(0.05))
-            )
-        }
-    }
-}
+
 
 // MARK: - MapView Representable
 struct MapViewRepresentable: UIViewRepresentable {

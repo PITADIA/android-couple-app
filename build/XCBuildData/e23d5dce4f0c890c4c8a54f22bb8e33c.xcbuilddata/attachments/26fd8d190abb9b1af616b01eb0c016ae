@@ -1,4 +1,0 @@
-module grpcWrapper {
-umbrella "/Users/lyes/Library/Developer/Xcode/DerivedData/CoupleApp-glxefjatricjpmcyoqnzlsoilsvw/SourcePackages/checkouts/grpc-binary/grpc-Wrapper/include"
-export *
-}

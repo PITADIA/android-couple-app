@@ -7,6 +7,9 @@ struct SubscriptionStepView: View {
     @StateObject private var pricingService = StoreKitPricingService.shared
     @Environment(\.dismiss) private var dismiss
     
+    // 🎯 SOLUTION SIMPLE: État de chargement pour tout le processus
+    @State private var isProcessingPurchase = false
+    
     var body: some View {
         ZStack {
             // Fond gris clair identique aux autres pages d'onboarding
@@ -117,10 +120,13 @@ struct SubscriptionStepView: View {
                     
                     // Bouton Commencer l'essai
                     Button(action: {
+                        // 🎯 SOLUTION SIMPLE: Démarrer le chargement
+                        isProcessingPurchase = true
                         purchaseSubscription()
                     }) {
                         HStack {
-                            if receiptService.isLoading {
+                            // 🎯 SOLUTION SIMPLE: Utiliser notre état local
+                            if isProcessingPurchase {
                                 HStack(spacing: 8) {
                                     ProgressView()
                                         .progressViewStyle(CircularProgressViewStyle(tint: .white))
@@ -138,7 +144,7 @@ struct SubscriptionStepView: View {
                         .background(Color(hex: "#FD267A"))
                         .cornerRadius(28)
                     }
-                    .disabled(receiptService.isLoading)
+                    .disabled(isProcessingPurchase)
                     .padding(.horizontal, 30)
                     
                     Spacer()
@@ -220,6 +226,16 @@ struct SubscriptionStepView: View {
             if let error = errorMessage {
                 print("🔥 SubscriptionStepView: Erreur reçue: \(error)")
                 NSLog("🔥 SubscriptionStepView: Erreur reçue: \(error)")
+                // 🎯 SOLUTION SIMPLE: Arrêter le chargement en cas d'erreur
+                isProcessingPurchase = false
+            }
+        }
+        // 🎯 SOLUTION SIMPLE: Observer la fin de l'onboarding
+        .onReceive(viewModel.$currentStep) { step in
+            // L'onboarding est terminé quand on quitte cette vue
+            if step != .subscription && isProcessingPurchase {
+                print("🎯 SubscriptionStepView: Onboarding terminé - arrêt du chargement")
+                isProcessingPurchase = false
             }
         }
 

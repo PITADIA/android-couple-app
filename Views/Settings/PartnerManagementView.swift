@@ -26,47 +26,47 @@ struct PartnerManagementView: View {
                 
                 // ScrollView pour permettre le défilement quand le clavier est ouvert
                 ScrollView {
-                    VStack {
+                VStack {
                         // Padding du haut adaptatif
                         Spacer()
                             .frame(height: max(50, (UIScreen.main.bounds.height - keyboardHeight) * 0.15))
-                        
-                        VStack(spacing: 40) {
-                            // Titre principal - conditionnel selon l'état de connexion
-                            if partnerCodeService.isConnected {
-                                Text("connected_with_partner".localized)
+                    
+                    VStack(spacing: 40) {
+                        // Titre principal - conditionnel selon l'état de connexion
+                        if partnerCodeService.isConnected {
+                            Text("connected_with_partner".localized)
+                                .font(.system(size: 28, weight: .bold))
+                                .foregroundColor(.black)
+                                .multilineTextAlignment(.center)
+                        } else {
+                            VStack(spacing: 20) {
+                                Text("connect_with_partner".localized)
                                     .font(.system(size: 28, weight: .bold))
                                     .foregroundColor(.black)
                                     .multilineTextAlignment(.center)
-                            } else {
-                                VStack(spacing: 20) {
-                                    Text("connect_with_partner".localized)
-                                        .font(.system(size: 28, weight: .bold))
-                                        .foregroundColor(.black)
-                                        .multilineTextAlignment(.center)
-                                        .lineLimit(nil)
-                                        .fixedSize(horizontal: false, vertical: true)
-                                    
-                                    // Sous-titre seulement si pas connecté
-                                    Text("connect_partner_description".localized)
-                                        .font(.system(size: 16))
-                                        .foregroundColor(.black.opacity(0.7))
-                                        .multilineTextAlignment(.center)
-                                        .lineLimit(nil)
-                                }
-                                .padding(.horizontal, 30)
+                                    .lineLimit(nil)
+                                    .fixedSize(horizontal: false, vertical: true)
+                                
+                                // Sous-titre seulement si pas connecté
+                                Text("connect_partner_description".localized)
+                                    .font(.system(size: 16))
+                                    .foregroundColor(.black.opacity(0.7))
+                                    .multilineTextAlignment(.center)
+                                    .lineLimit(nil)
                             }
-                            
-                            if partnerCodeService.isConnected {
-                                // État connecté
-                                connectedSection
-                            } else {
-                                // État non connecté
-                                disconnectedSection
-                            }
+                            .padding(.horizontal, 30)
                         }
-                        .frame(maxWidth: .infinity) // Centrage horizontal
                         
+                        if partnerCodeService.isConnected {
+                            // État connecté
+                            connectedSection
+                        } else {
+                            // État non connecté
+                            disconnectedSection
+                        }
+                    }
+                    .frame(maxWidth: .infinity) // Centrage horizontal
+                    
                         // Padding du bas adaptatif pour le clavier
                         Spacer()
                             .frame(height: max(50, keyboardHeight > 0 ? 20 : (UIScreen.main.bounds.height * 0.15)))

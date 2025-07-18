@@ -58,7 +58,7 @@ struct FavoritesCardView: View {
                         Spacer()
                             .frame(height: 20)
                         
-                        Image("mili")
+                        Image(LocalizationService.localizedImageName(frenchImage: "mili", defaultImage: "manon"))
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 240, height: 240)
