@@ -123,7 +123,7 @@ struct DatePickerCarousel: View {
                 // Carrousel des années
                 Picker("Année", selection: $selectedYear) {
                     ForEach(years, id: \.self) { year in
-                        Text("\(year)")
+                        Text(String(format: "%d", year))
                             .font(.system(size: 18, weight: .medium))
                             .foregroundColor(.black)
                             .tag(year)

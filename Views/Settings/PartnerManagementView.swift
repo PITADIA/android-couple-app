@@ -7,6 +7,8 @@ struct PartnerManagementView: View {
     
     @State private var enteredCode = ""
     @State private var showingDisconnectAlert = false
+    @FocusState private var isCodeFieldFocused: Bool
+    @State private var keyboardHeight: CGFloat = 0
     
     var body: some View {
         NavigationView {
@@ -22,47 +24,59 @@ struct PartnerManagementView: View {
                 )
                 .ignoresSafeArea()
                 
-                // Contenu centré verticalement et horizontalement
-                VStack {
-                    Spacer() // Pousse le contenu vers le centre verticalement
-                    
-                    VStack(spacing: 40) {
-                        // Titre principal - conditionnel selon l'état de connexion
-                        if partnerCodeService.isConnected {
-                            Text("connected_with_partner".localized)
-                                .font(.system(size: 28, weight: .bold))
-                                .foregroundColor(.black)
-                                .multilineTextAlignment(.center)
-                        } else {
-                            VStack(spacing: 20) {
-                                Text("connect_with_partner".localized)
+                // ScrollView pour permettre le défilement quand le clavier est ouvert
+                ScrollView {
+                    VStack {
+                        // Padding du haut adaptatif
+                        Spacer()
+                            .frame(height: max(50, (UIScreen.main.bounds.height - keyboardHeight) * 0.15))
+                        
+                        VStack(spacing: 40) {
+                            // Titre principal - conditionnel selon l'état de connexion
+                            if partnerCodeService.isConnected {
+                                Text("connected_with_partner".localized)
                                     .font(.system(size: 28, weight: .bold))
                                     .foregroundColor(.black)
                                     .multilineTextAlignment(.center)
-                                    .lineLimit(nil)
-                                    .fixedSize(horizontal: false, vertical: true)
-                                
-                                // Sous-titre seulement si pas connecté
-                                Text("connect_partner_description".localized)
-                                    .font(.system(size: 16))
-                                    .foregroundColor(.black.opacity(0.7))
-                                    .multilineTextAlignment(.center)
-                                    .lineLimit(nil)
+                            } else {
+                                VStack(spacing: 20) {
+                                    Text("connect_with_partner".localized)
+                                        .font(.system(size: 28, weight: .bold))
+                                        .foregroundColor(.black)
+                                        .multilineTextAlignment(.center)
+                                        .lineLimit(nil)
+                                        .fixedSize(horizontal: false, vertical: true)
+                                    
+                                    // Sous-titre seulement si pas connecté
+                                    Text("connect_partner_description".localized)
+                                        .font(.system(size: 16))
+                                        .foregroundColor(.black.opacity(0.7))
+                                        .multilineTextAlignment(.center)
+                                        .lineLimit(nil)
+                                }
+                                .padding(.horizontal, 30)
                             }
-                            .padding(.horizontal, 30)
+                            
+                            if partnerCodeService.isConnected {
+                                // État connecté
+                                connectedSection
+                            } else {
+                                // État non connecté
+                                disconnectedSection
+                            }
                         }
+                        .frame(maxWidth: .infinity) // Centrage horizontal
                         
-                        if partnerCodeService.isConnected {
-                            // État connecté
-                            connectedSection
-                        } else {
-                            // État non connecté
-                            disconnectedSection
-                        }
+                        // Padding du bas adaptatif pour le clavier
+                        Spacer()
+                            .frame(height: max(50, keyboardHeight > 0 ? 20 : (UIScreen.main.bounds.height * 0.15)))
                     }
-                    .frame(maxWidth: .infinity) // Centrage horizontal
-                    
-                    Spacer() // Pousse le contenu vers le centre verticalement
+                }
+                .scrollDismissesKeyboard(.interactively)
+                .onTapGesture {
+                    // Cacher le clavier quand on clique sur le fond du ScrollView
+                    isCodeFieldFocused = false
+                    hideKeyboard()
                 }
             }
         }
@@ -71,6 +85,11 @@ struct PartnerManagementView: View {
             Task {
                 await partnerCodeService.checkExistingConnection()
             }
+            // Observer les changements de clavier
+            setupKeyboardObservers()
+        }
+        .onDisappear {
+            removeKeyboardObservers()
         }
         .alert("Déconnecter le partenaire", isPresented: $showingDisconnectAlert) {
             Button("Annuler", role: .cancel) { }
@@ -266,6 +285,7 @@ struct PartnerManagementView: View {
                         .shadow(color: Color.black.opacity(0.1), radius: 8, x: 0, y: 2)
                 )
                 .keyboardType(.numberPad)
+                .focused($isCodeFieldFocused)
                 .onChange(of: enteredCode) { _, newValue in
                     // Limiter à 8 chiffres
                     if newValue.count > 8 {
@@ -361,6 +381,39 @@ struct PartnerManagementView: View {
         formatter.dateStyle = .long
         formatter.locale = Locale.current
         return formatter.string(from: date)
+    }
+    
+    private func setupKeyboardObservers() {
+        NotificationCenter.default.addObserver(
+            forName: UIResponder.keyboardWillShowNotification,
+            object: nil,
+            queue: .main
+        ) { notification in
+            if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+                withAnimation(.easeInOut(duration: 0.3)) {
+                    keyboardHeight = keyboardSize.height
+                }
+            }
+        }
+        
+        NotificationCenter.default.addObserver(
+            forName: UIResponder.keyboardWillHideNotification,
+            object: nil,
+            queue: .main
+        ) { _ in
+            withAnimation(.easeInOut(duration: 0.3)) {
+                keyboardHeight = 0
+            }
+        }
+    }
+    
+    private func removeKeyboardObservers() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    private func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 

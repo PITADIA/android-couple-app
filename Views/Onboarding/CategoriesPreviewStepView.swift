@@ -5,7 +5,7 @@ struct CategoriesPreviewStepView: View {
     @State private var visibleCategories: Set<String> = []
     @State private var currentCategoryIndex = 0
     
-    private let animationInterval: TimeInterval = 0.4
+    private let animationInterval: TimeInterval = 0.3
     
     var body: some View {
         VStack(spacing: 0) {
@@ -72,7 +72,7 @@ struct CategoriesPreviewStepView: View {
     
     private func startCategoryAnimation() {
         // Démarrer l'animation après un petit délai
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             animateNextCategory()
         }
     }

@@ -5,12 +5,18 @@ struct PartnerCodeStepView: View {
     @StateObject private var partnerCodeService = PartnerCodeService.shared
     @State private var enteredCode = ""
     @State private var showingShareSheet = false
+    @FocusState private var isCodeFieldFocused: Bool
     
     var body: some View {
         ZStack {
             // Fond gris clair identique aux autres pages d'onboarding
             Color(red: 0.97, green: 0.97, blue: 0.98)
                 .ignoresSafeArea()
+                .onTapGesture {
+                    // Cacher le clavier quand on clique sur le fond
+                    isCodeFieldFocused = false
+                    hideKeyboard()
+                }
             
             VStack(spacing: 0) {
                 Spacer()
@@ -70,6 +76,9 @@ struct PartnerCodeStepView: View {
                 .padding(.vertical, 30)
                 .background(Color.white)
                 .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: -5)
+                .onTapGesture {
+                    // Permettre de cliquer sur la zone du bouton sans cacher le clavier
+                }
             }
         }
         .onAppear {
@@ -233,6 +242,7 @@ struct PartnerCodeStepView: View {
                         .shadow(color: .black.opacity(0.1), radius: 2, x: 0, y: 1)
                 )
                 .keyboardType(.numberPad)
+                .focused($isCodeFieldFocused)
                 .onChange(of: enteredCode) { _, newValue in
                     // Limiter à 8 chiffres
                     if newValue.count > 8 {
@@ -345,4 +355,11 @@ struct ShareSheet: UIViewControllerRepresentable {
 #Preview {
     PartnerCodeStepView(viewModel: OnboardingViewModel())
         .background(Color(red: 0.97, green: 0.97, blue: 0.98))
+} 
+
+// MARK: - Extension pour cacher le clavier
+extension View {
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
 } 

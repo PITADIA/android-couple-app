@@ -35,11 +35,11 @@ struct QuestionCategory: Identifiable, Codable {
             isPremium: true
         ),
         QuestionCategory(
-            id: "pour-rire-a-deux",
-            title: NSLocalizedString("category_pour_rire_title", comment: "Title for Laugh Together category"),
-            subtitle: NSLocalizedString("category_pour_rire_subtitle", comment: "Subtitle for Laugh Together category"),
-            emoji: "😂",
-            gradientColors: ["#FFD700", "#FFA500"],
+            id: "a-distance",
+            title: NSLocalizedString("category_a_distance_title", comment: "Title for Through Distance category"),
+            subtitle: NSLocalizedString("category_a_distance_subtitle", comment: "Subtitle for Through Distance category"),
+            emoji: "✈️",
+            gradientColors: ["#00BCD4", "#26C6DA"],
             isPremium: true
         ),
         QuestionCategory(
@@ -51,11 +51,11 @@ struct QuestionCategory: Identifiable, Codable {
             isPremium: true
         ),
         QuestionCategory(
-            id: "a-distance",
-            title: NSLocalizedString("category_a_distance_title", comment: "Title for Through Distance category"),
-            subtitle: NSLocalizedString("category_a_distance_subtitle", comment: "Subtitle for Through Distance category"),
-            emoji: "✈️",
-            gradientColors: ["#00BCD4", "#26C6DA"],
+            id: "pour-rire-a-deux",
+            title: NSLocalizedString("category_pour_rire_title", comment: "Title for Laugh Together category"),
+            subtitle: NSLocalizedString("category_pour_rire_subtitle", comment: "Subtitle for Laugh Together category"),
+            emoji: "😂",
+            gradientColors: ["#FFD700", "#FFA500"],
             isPremium: true
         ),
         QuestionCategory(

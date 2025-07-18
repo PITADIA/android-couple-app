@@ -153,13 +153,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Across the Distance"
+            "value" : "Long Distance Relationship"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "À travers la distance"
+            "value" : "Relation à distance"
           }
         }
       }
@@ -221,13 +221,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "As a Couple"
+            "value" : "You and Me"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "En couple"
+            "value" : "Toi et Moi"
           }
         }
       }
@@ -289,13 +289,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "For Laughs Together"
+            "value" : "Laugh Together"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pour rigoler à deux"
+            "value" : "Pour rire à deux"
           }
         }
       }
@@ -391,7 +391,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What Do You Prefer?"
+            "value" : "Would you rather?"
           }
         },
         "fr" : {
