@@ -14,6 +14,7 @@ enum SheetType: Identifiable, Equatable {
     case partnerLocationMessage
     case eventsMap
     case locationTutorial
+    case dailyQuestionPermission
     
     var id: String {
         switch self {
@@ -41,6 +42,8 @@ enum SheetType: Identifiable, Equatable {
             return "eventsMap"
         case .locationTutorial:
             return "locationTutorial"
+        case .dailyQuestionPermission:
+            return "dailyQuestionPermission"
         }
     }
     
@@ -58,7 +61,8 @@ enum SheetType: Identifiable, Equatable {
              (.locationPermission, .locationPermission),
              (.partnerLocationMessage, .partnerLocationMessage),
              (.eventsMap, .eventsMap),
-             (.locationTutorial, .locationTutorial):
+             (.locationTutorial, .locationTutorial),
+             (.dailyQuestionPermission, .dailyQuestionPermission):
             return true
         default:
             return false

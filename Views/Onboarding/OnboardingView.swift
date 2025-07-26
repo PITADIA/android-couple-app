@@ -40,6 +40,8 @@ struct OnboardingView: View {
                             FitnessIntroStepView(viewModel: viewModel)
                         case .fitnessIntro2:
                             FitnessIntro2StepView(viewModel: viewModel)
+                        case .dailyQuestionNotification:
+                            DailyQuestionNotificationStepView(viewModel: viewModel)
                         case .categoriesPreview:
                             CategoriesPreviewStepView(viewModel: viewModel)
                         case .completion:

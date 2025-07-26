@@ -6,7 +6,7 @@ import StoreKit
 struct CoupleApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var appState = AppState()
-    @StateObject private var questionCacheManager = QuestionCacheManager()
+    @StateObject private var questionCacheManager = QuestionCacheManager.shared
     @StateObject private var performanceMonitor = PerformanceMonitor.shared
     
     init() {

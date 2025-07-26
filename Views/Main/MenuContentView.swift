@@ -1,4 +1,7 @@
 import SwiftUI
+import FirebaseFirestore
+import FirebaseFunctions
+import UserNotifications
 
 struct MenuContentView: View {
     @EnvironmentObject var appState: AppState
@@ -44,6 +47,36 @@ struct MenuContentView: View {
                         )
                 }
                 .ignoresSafeArea(edges: .top) // Permettre au ScrollView de remonter jusqu'en haut
+                
+
+                
+                // MARK: - CORRECTION TEMPORAIRE
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("🔧 CORRECTION")
+                        .font(.headline)
+                        .foregroundColor(.orange)
+                        .padding(.leading, 16)
+                    
+                    VStack(spacing: 0) {
+                        ProfileRowView(
+                            title: "🔧 Corriger questions quotidiennes",
+                            value: "Reset settings et nouvelle génération",
+                            showChevron: true,
+                            isDestructive: false,
+                            icon: "wrench.and.screwdriver",
+                            action: {
+                                Task {
+                                    await DailyQuestionService.shared.fixDailyQuestionSettings()
+                                }
+                            }
+                        )
+                    }
+                    .background(Color(.systemGray6))
+                    .cornerRadius(12)
+                    .padding(.horizontal, 16)
+                }
+                
+                // MARK: - Informations section
             }
         }
         .navigationBarHidden(true)
@@ -66,3 +99,5 @@ struct MenuContentView: View {
         }
     }
 } 
+
+ 

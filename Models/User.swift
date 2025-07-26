@@ -63,6 +63,7 @@ struct AppUser: Codable, Identifiable, Equatable {
     var relationshipStartDate: Date?
     var profileImageURL: String?
     var currentLocation: UserLocation?
+    var languageCode: String? // NOUVEAU: Code langue pour localisation notifications
     
     enum RelationshipDuration: String, Codable, CaseIterable {
         case none = "" // État non sélectionné
@@ -72,7 +73,7 @@ struct AppUser: Codable, Identifiable, Equatable {
         case notInRelationship = "Je ne suis pas en couple"
     }
     
-    init(id: String = UUID().uuidString, name: String, birthDate: Date, relationshipGoals: [String] = [], relationshipDuration: RelationshipDuration = .none, relationshipImprovement: String? = nil, questionMode: String? = nil, partnerCode: String? = nil, partnerId: String? = nil, partnerConnectedAt: Date? = nil, subscriptionInheritedFrom: String? = nil, subscriptionInheritedAt: Date? = nil, connectedPartnerCode: String? = nil, connectedPartnerId: String? = nil, connectedAt: Date? = nil, isSubscribed: Bool = false, onboardingInProgress: Bool = false, relationshipStartDate: Date? = nil, profileImageURL: String? = nil, currentLocation: UserLocation? = nil) {
+    init(id: String = UUID().uuidString, name: String, birthDate: Date, relationshipGoals: [String] = [], relationshipDuration: RelationshipDuration = .none, relationshipImprovement: String? = nil, questionMode: String? = nil, partnerCode: String? = nil, partnerId: String? = nil, partnerConnectedAt: Date? = nil, subscriptionInheritedFrom: String? = nil, subscriptionInheritedAt: Date? = nil, connectedPartnerCode: String? = nil, connectedPartnerId: String? = nil, connectedAt: Date? = nil, isSubscribed: Bool = false, onboardingInProgress: Bool = false, relationshipStartDate: Date? = nil, profileImageURL: String? = nil, currentLocation: UserLocation? = nil, languageCode: String? = nil) {
         self.id = id
         self.name = name
         self.birthDate = birthDate
@@ -93,6 +94,7 @@ struct AppUser: Codable, Identifiable, Equatable {
         self.relationshipStartDate = relationshipStartDate
         self.profileImageURL = profileImageURL
         self.currentLocation = currentLocation
+        self.languageCode = languageCode
     }
     
     // MARK: - Equatable

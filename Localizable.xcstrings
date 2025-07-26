@@ -73,6 +73,12 @@
     "🔥" : {
 
     },
+    "🔧 CORRECTION" : {
+
+    },
+    "activate_notifications_onboarding" : {
+
+    },
     "always_authorized" : {
       "comment" : "Always authorized location status"
     },
@@ -83,6 +89,9 @@
 
     },
     "Annuler" : {
+
+    },
+    "Aucune question disponible" : {
 
     },
     "authorization_required" : {
@@ -120,6 +129,9 @@
     },
     "cancel" : {
       "comment" : "Cancel button"
+    },
+    "cancel_button" : {
+
     },
     "cancel_subscription" : {
       "comment" : "Cancel subscription button"
@@ -423,6 +435,9 @@
     "connection_successful_status" : {
       "comment" : "Connection successful status"
     },
+    "continue_anyway" : {
+
+    },
     "create_account_description" : {
       "comment" : "Create account description"
     },
@@ -431,6 +446,15 @@
     },
     "current_user" : {
       "comment" : "Current user title"
+    },
+    "daily_question_preview_header" : {
+
+    },
+    "daily_question_preview_text" : {
+
+    },
+    "daily_question_title" : {
+
     },
     "debug_sync_subscriptions" : {
       "comment" : "Debug sync subscriptions title"
@@ -444,6 +468,9 @@
     "ellipsis" : {
       "comment" : "Ellipsis"
     },
+    "En attente de votre partenaire" : {
+
+    },
     "Erreur" : {
 
     },
@@ -455,6 +482,9 @@
     },
     "events_of_date" : {
       "comment" : "Events of date text"
+    },
+    "Générer une question" : {
+
     },
     "generic_partner" : {
       "comment" : "Generic partner name"
@@ -519,7 +549,31 @@
     "no_purchase_to_restore" : {
       "comment" : "No purchase to restore error"
     },
+    "notification_daily_21h" : {
+
+    },
+    "notification_permission_denied_onboarding_message" : {
+
+    },
+    "notification_permission_denied_title" : {
+
+    },
+    "notifications_activated" : {
+
+    },
     "OK" : {
+
+    },
+    "onboarding_daily_question_benefits" : {
+
+    },
+    "onboarding_daily_question_subtitle" : {
+
+    },
+    "onboarding_daily_question_title" : {
+
+    },
+    "onboarding_notification_explanation" : {
 
     },
     "one_more_step" : {
@@ -582,11 +636,20 @@
     "secure_account" : {
       "comment" : "Secure account title"
     },
+    "settings_button" : {
+
+    },
+    "Signaler ce message" : {
+
+    },
     "simulate_revocation" : {
       "comment" : "Simulate revocation button"
     },
     "simulate_subscription" : {
       "comment" : "Simulate subscription button"
+    },
+    "skip_notifications" : {
+
     },
     "subscribe_button" : {
       "comment" : "Subscribe button"
@@ -631,6 +694,9 @@
       "comment" : "View all button"
     },
     "Votre nom" : {
+
+    },
+    "Votre partenaire n'a pas encore répondu" : {
 
     },
     "when_in_use_authorized" : {

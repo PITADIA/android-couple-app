@@ -78,13 +78,15 @@ class RealmFavoriteQuestion: Object {
 
 @MainActor
 class QuestionCacheManager: ObservableObject {
+    static let shared = QuestionCacheManager()
+    
     private var realm: Realm?
     
     @Published var isLoading = false
     @Published var cacheStatus: [String: Bool] = [:]
     @Published var isRealmAvailable = false
     
-    init() {
+    private init() {
         initializeRealm()
     }
     
@@ -386,4 +388,220 @@ class RealmUser: Object, Identifiable {
     @Persisted var partnerConnectedAt: Date?
     @Persisted var subscriptionInheritedFrom: String?
     @Persisted var subscriptionInheritedAt: Date?
+} 
+
+// MARK: - Daily Questions Realm Models
+
+class RealmDailyQuestion: Object, Identifiable {
+    @Persisted var id: String = UUID().uuidString
+    @Persisted var questionKey: String = ""
+    @Persisted var scheduledDate: String = ""
+    @Persisted var scheduledTime: Date = Date()
+    @Persisted var coupleId: String = ""
+    @Persisted var responses: List<RealmQuestionResponse> = List<RealmQuestionResponse>()
+    @Persisted var status: String = "pending"
+    @Persisted var createdAt: Date = Date()
+    @Persisted var updatedAt: Date = Date()
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
+    convenience init(dailyQuestion: DailyQuestion) {
+        self.init()
+        self.id = dailyQuestion.id
+        self.questionKey = dailyQuestion.questionKey
+        self.scheduledDate = dailyQuestion.scheduledDate
+        self.scheduledTime = dailyQuestion.scheduledDateTime  // 🔧 CORRECTION: Utiliser scheduledDateTime
+        self.coupleId = dailyQuestion.coupleId
+        self.status = dailyQuestion.status.rawValue
+        self.createdAt = dailyQuestion.createdAt
+        self.updatedAt = dailyQuestion.updatedAt ?? dailyQuestion.createdAt
+        
+        // Convertir les réponses
+        for (_, response) in dailyQuestion.responses {
+            let realmResponse = RealmQuestionResponse(questionResponse: response)
+            self.responses.append(realmResponse)
+        }
+    }
+    
+    func toDailyQuestion() -> DailyQuestion {
+        // Reconvertir les réponses
+        var responsesDict: [String: QuestionResponse] = [:]
+        for realmResponse in responses {
+            let response = realmResponse.toQuestionResponse()
+            responsesDict[response.userId] = response
+        }
+        
+        return DailyQuestion(
+            id: self.id,
+            coupleId: self.coupleId,
+            questionKey: self.questionKey,
+            questionDay: 1, // Valeur par défaut pour les anciennes données
+            scheduledDate: self.scheduledDate,
+            scheduledDateTime: self.scheduledTime,
+            status: QuestionStatus(rawValue: self.status) ?? .pending,
+            createdAt: self.createdAt,
+            updatedAt: self.updatedAt,
+            timezone: "Europe/Paris", // Valeur par défaut
+            responsesFromSubcollection: [], // Nouveau système : vide par défaut
+            legacyResponses: responsesDict // Ancien système : conserver les données existantes
+        )
+    }
+}
+
+class RealmQuestionResponse: Object, Identifiable {
+    @Persisted var id: String = UUID().uuidString
+    @Persisted var userId: String = ""
+    @Persisted var userName: String = ""
+    @Persisted var text: String = ""
+    @Persisted var respondedAt: Date = Date()
+    @Persisted var status: String = "answered"
+    @Persisted var isReadByPartner: Bool = false
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
+    convenience init(questionResponse: QuestionResponse) {
+        self.init()
+        self.userId = questionResponse.userId
+        self.userName = questionResponse.userName
+        self.text = questionResponse.text
+        self.respondedAt = questionResponse.respondedAt
+        self.status = questionResponse.status.rawValue
+        self.isReadByPartner = questionResponse.isReadByPartner
+    }
+    
+    func toQuestionResponse() -> QuestionResponse {
+        var response = QuestionResponse(
+            userId: self.userId,
+            userName: self.userName,
+            text: self.text,
+            status: ResponseStatus(rawValue: self.status) ?? .answered
+        )
+        response.isReadByPartner = self.isReadByPartner
+        return response
+    }
+}
+
+// MARK: - Daily Questions Cache Manager Extension
+
+extension QuestionCacheManager {
+    
+    // MARK: - Daily Questions Cache
+    
+    func cacheDailyQuestion(_ question: DailyQuestion) {
+        guard let realm = realm else {
+            print("⚠️ RealmManager: Realm non disponible pour cache question quotidienne")
+            return
+        }
+        
+        do {
+            try realm.write {
+                let realmQuestion = RealmDailyQuestion(dailyQuestion: question)
+                realm.add(realmQuestion, update: .modified)
+            }
+            print("✅ RealmManager: Question quotidienne cachée: \(question.questionKey)")
+        } catch {
+            print("❌ RealmManager: Erreur cache question quotidienne: \(error)")
+        }
+    }
+    
+    func getCachedDailyQuestion(for coupleId: String, date: String) -> DailyQuestion? {
+        guard let realm = realm else {
+            return nil
+        }
+        
+        let realmQuestion = realm.objects(RealmDailyQuestion.self)
+            .filter("coupleId == %@ AND scheduledDate == %@", coupleId, date)
+            .first
+        
+        return realmQuestion?.toDailyQuestion()
+    }
+    
+    func getCachedDailyQuestions(for coupleId: String, limit: Int = 30) -> [DailyQuestion] {
+        guard let realm = realm else {
+            return []
+        }
+        
+        let realmQuestions = realm.objects(RealmDailyQuestion.self)
+            .filter("coupleId == %@", coupleId)
+            .sorted(byKeyPath: "scheduledDate", ascending: false)
+            .prefix(limit)
+        
+        return Array(realmQuestions.map { $0.toDailyQuestion() })
+    }
+    
+    func updateDailyQuestionResponse(_ questionId: String, userId: String, response: QuestionResponse) {
+        guard let realm = realm else {
+            print("⚠️ RealmManager: Realm non disponible pour mise à jour réponse")
+            return
+        }
+        
+        do {
+            try realm.write {
+                if let realmQuestion = realm.object(ofType: RealmDailyQuestion.self, forPrimaryKey: questionId) {
+                    // Supprimer l'ancienne réponse de cet utilisateur s'il y en a une
+                    let existingResponseIndex = realmQuestion.responses.firstIndex { $0.userId == userId }
+                    if let index = existingResponseIndex {
+                        realmQuestion.responses.remove(at: index)
+                    }
+                    
+                    // Ajouter la nouvelle réponse
+                    let realmResponse = RealmQuestionResponse(questionResponse: response)
+                    realmQuestion.responses.append(realmResponse)
+                    
+                    // Mettre à jour le statut de la question
+                    let answeredCount = realmQuestion.responses.filter { $0.status == "answered" }.count
+                    realmQuestion.status = answeredCount >= 2 ? "both_answered" : "one_answered"
+                    realmQuestion.updatedAt = Date()
+                }
+            }
+            print("✅ RealmManager: Réponse mise à jour dans le cache pour question: \(questionId)")
+        } catch {
+            print("❌ RealmManager: Erreur mise à jour réponse: \(error)")
+        }
+    }
+    
+    func clearOldDailyQuestions(olderThan days: Int = 30) {
+        guard let realm = realm else {
+            return
+        }
+        
+        let cutoffDate = Date().addingTimeInterval(-Double(days * 24 * 60 * 60))
+        let cutoffDateString = Calendar.current.stringFromDate(cutoffDate)
+        
+        do {
+            try realm.write {
+                let oldQuestions = realm.objects(RealmDailyQuestion.self)
+                    .filter("scheduledDate < %@", cutoffDateString)
+                
+                realm.delete(oldQuestions)
+                print("✅ RealmManager: \(oldQuestions.count) questions quotidiennes anciennes supprimées")
+            }
+        } catch {
+            print("❌ RealmManager: Erreur nettoyage questions anciennes: \(error)")
+        }
+    }
+    
+    func getDailyQuestionsCacheStatistics() -> (totalQuestions: Int, oldestDate: String?, newestDate: String?) {
+        guard let realm = realm else {
+            return (0, nil, nil)
+        }
+        
+        let questions = realm.objects(RealmDailyQuestion.self)
+        let totalCount = questions.count
+        
+        guard totalCount > 0 else {
+            return (0, nil, nil)
+        }
+        
+        // Trier par date pour trouver la plus ancienne et la plus récente
+        let sortedQuestions = questions.sorted(byKeyPath: "scheduledDate")
+        let oldestDate = sortedQuestions.first?.scheduledDate
+        let newestDate = sortedQuestions.last?.scheduledDate
+        
+        return (totalCount, oldestDate, newestDate)
+    }
 } 

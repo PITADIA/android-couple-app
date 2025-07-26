@@ -1,0 +1,4 @@
+module GoogleUtilities_AppDelegateSwizzler {
+umbrella "/Users/lyes/Library/Developer/Xcode/DerivedData/CoupleApp-glxefjatricjpmcyoqnzlsoilsvw/SourcePackages/checkouts/GoogleUtilities/GoogleUtilities/AppDelegateSwizzler/Public"
+export *
+}

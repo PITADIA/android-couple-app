@@ -54,15 +54,8 @@ struct CoupleStatisticsView: View {
                     textColor: Color(hex: "#0a85ff")
                 )
                 
-                // Pays visités
-                StatisticCardView(
-                    title: "countries_visited".localized,
-                    value: "\(countriesVisitedCount)",
-                    icon: "pays",
-                    iconColor: Color(hex: "#ead3f6"),
-                    backgroundColor: Color(hex: "#f3e6fa"),
-                    textColor: Color(hex: "#bf47ff")
-                )
+                // Statistiques questions quotidiennes (remplace pays visités)
+                DailyQuestionSingleStatsView()
             }
             .padding(.horizontal, 20)
         }
@@ -108,14 +101,7 @@ struct CoupleStatisticsView: View {
         return uniqueCities.count
     }
     
-    /// Nombre de pays uniques visités basé sur les entrées de journal
-    private var countriesVisitedCount: Int {
-        let uniqueCountries = Set(journalService.entries.compactMap { entry in
-            entry.location?.country?.trimmingCharacters(in: .whitespacesAndNewlines)
-        }.filter { !$0.isEmpty })
-        
-        return uniqueCountries.count
-    }
+
     
     // MARK: - Helper Methods
     

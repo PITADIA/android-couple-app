@@ -12,9 +12,11 @@
 		11384DC02E0A6E0F004E7AF3 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11384DBF2E0A6E0F004E7AF3 /* WidgetKit.framework */; };
 		11384DC22E0A6E0F004E7AF3 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11384DC12E0A6E0F004E7AF3 /* SwiftUI.framework */; };
 		11384DD32E0A6E11004E7AF3 /* Love2LoveWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 11384DBD2E0A6E0F004E7AF3 /* Love2LoveWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		11414E772E33F8EE00C2D157 /* SwiftyCrop in Frameworks */ = {isa = PBXBuildFile; productRef = 11414E762E33F8EE00C2D157 /* SwiftyCrop */; };
 		114926262DF23223009F7AFA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 114926252DF23223009F7AFA /* RealmSwift */; };
 		1149266F2DF241C5009F7AFA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1149266E2DF241C5009F7AFA /* RealmSwift */; };
 		1149278C2DF243DD009F7AFA /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 114926252DF23223009F7AFA /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		116D2B5C2E33FDB100A54C85 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 116D2B5B2E33FDB100A54C85 /* MessageKit */; };
 		1175AAD72E2599A300850937 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1175AAD62E2599A200850937 /* InfoPlist.xcstrings */; };
 		1175AAD82E2599A300850937 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1175AAD62E2599A200850937 /* InfoPlist.xcstrings */; };
 		11849DC02E251E16000B9FCF /* PourRire.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 11849DBF2E251E14000B9FCF /* PourRire.xcstrings */; };
@@ -42,7 +44,8 @@
 		1188F9862DF09230005B5328 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1188F9852DF09230005B5328 /* FirebaseAuth */; };
 		1188F9882DF09230005B5328 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1188F9872DF09230005B5328 /* FirebaseFirestore */; };
 		1188F98A2DF09230005B5328 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 1188F9892DF09230005B5328 /* FirebaseFunctions */; };
-		11C684382E16E74400F48062 /* SwiftyCrop in Frameworks */ = {isa = PBXBuildFile; productRef = 11C684372E16E74400F48062 /* SwiftyCrop */; };
+		11A0B95D2E30270000508826 /* DailyQuestions.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 11A0B95C2E30270000508826 /* DailyQuestions.xcstrings */; };
+		11D7F2542E326D560019BC3E /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 11D7F2532E326D560019BC3E /* FirebaseMessaging */; };
 		11FE3CCC2DF0C8B600F58DB2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 11FE3CA92DF0C8B600F58DB2 /* README.md */; };
 		11FE3CCD2DF0C8B600F58DB2 /* CoupleApp.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 11FE3CA02DF0C8B600F58DB2 /* CoupleApp.storekit */; };
 		11FE3CCE2DF0C8B600F58DB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11FE3C9E2DF0C8B600F58DB2 /* Assets.xcassets */; };
@@ -101,6 +104,7 @@
 		11849DD72E251E40000B9FCF /* Categories.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Categories.xcstrings; sourceTree = "<group>"; };
 		11849DDA2E251E47000B9FCF /* LesPlus Hots.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = "LesPlus Hots.xcstrings"; sourceTree = "<group>"; };
 		11849DDD2E251E4F000B9FCF /* MieuxEnsemble.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = MieuxEnsemble.xcstrings; sourceTree = "<group>"; };
+		11A0B95C2E30270000508826 /* DailyQuestions.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = DailyQuestions.xcstrings; sourceTree = "<group>"; };
 		11FE3C9E2DF0C8B600F58DB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11FE3C9F2DF0C8B600F58DB2 /* CoupleApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoupleApp.entitlements; sourceTree = "<group>"; };
 		11FE3CA02DF0C8B600F58DB2 /* CoupleApp.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = CoupleApp.storekit; sourceTree = "<group>"; };
@@ -144,14 +148,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11D7F2542E326D560019BC3E /* FirebaseMessaging in Frameworks */,
 				111FEC662DF38CDD00CB1034 /* ConfettiSwiftUI in Frameworks */,
 				114926262DF23223009F7AFA /* RealmSwift in Frameworks */,
 				1188F9862DF09230005B5328 /* FirebaseAuth in Frameworks */,
 				1188F9882DF09230005B5328 /* FirebaseFirestore in Frameworks */,
-				11C684382E16E74400F48062 /* SwiftyCrop in Frameworks */,
+				11414E772E33F8EE00C2D157 /* SwiftyCrop in Frameworks */,
 				111C37B32E09E36100FCA06D /* FirebaseStorage in Frameworks */,
 				1149266F2DF241C5009F7AFA /* RealmSwift in Frameworks */,
 				1188F98A2DF09230005B5328 /* FirebaseFunctions in Frameworks */,
+				116D2B5C2E33FDB100A54C85 /* MessageKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +209,7 @@
 				11384DC32E0A6E0F004E7AF3 /* Love2LoveWidget */,
 				11384DBE2E0A6E0F004E7AF3 /* Frameworks */,
 				1A000032294A1234567890AB /* Products */,
+				11A0B95C2E30270000508826 /* DailyQuestions.xcstrings */,
 			);
 			sourceTree = "<group>";
 		};
@@ -300,7 +307,8 @@
 				1188F9842DF09230005B5328 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				114926242DF23223009F7AFA /* XCRemoteSwiftPackageReference "realm-swift" */,
 				111FEC642DF38CDD00CB1034 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
-				11C684362E16E74400F48062 /* XCRemoteSwiftPackageReference "SwiftyCrop" */,
+				11414E742E33F76900C2D157 /* XCRemoteSwiftPackageReference "MessageKit" */,
+				11414E752E33F8EE00C2D157 /* XCRemoteSwiftPackageReference "SwiftyCrop" */,
 			);
 			productRefGroup = 1A000032294A1234567890AB /* Products */;
 			projectDirPath = "";
@@ -345,6 +353,7 @@
 				11849DD82E251E47000B9FCF /* Categories.xcstrings in Resources */,
 				11FE3CCC2DF0C8B600F58DB2 /* README.md in Resources */,
 				11849DC62E251E1E000B9FCF /* PourUnDate.xcstrings in Resources */,
+				11A0B95D2E30270000508826 /* DailyQuestions.xcstrings in Resources */,
 				11849DD52E251E40000B9FCF /* TuPreferes.xcstrings in Resources */,
 				1175AAD72E2599A300850937 /* InfoPlist.xcstrings in Resources */,
 				11849DC92E251E24000B9FCF /* ADistance.xcstrings in Resources */,
@@ -692,6 +701,22 @@
 				minimumVersion = 2.0.3;
 			};
 		};
+		11414E742E33F76900C2D157 /* XCRemoteSwiftPackageReference "MessageKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MessageKit/MessageKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		11414E752E33F8EE00C2D157 /* XCRemoteSwiftPackageReference "SwiftyCrop" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/benedom/SwiftyCrop?tab=readme-ov-file";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		114926242DF23223009F7AFA /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -708,14 +733,6 @@
 				minimumVersion = 11.14.0;
 			};
 		};
-		11C684362E16E74400F48062 /* XCRemoteSwiftPackageReference "SwiftyCrop" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/benedom/SwiftyCrop?tab=readme-ov-file";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -729,6 +746,11 @@
 			package = 111FEC642DF38CDD00CB1034 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
 			productName = ConfettiSwiftUI;
 		};
+		11414E762E33F8EE00C2D157 /* SwiftyCrop */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11414E752E33F8EE00C2D157 /* XCRemoteSwiftPackageReference "SwiftyCrop" */;
+			productName = SwiftyCrop;
+		};
 		114926252DF23223009F7AFA /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 114926242DF23223009F7AFA /* XCRemoteSwiftPackageReference "realm-swift" */;
@@ -738,6 +760,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 114926242DF23223009F7AFA /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		116D2B5B2E33FDB100A54C85 /* MessageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11414E742E33F76900C2D157 /* XCRemoteSwiftPackageReference "MessageKit" */;
+			productName = MessageKit;
 		};
 		1188F9852DF09230005B5328 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -754,10 +781,10 @@
 			package = 1188F9842DF09230005B5328 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFunctions;
 		};
-		11C684372E16E74400F48062 /* SwiftyCrop */ = {
+		11D7F2532E326D560019BC3E /* FirebaseMessaging */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 11C684362E16E74400F48062 /* XCRemoteSwiftPackageReference "SwiftyCrop" */;
-			productName = SwiftyCrop;
+			package = 1188F9842DF09230005B5328 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

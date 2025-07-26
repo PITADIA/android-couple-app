@@ -1,0 +1,4 @@
+module FirebaseCoreExtension {
+umbrella "/Users/lyes/Library/Developer/Xcode/DerivedData/CoupleApp-glxefjatricjpmcyoqnzlsoilsvw/SourcePackages/checkouts/firebase-ios-sdk/FirebaseCore/Extension"
+export *
+}

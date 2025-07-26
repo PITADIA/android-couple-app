@@ -15,8 +15,8 @@ struct TabContainerView: View {
                 case 1:
                     JournalPageView()
                 case 2:
-                    // Carte des événements
-                    JournalMapView(showBackButton: false)
+                    // Questions du jour
+                    DailyQuestionFlowView()
                         .environmentObject(appState)
                 case 3:
                     FavoritesView()
@@ -54,33 +54,33 @@ struct TabContainerView: View {
                     Button(action: {
                         selectedTab = 1
                     }) {
-                        Image("star")
+                        Image("map")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(
-                                width: selectedTab == 1 ? 34 : 30,
-                                height: selectedTab == 1 ? 28 : 24
+                                width: selectedTab == 1 ? 32 : 28,
+                                height: selectedTab == 1 ? 26 : 22
                             )
-                            .foregroundColor(selectedTab == 1 ? Color(hex: "#FD267A") : .gray)
-                            .fontWeight(selectedTab == 1 ? .bold : .regular)
+                            .foregroundColor(selectedTab == 1 ? Color(hex: "#FD267A") : .gray.opacity(0.8))
+                            .opacity(selectedTab == 1 ? 1.0 : 0.85)
                             .scaleEffect(selectedTab == 1 ? 1.1 : 1.0)
                             .animation(.easeInOut(duration: 0.2), value: selectedTab)
                     }
                     .frame(maxWidth: .infinity)
                     
-                    // Carte des événements
+                    // Questions du jour
                     Button(action: {
                         selectedTab = 2
                     }) {
-                        Image("map")
+                        Image("star")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(
-                                width: selectedTab == 2 ? 32 : 28,
-                                height: selectedTab == 2 ? 26 : 22
+                                width: selectedTab == 2 ? 34 : 30,
+                                height: selectedTab == 2 ? 28 : 24
                             )
-                            .foregroundColor(selectedTab == 2 ? Color(hex: "#FD267A") : .gray.opacity(0.8))
-                            .opacity(selectedTab == 2 ? 1.0 : 0.85)
+                            .foregroundColor(selectedTab == 2 ? Color(hex: "#FD267A") : .gray)
+                            .fontWeight(selectedTab == 2 ? .bold : .regular)
                             .scaleEffect(selectedTab == 2 ? 1.1 : 1.0)
                             .animation(.easeInOut(duration: 0.2), value: selectedTab)
                     }
@@ -202,6 +202,15 @@ struct TabContainerView: View {
                         // Démarrer immédiatement les mises à jour de localisation
                         appState.locationService?.startLocationUpdatesIfAuthorized()
                     }
+                
+            case .dailyQuestionPermission:
+                DailyQuestionPermissionView()
+                    .environmentObject(appState)
+                    .onAppear {
+                        print("🔥 TabContainer: DailyQuestionPermissionView apparue dans la sheet")
+                    }
+                
+
                 
             default:
                 EmptyView()

@@ -106,6 +106,17 @@ class AppState: ObservableObject {
         self.reviewService = ReviewRequestService.shared
         print("🔥 AppState: ReviewRequestService initialisé")
         
+    // NOUVEAU: Initialiser le FCMService
+    _ = FCMService.shared // Pas de demande de permission, juste initialisation
+    print("🔥 AppState: FCMService initialisé (sans demande de permission)")
+    
+    // NOUVEAU: Initialiser et configurer le DailyQuestionService
+    Task { @MainActor in
+        print("🔥 AppState: Configuration DailyQuestionService...")
+        DailyQuestionService.shared.configure(with: self)
+        print("🔥 AppState: DailyQuestionService configuré")
+    }
+        
         // NOUVEAU: Délai minimum pour l'écran de chargement (1.0 seconde)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             print("AppState: Délai minimum écoulé")
@@ -219,6 +230,12 @@ class AppState: ObservableObject {
                     if let partnerId = user.partnerId, !partnerId.isEmpty {
                         print("🔄 AppState: Utilisateur reconnecté - Redémarrage des services partenaires pour: \(partnerId)")
                         self?.partnerLocationService?.configureListener(for: partnerId)
+                        
+                        // NOUVEAU: Reconfigurer le DailyQuestionService avec le partenaire
+                        print("🔄 AppState: Reconfiguration DailyQuestionService avec partenaire")
+                        Task { @MainActor in
+                            DailyQuestionService.shared.configure(with: self!)
+                        }
                     } else {
                         print("🔄 AppState: Pas de partenaire connecté - Arrêt des services")
                         print("🔄 AppState: - Raison: partnerId = '\(user.partnerId ?? "nil")'")

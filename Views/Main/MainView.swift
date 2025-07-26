@@ -258,6 +258,15 @@ struct MainView: View {
                         // Démarrer immédiatement les mises à jour de localisation
                         appState.locationService?.startLocationUpdatesIfAuthorized()
                     }
+                
+            case .dailyQuestionPermission:
+                DailyQuestionPermissionView()
+                    .environmentObject(appState)
+                    .onAppear {
+                        print("🔥 MainView: DailyQuestionPermissionView apparue dans la sheet")
+                    }
+                
+
                 }
         }
 

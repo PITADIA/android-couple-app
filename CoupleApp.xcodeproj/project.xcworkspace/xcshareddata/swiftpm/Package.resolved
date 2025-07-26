@@ -1,5 +1,5 @@
 {
-  "originHash" : "b0a759cef5b3d9f3b8b886d76eb72cc0976c321d56cd40edbd10142bb248a1a6",
+  "originHash" : "66d6140dd5b799a5da3418e500b528984240fb4c823febc957c26a9280573c1d",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -33,8 +33,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/firebase-ios-sdk.git",
       "state" : {
-        "revision" : "45d327fcbe7793747295346c2209ad419bdead74",
-        "version" : "11.14.0"
+        "revision" : "fdc352fabaf5916e7faa1f96ad02b1957e93e5a5",
+        "version" : "11.15.0"
       }
     },
     {
@@ -42,8 +42,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/googleads/google-ads-on-device-conversion-ios-sdk",
       "state" : {
-        "revision" : "70a7857886f065a40486a7607268781c49db04ae",
-        "version" : "2.0.0"
+        "revision" : "428d8bb138e00f9a3f4f61cc6cd8863607524f65",
+        "version" : "2.1.0"
       }
     },
     {
@@ -51,8 +51,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/GoogleAppMeasurement.git",
       "state" : {
-        "revision" : "406f72d0d5e9445fd1cf782db3e9e338cee2bed4",
-        "version" : "11.14.0"
+        "revision" : "45ce435e9406d3c674dd249a042b932bee006f60",
+        "version" : "11.15.0"
       }
     },
     {
@@ -92,6 +92,15 @@
       }
     },
     {
+      "identity" : "inputbaraccessoryview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/nathantannar4/InputBarAccessoryView",
+      "state" : {
+        "revision" : "dfdc822b0d4a0d1b5777100347c399069e9bfc62",
+        "version" : "7.0.0"
+      }
+    },
+    {
       "identity" : "interop-ios-for-google-sdks",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/interop-ios-for-google-sdks.git",
@@ -107,6 +116,15 @@
       "state" : {
         "revision" : "a0bc79961d7be727d258d33d5a6b2f1023270ba1",
         "version" : "1.22.5"
+      }
+    },
+    {
+      "identity" : "messagekit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/MessageKit/MessageKit",
+      "state" : {
+        "revision" : "dc48356f830d40de5acc0e126a44257d0a1329b6",
+        "version" : "5.0.0"
       }
     },
     {
@@ -142,7 +160,7 @@
       "location" : "https://github.com/realm/realm-swift.git",
       "state" : {
         "branch" : "master",
-        "revision" : "712c52af6ae1aaca9aec83f1a14f4e5d48e3a24c"
+        "revision" : "5fcba6408c99eb3596bf5ae148bfc1a33b5adebd"
       }
     },
     {
@@ -160,7 +178,7 @@
       "location" : "https://github.com/benedom/SwiftyCrop?tab=readme-ov-file",
       "state" : {
         "branch" : "master",
-        "revision" : "ddf6ad7231187134ce132be87c8220a230c51838"
+        "revision" : "d40d5ea58bb02bd6b757507810f9968a45d6a281"
       }
     }
   ],

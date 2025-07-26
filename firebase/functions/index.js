@@ -3147,3 +3147,1664 @@ exports.syncPartnerFavorites = functions.https.onCall(async (data, context) => {
     throw new functions.https.HttpsError("internal", error.message);
   }
 });
+
+// ========================================
+// QUESTIONS QUOTIDIENNES - CLOUD FUNCTIONS
+// ========================================
+
+/**
+ * Détecte automatiquement le nombre total de questions disponibles
+ * Synchronisé avec les clés du fichier DailyQuestions.xcstrings
+ */
+function getTotalQuestionsCount() {
+  // NOUVEAU: Liste des clés synchronisée avec DailyQuestions.xcstrings
+  // Cette liste doit être mise à jour quand vous ajoutez des questions
+  const availableQuestionKeys = [
+    "daily_question_1",
+    "daily_question_2",
+    "daily_question_3",
+    "daily_question_4",
+    "daily_question_5",
+    "daily_question_6",
+    "daily_question_7",
+    "daily_question_8",
+    "daily_question_9",
+    "daily_question_10",
+    "daily_question_11",
+    "daily_question_12",
+    "daily_question_13",
+    "daily_question_14",
+    "daily_question_15",
+    "daily_question_16",
+    "daily_question_17",
+    "daily_question_18",
+    "daily_question_19",
+    "daily_question_20",
+  ];
+
+  console.log(
+    `📊 getTotalQuestionsCount: ${availableQuestionKeys.length} questions disponibles`
+  );
+
+  // ÉVOLUTIF: Vous pouvez ajouter autant de questions que vous voulez
+  // Il suffit d'ajouter les clés correspondantes dans ce tableau
+  return availableQuestionKeys.length;
+}
+
+// NOUVEAU: Fonction pour générer la clé de question avec cycle infini
+function generateQuestionKey(questionDay) {
+  const availableQuestions = getTotalQuestionsCount();
+  const cycledDay = ((questionDay - 1) % availableQuestions) + 1;
+  console.log(
+    `📝 generateQuestionKey: Cycle question ${questionDay} → ${cycledDay}/${availableQuestions}`
+  );
+  return `daily_question_${cycledDay}`;
+}
+
+/**
+ * NOUVEAU: Templates de notifications localisées
+ * Synchronisé avec DailyQuestions.xcstrings
+ */
+function getNotificationTemplates(userLanguage, type) {
+  const templates = {
+    new_message: {
+      fr: {
+        title: "💬 Nouveau message", // notification_new_message_title
+      },
+      en: {
+        title: "💬 New message", // notification_new_message_title
+      },
+      es: {
+        title: "💬 Nuevo mensaje",
+      },
+      de: {
+        title: "💬 Neue Nachricht",
+      },
+      it: {
+        title: "💬 Nuovo messaggio",
+      },
+    },
+    daily_reminder: {
+      fr: {
+        title: "💕 Question du jour", // notification_daily_reminder_title
+        body: "Votre question du jour est prête ! Connectez-vous avec votre partenaire.", // notification_daily_reminder_body
+      },
+      en: {
+        title: "💕 Daily Question", // notification_daily_reminder_title
+        body: "Your daily question is ready! Connect with your partner.", // notification_daily_reminder_body
+      },
+      es: {
+        title: "💕 Pregunta diaria",
+        body: "¡Tu pregunta diaria está lista! Conecta con tu pareja.",
+      },
+      de: {
+        title: "💕 Tägliche Frage",
+        body: "Deine tägliche Frage ist bereit! Verbinde dich mit deinem Partner.",
+      },
+      it: {
+        title: "💕 Domanda giornaliera",
+        body: "La tua domanda giornaliera è pronta! Connettiti con il tuo partner.",
+      },
+    },
+  };
+
+  const fallbackLanguage = "fr";
+  const selectedType = templates[type] || templates.new_message;
+
+  return selectedType[userLanguage] || selectedType[fallbackLanguage];
+}
+
+/**
+ * Récupère ou crée les settings pour un couple
+ */
+async function getOrCreateDailyQuestionSettings(
+  coupleId,
+  timezone = "Europe/Paris"
+) {
+  try {
+    console.log(
+      `📅 getOrCreateDailyQuestionSettings: Récupération/création settings pour ${coupleId}`
+    );
+
+    const settingsRef = admin
+      .firestore()
+      .collection("dailyQuestionSettings")
+      .doc(coupleId);
+
+    const settingsDoc = await settingsRef.get();
+
+    if (settingsDoc.exists) {
+      console.log(
+        `✅ getOrCreateDailyQuestionSettings: Settings existants trouvés pour ${coupleId}`
+      );
+      const data = settingsDoc.data();
+
+      // OPTIMISATION : S'assurer que nextScheduledDate existe
+      if (!data.nextScheduledDate) {
+        console.log(
+          `🔧 getOrCreateDailyQuestionSettings: Ajout nextScheduledDate manquant pour ${coupleId}`
+        );
+
+        const today = new Date();
+        const nextDate = new Date(today);
+        nextDate.setDate(nextDate.getDate() + 1);
+        const nextDateString = nextDate.toISOString().split("T")[0];
+
+        await settingsRef.update({
+          nextScheduledDate: nextDateString,
+        });
+
+        return {
+          ...data,
+          nextScheduledDate: nextDateString,
+        };
+      }
+
+      return data;
+    }
+
+    // Créer de nouveaux settings avec startDate à minuit
+    console.log(
+      `🆕 getOrCreateDailyQuestionSettings: Création nouveaux settings pour ${coupleId}`
+    );
+
+    const now = new Date();
+    const startDate = new Date(now);
+    startDate.setHours(0, 0, 0, 0); // Minuit du jour actuel
+
+    // OPTIMISATION : Calculer nextScheduledDate dès la création
+    const nextDate = new Date(startDate);
+    nextDate.setDate(nextDate.getDate() + 1); // Demain
+    const nextDateString = nextDate.toISOString().split("T")[0];
+
+    const newSettings = {
+      coupleId: coupleId,
+      startDate: admin.firestore.Timestamp.fromDate(startDate),
+      timezone: timezone,
+      currentDay: 1,
+      nextScheduledDate: nextDateString, // NOUVEAU : Optimisation
+      createdAt: admin.firestore.FieldValue.serverTimestamp(),
+      lastVisitDate: null,
+    };
+
+    console.log(
+      `📅 getOrCreateDailyQuestionSettings: Nouveaux settings pour ${coupleId}:`
+    );
+    console.log(`   - startDate: ${startDate.toISOString()}`);
+    console.log(`   - currentDay: 1`);
+    console.log(`   - nextScheduledDate: ${nextDateString}`);
+    console.log(`   - timezone: ${timezone}`);
+
+    await settingsRef.set(newSettings);
+
+    console.log(
+      `✅ getOrCreateDailyQuestionSettings: Settings créés avec succès pour ${coupleId}`
+    );
+
+    return {
+      ...newSettings,
+      // TOUJOURS garder startDate comme Timestamp côté Firebase
+    };
+  } catch (error) {
+    console.error(
+      `❌ getOrCreateDailyQuestionSettings: Erreur pour ${coupleId}:`,
+      error
+    );
+    throw error;
+  }
+}
+
+/**
+ * Calcule le jour actuel de la question basé sur les settings
+ */
+function calculateCurrentQuestionDay(settings, currentTime = new Date()) {
+  const totalQuestions = getTotalQuestionsCount();
+
+  if (!settings || !settings.startDate) {
+    return 1; // Première visite
+  }
+
+  // STANDARD: startDate est TOUJOURS un Timestamp côté Firebase
+  const startDate = settings.startDate.toDate
+    ? settings.startDate.toDate()
+    : new Date(settings.startDate);
+
+  // Normaliser les dates à minuit pour calculer correctement les jours
+  const normalizedStartDate = new Date(startDate);
+  normalizedStartDate.setHours(0, 0, 0, 0);
+
+  const normalizedCurrentTime = new Date(currentTime);
+  normalizedCurrentTime.setHours(0, 0, 0, 0);
+
+  const timeDiff =
+    normalizedCurrentTime.getTime() - normalizedStartDate.getTime();
+  const daysSinceStart = Math.floor(timeDiff / (1000 * 3600 * 24));
+
+  // NOUVEAU: Incrémenter basé sur le currentDay existant plutôt que recalculer depuis le début
+  const shouldIncrement = daysSinceStart >= settings.currentDay;
+  const nextDay = shouldIncrement
+    ? settings.currentDay + 1
+    : settings.currentDay;
+
+  // CYCLE INFINI: Plus de limite sur totalQuestions
+  const cycledDay = ((nextDay - 1) % totalQuestions) + 1;
+
+  console.log(
+    `📅 Calcul jour (fixé): StartDate=${normalizedStartDate.toISOString()}, Current=${normalizedCurrentTime.toISOString()}, Jours écoulés=${daysSinceStart}, CurrentDay=${
+      settings.currentDay
+    }, NextDay=${nextDay}, Cyclé=${cycledDay}/${totalQuestions}`
+  );
+
+  return cycledDay;
+}
+
+/**
+ * Générer la question du jour pour un couple
+ */
+exports.generateDailyQuestion = functions.https.onCall(
+  async (data, context) => {
+    try {
+      // Vérifier l'authentification
+      if (!context.auth) {
+        throw new functions.https.HttpsError(
+          "unauthenticated",
+          "Utilisateur non authentifié"
+        );
+      }
+
+      const { coupleId, userId, questionDay, timezone } = data;
+
+      if (!coupleId || !userId || !questionDay) {
+        throw new functions.https.HttpsError(
+          "invalid-argument",
+          "coupleId, userId et questionDay requis"
+        );
+      }
+
+      console.log(`⚙️ generateDailyQuestion: PARAMÈTRES REÇUS:`);
+      console.log(`⚙️ - coupleId: ${coupleId}`);
+      console.log(`⚙️ - userId: ${userId}`);
+      console.log(`⚙️ - questionDay: ${questionDay}`);
+      console.log(`⚙️ - timezone: ${timezone}`);
+
+      const today = new Date();
+      const todayString = today.toISOString().split("T")[0];
+
+      // NOUVEAU: Supprimer automatiquement la question d'hier AVANT de créer celle d'aujourd'hui
+      const yesterday = new Date(today);
+      yesterday.setDate(yesterday.getDate() - 1);
+      const yesterdayString = yesterday.toISOString().split("T")[0];
+
+      console.log(
+        `🧹 generateDailyQuestion: Vérification suppression question d'hier: ${yesterdayString}`
+      );
+
+      try {
+        const yesterdayQuestionRef = admin
+          .firestore()
+          .collection("dailyQuestions")
+          .doc(`${coupleId}_${yesterdayString}`);
+
+        const yesterdayDoc = await yesterdayQuestionRef.get();
+        if (yesterdayDoc.exists) {
+          console.log(
+            `🧹 generateDailyQuestion: Suppression question d'hier trouvée: ${yesterdayString}`
+          );
+
+          // Supprimer les réponses d'hier en premier
+          const responsesSnapshot = await yesterdayQuestionRef
+            .collection("responses")
+            .get();
+
+          const batch = admin.firestore().batch();
+
+          // Supprimer toutes les réponses
+          responsesSnapshot.docs.forEach((doc) => {
+            batch.delete(doc.ref);
+          });
+
+          // Supprimer la question principale
+          batch.delete(yesterdayQuestionRef);
+
+          await batch.commit();
+
+          console.log(
+            `✅ generateDailyQuestion: Question d'hier supprimée avec succès: ${yesterdayString} (${responsesSnapshot.docs.length} réponses supprimées)`
+          );
+        } else {
+          console.log(
+            `ℹ️ generateDailyQuestion: Aucune question d'hier à supprimer pour: ${yesterdayString}`
+          );
+        }
+      } catch (cleanupError) {
+        console.error(
+          `❌ generateDailyQuestion: Erreur suppression question d'hier:`,
+          cleanupError
+        );
+        // Ne pas faire échouer la génération pour une erreur de nettoyage
+      }
+
+      // Vérifier si cette question existe déjà pour aujourd'hui
+      const existingQuestionQuery = await admin
+        .firestore()
+        .collection("dailyQuestions")
+        .where("coupleId", "==", coupleId)
+        .where("scheduledDate", "==", todayString)
+        .get();
+
+      if (!existingQuestionQuery.empty) {
+        const existingDoc = existingQuestionQuery.docs[0];
+        const existingData = existingDoc.data();
+
+        return {
+          success: true,
+          message: "Question déjà existante pour aujourd'hui",
+          existingQuestion: {
+            id: existingDoc.id,
+            questionKey: existingData.questionKey,
+            questionDay: existingData.questionDay,
+          },
+        };
+      }
+
+      // Utiliser la fonction globale pour générer la clé
+      const questionKey = generateQuestionKey(questionDay);
+
+      console.log(`⚙️ generateDailyQuestion: GÉNÉRATION:`);
+      console.log(`⚙️ - questionKey: ${questionKey}`);
+      console.log(`⚙️ - questionDay: ${questionDay}`);
+      console.log(`⚙️ - date: ${todayString}`);
+
+      // Créer la question
+      const newQuestion = {
+        id: `${coupleId}_${todayString}`,
+        coupleId: coupleId,
+        questionKey: questionKey,
+        questionDay: questionDay,
+        scheduledDate: todayString,
+        scheduledDateTime: admin.firestore.Timestamp.fromDate(today),
+        responses: {},
+        status: "pending",
+        createdAt: admin.firestore.FieldValue.serverTimestamp(),
+        updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+        timezone: timezone || "Europe/Paris",
+      };
+
+      // Sauvegarder dans Firestore
+      await admin
+        .firestore()
+        .collection("dailyQuestions")
+        .doc(newQuestion.id)
+        .set(newQuestion);
+
+      // Mettre à jour currentDay dans settings (questionDay = nouveau currentDay)
+      try {
+        await admin
+          .firestore()
+          .collection("dailyQuestionSettings")
+          .doc(coupleId)
+          .update({
+            currentDay: questionDay,
+            lastVisitDate: admin.firestore.FieldValue.serverTimestamp(),
+          });
+
+        console.log(
+          `⚙️ generateDailyQuestion: currentDay mis à jour → ${questionDay}`
+        );
+      } catch (settingsError) {
+        console.error(
+          "❌ generateDailyQuestion: Erreur mise à jour settings:",
+          settingsError
+        );
+      }
+
+      return {
+        success: true,
+        questionId: newQuestion.id,
+        questionKey: questionKey,
+        questionDay: questionDay,
+        message: "Question générée avec succès",
+        question: {
+          id: newQuestion.id,
+          coupleId: newQuestion.coupleId,
+          questionKey: newQuestion.questionKey,
+          questionDay: newQuestion.questionDay,
+          scheduledDate: newQuestion.scheduledDate,
+          status: newQuestion.status,
+        },
+      };
+    } catch (error) {
+      console.error("❌ generateDailyQuestion: Erreur", error);
+      throw new functions.https.HttpsError(
+        "internal",
+        "Erreur lors de la génération de la question"
+      );
+    }
+  }
+);
+
+/**
+ * Notifier les partenaires quand une réponse est ajoutée (nouveau système sous-collections)
+ */
+exports.notifyPartnerResponseSubcollection = functions.firestore
+  .document("dailyQuestions/{questionId}/responses/{responseId}")
+  .onCreate(async (snap, context) => {
+    try {
+      const responseData = snap.data();
+      const questionId = context.params.questionId;
+      const responseId = context.params.responseId;
+
+      // Récupérer les données de la question
+      const questionDoc = await admin
+        .firestore()
+        .collection("dailyQuestions")
+        .doc(questionId)
+        .get();
+
+      if (!questionDoc.exists) {
+        console.log(
+          "❌ notifyPartnerResponseSubcollection: Question non trouvée"
+        );
+        return null;
+      }
+
+      const questionData = questionDoc.data();
+      const coupleId = questionData.coupleId;
+      const respondingUserId = responseData.userId;
+
+      // Identifier le partenaire à notifier
+      const userIds = coupleId.split("_");
+      const partnerUserId = userIds.find((id) => id !== respondingUserId);
+
+      if (!partnerUserId) {
+        return null;
+      }
+
+      // Marquer la question comme active
+      await questionDoc.ref.update({
+        status: "active",
+        lastResponseAt: admin.firestore.FieldValue.serverTimestamp(),
+      });
+
+      // Récupérer les données des utilisateurs pour FCM
+      const [respondingUserDoc, partnerUserDoc] = await Promise.all([
+        admin.firestore().collection("users").doc(respondingUserId).get(),
+        admin.firestore().collection("users").doc(partnerUserId).get(),
+      ]);
+
+      if (!respondingUserDoc.exists || !partnerUserDoc.exists) {
+        console.log(
+          "❌ notifyPartnerResponseSubcollection: Utilisateur(s) non trouvé(s)"
+        );
+        return null;
+      }
+
+      const respondingUserData = respondingUserDoc.data();
+      const partnerUserData = partnerUserDoc.data();
+      const fcmToken = partnerUserData.fcmToken;
+
+      console.log(
+        `🔥 notifyPartnerResponseSubcollection: Utilisateur répondant: ${
+          respondingUserData.name || "Inconnu"
+        }`
+      );
+      console.log(
+        `🔥 notifyPartnerResponseSubcollection: Partenaire: ${
+          partnerUserData.name || "Inconnu"
+        }`
+      );
+      console.log(
+        `🔥 notifyPartnerResponseSubcollection: Token FCM partenaire: ${
+          fcmToken ? fcmToken.substring(0, 20) + "..." : "AUCUN"
+        }`
+      );
+
+      if (!fcmToken) {
+        console.log(
+          `❌ notifyPartnerResponseSubcollection: Pas de token FCM pour ${partnerUserId}`
+        );
+        return null;
+      }
+
+      // Envoyer la notification FCM avec localisation
+      const messageText = responseData.text || "";
+      const previewText =
+        messageText.length > 50
+          ? messageText.substring(0, 50) + "..."
+          : messageText;
+
+      // NOUVEAU: Localisation basée sur la langue de l'utilisateur
+      const userLanguage = partnerUserData.languageCode || "fr"; // Défaut français
+
+      // Messages localisés via templates centralisés
+      const messages = getNotificationTemplates(userLanguage, "new_message");
+
+      console.log(
+        `🌍 notifyPartnerResponseSubcollection: Langue détectée: ${userLanguage}`
+      );
+
+      const payload = {
+        notification: {
+          title: messages.title,
+          body: `${respondingUserData.name}: ${previewText}`,
+        },
+        data: {
+          questionId: questionId,
+          senderId: respondingUserId,
+          senderName: respondingUserData.name || "Votre partenaire",
+          type: "new_message",
+          language: userLanguage, // NOUVEAU: Inclure la langue dans les data
+        },
+        token: fcmToken,
+      };
+
+      console.log(
+        `🔔 notifyPartnerResponseSubcollection: Préparation envoi FCM:`,
+        JSON.stringify(payload, null, 2)
+      );
+
+      try {
+        const response = await admin.messaging().send(payload);
+        console.log(
+          `✅ notifyPartnerResponseSubcollection: Push FCM envoyé à ${partnerUserId} - Response: ${response}`
+        );
+      } catch (fcmError) {
+        console.error(
+          `❌ notifyPartnerResponseSubcollection: Erreur envoi FCM - ${fcmError}`
+        );
+
+        // Si le token est invalide, le supprimer
+        if (fcmError.code === "messaging/registration-token-not-registered") {
+          await admin
+            .firestore()
+            .collection("users")
+            .doc(partnerUserId)
+            .update({
+              fcmToken: admin.firestore.FieldValue.delete(),
+            });
+          console.log(
+            `🧹 notifyPartnerResponseSubcollection: Token FCM invalide supprimé pour ${partnerUserId}`
+          );
+        }
+      }
+
+      console.log(
+        `✅ notifyPartnerResponseSubcollection: Question mise à jour, notification envoyée`
+      );
+
+      return null;
+    } catch (error) {
+      console.error("❌ notifyPartnerResponseSubcollection: Erreur", error);
+      return null;
+    }
+  });
+
+/**
+ * Fonction planifiée pour générer les questions quotidiennes
+ * OPTIMISÉ : traite seulement les couples qui ont une question prévue aujourd'hui
+ */
+exports.scheduledDailyQuestionGenerator = functions.pubsub
+  .schedule("0 21 * * *") // Tous les jours à 21h UTC
+  .timeZone("Europe/Paris") // Timezone française
+  .onRun(async (context) => {
+    try {
+      console.log(
+        "🔥 scheduledDailyQuestionGenerator: Début de la génération planifiée OPTIMISÉE"
+      );
+
+      const today = new Date();
+      const todayString = today.toISOString().split("T")[0]; // Format YYYY-MM-DD
+
+      // OPTIMISATION : Ne traiter que les couples qui ont une question prévue aujourd'hui
+      console.log(
+        `📅 scheduledDailyQuestionGenerator: Recherche couples avec nextScheduledDate = ${todayString}`
+      );
+
+      const settingsSnapshot = await admin
+        .firestore()
+        .collection("dailyQuestionSettings")
+        .where("nextScheduledDate", "==", todayString)
+        .get();
+
+      console.log(
+        `📦 scheduledDailyQuestionGenerator: ${settingsSnapshot.size} couples à traiter (au lieu de TOUS)`
+      );
+
+      if (settingsSnapshot.empty) {
+        console.log(
+          "✅ scheduledDailyQuestionGenerator: Aucun couple à traiter aujourd'hui"
+        );
+        return {
+          success: true,
+          generated: 0,
+          message: "Aucune génération nécessaire",
+        };
+      }
+
+      let totalGenerated = 0;
+      let totalSkipped = 0;
+      let totalErrors = 0;
+
+      // Traitement parallèle optimisé
+      const batchPromises = settingsSnapshot.docs.map(async (settingsDoc) => {
+        try {
+          const settings = settingsDoc.data();
+          const coupleId = settings.coupleId;
+
+          console.log(
+            `🎯 scheduledDailyQuestionGenerator: Traitement couple ${coupleId}`
+          );
+
+          // Calculer le jour actuel pour ce couple
+          const currentDay = calculateCurrentQuestionDay(settings);
+
+          if (!currentDay) {
+            console.log(
+              `✅ scheduledDailyQuestionGenerator: Couple ${coupleId} - toutes questions épuisées`
+            );
+
+            // OPTIMISATION : Programmer la prochaine date (cycle infini)
+            const nextDay = 1; // Recommencer au début
+            const nextDate = new Date(today);
+            nextDate.setDate(nextDate.getDate() + 1);
+            const nextDateString = nextDate.toISOString().split("T")[0];
+
+            await admin
+              .firestore()
+              .collection("dailyQuestionSettings")
+              .doc(coupleId)
+              .update({
+                nextScheduledDate: nextDateString,
+                currentDay: nextDay,
+              });
+
+            return { type: "cycle_restart", nextDay };
+          }
+
+          // Vérifier si une question existe déjà pour aujourd'hui
+          const existingQuery = await admin
+            .firestore()
+            .collection("dailyQuestions")
+            .where("coupleId", "==", coupleId)
+            .where("scheduledDate", "==", todayString)
+            .get();
+
+          if (!existingQuery.empty) {
+            console.log(
+              `⚠️ scheduledDailyQuestionGenerator: Question déjà existante pour ${coupleId}`
+            );
+            return { type: "skipped", reason: "already_exists" };
+          }
+
+          // NOUVEAU: Supprimer la question d'hier AVANT de créer celle d'aujourd'hui
+          const yesterday = new Date(today);
+          yesterday.setDate(yesterday.getDate() - 1);
+          const yesterdayString = yesterday.toISOString().split("T")[0];
+
+          try {
+            const yesterdayQuestionRef = admin
+              .firestore()
+              .collection("dailyQuestions")
+              .doc(`${coupleId}_${yesterdayString}`);
+
+            const yesterdayDoc = await yesterdayQuestionRef.get();
+            if (yesterdayDoc.exists) {
+              // Supprimer les réponses d'hier
+              const responsesSnapshot = await yesterdayQuestionRef
+                .collection("responses")
+                .get();
+
+              const batch = admin.firestore().batch();
+              responsesSnapshot.docs.forEach((doc) => batch.delete(doc.ref));
+              batch.delete(yesterdayQuestionRef);
+              await batch.commit();
+
+              console.log(
+                `🧹 scheduledDailyQuestionGenerator: Question d'hier supprimée pour ${coupleId}: ${yesterdayString}`
+              );
+            }
+          } catch (cleanupError) {
+            console.error(
+              `❌ scheduledDailyQuestionGenerator: Erreur suppression pour ${coupleId}:`,
+              cleanupError
+            );
+          }
+
+          // Créer la question pour le jour actuel
+          const questionKey = `daily_question_${currentDay}`;
+
+          const newQuestion = {
+            id: `${coupleId}_${todayString}`,
+            coupleId: coupleId,
+            questionKey: questionKey,
+            questionDay: currentDay,
+            scheduledDate: todayString,
+            scheduledDateTime: admin.firestore.Timestamp.fromDate(today),
+            responses: {},
+            status: "pending",
+            createdAt: admin.firestore.FieldValue.serverTimestamp(),
+            updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+            timezone: settings.timezone || "Europe/Paris",
+          };
+
+          await admin
+            .firestore()
+            .collection("dailyQuestions")
+            .doc(newQuestion.id)
+            .set(newQuestion);
+
+          // OPTIMISATION : Programmer la prochaine date
+          const nextDay = currentDay + 1;
+          const nextDate = new Date(today);
+          nextDate.setDate(nextDate.getDate() + 1);
+          const nextDateString = nextDate.toISOString().split("T")[0];
+
+          await admin
+            .firestore()
+            .collection("dailyQuestionSettings")
+            .doc(coupleId)
+            .update({
+              currentDay: nextDay,
+              nextScheduledDate: nextDateString,
+              lastQuestionGenerated:
+                admin.firestore.FieldValue.serverTimestamp(),
+            });
+
+          console.log(
+            `✅ scheduledDailyQuestionGenerator: Question créée pour ${coupleId} - ${questionKey} (jour ${currentDay})`
+          );
+          console.log(
+            `📅 scheduledDailyQuestionGenerator: Prochaine question le ${nextDateString} (jour ${nextDay})`
+          );
+
+          return { type: "generated", questionKey, currentDay, nextDay };
+        } catch (error) {
+          console.error(
+            `❌ scheduledDailyQuestionGenerator: Erreur pour le couple ${settingsDoc.id}`,
+            error
+          );
+          return { type: "error", error: error.message };
+        }
+      });
+
+      // Attendre tous les traitements
+      const results = await Promise.all(batchPromises);
+
+      // Compter les résultats
+      results.forEach((result) => {
+        switch (result.type) {
+          case "generated":
+          case "cycle_restart":
+            totalGenerated++;
+            break;
+          case "skipped":
+            totalSkipped++;
+            break;
+          case "error":
+            totalErrors++;
+            break;
+        }
+      });
+
+      console.log(
+        `✅ scheduledDailyQuestionGenerator: Traitement terminé - ${totalGenerated} générées, ${totalSkipped} ignorées, ${totalErrors} erreurs`
+      );
+
+      return {
+        success: true,
+        generated: totalGenerated,
+        skipped: totalSkipped,
+        errors: totalErrors,
+        processed: settingsSnapshot.size,
+        optimization: "nextScheduledDate_filter_active",
+      };
+    } catch (error) {
+      console.error(
+        "❌ scheduledDailyQuestionGenerator: Erreur globale",
+        error
+      );
+      throw error;
+    }
+  });
+
+/**
+ * Programmer les notifications pour une question (fonction helper avec localisation)
+ */
+async function scheduleDailyQuestionNotification(
+  coupleId,
+  questionDate,
+  questionKey
+) {
+  console.log(
+    `🔔 scheduleDailyQuestionNotification: Programmation notification pour ${coupleId}`
+  );
+
+  try {
+    // Récupérer les utilisateurs du couple
+    const [userId1, userId2] = coupleId.split("_");
+
+    // Récupérer les tokens FCM et langues des utilisateurs
+    const [user1Doc, user2Doc] = await Promise.all([
+      admin.firestore().collection("users").doc(userId1).get(),
+      admin.firestore().collection("users").doc(userId2).get(),
+    ]);
+
+    const notifications = [];
+
+    for (const userDoc of [user1Doc, user2Doc]) {
+      if (!userDoc.exists) continue;
+
+      const userData = userDoc.data();
+      const fcmToken = userData.fcmToken;
+
+      if (!fcmToken) {
+        console.log(
+          `❌ scheduleDailyQuestionNotification: Pas de token FCM pour ${userDoc.id}`
+        );
+        continue;
+      }
+
+      // NOUVEAU: Localisation des notifications quotidiennes
+      const userLanguage = userData.languageCode || "fr";
+
+      // Utiliser les templates centralisés
+      const messages = getNotificationTemplates(userLanguage, "daily_reminder");
+
+      console.log(
+        `🌍 scheduleDailyQuestionNotification: Langue ${userLanguage} pour utilisateur ${userDoc.id}`
+      );
+
+      notifications.push({
+        notification: {
+          title: messages.title,
+          body: messages.body,
+        },
+        data: {
+          type: "daily_question",
+          questionId: `${coupleId}_${questionDate}`,
+          questionKey: questionKey,
+          language: userLanguage,
+        },
+        token: fcmToken,
+      });
+    }
+
+    // Envoyer toutes les notifications
+    if (notifications.length > 0) {
+      const results = await Promise.allSettled(
+        notifications.map((payload) => admin.messaging().send(payload))
+      );
+
+      let successCount = 0;
+      let errorCount = 0;
+
+      results.forEach((result, index) => {
+        if (result.status === "fulfilled") {
+          successCount++;
+          console.log(
+            `✅ scheduleDailyQuestionNotification: Notification envoyée avec succès`
+          );
+        } else {
+          errorCount++;
+          console.error(
+            `❌ scheduleDailyQuestionNotification: Erreur notification:`,
+            result.reason
+          );
+        }
+      });
+
+      console.log(
+        `📊 scheduleDailyQuestionNotification: ${successCount} succès, ${errorCount} erreurs`
+      );
+    }
+  } catch (error) {
+    console.error("❌ scheduleDailyQuestionNotification: Erreur:", error);
+  }
+}
+
+/**
+ * Soumettre une réponse à une question quotidienne (nouveau système avec sous-collections)
+ */
+exports.submitDailyQuestionResponse = functions.https.onCall(
+  async (data, context) => {
+    try {
+      console.log("💬 submitDailyQuestionResponse: Début soumission réponse");
+
+      // Vérifier l'authentification
+      if (!context.auth) {
+        console.error(
+          "❌ submitDailyQuestionResponse: Utilisateur non authentifié"
+        );
+        throw new functions.https.HttpsError(
+          "unauthenticated",
+          "Utilisateur non authentifié"
+        );
+      }
+
+      const { questionId, responseText, userName } = data;
+      const userId = context.auth.uid;
+
+      if (!questionId || !responseText || !userName) {
+        console.error("❌ submitDailyQuestionResponse: Paramètres manquants");
+        throw new functions.https.HttpsError(
+          "invalid-argument",
+          "questionId, responseText et userName requis"
+        );
+      }
+
+      console.log(
+        `💬 submitDailyQuestionResponse: Question: ${questionId}, Utilisateur: ${userId}`
+      );
+
+      // Vérifier que la question existe
+      const questionRef = admin
+        .firestore()
+        .collection("dailyQuestions")
+        .doc(questionId);
+      const questionDoc = await questionRef.get();
+
+      if (!questionDoc.exists) {
+        throw new functions.https.HttpsError(
+          "not-found",
+          "Question non trouvée"
+        );
+      }
+
+      const questionData = questionDoc.data();
+
+      // Vérifier que l'utilisateur fait partie du couple
+      const coupleId = questionData.coupleId;
+      if (!coupleId.includes(userId)) {
+        throw new functions.https.HttpsError(
+          "permission-denied",
+          "Vous n'êtes pas autorisé à répondre à cette question"
+        );
+      }
+
+      // Créer la réponse dans la sous-collection
+      const responseData = {
+        id: admin.firestore().collection("temp").doc().id, // Générer un ID unique
+        userId: userId,
+        userName: userName,
+        text: responseText.trim(),
+        respondedAt: admin.firestore.FieldValue.serverTimestamp(),
+        status: "answered",
+        isReadByPartner: false,
+      };
+
+      // Ajouter la réponse à la sous-collection
+      const responseRef = questionRef
+        .collection("responses")
+        .doc(responseData.id);
+      await responseRef.set(responseData);
+
+      // Mettre à jour le timestamp de la question principale
+      await questionRef.update({
+        updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+        status: "active", // Marquer la question comme active dès la première réponse
+      });
+
+      console.log(
+        `✅ submitDailyQuestionResponse: Réponse ajoutée avec succès: ${responseData.id}`
+      );
+
+      return {
+        success: true,
+        responseId: responseData.id,
+        message: "Réponse ajoutée avec succès",
+      };
+    } catch (error) {
+      console.error("❌ submitDailyQuestionResponse: Erreur", error);
+
+      // Si c'est déjà une HttpsError, la relancer
+      if (error.code && error.message) {
+        throw error;
+      }
+
+      throw new functions.https.HttpsError(
+        "internal",
+        "Erreur lors de l'ajout de la réponse"
+      );
+    }
+  }
+);
+
+/**
+ * Récupérer les réponses d'une question quotidienne (sous-collection)
+ */
+exports.getDailyQuestionResponses = functions.https.onCall(
+  async (data, context) => {
+    try {
+      console.log("📋 getDailyQuestionResponses: Début récupération réponses");
+
+      // Vérifier l'authentification
+      if (!context.auth) {
+        console.error(
+          "❌ getDailyQuestionResponses: Utilisateur non authentifié"
+        );
+        throw new functions.https.HttpsError(
+          "unauthenticated",
+          "Utilisateur non authentifié"
+        );
+      }
+
+      const { questionId } = data;
+      const userId = context.auth.uid;
+
+      if (!questionId) {
+        throw new functions.https.HttpsError(
+          "invalid-argument",
+          "questionId requis"
+        );
+      }
+
+      console.log(
+        `📋 getDailyQuestionResponses: Question: ${questionId}, Utilisateur: ${userId}`
+      );
+
+      // Vérifier que la question existe et l'utilisateur y a accès
+      const questionRef = admin
+        .firestore()
+        .collection("dailyQuestions")
+        .doc(questionId);
+      const questionDoc = await questionRef.get();
+
+      if (!questionDoc.exists) {
+        throw new functions.https.HttpsError(
+          "not-found",
+          "Question non trouvée"
+        );
+      }
+
+      const questionData = questionDoc.data();
+      const coupleId = questionData.coupleId;
+
+      if (!coupleId.includes(userId)) {
+        throw new functions.https.HttpsError(
+          "permission-denied",
+          "Vous n'êtes pas autorisé à accéder à cette question"
+        );
+      }
+
+      // Récupérer toutes les réponses de la sous-collection
+      const responsesSnapshot = await questionRef
+        .collection("responses")
+        .orderBy("respondedAt", "asc")
+        .get();
+
+      const responses = [];
+      responsesSnapshot.forEach((doc) => {
+        const responseData = doc.data();
+        responses.push({
+          id: doc.id,
+          ...responseData,
+          respondedAt: responseData.respondedAt
+            ? responseData.respondedAt.toDate().toISOString()
+            : null,
+        });
+      });
+
+      console.log(
+        `✅ getDailyQuestionResponses: ${responses.length} réponses récupérées`
+      );
+
+      return {
+        success: true,
+        responses: responses,
+        count: responses.length,
+      };
+    } catch (error) {
+      console.error("❌ getDailyQuestionResponses: Erreur", error);
+
+      if (error.code && error.message) {
+        throw error;
+      }
+
+      throw new functions.https.HttpsError(
+        "internal",
+        "Erreur lors de la récupération des réponses"
+      );
+    }
+  }
+);
+
+/**
+ * Migrer les réponses existantes vers le nouveau système de sous-collections
+ */
+exports.migrateDailyQuestionResponses = functions.https.onCall(
+  async (data, context) => {
+    try {
+      console.log("🔄 migrateDailyQuestionResponses: Début migration");
+
+      // Cette fonction doit être protégée - seulement pour les admins ou l'utilisateur lui-même
+      if (!context.auth) {
+        throw new functions.https.HttpsError(
+          "unauthenticated",
+          "Utilisateur non authentifié"
+        );
+      }
+
+      const { coupleId, adminSecret } = data;
+      const userId = context.auth.uid;
+
+      // Vérifier les permissions
+      if (adminSecret) {
+        const expectedSecret =
+          functions.config().admin?.secret || "your-admin-secret";
+        if (adminSecret !== expectedSecret) {
+          throw new functions.https.HttpsError(
+            "permission-denied",
+            "Accès admin non autorisé"
+          );
+        }
+      } else if (coupleId && !coupleId.includes(userId)) {
+        throw new functions.https.HttpsError(
+          "permission-denied",
+          "Vous n'êtes pas autorisé à migrer ce couple"
+        );
+      }
+
+      let migratedCount = 0;
+      let skippedCount = 0;
+      let errorCount = 0;
+
+      // Récupérer les questions à migrer
+      let query = admin.firestore().collection("dailyQuestions");
+
+      if (coupleId) {
+        query = query.where("coupleId", "==", coupleId);
+      }
+
+      const questionsSnapshot = await query.get();
+
+      console.log(
+        `🔄 migrateDailyQuestionResponses: ${questionsSnapshot.size} questions à vérifier`
+      );
+
+      for (const questionDoc of questionsSnapshot.docs) {
+        try {
+          const questionData = questionDoc.data();
+          const oldResponses = questionData.responses || {};
+
+          // Vérifier s'il y a des réponses à migrer
+          if (Object.keys(oldResponses).length === 0) {
+            skippedCount++;
+            continue;
+          }
+
+          // Vérifier si la migration a déjà été faite
+          const existingResponsesSnapshot = await questionDoc.ref
+            .collection("responses")
+            .limit(1)
+            .get();
+
+          if (!existingResponsesSnapshot.empty) {
+            console.log(`⏭️ Question ${questionDoc.id} déjà migrée`);
+            skippedCount++;
+            continue;
+          }
+
+          console.log(
+            `🔄 Migration question ${questionDoc.id} - ${
+              Object.keys(oldResponses).length
+            } réponses`
+          );
+
+          // Migrer chaque réponse vers la sous-collection
+          const batch = admin.firestore().batch();
+
+          for (const [responseUserId, responseData] of Object.entries(
+            oldResponses
+          )) {
+            const responseId = admin.firestore().collection("temp").doc().id;
+            const responseRef = questionDoc.ref
+              .collection("responses")
+              .doc(responseId);
+
+            const migratedResponse = {
+              id: responseId,
+              userId: responseUserId,
+              userName: responseData.userName || "Utilisateur",
+              text: responseData.text || "",
+              respondedAt:
+                responseData.respondedAt ||
+                admin.firestore.FieldValue.serverTimestamp(),
+              status: responseData.status || "answered",
+              isReadByPartner: responseData.isReadByPartner || false,
+            };
+
+            batch.set(responseRef, migratedResponse);
+          }
+
+          // Nettoyer l'ancien champ responses
+          batch.update(questionDoc.ref, {
+            responses: admin.firestore.FieldValue.delete(),
+            migratedAt: admin.firestore.FieldValue.serverTimestamp(),
+            migrationVersion: "v2_subcollections",
+          });
+
+          await batch.commit();
+          migratedCount++;
+
+          console.log(`✅ Question ${questionDoc.id} migrée avec succès`);
+        } catch (error) {
+          console.error(
+            `❌ Erreur migration question ${questionDoc.id}:`,
+            error
+          );
+          errorCount++;
+        }
+      }
+
+      console.log(`✅ migrateDailyQuestionResponses: Migration terminée`);
+      console.log(
+        `📊 ${migratedCount} migrées, ${skippedCount} ignorées, ${errorCount} erreurs`
+      );
+
+      return {
+        success: true,
+        migratedCount,
+        skippedCount,
+        errorCount,
+        message: `Migration terminée: ${migratedCount} questions migrées`,
+      };
+    } catch (error) {
+      console.error("❌ migrateDailyQuestionResponses: Erreur", error);
+
+      if (error.code && error.message) {
+        throw error;
+      }
+
+      throw new functions.https.HttpsError(
+        "internal",
+        "Erreur lors de la migration"
+      );
+    }
+  }
+);
+
+/**
+ * Planifier les notifications quotidiennes (21h) pour les questions sans réponse
+ */
+exports.scheduleDailyQuestionNotifications = functions.pubsub
+  .schedule("0 21 * * *") // Chaque jour à 21h UTC (≈ 23h Paris en hiver, 22h en été)
+  .timeZone("Europe/Paris") // Utiliser le fuseau horaire français
+  .onRun(async (context) => {
+    try {
+      console.log(
+        "🔔 scheduleDailyQuestionNotifications: Début du traitement 21h"
+      );
+
+      const today = new Date();
+      const todayString = today.toISOString().split("T")[0]; // Format YYYY-MM-DD
+
+      // Récupérer toutes les questions d'aujourd'hui
+      const questionsSnapshot = await admin
+        .firestore()
+        .collection("dailyQuestions")
+        .where("scheduledDate", "==", todayString)
+        .get();
+
+      let notificationsSent = 0;
+
+      for (const questionDoc of questionsSnapshot.docs) {
+        const questionData = questionDoc.data();
+
+        // Vérifier si la question a des réponses dans la sous-collection
+        const responsesSnapshot = await admin
+          .firestore()
+          .collection("dailyQuestions")
+          .doc(questionDoc.id)
+          .collection("responses")
+          .get();
+
+        // Envoyer notification seulement si aucune réponse
+        if (responsesSnapshot.empty) {
+          console.log(
+            `🔔 Question ${questionDoc.id} sans réponse - envoi notification`
+          );
+
+          try {
+            await scheduleDailyQuestionNotification(
+              questionData.coupleId,
+              todayString,
+              questionData.questionKey
+            );
+            notificationsSent++;
+          } catch (notificationError) {
+            console.error(
+              `❌ Erreur notification pour ${questionDoc.id}:`,
+              notificationError
+            );
+          }
+        } else {
+          console.log(
+            `✅ Question ${questionDoc.id} a déjà ${responsesSnapshot.size} réponse(s) - pas de notification`
+          );
+        }
+      }
+
+      console.log(
+        `✅ scheduleDailyQuestionNotifications: ${notificationsSent} notifications envoyées`
+      );
+      return { success: true, notificationsSent };
+    } catch (error) {
+      console.error("❌ scheduleDailyQuestionNotifications: Erreur", error);
+      throw error;
+    }
+  });
+
+/**
+ * Signaler un contenu inapproprié
+ */
+exports.reportInappropriateContent = functions.https.onCall(
+  async (data, context) => {
+    try {
+      console.log("🚨 reportInappropriateContent: Début du signalement");
+
+      // Vérifier l'authentification
+      if (!context.auth) {
+        console.error(
+          "❌ reportInappropriateContent: Utilisateur non authentifié"
+        );
+        throw new functions.https.HttpsError(
+          "unauthenticated",
+          "Utilisateur non authentifié"
+        );
+      }
+
+      const {
+        messageId,
+        reportedUserId,
+        reportedUserName,
+        messageText,
+        reason,
+      } = data;
+      const reporterUserId = context.auth.uid;
+
+      // Validation des paramètres
+      if (
+        !messageId ||
+        !reportedUserId ||
+        !messageText ||
+        !reason ||
+        reporterUserId === reportedUserId
+      ) {
+        console.error(
+          "❌ reportInappropriateContent: Paramètres invalides ou auto-signalement"
+        );
+        throw new functions.https.HttpsError(
+          "invalid-argument",
+          "Paramètres manquants ou invalides"
+        );
+      }
+
+      console.log(
+        `🚨 reportInappropriateContent: Signalement de ${reportedUserId} par ${reporterUserId}`
+      );
+
+      // Récupérer les informations du rapporteur
+      const reporterDoc = await admin
+        .firestore()
+        .collection("users")
+        .doc(reporterUserId)
+        .get();
+
+      if (!reporterDoc.exists) {
+        throw new functions.https.HttpsError(
+          "not-found",
+          "Utilisateur rapporteur non trouvé"
+        );
+      }
+
+      const reporterData = reporterDoc.data();
+
+      // Créer le document de signalement
+      const reportData = {
+        id: admin.firestore().collection("temp").doc().id,
+        messageId: messageId,
+        reportedUserId: reportedUserId,
+        reportedUserName: reportedUserName || "Utilisateur inconnu",
+        reporterUserId: reporterUserId,
+        reporterUserName: reporterData.name || "Rapporteur inconnu",
+        messageText: messageText.substring(0, 500), // Limiter la taille
+        reason: reason,
+        status: "pending", // pending, reviewed, resolved, dismissed
+        reportedAt: admin.firestore.FieldValue.serverTimestamp(),
+        reviewedAt: null,
+        reviewedBy: null,
+        moderationAction: null, // warning, temporary_ban, permanent_ban, none
+        notes: "",
+        severity: "medium", // low, medium, high, critical
+      };
+
+      // Sauvegarder le signalement
+      await admin
+        .firestore()
+        .collection("content_reports")
+        .doc(reportData.id)
+        .set(reportData);
+
+      console.log(
+        `✅ reportInappropriateContent: Signalement sauvegardé: ${reportData.id}`
+      );
+
+      // NOUVEAU: Notification automatique aux administrateurs si contenu critique
+      if (await isContentCritical(messageText)) {
+        console.log(
+          "🚨 reportInappropriateContent: Contenu critique détecté - notification admin"
+        );
+        await notifyAdministrators(reportData);
+      }
+
+      // Incrémenter les statistiques de signalement pour l'utilisateur signalé
+      await admin
+        .firestore()
+        .collection("user_moderation_stats")
+        .doc(reportedUserId)
+        .set(
+          {
+            totalReports: admin.firestore.FieldValue.increment(1),
+            lastReportedAt: admin.firestore.FieldValue.serverTimestamp(),
+            pendingReports: admin.firestore.FieldValue.increment(1),
+          },
+          { merge: true }
+        );
+
+      console.log(
+        `✅ reportInappropriateContent: Statistiques mises à jour pour ${reportedUserId}`
+      );
+
+      return {
+        success: true,
+        reportId: reportData.id,
+        message: "Signalement enregistré avec succès",
+        reviewTime: "24-48 heures",
+      };
+    } catch (error) {
+      console.error("❌ reportInappropriateContent: Erreur", error);
+
+      // Si c'est déjà une HttpsError, la relancer
+      if (error.code && error.message) {
+        throw error;
+      }
+
+      throw new functions.https.HttpsError(
+        "internal",
+        "Erreur lors du signalement"
+      );
+    }
+  }
+);
+
+/**
+ * Vérifier si le contenu est critique (mots-clés sensibles)
+ */
+async function isContentCritical(messageText) {
+  const criticalKeywords = [
+    "violence",
+    "menace",
+    "harcèlement",
+    "suicide",
+    "drogue",
+    "illegal",
+    // Ajouter d'autres mots-clés selon les besoins
+  ];
+
+  const lowerText = messageText.toLowerCase();
+  return criticalKeywords.some((keyword) => lowerText.includes(keyword));
+}
+
+/**
+ * Notifier les administrateurs d'un contenu critique
+ */
+async function notifyAdministrators(reportData) {
+  try {
+    console.log(
+      "📧 notifyAdministrators: Notification admin pour rapport critique"
+    );
+
+    // Ici vous pouvez ajouter l'envoi d'emails ou notifications push aux admins
+    // Pour l'instant, on log simplement
+    console.log("📧 Admin notification:", {
+      reportId: reportData.id,
+      severity: "critical",
+      reportedUser: reportData.reportedUserId,
+      reason: reportData.reason,
+    });
+
+    // OPTIONNEL: Sauvegarder dans une collection d'alertes admin
+    await admin.firestore().collection("admin_alerts").doc().set({
+      type: "critical_content_report",
+      reportId: reportData.id,
+      severity: "high",
+      createdAt: admin.firestore.FieldValue.serverTimestamp(),
+      resolved: false,
+    });
+
+    console.log("✅ notifyAdministrators: Alerte admin créée");
+  } catch (error) {
+    console.error("❌ notifyAdministrators: Erreur", error);
+    // Ne pas faire échouer le signalement pour cette erreur
+  }
+}
+
+/**
+ * OPTIONNEL: Cloud Function pour récupérer les signalements (pour interface admin)
+ */
+exports.getContentReports = functions.https.onCall(async (data, context) => {
+  try {
+    // SÉCURITÉ: Vérifier que c'est un administrateur
+    if (!context.auth) {
+      throw new functions.https.HttpsError(
+        "unauthenticated",
+        "Authentification requise"
+      );
+    }
+
+    // TODO: Ajouter vérification des droits admin
+    // Pour l'instant, seulement pour debug/tests
+    const { limit = 50, status = "pending" } = data;
+
+    console.log(
+      `📋 getContentReports: Récupération signalements (status: ${status})`
+    );
+
+    const reportsSnapshot = await admin
+      .firestore()
+      .collection("content_reports")
+      .where("status", "==", status)
+      .orderBy("reportedAt", "desc")
+      .limit(limit)
+      .get();
+
+    const reports = reportsSnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+
+    console.log(`✅ getContentReports: ${reports.length} signalements trouvés`);
+
+    return {
+      success: true,
+      reports: reports,
+      count: reports.length,
+    };
+  } catch (error) {
+    console.error("❌ getContentReports: Erreur", error);
+    throw new functions.https.HttpsError("internal", "Erreur serveur");
+  }
+});
+
+/**
+ * Corriger les settings de questions quotidiennes pour un couple spécifique
+ */
+exports.fixDailyQuestionSettings = functions.https.onCall(
+  async (data, context) => {
+    try {
+      if (!context.auth) {
+        throw new functions.https.HttpsError(
+          "unauthenticated",
+          "Utilisateur non authentifié"
+        );
+      }
+
+      const { coupleId } = data;
+
+      if (!coupleId) {
+        throw new functions.https.HttpsError(
+          "invalid-argument",
+          "coupleId requis"
+        );
+      }
+
+      console.log(
+        `🔧 fixDailyQuestionSettings: Correction settings pour ${coupleId}`
+      );
+
+      // Recréer les settings avec des valeurs correctes
+      const now = new Date();
+      const startDate = new Date(now);
+      startDate.setHours(0, 0, 0, 0); // Minuit du jour actuel
+
+      const nextDate = new Date(startDate);
+      nextDate.setDate(nextDate.getDate() + 1);
+      const nextDateString = nextDate.toISOString().split("T")[0];
+
+      const correctedSettings = {
+        coupleId: coupleId,
+        startDate: admin.firestore.Timestamp.fromDate(startDate),
+        timezone: "Europe/Paris",
+        currentDay: 1, // Reset à 1
+        nextScheduledDate: nextDateString,
+        createdAt: admin.firestore.FieldValue.serverTimestamp(),
+        lastVisitDate: admin.firestore.FieldValue.serverTimestamp(),
+      };
+
+      await admin
+        .firestore()
+        .collection("dailyQuestionSettings")
+        .doc(coupleId)
+        .set(correctedSettings);
+
+      console.log(
+        `✅ fixDailyQuestionSettings: Settings corrigés pour ${coupleId}`
+      );
+      console.log(`   - Nouveau startDate: ${startDate.toISOString()}`);
+      console.log(`   - currentDay reset à: 1`);
+
+      return {
+        success: true,
+        message: "Settings corrigés avec succès",
+        newSettings: {
+          startDate: startDate.toISOString(),
+          currentDay: 1,
+          nextScheduledDate: nextDateString,
+        },
+      };
+    } catch (error) {
+      console.error("❌ fixDailyQuestionSettings: Erreur", error);
+      throw new functions.https.HttpsError("internal", error.message);
+    }
+  }
+);

@@ -111,5 +111,5 @@ struct CacheManagementView: View {
 
 #Preview {
     CacheManagementView()
-        .environmentObject(QuestionCacheManager())
+        .environmentObject(QuestionCacheManager.shared)
 } 

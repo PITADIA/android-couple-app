@@ -262,7 +262,8 @@ class FirebaseService: NSObject, ObservableObject {
             "updatedAt": Timestamp(date: Date()),
             "onboardingInProgress": true,  // IMPORTANT: Marquer l'onboarding comme en cours
             "relationshipImprovement": user.relationshipImprovement ?? "",
-            "questionMode": user.questionMode ?? ""
+            "questionMode": user.questionMode ?? "",
+            "languageCode": Locale.current.language.languageCode?.identifier ?? "fr"
         ]
         
         // Ajouter la date de début de relation si présente
@@ -375,8 +376,13 @@ class FirebaseService: NSObject, ObservableObject {
             ]
         }
         
+        // NOUVEAU: Ajouter la langue de l'utilisateur pour localisation des notifications
+        let deviceLanguage = Locale.current.language.languageCode?.identifier ?? "fr"
+        userData["languageCode"] = user.languageCode ?? deviceLanguage
+        
         print("🔥🔥🔥 FIREBASE SAVE: DONNEES A SAUVEGARDER:")
         print("🔥🔥🔥 FIREBASE SAVE: - onboardingInProgress: false (terminé)")
+        print("🔥🔥🔥 FIREBASE SAVE: - languageCode: \(userData["languageCode"] as? String ?? "non défini")")
         
         db.collection("users").document(firebaseUser.uid).setData(userData, merge: true) { [weak self] error in
             DispatchQueue.main.async {

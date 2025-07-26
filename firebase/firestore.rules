@@ -1,0 +1,248 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Utilisateurs peuvent accéder à leurs propres données complètes
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+      
+      // Permettre la lecture des données du partenaire connecté (HYBRIDE - TOUS LES CHAMPS)
+      allow read: if request.auth != null && 
+                     isConnectedPartnerHybrid(request.auth.uid, userId);
+    }
+    
+    // Collection séparée pour les données partagées entre partenaires
+    match /sharedPartnerData/{userId} {
+      // L'utilisateur peut écrire ses propres données partagées
+      allow write: if request.auth != null && request.auth.uid == userId;
+      
+      // Les partenaires connectés peuvent lire ces données partagées
+      allow read: if request.auth != null && 
+                     (request.auth.uid == userId || 
+                      isConnectedPartnerHybrid(request.auth.uid, userId));
+    }
+    
+    // Règles pour les codes partenaires
+    match /partnerCodes/{codeId} {
+      // Permettre la lecture pour vérifier l'existence et la validité d'un code
+      allow read: if request.auth != null;
+      
+      // Permettre la création seulement par le propriétaire du code
+      allow create: if request.auth != null && 
+                   request.auth.uid == request.resource.data.userId;
+      
+      // Permettre la mise à jour dans ces cas :
+      // 1. Le propriétaire du code peut toujours modifier son code
+      // 2. Un utilisateur peut se connecter à un code libre (connectedPartnerId == null)
+      // 3. Le partenaire connecté peut modifier certains champs
+      allow update: if request.auth != null && 
+                   (
+                     // Cas 1: Propriétaire du code
+                     request.auth.uid == resource.data.userId ||
+                     
+                     // Cas 2: Connexion à un code libre
+                     (resource.data.connectedPartnerId == null && 
+                      request.resource.data.connectedPartnerId == request.auth.uid) ||
+                     
+                     // Cas 3: Partenaire déjà connecté modifie ses données
+                     (request.auth.uid == resource.data.connectedPartnerId)
+                   );
+      
+      // Permettre la suppression seulement par le propriétaire
+      allow delete: if request.auth != null && 
+                   request.auth.uid == resource.data.userId;
+    }
+    
+    // Règles pour les entrées de journal partagé
+    match /journalEntries/{entryId} {
+      // Lecture : utilisateur authentifié ET (auteur OU dans partnerIds)
+      allow read: if request.auth != null && 
+                     (request.auth.uid == resource.data.authorId ||
+                      (resource.data.partnerIds != null && 
+                       request.auth.uid in resource.data.partnerIds));
+      
+      // Création : utilisateur authentifié ET auteur ET dans partnerIds
+      allow create: if request.auth != null && 
+                       request.auth.uid == request.resource.data.authorId &&
+                       request.resource.data.partnerIds != null &&
+                       request.auth.uid in request.resource.data.partnerIds;
+      
+      // Modification : seulement l'auteur peut modifier
+      allow update: if request.auth != null && 
+                       request.auth.uid == resource.data.authorId;
+      
+      // Suppression : seulement l'auteur peut supprimer
+      allow delete: if request.auth != null && 
+                       request.auth.uid == resource.data.authorId;
+    }
+    
+    // 🆕 NOUVEAU: Règles pour les favoris partagés (même pattern que journalEntries)
+    match /favoriteQuestions/{favoriteId} {
+      // Lecture : utilisateur authentifié ET (auteur OU dans partnerIds)
+      allow read: if request.auth != null && 
+                     (request.auth.uid == resource.data.authorId ||
+                      (resource.data.partnerIds != null && 
+                       request.auth.uid in resource.data.partnerIds));
+      
+      // Création : utilisateur authentifié ET auteur ET dans partnerIds
+      allow create: if request.auth != null && 
+                       request.auth.uid == request.resource.data.authorId &&
+                       request.resource.data.partnerIds != null &&
+                       request.auth.uid in request.resource.data.partnerIds;
+      
+      // Modification : seulement l'auteur peut modifier
+      allow update: if request.auth != null && 
+                       request.auth.uid == resource.data.authorId;
+      
+      // Suppression : l'auteur OU n'importe qui dans partnerIds peut supprimer
+      allow delete: if request.auth != null && 
+                       (request.auth.uid == resource.data.authorId ||
+                        (resource.data.partnerIds != null && 
+                         request.auth.uid in resource.data.partnerIds));
+    }
+    
+    // Règles pour les logs de partage d'abonnement (conformité Apple)
+    match /subscription_sharing_logs/{logId} {
+      // Permettre la création pour tous les utilisateurs authentifiés (pour les logs)
+      allow create: if request.auth != null;
+      // Lecture seulement pour les administrateurs (pas implémenté ici)
+      allow read: if false;
+    }
+    
+    // 🆕 NOUVEAU: Règles pour les questions quotidiennes partagées
+    match /dailyQuestions/{questionId} {
+      // Lecture : utilisateur authentifié ET fait partie du couple (son ID est dans coupleId)
+      allow read: if request.auth != null && 
+                     userIsInCouple(request.auth.uid, resource.data.coupleId);
+      
+      // Création : utilisateur authentifié ET fait partie du couple ET les partenaires sont connectés
+      allow create: if request.auth != null && 
+                       userIsInCouple(request.auth.uid, request.resource.data.coupleId) &&
+                       partnersAreConnectedForCouple(request.resource.data.coupleId);
+      
+      // Modification : utilisateur authentifié ET fait partie du couple
+      allow update: if request.auth != null && 
+                       userIsInCouple(request.auth.uid, resource.data.coupleId);
+      
+      // Suppression : utilisateur authentifié ET fait partie du couple
+      allow delete: if request.auth != null && 
+                       userIsInCouple(request.auth.uid, resource.data.coupleId);
+      
+      // NOUVEAU: Règles pour les sous-collections responses
+      match /responses/{responseId} {
+        allow read, write: if request.auth != null && 
+          request.auth.uid in get(/databases/$(database)/documents/dailyQuestions/$(questionId)).data.coupleId.split('_');
+      }
+    }
+    
+    // 🆕 NOUVEAU: Règles pour les paramètres des questions quotidiennes
+    match /dailyQuestionSettings/{coupleId} {
+      // Lecture : utilisateur authentifié ET fait partie du couple (son ID est dans coupleId)
+      allow read: if request.auth != null && 
+                     userIsInCouple(request.auth.uid, coupleId);
+      
+      // 🔧 CORRECTION: Création simplifiée - vérifier seulement que l'utilisateur fait partie du couple
+      allow create: if request.auth != null && 
+                       userIsInCouple(request.auth.uid, request.resource.data.coupleId);
+      
+      // Modification : utilisateur authentifié ET fait partie du couple
+      allow update: if request.auth != null && 
+                       userIsInCouple(request.auth.uid, resource.data.coupleId);
+      
+      // Suppression : utilisateur authentifié ET fait partie du couple
+      allow delete: if request.auth != null && 
+                       userIsInCouple(request.auth.uid, resource.data.coupleId);
+    }
+    
+    // Règles pour les signalements de contenu inapproprié
+    match /content_reports/{reportId} {
+      // Création : utilisateur authentifié peut créer un signalement
+      allow create: if request.auth != null;
+      
+      // Lecture : seulement pour les administrateurs (ou l'auteur du signalement)
+      allow read: if request.auth != null && request.auth.uid == resource.data.reporterUserId;
+      
+      // Modification : seulement pour les administrateurs (pas implémenté ici)
+      allow update: if false;
+      
+      // Suppression : interdite
+      allow delete: if false;
+    }
+    
+    // Règles pour les statistiques de modération
+    match /user_moderation_stats/{userId} {
+      // Lecture : utilisateur peut voir ses propres stats
+      allow read: if request.auth != null && request.auth.uid == userId;
+      
+      // Écriture : seulement via Cloud Functions
+      allow write: if false;
+    }
+    
+    // Règles pour les alertes administrateur
+    match /admin_alerts/{alertId} {
+      // Lecture/écriture : seulement pour les administrateurs (pas implémenté ici)
+      allow read, write: if false;
+    }
+    
+    // Interdire tout autre accès
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+  
+  // 🔧 FONCTION HYBRIDE ULTRA-ROBUSTE - VÉRIFIE TOUS LES CHAMPS POSSIBLES
+  function isConnectedPartnerHybrid(currentUserId, targetUserId) {
+    let currentUserDoc = get(/databases/$(database)/documents/users/$(currentUserId));
+    let targetUserDoc = get(/databases/$(database)/documents/users/$(targetUserId));
+    
+    return (
+      // MÉTHODE 1: Vérification bidirectionnelle classique avec partnerId
+      (
+        ('partnerId' in currentUserDoc.data && 'partnerId' in targetUserDoc.data) &&
+        (currentUserDoc.data.partnerId == targetUserId && 
+         targetUserDoc.data.partnerId == currentUserId)
+      ) ||
+      
+      // MÉTHODE 2: Vérification avec connectedPartnerId (ancienne méthode)
+      (
+        ('connectedPartnerId' in currentUserDoc.data && 'connectedPartnerId' in targetUserDoc.data) &&
+        (currentUserDoc.data.connectedPartnerId == targetUserId && 
+         targetUserDoc.data.connectedPartnerId == currentUserId)
+      ) ||
+      
+      // MÉTHODE 3: Vérification croisée (partnerId vers connectedPartnerId)
+      (
+        ('partnerId' in currentUserDoc.data && 'connectedPartnerId' in targetUserDoc.data) &&
+        (currentUserDoc.data.partnerId == targetUserId && 
+         targetUserDoc.data.connectedPartnerId == currentUserId)
+      ) ||
+      
+      // MÉTHODE 4: Vérification croisée inverse (connectedPartnerId vers partnerId)
+      (
+        ('connectedPartnerId' in currentUserDoc.data && 'partnerId' in targetUserDoc.data) &&
+        (currentUserDoc.data.connectedPartnerId == targetUserId && 
+         targetUserDoc.data.partnerId == currentUserId)
+      )
+    );
+  }
+  
+  // 🆕 NOUVELLES FONCTIONS HELPER POUR LES QUESTIONS QUOTIDIENNES
+  
+  // Vérifie si un utilisateur fait partie d'un couple basé sur le coupleId
+  function userIsInCouple(userId, coupleId) {
+    // Le coupleId est au format "userId1_userId2" (trié alphabétiquement)
+    let userIds = coupleId.split('_');
+    
+    // Vérifier que l'userId correspond à un des deux utilisateurs du couple
+    return userIds.size() == 2 && 
+           (userId == userIds[0] || userId == userIds[1]);
+  }
+  
+  // Vérifie que les deux partenaires du couple sont bien connectés entre eux
+  function partnersAreConnectedForCouple(coupleId) {
+    let userIds = coupleId.split('_');
+    
+    // Vérifier qu'on a exactement 2 utilisateurs
+    return userIds.size() == 2 && 
+           isConnectedPartnerHybrid(userIds[0], userIds[1]);
+  }
+} 
