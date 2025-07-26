@@ -17,6 +17,10 @@ struct DailyQuestionMainView: View {
     
     // SOLUTION: État stable pour les messages qui évite les problèmes de ForEach
     @State private var stableMessages: [QuestionResponse] = []
+    // SUPPRIMÉ: tabBarHeight plus nécessaire avec la nouvelle structure VStack
+    
+    // SUPPRIMÉ: Observateur de clavier - on laisse iOS gérer automatiquement
+    // @State private var keyboardHeight: CGFloat = 0
     
     private var currentUserId: String? {
         return Auth.auth().currentUser?.uid
@@ -52,6 +56,8 @@ struct DailyQuestionMainView: View {
                     }
                 }
             }
+            .ignoresSafeArea(.keyboard)
+            // ☝️ NOUVEAU: Ignorer safe area clavier car on gère manuellement avec keyboardHeight
             .navigationTitle(NSLocalizedString("daily_question_title", tableName: "DailyQuestions", comment: ""))
             .navigationBarTitleDisplayMode(.inline)
             .toolbarColorScheme(.light, for: .navigationBar) // Force le texte en noir
@@ -248,8 +254,10 @@ struct DailyQuestionMainView: View {
     }
     
     private func questionContentView(_ question: DailyQuestion, geometry: GeometryProxy) -> some View {
-        ZStack {
-            // Contenu principal avec ScrollView
+        VStack(spacing: 0) {
+            // NOUVEAU: VStack au lieu de ZStack (recommandé par tous les forums dev)
+            
+            // Contenu principal (ScrollView) 
             ScrollViewReader { proxy in
                 ScrollView {
                     VStack(spacing: 20) {
@@ -261,10 +269,9 @@ struct DailyQuestionMainView: View {
                         // Section chat
                         chatSection(for: question, proxy: proxy)
                         
-                        // Espace pour éviter que le contenu passe sous l'input
-                        // Adaptatif selon l'état du clavier
+                        // Espace en bas pour la zone de texte + menu (Spacer recommandé)
                         Spacer()
-                            .frame(height: isTextFieldFocused ? 80 : (120 + max(geometry.safeAreaInsets.bottom, 16)))
+                            .frame(height: 20) // Réduit car le menu reste en bas maintenant
                     }
                 }
                 .onChange(of: stableMessages.count) { _, newCount in
@@ -276,7 +283,7 @@ struct DailyQuestionMainView: View {
                 }
                 .onChange(of: isTextFieldFocused) { _, isFocused in
                     if isFocused {
-                        // Scroll vers le bas quand le clavier s'ouvre
+                        // Scroll vers le bas quand le focus change
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                             withAnimation(.easeInOut(duration: 0.3)) {
                                 proxy.scrollTo("bottom", anchor: .bottom)
@@ -285,14 +292,14 @@ struct DailyQuestionMainView: View {
                     }
                 }
             }
-            // .ignoresSafeArea(.keyboard) // SUPPRIMÉ - Permet au clavier de pousser le contenu
+            // ☝️ SUPPRESSION de .ignoresSafeArea(.keyboard) qui causait le conflit
             
-            // Zone de saisie fixe en bas
-            VStack {
-                Spacer()
-                inputArea(for: question, geometry: geometry)
-            }
+            // Zone de texte DIRECTEMENT dans la VStack (solution recommandée)
+            inputArea(for: question, geometry: geometry)
         }
+        // NOUVEAU: Background appliqué avec .background() au lieu de ZStack  
+        .background(Color(white: 0.97))
+        // ☝️ CLEF : .background() au lieu d'un élément dans ZStack
         .onAppear {
             // Initialiser les messages stables dès l'apparition de la vue
             updateStableMessages(from: question)
@@ -397,26 +404,25 @@ struct DailyQuestionMainView: View {
                         RoundedRectangle(cornerRadius: 25)
                             .fill(Color.gray.opacity(0.1))
                     )
-                    .onSubmit {
-                        submitResponse(question: question)
-                    }
                 
-                // Bouton d'envoi
                 Button {
                     submitResponse(question: question)
                 } label: {
-                    Image(systemName: "arrow.up.circle.fill")
-                        .font(.system(size: 32))
-                        .foregroundColor(responseText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? .gray : Color(hex: "#FD267A"))
+                    Image(systemName: "paperplane.fill")
+                        .foregroundColor(.white)
+                        .frame(width: 35, height: 35)
+                        .background(Color(hex: "#FD267A"))
+                        .clipShape(Circle())
                 }
                 .disabled(responseText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || isSubmittingResponse)
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 12)
-            .padding(.bottom, isTextFieldFocused ? 0 : max(geometry.safeAreaInsets.bottom, 16))
-            // ☝️ CLEF : Pas de padding bottom quand le clavier est ouvert !
+            // NOUVEAU: Padding simple - le menu reste maintenant en bas !
+            .padding(.bottom, 8)
         }
         .background(.regularMaterial)
+        // SUPPRIMÉ: Plus d'animation manuelle - laissé à iOS
     }
     
     // MARK: - Actions
@@ -461,6 +467,10 @@ struct DailyQuestionMainView: View {
             }
         }
     }
+    
+    // MARK: - Keyboard Management
+    
+    // SUPPRIMÉ: Keyboard Management - laissé à iOS
 }
 
 struct DailyQuestionCard: View {

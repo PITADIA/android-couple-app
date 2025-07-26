@@ -5,6 +5,9 @@ struct TabContainerView: View {
     @State private var selectedTab = 0
     @State private var activeSheet: SheetType?
     
+    // NOUVEAU: Observer l'état de focus des TextFields pour cacher le menu
+    @State private var isKeyboardVisible = false
+    
     var body: some View {
         ZStack {
             // Contenu principal selon l'onglet sélectionné
@@ -26,8 +29,12 @@ struct TabContainerView: View {
                     HomeContentView(activeSheet: $activeSheet)
                 }
             }
-            
-            // Menu fixe en bas
+            // NOUVEAU: Padding pour éviter que le contenu passe sous le menu
+            .padding(.bottom, isKeyboardVisible ? 1 : 45) // Adaptatif : 6px quand clavier ouvert, 60px quand fermé
+        }
+        // NOUVEAU: Menu positionné avec overlay pour qu'il reste TOUJOURS en bas
+        .overlay(
+            // Menu fixe en bas - CACHÉ quand le clavier est visible
             VStack {
                 Spacer()
                 
@@ -125,8 +132,13 @@ struct TabContainerView: View {
                 .padding(.horizontal, 20)
                 .padding(.vertical, 12)
                 .background(Color.white)
+                // CRUCIAL: Le menu ignore complètement le clavier et reste en bas
+                .ignoresSafeArea(.keyboard, edges: .bottom)
+                // NOUVEAU: Cacher le menu quand le clavier est visible
+                .opacity(isKeyboardVisible ? 0 : 1)
+                // L'animation est gérée dans les observateurs de clavier
             }
-        }
+        )
         .navigationBarHidden(true)
         .sheet(item: $activeSheet) { sheetType in
             switch sheetType {
@@ -218,6 +230,27 @@ struct TabContainerView: View {
         }
         .onAppear {
             print("🔥 TabContainer: Vue principale apparue")
+            
+            // NOUVEAU: Observer les notifications de clavier pour cacher le menu
+            NotificationCenter.default.addObserver(
+                forName: UIResponder.keyboardWillShowNotification,
+                object: nil,
+                queue: .main
+            ) { _ in
+                withAnimation(.easeInOut(duration: 0.3)) {
+                    isKeyboardVisible = true
+                }
+            }
+            
+            NotificationCenter.default.addObserver(
+                forName: UIResponder.keyboardWillHideNotification,
+                object: nil,
+                queue: .main
+            ) { _ in
+                withAnimation(.easeInOut(duration: 0.3)) {
+                    isKeyboardVisible = false
+                }
+            }
         }
         .onReceive(NotificationCenter.default.publisher(for: .freemiumManagerChanged)) { _ in
             if let freemiumManager = appState.freemiumManager {
@@ -226,6 +259,11 @@ struct TabContainerView: View {
                     activeSheet = .subscription
                 }
             }
+        }
+        .onDisappear {
+            // NOUVEAU: Les observateurs avec closure sont automatiquement nettoyés
+            // Pas besoin de removeObserver explicite
+            print("🔥 TabContainer: Vue principale disparue")
         }
     }
 } 
