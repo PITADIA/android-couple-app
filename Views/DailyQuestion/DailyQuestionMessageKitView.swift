@@ -10,16 +10,21 @@ struct DailyQuestionMessageKitView: UIViewControllerRepresentable {
     @EnvironmentObject var appState: AppState
     
     func makeUIViewController(context: Context) -> DailyQuestionChatViewController {
+        print("🔥 DailyQuestionMessageKit: makeUIViewController appelé")
         let chatVC = DailyQuestionChatViewController()
         chatVC.question = question
         chatVC.dailyQuestionService = dailyQuestionService
         chatVC.appState = appState
+        print("   - ChatVC créé avec question: \(question.id)")
         return chatVC
     }
     
     func updateUIViewController(_ uiViewController: DailyQuestionChatViewController, context: Context) {
+        print("🔥 DailyQuestionMessageKit: updateUIViewController appelé")
         uiViewController.question = question
         uiViewController.appState = appState
+        print("   - Mise à jour avec question: \(question.id)")
+        print("   - Nombre de réponses: \(question.responsesArray.count)")
         uiViewController.updateMessages()
     }
 }
@@ -37,20 +42,25 @@ class DailyQuestionChatViewController: MessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("🔥 DailyQuestionMessageKit: viewDidLoad")
         setupCurrentUser()
         configureMessageKit()
         setupInputBar()
         updateMessages()
+        print("🔥 DailyQuestionMessageKit: viewDidLoad terminé")
     }
     
     // MARK: - Setup
     
     private func setupCurrentUser() {
+        print("🔥 DailyQuestionMessageKit: setupCurrentUser")
         guard let appState = appState else { return }
         currentUserSender = MessageKitAdapter.currentUserSender(appState: appState)
+        print("   - Current user sender: \(currentUserSender?.displayName ?? "nil")")
     }
     
     private func configureMessageKit() {
+        print("🔥 DailyQuestionMessageKit: Configuration MessageKit")
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
@@ -59,13 +69,16 @@ class DailyQuestionChatViewController: MessagesViewController {
         // Style Love2Love
         messagesCollectionView.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.98, alpha: 1.0)
         
-        // Masquer les avatars pour une apparence plus propre
+        // 🎯 STYLE TWITTER - Les avatars et noms sont masqués via les méthodes de délégué
+        // (pas de propriétés directes à configurer ici)
+        print("🔥 DailyQuestionMessageKit: Délégués configurés")
         
         // Couleurs personnalisées
         maintainPositionOnKeyboardFrameChanged = true
         messageInputBar.backgroundView.backgroundColor = UIColor.systemBackground
         
         scrollsToLastItemOnKeyboardBeginsEditing = true
+        print("🔥 DailyQuestionMessageKit: Configuration terminée")
     }
     
     private func setupInputBar() {
@@ -96,15 +109,25 @@ class DailyQuestionChatViewController: MessagesViewController {
     func updateMessages() {
         guard let question = question else { return }
         
+        print("🔥 DailyQuestionMessageKit: updateMessages appelé")
+        print("   - Question ID: \(question.id)")
+        print("   - Nombre de réponses: \(question.responsesArray.count)")
+        
         let newMessages = MessageKitAdapter.convert(question.responsesArray)
+        print("   - Messages convertis: \(newMessages.count)")
         
         // Animation smooth pour les nouveaux messages
         let shouldScrollToBottom = messages.isEmpty
+        print("   - shouldScrollToBottom: \(shouldScrollToBottom)")
+        print("   - Ancien nombre de messages: \(messages.count)")
         messages = newMessages
+        print("   - Nouveau nombre de messages: \(messages.count)")
         
         DispatchQueue.main.async {
+            print("🔄 DailyQuestionMessageKit: Reload data sur main thread")
             self.messagesCollectionView.reloadData()
             if shouldScrollToBottom {
+                print("📜 DailyQuestionMessageKit: Scroll to bottom")
                 self.messagesCollectionView.scrollToLastItem()
             }
         }
@@ -128,44 +151,63 @@ class DailyQuestionChatViewController: MessagesViewController {
 extension DailyQuestionChatViewController: MessagesDataSource {
     
     var currentSender: SenderType {
-        return currentUserSender ?? MessageSender(userId: "unknown", name: "Unknown")
+        let sender = currentUserSender ?? MessageSender(userId: "unknown", name: "Unknown")
+        print("🔍 currentSender appelé → \(sender.displayName) (ID: \(sender.senderId))")
+        return sender
     }
     
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
-        return messages[indexPath.section]
+        let message = messages[indexPath.section]
+        let textPreview: String
+        switch message.kind {
+        case .text(let text):
+            textPreview = String(text.prefix(20))
+        default:
+            textPreview = "non-text message"
+        }
+        print("🔍 messageForItem appelé pour section \(indexPath.section) → sender: \(message.sender.displayName), text: '\(textPreview)...'")
+        return message
     }
     
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
+        print("🔍 numberOfSections appelé → \(messages.count)")
         return messages.count
     }
     
+    func cellTopLabelText(for message: MessageType, at indexPath: IndexPath) -> String? {
+        // 🎯 TWITTER STYLE: Aucun label en haut de cellule
+        print("🔍 cellTopLabelText appelé pour section \(indexPath.section) → return nil")
+        return nil
+    }
+    
+    func cellBottomLabelText(for message: MessageType, at indexPath: IndexPath) -> String? {
+        // 🎯 TWITTER STYLE: Aucun label en bas de cellule  
+        print("🔍 cellBottomLabelText appelé pour section \(indexPath.section) → return nil")
+        return nil
+    }
+    
     func messageTopLabelText(for message: MessageType, at indexPath: IndexPath) -> String? {
-        // Afficher le nom de l'expéditeur pour le premier message ou après une pause
-        if indexPath.section == 0 {
-            return message.sender.displayName
-        }
-        
-        let previousMessage = messages[indexPath.section - 1]
-        if previousMessage.sender.senderId != message.sender.senderId {
-            return message.sender.displayName
-        }
-        
+        // 🗑️ SUPPRIMÉ : Affichage des noms au-dessus des messages
+        // Plus de noms affichés pour un design épuré comme Twitter
+        print("🔍 messageTopLabelText appelé pour section \(indexPath.section), sender: \(message.sender.displayName) → return nil")
         return nil
     }
     
     func messageBottomLabelText(for message: MessageType, at indexPath: IndexPath) -> String? {
-        // Afficher l'heure pour le dernier message ou avant un changement d'expéditeur
-        let isLastMessage = indexPath.section == messages.count - 1
-        let isLastFromSender = indexPath.section < messages.count - 1 ? 
-            messages[indexPath.section + 1].sender.senderId != message.sender.senderId : true
+        // 🎯 STYLE TWITTER : Afficher l'heure SEULEMENT sur le tout dernier message
+        let isVeryLastMessage = indexPath.section == messages.count - 1
+        print("🔍 messageBottomLabelText appelé pour section \(indexPath.section)/\(messages.count-1), isLast: \(isVeryLastMessage)")
         
-        if isLastMessage || isLastFromSender {
+        if isVeryLastMessage {
             let formatter = DateFormatter()
             formatter.dateStyle = .none
             formatter.timeStyle = .short
-            return formatter.string(from: message.sentDate)
+            let timeString = formatter.string(from: message.sentDate)
+            print("🔍 → return time: \(timeString)")
+            return timeString
         }
         
+        print("🔍 → return nil (pas le dernier message)")
         return nil
     }
 }
@@ -175,15 +217,41 @@ extension DailyQuestionChatViewController: MessagesDataSource {
 extension DailyQuestionChatViewController: MessagesLayoutDelegate {
     
     func messageTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
-        return messageTopLabelText(for: message, at: indexPath) != nil ? 20 : 0
+        // 🗑️ Plus de noms affichés = plus de hauteur nécessaire
+        print("🔍 messageTopLabelHeight appelé pour section \(indexPath.section) → return 0")
+        return 0
     }
     
     func messageBottomLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
-        return messageBottomLabelText(for: message, at: indexPath) != nil ? 16 : 0
+        let height: CGFloat = messageBottomLabelText(for: message, at: indexPath) != nil ? 16 : 0
+        print("🔍 messageBottomLabelHeight appelé pour section \(indexPath.section) → return \(height)")
+        return height
     }
     
     func avatarSize(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGSize {
-        return CGSize.zero // Pas d'avatars
+        print("🔍 avatarSize appelé pour section \(indexPath.section) → return .zero")
+        return .zero // 🎯 TWITTER STYLE: Aucun avatar
+    }
+    
+    func cellTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        print("🔍 cellTopLabelHeight appelé pour section \(indexPath.section) → return 0")
+        return 0 // 🎯 TWITTER STYLE: Aucun label en haut de cellule
+    }
+    
+    func cellBottomLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        print("🔍 cellBottomLabelHeight appelé pour section \(indexPath.section) → return 0")
+        return 0 // 🎯 TWITTER STYLE: Aucun label en bas de cellule
+    }
+    
+    func messageLabelInsets(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIEdgeInsets {
+        let insets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        print("🔍 messageLabelInsets appelé pour section \(indexPath.section) → return \(insets)")
+        return insets
+    }
+    
+    func headerViewSize(for section: Int, in messagesCollectionView: MessagesCollectionView) -> CGSize {
+        print("🔍 headerViewSize appelé pour section \(section) → return .zero")
+        return .zero // 🎯 TWITTER STYLE: Aucun header
     }
 }
 
@@ -192,23 +260,53 @@ extension DailyQuestionChatViewController: MessagesLayoutDelegate {
 extension DailyQuestionChatViewController: MessagesDisplayDelegate {
     
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-        return isFromCurrentSender(message: message) 
+        let color = isFromCurrentSender(message: message) 
             ? UIColor(red: 0.99, green: 0.15, blue: 0.48, alpha: 1.0) // Rose Love2Love
             : UIColor.systemGray5 // Gris pour les messages reçus
+        print("🔍 backgroundColor appelé pour section \(indexPath.section), isFromCurrentSender: \(isFromCurrentSender(message: message)) → \(color)")
+        return color
     }
     
     func textColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-        return isFromCurrentSender(message: message) ? UIColor.white : UIColor.label
+        let color = isFromCurrentSender(message: message) ? UIColor.white : UIColor.label
+        print("🔍 textColor appelé pour section \(indexPath.section) → \(color)")
+        return color
     }
     
     func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
-        // Masquer complètement les avatars
+        // 🎯 TWITTER STYLE: Supprimer complètement les avatars
+        print("🔍 configureAvatarView appelé pour section \(indexPath.section), sender: \(message.sender.displayName)")
+        print("   → Masquage avatar: isHidden=true, frame=.zero, alpha=0")
         avatarView.isHidden = true
-        avatarView.frame = CGRect.zero
+        avatarView.frame = .zero
+        avatarView.alpha = 0
+        avatarView.backgroundColor = .clear
+    }
+    
+    func configureMediaMessageImageView(_ imageView: UIImageView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
+        // 🎯 TWITTER STYLE: Configuration pour les images si nécessaire
+        print("🔍 configureMediaMessageImageView appelé pour section \(indexPath.section)")
+    }
+    
+    func configureAccessoryView(_ accessoryView: UIView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
+        // 🎯 TWITTER STYLE: Pas d'accessoires
+        print("🔍 configureAccessoryView appelé pour section \(indexPath.section) → isHidden=true")
+        accessoryView.isHidden = true
+    }
+    
+    func detectorAttributes(for detector: DetectorType, and message: MessageType, at indexPath: IndexPath) -> [NSAttributedString.Key: Any] {
+        // 🎯 TWITTER STYLE: Attributs pour liens/mentions
+        print("🔍 detectorAttributes appelé pour section \(indexPath.section), detector: \(detector)")
+        return [
+            .foregroundColor: UIColor(red: 0.99, green: 0.15, blue: 0.48, alpha: 1.0),
+            .underlineStyle: NSUnderlineStyle.single.rawValue
+        ]
     }
     
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
-        return .bubbleTail(isFromCurrentSender(message: message) ? .bottomRight : .bottomLeft, .curved)
+        // 🎯 TWITTER STYLE: Bulles sans queue puisque pas d'avatars
+        print("🔍 messageStyle appelé pour section \(indexPath.section) → return .bubble")
+        return .bubble
     }
 }
 

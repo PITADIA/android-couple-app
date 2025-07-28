@@ -67,6 +67,24 @@
           }
         }
       }
+    },
+    "NSUserNotificationsUsageDescription" : {
+      "comment" : "Notification usage description",
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Love2Love sends you notifications when your partner sends you a message. You can disable these notifications at any time in Settings."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Love2Love vous envoie des notifications lorsque votre partenaire vous écrit un message. Vous pouvez désactiver ces notifications à tout moment dans les Réglages."
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

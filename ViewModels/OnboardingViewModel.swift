@@ -138,14 +138,14 @@ class OnboardingViewModel: ObservableObject {
                 currentStep = .partnerCode
             }
         case .partnerCode:
+            currentStep = .categoriesPreview
+        case .categoriesPreview:
             currentStep = .fitnessIntro
         case .fitnessIntro:
             currentStep = .fitnessIntro2
         case .fitnessIntro2:
             currentStep = .dailyQuestionNotification
         case .dailyQuestionNotification:
-            currentStep = .categoriesPreview
-        case .categoriesPreview:
             currentStep = .subscription
         case .subscription:
             // L'onboarding doit être finalisé via skipSubscription() ou completeSubscription()
@@ -176,14 +176,14 @@ class OnboardingViewModel: ObservableObject {
             break
         case .partnerCode:
             currentStep = .authentication
-        case .fitnessIntro:
+        case .categoriesPreview:
             currentStep = .partnerCode
+        case .fitnessIntro:
+            currentStep = .categoriesPreview
         case .fitnessIntro2:
             currentStep = .fitnessIntro
         case .dailyQuestionNotification:
             currentStep = .fitnessIntro2
-        case .categoriesPreview:
-            currentStep = .dailyQuestionNotification
         case .subscription:
             print("🔥 OnboardingViewModel: Impossible de revenir en arrière depuis l'abonnement")
             break

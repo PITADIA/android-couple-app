@@ -3,118 +3,128 @@ import SwiftUI
 struct DailyQuestionIntroView: View {
     @EnvironmentObject var appState: AppState
     @State private var showingPartnerCodeSheet = false
+    @State private var navigateToChat = false
+    
+    // Vérifier si l'utilisateur a un partenaire connecté
+    private var hasConnectedPartner: Bool {
+        guard let partnerId = appState.currentUser?.partnerId else { return false }
+        return !partnerId.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+    
+    // Texte du bouton selon le statut
+    private var buttonText: String {
+        if hasConnectedPartner {
+            return "Continuer"
+        } else {
+            return NSLocalizedString("connect_partner_button", tableName: "DailyQuestions", comment: "")
+        }
+    }
     
     var body: some View {
+        NavigationView {
         ZStack {
-            // Fond dégradé
-            LinearGradient(
-                gradient: Gradient(colors: [
-                    Color(hex: "#FD267A"),
-                    Color(hex: "#FF655B")
-                ]),
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
+                // Fond gris clair identique à la page journal
+                Color(red: 0.97, green: 0.97, blue: 0.98)
             .ignoresSafeArea()
             
-            VStack(spacing: 40) {
+                VStack(spacing: 0) {
+                    // Header avec titre
+                    HStack {
                 Spacer()
                 
-                VStack(spacing: 30) {
-                    // Titre principal avec emoji
-                    VStack(spacing: 16) {
-                        Text(NSLocalizedString("daily_question_intro_title", tableName: "DailyQuestions", comment: ""))
-                            .font(.system(size: 32, weight: .bold))
-                            .foregroundColor(.white)
-                            .multilineTextAlignment(.center)
-                            .padding(.horizontal, 30)
-                        
-                        Text(NSLocalizedString("daily_question_intro_subtitle", tableName: "DailyQuestions", comment: ""))
-                            .font(.system(size: 18))
-                            .foregroundColor(.white.opacity(0.9))
-                            .multilineTextAlignment(.center)
-                            .lineSpacing(6)
-                            .padding(.horizontal, 30)
-                    }
-                    
-                    // Carte d'illustration
-                    VStack(spacing: 20) {
-                        VStack(spacing: 16) {
-                            // Icône illustrative
-                            HStack(spacing: 12) {
-                                Image(systemName: "heart.fill")
-                                    .font(.system(size: 24))
-                                    .foregroundColor(Color(hex: "#FD267A"))
-                                
-                                Image(systemName: "clock.fill")
-                                    .font(.system(size: 24))
-                                    .foregroundColor(Color(hex: "#FF655B"))
-                                
-                                Image(systemName: "message.fill")
-                                    .font(.system(size: 24))
-                                    .foregroundColor(Color(hex: "#FD267A"))
-                            }
-                            
-                            Text(NSLocalizedString("daily_question_intro_time", tableName: "DailyQuestions", comment: ""))
-                                .font(.system(size: 16, weight: .semibold))
-                                .foregroundColor(.black.opacity(0.8))
+                        // Titre
+                        VStack(spacing: 4) {
+                            Text(NSLocalizedString("daily_question_title", tableName: "DailyQuestions", comment: ""))
+                                .font(.system(size: 28, weight: .bold))
+                                .foregroundColor(.black)
                         }
+                        
+                        Spacer()
                     }
-                    .padding(.vertical, 24)
                     .padding(.horizontal, 20)
-                    .background(
-                        RoundedRectangle(cornerRadius: 20)
-                            .fill(.white)
-                            .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: 5)
-                    )
+                    .padding(.top, 20)
+                    .padding(.bottom, 100) // Espace augmenté entre titre et image
+                    
+                    // Contenu principal centré avec mêmes spacings que journal
+                    VStack(spacing: 20) {
+                        Image("mima")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 240, height: 240)
+                        
+                        VStack(spacing: 12) {
+                            Text(NSLocalizedString("daily_question_intro_title", tableName: "DailyQuestions", comment: ""))
+                                .font(.system(size: 22, weight: .medium))
+                                .foregroundColor(.black)
+                                .multilineTextAlignment(.center)
+                            
+                            Text(NSLocalizedString("daily_question_intro_subtitle", tableName: "DailyQuestions", comment: ""))
+                                .font(.system(size: 16))
+                                .foregroundColor(.black.opacity(0.7))
+                                .multilineTextAlignment(.center)
                     .padding(.horizontal, 30)
+                        }
                 }
                 
                 Spacer()
                 
-                VStack(spacing: 20) {
-                    // Message de disponibilité
-                    Text(NSLocalizedString("daily_question_couples_only", tableName: "DailyQuestions", comment: ""))
-                        .font(.system(size: 16))
-                        .foregroundColor(.white.opacity(0.8))
-                        .multilineTextAlignment(.center)
-                        .padding(.horizontal, 40)
-                    
-                    // Bouton principal
+                    // Bouton principal conditionnel
+                    VStack {
                     Button {
+                            if hasConnectedPartner {
+                                // Naviguer vers le chat
+                                navigateToChat = true
+                            } else {
+                                // Montrer le sheet de connexion partenaire
                         showingPartnerCodeSheet = true
+                            }
                     } label: {
-                        HStack(spacing: 12) {
-                            Image(systemName: "person.2.fill")
-                                .font(.system(size: 18))
-                            
-                            Text(NSLocalizedString("connect_partner_button", tableName: "DailyQuestions", comment: ""))
-                                .font(.system(size: 18, weight: .semibold))
-                        }
+                            Text(buttonText)
+                                .font(.system(size: 16, weight: .semibold))
                         .foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
+                                .padding(.horizontal, 24)
                         .frame(height: 56)
                         .background(
-                            RoundedRectangle(cornerRadius: 28)
-                                .fill(.white.opacity(0.2))
-                                .overlay(
                                     RoundedRectangle(cornerRadius: 28)
-                                        .stroke(.white.opacity(0.3), lineWidth: 1)
+                                        .fill(Color(hex: "#FD267A"))
                                 )
-                        )
+                        }
+                        .padding(.bottom, 160) // Espace pour le menu du bas
                     }
-                    .padding(.horizontal, 30)
                 }
-                .padding(.bottom, 50)
             }
         }
         .navigationBarHidden(true)
         .sheet(isPresented: $showingPartnerCodeSheet) {
-            PartnerCodeStepView(
-                viewModel: OnboardingViewModel()
+            DailyQuestionPartnerCodeView(
+                onDismiss: {
+                    showingPartnerCodeSheet = false
+                }
             )
             .environmentObject(appState)
         }
+        .fullScreenCover(isPresented: $navigateToChat) {
+            DailyQuestionMainView()
+                .environmentObject(appState)
+        }
+        .overlay(
+            Group {
+                if let partnerService = appState.partnerConnectionService,
+                   partnerService.shouldShowConnectionSuccess {
+                    PartnerConnectionSuccessView(
+                        partnerName: partnerService.connectedPartnerName
+                    ) {
+                        // Fermer le succès et naviguer vers le chat
+                        partnerService.dismissConnectionSuccess()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            navigateToChat = true
+                        }
+                    }
+                    .transition(.opacity)
+                    .zIndex(1000)
+                }
+            }
+        )
     }
 }
 

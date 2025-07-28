@@ -87,21 +87,7 @@
       }
     },
     "continue_without_notifications_button" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Continue without notifications"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Continuer sans notifications"
-          }
-        }
-      }
+
     },
     "daily_question_1" : {
       "extractionState" : "manual",
@@ -109,30 +95,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What do you think we should prioritize to improve our relationship?"
+            "value" : "What didn’t you receive enough of in your past relationships that you’d love to experience with me?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Que penses-tu qu'il faudrait améliorer en priorité pour le bien de notre couple ?"
-          }
-        }
-      }
-    },
-    "daily_question_1_notification" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "💕 New question: What should we prioritize to improve our relationship?"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "💕 Nouvelle question : Que devrions-nous améliorer en priorité dans notre couple ?"
+            "value" : "Qu’est-ce que tu n’as pas assez reçu dans tes précédentes relations que tu aimerais recevoir avec moi ? "
           }
         }
       }
@@ -143,30 +112,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What is your favorite memory of us together from the past month?"
+            "value" : "What kind of behavior would make you walk away from a relationship? And how can we make sure that never happens between us?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quel est ton souvenir préféré de nous deux du mois dernier ?"
-          }
-        }
-      }
-    },
-    "daily_question_2_notification" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "💭 New question: What's your favorite memory of us from last month?"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "💭 Nouvelle question : Quel est ton souvenir préféré de nous du mois dernier ?"
+            "value" : "Quel est le genre de comportement qui te ferait abandonner une relation ? Et comment pouvons-nous faire en sorte que cela ne se produise pas dans la nôtre ?"
           }
         }
       }
@@ -177,30 +129,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "If we could plan the perfect weekend together, what would it look like?"
+            "value" : "What’s something you wish I would ask you more often?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Si nous pouvions planifier le week-end parfait ensemble, à quoi ressemblerait-il ?"
-          }
-        }
-      }
-    },
-    "daily_question_3_notification" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🌟 New question: What would our perfect weekend look like?"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🌟 Nouvelle question : À quoi ressemblerait notre week-end parfait ?"
+            "value" : "Quelle est la chose que tu aimerais que je te demande plus souvent ?"
           }
         }
       }
@@ -211,30 +146,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What's one thing about me that you've discovered recently and that you love?"
+            "value" : "Is there something you’re hoping for from me, but haven’t dared to ask yet?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quelle est une chose chez moi que tu as découverte récemment et que tu adores ?"
-          }
-        }
-      }
-    },
-    "daily_question_4_notification" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "❤️ New question: What have you discovered about me recently that you love?"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "❤️ Nouvelle question : Qu'as-tu découvert chez moi récemment que tu adores ?"
+            "value" : "Est-ce qu’il y a quelque chose que tu attends de moi, que tu n’as pas encore osé me demander ?"
           }
         }
       }
@@ -245,30 +163,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "How do you feel most loved and appreciated by me?"
+            "value" : "What emotional wound from your past are you still trying to heal? And how can I help you in that process?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Comment te sens-tu le plus aimé(e) et apprécié(e) par moi ?"
-          }
-        }
-      }
-    },
-    "daily_question_5_notification" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "💝 New question: How do you feel most loved by me?"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "💝 Nouvelle question : Comment te sens-tu le plus aimé(e) par moi ?"
+            "value" : "Quelle est la blessure émotionnelle de ton passé que tu es encore en train d’essayer de guérir ? Et comment puis-je t’aider à la guérir ?"
           }
         }
       }
@@ -279,30 +180,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What's a goal or dream we should pursue together this year?"
+            "value" : "What is the one quality you love most about me, and never want to see change?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quel est un objectif ou un rêve que nous devrions poursuivre ensemble cette année ?"
-          }
-        }
-      }
-    },
-    "daily_question_6_notification" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🎯 New question: What goal should we pursue together this year?"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🎯 Nouvelle question : Quel objectif devrions-nous poursuivre ensemble cette année ?"
+            "value" : "Quelle est la qualité chez moi que tu aimes le plus, et que tu ne voudrais jamais voir changer ?"
           }
         }
       }
@@ -313,30 +197,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What's something small I do that always makes you smile?"
+            "value" : "What small daily gesture could we do for each other to bring more joy into our everyday life?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quelle est une petite chose que je fais et qui te fait toujours sourire ?"
-          }
-        }
-      }
-    },
-    "daily_question_7_notification" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "😊 New question: What small thing do I do that always makes you smile?"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "😊 Nouvelle question : Quelle petite chose que je fais te fait toujours sourire ?"
+            "value" : "Quelle toute petite attention pourrions-nous mettre en place l’un envers l’autre, dans le but de se faire plaisir facilement chaque jour ?"
           }
         }
       }
@@ -347,30 +214,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "If we could live anywhere in the world together, where would it be and why?"
+            "value" : "If you had to suggest three ideas to help us better handle conflicts, what would they be?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Si nous pouvions vivre n'importe où dans le monde ensemble, où serait-ce et pourquoi ?"
-          }
-        }
-      }
-    },
-    "daily_question_8_notification" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🌍 New question: Where in the world would we live together?"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🌍 Nouvelle question : Où dans le monde aimerions-nous vivre ensemble ?"
+            "value" : "Si tu devais me donner trois idées pour améliorer la manière dont on gère nos disputes, quelles seraient-elles ?"
           }
         }
       }
@@ -381,30 +231,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What's a tradition or ritual you'd like us to start together?"
+            "value" : "Do you feel our relationship is balanced when it comes to giving and receiving? If not, how can we improve that?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quelle est une tradition ou un rituel que tu aimerais qu'on commence ensemble ?"
-          }
-        }
-      }
-    },
-    "daily_question_9_notification" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🎋 New question: What tradition should we start together?"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🎋 Nouvelle question : Quelle tradition devrions-nous commencer ensemble ?"
+            "value" : "Est-ce que tu as l’impression que notre couple est équilibré entre donner et recevoir ? Si non, comment pourrions-nous améliorer cela ?"
           }
         }
       }
@@ -415,30 +248,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What's one way I can better support you during stressful times?"
+            "value" : "Where do you see us in five years, and what steps can we take today to make that vision a reality?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Comment puis-je mieux te soutenir pendant les moments stressants ?"
-          }
-        }
-      }
-    },
-    "daily_question_10_notification" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🤗 New question: How can I better support you during stress?"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🤗 Nouvelle question : Comment puis-je mieux te soutenir dans le stress ?"
+            "value" : "Où nous vois-tu dans cinq ans, et quelles actions pouvons-nous mettre en place pour y arriver ?"
           }
         }
       }
@@ -449,30 +265,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What's your favorite way for us to spend quality time together?"
+            "value" : "What would you love to receive more of from me, that you’re not getting enough of right now? I promise I’ll try my best to give it to you."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quelle est ta façon préférée de passer du temps de qualité ensemble ?"
-          }
-        }
-      }
-    },
-    "daily_question_11_notification" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "⏰ New question: What's your favorite way to spend quality time together?"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "⏰ Nouvelle question : Quelle est ta façon préférée de passer du temps ensemble ?"
+            "value" : "Qu’est-ce que tu aimerais recevoir encore plus de moi, que tu ne reçois pas assez actuellement ? Je te promets d’essayer de te le donner davantage."
           }
         }
       }
@@ -483,30 +282,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What's something you've always wanted to try but haven't yet?"
+            "value" : "Tell me the most beautiful thing I’ve ever done for you and why it meant so much to you."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quelle est une chose que tu as toujours voulu essayer mais que tu n'as pas encore faite ?"
-          }
-        }
-      }
-    },
-    "daily_question_12_notification" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "✨ New question: What have you always wanted to try?"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "✨ Nouvelle question : Qu'as-tu toujours voulu essayer ?"
+            "value" : "Dis-moi la plus belle chose que j’ai faite pour toi, et explique-moi pourquoi cela t’a autant marqué."
           }
         }
       }
@@ -517,30 +299,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "How do you think we've grown as a couple since we first met?"
+            "value" : "What’s your absolute favorite thing to do with me?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Comment penses-tu que nous avons évolué en tant que couple depuis notre première rencontre ?"
-          }
-        }
-      }
-    },
-    "daily_question_13_notification" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🌱 New question: How have we grown as a couple?"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🌱 Nouvelle question : Comment avons-nous évolué en tant que couple ?"
+            "value" : "Quelle est la chose que tu préfères le plus faire avec moi ?"
           }
         }
       }
@@ -551,30 +316,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What's a quality you admire in me that you'd like to develop in yourself?"
+            "value" : "If we had to express gratitude to each other for one thing, what would it be?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quelle est une qualité que tu admires chez moi et que tu aimerais développer en toi ?"
-          }
-        }
-      }
-    },
-    "daily_question_14_notification" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🌟 New question: What quality do you admire in me?"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🌟 Nouvelle question : Quelle qualité admires-tu chez moi ?"
+            "value" : "Si nous devions être reconnaissants l’un envers l’autre pour une chose, de quoi s’agirait-il ?"
           }
         }
       }
@@ -585,30 +333,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "If we could go back in time to our first date, what advice would you give us?"
+            "value" : "What kind of gift do you love receiving most from me?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Si nous pouvions retourner dans le temps à notre premier rendez-vous, quels conseils nous donnerais-tu ?"
-          }
-        }
-      }
-    },
-    "daily_question_15_notification" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "⏳ New question: What advice would you give our past selves?"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "⏳ Nouvelle question : Quels conseils donnerais-tu à nos anciens nous ?"
+            "value" : "Quel est le cadeau que tu préfères le plus recevoir de moi ?"
           }
         }
       }
@@ -619,30 +350,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What's one thing you're grateful for about our relationship today?"
+            "value" : "Is there a part of your personality you’ve been hiding from me because you’re afraid of being judged?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pour quelle chose es-tu reconnaissant(e) dans notre relation aujourd'hui ?"
-          }
-        }
-      }
-    },
-    "daily_question_16_notification" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🙏 New question: What are you grateful for in our relationship today?"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🙏 Nouvelle question : Pour quoi es-tu reconnaissant(e) dans notre relation aujourd'hui ?"
+            "value" : "Est-ce qu’il y’a une part de ta personnalité que tu me caches par peur de mon jugement ?"
           }
         }
       }
@@ -653,30 +367,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What's a challenge we've overcome together that made us stronger?"
+            "value" : "Is there something I do that bothers you — and that you wish I’d stop doing? Help me understand why you think it’s a barrier to our love, or why it could become one."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quel est un défi que nous avons surmonté ensemble et qui nous a rendus plus forts ?"
-          }
-        }
-      }
-    },
-    "daily_question_17_notification" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "💪 New question: What challenge made us stronger together?"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "💪 Nouvelle question : Quel défi nous a rendus plus forts ensemble ?"
+            "value" : "Qu’est-ce que je fais qui te dérange et que tu aimerais que je cesse ? Explique-moi pourquoi tu penses que c’est un frein à notre amour, ou que cela pourrait le devenir."
           }
         }
       }
@@ -687,30 +384,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What's something fun and spontaneous we should do together soon?"
+            "value" : "Is there something about your past or your childhood that you haven’t shared with me yet, but would like to talk about?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quelle est une chose amusante et spontanée que nous devrions faire ensemble bientôt ?"
-          }
-        }
-      }
-    },
-    "daily_question_18_notification" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🎉 New question: What should we do together spontaneously?"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🎉 Nouvelle question : Que devrions-nous faire ensemble spontanément ?"
+            "value" : "Y a-t-il quelque chose à propos de ta vie passée ou de ton enfance dont tu ne m’as pas encore parlé mais que tu aimerais aborder ?"
           }
         }
       }
@@ -721,30 +401,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "How do you envision our relationship in five years?"
+            "value" : "If you had to describe my love language, what would you say it is?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Comment envisages-tu notre relation dans cinq ans ?"
-          }
-        }
-      }
-    },
-    "daily_question_19_notification" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🔮 New question: How do you see our future together?"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🔮 Nouvelle question : Comment vois-tu notre avenir ensemble ?"
+            "value" : "Si tu devais décrire mon love langage, que dirais-tu ? "
           }
         }
       }
@@ -755,30 +418,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "What's one word that best describes how I make you feel, and why?"
+            "value" : "What is our greatest strength as a couple?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quel est un mot qui décrit le mieux ce que tu ressens avec moi, et pourquoi ?"
-          }
-        }
-      }
-    },
-    "daily_question_20_notification" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "💫 New question: What word describes how I make you feel?"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "💫 Nouvelle question : Quel mot décrit ce que tu ressens avec moi ?"
+            "value" : "Selon toi, quelle est la plus grande force notre couple ? "
           }
         }
       }
@@ -815,24 +461,7 @@
             "value" : "Connexion quotidienne, lien renforcé"
           }
         }
-      }
-    },
-    "daily_question_card_header" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Today's Question"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Question d'aujourd'hui"
-          }
-        }
-      }
+            }
     },
     "daily_question_couples_only" : {
       "extractionState" : "manual",
@@ -891,13 +520,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Every evening at 9 PM, discover a unique question to reconnect together, strengthen your bond and nurture the connection that unites you."
+            "value" : "Every day, discover a unique question specially designed to strengthen your bond, deepen your love, and nurture the connection between you."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Chaque soir à 21h, découvrez une question unique pour vous reconnecter à deux, renforcer votre complicité et entretenir ce lien qui vous unit."
+            "value" : "Chaque jour, découvrez une question unique spécialement pensée pour renforcer votre complicité, votre amour et entretenir ce lien qui vous unit."
           }
         }
       }
@@ -925,13 +554,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "🧡 A daily love ritual"
+            "value" : "A daily love ritual"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "🧡 Un rituel d'amour quotidien"
+            "value" : "Un rituel d'amour quotidien"
           }
         }
       }
@@ -1231,13 +860,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Start the conversation by sharing your thoughts!"
+            "value" : "Start the conversation by sharing your answer."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lancez la conversation en partageant vos pensées !"
+            "value" : "Lancez la conversation en partageant votre réponse"
           }
         }
       }
@@ -1265,7 +894,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Daily Question"
+            "value" : "Question of the Day"
           }
         },
         "fr" : {
@@ -2029,6 +1658,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "En attente de la réponse de votre partenaire..."
+          }
+        }
+      }
+    },
+    "no_question_available" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No question available"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucune question disponible"
+          }
+        }
+      }
+    },
+    "generate_question" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generate a question"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Générer une question"
           }
         }
       }

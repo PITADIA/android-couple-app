@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var appState: AppState
+    @Environment(\.scenePhase) private var scenePhase
     @State private var isTransitioning = false
     @State private var isOnboardingActive = false
     
@@ -34,6 +35,12 @@ struct ContentView: View {
                 }
             }
             .preferredColorScheme(.light)
+        }
+        .onChange(of: scenePhase) { oldPhase, newPhase in
+            handleScenePhaseChange(from: oldPhase, to: newPhase)
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .freemiumManagerChanged)) { _ in
+            print("ContentView: FreemiumManager notification reçue")
         }
         .onAppear {
             print("ContentView: Vue principale apparue")
@@ -96,6 +103,28 @@ struct ContentView: View {
         default:
             print("❌ ContentView: Host non reconnu: \(url.host ?? "nil")")
         }
+    }
+    
+    /// Gère les changements de phase de l'app pour nettoyer les badges
+    private func handleScenePhaseChange(from oldPhase: ScenePhase, to newPhase: ScenePhase) {
+        print("🔔 ContentView: ScenePhase changé: \(oldPhase) → \(newPhase)")
+        
+        switch newPhase {
+        case .active:
+            // Reset le badge quand l'app devient active
+            clearAppBadge()
+        case .inactive:
+            print("🔔 ContentView: App devenue inactive")
+        case .background:
+            print("🔔 ContentView: App passée en arrière-plan")
+        @unknown default:
+            print("🔔 ContentView: Phase inconnue")
+        }
+    }
+    
+    /// Remet le badge de l'app à zéro
+    private func clearAppBadge() {
+        BadgeManager.clearBadge()
     }
 }
 

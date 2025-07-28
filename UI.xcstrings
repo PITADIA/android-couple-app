@@ -837,24 +837,7 @@
             "value" : "Félicitations"
           }
         }
-      }
-    },
-    "congratulations_connection" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Congratulations, you have successfully connected with %@. You can now share your favorite questions and see your real-time distance."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Félicitations, vous vous êtes connecté avec succès avec %@. Vous pouvez maintenant partager vos questions favorites et voir votre distance en temps réel."
-          }
-        }
-      }
+            }
     },
     "congratulations_pack" : {
       "comment" : "UI Strings - Pack Completion",
@@ -1096,6 +1079,24 @@
         }
       }
     },
+    "preparation_in_progress" : {
+      "comment" : "Loading state for partner connection",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preparing..."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Préparation..."
+          }
+        }
+      }
+    },
     "continue_free_version" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1279,6 +1280,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Créez votre carte à souvenirs"
+          }
+        }
+      }
+    },
+    "daily_question_onboarding_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Answer the question of the day"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Répondez à la question du jours"
           }
         }
       }
@@ -6429,6 +6447,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Questions favorites partagées"
+          }
+        }
+      }
+    },
+    "daily_questions_available" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daily questions available"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Questions du jours disponible"
           }
         }
       }

@@ -1,0 +1,4 @@
+module nanopb {
+umbrella "/Users/lyes/Library/Developer/Xcode/DerivedData/CoupleApp-glxefjatricjpmcyoqnzlsoilsvw/SourcePackages/checkouts/nanopb/spm_headers"
+export *
+}

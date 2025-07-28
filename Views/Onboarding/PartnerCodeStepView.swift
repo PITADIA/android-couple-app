@@ -133,7 +133,7 @@ struct PartnerCodeStepView: View {
         }
         .sheet(isPresented: $showingShareSheet) {
             if let code = partnerCodeService.generatedCode {
-                ShareSheet(activityItems: [createShareMessage(code: code)])
+                ShareSheet(items: [createShareMessage(code: code)])
             }
         }
     }
@@ -307,59 +307,9 @@ struct PartnerCodeStepView: View {
     }
 }
 
-// MARK: - ShareSheet Component
-struct ShareSheet: UIViewControllerRepresentable {
-    let activityItems: [Any]
-    let applicationActivities: [UIActivity]? = nil
-    
-    func makeUIViewController(context: UIViewControllerRepresentableContext<ShareSheet>) -> UIActivityViewController {
-        let controller = UIActivityViewController(
-            activityItems: activityItems,
-            applicationActivities: applicationActivities
-        )
-        
-        // Masquer les activités non désirées (tout ce qui est en dessous d'AirDrop)
-        controller.excludedActivityTypes = [
-            .addToReadingList,
-            .assignToContact,
-            .copyToPasteboard,
-            .openInIBooks,
-            .postToFacebook,
-            .postToFlickr,
-            .postToTencentWeibo,
-            .postToTwitter,
-            .postToVimeo,
-            .postToWeibo,
-            .print,
-            .saveToCameraRoll,
-            .markupAsPDF,
-            .sharePlay
-        ]
-        
-        // Configuration pour iPad
-        if let popover = controller.popoverPresentationController {
-            popover.sourceView = UIApplication.shared.connectedScenes
-                .compactMap { $0 as? UIWindowScene }
-                .flatMap { $0.windows }
-                .first { $0.isKeyWindow }
-            popover.sourceRect = CGRect(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2, width: 0, height: 0)
-            popover.permittedArrowDirections = []
-        }
-        
-        return controller
-    }
-    
-    func updateUIViewController(_ uiViewController: UIActivityViewController, context: UIViewControllerRepresentableContext<ShareSheet>) {}
-}
+
 
 #Preview {
     PartnerCodeStepView(viewModel: OnboardingViewModel())
         .background(Color(red: 0.97, green: 0.97, blue: 0.98))
-} 
-
-// MARK: - Extension pour cacher le clavier
-extension View {
-    func hideKeyboard() {
-        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-    }
 } 

@@ -4,6 +4,8 @@ struct PartnerConnectionSuccessView: View {
     let partnerName: String
     let onContinue: () -> Void
     @State private var showAnimation = false
+    @State private var isLoading = false
+    @StateObject private var dailyQuestionService = DailyQuestionService.shared
     
     var body: some View {
         ZStack {
@@ -29,14 +31,6 @@ struct PartnerConnectionSuccessView: View {
                         .foregroundColor(.black)
                         .opacity(showAnimation ? 1.0 : 0.0)
                         .animation(.easeInOut(duration: 1.0).delay(0.5), value: showAnimation)
-                    
-                    Text(String(format: "congratulations_connection".localized, partnerName))
-                        .font(.system(size: 16))
-                        .foregroundColor(.black.opacity(0.8))
-                        .multilineTextAlignment(.center)
-                        .padding(.horizontal, 20)
-                        .opacity(showAnimation ? 1.0 : 0.0)
-                        .animation(.easeInOut(duration: 1.0).delay(1.0), value: showAnimation)
                 }
                 .padding(.top, 60)
                 
@@ -116,6 +110,15 @@ struct PartnerConnectionSuccessView: View {
                             .font(.system(size: 16))
                             .foregroundColor(.black)
                     }
+                    
+                    HStack(spacing: 12) {
+                        Text("💬")
+                            .font(.system(size: 24))
+                        
+                        Text("daily_questions_available".localized)
+                            .font(.system(size: 16))
+                            .foregroundColor(.black.opacity(0.8))
+                    }
                 }
                 .padding(.horizontal, 20)
                 .opacity(showAnimation ? 1.0 : 0.0)
@@ -125,17 +128,27 @@ struct PartnerConnectionSuccessView: View {
                 
                 // Bouton Continuer - Style identique au tutoriel
                 Button(action: {
-                    print("🎉 PartnerConnectionSuccessView: Bouton Continuer pressé")
-                    onContinue()
+                    Task {
+                        await handleContinue()
+                    }
                 }) {
-                    Text("continue".localized)
-                        .font(.system(size: 18, weight: .semibold))
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 56)
-                        .background(Color(hex: "#FD267A"))
-                        .clipShape(RoundedRectangle(cornerRadius: 28))
+                    HStack(spacing: 12) {
+                        if isLoading {
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                                .scaleEffect(0.9)
+                        }
+                        
+                        Text(isLoading ? "preparation_in_progress".localized : "continue".localized)
+                            .font(.system(size: 18, weight: .semibold))
+                            .foregroundColor(.white)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 56)
+                    .background(Color(hex: "#FD267A").opacity(isLoading ? 0.7 : 1.0))
+                    .clipShape(RoundedRectangle(cornerRadius: 28))
                 }
+                .disabled(isLoading)
                 .padding(.horizontal, 20)
                 .padding(.bottom, 40)
                 .opacity(showAnimation ? 1.0 : 0.0)
@@ -145,6 +158,46 @@ struct PartnerConnectionSuccessView: View {
         .onAppear {
             print("🎉 PartnerConnectionSuccessView: Vue apparue pour partenaire: \(partnerName)")
             showAnimation = true
+        }
+    }
+    
+    /// Gère le clic sur "Continuer" avec attente que le service soit prêt
+    private func handleContinue() async {
+        print("🎉 PartnerConnectionSuccessView: Bouton Continuer pressé")
+        isLoading = true
+        
+        // Délai minimum pour montrer l'effet de chargement (1.5 secondes)
+        let minimumLoadingTime: TimeInterval = 1.5
+        let loadingStart = Date()
+        
+        // Attendre le délai minimum ET que le service soit prêt
+        while Date().timeIntervalSince(loadingStart) < minimumLoadingTime {
+            try? await Task.sleep(nanoseconds: 100_000_000) // 100ms
+        }
+        
+        // Attendre que le service soit dans un état stable (max 8 secondes supplémentaires)
+        let maxAdditionalWait: TimeInterval = 8.0
+        let serviceWaitStart = Date()
+        
+        while Date().timeIntervalSince(serviceWaitStart) < maxAdditionalWait {
+            let isServiceReady = !dailyQuestionService.isLoading && 
+                                !dailyQuestionService.isOptimizing &&
+                                (dailyQuestionService.currentQuestion != nil || dailyQuestionService.allQuestionsExhausted)
+            
+            if isServiceReady {
+                print("🎉 PartnerConnectionSuccessView: Service prêt après \(Date().timeIntervalSince(loadingStart))s")
+                break
+            }
+            
+            try? await Task.sleep(nanoseconds: 100_000_000) // 100ms
+        }
+        
+        print("🎉 PartnerConnectionSuccessView: Préparation terminée - Fermeture de la vue")
+        
+        // Fermer la vue (garder isLoading=true jusqu'à l'appel d'onContinue)
+        await MainActor.run {
+            onContinue()
+            // Note: isLoading reste true jusqu'à ce que la vue se ferme
         }
     }
 } 

@@ -1,0 +1,4 @@
+module RealmCoreResources {
+umbrella "/Users/lyes/Library/Developer/Xcode/DerivedData/CoupleApp-glxefjatricjpmcyoqnzlsoilsvw/SourcePackages/checkouts/realm-core/src/spm"
+export *
+}

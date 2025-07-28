@@ -16,13 +16,13 @@ struct TabContainerView: View {
                 case 0:
                     HomeContentView(activeSheet: $activeSheet)
                 case 1:
-                    JournalPageView()
-                case 2:
                     // Questions du jour
                     DailyQuestionFlowView()
                         .environmentObject(appState)
-                case 3:
+                case 2:
                     FavoritesView()
+                case 3:
+                    JournalPageView()
                 case 4:
                     MenuContentView()
                 default:
@@ -57,29 +57,29 @@ struct TabContainerView: View {
                     }
                     .frame(maxWidth: .infinity)
                     
-                    // Journal
+                    // Questions du jour
                     Button(action: {
                         selectedTab = 1
                     }) {
-                        Image("map")
+                        Image("star")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(
-                                width: selectedTab == 1 ? 32 : 28,
-                                height: selectedTab == 1 ? 26 : 22
+                                width: selectedTab == 1 ? 34 : 30,
+                                height: selectedTab == 1 ? 28 : 24
                             )
-                            .foregroundColor(selectedTab == 1 ? Color(hex: "#FD267A") : .gray.opacity(0.8))
-                            .opacity(selectedTab == 1 ? 1.0 : 0.85)
+                            .foregroundColor(selectedTab == 1 ? Color(hex: "#FD267A") : .gray)
+                            .fontWeight(selectedTab == 1 ? .bold : .regular)
                             .scaleEffect(selectedTab == 1 ? 1.1 : 1.0)
                             .animation(.easeInOut(duration: 0.2), value: selectedTab)
                     }
                     .frame(maxWidth: .infinity)
                     
-                    // Questions du jour
+                    // Favoris
                     Button(action: {
                         selectedTab = 2
                     }) {
-                        Image("star")
+                        Image("heart")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(
@@ -93,19 +93,19 @@ struct TabContainerView: View {
                     }
                     .frame(maxWidth: .infinity)
                     
-                    // Favoris
+                    // Journal
                     Button(action: {
                         selectedTab = 3
                     }) {
-                        Image("heart")
+                        Image("map")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(
-                                width: selectedTab == 3 ? 34 : 30,
-                                height: selectedTab == 3 ? 28 : 24
+                                width: selectedTab == 3 ? 32 : 28,
+                                height: selectedTab == 3 ? 26 : 22
                             )
-                            .foregroundColor(selectedTab == 3 ? Color(hex: "#FD267A") : .gray)
-                            .fontWeight(selectedTab == 3 ? .bold : .regular)
+                            .foregroundColor(selectedTab == 3 ? Color(hex: "#FD267A") : .gray.opacity(0.8))
+                            .opacity(selectedTab == 3 ? 1.0 : 0.85)
                             .scaleEffect(selectedTab == 3 ? 1.1 : 1.0)
                             .animation(.easeInOut(duration: 0.2), value: selectedTab)
                     }

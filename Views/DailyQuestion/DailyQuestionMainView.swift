@@ -3,6 +3,7 @@ import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFunctions
 import Combine
+import UserNotifications
 
 struct DailyQuestionMainView: View {
     @EnvironmentObject var appState: AppState
@@ -22,6 +23,14 @@ struct DailyQuestionMainView: View {
     // SUPPRIMÉ: Observateur de clavier - on laisse iOS gérer automatiquement
     // @State private var keyboardHeight: CGFloat = 0
     
+    // 🔔 NOTIFICATIONS: Demande de permission (une seule fois)
+    @State private var hasRequestedNotificationsThisSession = false
+    
+    // 🎯 EXPERT SOLUTION: Extension UIKit pour fermeture clavier
+    private func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+    
     private var currentUserId: String? {
         return Auth.auth().currentUser?.uid
     }
@@ -33,26 +42,43 @@ struct DailyQuestionMainView: View {
     
     var body: some View {
         NavigationView {
-            GeometryReader { geometry in
             ZStack {
-                Color(white: 0.97) // Fond gris clair moderne comme dans les apps de chat
+                // 🎯 SOLUTION AMÉLIORÉE: Background tapGesture seulement sur zone de contenu
+                Color(white: 0.97)
                     .ignoresSafeArea()
                 
-                if isNoPartnerState {
-                    // État sans partenaire
-                    noPartnerView
-                } else if dailyQuestionService.allQuestionsExhausted {
-                    // État d'épuisement des questions
-                    exhaustedQuestionsView
-                } else if dailyQuestionService.isLoading && dailyQuestionService.currentQuestion == nil {
-                    // État de chargement
-                    loadingView
-                } else if let currentQuestion = dailyQuestionService.currentQuestion {
-                    // État normal avec question
+                GeometryReader { geometry in
+                    if isNoPartnerState {
+                        // État sans partenaire
+                        noPartnerView
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                handleBackgroundTap()
+                            }
+                    } else if dailyQuestionService.allQuestionsExhausted {
+                        // État d'épuisement des questions
+                        exhaustedQuestionsView
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                handleBackgroundTap()
+                            }
+                    } else if (dailyQuestionService.isLoading || dailyQuestionService.isOptimizing) && dailyQuestionService.currentQuestion == nil {
+                        // État de chargement (génération de question OU optimisation timezone)
+                        loadingView
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                handleBackgroundTap()
+                            }
+                    } else if let currentQuestion = dailyQuestionService.currentQuestion {
+                        // État normal avec question
                         questionContentView(currentQuestion, geometry: geometry)
-                } else {
-                    // État sans question disponible
-                    noQuestionView
+                    } else {
+                        // État sans question disponible
+                        noQuestionView
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                handleBackgroundTap()
+                            }
                     }
                 }
             }
@@ -71,23 +97,49 @@ struct DailyQuestionMainView: View {
             // }
         }
         .onAppear {
-            if dailyQuestionService.currentQuestion == nil && !dailyQuestionService.allQuestionsExhausted {
-                print("🔍 DailyQuestionMainView.onAppear: Génération question (currentQuestion=nil)")
+            // 🧹 NETTOYER LES NOTIFICATIONS ET BADGE QUAND L'UTILISATEUR OUVRE LA VUE
+            if let currentQuestion = dailyQuestionService.currentQuestion {
+                // 🎯 DOUBLE NOTIFICATION FIX: Nettoyer notifications en attente ET déjà délivrées
                 Task {
-                    await dailyQuestionService.generateTodaysQuestion()
+                    await clearAllNotificationsForQuestion(currentQuestion.id)
                 }
-            } else {
-                print("🔍 DailyQuestionMainView.onAppear: Pas de génération (currentQuestion existe ou épuisées)")
             }
+            // Reset général du badge
+            BadgeManager.clearBadge()
+            
+            if dailyQuestionService.currentQuestion == nil && !dailyQuestionService.allQuestionsExhausted {
+                Task {
+                    await dailyQuestionService.checkForNewQuestionWithTimezoneOptimization()
+                }
+            }
+            
+            // 🔔 DEMANDE IMMÉDIATE DE PERMISSION (UNE SEULE FOIS)
+            self.requestNotificationIfNeeded()
         }
+        // plus de timer -> onDisappear inutile
         .refreshable {
             if !dailyQuestionService.allQuestionsExhausted {
-                print("🔍 DailyQuestionMainView.refreshable: Génération forcée")
                 Task {
-                    await dailyQuestionService.generateTodaysQuestion()
+                    await dailyQuestionService.checkForNewQuestionWithTimezoneOptimization()
                 }
             }
         }
+        .overlay(
+            // 🎉 SYSTÈME DE NOTIFICATION DE CONNEXION PARTENAIRE
+            Group {
+                if let partnerService = appState.partnerConnectionService,
+                   partnerService.shouldShowConnectionSuccess {
+                    PartnerConnectionSuccessView(
+                        partnerName: partnerService.connectedPartnerName
+                    ) {
+                        // Fermer le message de succès
+                        partnerService.dismissConnectionSuccess()
+                }
+                    .transition(.opacity)
+                    .zIndex(1000)
+            }
+        }
+        )
     }
     
     // MARK: - État d'épuisement des questions
@@ -185,7 +237,8 @@ struct DailyQuestionMainView: View {
     // MARK: - Computed Properties
     
     private var isNoPartnerState: Bool {
-        return appState.currentUser?.partnerId == nil
+        guard let partnerId = appState.currentUser?.partnerId else { return true }
+        return partnerId.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
     
 
@@ -193,7 +246,7 @@ struct DailyQuestionMainView: View {
     // MARK: - Views
     
     private var noPartnerView: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 5) {
             Image(systemName: "person.2.slash")
                 .font(.system(size: 60))
                 .foregroundColor(.gray)
@@ -217,9 +270,15 @@ struct DailyQuestionMainView: View {
                 .scaleEffect(1.5)
                 .tint(Color(hex: "#FD267A"))
             
-            Text(NSLocalizedString("daily_question_loading", tableName: "DailyQuestions", comment: ""))
-                .font(.system(size: 16))
+            VStack(spacing: 8) {
+                Text(dailyQuestionService.isOptimizing ? "Recherche de nouvelles questions..." : NSLocalizedString("daily_question_loading", tableName: "DailyQuestions", comment: ""))
+                    .font(.system(size: 16, weight: .medium))
+                    .foregroundColor(.black)
+                
+                Text(dailyQuestionService.isOptimizing ? "Optimisation en cours" : "Génération de votre question")
+                    .font(.system(size: 14))
                 .foregroundColor(.gray)
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
@@ -230,17 +289,16 @@ struct DailyQuestionMainView: View {
                 .font(.system(size: 60))
                 .foregroundColor(.gray)
             
-            Text("Aucune question disponible")
+            Text(NSLocalizedString("no_question_available", tableName: "DailyQuestions", comment: ""))
                 .font(.system(size: 20, weight: .semibold))
                 .foregroundColor(.black)
             
             Button {
-                print("🔍 DailyQuestionMainView.button: Génération manuelle demandée")
                 Task {
-                    await dailyQuestionService.generateTodaysQuestion()
+                    await dailyQuestionService.checkForNewQuestionWithTimezoneOptimization()
                 }
             } label: {
-                Text("Générer une question")
+                Text(NSLocalizedString("generate_question", tableName: "DailyQuestions", comment: ""))
                     .font(.system(size: 16, weight: .medium))
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity)
@@ -254,25 +312,29 @@ struct DailyQuestionMainView: View {
     }
     
     private func questionContentView(_ question: DailyQuestion, geometry: GeometryProxy) -> some View {
-        VStack(spacing: 0) {
+        VStack(spacing: 0) { // 🎯 EXPERT: Pas d'espacement par défaut
             // NOUVEAU: VStack au lieu de ZStack (recommandé par tous les forums dev)
             
             // Contenu principal (ScrollView) 
             ScrollViewReader { proxy in
                 ScrollView {
-                    VStack(spacing: 20) {
+                    VStack(spacing: 0) { // 🎯 EXPERT: Contrôler manuellement tout l'espacement
                         // Carte de la question
                         DailyQuestionCard(question: question)
-                            .padding(.horizontal, 20)
-                            .padding(.top, 20)
+                            .padding(.horizontal, 12) // 🎯 COMPACT: Réduire marges (20→12)
+                            .padding(.top, 12)        // 🎯 COMPACT: Réduire padding top (20→12)
+                            .padding(.bottom, 8)      // 🎯 COMPACT: Petit espace après question
                         
                         // Section chat
                         chatSection(for: question, proxy: proxy)
                         
                         // Espace en bas pour la zone de texte + menu (Spacer recommandé)
-                        Spacer()
-                            .frame(height: 20) // Réduit car le menu reste en bas maintenant
+                        Color.clear.frame(height: 8) // 🎯 EXPERT: Frame fixe au lieu de Spacer
                     }
+                }
+                .contentShape(Rectangle()) // 🎯 ZONE TAPABLE: Définir zone de contenu uniquement
+                .onTapGesture {
+                    handleBackgroundTap() // 🎯 GESTE SÉCURISÉ: Seulement sur zone de contenu
                 }
                 .onChange(of: stableMessages.count) { _, newCount in
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
@@ -307,28 +369,27 @@ struct DailyQuestionMainView: View {
     }
     
     private func chatSection(for question: DailyQuestion, proxy: ScrollViewProxy) -> some View {
-        VStack(spacing: 16) {
+        VStack(spacing: 0) { // 🎯 EXPERT: Supprimer espacement par défaut VStack
             if stableMessages.isEmpty {
                 // Message d'encouragement
-                VStack(spacing: 12) {
-                    Image(systemName: "bubble.left.and.bubble.right")
-                        .font(.system(size: 30))
-                        .foregroundColor(Color(hex: "#FD267A"))
-                    
+                VStack(spacing: 8) { // 🎯 COMPACT: Réduire espacement encouragement
                     Text(NSLocalizedString("daily_question_start_conversation", tableName: "DailyQuestions", comment: ""))
                         .font(.system(size: 16))
                         .foregroundColor(.gray)
                         .multilineTextAlignment(.center)
                 }
-                .padding(.vertical, 40)
+                .padding(.vertical, 20) // 🎯 COMPACT: Réduire padding encouragement
             } else {
                 // Messages existants avec état stable
-                ForEach(stableMessages, id: \.id) { response in
-                    VStack {
+                ForEach(Array(stableMessages.enumerated()), id: \.element.id) { index, response in
+                    let isPreviousSameSender = index > 0 && stableMessages[index - 1].userId == response.userId
+                    VStack(spacing: 0) { // 🎯 EXPERT: Pas d'espacement dans wrapper
                     ChatMessageView(
                         response: response,
                             isCurrentUser: response.userId == currentUserId,
-                        partnerName: response.userName
+                        partnerName: response.userName,
+                        isLastMessage: response.id == stableMessages.last?.id, // 🎯 TWITTER STYLE: Déterminer si c'est le dernier message
+                        isPreviousSameSender: isPreviousSameSender // 🎯 ESPACEMENT: Déterminer si même expéditeur que précédent
                     )
                     }
                     .id("\(response.id)-stable")
@@ -338,14 +399,15 @@ struct DailyQuestionMainView: View {
                 if question.shouldShowWaitingMessage(for: currentUserId ?? "", withSettings: dailyQuestionService.currentSettings) {
                     WaitingMessageView()
                         .id("waiting_message")
+                        .padding(.top, 8) // 🎯 COMPACT: Petit espacement pour message attente
                 }
                 
                 // Spacer invisible pour le scroll automatique
-                Spacer(minLength: 1)
+                Color.clear.frame(height: 1) // 🎯 EXPERT: Remplacer Spacer par frame fixe
                     .id("bottom")
             }
         }
-        .padding(.horizontal, 20)
+        .padding(.horizontal, 12) // 🎯 COMPACT: Réduire marges horizontales (20→12)
         .onAppear {
             updateStableMessages(from: question)
         }
@@ -356,23 +418,45 @@ struct DailyQuestionMainView: View {
     
     // MARK: - Helper Functions
     
+    /// 🎯 DOUBLE NOTIFICATION FIX: Nettoie TOUTES les notifications d'une question (en attente + délivrées)
+    private func clearAllNotificationsForQuestion(_ questionId: String) async {
+        let center = UNUserNotificationCenter.current()
+        let questionNotificationPrefix = "new_message_\(questionId)_"
+        
+        // 1. Supprimer les notifications en attente
+        let pendingRequests = await center.pendingNotificationRequests()
+        let pendingIds = pendingRequests
+            .filter { $0.identifier.hasPrefix(questionNotificationPrefix) }
+            .map { $0.identifier }
+        
+        // 2. Supprimer les notifications déjà délivrées
+        let deliveredNotifications = await center.deliveredNotifications()
+        let deliveredIds = deliveredNotifications
+            .filter { $0.request.identifier.hasPrefix(questionNotificationPrefix) }
+            .map { $0.request.identifier }
+        
+        // 3. Nettoyer tout
+        if !pendingIds.isEmpty {
+            center.removePendingNotificationRequests(withIdentifiers: pendingIds)
+            print("🗑️ DailyQuestionMainView: \(pendingIds.count) notifications en attente supprimées pour question \(questionId)")
+        }
+        
+        if !deliveredIds.isEmpty {
+            center.removeDeliveredNotifications(withIdentifiers: deliveredIds)
+            print("🗑️ DailyQuestionMainView: \(deliveredIds.count) notifications délivrées supprimées pour question \(questionId)")
+        }
+        
+        // 4. Appeler aussi le service pour cohérence
+        dailyQuestionService.clearNotificationsForQuestion(questionId)
+    }
+    
     private func updateStableMessages(from question: DailyQuestion) {
-        let newMessages = question.responsesArray
+        let newMessages = question.responsesArray.sorted { $0.respondedAt < $1.respondedAt }
         
-        // Comparer avec les messages actuels
-        let currentCount = stableMessages.count
-        let newCount = newMessages.count
-        
-        // Seulement mettre à jour si les messages ont vraiment changé
-        if !messagesAreEqual(stableMessages, newMessages) {
-            withAnimation(.easeInOut(duration: 0.2)) {
-                self.stableMessages = newMessages
-            }
-            
-            // Si de nouveaux messages ont été ajoutés, déclencher le scroll
-            if newCount > currentCount {
-                // Nouveaux messages détectés - le scroll sera géré automatiquement par onChange
-            }
+        // Éviter les mises à jour inutiles qui causent des recomposition
+        if newMessages.count != stableMessages.count || 
+           newMessages.last?.id != stableMessages.last?.id {
+            stableMessages = newMessages
         }
     }
     
@@ -394,16 +478,32 @@ struct DailyQuestionMainView: View {
                 .background(Color.gray.opacity(0.3))
             
             HStack(spacing: 12) {
-                // Vrai TextField au lieu du bouton
-                TextField(NSLocalizedString("daily_question_type_response", tableName: "DailyQuestions", comment: ""), text: $responseText)
-                    .focused($isTextFieldFocused)
-                    .textFieldStyle(PlainTextFieldStyle())
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 12)
-                    .background(
-                        RoundedRectangle(cornerRadius: 25)
-                            .fill(Color.gray.opacity(0.1))
-                    )
+                // 🎯 SOLUTION: TextEditor pour retours à la ligne naturels
+                ZStack(alignment: .topLeading) {
+                    // Placeholder personnalisé
+                    if responseText.isEmpty {
+                        Text(NSLocalizedString("daily_question_type_response", tableName: "DailyQuestions", comment: ""))
+                            .foregroundColor(.gray)
+                            .font(.system(size: 16)) // Même police que le TextEditor
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 20) // Ajusté pour aligner avec TextEditor
+                            .allowsHitTesting(false) // Permet de taper à travers
+                    }
+                    
+                    TextEditor(text: $responseText)
+                        .focused($isTextFieldFocused)
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 12)
+                        .background(Color.clear)
+                        .frame(minHeight: 40, maxHeight: 120)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .scrollContentBackground(.hidden) // Masquer le background par défaut
+                        .font(.system(size: 16)) // Taille de police cohérente
+                }
+                .background(
+                    RoundedRectangle(cornerRadius: 25)
+                        .fill(Color.gray.opacity(0.1))
+                )
                 
                 Button {
                     submitResponse(question: question)
@@ -426,6 +526,21 @@ struct DailyQuestionMainView: View {
     }
     
     // MARK: - Actions
+    
+    /// Gère les taps en dehors de la zone de saisie pour fermer le chat ou le clavier
+    private func handleBackgroundTap() {
+        // 🎯 LOGIQUE AMÉLIORÉE: Gestion intelligente des taps background
+        if isTextFieldFocused {
+            // Si le clavier est ouvert → fermer seulement le clavier
+            isTextFieldFocused = false
+            hideKeyboard()
+        } else {
+            // Si le clavier est fermé → fermer le chat avec délai
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                dismiss()
+            }
+        }
+    }
     
     private func submitResponse(question: DailyQuestion) {
         guard !responseText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
@@ -454,7 +569,12 @@ struct DailyQuestionMainView: View {
             let success = await dailyQuestionService.submitResponse(textToSubmit)
             
             await MainActor.run {
-                if !success {
+                if success {
+                    // 🎯 NOUVEAU: Fermer le chat après envoi réussi du message
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                        dismiss()
+                    }
+                } else {
                     // En cas d'échec, restaurer le texte et supprimer le message temporaire
                     responseText = textToSubmit
                     if let tempIndex = stableMessages.firstIndex(where: { $0.id == tempResponse.id }) {
@@ -471,6 +591,41 @@ struct DailyQuestionMainView: View {
     // MARK: - Keyboard Management
     
     // SUPPRIMÉ: Keyboard Management - laissé à iOS
+    
+    // MARK: - 🔔 NOTIFICATIONS (DailyQuestionMainView)
+    
+    /// Vérifie et demande immédiatement les permissions de notifications (une seule fois)
+    private func requestNotificationIfNeeded() {
+        guard let currentUser = appState.currentUser,
+              !hasRequestedNotificationsThisSession else {
+            return
+        }
+        let userKey = "notifications_requested_\(currentUser.id)"
+        let hasAlreadyRequested = UserDefaults.standard.bool(forKey: userKey)
+        if hasAlreadyRequested {
+            return
+        }
+        Task { @MainActor in
+            await self.requestNotificationPermissions()
+        }
+    }
+    
+    /// Demande les permissions de notifications avec la popup native iOS
+    @MainActor
+    private func requestNotificationPermissions() async {
+        guard let currentUser = appState.currentUser else { return }
+        hasRequestedNotificationsThisSession = true
+        do {
+            let granted = try await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge])
+            if granted {
+                FCMService.shared.requestTokenAndSave()
+            }
+            let userKey = "notifications_requested_\(currentUser.id)"
+            UserDefaults.standard.set(true, forKey: userKey)
+        } catch {
+            print("❌ Notifications: Erreur lors de la demande - \(error)")
+        }
+    }
 }
 
 struct DailyQuestionCard: View {
@@ -480,7 +635,7 @@ struct DailyQuestionCard: View {
         VStack(spacing: 0) {
             // Header de la carte
             VStack(spacing: 8) {
-                Text(NSLocalizedString("daily_question_card_header", tableName: "DailyQuestions", comment: ""))
+                Text("Love2Love")
                     .font(.system(size: 18, weight: .bold))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
@@ -536,12 +691,16 @@ struct ChatMessageView: View {
     let response: QuestionResponse
     let isCurrentUser: Bool
     let partnerName: String
+    let isLastMessage: Bool // 🎯 TWITTER STYLE: Savoir si c'est le dernier message
+    let isPreviousSameSender: Bool // 🎯 ESPACEMENT: Déterminer si même expéditeur que précédent
     
     var body: some View {
-        HStack {
+        HStack(alignment: .bottom, spacing: 0) {
             if isCurrentUser {
-                Spacer(minLength: 50)
-            
+                // Espace libre à gauche
+                Spacer(minLength: 80) // 🎯 LARGEUR LIMITÉE: 70% max pour les messages
+                
+                // Message utilisateur aligné à droite
                 VStack(alignment: .trailing, spacing: 4) {
                     messageContent
                         .background(
@@ -550,77 +709,67 @@ struct ChatMessageView: View {
                         )
                         .foregroundColor(.white)
                     
-                    Text(response.respondedAt.formatted(date: .omitted, time: .shortened))
-                        .font(.caption2)
-                        .foregroundColor(.secondary)
-                        .padding(.trailing, 8)
+                    // 🎯 TWITTER STYLE: Heure seulement sur dernier message
+                    if isLastMessage {
+                        Text(response.respondedAt.formatted(date: .omitted, time: .shortened))
+                            .font(.caption2)
+                            .foregroundColor(.secondary)
+                            .padding(.trailing, 8)
+                    }
                 }
             } else {
+                // Message partenaire aligné à gauche
                 VStack(alignment: .leading, spacing: 4) {
-                    HStack(alignment: .top, spacing: 8) {
-                        // Avatar simple avec initiales
-                        Circle()
-                            .fill(Color.gray.opacity(0.3))
-                            .frame(width: 32, height: 32)
-                            .overlay(
-                                Text(String(partnerName.prefix(1)).uppercased())
-                                    .font(.system(size: 14, weight: .semibold))
-                                    .foregroundColor(.gray)
-                            )
-                        
-                        VStack(alignment: .leading, spacing: 2) {
-                            Text(partnerName)
-                                .font(.caption)
-                                .fontWeight(.medium)
-                                .foregroundColor(.secondary)
-                            
-                            messageContent
-                                .background(
-                                    RoundedRectangle(cornerRadius: 18)
-                                        .fill(Color(UIColor.systemGray6)) // Gris système pour le partenaire
-                                )
-                                .foregroundColor(.primary)
-                        }
-                    }
+                    messageContent
+                        .background(
+                            RoundedRectangle(cornerRadius: 18)
+                                .fill(Color(UIColor.systemGray6)) // Gris système pour le partenaire
+                        )
+                        .foregroundColor(.primary)
                     
-                    Text(response.respondedAt.formatted(date: .omitted, time: .shortened))
-                        .font(.caption2)
-                        .foregroundColor(.secondary)
-                        .padding(.leading, 40)
+                    // 🎯 TWITTER STYLE: Heure seulement sur dernier message
+                    if isLastMessage {
+                        Text(response.respondedAt.formatted(date: .omitted, time: .shortened))
+                            .font(.caption2)
+                            .foregroundColor(.secondary)
+                            .padding(.leading, 8)
+                    }
                 }
                 
-                Spacer(minLength: 50)
+                // Espace libre à droite
+                Spacer(minLength: 80) // 🎯 LARGEUR LIMITÉE: 70% max pour les messages
             }
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 4)
+        .padding(.horizontal, 16) // 🎯 MARGES: Espace des bords de l'écran
+        .padding(.vertical, isPreviousSameSender ? 1.5 : 3) // 🎯 ESPACEMENT +1px: Plus d'air entre les messages
     }
     
     private var messageContent: some View {
-        Text(response.text)
-            .font(.body)
-            .multilineTextAlignment(isCurrentUser ? .trailing : .leading)
-            .padding(.horizontal, 16)
-            .padding(.vertical, 12)
-            .fixedSize(horizontal: false, vertical: true)
-            .contextMenu {
-                // Menu contextuel pour signalement (seulement pour les messages du partenaire)
-                if !isCurrentUser {
-                    Button(action: {
-                        reportMessage()
-                    }) {
-                        Label("Signaler ce message", systemImage: "exclamationmark.triangle")
-                    }
-                    .foregroundColor(.red)
+        ChatText(
+            response.text,
+            font: UIFont.systemFont(ofSize: 17), // Font.body équivalent
+            textColor: isCurrentUser ? UIColor.white : UIColor.label,
+            textAlignment: .left, // 🎯 ALIGNEMENT UNIFORME: Texte toujours aligné à gauche dans sa bulle
+            isCurrentUser: isCurrentUser
+        )
+        .padding(.horizontal, 12) // 🎯 COMPACT: Padding interne réduit (16→12)
+        .padding(.vertical, 8) // 🎯 COMPACT: Padding vertical réduit (12→8)
+        .fixedSize(horizontal: false, vertical: true)
+        .contextMenu {
+            // Menu contextuel pour signalement (seulement pour les messages du partenaire)
+            if !isCurrentUser {
+                Button(action: {
+                    reportMessage()
+                }) {
+                    Label("Signaler ce message", systemImage: "exclamationmark.triangle")
                 }
+                .foregroundColor(.red)
             }
+        }
     }
     
     // NOUVEAU: Fonction de signalement
     private func reportMessage() {
-        print("🚨 ChatMessageView: Signalement du message: \(response.id)")
-        print("🚨 ChatMessageView: Contenu signalé: \(String(response.text.prefix(50)))...")
-        
         Task {
             do {
                 let functions = Functions.functions()
@@ -636,19 +785,12 @@ struct ChatMessageView: View {
                 if let data = result.data as? [String: Any],
                    let success = data["success"] as? Bool,
                    success {
-                    print("✅ ChatMessageView: Signalement envoyé avec succès")
                     
                     // Afficher confirmation à l'utilisateur
-                    DispatchQueue.main.async {
-                        // Vous pouvez ajouter une alerte de confirmation ici
-                        print("Message signalé avec succès")
-                    }
                 } else {
-                    print("❌ ChatMessageView: Échec du signalement")
                 }
                 
             } catch {
-                print("❌ ChatMessageView: Erreur signalement - \(error)")
             }
         }
     }
@@ -730,6 +872,7 @@ struct HistoryPreviewCard: View {
         .cornerRadius(12)
         .shadow(color: .black.opacity(0.05), radius: 4, x: 0, y: 2)
     }
+    
 }
 
 // MARK: - Extensions
@@ -782,3 +925,4 @@ extension Date {
         .environmentObject(AppState())
     }
 } 
+

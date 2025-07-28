@@ -501,9 +501,24 @@ struct DailyQuestionGenerator {
     
     /// Vérifie si une nouvelle question devrait être disponible
     static func shouldShowNewQuestion(settings: DailyQuestionSettings) -> Bool {
+        
+        // 🔧 LOGS TIMEZONE DÉTAILLÉS AVANT CALCUL
+        print("🕐 shouldShowNewQuestion: TIMEZONE DEBUG DÉTAILLÉ:")
+        print("🕐 - Date() maintenant: \(Date())")
+        print("🕐 - Date() ISO: \(ISO8601DateFormatter().string(from: Date()))")
+        print("🕐 - TimeZone.current: \(TimeZone.current.identifier)")
+        print("🕐 - Settings.startDate: \(settings.startDate)")
+        print("🕐 - Settings.startDate ISO: \(ISO8601DateFormatter().string(from: settings.startDate))")
+        print("🕐 - Settings timezone: \(settings.timezone)")
+        
         // CORRECTION TIMEZONE: Utiliser UTC pour éviter les problèmes startOfDay
         var calendar = Calendar(identifier: .gregorian)
         calendar.timeZone = TimeZone(identifier: "UTC")!
+        
+        // 🔧 COMPARAISON LOCAL vs UTC
+        let localCalendar = Calendar.current
+        let localStartOfToday = localCalendar.startOfDay(for: Date())
+        let localStartOfSettings = localCalendar.startOfDay(for: settings.startDate)
         
         // Normaliser les dates à minuit UTC pour un calcul correct
         let startOfDay = calendar.startOfDay(for: settings.startDate)
@@ -512,16 +527,45 @@ struct DailyQuestionGenerator {
         let daysSinceStart = calendar.dateComponents([.day], from: startOfDay, to: startOfToday).day ?? 0
         let expectedDay = daysSinceStart + 1
         
-        let shouldShow = expectedDay > settings.currentDay
+        // 🔧 CORRECTION LOGIQUE PREMIER JOUR
+        // Pour un nouveau couple (premier jour), autoriser immédiatement la question
+        let isFirstDay = settings.currentDay == 1 && daysSinceStart == 0
+        let shouldShow = expectedDay > settings.currentDay || isFirstDay
         
         // LOGS SYSTÉMATIQUES pour diagnostic
         print("⚙️ SHOULDSHOWNEWQUESTION (UTC FIXED):")
-        print("⚙️ - startOfDay: \(startOfDay)")
-        print("⚙️ - startOfToday: \(startOfToday)")
+        print("⚙️ LOCAL CALENDAR:")
+        print("⚙️ - localStartOfToday: \(localStartOfToday)")
+        print("⚙️ - localStartOfSettings: \(localStartOfSettings)")
+        print("⚙️ UTC CALENDAR:")
+        print("⚙️ - startOfDay (UTC): \(startOfDay)")
+        print("⚙️ - startOfToday (UTC): \(startOfToday)")
+        print("⚙️ CALCULS:")
         print("⚙️ - daysSinceStart: \(daysSinceStart)")
         print("⚙️ - expectedDay: \(expectedDay)")
         print("⚙️ - settings.currentDay: \(settings.currentDay)")
-        print("⚙️ - shouldShow: \(shouldShow)")
+        print("⚙️ - isFirstDay: \(isFirstDay) (currentDay=1 && daysSinceStart=0)")
+        print("⚙️ - expectedDay > currentDay? \(expectedDay) > \(settings.currentDay) = \(expectedDay > settings.currentDay)")
+        print("⚙️ - LOGIQUE COMPLÈTE: (\(expectedDay) > \(settings.currentDay)) || \(isFirstDay) = \(shouldShow)")
+        print("⚙️ - RÉSULTAT shouldShow: \(shouldShow)")
+        
+        // 🔧 LOG SUPPLÉMENTAIRE : Heure exacte du changement
+        if shouldShow {
+            let timeFormatter = DateFormatter()
+            timeFormatter.timeStyle = .long
+            timeFormatter.dateStyle = .none
+            print("🚨 shouldShowNewQuestion: NOUVELLE QUESTION AUTORISÉE À: \(Date())")
+            print("🚨 - Heure système: \(timeFormatter.string(from: Date()))")
+            if isFirstDay {
+                print("🎉 - RAISON: Premier jour d'un nouveau couple!")
+            } else {
+                print("🗓️ - RAISON: Nouveau jour détecté (expectedDay > currentDay)")
+            }
+        } else {
+            print("⏰ shouldShowNewQuestion: Nouvelle question PAS ENCORE disponible")
+            print("⏰ - Il faut attendre expectedDay > currentDay: \(expectedDay) > \(settings.currentDay)")
+            print("⏰ - OU que ce soit le premier jour (currentDay=1 && daysSinceStart=0)")
+        }
         
         return shouldShow
     }

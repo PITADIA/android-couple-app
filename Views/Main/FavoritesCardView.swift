@@ -40,24 +40,23 @@ struct FavoritesCardView: View {
                 HStack {
                     Spacer()
                     
-                    // Compteur de favoris
-                    Text("\(currentFavoriteIndex + 1) " + "on_count".localized + " \(favoritesService.getAllFavorites().count)")
-                        .font(.system(size: 18, weight: .semibold))
+                    // Titre
+                    VStack(spacing: 4) {
+                        Text("Favoris")
+                            .font(.system(size: 28, weight: .bold))
                         .foregroundColor(.black)
+                    }
                     
                     Spacer()
                 }
                 .padding(.horizontal, 20)
-                .padding(.top, 60)
-                .padding(.bottom, 40)
+                .padding(.top, 20)
+                .padding(.bottom, 20)
                 
-                // Zone des cartes
+                // Contenu principal
                 if favoritesService.getAllFavorites().isEmpty {
-                    // État vide
+                    // État vide avec layout identique au journal
                     VStack(spacing: 30) {
-                        Spacer()
-                            .frame(height: 20)
-                        
                         Image(LocalizationService.localizedImageName(frenchImage: "mili", defaultImage: "manon"))
                             .resizable()
                             .aspectRatio(contentMode: .fit)
@@ -73,14 +72,11 @@ struct FavoritesCardView: View {
                                 .font(.system(size: 16))
                                 .foregroundColor(.black.opacity(0.7))
                                 .multilineTextAlignment(.center)
-                                .lineLimit(nil)
-                                .padding(.horizontal, 20)
+                                .padding(.horizontal, 30)
                         }
-                        
-                        Spacer()
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .padding(.horizontal, 40)
+                    .padding(.horizontal, 20)
                 } else {
                     // Cartes de favoris avec le même design
                     GeometryReader { geometry in
@@ -135,24 +131,22 @@ struct FavoritesCardView: View {
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .padding(.horizontal, 20)
-                }
-                
-                // Bouton Retirer des favoris (design moderne)
-                if !favoritesService.getAllFavorites().isEmpty {
+                    
+                    // Bouton Retirer des favoris (design moderne)
                     Button("remove_from_favorites".localized) {
                         showingDeleteAlert = true
                     }
-                            .font(.system(size: 18, weight: .semibold))
-                            .foregroundColor(.white)
-                        .frame(width: UIScreen.main.bounds.width - 40) // Même largeur que les cartes
-                        .frame(height: 56)
-                        .background(
-                            // Même couleur que le header des cartes
-                            Color(red: 1.0, green: 0.4, blue: 0.6)
-                        )
-                        .cornerRadius(28)
-                    .padding(.top, 40) // Ajout d'espace au-dessus du bouton
-                    .padding(.bottom, 50)
+                    .font(.system(size: 18, weight: .semibold))
+                    .foregroundColor(.white)
+                    .frame(width: UIScreen.main.bounds.width - 40) // Même largeur que les cartes
+                    .frame(height: 56)
+                    .background(
+                        // Même couleur que le header des cartes
+                        Color(red: 1.0, green: 0.4, blue: 0.6)
+                    )
+                    .cornerRadius(28)
+                    .padding(.top, 20) // Réduit de 40 à 20 pour rapprocher du contenu
+                    .padding(.bottom, 30) // Réduit de 50 à 30
                 }
             }
         }
@@ -257,7 +251,7 @@ struct FavoriteQuestionCardView: View {
             )
         }
         .frame(maxWidth: .infinity)
-        .frame(height: 500)
+        .frame(height: 400) // Réduit de 500 à 400 pour des cartes moins hautes
         .cornerRadius(20)
         .shadow(color: .black.opacity(isBackground ? 0.1 : 0.3), radius: isBackground ? 5 : 10, x: 0, y: isBackground ? 2 : 5)
     }

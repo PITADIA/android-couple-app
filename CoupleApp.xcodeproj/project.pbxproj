@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		110E27332E37B00200F2F6B3 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 110E27322E37B00200F2F6B3 /* MessageKit */; };
 		111C37B32E09E36100FCA06D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 111C37B22E09E36100FCA06D /* FirebaseStorage */; };
 		111FEC662DF38CDD00CB1034 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 111FEC652DF38CDD00CB1034 /* ConfettiSwiftUI */; };
 		11384DC02E0A6E0F004E7AF3 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11384DBF2E0A6E0F004E7AF3 /* WidgetKit.framework */; };
@@ -16,7 +17,6 @@
 		114926262DF23223009F7AFA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 114926252DF23223009F7AFA /* RealmSwift */; };
 		1149266F2DF241C5009F7AFA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1149266E2DF241C5009F7AFA /* RealmSwift */; };
 		1149278C2DF243DD009F7AFA /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 114926252DF23223009F7AFA /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		116D2B5C2E33FDB100A54C85 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 116D2B5B2E33FDB100A54C85 /* MessageKit */; };
 		1175AAD72E2599A300850937 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1175AAD62E2599A200850937 /* InfoPlist.xcstrings */; };
 		1175AAD82E2599A300850937 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1175AAD62E2599A200850937 /* InfoPlist.xcstrings */; };
 		11849DC02E251E16000B9FCF /* PourRire.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 11849DBF2E251E14000B9FCF /* PourRire.xcstrings */; };
@@ -157,7 +157,7 @@
 				111C37B32E09E36100FCA06D /* FirebaseStorage in Frameworks */,
 				1149266F2DF241C5009F7AFA /* RealmSwift in Frameworks */,
 				1188F98A2DF09230005B5328 /* FirebaseFunctions in Frameworks */,
-				116D2B5C2E33FDB100A54C85 /* MessageKit in Frameworks */,
+				110E27332E37B00200F2F6B3 /* MessageKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,8 +307,8 @@
 				1188F9842DF09230005B5328 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				114926242DF23223009F7AFA /* XCRemoteSwiftPackageReference "realm-swift" */,
 				111FEC642DF38CDD00CB1034 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
-				11414E742E33F76900C2D157 /* XCRemoteSwiftPackageReference "MessageKit" */,
 				11414E752E33F8EE00C2D157 /* XCRemoteSwiftPackageReference "SwiftyCrop" */,
+				110E27312E37B00200F2F6B3 /* XCRemoteSwiftPackageReference "MessageKit" */,
 			);
 			productRefGroup = 1A000032294A1234567890AB /* Products */;
 			projectDirPath = "";
@@ -693,20 +693,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		110E27312E37B00200F2F6B3 /* XCRemoteSwiftPackageReference "MessageKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MessageKit/MessageKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		111FEC642DF38CDD00CB1034 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 2.0.3;
-			};
-		};
-		11414E742E33F76900C2D157 /* XCRemoteSwiftPackageReference "MessageKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/MessageKit/MessageKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
 			};
 		};
 		11414E752E33F8EE00C2D157 /* XCRemoteSwiftPackageReference "SwiftyCrop" */ = {
@@ -736,6 +736,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		110E27322E37B00200F2F6B3 /* MessageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 110E27312E37B00200F2F6B3 /* XCRemoteSwiftPackageReference "MessageKit" */;
+			productName = MessageKit;
+		};
 		111C37B22E09E36100FCA06D /* FirebaseStorage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1188F9842DF09230005B5328 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
@@ -760,11 +765,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 114926242DF23223009F7AFA /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
-		};
-		116D2B5B2E33FDB100A54C85 /* MessageKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 11414E742E33F76900C2D157 /* XCRemoteSwiftPackageReference "MessageKit" */;
-			productName = MessageKit;
 		};
 		1188F9852DF09230005B5328 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;

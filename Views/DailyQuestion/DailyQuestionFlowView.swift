@@ -1,80 +1,42 @@
 import SwiftUI
-import UserNotifications
+// 🗑️ SUPPRIMÉ : import UserNotifications
+// Plus besoin car on ne gère plus les permissions de notifications pour les questions du jour
 
 struct DailyQuestionFlowView: View {
     @EnvironmentObject var appState: AppState
     @StateObject private var dailyQuestionService = DailyQuestionService.shared
-    @State private var hasRequestedNotifications = false
-    @State private var isCheckingPermission = true
+    // 🗑️ SUPPRIMÉ : Variables liées aux permissions de notifications
+    // Plus besoin de hasRequestedNotifications et isCheckingPermission
 
     var body: some View {
         Group {
-            if isCheckingPermission {
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle(tint: Color(hex: "#FD267A")))
+            if let user = appState.currentUser,
+               let partnerId = user.partnerId,
+               !partnerId.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                // ✅ Partenaire déjà connecté ⇒ Aller directement au chat
+                DailyQuestionMainView()
+                    .environmentObject(appState)
             } else {
-                // 🎯 NOUVEAU PIPELINE CONFORME APPLE
-                if let currentUser = appState.currentUser {
-                    if currentUser.partnerId == nil {
-                        // Cas 1: Aucun partenaire connecté → Page de connexion OBLIGATOIRE
-                        DailyQuestionIntroView()
-                            .environmentObject(appState)
-                    } else if !hasRequestedNotifications {
-                        // Cas 2: Partenaire connecté + jamais demandé notifications → Demander UNE FOIS SEULEMENT
-                        DailyQuestionPermissionView(
-                            onPermissionGranted: {
-                                markNotificationsAsRequested()
-                            },
-                            onContinueWithoutPermissions: {
-                                markNotificationsAsRequested()
-                            }
-                        )
-                        .environmentObject(appState)
-                    } else {
-                        // Cas 3: Partenaire connecté + notifications déjà demandées → Chat TOUJOURS accessible
-                        DailyQuestionMainView()
-                            .environmentObject(appState)
-                    }
-                } else {
-                    // Fallback si pas d'utilisateur
+                // ❌ Pas de partenaire ⇒ Intro pour connexion
                     DailyQuestionIntroView()
                         .environmentObject(appState)
-                }
             }
         }
         .onAppear {
-            checkNotificationStatus()
             // ✅ Toujours configurer le service si un partenaire est déjà connecté
-            if let currentUser = appState.currentUser, currentUser.partnerId != nil {
+            if let currentUser = appState.currentUser, 
+               let partnerId = currentUser.partnerId,
+               !partnerId.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                 dailyQuestionService.configure(with: appState)
             }
         }
     }
     
-
-    
-    private func markNotificationsAsRequested() {
-        // Marquer que l'utilisateur a été sollicité pour les notifications
-        if let currentUser = appState.currentUser {
-            let key = "notifications_requested_\(currentUser.id)"
-            UserDefaults.standard.set(true, forKey: key)
-            hasRequestedNotifications = true
-            print("✅ DailyQuestionFlowView: Notifications marquées comme demandées")
-        }
-    }
-
-    private func checkNotificationStatus() {
-        isCheckingPermission = true
-        
-        // Vérifier si on a déjà demandé les notifications à cet utilisateur
-        if let currentUser = appState.currentUser {
-            let key = "notifications_requested_\(currentUser.id)"
-            hasRequestedNotifications = UserDefaults.standard.bool(forKey: key)
-        }
-        
-        isCheckingPermission = false
-        print("🔍 DailyQuestionFlowView: hasRequestedNotifications = \(hasRequestedNotifications)")
-    }
+    // 🗑️ FONCTIONS SUPPRIMÉES :
+    // - markNotificationsAsRequested()
+    // - checkNotificationStatus()
+    // Ces fonctions géraient les permissions de notifications pour les questions du jour
+    // SUPPRIMÉES car plus besoin de permissions pour accéder aux questions
 } 
 
  

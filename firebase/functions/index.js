@@ -3201,61 +3201,94 @@ function generateQuestionKey(questionDay) {
   return `daily_question_${cycledDay}`;
 }
 
+// 🗑️ FONCTION SUPPRIMÉE : getNotificationTemplates()
+// Cette fonction généraient des templates localisés type "💬 Nouveau message"
+// SUPPRIMÉE car maintenant les notifications FCM utilisent directement :
+// - Titre : Nom du partenaire
+// - Body : Message complet
+// Format unifié avec les notifications locales iOS
+
 /**
- * NOUVEAU: Templates de notifications localisées
- * Synchronisé avec DailyQuestions.xcstrings
+ * Calcule le jour actuel de la question basé sur les settings
+ * CORRIGÉ : Utilise UTC pour éviter les problèmes de timezone
  */
-function getNotificationTemplates(userLanguage, type) {
-  const templates = {
-    new_message: {
-      fr: {
-        title: "💬 Nouveau message", // notification_new_message_title
-      },
-      en: {
-        title: "💬 New message", // notification_new_message_title
-      },
-      es: {
-        title: "💬 Nuevo mensaje",
-      },
-      de: {
-        title: "💬 Neue Nachricht",
-      },
-      it: {
-        title: "💬 Nuovo messaggio",
-      },
-    },
-    daily_reminder: {
-      fr: {
-        title: "💕 Question du jour", // notification_daily_reminder_title
-        body: "Votre question du jour est prête ! Connectez-vous avec votre partenaire.", // notification_daily_reminder_body
-      },
-      en: {
-        title: "💕 Daily Question", // notification_daily_reminder_title
-        body: "Your daily question is ready! Connect with your partner.", // notification_daily_reminder_body
-      },
-      es: {
-        title: "💕 Pregunta diaria",
-        body: "¡Tu pregunta diaria está lista! Conecta con tu pareja.",
-      },
-      de: {
-        title: "💕 Tägliche Frage",
-        body: "Deine tägliche Frage ist bereit! Verbinde dich mit deinem Partner.",
-      },
-      it: {
-        title: "💕 Domanda giornaliera",
-        body: "La tua domanda giornaliera è pronta! Connettiti con il tuo partner.",
-      },
-    },
-  };
+function calculateCurrentQuestionDay(settings, currentTime = new Date()) {
+  const totalQuestions = getTotalQuestionsCount();
 
-  const fallbackLanguage = "fr";
-  const selectedType = templates[type] || templates.new_message;
+  if (!settings || !settings.startDate) {
+    console.log(
+      "📅 calculateCurrentQuestionDay: Pas de settings ou startDate - retour jour 1"
+    );
+    return 1; // Première visite
+  }
 
-  return selectedType[userLanguage] || selectedType[fallbackLanguage];
+  // STANDARD: startDate est TOUJOURS un Timestamp côté Firebase
+  const startDate = settings.startDate.toDate
+    ? settings.startDate.toDate()
+    : new Date(settings.startDate);
+
+  console.log("📅 calculateCurrentQuestionDay: LOGS TIMEZONE DÉTAILLÉS");
+  console.log(`📅 - startDate original: ${startDate.toISOString()}`);
+  console.log(`📅 - currentTime original: ${currentTime.toISOString()}`);
+  console.log(`📅 - timezone settings: ${settings.timezone}`);
+  console.log(`📅 - currentDay dans settings: ${settings.currentDay}`);
+
+  // 🔧 CORRECTION : Utiliser UTC EXCLUSIVEMENT pour éviter les problèmes de timezone
+  const startDateUTC = new Date(
+    Date.UTC(
+      startDate.getFullYear(),
+      startDate.getMonth(),
+      startDate.getDate(),
+      0,
+      0,
+      0,
+      0
+    )
+  );
+
+  const currentTimeUTC = new Date(
+    Date.UTC(
+      currentTime.getFullYear(),
+      currentTime.getMonth(),
+      currentTime.getDate(),
+      0,
+      0,
+      0,
+      0
+    )
+  );
+
+  console.log(`📅 - startDateUTC normalisée: ${startDateUTC.toISOString()}`);
+  console.log(
+    `📅 - currentTimeUTC normalisée: ${currentTimeUTC.toISOString()}`
+  );
+
+  const timeDiff = currentTimeUTC.getTime() - startDateUTC.getTime();
+  const daysSinceStart = Math.floor(timeDiff / (1000 * 3600 * 24));
+
+  console.log(`📅 - timeDiff (ms): ${timeDiff}`);
+  console.log(`📅 - daysSinceStart: ${daysSinceStart}`);
+
+  // 🔧 CORRECTION : Logic plus robuste pour l'incrémentation
+  // Si on est le même jour que la création, currentDay = 1
+  // Si on est le jour suivant, currentDay = 2, etc.
+  const expectedDay = daysSinceStart + 1;
+
+  console.log(`📅 - expectedDay calculé: ${expectedDay}`);
+  console.log(`📅 - currentDay actuel: ${settings.currentDay}`);
+
+  // CYCLE INFINI: Plus de limite sur totalQuestions
+  const cycledDay = ((expectedDay - 1) % totalQuestions) + 1;
+
+  console.log(`📅 - cycledDay final: ${cycledDay}/${totalQuestions}`);
+  console.log("📅 calculateCurrentQuestionDay: FIN LOGS TIMEZONE");
+
+  return cycledDay;
 }
 
 /**
  * Récupère ou crée les settings pour un couple
+ * CORRIGÉ : Utilise UTC pour la cohérence timezone
  */
 async function getOrCreateDailyQuestionSettings(
   coupleId,
@@ -3303,26 +3336,34 @@ async function getOrCreateDailyQuestionSettings(
       return data;
     }
 
-    // Créer de nouveaux settings avec startDate à minuit
+    // 🔧 CORRECTION : Créer startDate en UTC minuit pour éviter les problèmes de timezone
     console.log(
       `🆕 getOrCreateDailyQuestionSettings: Création nouveaux settings pour ${coupleId}`
     );
 
     const now = new Date();
-    const startDate = new Date(now);
-    startDate.setHours(0, 0, 0, 0); // Minuit du jour actuel
+
+    // 🔧 NOUVEAU : Créer startDate en UTC minuit pour cohérence
+    const startDateUTC = new Date(
+      Date.UTC(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0)
+    );
+
+    console.log(`📅 getOrCreateDailyQuestionSettings: CRÉATION SETTINGS UTC:`);
+    console.log(`📅 - now local: ${now.toISOString()}`);
+    console.log(`📅 - startDateUTC: ${startDateUTC.toISOString()}`);
+    console.log(`📅 - timezone: ${timezone}`);
 
     // OPTIMISATION : Calculer nextScheduledDate dès la création
-    const nextDate = new Date(startDate);
+    const nextDate = new Date(startDateUTC);
     nextDate.setDate(nextDate.getDate() + 1); // Demain
     const nextDateString = nextDate.toISOString().split("T")[0];
 
     const newSettings = {
       coupleId: coupleId,
-      startDate: admin.firestore.Timestamp.fromDate(startDate),
+      startDate: admin.firestore.Timestamp.fromDate(startDateUTC), // 🔧 UTC
       timezone: timezone,
       currentDay: 1,
-      nextScheduledDate: nextDateString, // NOUVEAU : Optimisation
+      nextScheduledDate: nextDateString,
       createdAt: admin.firestore.FieldValue.serverTimestamp(),
       lastVisitDate: null,
     };
@@ -3330,7 +3371,7 @@ async function getOrCreateDailyQuestionSettings(
     console.log(
       `📅 getOrCreateDailyQuestionSettings: Nouveaux settings pour ${coupleId}:`
     );
-    console.log(`   - startDate: ${startDate.toISOString()}`);
+    console.log(`   - startDate: ${startDateUTC.toISOString()}`);
     console.log(`   - currentDay: 1`);
     console.log(`   - nextScheduledDate: ${nextDateString}`);
     console.log(`   - timezone: ${timezone}`);
@@ -3352,50 +3393,6 @@ async function getOrCreateDailyQuestionSettings(
     );
     throw error;
   }
-}
-
-/**
- * Calcule le jour actuel de la question basé sur les settings
- */
-function calculateCurrentQuestionDay(settings, currentTime = new Date()) {
-  const totalQuestions = getTotalQuestionsCount();
-
-  if (!settings || !settings.startDate) {
-    return 1; // Première visite
-  }
-
-  // STANDARD: startDate est TOUJOURS un Timestamp côté Firebase
-  const startDate = settings.startDate.toDate
-    ? settings.startDate.toDate()
-    : new Date(settings.startDate);
-
-  // Normaliser les dates à minuit pour calculer correctement les jours
-  const normalizedStartDate = new Date(startDate);
-  normalizedStartDate.setHours(0, 0, 0, 0);
-
-  const normalizedCurrentTime = new Date(currentTime);
-  normalizedCurrentTime.setHours(0, 0, 0, 0);
-
-  const timeDiff =
-    normalizedCurrentTime.getTime() - normalizedStartDate.getTime();
-  const daysSinceStart = Math.floor(timeDiff / (1000 * 3600 * 24));
-
-  // NOUVEAU: Incrémenter basé sur le currentDay existant plutôt que recalculer depuis le début
-  const shouldIncrement = daysSinceStart >= settings.currentDay;
-  const nextDay = shouldIncrement
-    ? settings.currentDay + 1
-    : settings.currentDay;
-
-  // CYCLE INFINI: Plus de limite sur totalQuestions
-  const cycledDay = ((nextDay - 1) % totalQuestions) + 1;
-
-  console.log(
-    `📅 Calcul jour (fixé): StartDate=${normalizedStartDate.toISOString()}, Current=${normalizedCurrentTime.toISOString()}, Jours écoulés=${daysSinceStart}, CurrentDay=${
-      settings.currentDay
-    }, NextDay=${nextDay}, Cyclé=${cycledDay}/${totalQuestions}`
-  );
-
-  return cycledDay;
 }
 
 /**
@@ -3574,10 +3571,74 @@ exports.generateDailyQuestion = functions.https.onCall(
         },
       };
     } catch (error) {
-      console.error("❌ generateDailyQuestion: Erreur", error);
+      console.error("❌ generateDailyQuestion: Erreur:", error);
       throw new functions.https.HttpsError(
         "internal",
         "Erreur lors de la génération de la question"
+      );
+    }
+  }
+);
+
+/**
+ * 🔧 NOUVEAU: Créer ou récupérer les settings pour un couple
+ * Callable sécurisé pour initialiser immédiatement les settings à la première connexion
+ */
+exports.getOrCreateDailyQuestionSettings = functions.https.onCall(
+  async (data, context) => {
+    try {
+      // Vérifier l'authentification
+      if (!context.auth) {
+        throw new functions.https.HttpsError(
+          "unauthenticated",
+          "Utilisateur non authentifié"
+        );
+      }
+
+      const { coupleId, timezone } = data;
+
+      if (!coupleId) {
+        throw new functions.https.HttpsError(
+          "invalid-argument",
+          "coupleId requis"
+        );
+      }
+
+      console.log(
+        `📅 getOrCreateDailyQuestionSettings: Callable pour ${coupleId}`
+      );
+      console.log(`📅 - timezone: ${timezone || "Europe/Paris"}`);
+      console.log(`📅 - userId: ${context.auth.uid}`);
+
+      // Utiliser la fonction utilitaire existante
+      const settings = await getOrCreateDailyQuestionSettings(
+        coupleId,
+        timezone || "Europe/Paris"
+      );
+
+      console.log(
+        `✅ getOrCreateDailyQuestionSettings: Succès pour ${coupleId}`
+      );
+      console.log(`   - currentDay: ${settings.currentDay}`);
+      console.log(`   - startDate: ${settings.startDate}`);
+
+      return {
+        success: true,
+        settings: {
+          coupleId: settings.coupleId,
+          currentDay: settings.currentDay,
+          startDate: settings.startDate,
+          timezone: settings.timezone,
+          nextScheduledDate: settings.nextScheduledDate,
+          createdAt: settings.createdAt,
+        },
+        message: "Settings créés/récupérés avec succès",
+      };
+    } catch (error) {
+      console.error("❌ getOrCreateDailyQuestionSettings: Erreur:", error);
+      throw new functions.https.HttpsError(
+        "internal",
+        "Erreur lors de la création/récupération des settings"
       );
     }
   }
@@ -3676,17 +3737,10 @@ exports.notifyPartnerResponseSubcollection = functions.firestore
       // NOUVEAU: Localisation basée sur la langue de l'utilisateur
       const userLanguage = partnerUserData.languageCode || "fr"; // Défaut français
 
-      // Messages localisés via templates centralisés
-      const messages = getNotificationTemplates(userLanguage, "new_message");
-
-      console.log(
-        `🌍 notifyPartnerResponseSubcollection: Langue détectée: ${userLanguage}`
-      );
-
       const payload = {
         notification: {
-          title: messages.title,
-          body: `${respondingUserData.name}: ${previewText}`,
+          title: respondingUserData.name || "Votre partenaire", // 🎯 FORMAT UNIFIÉ : Nom en titre
+          body: messageText, // 🎯 FORMAT UNIFIÉ : Message complet en body
         },
         data: {
           questionId: questionId,
@@ -3697,6 +3751,15 @@ exports.notifyPartnerResponseSubcollection = functions.firestore
         },
         token: fcmToken,
       };
+
+      console.log(
+        `🔔 notifyPartnerResponseSubcollection: Notification FCM format unifié:`
+      );
+      console.log(`   - Titre: ${payload.notification.title}`);
+      console.log(
+        `   - Body: ${payload.notification.body.substring(0, 50)}...`
+      );
+      console.log(`   - Langue: ${userLanguage}`);
 
       console.log(
         `🔔 notifyPartnerResponseSubcollection: Préparation envoi FCM:`,
@@ -3741,11 +3804,12 @@ exports.notifyPartnerResponseSubcollection = functions.firestore
 
 /**
  * Fonction planifiée pour générer les questions quotidiennes
+ * 🔧 CORRIGÉ : S'exécute à minuit UTC pour cohérence timezone
  * OPTIMISÉ : traite seulement les couples qui ont une question prévue aujourd'hui
  */
 exports.scheduledDailyQuestionGenerator = functions.pubsub
-  .schedule("0 21 * * *") // Tous les jours à 21h UTC
-  .timeZone("Europe/Paris") // Timezone française
+  .schedule("0 0 * * *") // 🔧 CORRECTION: Minuit UTC au lieu de 21h
+  .timeZone("UTC") // 🔧 CORRECTION: UTC explicite pour éviter confusion
   .onRun(async (context) => {
     try {
       console.log(
@@ -3967,100 +4031,9 @@ exports.scheduledDailyQuestionGenerator = functions.pubsub
     }
   });
 
-/**
- * Programmer les notifications pour une question (fonction helper avec localisation)
- */
-async function scheduleDailyQuestionNotification(
-  coupleId,
-  questionDate,
-  questionKey
-) {
-  console.log(
-    `🔔 scheduleDailyQuestionNotification: Programmation notification pour ${coupleId}`
-  );
-
-  try {
-    // Récupérer les utilisateurs du couple
-    const [userId1, userId2] = coupleId.split("_");
-
-    // Récupérer les tokens FCM et langues des utilisateurs
-    const [user1Doc, user2Doc] = await Promise.all([
-      admin.firestore().collection("users").doc(userId1).get(),
-      admin.firestore().collection("users").doc(userId2).get(),
-    ]);
-
-    const notifications = [];
-
-    for (const userDoc of [user1Doc, user2Doc]) {
-      if (!userDoc.exists) continue;
-
-      const userData = userDoc.data();
-      const fcmToken = userData.fcmToken;
-
-      if (!fcmToken) {
-        console.log(
-          `❌ scheduleDailyQuestionNotification: Pas de token FCM pour ${userDoc.id}`
-        );
-        continue;
-      }
-
-      // NOUVEAU: Localisation des notifications quotidiennes
-      const userLanguage = userData.languageCode || "fr";
-
-      // Utiliser les templates centralisés
-      const messages = getNotificationTemplates(userLanguage, "daily_reminder");
-
-      console.log(
-        `🌍 scheduleDailyQuestionNotification: Langue ${userLanguage} pour utilisateur ${userDoc.id}`
-      );
-
-      notifications.push({
-        notification: {
-          title: messages.title,
-          body: messages.body,
-        },
-        data: {
-          type: "daily_question",
-          questionId: `${coupleId}_${questionDate}`,
-          questionKey: questionKey,
-          language: userLanguage,
-        },
-        token: fcmToken,
-      });
-    }
-
-    // Envoyer toutes les notifications
-    if (notifications.length > 0) {
-      const results = await Promise.allSettled(
-        notifications.map((payload) => admin.messaging().send(payload))
-      );
-
-      let successCount = 0;
-      let errorCount = 0;
-
-      results.forEach((result, index) => {
-        if (result.status === "fulfilled") {
-          successCount++;
-          console.log(
-            `✅ scheduleDailyQuestionNotification: Notification envoyée avec succès`
-          );
-        } else {
-          errorCount++;
-          console.error(
-            `❌ scheduleDailyQuestionNotification: Erreur notification:`,
-            result.reason
-          );
-        }
-      });
-
-      console.log(
-        `📊 scheduleDailyQuestionNotification: ${successCount} succès, ${errorCount} erreurs`
-      );
-    }
-  } catch (error) {
-    console.error("❌ scheduleDailyQuestionNotification: Erreur:", error);
-  }
-}
+// 🗑️ FONCTION SUPPRIMÉE : scheduleDailyQuestionNotification
+// Cette fonction était utilisée pour envoyer des notifications de rappel à 21h
+// SUPPRIMÉE car seules les notifications de messages sont souhaitées
 
 /**
  * Soumettre une réponse à une question quotidienne (nouveau système avec sous-collections)
@@ -4423,76 +4396,14 @@ exports.migrateDailyQuestionResponses = functions.https.onCall(
   }
 );
 
-/**
- * Planifier les notifications quotidiennes (21h) pour les questions sans réponse
- */
-exports.scheduleDailyQuestionNotifications = functions.pubsub
-  .schedule("0 21 * * *") // Chaque jour à 21h UTC (≈ 23h Paris en hiver, 22h en été)
-  .timeZone("Europe/Paris") // Utiliser le fuseau horaire français
-  .onRun(async (context) => {
-    try {
-      console.log(
-        "🔔 scheduleDailyQuestionNotifications: Début du traitement 21h"
-      );
-
-      const today = new Date();
-      const todayString = today.toISOString().split("T")[0]; // Format YYYY-MM-DD
-
-      // Récupérer toutes les questions d'aujourd'hui
-      const questionsSnapshot = await admin
-        .firestore()
-        .collection("dailyQuestions")
-        .where("scheduledDate", "==", todayString)
-        .get();
-
-      let notificationsSent = 0;
-
-      for (const questionDoc of questionsSnapshot.docs) {
-        const questionData = questionDoc.data();
-
-        // Vérifier si la question a des réponses dans la sous-collection
-        const responsesSnapshot = await admin
-          .firestore()
-          .collection("dailyQuestions")
-          .doc(questionDoc.id)
-          .collection("responses")
-          .get();
-
-        // Envoyer notification seulement si aucune réponse
-        if (responsesSnapshot.empty) {
-          console.log(
-            `🔔 Question ${questionDoc.id} sans réponse - envoi notification`
-          );
-
-          try {
-            await scheduleDailyQuestionNotification(
-              questionData.coupleId,
-              todayString,
-              questionData.questionKey
-            );
-            notificationsSent++;
-          } catch (notificationError) {
-            console.error(
-              `❌ Erreur notification pour ${questionDoc.id}:`,
-              notificationError
-            );
-          }
-        } else {
-          console.log(
-            `✅ Question ${questionDoc.id} a déjà ${responsesSnapshot.size} réponse(s) - pas de notification`
-          );
-        }
-      }
-
-      console.log(
-        `✅ scheduleDailyQuestionNotifications: ${notificationsSent} notifications envoyées`
-      );
-      return { success: true, notificationsSent };
-    } catch (error) {
-      console.error("❌ scheduleDailyQuestionNotifications: Erreur", error);
-      throw error;
-    }
-  });
+// 🗑️ FONCTION SUPPRIMÉE : scheduleDailyQuestionNotifications
+// Cette fonction s'exécutait tous les jours à 21h pour envoyer des notifications de rappel
+// SUPPRIMÉE car seules les notifications de messages entre partenaires sont souhaitées
+//
+// Économies réalisées :
+// - 0 Cloud Scheduler jobs = -$0.10/mois
+// - 0 exécutions quotidiennes = -720 exécutions/mois
+// - 0 Firestore reads pour vérifier les réponses = économies importantes
 
 /**
  * Signaler un contenu inapproprié
@@ -4736,75 +4647,356 @@ exports.getContentReports = functions.https.onCall(async (data, context) => {
   }
 });
 
+// 🗑️ FONCTION DEBUG SUPPRIMÉE : fixDailyQuestionSettings
+// Cette fonction était utilisée pour corriger manuellement les settings des questions quotidiennes
+// SUPPRIMÉE car plus nécessaire après les corrections timezone automatiques
+
 /**
- * Corriger les settings de questions quotidiennes pour un couple spécifique
+ * 🌍 SOLUTION TIMEZONE UNIVERSELLE - Cron Horaire Optimisé
+ * Gère toutes les timezones du monde automatiquement
+ * S'exécute toutes les heures et check seulement les timezones pertinentes
  */
-exports.fixDailyQuestionSettings = functions.https.onCall(
-  async (data, context) => {
+exports.hourlyGlobalTimezoneManager = functions.pubsub
+  .schedule("0 * * * *") // Toutes les heures pile
+  .timeZone("UTC") // Fixe en UTC pour cohérence
+  .onRun(async (context) => {
+    const startTime = Date.now();
+    const currentUTCTime = new Date();
+    const currentUTCHour = currentUTCTime.getUTCHours();
+    const currentUTCMinute = currentUTCTime.getUTCMinutes();
+
+    console.log("🌍 === TIMEZONE MANAGER START ===");
+    console.log(`🕐 UTC Time: ${currentUTCTime.toISOString()}`);
+    console.log(`🎯 Checking UTC Hour: ${currentUTCHour}`);
+
     try {
-      if (!context.auth) {
-        throw new functions.https.HttpsError(
-          "unauthenticated",
-          "Utilisateur non authentifié"
-        );
-      }
-
-      const { coupleId } = data;
-
-      if (!coupleId) {
-        throw new functions.https.HttpsError(
-          "invalid-argument",
-          "coupleId requis"
-        );
-      }
+      // 🎯 OPTIMISATION: Mapper les timezones pertinentes pour cette heure UTC
+      const timezonesToCheck = getTimezonesForUTCHour(currentUTCHour);
 
       console.log(
-        `🔧 fixDailyQuestionSettings: Correction settings pour ${coupleId}`
+        `🔍 Timezones à vérifier (${timezonesToCheck.length}):`,
+        timezonesToCheck
       );
 
-      // Recréer les settings avec des valeurs correctes
-      const now = new Date();
-      const startDate = new Date(now);
-      startDate.setHours(0, 0, 0, 0); // Minuit du jour actuel
+      if (timezonesToCheck.length === 0) {
+        console.log("⏭️  Aucune timezone pertinente pour cette heure - skip");
+        return {
+          success: true,
+          skipped: true,
+          reason: "no_relevant_timezones",
+        };
+      }
 
-      const nextDate = new Date(startDate);
-      nextDate.setDate(nextDate.getDate() + 1);
-      const nextDateString = nextDate.toISOString().split("T")[0];
+      // 📊 Stats tracking
+      let couplesProcessed = 0;
+      let questionsGenerated = 0;
+      let notificationsSent = 0;
+      let errors = 0;
 
-      const correctedSettings = {
-        coupleId: coupleId,
-        startDate: admin.firestore.Timestamp.fromDate(startDate),
-        timezone: "Europe/Paris",
-        currentDay: 1, // Reset à 1
-        nextScheduledDate: nextDateString,
-        createdAt: admin.firestore.FieldValue.serverTimestamp(),
-        lastVisitDate: admin.firestore.FieldValue.serverTimestamp(),
-      };
-
-      await admin
+      // 🔍 Récupérer les couples dans les timezones pertinentes
+      const couplesQuery = admin
         .firestore()
         .collection("dailyQuestionSettings")
-        .doc(coupleId)
-        .set(correctedSettings);
+        .where("timezone", "in", timezonesToCheck);
 
+      const couplesSnapshot = await couplesQuery.get();
       console.log(
-        `✅ fixDailyQuestionSettings: Settings corrigés pour ${coupleId}`
+        `📋 ${couplesSnapshot.size} couple(s) trouvé(s) dans les timezones pertinentes`
       );
-      console.log(`   - Nouveau startDate: ${startDate.toISOString()}`);
-      console.log(`   - currentDay reset à: 1`);
 
-      return {
+      // 🔄 Traiter chaque couple
+      for (const coupleDoc of couplesSnapshot.docs) {
+        const coupleId = coupleDoc.id;
+        const coupleData = coupleDoc.data();
+        const userTimezone = coupleData.timezone || "Europe/Paris";
+
+        couplesProcessed++;
+
+        try {
+          console.log(
+            `\n👫 Couple ${couplesProcessed}/${couplesSnapshot.size}: ${coupleId}`
+          );
+          console.log(`🌍 Timezone: ${userTimezone}`);
+
+          // 🕐 Calculer l'heure locale du couple
+          const userLocalTime = getCurrentTimeInTimezone(userTimezone);
+          const userHour = userLocalTime.getHours();
+          const userMinute = userLocalTime.getMinutes();
+
+          console.log(
+            `⏰ Heure locale couple: ${userHour}:${userMinute
+              .toString()
+              .padStart(2, "0")}`
+          );
+
+          // ✅ Nouvelle question à minuit local (00:00)
+          if (userHour === 0 && userMinute === 0) {
+            console.log("🎯 MINUIT LOCAL - Génération nouvelle question");
+
+            try {
+              const result = await generateDailyQuestionForCouple(
+                coupleId,
+                userTimezone
+              );
+              if (result.success) {
+                questionsGenerated++;
+                console.log(`✅ Question générée: ${result.questionKey}`);
+              } else {
+                errors++;
+                console.log(`❌ Erreur génération: ${result.error}`);
+              }
+            } catch (error) {
+              errors++;
+              console.log(`❌ Exception génération: ${error.message}`);
+            }
+          }
+
+          // 🗑️ SUPPRIMÉ : Notification à 21h local
+          // Cette logique envoyait des notifications de rappel à 21h si pas de réponse
+          // SUPPRIMÉE car seules les notifications de messages sont souhaitées
+
+          // ⏭️ Autres heures - skip
+          else {
+            console.log(`⏭️  Heure non critique (${userHour}h) - skip`);
+          }
+        } catch (error) {
+          errors++;
+          console.log(
+            `❌ Erreur traitement couple ${coupleId}: ${error.message}`
+          );
+        }
+      }
+
+      // 📊 Rapport final
+      const executionTime = Date.now() - startTime;
+      const finalStats = {
         success: true,
-        message: "Settings corrigés avec succès",
-        newSettings: {
-          startDate: startDate.toISOString(),
-          currentDay: 1,
-          nextScheduledDate: nextDateString,
+        executionTimeMs: executionTime,
+        utcHour: currentUTCHour,
+        timezonesChecked: timezonesToCheck,
+        stats: {
+          couplesFound: couplesSnapshot.size,
+          couplesProcessed,
+          questionsGenerated,
+          notificationsSent,
+          errors,
         },
       };
+
+      console.log("\n📊 === RAPPORT FINAL ===");
+      console.log(`⏱️  Temps d'exécution: ${executionTime}ms`);
+      console.log(
+        `👫 Couples traités: ${couplesProcessed}/${couplesSnapshot.size}`
+      );
+      console.log(`❓ Questions générées: ${questionsGenerated}`);
+      console.log(`🔔 Notifications envoyées: ${notificationsSent}`);
+      console.log(`❌ Erreurs: ${errors}`);
+      console.log("🌍 === TIMEZONE MANAGER END ===\n");
+
+      return finalStats;
     } catch (error) {
-      console.error("❌ fixDailyQuestionSettings: Erreur", error);
-      throw new functions.https.HttpsError("internal", error.message);
+      console.log(`❌ ERREUR GLOBALE Timezone Manager: ${error.message}`);
+      console.log("Stack:", error.stack);
+
+      return {
+        success: false,
+        error: error.message,
+        executionTimeMs: Date.now() - startTime,
+      };
     }
+  });
+
+/**
+ * 🎯 Mapper les timezones pertinentes selon l'heure UTC
+ * OPTIMISATION: Évite de checker tous les couples inutilement
+ */
+function getTimezonesForUTCHour(utcHour) {
+  // 🗺️ Mapping intelligent des timezones principales
+  const timezoneMap = {
+    // UTC 0 = Minuit pour UTC+0, 21h pour UTC-3
+    0: [
+      "UTC",
+      "Europe/London",
+      "Atlantic/Reykjavik",
+      "America/Argentina/Buenos_Aires",
+      "America/Sao_Paulo",
+    ],
+
+    // UTC 1 = Minuit pour UTC+1, 21h pour UTC-2
+    1: [
+      "Europe/Paris",
+      "Europe/Berlin",
+      "Europe/Rome",
+      "Europe/Madrid",
+      "Africa/Lagos",
+    ],
+
+    // UTC 2 = Minuit pour UTC+2, 21h pour UTC-1
+    2: [
+      "Europe/Helsinki",
+      "Europe/Athens",
+      "Africa/Cairo",
+      "Asia/Jerusalem",
+      "Atlantic/Azores",
+    ],
+
+    // UTC 3 = Minuit pour UTC+3, 21h pour UTC+0
+    3: ["Europe/Moscow", "Asia/Riyadh", "Africa/Nairobi", "Europe/London"],
+
+    // UTC 4 = Minuit pour UTC+4, 21h pour UTC+1
+    4: ["Asia/Dubai", "Asia/Baku", "Europe/Paris", "Europe/Berlin"],
+
+    // UTC 5 = Minuit pour UTC+5, 21h pour UTC+2
+    5: ["Asia/Karachi", "Asia/Tashkent", "Europe/Helsinki", "Europe/Athens"],
+
+    // UTC 6 = Minuit pour UTC+6, 21h pour UTC+3
+    6: ["Asia/Almaty", "Asia/Dhaka", "Europe/Moscow", "Asia/Riyadh"],
+
+    // UTC 7 = Minuit pour UTC+7, 21h pour UTC+4
+    7: ["Asia/Bangkok", "Asia/Jakarta", "Asia/Dubai", "Asia/Baku"],
+
+    // UTC 8 = Minuit pour UTC+8, 21h pour UTC+5
+    8: ["Asia/Shanghai", "Asia/Singapore", "Asia/Karachi", "Asia/Tashkent"],
+
+    // UTC 9 = Minuit pour UTC+9, 21h pour UTC+6
+    9: ["Asia/Tokyo", "Asia/Seoul", "Asia/Almaty", "Asia/Dhaka"],
+
+    // UTC 10 = Minuit pour UTC+10, 21h pour UTC+7
+    10: ["Australia/Sydney", "Pacific/Guam", "Asia/Bangkok", "Asia/Jakarta"],
+
+    // UTC 11 = Minuit pour UTC+11, 21h pour UTC+8
+    11: ["Pacific/Norfolk", "Asia/Magadan", "Asia/Shanghai", "Asia/Singapore"],
+
+    // UTC 12 = Minuit pour UTC+12, 21h pour UTC+9
+    12: ["Pacific/Auckland", "Pacific/Fiji", "Asia/Tokyo", "Asia/Seoul"],
+
+    // UTC 13 = Minuit pour UTC+13, 21h pour UTC+10
+    13: ["Pacific/Tongatapu", "Australia/Sydney", "Pacific/Guam"],
+
+    // UTC 14 = Minuit pour UTC+14, 21h pour UTC+11
+    14: ["Pacific/Kiritimati", "Pacific/Norfolk", "Asia/Magadan"],
+
+    // UTC 15 = 21h pour UTC+12
+    15: ["Pacific/Auckland", "Pacific/Fiji"],
+
+    // UTC 16 = 21h pour UTC+13
+    16: ["Pacific/Tongatapu"],
+
+    // UTC 17 = 21h pour UTC+14
+    17: ["Pacific/Kiritimati"],
+
+    // UTC 18 = Minuit pour UTC-6, 21h pour UTC-3
+    18: [
+      "America/Chicago",
+      "America/Mexico_City",
+      "America/Argentina/Buenos_Aires",
+      "America/Sao_Paulo",
+    ],
+
+    // UTC 19 = Minuit pour UTC-5, 21h pour UTC-2
+    19: ["America/New_York", "America/Toronto", "Atlantic/Azores"],
+
+    // UTC 20 = Minuit pour UTC-4, 21h pour UTC-1
+    20: ["America/Caracas", "Atlantic/Bermuda"],
+
+    // UTC 21 = Minuit pour UTC-3, 21h pour UTC+0
+    21: [
+      "America/Argentina/Buenos_Aires",
+      "America/Sao_Paulo",
+      "Europe/London",
+    ],
+
+    // UTC 22 = Minuit pour UTC-2, 21h pour UTC+1
+    22: ["Atlantic/Azores", "Europe/Paris", "Europe/Berlin"],
+
+    // UTC 23 = Minuit pour UTC-1, 21h pour UTC+2
+    23: ["Atlantic/Cape_Verde", "Europe/Helsinki", "Europe/Athens"],
+  };
+
+  return timezoneMap[utcHour] || [];
+}
+
+/**
+ * 🕐 Obtenir l'heure actuelle dans une timezone donnée
+ */
+function getCurrentTimeInTimezone(timezone) {
+  try {
+    const now = new Date();
+
+    // Utiliser Intl.DateTimeFormat pour la conversion timezone
+    const formatter = new Intl.DateTimeFormat("en-US", {
+      timeZone: timezone,
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false,
+    });
+
+    const parts = formatter.formatToParts(now);
+    const year = parseInt(parts.find((p) => p.type === "year").value);
+    const month = parseInt(parts.find((p) => p.type === "month").value) - 1; // Month is 0-indexed
+    const day = parseInt(parts.find((p) => p.type === "day").value);
+    const hour = parseInt(parts.find((p) => p.type === "hour").value);
+    const minute = parseInt(parts.find((p) => p.type === "minute").value);
+    const second = parseInt(parts.find((p) => p.type === "second").value);
+
+    return new Date(year, month, day, hour, minute, second);
+  } catch (error) {
+    console.log(`❌ Erreur conversion timezone ${timezone}: ${error.message}`);
+    return new Date(); // Fallback UTC
   }
-);
+}
+
+/**
+ * 🎯 Générer une question quotidienne pour un couple spécifique
+ */
+async function generateDailyQuestionForCouple(coupleId, timezone) {
+  try {
+    console.log(`🎯 generateDailyQuestionForCouple: ${coupleId} (${timezone})`);
+
+    // Récupérer les settings du couple
+    const settingsDoc = await admin
+      .firestore()
+      .collection("dailyQuestionSettings")
+      .doc(coupleId)
+      .get();
+
+    if (!settingsDoc.exists) {
+      return { success: false, error: "Settings not found" };
+    }
+
+    const settings = settingsDoc.data();
+    const currentDay = settings.currentDay || 1;
+    const nextDay = currentDay + 1;
+
+    console.log(`📊 Settings: currentDay=${currentDay}, nextDay=${nextDay}`);
+
+    // Utiliser la logique existante de génération
+    const result = await exports.generateDailyQuestion.run({
+      coupleId,
+      userId: "system",
+      questionDay: nextDay,
+      timezone,
+    });
+
+    return {
+      success: true,
+      questionKey: result.question?.questionKey,
+      day: nextDay,
+    };
+  } catch (error) {
+    console.log(`❌ Erreur generateDailyQuestionForCouple: ${error.message}`);
+    return { success: false, error: error.message };
+  }
+}
+
+// 🗑️ FONCTION SUPPRIMÉE : sendReminderNotificationIfNeeded
+// Cette fonction vérifiait si une notification de rappel était nécessaire à 21h
+// SUPPRIMÉE car seules les notifications de messages sont souhaitées
+
+// 🗑️ FONCTION SUPPRIMÉE : sendReminderNotification
+// Cette fonction envoyait des notifications de rappel avec templates localisés
+// SUPPRIMÉE car seules les notifications de messages entre partenaires sont souhaitées

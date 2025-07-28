@@ -50,31 +50,8 @@ struct MenuContentView: View {
                 
 
                 
-                // MARK: - CORRECTION TEMPORAIRE
-                VStack(alignment: .leading, spacing: 12) {
-                    Text("🔧 CORRECTION")
-                        .font(.headline)
-                        .foregroundColor(.orange)
-                        .padding(.leading, 16)
-                    
-                    VStack(spacing: 0) {
-                        ProfileRowView(
-                            title: "🔧 Corriger questions quotidiennes",
-                            value: "Reset settings et nouvelle génération",
-                            showChevron: true,
-                            isDestructive: false,
-                            icon: "wrench.and.screwdriver",
-                            action: {
-                                Task {
-                                    await DailyQuestionService.shared.fixDailyQuestionSettings()
-                                }
-                            }
-                        )
-                    }
-                    .background(Color(.systemGray6))
-                    .cornerRadius(12)
-                    .padding(.horizontal, 16)
-                }
+                // 🗑️ SECTION DEBUG SUPPRIMÉE
+                // La fonctionnalité de correction des questions quotidiennes a été supprimée
                 
                 // MARK: - Informations section
             }
