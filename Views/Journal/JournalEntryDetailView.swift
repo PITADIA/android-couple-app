@@ -180,8 +180,8 @@ struct JournalEntryDetailView: View {
             print("📄 JournalEntryDetailView: entry.id: \(entry.id)")
             print("📄 JournalEntryDetailView: entry.authorId: \(entry.authorId)")
             print("📄 JournalEntryDetailView: currentUser.uid: \(Auth.auth().currentUser?.uid ?? "nil")")
-            print("📄 JournalEntryDetailView: AppState présent: \(appState != nil)")
-            print("📄 JournalEntryDetailView: JournalService présent: \(journalService != nil)")
+            print("📄 JournalEntryDetailView: AppState présent: true")
+            print("📄 JournalEntryDetailView: JournalService présent: true")
         }
         .onDisappear {
             print("📄 JournalEntryDetailView: Vue disparue - '\(entry.title)'")
@@ -233,7 +233,7 @@ struct JournalEntryDetailView: View {
         print("🗑️ JournalEntryDetailView: - Auteur: \(entry.authorName) (\(entry.authorId))")
         print("🗑️ JournalEntryDetailView: - A une image: \(entry.hasImage)")
         print("🗑️ JournalEntryDetailView: - Image URL: \(entry.imageURL ?? "nil")")
-        print("🗑️ JournalEntryDetailView: - JournalService disponible: \(journalService != nil)")
+        print("🗑️ JournalEntryDetailView: - JournalService disponible: true")
         
         isDeleting = true
         print("🗑️ JournalEntryDetailView: Flag isDeleting = true")

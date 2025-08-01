@@ -381,7 +381,7 @@ class WidgetService: ObservableObject {
     
     // NOUVEAU: Forcer le téléchargement immédiat des images de profil
     func forceRefreshProfileImages() {
-        guard let sharedDefaults = sharedDefaults else {
+        guard sharedDefaults != nil else {
             print("❌ WidgetService: Impossible d'accéder aux UserDefaults partagés")
             return
         }
@@ -600,7 +600,7 @@ class WidgetService: ObservableObject {
         let fileName = isUser ? "user_profile_image.jpg" : "partner_profile_image.jpg"
         
         print("🔄 WidgetService: downloadAndCacheImage appelé")
-        print("  - URL: \(urlString)")
+        print("  - URL: [MASQUÉE POUR SÉCURITÉ]")
         print("  - Key: \(key)")
         print("  - FileName: \(fileName)")
         print("  - IsUser: \(isUser)")

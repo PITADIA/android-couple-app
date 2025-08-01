@@ -43,7 +43,7 @@ struct CacheManagementView: View {
                 Section("🔄 Actions") {
                     Button(action: {
                         Task {
-                            await questionCacheManager.preloadAllCategories()
+                            questionCacheManager.preloadAllCategories()
                             updateStats()
                         }
                     }) {

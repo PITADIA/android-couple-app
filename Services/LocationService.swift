@@ -2,6 +2,8 @@ import Foundation
 import CoreLocation
 import Combine
 import FirebaseAuth
+import UIKit
+import FirebaseAnalytics
 
 class LocationService: NSObject, ObservableObject {
     static let shared = LocationService()
@@ -30,10 +32,16 @@ class LocationService: NSObject, ObservableObject {
     private func setupLocationManager() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters // Précision moins gourmande
-        locationManager.distanceFilter = 500 // Mise à jour tous les 500 mètres
+        
+        // 🔧 FIX iOS 16.4+ : Supprimer distanceFilter pour éviter les délais de 15 secondes
+        // Référence: Apple Developer Forums - Background location updates stop in iOS 16.4
+        // https://developer.apple.com/forums/thread/726945
+        locationManager.distanceFilter = kCLDistanceFilterNone // Pas de filtre pour iOS 16.4+
+        
         authorizationStatus = locationManager.authorizationStatus
         
         print("📍 LocationService: Service initialisé - Statut: \(statusDescription(authorizationStatus))")
+        print("📍 LocationService: Configuration iOS 16.4+ : distanceFilter = kCLDistanceFilterNone")
     }
     
     private func setupAuthObserver() {
@@ -151,7 +159,10 @@ extension LocationService: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         
+        let deviceModel = UIDevice.current.modelName
         print("📍 LocationService: Nouvelle localisation reçue: \(location.coordinate.latitude), \(location.coordinate.longitude)")
+        print("📍 LocationService: Appareil: \(deviceModel), iOS: \(UIDevice.current.systemVersion)")
+        print("📍 LocationService: Précision: \(location.horizontalAccuracy)m, Âge: \(abs(location.timestamp.timeIntervalSinceNow))s")
         
         // Géocodage inverse pour obtenir l'adresse
         let geocoder = CLGeocoder()
@@ -173,6 +184,10 @@ extension LocationService: CLLocationManagerDelegate {
                     userLocation = UserLocation(coordinate: location.coordinate)
                     print("📍 LocationService: Adresse non résolue - Coordonnées uniquement")
                 }
+                
+                // 📊 Analytics: Géolocalisation utilisée
+                Analytics.logEvent("localisation_utilisee", parameters: [:])
+                print("📊 Événement Firebase: localisation_utilisee")
                 
                 self?.saveLocationToFirebase(userLocation)
             }

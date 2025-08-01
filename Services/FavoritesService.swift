@@ -4,6 +4,7 @@ import Combine
 import FirebaseFirestore
 import FirebaseAuth
 import FirebaseFunctions
+import FirebaseAnalytics
 
 class FavoritesService: ObservableObject {
     @Published var favoriteQuestions: [FavoriteQuestion] = []
@@ -110,8 +111,12 @@ class FavoritesService: ObservableObject {
         print("🔥 FavoritesService: - Collection: favoriteQuestions")
         print("🔥 FavoritesService: - Filtre: partnerIds array-contains \(currentUserId)")
         
+        // Utiliser Firebase UID pour le listener
+        let firebaseUID = Auth.auth().currentUser?.uid ?? currentUserId
+        print("🔥 FavoritesService: - Listener avec Firebase UID: \(firebaseUID)")
+        
         listener = db.collection("favoriteQuestions")
-            .whereField("partnerIds", arrayContains: currentUserId)
+            .whereField("partnerIds", arrayContains: firebaseUID)
             .addSnapshotListener { [weak self] snapshot, error in
                 if let error = error {
                     print("❌ FavoritesService: Erreur listener: \(error)")
@@ -195,18 +200,27 @@ class FavoritesService: ObservableObject {
         
         Task {
             do {
-                // Déterminer les partenaires avec qui partager
-                var partnerIds: [String] = [userId] // Toujours inclure l'auteur
+                // Déterminer les partenaires avec qui partager (utiliser UNIQUEMENT des Firebase UIDs)
+                var partnerIds: [String] = []
+                
+                // Toujours inclure l'auteur (Firebase UID)
+                if let firebaseUID = Auth.auth().currentUser?.uid {
+                    partnerIds.append(firebaseUID)
+                }
+                
+                // Ajouter le partenaire (Firebase UID) 
                 if let appState = appState, let partnerId = appState.currentUser?.partnerId {
                     partnerIds.append(partnerId)
                 }
+                
+                print("🔥 FavoritesService: - partnerIds construits avec Firebase UIDs: \(partnerIds)")
                 
                 let sharedFavorite = SharedFavoriteQuestion(
                     questionId: question.id,
                     questionText: question.text,
                     categoryTitle: category.title,
                     emoji: category.emoji,
-                    authorId: userId,
+                    authorId: Auth.auth().currentUser?.uid ?? userId, // Utiliser Firebase UID comme authorId
                     authorName: userName,
                     partnerIds: partnerIds
                 )
@@ -220,11 +234,21 @@ class FavoritesService: ObservableObject {
                 print("🔥 FavoritesService: - Author ID: \(sharedFavorite.authorId)")
                 print("🔥 FavoritesService: - Partner IDs: \(sharedFavorite.partnerIds)")
                 print("🔥 FavoritesService: - Collection: favoriteQuestions")
+                print("🔥 FavoritesService: - Firebase UID actuel: \(Auth.auth().currentUser?.uid ?? "nil")")
+                print("🔥 FavoritesService: - currentUserId (service): \(currentUserId ?? "nil")")
+                print("🔥 FavoritesService: - Data à sauvegarder: \(data)")
                 
                 try await documentRef.setData(data)
                 
                 print("✅ FavoritesService: Favori partagé ajouté: \(question.text.prefix(50))...")
                 print("✅ FavoritesService: Document Firestore créé avec succès")
+                
+                // 📊 Analytics: Question mise en favori
+                Analytics.logEvent("question_favoriee", parameters: [
+                    "question_id": question.id,
+                    "categorie": category.id
+                ])
+                print("📊 Événement Firebase: question_favoriee - \(question.id) - \(category.id)")
                 
                 // Plus besoin de tracker les favoris - on se base maintenant sur les questions vues
                 
@@ -234,6 +258,13 @@ class FavoritesService: ObservableObject {
                 
             } catch {
                 print("❌ FavoritesService: Erreur ajout favori partagé: \(error)")
+                print("❌ FavoritesService: - Type erreur: \(type(of: error))")
+                print("❌ FavoritesService: - Description détaillée: \(error.localizedDescription)")
+                if let firestoreError = error as NSError? {
+                    print("❌ FavoritesService: - Code erreur: \(firestoreError.code)")
+                    print("❌ FavoritesService: - Domaine erreur: \(firestoreError.domain)")
+                    print("❌ FavoritesService: - UserInfo: \(firestoreError.userInfo)")
+                }
                 await MainActor.run {
                     self.isLoading = false
                     self.errorMessage = "Erreur lors de l'ajout aux favoris"
@@ -545,7 +576,7 @@ class FavoritesService: ObservableObject {
     func syncPartnerFavorites(partnerId: String, completion: @escaping (Bool, String?) -> Void) {
         print("❤️ FavoritesService: Début synchronisation favoris avec partenaire: \(partnerId)")
         
-        guard let firebaseUser = Auth.auth().currentUser else {
+        guard Auth.auth().currentUser != nil else {
             print("❌ FavoritesService: Aucun utilisateur connecté")
             completion(false, "Utilisateur non connecté")
             return

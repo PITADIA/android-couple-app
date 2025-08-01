@@ -1,6 +1,7 @@
 import Foundation
 import Combine
 import UIKit
+import FirebaseAnalytics
 
 class OnboardingViewModel: ObservableObject {
     enum OnboardingStep: CaseIterable {
@@ -113,6 +114,12 @@ class OnboardingViewModel: ObservableObject {
     }
     
     func nextStep() {
+        let stepNumber = OnboardingStep.allCases.firstIndex(of: currentStep) ?? 0
+        
+        // 📊 Analytics: Progression onboarding
+        Analytics.logEvent("onboarding_etape", parameters: ["etape": stepNumber])
+        print("📊 Événement Firebase: onboarding_etape - étape: \(stepNumber)")
+        
         switch currentStep {
         case .name:
             if !userName.isEmpty {
@@ -295,6 +302,10 @@ class OnboardingViewModel: ObservableObject {
                     print("🔥 OnboardingViewModel: Mise à jour de l'utilisateur via AppState")
                     print("🔥🔥🔥 ONBOARDING FINALIZE: SAUVEGARDE FINALE AVEC ONBOARDING TERMINE")
                     NSLog("🔥🔥🔥 ONBOARDING: MISE A JOUR VIA APPSTATE")
+                    
+                    // 📊 Analytics: Onboarding terminé
+                    Analytics.logEvent("onboarding_complete", parameters: [:])
+                    print("📊 Événement Firebase: onboarding_complete")
                     
                     // NOUVEAU: Marquer la fin du processus d'onboarding dans Firebase et AppState
                     FirebaseService.shared.completeOnboardingProcess()

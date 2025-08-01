@@ -56,7 +56,7 @@ struct DailyQuestionPartnerCodeView: View {
                                 generatedCodeSection(code: generatedCode)
                             } else if partnerCodeService.isLoading {
                                 loadingCodeSection
-                            } else if let errorMessage = partnerCodeService.errorMessage {
+                            } else if partnerCodeService.errorMessage != nil {
                                 errorCodeSection
                             } else {
                                 loadingCodeSection
@@ -89,7 +89,7 @@ struct DailyQuestionPartnerCodeView: View {
                     onDismiss()
                 } else {
                     print("🔗 DailyQuestionPartnerCodeView: Génération du code...")
-                    await partnerCodeService.generatePartnerCode()
+                    _ = await partnerCodeService.generatePartnerCode()
                 }
             }
             // Observer les changements de clavier
@@ -302,7 +302,7 @@ struct DailyQuestionPartnerCodeView: View {
     private func connectWithCode() async {
         guard !enteredCode.isEmpty else { return }
         
-        await partnerCodeService.connectWithPartnerCode(enteredCode)
+        _ = await partnerCodeService.connectWithPartnerCode(enteredCode)
         
         // La connexion sera gérée par onChange(of: partnerCodeService.isConnected)
     }

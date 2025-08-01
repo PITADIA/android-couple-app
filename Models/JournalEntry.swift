@@ -132,8 +132,18 @@ extension JournalEntry {
         guard let data = document.data() else { return nil }
         
         self.id = document.documentID
-        self.title = data["title"] as? String ?? ""
-        self.description = data["description"] as? String ?? ""
+        // 🔐 DÉCHIFFREMENT HYBRIDE des métadonnées (Phase 2)
+        self.title = LocationEncryptionService.readMessageFromFirestore(
+            data.mapKeys { key in
+                return key == "encryptedTitle" ? "encryptedText" : key.replacingOccurrences(of: "title", with: "text")
+            }
+        ) ?? data["title"] as? String ?? ""
+        
+        self.description = LocationEncryptionService.readMessageFromFirestore(
+            data.mapKeys { key in
+                return key == "encryptedDescription" ? "encryptedText" : key.replacingOccurrences(of: "description", with: "text")
+            }
+        ) ?? data["description"] as? String ?? ""
         
         if let timestamp = data["eventDate"] as? Timestamp {
             self.eventDate = timestamp.dateValue()
@@ -160,20 +170,30 @@ extension JournalEntry {
         self.isShared = data["isShared"] as? Bool ?? true
         self.partnerIds = data["partnerIds"] as? [String] ?? []
         
-        // Désérialiser la localisation
-        if let locationData = data["location"] as? [String: Any] {
-            let latitude = locationData["latitude"] as? Double ?? 0.0
-            let longitude = locationData["longitude"] as? Double ?? 0.0
-            let address = locationData["address"] as? String
-            let city = locationData["city"] as? String
-            let country = locationData["country"] as? String
+        // 🔄 MIGRATION HYBRIDE - Désérialiser la localisation (Nouveau + Ancien format)
+        if let locationData = LocationEncryptionService.readLocation(from: data) {
+            let coordinate = locationData.toCLLocation().coordinate
+            
+            // Récupérer les métadonnées additionnelles si disponibles
+            var address: String?
+            var city: String?
+            var country: String?
+            
+            // Essayer de récupérer depuis l'ancien format d'abord
+            if let legacyLocation = data["location"] as? [String: Any] {
+                address = legacyLocation["address"] as? String
+                city = legacyLocation["city"] as? String
+                country = legacyLocation["country"] as? String
+            }
             
             self.location = JournalLocation(
-                coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude),
+                coordinate: coordinate,
                 address: address,
                 city: city,
                 country: country
             )
+            
+            print("✅ JournalEntry: Localisation chargée (chiffré: \(locationData.isEncrypted))")
         } else {
             self.location = nil
         }
@@ -181,8 +201,6 @@ extension JournalEntry {
     
     func toDictionary() -> [String: Any] {
         var dict: [String: Any] = [
-            "title": title,
-            "description": description,
             "eventDate": Timestamp(date: eventDate),
             "createdAt": Timestamp(date: createdAt),
             "updatedAt": Timestamp(date: updatedAt),
@@ -193,15 +211,39 @@ extension JournalEntry {
             "partnerIds": partnerIds
         ]
         
-        // Sérialiser la localisation
+        // 🔐 CHIFFREMENT HYBRIDE des métadonnées sensibles (Phase 2)
+        let encryptedTitleData = LocationEncryptionService.processMessageForStorage(title)
+        dict.merge(encryptedTitleData.mapKeys { key in
+            return key == "encryptedText" ? "encryptedTitle" : key.replacingOccurrences(of: "text", with: "title")
+        }) { (_, new) in new }
+        
+        let encryptedDescriptionData = LocationEncryptionService.processMessageForStorage(description)
+        dict.merge(encryptedDescriptionData.mapKeys { key in
+            return key == "encryptedText" ? "encryptedDescription" : key.replacingOccurrences(of: "text", with: "description")
+        }) { (_, new) in new }
+        
+        // 🔐 ÉCRITURE HYBRIDE - Nouveau format chiffré + Legacy pour transition
         if let location = location {
-            dict["location"] = [
-                "latitude": location.latitude,
-                "longitude": location.longitude,
-                "address": location.address as Any,
-                "city": location.city as Any,
-                "country": location.country as Any
-            ]
+            let clLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
+            
+            // Nouveau format chiffré
+            let encryptedLocationData = LocationEncryptionService.processLocationForStorage(clLocation)
+            if !encryptedLocationData.isEmpty {
+                dict.merge(encryptedLocationData) { (_, new) in new }
+            }
+            
+            // Métadonnées additionnelles (non sensibles)
+            if let address = location.address {
+                dict["locationAddress"] = address
+            }
+            if let city = location.city {
+                dict["locationCity"] = city
+            }
+            if let country = location.country {
+                dict["locationCountry"] = country
+            }
+            
+            print("✅ JournalEntry: Localisation sauvegardée avec chiffrement hybride")
         }
         
         return dict

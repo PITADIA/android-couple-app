@@ -43,7 +43,7 @@ class FCMService: NSObject, ObservableObject {
         }
         
         // Observer les changements d'authentification
-        Auth.auth().addStateDidChangeListener { [weak self] _, user in
+        _ = Auth.auth().addStateDidChangeListener { [weak self] _, user in
             if let user = user {
                 print("🔔 FCMService: Utilisateur connecté: \(user.uid)")
                 self?.currentUserId = user.uid

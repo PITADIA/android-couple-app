@@ -91,12 +91,12 @@ struct AsyncImageView: View {
             return
         }
         
-        print("🖼️ AsyncImageView: Tentative de chargement de l'image: \(imageURL)")
+        print("🖼️ AsyncImageView: Tentative de chargement de l'image: [URL MASQUÉE]")
         loadImage(from: imageURL)
     }
     
     private func loadImage(from urlString: String) {
-        print("🖼️ AsyncImageView: loadImage démarré pour: \(urlString)")
+        print("🖼️ AsyncImageView: loadImage démarré pour: [URL MASQUÉE]")
         isLoading = true
         hasError = false
         
@@ -111,7 +111,7 @@ struct AsyncImageView: View {
                     self.hasError = false
                 }
             } catch {
-                print("❌ AsyncImageView: Erreur chargement image pour \(urlString): \(error)")
+                print("❌ AsyncImageView: Erreur chargement image pour [URL MASQUÉE]: \(error)")
                 
                 await MainActor.run {
                     self.isLoading = false

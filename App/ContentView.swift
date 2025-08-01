@@ -1,4 +1,5 @@
 import SwiftUI
+import FirebaseAnalytics
 
 struct ContentView: View {
     @EnvironmentObject var appState: AppState
@@ -44,6 +45,18 @@ struct ContentView: View {
         }
         .onAppear {
             print("ContentView: Vue principale apparue")
+            
+            // 📊 Analytics: Première ouverture (une seule fois)
+            let isFirstLaunch = !UserDefaults.standard.bool(forKey: "has_launched_before")
+            if isFirstLaunch {
+                Analytics.logEvent("premiere_ouverture", parameters: [:])
+                print("📊 Événement Firebase: premiere_ouverture")
+                UserDefaults.standard.set(true, forKey: "has_launched_before")
+            }
+            
+            // 📊 Analytics: Retour quotidien
+            trackDailyReturn()
+            
             setupObservers()
         }
         .onChange(of: appState.isAuthenticated) { _, isAuth in
@@ -125,6 +138,42 @@ struct ContentView: View {
     /// Remet le badge de l'app à zéro
     private func clearAppBadge() {
         BadgeManager.clearBadge()
+    }
+    
+    /// Track le retour quotidien de l'utilisateur
+    private func trackDailyReturn() {
+        let today = Calendar.current.startOfDay(for: Date())
+        let lastVisit = UserDefaults.standard.object(forKey: "last_daily_visit") as? Date ?? Date.distantPast
+        let lastVisitDay = Calendar.current.startOfDay(for: lastVisit)
+        
+        if today > lastVisitDay {
+            // Nouveau jour
+            let consecutiveDays = calculateConsecutiveDays(lastVisit: lastVisitDay, today: today)
+            Analytics.logEvent("retour_quotidien", parameters: ["jours_consecutifs": consecutiveDays])
+            print("📊 Événement Firebase: retour_quotidien - jours_consecutifs: \(consecutiveDays)")
+            
+            UserDefaults.standard.set(today, forKey: "last_daily_visit")
+            if consecutiveDays == 1 {
+                UserDefaults.standard.set(today, forKey: "streak_start_date")
+            }
+        }
+    }
+    
+    private func calculateConsecutiveDays(lastVisit: Date, today: Date) -> Int {
+        let streakStart = UserDefaults.standard.object(forKey: "streak_start_date") as? Date ?? today
+        let daysBetween = Calendar.current.dateComponents([.day], from: lastVisit, to: today).day ?? 0
+        
+        if daysBetween == 1 {
+            // Jour consécutif
+            return Calendar.current.dateComponents([.day], from: streakStart, to: today).day! + 1
+        } else if daysBetween == 0 {
+            // Même jour
+            return Calendar.current.dateComponents([.day], from: streakStart, to: today).day! + 1
+        } else {
+            // Cassure de série
+            UserDefaults.standard.set(today, forKey: "streak_start_date")
+            return 1
+        }
     }
 }
 

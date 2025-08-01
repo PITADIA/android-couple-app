@@ -2,6 +2,48 @@ import SwiftUI
 import UserNotifications
 import UIKit
 
+// MARK: - UIDevice Extensions
+
+extension UIDevice {
+    var modelName: String {
+        var systemInfo = utsname()
+        uname(&systemInfo)
+        let machineMirror = Mirror(reflecting: systemInfo.machine)
+        let identifier = machineMirror.children.reduce("") { identifier, element in
+            guard let value = element.value as? Int8, value != 0 else { return identifier }
+            return identifier + String(UnicodeScalar(UInt8(value)))
+        }
+        
+        switch identifier {
+        case "iPhone11,2": return "iPhone XS"
+        case "iPhone11,4", "iPhone11,6": return "iPhone XS Max"
+        case "iPhone11,8": return "iPhone XR"
+        case "iPhone12,1": return "iPhone 11"
+        case "iPhone12,3": return "iPhone 11 Pro"
+        case "iPhone12,5": return "iPhone 11 Pro Max"
+        case "iPhone13,1": return "iPhone 12 mini"
+        case "iPhone13,2": return "iPhone 12"
+        case "iPhone13,3": return "iPhone 12 Pro"
+        case "iPhone13,4": return "iPhone 12 Pro Max"
+        case "iPhone14,2": return "iPhone 13 mini"
+        case "iPhone14,3": return "iPhone 13"
+        case "iPhone14,4": return "iPhone 13 Pro"
+        case "iPhone14,5": return "iPhone 13 Pro Max"
+        case "iPhone14,6": return "iPhone SE (3rd generation)"
+        case "iPhone14,7": return "iPhone 14"
+        case "iPhone14,8": return "iPhone 14 Plus"
+        case "iPhone15,2": return "iPhone 14 Pro"
+        case "iPhone15,3": return "iPhone 14 Pro Max"
+        case "iPhone15,4": return "iPhone 15"
+        case "iPhone15,5": return "iPhone 15 Plus"
+        case "iPhone16,1": return "iPhone 15 Pro"
+        case "iPhone16,2": return "iPhone 15 Pro Max"
+        case "x86_64", "i386": return "Simulator"
+        default: return identifier
+        }
+    }
+}
+
 // MARK: - Badge Management Utility
 
 /// Utilitaire global pour gérer les badges de l'app
@@ -10,16 +52,36 @@ struct BadgeManager {
     /// Remet le badge de l'app à zéro
     static func clearBadge() {
         DispatchQueue.main.async {
-            UIApplication.shared.applicationIconBadgeNumber = 0
-            print("✅ BadgeManager: Badge remis à 0")
+            if #available(iOS 17.0, *) {
+                UNUserNotificationCenter.current().setBadgeCount(0) { error in
+                    if let error = error {
+                        print("❌ BadgeManager: Erreur lors de la remise à 0 du badge: \(error)")
+                    } else {
+                        print("✅ BadgeManager: Badge remis à 0")
+                    }
+                }
+            } else {
+                UIApplication.shared.applicationIconBadgeNumber = 0
+                print("✅ BadgeManager: Badge remis à 0 (iOS < 17)")
+            }
         }
     }
 
     /// Définit le badge avec un nombre spécifique
     static func setBadge(count: Int) {
         DispatchQueue.main.async {
-            UIApplication.shared.applicationIconBadgeNumber = count
-            print("🔔 BadgeManager: Badge défini à \(count)")
+            if #available(iOS 17.0, *) {
+                UNUserNotificationCenter.current().setBadgeCount(count) { error in
+                    if let error = error {
+                        print("❌ BadgeManager: Erreur lors de la définition du badge à \(count): \(error)")
+                    } else {
+                        print("🔔 BadgeManager: Badge défini à \(count)")
+                    }
+                }
+            } else {
+                UIApplication.shared.applicationIconBadgeNumber = count
+                print("🔔 BadgeManager: Badge défini à \(count) (iOS < 17)")
+            }
         }
     }
 
@@ -185,7 +247,12 @@ extension String {
     /// Convertit une distance en km vers miles pour la localisation anglaise
     func convertedForLocale() -> String {
         // Déterminer la langue courante
-        let currentLanguage = Locale.current.languageCode ?? "en"
+        let currentLanguage: String
+        if #available(iOS 16.0, *) {
+            currentLanguage = Locale.current.language.languageCode?.identifier ?? "en"
+        } else {
+            currentLanguage = Locale.current.languageCode ?? "en"
+        }
         
         // Si c'est déjà en anglais et contient "km", convertir en miles
         if currentLanguage == "en" {

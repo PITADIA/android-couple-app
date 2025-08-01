@@ -1,4 +1,5 @@
 import SwiftUI
+import FirebaseAnalytics
 
 struct TabContainerView: View {
     @EnvironmentObject var appState: AppState
@@ -42,6 +43,9 @@ struct TabContainerView: View {
                     // Accueil
                     Button(action: {
                         selectedTab = 0
+                        // 📊 Analytics: Navigation onglet
+                        Analytics.logEvent("onglet_visite", parameters: ["onglet": "accueil"])
+                        print("📊 Événement Firebase: onglet_visite - onglet: accueil")
                     }) {
                         Image("home")
                             .resizable()
@@ -60,6 +64,9 @@ struct TabContainerView: View {
                     // Questions du jour
                     Button(action: {
                         selectedTab = 1
+                        // 📊 Analytics: Navigation onglet
+                        Analytics.logEvent("onglet_visite", parameters: ["onglet": "questions"])
+                        print("📊 Événement Firebase: onglet_visite - onglet: questions")
                     }) {
                         Image("star")
                             .resizable()
@@ -78,6 +85,9 @@ struct TabContainerView: View {
                     // Favoris
                     Button(action: {
                         selectedTab = 2
+                        // 📊 Analytics: Navigation onglet
+                        Analytics.logEvent("onglet_visite", parameters: ["onglet": "favoris"])
+                        print("📊 Événement Firebase: onglet_visite - onglet: favoris")
                     }) {
                         Image("heart")
                             .resizable()
@@ -96,6 +106,9 @@ struct TabContainerView: View {
                     // Journal
                     Button(action: {
                         selectedTab = 3
+                        // 📊 Analytics: Navigation onglet
+                        Analytics.logEvent("onglet_visite", parameters: ["onglet": "journal"])
+                        print("📊 Événement Firebase: onglet_visite - onglet: journal")
                     }) {
                         Image("map")
                             .resizable()
@@ -114,6 +127,9 @@ struct TabContainerView: View {
                     // Profil
                     Button(action: {
                         selectedTab = 4
+                        // 📊 Analytics: Navigation onglet
+                        Analytics.logEvent("onglet_visite", parameters: ["onglet": "profil"])
+                        print("📊 Événement Firebase: onglet_visite - onglet: profil")
                     }) {
                         Image("profile")
                             .resizable()

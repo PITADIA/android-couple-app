@@ -184,8 +184,16 @@ struct LocationPickerView: View {
         
         // 2. Fallback : Utiliser la locale/région du téléphone
         let locale = Locale.current
-        let languageCode = locale.languageCode ?? "en"
-        let regionCode = locale.regionCode ?? "US"
+        let languageCode: String
+        let regionCode: String
+        
+        if #available(iOS 16.0, *) {
+            languageCode = locale.language.languageCode?.identifier ?? "en"
+            regionCode = locale.region?.identifier ?? "US"
+        } else {
+            languageCode = locale.languageCode ?? "en"
+            regionCode = locale.regionCode ?? "US"
+        }
         
         print("📍 LocationPicker: Locale - Langue: \(languageCode), Région: \(regionCode)")
         

@@ -1,5 +1,5 @@
 {
-  "originHash" : "60a73ee368f8b643abcb67bfb1155d0ad3f396a0dc5d3244d4d92f7b1d47850e",
+  "originHash" : "97fbb0eb82e75d6f26daf2c915b0bc52acd968a38310a941314853de13d575f1",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -146,6 +146,15 @@
       }
     },
     {
+      "identity" : "purchases-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/RevenueCat/purchases-ios",
+      "state" : {
+        "revision" : "709554156bb93c909b362e0b30ec0f2afee3df6e",
+        "version" : "5.33.1"
+      }
+    },
+    {
       "identity" : "realm-core",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/realm/realm-core.git",
@@ -161,6 +170,24 @@
       "state" : {
         "branch" : "master",
         "revision" : "5fcba6408c99eb3596bf5ae148bfc1a33b5adebd"
+      }
+    },
+    {
+      "identity" : "swift-asn1",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-asn1.git",
+      "state" : {
+        "revision" : "f70225981241859eb4aa1a18a75531d26637c8cc",
+        "version" : "1.4.0"
+      }
+    },
+    {
+      "identity" : "swift-crypto",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-crypto.git",
+      "state" : {
+        "revision" : "176abc28e002a9952470f08745cd26fad9286776",
+        "version" : "3.13.3"
       }
     },
     {

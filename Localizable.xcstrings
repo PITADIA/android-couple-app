@@ -468,9 +468,6 @@
     "Favoris" : {
 
     },
-    "Génération de votre question" : {
-
-    },
     "generic_partner" : {
       "comment" : "Generic partner name"
     },
@@ -542,9 +539,6 @@
     },
     "open_settings_button" : {
       "comment" : "Open settings button"
-    },
-    "Optimisation en cours" : {
-
     },
     "others" : {
       "comment" : "Others text"

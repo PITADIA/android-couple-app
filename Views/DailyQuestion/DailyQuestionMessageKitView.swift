@@ -2,6 +2,7 @@ import SwiftUI
 import MessageKit
 import InputBarAccessoryView
 import FirebaseAuth
+import FirebaseAnalytics
 
 /// Vue chat utilisant MessageKit pour les questions quotidiennes
 struct DailyQuestionMessageKitView: UIViewControllerRepresentable {
@@ -74,7 +75,7 @@ class DailyQuestionChatViewController: MessagesViewController {
         print("🔥 DailyQuestionMessageKit: Délégués configurés")
         
         // Couleurs personnalisées
-        maintainPositionOnKeyboardFrameChanged = true
+        maintainPositionOnInputBarHeightChanged = true
         messageInputBar.backgroundView.backgroundColor = UIColor.systemBackground
         
         scrollsToLastItemOnKeyboardBeginsEditing = true
@@ -228,7 +229,7 @@ extension DailyQuestionChatViewController: MessagesLayoutDelegate {
         return height
     }
     
-    func avatarSize(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGSize {
+    func avatarSize(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGSize? {
         print("🔍 avatarSize appelé pour section \(indexPath.section) → return .zero")
         return .zero // 🎯 TWITTER STYLE: Aucun avatar
     }
@@ -325,7 +326,7 @@ extension DailyQuestionChatViewController: InputBarAccessoryViewDelegate {
     
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
         guard let currentUserSender = currentUserSender,
-              let question = question,
+              let _ = question,
               let dailyQuestionService = dailyQuestionService else { return }
         
         // Créer un message temporaire pour l'affichage immédiat
@@ -341,6 +342,13 @@ extension DailyQuestionChatViewController: InputBarAccessoryViewDelegate {
         // Vider la barre de saisie
         inputBar.inputTextView.text = ""
         inputBar.invalidatePlugins()
+        
+        // 📊 Analytics: Message envoyé
+        Analytics.logEvent("message_envoye", parameters: [
+            "type": "texte",
+            "source": "daily_question_messagekit"
+        ])
+        print("📊 Événement Firebase: message_envoye - type: texte - source: daily_question_messagekit")
         
         // Envoyer à Firebase (asynchrone)
         Task {

@@ -3,16 +3,39 @@ import StoreKit
 import FirebaseCore
 import FirebaseMessaging
 import UserNotifications
+import FirebaseAppCheck
+import RevenueCat
+
+/// Factory personnalisée pour App Check Provider
+class CoupleAppCheckProviderFactory: NSObject, AppCheckProviderFactory {
+    func createProvider(with app: FirebaseApp) -> AppCheckProvider? {
+        if #available(iOS 14.0, *) {
+            return AppAttestProvider(app: app)
+        } else {
+            return DeviceCheckProvider(app: app)
+        }
+    }
+}
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         print("🔥 AppDelegate: Démarrage de l'application")
         
+        // 🛡️ Configuration App Check AVANT Firebase (MODE SURVEILLANCE)
+        print("🛡️ AppDelegate: Configuration App Check...")
+        configureAppCheck()
+        print("🛡️ AppDelegate: App Check configuré en mode surveillance")
+        
         // Configuration Firebase
         print("🔥 AppDelegate: Configuration Firebase...")
         FirebaseApp.configure()
         print("🔥 AppDelegate: Firebase configuré avec succès")
+        
+        // Configuration RevenueCat (tracking uniquement)
+        print("💰 AppDelegate: Configuration RevenueCat...")
+        configureRevenueCat()
+        print("💰 AppDelegate: RevenueCat configuré")
         
         // Configuration des achats in-app
         print("🔥 AppDelegate: Configuration StoreKit...")
@@ -26,6 +49,17 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         return true
     }
     
+    private func configureRevenueCat() {
+        print("💰 AppDelegate: Initialisation RevenueCat pour tracking...")
+        
+        // Configuration RevenueCat en mode tracking uniquement
+        Purchases.logLevel = .info
+        Purchases.configure(withAPIKey: "appl_pMKnixURdQHqWmKnsoicGCXeiJL")
+        
+        print("💰 AppDelegate: RevenueCat initialisé - mode tracking actif")
+        print("💰 AppDelegate: Les transactions StoreKit seront automatiquement trackées")
+    }
+    
     private func configureStoreKit() {
         print("🔥 AppDelegate: Ajout de l'observateur StoreKit")
         // Configuration pour les achats in-app
@@ -37,6 +71,28 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         let center = UNUserNotificationCenter.current()
         center.delegate = self
         print("🔥 AppDelegate: UNUserNotificationCenter delegate défini")
+    }
+    
+    /// 🛡️ Configuration App Check en mode SURVEILLANCE (aucun blocage)
+    private func configureAppCheck() {
+        print("🛡️ AppCheck: Initialisation du provider...")
+        
+        #if DEBUG
+        // En debug : utiliser le debug provider
+        let providerFactory = AppCheckDebugProviderFactory()
+        print("🛡️ AppCheck: Mode DEBUG - Provider de développement")
+        #else
+        // En production : utiliser App Attest (déjà configuré dans Firebase)
+        let providerFactory = CoupleAppCheckProviderFactory()
+        print("🛡️ AppCheck: Mode PRODUCTION - App Attest provider")
+        #endif
+        
+        AppCheck.setAppCheckProviderFactory(providerFactory)
+        
+        // 🎯 IMPORTANT: Mode surveillance uniquement - aucun blocage
+        print("🛡️ AppCheck: ⚠️ Mode SURVEILLANCE activé - aucun service ne sera bloqué")
+        print("🛡️ AppCheck: Les métriques seront collectées pendant 2-3 semaines")
+        print("🛡️ AppCheck: Activation de l'enforcement sera faite manuellement plus tard")
     }
     
     func applicationWillTerminate(_ application: UIApplication) {

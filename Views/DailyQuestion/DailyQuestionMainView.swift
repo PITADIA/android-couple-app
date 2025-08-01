@@ -4,6 +4,7 @@ import FirebaseFirestore
 import FirebaseFunctions
 import Combine
 import UserNotifications
+import FirebaseAnalytics
 
 struct DailyQuestionMainView: View {
     @EnvironmentObject var appState: AppState
@@ -270,15 +271,9 @@ struct DailyQuestionMainView: View {
                 .scaleEffect(1.5)
                 .tint(Color(hex: "#FD267A"))
             
-            VStack(spacing: 8) {
-                Text(dailyQuestionService.isOptimizing ? "Recherche de nouvelles questions..." : NSLocalizedString("daily_question_loading", tableName: "DailyQuestions", comment: ""))
-                    .font(.system(size: 16, weight: .medium))
-                    .foregroundColor(.black)
-                
-                Text(dailyQuestionService.isOptimizing ? "Optimisation en cours" : "Génération de votre question")
-                    .font(.system(size: 14))
-                .foregroundColor(.gray)
-            }
+            Text(dailyQuestionService.isOptimizing ? NSLocalizedString("messaging_space_creation", tableName: "DailyQuestions", comment: "") : NSLocalizedString("daily_question_loading", tableName: "DailyQuestions", comment: ""))
+                .font(.system(size: 16, weight: .medium))
+                .foregroundColor(.black)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
@@ -565,9 +560,16 @@ struct DailyQuestionMainView: View {
         responseText = ""
         isTextFieldFocused = false
         
+                // 📊 Analytics: Message envoyé
+        Analytics.logEvent("message_envoye", parameters: [
+            "type": "texte",
+            "source": "daily_question_main"
+        ])
+        print("📊 Événement Firebase: message_envoye - type: texte - source: daily_question_main")
+        
         Task {
             let success = await dailyQuestionService.submitResponse(textToSubmit)
-            
+
             await MainActor.run {
                 if success {
                     // 🎯 NOUVEAU: Fermer le chat après envoi réussi du message
@@ -578,7 +580,7 @@ struct DailyQuestionMainView: View {
                     // En cas d'échec, restaurer le texte et supprimer le message temporaire
                     responseText = textToSubmit
                     if let tempIndex = stableMessages.firstIndex(where: { $0.id == tempResponse.id }) {
-                        withAnimation(.easeInOut(duration: 0.2)) {
+                        _ = withAnimation(.easeInOut(duration: 0.2)) {
                             stableMessages.remove(at: tempIndex)
                         }
                     }

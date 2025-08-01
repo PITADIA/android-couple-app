@@ -2,6 +2,7 @@ import SwiftUI
 import PhotosUI
 import Photos
 import MapKit
+import FirebaseAnalytics
 
 struct CreateJournalEntryView: View {
     @EnvironmentObject var appState: AppState
@@ -308,6 +309,13 @@ struct CreateJournalEntryView: View {
                     image: selectedImage,
                     location: selectedLocation
                 )
+                
+                // 📊 Analytics: Événement journal ajouté
+                let entryType = selectedImage != nil ? "photo" : "texte"
+                Analytics.logEvent("journal_evenement_ajoute", parameters: [
+                    "type": entryType
+                ])
+                print("📊 Événement Firebase: journal_evenement_ajoute - type: \(entryType)")
                 
                 await MainActor.run {
                     dismiss()

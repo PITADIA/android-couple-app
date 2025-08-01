@@ -392,7 +392,7 @@ class DailyQuestionService: ObservableObject {
                 if let data = result.data as? [String: Any],
                    let success = data["success"] as? Bool,
                    success,
-                   let settingsData = data["settings"] as? [String: Any] {
+                   let _ = data["settings"] as? [String: Any] {
                     
                     print("✅ DailyQuestionService: Settings créés/récupérés via Cloud Function")
                     
@@ -557,10 +557,13 @@ class DailyQuestionService: ObservableObject {
                     // Mettre à jour Firestore pour persister le nouveau currentDay
                     if let coupleId = self.coupleId {
                         do {
+                            let updateData: [String: Any] = [
+                                "currentDay": settings.currentDay,
+                                "lastVisitDate": Timestamp(date: Date())
+                            ]
                             try await db.collection("dailyQuestionSettings")
                                 .document(coupleId)
-                                .updateData(["currentDay": settings.currentDay,
-                                             "lastVisitDate": Timestamp(date: Date())])
+                                .updateData(updateData)
                             print("✅ DailyQuestionService: currentDay mis à jour → \(settings.currentDay)")
                         } catch {
                             print("❌ DailyQuestionService: Impossible de mettre à jour currentDay - \(error)")
@@ -647,7 +650,7 @@ class DailyQuestionService: ObservableObject {
     // MARK: - Migration Support
     
     func migrateTodaysQuestionToSubcollections() async -> Bool {
-        guard let currentUser = Auth.auth().currentUser,
+        guard let _ = Auth.auth().currentUser,
               let coupleId = coupleId else {
             print("❌ DailyQuestionService: Pas d'utilisateur connecté pour migration")
             return false
@@ -973,7 +976,7 @@ class DailyQuestionService: ObservableObject {
         }
         
         // ⏰ Autres heures critiques (si settings spéciaux)
-        if let settings = currentSettings {
+        if currentSettings != nil {
             // Check personnalisé selon les préférences du couple
             // TODO: Ajouter logique personnalisée si nécessaire
         }
@@ -985,33 +988,25 @@ class DailyQuestionService: ObservableObject {
     private func intelligentFirebaseCall(optimizationStats: TimezoneOptimizationStats) async {
         print("🚀 intelligentFirebaseCall: Début appel optimisé")
         
-        do {
-            // Préparer les paramètres avec timezone locale
-            let callParams: [String: Any] = [
-                "timezone": TimeZone.current.identifier,
-                "localHour": optimizationStats.localHour,
-                "cacheStats": [
-                    "cacheHits": optimizationStats.cacheHits,
-                    "lastCacheUpdate": Date().timeIntervalSince1970
-                ]
+        // Préparer les paramètres avec timezone locale
+        let _ = [
+            "timezone": TimeZone.current.identifier,
+            "localHour": optimizationStats.localHour,
+            "cacheStats": [
+                "cacheHits": optimizationStats.cacheHits,
+                "lastCacheUpdate": Date().timeIntervalSince1970
             ]
-            
-            print("📤 Paramètres envoyés:")
-            print("   - timezone: \(TimeZone.current.identifier)")
-            print("   - localHour: \(optimizationStats.localHour)")
-            print("   - cacheHits: \(optimizationStats.cacheHits)")
-            
-            // Appeler la fonction de génération standard
-            await generateTodaysQuestion()
-            
-            print("✅ Appel Firebase terminé avec succès")
-            
-        } catch {
-            print("❌ Erreur appel Firebase: \(error.localizedDescription)")
-            
-            // Fallback sur le cache en cas d'erreur
-            await fallbackToCache()
-        }
+        ] as [String: Any]
+        
+        print("📤 Paramètres envoyés:")
+        print("   - timezone: \(TimeZone.current.identifier)")
+        print("   - localHour: \(optimizationStats.localHour)")
+        print("   - cacheHits: \(optimizationStats.cacheHits)")
+        
+        // Appeler la fonction de génération standard
+        await generateTodaysQuestion()
+        
+        print("✅ Appel Firebase terminé avec succès")
     }
     
     /// 📦 Fallback sur le cache en cas d'erreur Firebase
@@ -1072,7 +1067,12 @@ class DailyQuestionService: ObservableObject {
         }
         
         // Détecter la langue du système iOS
-        let userLanguage = Locale.current.languageCode ?? "fr"
+        let userLanguage: String
+        if #available(iOS 16.0, *) {
+            userLanguage = Locale.current.language.languageCode?.identifier ?? "fr"
+        } else {
+            userLanguage = Locale.current.languageCode ?? "fr"
+        }
         
         print("🌍 DailyQuestionService: Sauvegarde langue utilisateur: \(userLanguage)")
         

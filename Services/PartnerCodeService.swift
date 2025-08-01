@@ -3,6 +3,7 @@ import FirebaseFirestore
 import FirebaseAuth
 import FirebaseFunctions
 import Combine
+import FirebaseAnalytics
 
 class PartnerCodeService: ObservableObject {
     static let shared = PartnerCodeService()
@@ -24,7 +25,7 @@ class PartnerCodeService: ObservableObject {
     
     private init() {}
     
-    // MARK: - Génération d'un code partenaire permanent
+    // MARK: - Génération d'un code partenaire temporaire (conforme Apple)
     
     func generatePartnerCode() async -> String? {
         print("🔗 PartnerCodeService: Début génération code")
@@ -44,25 +45,71 @@ class PartnerCodeService: ObservableObject {
             self.errorMessage = nil
         }
         
-        // Vérifier si l'utilisateur a déjà un code
+        // 🛡️ CONFORMITÉ APPLE : Vérifier si l'utilisateur a un code récent (< 24h)
         do {
-            print("🔗 PartnerCodeService: Vérification code existant...")
-            let existingCodeSnapshot = try await db.collection("partnerCodes")
+            print("🔗 PartnerCodeService: Vérification code récent (< 24h)...")
+            
+            let yesterday = Date().addingTimeInterval(-86400) // 24h en secondes
+            let recentCodeSnapshot = try await db.collection("partnerCodes")
                 .whereField("userId", isEqualTo: currentUser.uid)
+                .whereField("createdAt", isGreaterThan: Timestamp(date: yesterday))
+                .whereField("isActive", isEqualTo: true)
                 .getDocuments()
             
-            print("🔗 PartnerCodeService: Nombre de codes trouvés: \(existingCodeSnapshot.documents.count)")
+            print("🔗 PartnerCodeService: Nombre de codes récents trouvés: \(recentCodeSnapshot.documents.count)")
             
-            // Si un code existe déjà, le retourner
-            if let existingDoc = existingCodeSnapshot.documents.first {
+            // Si un code récent existe (< 24h), le retourner
+            if let existingDoc = recentCodeSnapshot.documents.first {
                 let existingCode = existingDoc.documentID
-                print("🔗 PartnerCodeService: Code existant trouvé: \(existingCode)")
+                print("🔗 PartnerCodeService: Code récent trouvé: \(existingCode)")
                 await MainActor.run {
                     self.generatedCode = existingCode
                     self.isLoading = false
                 }
-                print("✅ PartnerCodeService: Code existant retourné et UI mise à jour")
+                print("✅ PartnerCodeService: Code récent retourné et UI mise à jour")
                 return existingCode
+            }
+            
+            // 🔄 MIGRATION PROGRESSIVE : Vérifier codes anciens (sans expiresAt)
+            print("🔗 PartnerCodeService: Vérification codes legacy...")
+            let legacyCodeSnapshot = try await db.collection("partnerCodes")
+                .whereField("userId", isEqualTo: currentUser.uid)
+                .whereField("isActive", isEqualTo: true)
+                .getDocuments()
+            
+            // Si code legacy existe, lui donner 72h de grâce (migration douce)
+            if let legacyDoc = legacyCodeSnapshot.documents.first {
+                let legacyData = legacyDoc.data()
+                
+                // Si pas d'expiresAt, c'est un ancien code
+                if legacyData["expiresAt"] == nil {
+                    let gracePeriod = Date().addingTimeInterval(259200) // 72h de grâce
+                    
+                    // Migrer vers le nouveau format avec période de grâce
+                    try await legacyDoc.reference.updateData([
+                        "expiresAt": Timestamp(date: gracePeriod),
+                        "migrationGracePeriod": true,
+                        "rotationReason": "apple_compliance_migration"
+                    ])
+                    
+                    print("🔄 PartnerCodeService: Code legacy migré avec 72h de grâce")
+                    
+                    await MainActor.run {
+                        self.generatedCode = legacyDoc.documentID
+                        self.isLoading = false
+                    }
+                    return legacyDoc.documentID
+                }
+            }
+            
+            // 🔄 ROTATION : Désactiver uniquement les anciens codes non-legacy
+            print("🔗 PartnerCodeService: Désactivation codes expirés...")
+            for document in legacyCodeSnapshot.documents {
+                let data = document.data()
+                if let expiresAt = data["expiresAt"] as? Timestamp,
+                   expiresAt.dateValue() < Date() {
+                    try await document.reference.updateData(["isActive": false])
+                }
             }
             
             print("🔗 PartnerCodeService: Aucun code existant, génération d'un nouveau...")
@@ -95,12 +142,14 @@ class PartnerCodeService: ObservableObject {
             
             print("🔗 PartnerCodeService: Code unique trouvé: \(code), création en base...")
             
-            // Créer le nouveau code permanent
+            // 🛡️ CONFORMITÉ APPLE : Créer le nouveau code TEMPORAIRE (24h)
             try await db.collection("partnerCodes").document(code).setData([
                 "userId": currentUser.uid,
                 "createdAt": Timestamp(date: Date()),
+                "expiresAt": Timestamp(date: Date().addingTimeInterval(86400)), // 24h
                 "isActive": true,
-                "connectedPartnerId": NSNull() // Pas encore connecté
+                "connectedPartnerId": NSNull(), // Pas encore connecté
+                "rotationReason": "apple_compliance" // Justification rotation
             ])
             
             print("✅ PartnerCodeService: Code créé en base avec succès")
@@ -172,10 +221,14 @@ class PartnerCodeService: ObservableObject {
             
             let partnerName = data["partnerName"] as? String ?? "Partenaire"
             let subscriptionInherited = data["subscriptionInherited"] as? Bool ?? false
-            let message = data["message"] as? String ?? "Connexion réussie"
+            let _ = data["message"] as? String ?? "Connexion réussie"
             
             print("✅ PartnerCodeService: Connexion réussie - Partenaire: \(partnerName)")
             print("✅ PartnerCodeService: Abonnement hérité: \(subscriptionInherited)")
+            
+            // 📊 Analytics: Partenaire connecté
+            Analytics.logEvent("partenaire_connecte", parameters: [:])
+            print("📊 Événement Firebase: partenaire_connecte")
             
             // Plus besoin de tracker la connexion partenaire pour les reviews
             
@@ -348,7 +401,7 @@ class PartnerCodeService: ObservableObject {
     func disconnectPartner() async -> Bool {
         print("🔗 PartnerCodeService: disconnectPartner - Début déconnexion sécurisée")
         
-        guard let currentUser = Auth.auth().currentUser else { 
+        guard Auth.auth().currentUser != nil else { 
             print("❌ PartnerCodeService: disconnectPartner - Utilisateur non connecté")
             return false 
         }

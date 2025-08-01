@@ -1695,6 +1695,23 @@
           }
         }
       }
+    },
+    "messaging_space_creation" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your chat is being created..."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Votre espace de messagerie est en cours de création..."
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

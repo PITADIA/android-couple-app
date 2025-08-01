@@ -1,4 +1,5 @@
 import SwiftUI
+import FirebaseAnalytics
 
 struct JournalView: View {
     @EnvironmentObject var appState: AppState
@@ -89,6 +90,11 @@ struct JournalView: View {
             }
         }
         .navigationBarHidden(true)
+        .onAppear {
+            // 📊 Analytics: Journal ouvert
+            Analytics.logEvent("journal_ouvert", parameters: [:])
+            print("📊 Événement Firebase: journal_ouvert")
+        }
         .sheet(isPresented: $showingCreateEntry) {
             CreateJournalEntryView()
                 .environmentObject(appState)

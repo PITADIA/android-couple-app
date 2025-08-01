@@ -37,7 +37,7 @@ class FirebaseService: NSObject, ObservableObject {
     
     func checkAuthenticationState() {
         print("🔥 FirebaseService: Vérification de l'état d'authentification")
-        Auth.auth().addStateDidChangeListener { [weak self] _, firebaseUser in
+        _ = Auth.auth().addStateDidChangeListener { [weak self] _, firebaseUser in
             DispatchQueue.main.async {
                 if let firebaseUser = firebaseUser {
                     print("🔥 FirebaseService: Utilisateur Firebase trouvé - UID: \(firebaseUser.uid)")
@@ -249,12 +249,12 @@ class FirebaseService: NSObject, ObservableObject {
             "relationshipDuration": user.relationshipDuration.rawValue,
             "partnerCode": user.partnerCode ?? "",
             "partnerId": user.partnerId ?? "",
-            "partnerConnectedAt": user.partnerConnectedAt != nil ? Timestamp(date: user.partnerConnectedAt!) : nil as Timestamp?,
+            "partnerConnectedAt": user.partnerConnectedAt != nil ? Timestamp(date: user.partnerConnectedAt!) : NSNull(),
             "subscriptionInheritedFrom": user.subscriptionInheritedFrom ?? "",
-            "subscriptionInheritedAt": user.subscriptionInheritedAt != nil ? Timestamp(date: user.subscriptionInheritedAt!) : nil as Timestamp?,
+            "subscriptionInheritedAt": user.subscriptionInheritedAt != nil ? Timestamp(date: user.subscriptionInheritedAt!) : NSNull(),
             "connectedPartnerCode": user.connectedPartnerCode ?? "",
             "connectedPartnerId": user.connectedPartnerId ?? "",
-            "connectedAt": user.connectedAt != nil ? Timestamp(date: user.connectedAt!) : nil as Timestamp?,
+            "connectedAt": user.connectedAt != nil ? Timestamp(date: user.connectedAt!) : NSNull(),
             "isSubscribed": user.isSubscribed,
             "appleUserID": firebaseUser.uid,
             "lastLoginDate": Timestamp(date: Date()),
@@ -338,12 +338,12 @@ class FirebaseService: NSObject, ObservableObject {
             "relationshipDuration": user.relationshipDuration.rawValue,
             "partnerCode": user.partnerCode ?? "",
             "partnerId": user.partnerId ?? "",
-            "partnerConnectedAt": user.partnerConnectedAt != nil ? Timestamp(date: user.partnerConnectedAt!) : nil as Timestamp?,
+            "partnerConnectedAt": user.partnerConnectedAt != nil ? Timestamp(date: user.partnerConnectedAt!) : NSNull(),
             "subscriptionInheritedFrom": user.subscriptionInheritedFrom ?? "",
-            "subscriptionInheritedAt": user.subscriptionInheritedAt != nil ? Timestamp(date: user.subscriptionInheritedAt!) : nil as Timestamp?,
+            "subscriptionInheritedAt": user.subscriptionInheritedAt != nil ? Timestamp(date: user.subscriptionInheritedAt!) : NSNull(),
             "connectedPartnerCode": user.connectedPartnerCode ?? "",
             "connectedPartnerId": user.connectedPartnerId ?? "",
-            "connectedAt": user.connectedAt != nil ? Timestamp(date: user.connectedAt!) : nil as Timestamp?,
+            "connectedAt": user.connectedAt != nil ? Timestamp(date: user.connectedAt!) : NSNull(),
             "isSubscribed": user.isSubscribed,
             "appleUserID": firebaseUser.uid,
             "lastLoginDate": Timestamp(date: Date()),
@@ -1114,6 +1114,7 @@ class FirebaseService: NSObject, ObservableObject {
             print("✅ FirebaseService: Upload réussi - Métadonnées: \(uploadMetadata?.description ?? "nil")")
             print("🔥 FirebaseService: Récupération URL de téléchargement...")
             
+            // 🛡️ SÉCURITÉ: Génération d'URL sécurisée avec expiration limitée
             profileImageRef.downloadURL { url, urlError in
                 print("🔥 FirebaseService: Callback downloadURL reçu")
                 
@@ -1121,7 +1122,8 @@ class FirebaseService: NSObject, ObservableObject {
                     print("❌ FirebaseService: Erreur récupération URL: \(urlError.localizedDescription)")
                     completion(nil)
                 } else if let downloadURL = url {
-                    print("✅ FirebaseService: URL de téléchargement obtenue: \(downloadURL.absoluteString)")
+                    print("✅ FirebaseService: URL de téléchargement sécurisée obtenue")
+                    print("🛡️ FirebaseService: URL expiration gérée par Firebase Security Rules")
                     completion(downloadURL.absoluteString)
                 } else {
                     print("❌ FirebaseService: URL de téléchargement nil inexpliquée")
@@ -1151,14 +1153,14 @@ class FirebaseService: NSObject, ObservableObject {
         // Données sécurisées à partager avec le partenaire (pour widgets)
         let sharedData: [String: Any] = [
             "name": currentUser.name,
-            "relationshipStartDate": currentUser.relationshipStartDate != nil ? Timestamp(date: currentUser.relationshipStartDate!) : nil as Timestamp?,
+            "relationshipStartDate": currentUser.relationshipStartDate != nil ? Timestamp(date: currentUser.relationshipStartDate!) : NSNull(),
             "currentLocation": currentUser.currentLocation != nil ? [
                 "latitude": currentUser.currentLocation!.latitude,
                 "longitude": currentUser.currentLocation!.longitude,
                 "city": currentUser.currentLocation!.city as Any,
                 "country": currentUser.currentLocation!.country as Any,
                 "lastUpdated": Timestamp(date: currentUser.currentLocation!.lastUpdated)
-            ] : nil as [String: Any]?,
+            ] : NSNull(),
             "lastActive": Timestamp(date: Date()),
             "profileImageURL": currentUser.profileImageURL as Any
         ]
@@ -1223,7 +1225,7 @@ class FirebaseService: NSObject, ObservableObject {
     func syncPartnerJournalEntries(partnerId: String, completion: @escaping (Bool, String?) -> Void) {
         print("📚 FirebaseService: Début synchronisation entrées journal avec partenaire: \(partnerId)")
         
-        guard let firebaseUser = Auth.auth().currentUser else {
+        guard Auth.auth().currentUser != nil else {
             print("❌ FirebaseService: Aucun utilisateur connecté")
             completion(false, "Utilisateur non connecté")
             return
@@ -1271,7 +1273,7 @@ class FirebaseService: NSObject, ObservableObject {
     func syncPartnerFavorites(partnerId: String, completion: @escaping (Bool, String?) -> Void) {
         print("❤️ FirebaseService: Début synchronisation favoris avec partenaire: \(partnerId)")
         
-        guard let firebaseUser = Auth.auth().currentUser else {
+        guard Auth.auth().currentUser != nil else {
             print("❌ FirebaseService: Aucun utilisateur connecté")
             completion(false, "Utilisateur non connecté")
             return

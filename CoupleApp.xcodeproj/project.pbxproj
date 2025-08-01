@@ -10,10 +10,12 @@
 		110E27332E37B00200F2F6B3 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 110E27322E37B00200F2F6B3 /* MessageKit */; };
 		111C37B32E09E36100FCA06D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 111C37B22E09E36100FCA06D /* FirebaseStorage */; };
 		111FEC662DF38CDD00CB1034 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 111FEC652DF38CDD00CB1034 /* ConfettiSwiftUI */; };
+		1134036D2E3B81BB00CC4CA1 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 1134036C2E3B81BB00CC4CA1 /* FirebaseCore */; };
 		11384DC02E0A6E0F004E7AF3 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11384DBF2E0A6E0F004E7AF3 /* WidgetKit.framework */; };
 		11384DC22E0A6E0F004E7AF3 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11384DC12E0A6E0F004E7AF3 /* SwiftUI.framework */; };
 		11384DD32E0A6E11004E7AF3 /* Love2LoveWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 11384DBD2E0A6E0F004E7AF3 /* Love2LoveWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		11414E772E33F8EE00C2D157 /* SwiftyCrop in Frameworks */ = {isa = PBXBuildFile; productRef = 11414E762E33F8EE00C2D157 /* SwiftyCrop */; };
+		114781F72E3A8E0E006E28E0 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 114781F62E3A8E0E006E28E0 /* FirebaseAppCheck */; };
 		114926262DF23223009F7AFA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 114926252DF23223009F7AFA /* RealmSwift */; };
 		1149266F2DF241C5009F7AFA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1149266E2DF241C5009F7AFA /* RealmSwift */; };
 		1149278C2DF243DD009F7AFA /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 114926252DF23223009F7AFA /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -44,6 +46,8 @@
 		1188F9862DF09230005B5328 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1188F9852DF09230005B5328 /* FirebaseAuth */; };
 		1188F9882DF09230005B5328 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1188F9872DF09230005B5328 /* FirebaseFirestore */; };
 		1188F98A2DF09230005B5328 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 1188F9892DF09230005B5328 /* FirebaseFunctions */; };
+		119F18A32E3B86E70085541F /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 119F18A22E3B86E70085541F /* RevenueCat */; };
+		119F18A52E3B8E210085541F /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 119F18A42E3B8E210085541F /* FirebaseAnalytics */; };
 		11A0B95D2E30270000508826 /* DailyQuestions.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 11A0B95C2E30270000508826 /* DailyQuestions.xcstrings */; };
 		11D7F2542E326D560019BC3E /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 11D7F2532E326D560019BC3E /* FirebaseMessaging */; };
 		11FE3CCC2DF0C8B600F58DB2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 11FE3CA92DF0C8B600F58DB2 /* README.md */; };
@@ -148,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				119F18A52E3B8E210085541F /* FirebaseAnalytics in Frameworks */,
 				11D7F2542E326D560019BC3E /* FirebaseMessaging in Frameworks */,
 				111FEC662DF38CDD00CB1034 /* ConfettiSwiftUI in Frameworks */,
 				114926262DF23223009F7AFA /* RealmSwift in Frameworks */,
@@ -157,7 +162,10 @@
 				111C37B32E09E36100FCA06D /* FirebaseStorage in Frameworks */,
 				1149266F2DF241C5009F7AFA /* RealmSwift in Frameworks */,
 				1188F98A2DF09230005B5328 /* FirebaseFunctions in Frameworks */,
+				119F18A32E3B86E70085541F /* RevenueCat in Frameworks */,
 				110E27332E37B00200F2F6B3 /* MessageKit in Frameworks */,
+				1134036D2E3B81BB00CC4CA1 /* FirebaseCore in Frameworks */,
+				114781F72E3A8E0E006E28E0 /* FirebaseAppCheck in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +317,8 @@
 				111FEC642DF38CDD00CB1034 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 				11414E752E33F8EE00C2D157 /* XCRemoteSwiftPackageReference "SwiftyCrop" */,
 				110E27312E37B00200F2F6B3 /* XCRemoteSwiftPackageReference "MessageKit" */,
+				114781FC2E3A913C006E28E0 /* XCRemoteSwiftPackageReference "swift-crypto" */,
+				1134036B2E3B819E00CC4CA1 /* XCRemoteSwiftPackageReference "purchases-ios" */,
 			);
 			productRefGroup = 1A000032294A1234567890AB /* Products */;
 			projectDirPath = "";
@@ -709,12 +719,28 @@
 				minimumVersion = 2.0.3;
 			};
 		};
+		1134036B2E3B819E00CC4CA1 /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.33.1;
+			};
+		};
 		11414E752E33F8EE00C2D157 /* XCRemoteSwiftPackageReference "SwiftyCrop" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/benedom/SwiftyCrop?tab=readme-ov-file";
 			requirement = {
 				branch = master;
 				kind = branch;
+			};
+		};
+		114781FC2E3A913C006E28E0 /* XCRemoteSwiftPackageReference "swift-crypto" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-crypto.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.13.3;
 			};
 		};
 		114926242DF23223009F7AFA /* XCRemoteSwiftPackageReference "realm-swift" */ = {
@@ -751,10 +777,18 @@
 			package = 111FEC642DF38CDD00CB1034 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
 			productName = ConfettiSwiftUI;
 		};
+		1134036C2E3B81BB00CC4CA1 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FirebaseCore;
+		};
 		11414E762E33F8EE00C2D157 /* SwiftyCrop */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 11414E752E33F8EE00C2D157 /* XCRemoteSwiftPackageReference "SwiftyCrop" */;
 			productName = SwiftyCrop;
+		};
+		114781F62E3A8E0E006E28E0 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FirebaseAppCheck;
 		};
 		114926252DF23223009F7AFA /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -780,6 +814,15 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1188F9842DF09230005B5328 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFunctions;
+		};
+		119F18A22E3B86E70085541F /* RevenueCat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1134036B2E3B819E00CC4CA1 /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			productName = RevenueCat;
+		};
+		119F18A42E3B8E210085541F /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FirebaseAnalytics;
 		};
 		11D7F2532E326D560019BC3E /* FirebaseMessaging */ = {
 			isa = XCSwiftPackageProductDependency;

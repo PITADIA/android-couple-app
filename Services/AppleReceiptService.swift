@@ -1,6 +1,7 @@
 import Foundation
 import StoreKit
 import FirebaseFunctions
+import FirebaseAnalytics
 
 class AppleReceiptService: NSObject, ObservableObject {
     static let shared = AppleReceiptService()
@@ -289,6 +290,10 @@ extension AppleReceiptService: SKPaymentTransactionObserver {
                 // Pour l'instant, marquer comme abonné pour permettre la navigation
                 self.isSubscribed = true
                 self.errorMessage = nil
+                
+                // 📊 Analytics: Achat restauré
+                Analytics.logEvent("achat_restaure", parameters: [:])
+                print("📊 Événement Firebase: achat_restaure")
                 
                 print("🔥 AppleReceiptService: ✅ Abonnement restauré avec succès")
                 NSLog("🔥 AppleReceiptService: ✅ Abonnement restauré avec succès")

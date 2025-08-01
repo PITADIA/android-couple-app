@@ -27,11 +27,11 @@ struct DailyQuestionSettings: Codable, Identifiable {
 
 // MARK: - Question Response Model (pour sous-collections)
 struct QuestionResponse: Codable, Equatable, Identifiable {
-    let id: String
+    var id: String
     let userId: String
     let userName: String
     let text: String
-    let respondedAt: Date
+    var respondedAt: Date
     var status: ResponseStatus
     var isReadByPartner: Bool
     
@@ -43,6 +43,61 @@ struct QuestionResponse: Codable, Equatable, Identifiable {
         self.respondedAt = Date()
         self.status = status
         self.isReadByPartner = false
+    }
+    
+    // MARK: - Méthodes de chiffrement (Phase 2)
+    
+    /// Créer une réponse avec chiffrement automatique
+    static func createEncrypted(userId: String, userName: String, text: String, status: ResponseStatus = .answered) -> QuestionResponse {
+        // Le texte sera chiffré lors de la sauvegarde Firestore
+        return QuestionResponse(userId: userId, userName: userName, text: text, status: status)
+    }
+    
+    /// Sauvegarder en Firestore avec chiffrement hybride
+    func toFirestoreData() -> [String: Any] {
+        var data: [String: Any] = [
+            "id": id,
+            "userId": userId,
+            "userName": userName,
+            "respondedAt": Timestamp(date: respondedAt),
+            "status": status.rawValue,
+            "isReadByPartner": isReadByPartner
+        ]
+        
+        // 🔐 CHIFFREMENT HYBRIDE des réponses (Phase 2)
+        let encryptedTextData = LocationEncryptionService.processMessageForStorage(text)
+        data.merge(encryptedTextData) { (_, new) in new }
+        
+        return data
+    }
+    
+    /// Lire depuis Firestore avec déchiffrement hybride
+    static func fromFirestoreData(_ data: [String: Any]) -> QuestionResponse? {
+        guard let id = data["id"] as? String,
+              let userId = data["userId"] as? String,
+              let userName = data["userName"] as? String else {
+            return nil
+        }
+        
+        // 🔐 DÉCHIFFREMENT HYBRIDE du texte
+        let decryptedText = LocationEncryptionService.readMessageFromFirestore(data) ?? ""
+        
+        var response = QuestionResponse(userId: userId, userName: userName, text: decryptedText)
+        response.id = id
+        
+        // Date avec gestion d'erreurs
+        if let timestamp = data["respondedAt"] as? Timestamp {
+            response.respondedAt = timestamp.dateValue()
+        }
+        
+        // Status et autres champs
+        if let statusString = data["status"] as? String {
+            response.status = ResponseStatus(rawValue: statusString) ?? .answered
+        }
+        
+        response.isReadByPartner = data["isReadByPartner"] as? Bool ?? false
+        
+        return response
     }
     
     // MARK: - Codable avec migration automatique pour Firestore
@@ -409,7 +464,6 @@ struct DailyQuestionGenerator {
     static func getAvailableQuestionsCount() -> Int {
         // Parcourir les clés de localisation pour compter les questions disponibles
         var count = 0
-        let bundle = Bundle.main
         
         // Chercher toutes les clés daily_question_X dans DailyQuestions.xcstrings
         for i in 1...1000 { // Limite raisonnable pour éviter les boucles infinies

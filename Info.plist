@@ -43,20 +43,160 @@
 	<true/>
 	<key>UILaunchScreen</key>
 	<dict/>
-	<key>UIRequiredDeviceCapabilities</key>
-	<array>
-		<string>armv7</string>
-	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-	<key>ITSAppUsesNonExemptEncryption</key>
-	<false/>
+	
+	<!-- Spécifier explicitement: iPhone uniquement -->
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+	</array>
+
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Love2Love uses your location to calculate the distance between you and your partner, and to allow you to add places to your shared memories.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Love2Love needs access to your photos to allow you to personalize your profile and add images to your shared memories in the couple's journal.</string>
+	
+	<!-- Export Compliance pour Apple Store - CryptoKit AES-GCM utilisé -->
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<true/>
+	
+	<!-- Privacy Manifests - Conformité Apple iOS 17+ -->
+	<key>NSPrivacyAccessedAPITypes</key>
+	<array>
+		<dict>
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategorySystemBootTime</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>35F9.1</string>
+			</array>
+		</dict>
+		<dict>
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategoryUserDefaults</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>CA92.1</string>
+			</array>
+		</dict>
+	</array>
+	
+	<!-- Tracking Usage - Firebase Analytics sans publicité -->
+	<key>NSPrivacyTrackingDomains</key>
+	<array/>
+	<key>NSPrivacyTracking</key>
+	<false/>
+	
+	<!-- Collecte de données - Déclaration complète -->
+	<key>NSPrivacyCollectedDataTypes</key>
+	<array>
+		<!-- Informations de contact (Apple Sign In) -->
+		<dict>
+			<key>NSPrivacyCollectedDataType</key>
+			<string>NSPrivacyCollectedDataTypeContactInfo</string>
+			<key>NSPrivacyCollectedDataTypeLinked</key>
+			<true/>
+			<key>NSPrivacyCollectedDataTypeTracking</key>
+			<false/>
+			<key>NSPrivacyCollectedDataTypePurposes</key>
+			<array>
+				<string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
+			</array>
+		</dict>
+		<!-- Contenu utilisateur (Messages, Journal) -->
+		<dict>
+			<key>NSPrivacyCollectedDataType</key>
+			<string>NSPrivacyCollectedDataTypeUserContent</string>
+			<key>NSPrivacyCollectedDataTypeLinked</key>
+			<true/>
+			<key>NSPrivacyCollectedDataTypeTracking</key>
+			<false/>
+			<key>NSPrivacyCollectedDataTypePurposes</key>
+			<array>
+				<string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
+			</array>
+		</dict>
+		<!-- Localisation précise -->
+		<dict>
+			<key>NSPrivacyCollectedDataType</key>
+			<string>NSPrivacyCollectedDataTypeLocation</string>
+			<key>NSPrivacyCollectedDataTypeLinked</key>
+			<true/>
+			<key>NSPrivacyCollectedDataTypeTracking</key>
+			<false/>
+			<key>NSPrivacyCollectedDataTypePurposes</key>
+			<array>
+				<string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
+			</array>
+		</dict>
+		<!-- Historique d'achats -->
+		<dict>
+			<key>NSPrivacyCollectedDataType</key>
+			<string>NSPrivacyCollectedDataTypePurchases</string>
+			<key>NSPrivacyCollectedDataTypeLinked</key>
+			<true/>
+			<key>NSPrivacyCollectedDataTypeTracking</key>
+			<false/>
+			<key>NSPrivacyCollectedDataTypePurposes</key>
+			<array>
+				<string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
+				<string>NSPrivacyCollectedDataTypePurposeAnalytics</string>
+			</array>
+		</dict>
+		<!-- Identifiants utilisateur -->
+		<dict>
+			<key>NSPrivacyCollectedDataType</key>
+			<string>NSPrivacyCollectedDataTypeIdentifiers</string>
+			<key>NSPrivacyCollectedDataTypeLinked</key>
+			<true/>
+			<key>NSPrivacyCollectedDataTypeTracking</key>
+			<false/>
+			<key>NSPrivacyCollectedDataTypePurposes</key>
+			<array>
+				<string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
+				<string>NSPrivacyCollectedDataTypePurposeAnalytics</string>
+			</array>
+		</dict>
+		<!-- Données d'usage -->
+		<dict>
+			<key>NSPrivacyCollectedDataType</key>
+			<string>NSPrivacyCollectedDataTypeUsageData</string>
+			<key>NSPrivacyCollectedDataTypeLinked</key>
+			<false/>
+			<key>NSPrivacyCollectedDataTypeTracking</key>
+			<false/>
+			<key>NSPrivacyCollectedDataTypePurposes</key>
+			<array>
+				<string>NSPrivacyCollectedDataTypePurposeAnalytics</string>
+				<string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
+			</array>
+		</dict>
+		<!-- Données de diagnostic -->
+		<dict>
+			<key>NSPrivacyCollectedDataType</key>
+			<string>NSPrivacyCollectedDataTypeOtherDiagnosticData</string>
+			<key>NSPrivacyCollectedDataTypeLinked</key>
+			<false/>
+			<key>NSPrivacyCollectedDataTypeTracking</key>
+			<false/>
+			<key>NSPrivacyCollectedDataTypePurposes</key>
+			<array>
+				<string>NSPrivacyCollectedDataTypePurposeAnalytics</string>
+				<string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
+			</array>
+		</dict>
+	</array>
+	
+	<!-- App Transport Security -->
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<false/>
+	</dict>
+	
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>

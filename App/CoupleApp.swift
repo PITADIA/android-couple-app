@@ -35,7 +35,7 @@ struct CoupleApp: App {
                         
                         // Préchargement en arrière-plan pour les anciennes données (compatibilité)
                         Task {
-                            await questionCacheManager.preloadAllCategories()
+                            questionCacheManager.preloadAllCategories()
                             questionCacheManager.optimizeMemoryUsage()
                         }
                     }

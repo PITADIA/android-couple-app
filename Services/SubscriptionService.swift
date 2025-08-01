@@ -3,6 +3,7 @@ import StoreKit
 import Combine
 import FirebaseFirestore
 import FirebaseAuth
+import FirebaseAnalytics
 
 class SubscriptionService: NSObject, ObservableObject, SKPaymentTransactionObserver {
     static let shared = SubscriptionService()
@@ -130,6 +131,14 @@ class SubscriptionService: NSObject, ObservableObject, SKPaymentTransactionObser
         print("🔥 SubscriptionService: ✅ Achat réussi: \(transaction.payment.productIdentifier)")
         NSLog("🔥 SubscriptionService: ✅ Achat réussi: \(transaction.payment.productIdentifier)")
         
+        // 📊 Analytics: Abonnement réussi avec le bon type
+        let planType = transaction.payment.productIdentifier.contains("weekly") ? "weekly" : "monthly"
+        Analytics.logEvent("abonnement_reussi", parameters: [
+            "type": planType,
+            "source": "storekit_success"
+        ])
+        print("📊 Événement Firebase: abonnement_reussi - type: \(planType) - source: storekit_success")
+        
         isSubscribed = true
         isLoading = false
         
@@ -161,6 +170,10 @@ class SubscriptionService: NSObject, ObservableObject, SKPaymentTransactionObser
     private func handleRestored(_ transaction: SKPaymentTransaction) {
         print("🔥 SubscriptionService: ✅ Achat restauré: \(transaction.payment.productIdentifier)")
         NSLog("🔥 SubscriptionService: ✅ Achat restauré: \(transaction.payment.productIdentifier)")
+        
+        // 📊 Analytics: Achat restauré
+        Analytics.logEvent("achat_restaure", parameters: [:])
+        print("📊 Événement Firebase: achat_restaure")
         
         isSubscribed = true
         isLoading = false

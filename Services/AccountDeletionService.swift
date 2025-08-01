@@ -66,44 +66,26 @@ class AccountDeletionService: NSObject, ObservableObject {
             print("✅ AccountDeletionService: Codes partenaires supprimés")
             
             // ÉTAPE 2: Continuer avec la suppression du document utilisateur
-            userRef.getDocument { document, error in
-                if let error = error {
-                    print("❌ AccountDeletionService: Erreur lors de la vérification: \(error.localizedDescription)")
-                    completion(false)
-                    return
-                }
+            do {
+                let document = try await userRef.getDocument()
                 
-                if let document = document, document.exists {
+                if document.exists {
                     print("🔥 AccountDeletionService: Document trouvé, suppression en cours...")
                     print("🔥 AccountDeletionService: Données à supprimer: \(document.data() ?? [:])")
                     
                     // Supprimer le document
-                    userRef.delete { deleteError in
-                        if let deleteError = deleteError {
-                            print("❌ AccountDeletionService: Erreur suppression Firestore: \(deleteError.localizedDescription)")
-                            
-                            // Tenter une suppression avec overwrite
-                            print("🔥 AccountDeletionService: Tentative de suppression par overwrite...")
-                            userRef.setData([:]) { overwriteError in
-                                if let overwriteError = overwriteError {
-                                    print("❌ AccountDeletionService: Échec overwrite: \(overwriteError.localizedDescription)")
-                                    completion(false)
-                                } else {
-                                    print("✅ AccountDeletionService: Document vidé par overwrite")
-                                    // Maintenant essayer de supprimer le document vide
-                                    userRef.delete { finalDeleteError in
-                                        if let finalDeleteError = finalDeleteError {
-                                            print("❌ AccountDeletionService: Échec suppression finale: \(finalDeleteError.localizedDescription)")
-                                            completion(false)
-                                        } else {
-                                            print("✅ AccountDeletionService: Document supprimé après overwrite")
-                                            completion(true)
-                                        }
-                                    }
-                                }
-                            }
-                        } else {
-                            print("✅ AccountDeletionService: Document utilisateur supprimé de Firestore")
+                    do {
+                        try await userRef.delete()
+                        print("✅ AccountDeletionService: Document Firestore supprimé")
+                        completion(true)
+                    } catch {
+                        print("❌ AccountDeletionService: Erreur suppression Firestore: \(error.localizedDescription)")
+                        
+                        // Tenter une suppression avec overwrite
+                        print("🔥 AccountDeletionService: Tentative de suppression par overwrite...")
+                        do {
+                            try await userRef.setData([:])
+                            print("✅ AccountDeletionService: Document overwrité avec succès")
                             completion(true)
                         }
                     }
@@ -111,6 +93,9 @@ class AccountDeletionService: NSObject, ObservableObject {
                     print("🔥 AccountDeletionService: Aucun document trouvé pour l'utilisateur \(userId)")
                     completion(true) // Pas de document = déjà supprimé
                 }
+            } catch {
+                print("❌ AccountDeletionService: Erreur lors de la vérification: \(error.localizedDescription)")
+                completion(false)
             }
         }
     }

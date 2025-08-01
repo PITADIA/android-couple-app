@@ -3,6 +3,7 @@ import AuthenticationServices
 import PhotosUI
 import Photos
 import SwiftyCrop
+import FirebaseAnalytics
 
 struct MenuView: View {
     @EnvironmentObject var appState: AppState
@@ -447,7 +448,7 @@ struct MenuView: View {
     // L'upload vers Firebase se fait maintenant via onChange de profileImage
     
     private func uploadProfileImage(_ image: UIImage) {
-        guard let currentUser = appState.currentUser else {
+        guard appState.currentUser != nil else {
             return
         }
         
@@ -455,7 +456,7 @@ struct MenuView: View {
         profileImage = image
         
         // Utiliser la nouvelle méthode dédiée à l'upload d'image de profil
-        FirebaseService.shared.updateProfileImage(image) { [weak appState] success, imageURL in
+        FirebaseService.shared.updateProfileImage(image) { success, imageURL in
             DispatchQueue.main.async {
                 if !success {
                     // Réinitialiser l'image temporaire en cas d'erreur

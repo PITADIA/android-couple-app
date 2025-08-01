@@ -416,7 +416,7 @@ class RealmDailyQuestion: Object, Identifiable {
         self.coupleId = dailyQuestion.coupleId
         self.status = dailyQuestion.status.rawValue
         self.createdAt = dailyQuestion.createdAt
-        self.updatedAt = dailyQuestion.updatedAt ?? dailyQuestion.createdAt
+        self.updatedAt = dailyQuestion.updatedAt
         
         // Convertir les réponses
         for (_, response) in dailyQuestion.responses {

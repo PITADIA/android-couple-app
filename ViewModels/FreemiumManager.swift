@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 import Combine
+import FirebaseAnalytics
 
 class FreemiumManager: ObservableObject {
     @Published var showingSubscription = false {
@@ -30,7 +31,7 @@ class FreemiumManager: ObservableObject {
     private func setupObservers() {
         // Observer les changements d'abonnement
         appState?.$currentUser
-            .sink { [weak self] (user: AppUser?) in
+            .sink { (user: AppUser?) in
                 // Réagir aux changements d'abonnement si nécessaire
                 print("🔥 FreemiumManager: Utilisateur changé - isSubscribed: \(user?.isSubscribed ?? false)")
             }
@@ -86,6 +87,12 @@ class FreemiumManager: ObservableObject {
             blockedCategoryAttempt = category
             showingSubscription = true
             
+            // 📊 Analytics: Paywall affiché pour question
+            Analytics.logEvent("paywall_affiche", parameters: [
+                "source": "freemium_limite"
+            ])
+            print("📊 Événement Firebase: paywall_affiche - source: freemium_limite")
+            
             // Analytics - track blocked question
             trackQuestionBlocked(at: index, in: category)
         }
@@ -121,6 +128,12 @@ class FreemiumManager: ObservableObject {
             print("🔥🔥🔥 FREEMIUM TAP: - MISE A JOUR showingSubscription vers TRUE")
             showingSubscription = true
             print("🔥🔥🔥 FREEMIUM TAP: - showingSubscription APRES: \(showingSubscription)")
+            
+            // 📊 Analytics: Paywall affiché
+            Analytics.logEvent("paywall_affiche", parameters: [
+                "source": "freemium_limite"
+            ])
+            print("📊 Événement Firebase: paywall_affiche - source: freemium_limite")
             
             // Notifier le changement
             NotificationCenter.default.post(name: .freemiumManagerChanged, object: nil)
@@ -181,7 +194,13 @@ class FreemiumManager: ObservableObject {
     /// NOUVEAU: Retourne le nombre maximum de questions gratuites pour une catégorie
     func getMaxFreeQuestions(for category: QuestionCategory) -> Int {
         print("🔍 DEBUG getMaxFreeQuestions: ===== DEBUT =====")
-        print("🔍 DEBUG getMaxFreeQuestions: - Langue: \(Locale.current.languageCode ?? "unknown")")
+        let currentLanguage: String
+        if #available(iOS 16.0, *) {
+            currentLanguage = Locale.current.language.languageCode?.identifier ?? "unknown"
+        } else {
+            currentLanguage = Locale.current.languageCode ?? "unknown"
+        }
+        print("🔍 DEBUG getMaxFreeQuestions: - Langue: \(currentLanguage)")
         print("🔍 DEBUG getMaxFreeQuestions: - Catégorie ID: \(category.id)")
         print("🔍 DEBUG getMaxFreeQuestions: - Catégorie titre: \(category.title)")
         print("🔍 DEBUG getMaxFreeQuestions: - isPremium: \(category.isPremium)")
@@ -265,6 +284,12 @@ class FreemiumManager: ObservableObject {
             
             // Marquer que la tentative d'accès était pour le journal
             showingSubscription = true
+            
+            // 📊 Analytics: Paywall affiché pour journal
+            Analytics.logEvent("paywall_affiche", parameters: [
+                "source": "popup_journal"
+            ])
+            print("📊 Événement Firebase: paywall_affiche - source: popup_journal")
             
             // Analytics - track blocked journal entry
             trackJournalEntryBlocked(entriesCount: currentEntriesCount)

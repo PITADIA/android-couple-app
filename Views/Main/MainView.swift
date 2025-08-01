@@ -1,4 +1,5 @@
 import SwiftUI
+import FirebaseAnalytics
 import Combine
 
 struct MainView: View {
@@ -141,6 +142,9 @@ struct MainView: View {
                         // Profil
                         Button(action: {
                             activeSheet = .menu
+                            // 📊 Analytics: Paramètres ouverts
+                            Analytics.logEvent("parametres_ouverts", parameters: [:])
+                            print("📊 Événement Firebase: parametres_ouverts")
                         }) {
                             Image("profile")
                                 .resizable()

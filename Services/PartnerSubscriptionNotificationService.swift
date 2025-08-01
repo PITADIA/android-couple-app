@@ -24,22 +24,16 @@ class PartnerSubscriptionNotificationService: ObservableObject {
     private func setupObservers() {
         // Observer les notifications de partage d'abonnement
         NotificationCenter.default.publisher(for: .partnerSubscriptionShared)
-            .sink { [weak self] notification in
-                if let userInfo = notification.userInfo,
-                   let partnerId = userInfo["partnerId"] as? String {
-                    print("🎁 PartnerSubscriptionNotificationService: Abonnement partagé avec: \(partnerId)")
-                }
+            .sink { _ in
+                print("🎁 PartnerSubscriptionNotificationService: Notification d'abonnement partagé reçue")
             }
             .store(in: &cancellables)
         
         // Observer les notifications de révocation d'abonnement
         NotificationCenter.default.publisher(for: .partnerSubscriptionRevoked)
-            .sink { [weak self] notification in
-                if let userInfo = notification.userInfo,
-                   let partnerId = userInfo["partnerId"] as? String {
-                    print("🔒 PartnerSubscriptionNotificationService: Abonnement révoqué pour: \(partnerId)")
-                    // Le partenaire sera notifié via le listener Firebase
-                }
+            .sink { _ in
+                print("🔒 PartnerSubscriptionNotificationService: Notification d'abonnement révoqué reçue")
+                // Le partenaire sera notifié via le listener Firebase
             }
             .store(in: &cancellables)
     }
@@ -85,7 +79,7 @@ class PartnerSubscriptionNotificationService: ObservableObject {
                 // Vérifier si l'utilisateur a perdu son abonnement hérité
                 if let wasSubscribed = data["isSubscribed"] as? Bool,
                    !wasSubscribed,
-                   let expiredAt = data["subscriptionExpiredAt"] {
+                   let _ = data["subscriptionExpiredAt"] {
                     Task {
                         await self?.handleSubscriptionRevoked()
                     }

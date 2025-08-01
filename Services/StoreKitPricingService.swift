@@ -240,7 +240,11 @@ struct LocalizedPrice {
         self.productId = product.productIdentifier
         self.price = product.price
         self.locale = product.priceLocale
-        self.currencyCode = product.priceLocale.currencyCode ?? "EUR"
+        if #available(iOS 16.0, *) {
+            self.currencyCode = product.priceLocale.currency?.identifier ?? "EUR"
+        } else {
+            self.currencyCode = product.priceLocale.currencyCode ?? "EUR"
+        }
         
         // Formatter pour le prix principal
         let priceFormatter = NumberFormatter()

@@ -1,5 +1,6 @@
 import SwiftUI
 import MapKit
+import FirebaseAnalytics
 
 struct WidgetsView: View {
     @EnvironmentObject var appState: AppState
@@ -137,6 +138,9 @@ struct WidgetsView: View {
                                 // Card pour widgets écran verrouillé
                                 Button(action: {
                                     showLockScreenTutorial = true
+                                    // 📊 Analytics: Configuration widget
+                                    Analytics.logEvent("widget_configure", parameters: ["type": "lock"])
+                                    print("📊 Événement Firebase: widget_configure - type: lock")
                                 }) {
                                     HStack(spacing: 16) {
                                         VStack(alignment: .leading, spacing: 6) {
@@ -170,6 +174,9 @@ struct WidgetsView: View {
                                 // Card pour widgets écran d'accueil
                                 Button(action: {
                                     showHomeScreenTutorial = true
+                                    // 📊 Analytics: Configuration widget
+                                    Analytics.logEvent("widget_configure", parameters: ["type": "home"])
+                                    print("📊 Événement Firebase: widget_configure - type: home")
                                 }) {
                                     HStack(spacing: 16) {
                                         VStack(alignment: .leading, spacing: 6) {

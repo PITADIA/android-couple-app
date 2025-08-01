@@ -1,6 +1,7 @@
 import Foundation
 import Combine
 import FirebaseAuth
+import RevenueCat
 
 class AppState: ObservableObject {
     @Published var isOnboardingCompleted: Bool = false
@@ -330,11 +331,33 @@ class AppState: ObservableObject {
     func updateUser(_ user: AppUser) {
         self.currentUser = user
         
+        // Configuration RevenueCat avec l'ID utilisateur Firebase
+        if let firebaseUserId = Auth.auth().currentUser?.uid {
+            print("💰 AppState: Configuration RevenueCat avec userID: \(firebaseUserId)")
+            Purchases.shared.logIn(firebaseUserId) { (customerInfo, created, error) in
+                if let error = error {
+                    print("❌ AppState: Erreur RevenueCat logIn: \(error)")
+                } else {
+                    print("✅ AppState: RevenueCat utilisateur configuré - created: \(created)")
+                }
+            }
+        }
+        
         // Sauvegarder dans Firebase
         firebaseService.saveUserData(user)
     }
     
     func signOut() {
+        // Déconnexion RevenueCat
+        print("💰 AppState: Déconnexion RevenueCat")
+        Purchases.shared.logOut { (customerInfo, error) in
+            if let error = error {
+                print("❌ AppState: Erreur RevenueCat logOut: \(error)")
+            } else {
+                print("✅ AppState: RevenueCat utilisateur déconnecté")
+            }
+        }
+        
         firebaseService.signOut()
         isOnboardingCompleted = false
         isOnboardingInProgress = false
@@ -346,6 +369,17 @@ class AppState: ObservableObject {
     
     func deleteAccount() {
         print("AppState: Suppression du compte")
+        
+        // Déconnexion RevenueCat lors de la suppression
+        print("💰 AppState: Déconnexion RevenueCat (suppression compte)")
+        Purchases.shared.logOut { (customerInfo, error) in
+            if let error = error {
+                print("❌ AppState: Erreur RevenueCat logOut (suppression): \(error)")
+            } else {
+                print("✅ AppState: RevenueCat utilisateur déconnecté (suppression)")
+            }
+        }
+        
         firebaseService.signOut()
         isOnboardingCompleted = false
         isAuthenticated = false

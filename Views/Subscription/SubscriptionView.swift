@@ -1,5 +1,6 @@
 import SwiftUI
 import StoreKit
+import FirebaseAnalytics
 
 struct SubscriptionView: View {
     @EnvironmentObject var appState: AppState
@@ -219,6 +220,13 @@ struct SubscriptionView: View {
                     appState.updateUser(currentUser)
                 }
                 
+                // 📊 Analytics: Abonnement réussi
+                Analytics.logEvent("abonnement_reussi", parameters: [
+                    "type": "unknown", // Le type exact n'est pas disponible ici
+                    "source": "subscription_view"
+                ])
+                print("📊 Événement Firebase: abonnement_reussi - source: subscription_view")
+                
                 // Analytics
                 appState.freemiumManager?.trackConversion()
                 
@@ -236,6 +244,15 @@ struct SubscriptionView: View {
     
     private func purchaseSubscription() {
         print("🔥 SubscriptionView: Tentative d'achat")
+        
+        // 📊 Analytics: Abonnement démarré
+        let planType = receiptService.selectedPlan == .weekly ? "weekly" : "monthly"
+        Analytics.logEvent("abonnement_demarre", parameters: [
+            "type": planType,
+            "source": "subscription_view"
+        ])
+        print("📊 Événement Firebase: abonnement_demarre - type: \(planType) - source: subscription_view")
+        
         // Analytics - tracker tentative d'achat
         appState.freemiumManager?.trackUpgradePromptShown()
         receiptService.purchaseSubscription()

@@ -1,5 +1,6 @@
 import Foundation
 import StoreKit
+import FirebaseAnalytics
 import UIKit
 
 class ReviewRequestService: ObservableObject {
@@ -86,6 +87,10 @@ class ReviewRequestService: ObservableObject {
         }
         
         print("🌟 ReviewRequestService: 🎉 DEMANDE D'AVIS APPLE DÉCLENCHÉE!")
+        
+        // 📊 Analytics: Demande d'avis
+        Analytics.logEvent("avis_demande", parameters: [:])
+        print("📊 Événement Firebase: avis_demande")
         
         // Demander l'avis avec l'API Apple
         SKStoreReviewController.requestReview(in: windowScene)

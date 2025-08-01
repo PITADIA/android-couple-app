@@ -4,6 +4,7 @@ import Combine
 import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFunctions
+import FirebaseAnalytics
 
 class PartnerSubscriptionSyncService: ObservableObject {
     static let shared = PartnerSubscriptionSyncService()
@@ -19,7 +20,7 @@ class PartnerSubscriptionSyncService: ObservableObject {
     
     private func setupAuthObserver() {
         // Observer les changements d'authentification
-        Auth.auth().addStateDidChangeListener { [weak self] (auth: Auth, user: FirebaseAuth.User?) in
+        _ = Auth.auth().addStateDidChangeListener { [weak self] (auth: Auth, user: FirebaseAuth.User?) in
             if user != nil {
                 print("🔄 PartnerSubscriptionSyncService: Utilisateur reconnecté - Redémarrage listeners")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
@@ -170,6 +171,11 @@ class PartnerSubscriptionSyncService: ObservableObject {
                 if let inherited = resultData["subscriptionInherited"] as? Bool,
                    inherited,
                    let fromPartnerName = resultData["fromPartnerName"] as? String {
+                    
+                    // 📊 Analytics: Abonnement partagé avec partenaire
+                    Analytics.logEvent("abonnement_partage_partenaire", parameters: [:])
+                    print("📊 Événement Firebase: abonnement_partage_partenaire")
+                    
                     await MainActor.run {
                         NotificationCenter.default.post(
                             name: .partnerSubscriptionShared,

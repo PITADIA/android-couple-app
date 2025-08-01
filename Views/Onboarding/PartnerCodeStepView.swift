@@ -1,4 +1,5 @@
 import SwiftUI
+import FirebaseAnalytics
 
 struct PartnerCodeStepView: View {
     @ObservedObject var viewModel: OnboardingViewModel
@@ -44,7 +45,7 @@ struct PartnerCodeStepView: View {
                     } else if partnerCodeService.isLoading {
                         // Afficher un état de chargement
                         loadingCodeSection
-                    } else if let errorMessage = partnerCodeService.errorMessage {
+                    } else if partnerCodeService.errorMessage != nil {
                         // Afficher l'erreur avec possibilité de réessayer
                         errorCodeSection
                     } else {
@@ -91,7 +92,7 @@ struct PartnerCodeStepView: View {
                 } else {
                     print("🔗 PartnerCodeStepView: Pas de connexion existante")
                     print("🔗 PartnerCodeStepView: Génération automatique du code...")
-                    await partnerCodeService.generatePartnerCode()
+                    _ = await partnerCodeService.generatePartnerCode()
                 }
             }
         }
@@ -299,6 +300,11 @@ struct PartnerCodeStepView: View {
     
     private func shareCode(_ code: String) {
         print("🔗 PartnerCodeStepView: Tentative de partage du code: \(code)")
+        
+        // 📊 Analytics: Code partenaire partagé
+        Analytics.logEvent("code_partenaire_partage", parameters: [:])
+        print("📊 Événement Firebase: code_partenaire_partage")
+        
         showingShareSheet = true
     }
     

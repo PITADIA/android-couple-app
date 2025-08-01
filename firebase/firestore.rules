@@ -83,11 +83,15 @@ service cloud.firestore {
                       (resource.data.partnerIds != null && 
                        request.auth.uid in resource.data.partnerIds));
       
-      // Création : utilisateur authentifié ET auteur ET dans partnerIds
+      // 🔧 CORRECTION: Permettre les queries/listes pour les utilisateurs authentifiés
+      allow list: if request.auth != null;
+      
+      // 🛡️ CRÉATION SIMPLIFIÉE : utilisateur authentifié ET dans partnerIds
       allow create: if request.auth != null && 
-                       request.auth.uid == request.resource.data.authorId &&
                        request.resource.data.partnerIds != null &&
-                       request.auth.uid in request.resource.data.partnerIds;
+                       request.auth.uid in request.resource.data.partnerIds &&
+                       // Vérifier que l'auteur est bien celui qui créé
+                       request.auth.uid == request.resource.data.authorId;
       
       // Modification : seulement l'auteur peut modifier
       allow update: if request.auth != null && 

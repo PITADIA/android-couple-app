@@ -1,4 +1,5 @@
 import SwiftUI
+import FirebaseAnalytics
 
 struct QuestionListView: View {
     let category: QuestionCategory
@@ -85,7 +86,13 @@ struct QuestionListView: View {
         let isUserSubscribed = appState.currentUser?.isSubscribed ?? false
         
         print("🔍 DEBUG shouldShowFreemiumPaywall: ===== DEBUT VERIFICATION =====")
-        print("🔍 DEBUG shouldShowFreemiumPaywall: - Langue: \(Locale.current.languageCode ?? "unknown")")
+        let currentLanguage: String
+        if #available(iOS 16.0, *) {
+            currentLanguage = Locale.current.language.languageCode?.identifier ?? "unknown"
+        } else {
+            currentLanguage = Locale.current.languageCode ?? "unknown"
+        }
+        print("🔍 DEBUG shouldShowFreemiumPaywall: - Langue: \(currentLanguage)")
         print("🔍 DEBUG shouldShowFreemiumPaywall: - Catégorie ID: \(category.id)")
         print("🔍 DEBUG shouldShowFreemiumPaywall: - Catégorie titre: \(category.title)")
         print("🔍 DEBUG shouldShowFreemiumPaywall: - isPremium: \(category.isPremium)")
@@ -334,6 +341,17 @@ struct QuestionListView: View {
                                             // Swipe vers la droite - question précédente
                                             if currentQuestionIndex > 0 {
                                                 currentIndex -= 1
+                                                
+                                                // 📊 Analytics: Question vue
+                                                if currentIndex < accessibleQuestions.count {
+                                                    let question = accessibleQuestions[currentIndex]
+                                                    Analytics.logEvent("question_vue", parameters: [
+                                                        "categorie": category.id,
+                                                        "question_id": question.id
+                                                    ])
+                                                    print("📊 Événement Firebase: question_vue - \(category.id) - \(question.id)")
+                                                }
+                                                
                                                 // 🔥 NOUVEAU: Sauvegarder la position actuelle
                                                 categoryProgressService.saveCurrentIndex(currentIndex, for: category.id)
                                                 
@@ -350,6 +368,17 @@ struct QuestionListView: View {
                                                 print("🔍 SWIPE GAUCHE: nextIndex=\(nextIndex), accessibleQuestions.count=\(accessibleQuestions.count)")
                                                 
                                                 currentIndex = nextIndex
+                                                
+                                                // 📊 Analytics: Question vue
+                                                if currentIndex < accessibleQuestions.count {
+                                                    let question = accessibleQuestions[currentIndex]
+                                                    Analytics.logEvent("question_vue", parameters: [
+                                                        "categorie": category.id,
+                                                        "question_id": question.id
+                                                    ])
+                                                    print("📊 Événement Firebase: question_vue - \(category.id) - \(question.id)")
+                                                }
+                                                
                                                 // 🔥 NOUVEAU: Sauvegarder la position actuelle
                                                 categoryProgressService.saveCurrentIndex(currentIndex, for: category.id)
                                                 
@@ -459,7 +488,13 @@ struct QuestionListView: View {
         print("🔍 DEBUG checkForPackCompletionCard: currentIndex=\(currentIndex), accessibleQuestions.count=\(accessibleQuestions.count)")
         print("🔍 DEBUG checkForPackCompletionCard: cachedQuestions.count=\(cachedQuestions.count), showPackCompletionCard=\(showPackCompletionCard)")
         print("🔍 DEBUG checkForPackCompletionCard: category.id=\(category.id), category.title=\(category.title)")
-        print("🔍 DEBUG checkForPackCompletionCard: current language=\(Locale.current.languageCode ?? "unknown")")
+        let currentLanguage: String
+        if #available(iOS 16.0, *) {
+            currentLanguage = Locale.current.language.languageCode?.identifier ?? "unknown"
+        } else {
+            currentLanguage = Locale.current.languageCode ?? "unknown"
+        }
+        print("🔍 DEBUG checkForPackCompletionCard: current language=\(currentLanguage)")
         
         // NOUVELLE LOGIQUE: Vérifier d'abord si on a atteint la limite freemium
         if let freemiumManager = appState.freemiumManager {
@@ -536,7 +571,16 @@ struct QuestionListView: View {
     }
      
      private func unlockNextPack() {
+         let packNumber = packProgressService.getUnlockedPacks(for: category.id)
+         
          packProgressService.unlockNextPack(for: category.id)
+         
+         // 📊 Analytics: Pack complété
+         Analytics.logEvent("pack_complete", parameters: [
+             "categorie": category.id,
+             "pack_numero": packNumber
+         ])
+         print("📊 Événement Firebase: pack_complete - categorie: \(category.id) - pack_numero: \(packNumber)")
          
          // Recharger les questions accessibles
          accessibleQuestions = packProgressService.getAccessibleQuestions(

@@ -25,7 +25,7 @@ class AuthenticationService: NSObject, ObservableObject {
         }
         
         // Écouter les changements d'authentification
-        Auth.auth().addStateDidChangeListener { [weak self] _, user in
+        _ = Auth.auth().addStateDidChangeListener { [weak self] _, user in
             DispatchQueue.main.async {
                 self?.currentUser = user
                 self?.isAuthenticated = user != nil
@@ -214,7 +214,7 @@ extension AuthenticationService: ASAuthorizationControllerDelegate {
                     self.errorMessage = "Authentification non gérée"
                 case .unknown:
                     self.errorMessage = "Erreur d'authentification inconnue"
-                @unknown default:
+                default:
                     self.errorMessage = "Erreur d'authentification"
                 }
             } else {

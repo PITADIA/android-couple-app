@@ -1,0 +1,254 @@
+================================================================================
+                    BROCHURE TECHNIQUE DU MOYEN DE CRYPTOLOGIE
+                              APPLICATION LOVE2LOVE
+                        Déclaration ANSSI - France 2025
+================================================================================
+
+1. PRÉSENTATION GÉNÉRALE
+================================================================================
+
+Nom du produit           : Love2Love
+Type                     : Application mobile iOS
+Version                  : 1.9
+Identifiant App Store    : com.lyes.love2love
+
+
+Description générale     : Application mobile iOS permettant aux couples de  répondre à des 
+                          questions quotidiennes de manière sécurisée.
+
+Fonctionnalités principales :
+- Questions quotidiennes pour couples
+- Journal partagé avec géolocalisation
+- Messagerie sécurisée entre partenaires
+- Gestion des favoris et souvenirs
+- Suivi de la proximité géographique
+
+2. ARCHITECTURE CRYPTOGRAPHIQUE
+================================================================================
+
+2.1 Chiffrement symétrique principal
+-------------------------------------
+Algorithme               : AES (Advanced Encryption Standard)
+Mode d'opération         : GCM (Galois/Counter Mode)
+Longueur de clé          : 256 bits
+Standard de référence    : NIST SP 800-38D
+Implémentation           : Apple CryptoKit Framework (iOS 13+)
+
+Caractéristiques techniques :
+- Vecteur d'initialisation : 96 bits (généré aléatoirement)
+- Tag d'authentification   : 128 bits (intégré GCM)
+- Génération clé           : SymmetricKey(size: .bits256)
+- Stockage clé             : Keychain Services iOS (kSecClassGenericPassword)
+
+2.2 Fonction de hachage
+-----------------------
+Algorithme               : SHA-256
+Longueur de sortie       : 256 bits
+Standard de référence    : NIST FIPS 180-4
+Implémentation           : Apple CryptoKit Framework
+
+Usage :
+- Génération de nonces pour Apple Sign-In
+- Anonymisation des identifiants dans les logs d'audit
+- Intégrité des données d'authentification
+
+2.3 Génération de nombres aléatoires
+-----------------------------------
+Fonction                 : SecRandomCopyBytes
+Source d'entropie        : iOS Security Framework
+Standard                 : Conforme NIST SP 800-90A
+
+Usage :
+- Génération des vecteurs d'initialisation (IV)
+- Création des nonces cryptographiques
+- Génération des clés de session
+
+3. DONNÉES PROTÉGÉES PAR CHIFFREMENT
+================================================================================
+
+3.1 Coordonnées de géolocalisation
+----------------------------------
+Format d'entrée          : CLLocation (latitude, longitude)
+Traitement               : Conversion en string "lat,lon"
+Chiffrement              : AES-256-GCM
+Format de sortie         : Base64 (combined IV + ciphertext + tag)
+
+3.2 Messages textuels entre partenaires
+---------------------------------------
+Type de données          : Réponses aux questions quotidiennes
+Encoding                 : UTF-8
+Chiffrement              : AES-256-GCM
+Stockage                 : Firebase Firestore (données chiffrées)
+
+3.3 Métadonnées du journal intime
+---------------------------------
+Données concernées       : Titres et descriptions des entrées
+Chiffrement              : AES-256-GCM
+Authentification         : Tag GCM pour vérification d'intégrité
+
+4. ARCHITECTURE DE SÉCURITÉ
+================================================================================
+
+4.1 Chiffrement côté client
+---------------------------
+Localisation             : Appareil iOS de l'utilisateur
+Responsabilité           : LocationEncryptionService.swift
+Processus                :
+1. Génération automatique de la clé AES-256
+2. Stockage sécurisé dans Keychain iOS
+3. Chiffrement des données avant transmission
+4. Aucun déchiffrement côté serveur
+
+4.2 Gestion des clés cryptographiques
+-------------------------------------
+Génération               : SymmetricKey(size: .bits256) - Apple CryptoKit
+Stockage                 : Keychain Services iOS
+Classe de sécurité       : kSecClassGenericPassword
+Service                  : com.lyes.love2love.encryption
+Compte                   : love2love_location_encryption_key
+Persistance              : Jusqu'à désinstallation de l'application
+Protection matérielle    : Secure Enclave (si disponible sur l'appareil)
+
+4.3 Transport sécurisé
+---------------------
+Protocole                : HTTPS/TLS 1.2+
+Destination              : Firebase Firestore (Google Cloud Platform)
+Configuration            : App Transport Security activé
+NSAllowsArbitraryLoads   : false (connexions HTTP interdites)
+
+4.4 Stockage des données chiffrées
+----------------------------------
+Plateforme               : Firebase Firestore (base de données NoSQL)
+Format                   : Documents JSON avec champs chiffrés
+Sécurité                 : Règles Firestore pour contrôle d'accès
+Géolocalisation          : Aucun déchiffrement côté serveur
+
+5. IMPLÉMENTATION TECHNIQUE
+================================================================================
+
+5.1 Service de chiffrement principal
+------------------------------------
+Fichier                  : Services/LocationEncryptionService.swift
+Classe                   : LocationEncryptionService
+Version du service       : 2.0
+
+Méthodes principales :
+- encryptLocation()      : Chiffrement coordonnées GPS
+- decryptLocation()      : Déchiffrement coordonnées GPS
+- encryptText()          : Chiffrement messages textuels
+- decryptText()          : Déchiffrement messages textuels
+
+5.2 Gestion de la migration
+---------------------------
+Stratégie                : Migration progressive (format hybride)
+Rétrocompatibilité       : Support ancien format non-chiffré
+Transition               : Chiffrement automatique lors des mises à jour
+Indicateur               : Champ "migrationStatus" dans les documents
+
+5.3 Audit et traçabilité
+------------------------
+Service                  : Services/AuditService.swift
+Anonymisation            : SHA-256 des identifiants utilisateurs
+Logs de sécurité         : Événements de chiffrement/déchiffrement
+Conformité RGPD          : Hachage des données personnelles dans les logs
+
+6. STANDARDS ET CONFORMITÉ
+================================================================================
+
+6.1 Algorithmes utilisés
+------------------------
+AES-256-GCM              : NIST SP 800-38D (approuvé FIPS 140-2)
+SHA-256                  : NIST FIPS 180-4 (approuvé FIPS 140-2)
+SecRandomCopyBytes       : Conforme NIST SP 800-90A
+
+6.2 Conformité réglementaire
+----------------------------
+Usage                    : Civil exclusivement (grand public)
+Algorithmes              : Standards publics internationaux
+Export                   : Pas d'algorithmes propriétaires
+Classification           : Moyen de cryptologie standard
+
+6.3 Sécurité par conception
+---------------------------
+Principe                 : Chiffrement de bout en bout
+Contrôle des clés        : Utilisateur final uniquement
+Zero-knowledge           : Serveur ne peut pas déchiffrer les données
+Authentification         : Tag GCM pour vérification d'intégrité
+
+7. MODALITÉS D'INSTALLATION ET D'USAGE
+================================================================================
+
+7.1 Installation
+----------------
+Plateforme               : iOS 13.0+ (iPhone uniquement)
+Canal de distribution    : Apple App Store exclusivement
+Processus                : Installation standard iOS (aucune assistance requise)
+Configuration            : Automatique lors du premier lancement
+
+7.2 Usage opérationnel
+----------------------
+Public cible             : Couples (usage personnel)
+Complexité               : Interface utilisateur simplifiée
+Formation requise        : Aucune (application grand public)
+Maintenance              : Mises à jour automatiques App Store
+
+7.3 Fonctionnalités non modifiables
+-----------------------------------
+Algorithmes              : Intégrés dans l'application (non modifiables)
+Paramètres crypto        : Configurés par le développeur
+Sécurité                 : Pas d'options de contournement utilisateur
+
+8. JUSTIFICATIONS TECHNIQUES
+================================================================================
+
+8.1 Choix d'AES-256-GCM
+-----------------------
+Justification            : 
+- Algorithme standard approuvé internationalement
+- Chiffrement et authentification en une seule opération
+- Performance optimisée sur les processeurs mobiles Apple
+- Résistance prouvée aux attaques cryptanalytiques modernes
+- Support natif dans Apple CryptoKit
+
+8.2 Architecture côté client
+----------------------------
+Justification            :
+- Protection maximale des données utilisateurs
+- Pas de confiance requise envers l'infrastructure serveur
+- Conformité RGPD (minimisation des données)
+- Résilience en cas de compromission serveur
+
+8.3 Stockage dans Keychain iOS
+------------------------------
+Justification            :
+- Sécurité matérielle (Secure Enclave si disponible)
+- Chiffrement automatique par l'OS
+- Isolation entre applications
+- Persistance sécurisée des clés cryptographiques
+
+9. DOCUMENTATION DE RÉFÉRENCE
+================================================================================
+
+9.1 Standards appliqués
+-----------------------
+- NIST SP 800-38D : Recommendation for Block Cipher Modes of Operation
+- NIST FIPS 180-4 : Secure Hash Standard (SHS)
+- NIST SP 800-90A : Recommendation for Random Number Generation
+- RFC 5116      : An Interface and Algorithms for Authenticated Encryption
+
+9.2 Documentation Apple
+-----------------------
+- Apple CryptoKit Framework Documentation
+- iOS Security Guide (Apple Inc.)
+- Keychain Services Programming Guide
+- App Transport Security Requirements
+
+9.3 Conformité légale
+--------------------
+- Décret n° 2007-663 du 2 mai 2007 (France)
+- Règlement général sur la protection des données (RGPD)
+- Loi n° 2004-575 du 21 juin 2004 (LCEN)
+
+================================================================================
+                            FIN DE DOCUMENT
+================================================================================

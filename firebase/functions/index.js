@@ -5,6 +5,241 @@ const jwt = require("jsonwebtoken");
 
 admin.initializeApp();
 
+// 🛡️ SÉCURITÉ GLOBALE - Configuration centralisée
+const SECURITY_CONFIG = {
+  // Rate Limiting
+  rateLimitingEnabled:
+    functions.config().security?.rate_limiting_enabled !== "false",
+  strictMode: functions.config().security?.strict_mode === "true",
+  logOnly: functions.config().security?.log_only === "true",
+
+  // Logs sécurisés
+  verboseLogging: functions.config().logs?.verbose === "true", // False par défaut en prod
+  logUserIds: functions.config().logs?.log_user_ids === "true", // False par défaut
+  logSensitiveData: functions.config().logs?.log_sensitive === "true", // False par défaut
+
+  // Environment
+  isProduction:
+    functions.config().project?.env === "production" ||
+    process.env.NODE_ENV === "production",
+};
+
+/**
+ * 🔒 Logger sécurisé - Évite les fuites en production
+ */
+function secureLog(level, message, data = null, options = {}) {
+  const {
+    forceLog = false, // Forcer le log même en production
+    sensitive = false, // Données sensibles
+    includeUserId = false, // Inclure l'ID utilisateur
+  } = options;
+
+  // En production, réduire drastiquement les logs
+  if (SECURITY_CONFIG.isProduction && !forceLog) {
+    // Ne logger que les erreurs critiques en production
+    if (level !== "error" && level !== "warn") {
+      return;
+    }
+
+    // Filtrer les données sensibles
+    if (sensitive && !SECURITY_CONFIG.logSensitiveData) {
+      data = "[DONNÉES SENSIBLES MASQUÉES]";
+    }
+
+    // Masquer les IDs utilisateurs
+    if (includeUserId && !SECURITY_CONFIG.logUserIds) {
+      message = message.replace(/[a-zA-Z0-9]{20,}/g, "[USER_ID_MASKED]");
+    }
+  }
+
+  // Logger selon le niveau
+  const timestamp = new Date().toISOString();
+  const logMessage = `[${timestamp}] ${message}`;
+
+  switch (level) {
+    case "error":
+      console.error(logMessage, data || "");
+      break;
+    case "warn":
+      console.warn(logMessage, data || "");
+      break;
+    case "info":
+      if (SECURITY_CONFIG.verboseLogging || !SECURITY_CONFIG.isProduction) {
+        console.info(logMessage, data || "");
+      }
+      break;
+    case "debug":
+      if (SECURITY_CONFIG.verboseLogging) {
+        console.log(logMessage, data || "");
+      }
+      break;
+    default:
+      console.log(logMessage, data || "");
+  }
+}
+
+// Raccourcis pour faciliter l'utilisation
+const logger = {
+  error: (msg, data, opts) => secureLog("error", msg, data, opts),
+  warn: (msg, data, opts) => secureLog("warn", msg, data, opts),
+  info: (msg, data, opts) => secureLog("info", msg, data, opts),
+  debug: (msg, data, opts) => secureLog("debug", msg, data, opts),
+
+  // Logs spécialisés
+  security: (msg, data) =>
+    secureLog("warn", `🔒 SECURITY: ${msg}`, data, { forceLog: true }),
+  audit: (msg, data) =>
+    secureLog("info", `📋 AUDIT: ${msg}`, data, { forceLog: true }),
+};
+
+// Limites par fonction (appels/fenêtre en minutes)
+const RATE_LIMITS = {
+  validateAppleReceipt: { calls: 5, window: 1 },
+  connectToPartner: { calls: 3, window: 5 },
+  generatePartnerCode: { calls: 2, window: 1 },
+  submitDailyQuestionResponse: { calls: 20, window: 1 },
+  validatePartnerCode: { calls: 10, window: 1 },
+  disconnectPartners: { calls: 2, window: 10 },
+};
+
+/**
+ * 🔒 Rate Limiting Middleware - Sécurisé et Non-Disruptif
+ */
+async function checkRateLimit(userId, functionName, context = {}) {
+  // Si rate limiting désactivé, on laisse passer (mode maintenance)
+  if (!SECURITY_CONFIG.rateLimitingEnabled) {
+    logger.debug(`RateLimit désactivé pour ${functionName}`);
+    return;
+  }
+
+  const config = RATE_LIMITS[functionName];
+  if (!config) {
+    console.log(`⚠️ RateLimit: Pas de config pour ${functionName}`);
+    return; // Pas de limite définie = pas de restriction
+  }
+
+  const now = new Date();
+  const windowStart = new Date(now.getTime() - config.window * 60000);
+  const windowKey = `${Math.floor(now.getTime() / (config.window * 60000))}`;
+
+  try {
+    // Utiliser MemoryStore temporaire pour éviter les coûts Firestore
+    const rateLimitDoc = admin
+      .firestore()
+      .collection("rate_limits")
+      .doc(`${userId}_${functionName}_${windowKey}`);
+
+    const doc = await rateLimitDoc.get();
+    const currentCalls = doc.exists ? doc.data().count || 0 : 0;
+
+    // Incrémenter le compteur
+    await rateLimitDoc.set(
+      {
+        count: currentCalls + 1,
+        lastCall: now,
+        userId: userId,
+        function: functionName,
+        window: config.window,
+      },
+      { merge: true }
+    );
+
+    // Vérifier la limite
+    if (currentCalls >= config.calls) {
+      const message = `Rate limit dépassé pour ${functionName}: ${currentCalls}/${config.calls} en ${config.window}min`;
+
+      // Mode log uniquement (pour test en prod sans casser)
+      if (SECURITY_CONFIG.logOnly) {
+        logger.security(`Rate limit dépassé (LOG ONLY) - ${functionName}`, {
+          calls: currentCalls,
+          limit: config.calls,
+          window: config.window,
+        });
+
+        // Logger l'événement pour surveillance (sans user ID en production)
+        await admin
+          .firestore()
+          .collection("security_events")
+          .add({
+            type: "rate_limit_exceeded",
+            userId: SECURITY_CONFIG.logUserIds ? userId : "[MASKED]",
+            function: functionName,
+            count: currentCalls,
+            limit: config.calls,
+            window: config.window,
+            timestamp: now,
+            action: "logged_only",
+            userAgent: context.rawRequest?.headers?.["user-agent"] || "unknown",
+          });
+
+        return; // On laisse passer mais on log
+      }
+
+      // Mode strict : rejeter la requête
+      console.error(`❌ RateLimit: ${message}`);
+
+      // Logger l'événement
+      await admin.firestore().collection("security_events").add({
+        type: "rate_limit_exceeded",
+        userId: userId,
+        function: functionName,
+        count: currentCalls,
+        limit: config.calls,
+        window: config.window,
+        timestamp: now,
+        action: "blocked",
+      });
+
+      throw new functions.https.HttpsError(
+        "resource-exhausted",
+        `Trop de requêtes. Veuillez attendre ${config.window} minute(s).`
+      );
+    }
+
+    console.log(
+      `✅ RateLimit: ${functionName} - ${currentCalls + 1}/${config.calls}`
+    );
+  } catch (error) {
+    // En cas d'erreur du rate limiting, on laisse passer pour ne pas casser l'app
+    if (!RATE_LIMITING_CONFIG.strictMode) {
+      console.warn(
+        `⚠️ RateLimit: Erreur non bloquante pour ${functionName}:`,
+        error.message
+      );
+      return;
+    }
+    throw error;
+  }
+}
+
+/**
+ * 🧹 Nettoyage automatique des anciens rate limits
+ */
+async function cleanupOldRateLimits() {
+  const oneDayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
+
+  try {
+    const oldLimits = await admin
+      .firestore()
+      .collection("rate_limits")
+      .where("lastCall", "<", oneDayAgo)
+      .limit(100)
+      .get();
+
+    const batch = admin.firestore().batch();
+    oldLimits.docs.forEach((doc) => batch.delete(doc.ref));
+
+    if (oldLimits.size > 0) {
+      await batch.commit();
+      console.log(
+        `🧹 Nettoyage: ${oldLimits.size} anciens rate limits supprimés`
+      );
+    }
+  } catch (error) {
+    console.warn("⚠️ Erreur nettoyage rate limits:", error.message);
+  }
+}
+
 // Configuration App Store Connect API (avec valeurs par défaut)
 const APP_STORE_CONNECT_CONFIG = {
   keyId: functions.config().apple?.key_id || "",
@@ -25,6 +260,11 @@ const SUBSCRIPTION_PRODUCTS = {
  */
 exports.validateAppleReceipt = functions.https.onCall(async (data, context) => {
   try {
+    // 🛡️ RATE LIMITING - Protection contre les abus
+    if (context.auth) {
+      await checkRateLimit(context.auth.uid, "validateAppleReceipt", context);
+    }
+
     console.log("🔥 validateAppleReceipt: Début de la validation");
 
     const { receiptData, productId } = data;
@@ -961,6 +1201,25 @@ exports.connectToPartner = functions.https.onCall(async (data, context) => {
       throw new functions.https.HttpsError(
         "failed-precondition",
         "Code partenaire inactif"
+      );
+    }
+
+    // 🛡️ CONFORMITÉ APPLE : Vérifier expiration code (24h max)
+    if (codeData.expiresAt && codeData.expiresAt.toDate() < new Date()) {
+      // Désactiver le code expiré
+      await admin
+        .firestore()
+        .collection("partnerCodes")
+        .doc(partnerCode)
+        .update({
+          isActive: false,
+          deactivatedAt: admin.firestore.FieldValue.serverTimestamp(),
+          deactivationReason: "expired_24h",
+        });
+
+      throw new functions.https.HttpsError(
+        "deadline-exceeded",
+        "Code partenaire expiré (24h max). Demandez un nouveau code à votre partenaire."
       );
     }
 

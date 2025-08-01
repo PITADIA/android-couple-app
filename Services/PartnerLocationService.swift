@@ -21,6 +21,11 @@ class PartnerLocationService: ObservableObject {
     private var refreshTimer: Timer?
     private var partnerId: String?
     
+    // Cache pour éviter les appels redondants
+    private var lastFetchTime: Date = Date.distantPast
+    private var lastLocationFetchTime: Date = Date.distantPast
+    private let cacheValidityInterval: TimeInterval = 15 // Réduit à 15 secondes pour iOS 16.4+
+    
     private init() {}
     
     deinit {
@@ -39,14 +44,30 @@ class PartnerLocationService: ObservableObject {
             return
         }
         
+        // Éviter les appels redondants si c'est le même partenaire
+        if self.partnerId == partnerId && partnerName != nil {
+            print("🌍 PartnerLocationService: Même partenaire déjà configuré - Récupération localisation uniquement")
+            fetchPartnerLocationViaCloudFunction(partnerId: partnerId)
+            return
+        }
+        
         self.partnerId = partnerId
         fetchPartnerDataViaCloudFunction(partnerId: partnerId)
     }
     
     private func fetchPartnerDataViaCloudFunction(partnerId: String) {
+        // Vérifier le cache pour éviter les appels trop fréquents
+        let now = Date()
+        if now.timeIntervalSince(lastFetchTime) < cacheValidityInterval && partnerName != nil {
+            print("🌍 PartnerLocationService: Données partenaire en cache - Récupération localisation uniquement")
+            fetchPartnerLocationViaCloudFunction(partnerId: partnerId)
+            return
+        }
+        
         print("🌍 PartnerLocationService: Récupération données partenaire via Cloud Function")
         
         isLoading = true
+        lastFetchTime = now
         
         // Récupérer les infos de base du partenaire
         functions.httpsCallable("getPartnerInfo").call(["partnerId": partnerId]) { [weak self] result, error in
@@ -68,14 +89,22 @@ class PartnerLocationService: ObservableObject {
                 
                 self?.updatePartnerDataFromCloudFunction(partnerInfo)
                 
-                // Maintenant récupérer la localisation séparément
+                // Récupérer la localisation immédiatement après pour un affichage plus rapide
                 self?.fetchPartnerLocationViaCloudFunction(partnerId: partnerId)
             }
         }
     }
     
     private func fetchPartnerLocationViaCloudFunction(partnerId: String) {
+        // Cache pour la localisation aussi - éviter les appels trop fréquents
+        let now = Date()
+        if now.timeIntervalSince(lastLocationFetchTime) < 5 { // Cache réduit à 5 secondes pour améliorer la réactivité
+            print("🌍 PartnerLocationService: Localisation récemment récupérée - Attente")
+            return
+        }
+        
         print("🌍 PartnerLocationService: Récupération localisation partenaire via Cloud Function")
+        lastLocationFetchTime = now
         
         functions.httpsCallable("getPartnerLocation").call(["partnerId": partnerId]) { [weak self] result, error in
             DispatchQueue.main.async {
@@ -94,6 +123,7 @@ class PartnerLocationService: ObservableObject {
                     if let locationData = data["location"] as? [String: Any] {
                         print("✅ PartnerLocationService: Localisation partenaire récupérée: \(locationData)")
                         self?.updatePartnerLocationFromCloudFunction(locationData)
+                        print("🚀 PartnerLocationService: Localisation mise à jour - Notification des observers")
                     }
                 } else {
                     let reason = data["reason"] as? String ?? "unknown"
@@ -248,5 +278,9 @@ class PartnerLocationService: ObservableObject {
         partnerProfileImageURL = nil
         partnerId = nil
         isLoading = false
+        
+        // Reset des caches aussi
+        lastFetchTime = Date.distantPast
+        lastLocationFetchTime = Date.distantPast
     }
 } 
