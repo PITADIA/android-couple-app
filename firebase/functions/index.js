@@ -5252,6 +5252,511 @@ async function generateDailyQuestionForCouple(coupleId, timezone) {
   }
 }
 
+// ================================
+// 🎯 DAILY CHALLENGES FUNCTIONS
+// ================================
+
+/**
+ * Retourne le nombre total de défis disponibles
+ */
+function getTotalChallengesCount() {
+  return 24; // 24 défis traduits dans DailyChallenges.xcstrings
+}
+
+/**
+ * Génère la clé de défi basée sur le jour
+ */
+function generateChallengeKey(challengeDay) {
+  const totalChallenges = getTotalChallengesCount();
+
+  // Cycle à travers les défis si on dépasse le total
+  const challengeIndex = ((challengeDay - 1) % totalChallenges) + 1;
+  return `daily_challenge_${challengeIndex}`;
+}
+
+/**
+ * Calcule le jour actuel du défi basé sur les settings
+ * Réutilise la même logique que calculateCurrentQuestionDay
+ */
+function calculateCurrentChallengeDay(settings, currentTime = new Date()) {
+  const totalChallenges = getTotalChallengesCount();
+
+  if (!settings || !settings.startDate) {
+    console.log(
+      "📅 calculateCurrentChallengeDay: Pas de settings ou startDate - retour jour 1"
+    );
+    return 1; // Première visite
+  }
+
+  // STANDARD: startDate est TOUJOURS un Timestamp côté Firebase
+  const startDate = settings.startDate.toDate
+    ? settings.startDate.toDate()
+    : new Date(settings.startDate);
+
+  console.log("📅 calculateCurrentChallengeDay: LOGS TIMEZONE DÉTAILLÉS");
+  console.log(`📅 - startDate original: ${startDate.toISOString()}`);
+  console.log(`📅 - currentTime: ${currentTime.toISOString()}`);
+
+  // 🔧 CORRECTION: Utiliser la même logique que les questions du jour
+  const startDateUTC = new Date(
+    Date.UTC(
+      startDate.getFullYear(),
+      startDate.getMonth(),
+      startDate.getDate(),
+      0,
+      0,
+      0,
+      0
+    )
+  );
+
+  const currentTimeUTC = new Date(
+    Date.UTC(
+      currentTime.getFullYear(),
+      currentTime.getMonth(),
+      currentTime.getDate(),
+      0,
+      0,
+      0,
+      0
+    )
+  );
+
+  console.log(`📅 - startDateUTC: ${startDateUTC.toISOString()}`);
+  console.log(`📅 - currentTimeUTC: ${currentTimeUTC.toISOString()}`);
+
+  // Calcul de la différence en jours (aligné avec les questions du jour)
+  const timeDiff = currentTimeUTC.getTime() - startDateUTC.getTime();
+  const daysSinceStart = Math.floor(timeDiff / (1000 * 3600 * 24));
+
+  console.log(`📅 - timeDiff (ms): ${timeDiff}`);
+  console.log(`📅 - daysSinceStart: ${daysSinceStart}`);
+
+  // 🔧 CORRECTION : Logic plus robuste pour l'incrémentation (comme les questions)
+  // Si on est le même jour que la création, currentDay = 1
+  // Si on est le jour suivant, currentDay = 2, etc.
+  const expectedDay = daysSinceStart + 1;
+
+  console.log(`📅 - expectedDay calculé: ${expectedDay}`);
+  console.log(`📅 - currentDay actuel: ${settings.currentDay || "non défini"}`);
+
+  // CYCLE INFINI: Plus de limite sur totalChallenges
+  const cycledDay = ((expectedDay - 1) % totalChallenges) + 1;
+
+  console.log(`📅 - cycledDay final: ${cycledDay}/${totalChallenges}`);
+  console.log("📅 calculateCurrentChallengeDay: FIN LOGS TIMEZONE");
+
+  return cycledDay;
+}
+
+/**
+ * Récupère ou crée les settings de défis quotidiens pour un couple
+ */
+async function getOrCreateDailyChallengeSettings(
+  coupleId,
+  timezone = "Europe/Paris"
+) {
+  try {
+    console.log(
+      `📅 getOrCreateDailyChallengeSettings: Récupération/création settings pour ${coupleId}`
+    );
+
+    const settingsRef = admin
+      .firestore()
+      .collection("dailyChallengeSettings")
+      .doc(coupleId);
+
+    const settingsDoc = await settingsRef.get();
+
+    if (settingsDoc.exists) {
+      console.log(
+        `✅ getOrCreateDailyChallengeSettings: Settings existants trouvés pour ${coupleId}`
+      );
+      const data = settingsDoc.data();
+
+      // OPTIMISATION : S'assurer que nextScheduledDate existe
+      if (!data.nextScheduledDate) {
+        console.log(
+          `🔧 getOrCreateDailyChallengeSettings: Ajout nextScheduledDate manquant pour ${coupleId}`
+        );
+
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+
+        await settingsRef.update({
+          nextScheduledDate: admin.firestore.Timestamp.fromDate(tomorrow),
+        });
+
+        data.nextScheduledDate = admin.firestore.Timestamp.fromDate(tomorrow);
+      }
+
+      return data;
+    }
+
+    // CRÉATION : Nouveaux settings
+    console.log(
+      `🆕 getOrCreateDailyChallengeSettings: Création nouveaux settings pour ${coupleId}`
+    );
+
+    // 🔧 CORRECTION HARMONISATION : Utiliser UTC minuit comme les questions du jour
+    const now = new Date();
+    const startDateUTC = new Date(
+      Date.UTC(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0)
+    );
+
+    console.log(`📅 getOrCreateDailyChallengeSettings: CRÉATION SETTINGS UTC:`);
+    console.log(`📅 - now local: ${now.toISOString()}`);
+    console.log(`📅 - startDateUTC: ${startDateUTC.toISOString()}`);
+    console.log(`📅 - timezone: ${timezone}`);
+
+    const tomorrow = new Date(startDateUTC);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+
+    const newSettings = {
+      coupleId,
+      startDate: admin.firestore.Timestamp.fromDate(startDateUTC), // 🔧 CORRECTION: UTC
+      timezone,
+      currentDay: 1,
+      createdAt: admin.firestore.Timestamp.fromDate(new Date()),
+      lastVisitDate: admin.firestore.Timestamp.fromDate(new Date()),
+      nextScheduledDate: admin.firestore.Timestamp.fromDate(tomorrow),
+    };
+
+    await settingsRef.set(newSettings);
+
+    console.log(
+      `✅ getOrCreateDailyChallengeSettings: Settings créés avec succès pour ${coupleId}`
+    );
+
+    return newSettings;
+  } catch (error) {
+    console.error(
+      `❌ getOrCreateDailyChallengeSettings: Erreur pour ${coupleId}:`,
+      error
+    );
+    throw error;
+  }
+}
+
+/**
+ * Génère un défi quotidien pour un couple
+ */
+async function generateDailyChallengeForCouple(coupleId, timezone) {
+  try {
+    console.log(
+      `🎯 generateDailyChallengeForCouple: ${coupleId} (${timezone})`
+    );
+
+    // Récupérer les settings du couple
+    const settingsDoc = await admin
+      .firestore()
+      .collection("dailyChallengeSettings")
+      .doc(coupleId)
+      .get();
+
+    if (!settingsDoc.exists) {
+      return { success: false, error: "Settings not found" };
+    }
+
+    const settings = settingsDoc.data();
+    const currentDay = settings.currentDay || 1;
+
+    console.log(`📊 Settings: currentDay=${currentDay}`);
+    console.log(
+      `🔧 CORRECTION: Laisser generateDailyChallenge calculer automatiquement le jour (pas de forçage nextDay)`
+    );
+
+    // ✅ CORRECTION: Ne pas forcer nextDay, laisser generateDailyChallenge calculer le bon jour
+    const result = await exports.generateDailyChallenge.run(
+      {
+        coupleId,
+        // challengeDay: nextDay, // ❌ SUPPRIMÉ: ne plus forcer l'incrémentation
+        timezone,
+      },
+      {
+        auth: { uid: "system" }, // Contexte d'authentification système
+      }
+    );
+
+    return {
+      success: true,
+      challengeKey: result.challenge?.challengeKey,
+      day: result.challenge?.challengeDay || currentDay, // ✅ CORRECTION: utiliser le jour calculé
+      challengeId: result.challenge?.id,
+    };
+  } catch (error) {
+    console.log(`❌ Erreur generateDailyChallengeForCouple: ${error.message}`);
+    return { success: false, error: error.message };
+  }
+}
+
+/**
+ * Cloud Function HTTP pour générer un défi quotidien
+ */
+exports.generateDailyChallenge = functions.https.onCall(
+  async (data, context) => {
+    try {
+      // Vérification de l'authentification
+      if (!context.auth) {
+        throw new functions.https.HttpsError(
+          "unauthenticated",
+          "Authentication required"
+        );
+      }
+
+      const { coupleId, challengeDay, timezone = "Europe/Paris" } = data;
+      const userId = context.auth.uid;
+
+      console.log(
+        `🎯 generateDailyChallenge appelée par ${userId} pour ${coupleId}, jour ${challengeDay}`
+      );
+
+      // Rate limiting
+      await checkRateLimit(userId, "generateDailyChallenge", { coupleId });
+
+      if (!coupleId) {
+        throw new functions.https.HttpsError(
+          "invalid-argument",
+          "coupleId is required"
+        );
+      }
+
+      // Récupérer ou créer les settings
+      const settings = await getOrCreateDailyChallengeSettings(
+        coupleId,
+        timezone
+      );
+
+      // Calculer le jour actuel (aligné avec les questions du jour)
+      // 🔧 CORRECTION: Utiliser new Date() comme pour les questions du jour
+      const currentTime = new Date();
+      const calculatedDay = calculateCurrentChallengeDay(settings, currentTime);
+
+      console.log(
+        `📊 Jour calculé: ${calculatedDay}, Jour demandé: ${
+          challengeDay || "auto"
+        }`
+      );
+
+      const targetDay = challengeDay || calculatedDay;
+      const challengeKey = generateChallengeKey(targetDay);
+
+      // 🔧 IDEMPOTENCE: Vérifier si le défi d'aujourd'hui existe déjà
+      const todayDateStr = new Date().toISOString().split("T")[0];
+      const todayId = `${coupleId}_${todayDateStr}`;
+
+      console.log(`🔍 Vérification existence défi: ${todayId}`);
+
+      const existingTodayDoc = await admin
+        .firestore()
+        .collection("dailyChallenges")
+        .doc(todayId)
+        .get();
+
+      if (existingTodayDoc.exists) {
+        console.log(
+          `✅ Défi d'aujourd'hui déjà présent: ${todayId}, retour sans génération`
+        );
+        const existingData = existingTodayDoc.data();
+        return {
+          success: true,
+          challenge: existingData,
+          settings: {
+            ...settings,
+            currentDay: targetDay,
+          },
+        };
+      }
+
+      console.log(`🆕 Aucun défi trouvé pour ${todayId}, génération autorisée`);
+
+      // 🧹 CLEANUP: Supprimer automatiquement le défi d'hier AVANT de créer celui d'aujourd'hui
+      const today = new Date(currentTime);
+      const yesterday = new Date(today);
+      yesterday.setDate(yesterday.getDate() - 1);
+      const yesterdayString = yesterday.toISOString().split("T")[0];
+
+      console.log(
+        `🧹 generateDailyChallenge: Vérification suppression défi d'hier: ${yesterdayString}`
+      );
+
+      try {
+        const yesterdayChallengeRef = admin
+          .firestore()
+          .collection("dailyChallenges")
+          .doc(`${coupleId}_${yesterdayString}`);
+
+        const yesterdayDoc = await yesterdayChallengeRef.get();
+        if (yesterdayDoc.exists) {
+          console.log(
+            `🧹 generateDailyChallenge: Suppression défi d'hier trouvé: ${yesterdayString}`
+          );
+
+          await yesterdayChallengeRef.delete();
+
+          console.log(
+            `✅ generateDailyChallenge: Défi d'hier supprimé avec succès: ${yesterdayString}`
+          );
+        } else {
+          console.log(
+            `✅ generateDailyChallenge: Aucun défi d'hier à supprimer: ${yesterdayString}`
+          );
+        }
+      } catch (error) {
+        console.error(
+          `⚠️ generateDailyChallenge: Erreur suppression défi d'hier:`,
+          error
+        );
+        // Ne pas bloquer la génération pour une erreur de cleanup
+      }
+
+      // Créer l'ID du défi
+      const dateStr = currentTime.toISOString().split("T")[0];
+      const challengeId = `${coupleId}_${dateStr}`;
+
+      // Vérifier si le défi existe déjà
+      const existingChallengeDoc = await admin
+        .firestore()
+        .collection("dailyChallenges")
+        .doc(challengeId)
+        .get();
+
+      let challenge;
+
+      if (existingChallengeDoc.exists) {
+        console.log(`✅ Défi existant trouvé: ${challengeId}`);
+        challenge = existingChallengeDoc.data();
+      } else {
+        // Créer nouveau défi
+        console.log(`🆕 Création nouveau défi: ${challengeId}`);
+
+        challenge = {
+          id: challengeId,
+          challengeKey,
+          challengeDay: targetDay,
+          scheduledDate: admin.firestore.Timestamp.fromDate(currentTime),
+          coupleId,
+          isCompleted: false,
+          createdAt: admin.firestore.Timestamp.fromDate(new Date()),
+        };
+
+        await admin
+          .firestore()
+          .collection("dailyChallenges")
+          .doc(challengeId)
+          .set(challenge);
+
+        // Mettre à jour les settings si nécessaire
+        if (targetDay > (settings.currentDay || 0)) {
+          await admin
+            .firestore()
+            .collection("dailyChallengeSettings")
+            .doc(coupleId)
+            .update({
+              currentDay: targetDay,
+              lastVisitDate: admin.firestore.Timestamp.fromDate(new Date()),
+            });
+        }
+      }
+
+      console.log(`✅ generateDailyChallenge: Défi retourné pour ${coupleId}`);
+
+      return {
+        success: true,
+        challenge,
+        settings: {
+          ...settings,
+          currentDay: targetDay,
+        },
+      };
+    } catch (error) {
+      console.error("❌ generateDailyChallenge error:", error);
+
+      if (error instanceof functions.https.HttpsError) {
+        throw error;
+      }
+
+      throw new functions.https.HttpsError(
+        "internal",
+        "Internal server error",
+        error.message
+      );
+    }
+  }
+);
+
+/**
+ * Fonction programmée pour générer les défis quotidiens
+ * Exécutée chaque jour à 00:00 UTC
+ */
+exports.scheduledDailyChallengeGeneration = functions.pubsub
+  .schedule("0 0 * * *")
+  .timeZone("UTC")
+  .onRun(async (context) => {
+    console.log("🕛 scheduledDailyChallengeGeneration: Démarrage");
+
+    try {
+      // Récupérer tous les couples avec des settings de défis
+      const settingsSnapshot = await admin
+        .firestore()
+        .collection("dailyChallengeSettings")
+        .get();
+
+      if (settingsSnapshot.empty) {
+        console.log("📊 Aucun couple trouvé pour génération défis");
+        return null;
+      }
+
+      console.log(
+        `📊 ${settingsSnapshot.size} couple(s) trouvé(s) pour génération défis`
+      );
+
+      const promises = [];
+      settingsSnapshot.forEach((doc) => {
+        const settings = doc.data();
+        const coupleId = doc.id;
+
+        console.log(`🎯 Programmation génération défi pour ${coupleId}`);
+
+        promises.push(
+          generateDailyChallengeForCouple(
+            coupleId,
+            settings.timezone || "Europe/Paris"
+          )
+        );
+      });
+
+      const results = await Promise.allSettled(promises);
+
+      let successCount = 0;
+      let errorCount = 0;
+
+      results.forEach((result, index) => {
+        if (result.status === "fulfilled") {
+          successCount++;
+          console.log(
+            `✅ Génération défi ${index + 1}: ${
+              result.value.success ? "Succès" : "Échec"
+            }`
+          );
+        } else {
+          errorCount++;
+          console.error(`❌ Génération défi ${index + 1}:`, result.reason);
+        }
+      });
+
+      console.log(
+        `🎯 scheduledDailyChallengeGeneration terminé: ${successCount} succès, ${errorCount} erreurs`
+      );
+
+      return null;
+    } catch (error) {
+      console.error("❌ scheduledDailyChallengeGeneration error:", error);
+      return null;
+    }
+  });
+
 // 🗑️ FONCTION SUPPRIMÉE : sendReminderNotificationIfNeeded
 // Cette fonction vérifiait si une notification de rappel était nécessaire à 21h
 // SUPPRIMÉE car seules les notifications de messages sont souhaitées

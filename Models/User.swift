@@ -65,6 +65,14 @@ struct AppUser: Codable, Identifiable, Equatable {
     var currentLocation: UserLocation?
     var languageCode: String? // NOUVEAU: Code langue pour localisation notifications
     
+    // NOUVEAU: Tracking freemium questions du jour
+    var dailyQuestionFirstAccessDate: Date?
+    var dailyQuestionMaxDayReached: Int
+    
+    // NOUVEAU: Tracking freemium défis du jour
+    var dailyChallengeFirstAccessDate: Date?
+    var dailyChallengeMaxDayReached: Int
+    
     enum RelationshipDuration: String, Codable, CaseIterable {
         case none = "" // État non sélectionné
         case lessThanYear = "Moins d'un an"
@@ -73,7 +81,7 @@ struct AppUser: Codable, Identifiable, Equatable {
         case notInRelationship = "Je ne suis pas en couple"
     }
     
-    init(id: String = UUID().uuidString, name: String, birthDate: Date, relationshipGoals: [String] = [], relationshipDuration: RelationshipDuration = .none, relationshipImprovement: String? = nil, questionMode: String? = nil, partnerCode: String? = nil, partnerId: String? = nil, partnerConnectedAt: Date? = nil, subscriptionInheritedFrom: String? = nil, subscriptionInheritedAt: Date? = nil, connectedPartnerCode: String? = nil, connectedPartnerId: String? = nil, connectedAt: Date? = nil, isSubscribed: Bool = false, onboardingInProgress: Bool = false, relationshipStartDate: Date? = nil, profileImageURL: String? = nil, currentLocation: UserLocation? = nil, languageCode: String? = nil) {
+    init(id: String = UUID().uuidString, name: String, birthDate: Date, relationshipGoals: [String] = [], relationshipDuration: RelationshipDuration = .none, relationshipImprovement: String? = nil, questionMode: String? = nil, partnerCode: String? = nil, partnerId: String? = nil, partnerConnectedAt: Date? = nil, subscriptionInheritedFrom: String? = nil, subscriptionInheritedAt: Date? = nil, connectedPartnerCode: String? = nil, connectedPartnerId: String? = nil, connectedAt: Date? = nil, isSubscribed: Bool = false, onboardingInProgress: Bool = false, relationshipStartDate: Date? = nil, profileImageURL: String? = nil, currentLocation: UserLocation? = nil, languageCode: String? = nil, dailyQuestionFirstAccessDate: Date? = nil, dailyQuestionMaxDayReached: Int = 0, dailyChallengeFirstAccessDate: Date? = nil, dailyChallengeMaxDayReached: Int = 0) {
         self.id = id
         self.name = name
         self.birthDate = birthDate
@@ -95,6 +103,10 @@ struct AppUser: Codable, Identifiable, Equatable {
         self.profileImageURL = profileImageURL
         self.currentLocation = currentLocation
         self.languageCode = languageCode
+        self.dailyQuestionFirstAccessDate = dailyQuestionFirstAccessDate
+        self.dailyQuestionMaxDayReached = dailyQuestionMaxDayReached
+        self.dailyChallengeFirstAccessDate = dailyChallengeFirstAccessDate
+        self.dailyChallengeMaxDayReached = dailyChallengeMaxDayReached
     }
     
     // MARK: - Equatable
@@ -115,7 +127,11 @@ struct AppUser: Codable, Identifiable, Equatable {
                lhs.connectedPartnerId == rhs.connectedPartnerId &&
                lhs.connectedAt == rhs.connectedAt &&
                lhs.isSubscribed == rhs.isSubscribed &&
-               lhs.onboardingInProgress == rhs.onboardingInProgress
+               lhs.onboardingInProgress == rhs.onboardingInProgress &&
+               lhs.dailyQuestionFirstAccessDate == rhs.dailyQuestionFirstAccessDate &&
+               lhs.dailyQuestionMaxDayReached == rhs.dailyQuestionMaxDayReached &&
+               lhs.dailyChallengeFirstAccessDate == rhs.dailyChallengeFirstAccessDate &&
+               lhs.dailyChallengeMaxDayReached == rhs.dailyChallengeMaxDayReached
     }
 }
 

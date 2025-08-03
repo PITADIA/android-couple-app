@@ -4,7 +4,7 @@ import Combine
 class CategoryProgressService: ObservableObject {
     static let shared = CategoryProgressService()
     
-    @Published private var categoryProgress: [String: Int] = [:]
+    @Published var categoryProgress: [String: Int] = [:]
     
     private let userDefaults = UserDefaults.standard
     private let categoryProgressKey = "CategoryProgressKey"
@@ -17,9 +17,15 @@ class CategoryProgressService: ObservableObject {
     
     /// Sauvegarder la position actuelle dans une catégorie
     func saveCurrentIndex(_ index: Int, for categoryId: String) {
+        print("📊 === SAUVEGARDE PROGRESSION ===")
+        print("📊 CategoryProgressService: Sauvegarde position \(index) pour '\(categoryId)'")
+        print("📊 CategoryProgressService: Avant - categoryProgress: \(categoryProgress)")
+        
         categoryProgress[categoryId] = index
         saveProgress()
-        print("🔥 CategoryProgressService: Position \(index) sauvegardée pour '\(categoryId)'")
+        
+        print("📊 CategoryProgressService: Après - categoryProgress: \(categoryProgress)")
+        print("📊 CategoryProgressService: ✅ Position \(index) sauvegardée pour '\(categoryId)'")
     }
     
     /// Récupérer la dernière position dans une catégorie

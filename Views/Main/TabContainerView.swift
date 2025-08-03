@@ -17,14 +17,16 @@ struct TabContainerView: View {
                 case 0:
                     HomeContentView(activeSheet: $activeSheet)
                 case 1:
-                    // Questions du jour
                     DailyQuestionFlowView()
                         .environmentObject(appState)
                 case 2:
-                    FavoritesView()
+                    DailyChallengeFlowView()
+                        .environmentObject(appState)
                 case 3:
-                    JournalPageView()
+                    FavoritesView()
                 case 4:
+                    JournalPageView()
+                case 5:
                     MenuContentView()
                 default:
                     HomeContentView(activeSheet: $activeSheet)
@@ -63,6 +65,19 @@ struct TabContainerView: View {
                     
                     // Questions du jour
                     Button(action: {
+                        // 📅 LOGS DATE/HEURE DEMANDÉS - CLIC QUESTIONS DU JOUR
+                        let now = Date()
+                        let formatter = DateFormatter()
+                        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                        formatter.timeZone = TimeZone.current
+                        print("🚀 === CLIC QUESTIONS DU JOUR ===")
+                        print("🕐 CLIC QUESTIONS: Date/Heure actuelle: \(formatter.string(from: now))")
+                        print("🌍 CLIC QUESTIONS: Timezone: \(TimeZone.current.identifier)")
+                        print("📅 CLIC QUESTIONS: Jour de la semaine: \(Calendar.current.component(.weekday, from: now))")
+                        print("📊 CLIC QUESTIONS: Jour du mois: \(Calendar.current.component(.day, from: now))")
+                        print("📈 CLIC QUESTIONS: Mois: \(Calendar.current.component(.month, from: now))")
+                        print("📉 CLIC QUESTIONS: Année: \(Calendar.current.component(.year, from: now))")
+                        
                         selectedTab = 1
                         // 📊 Analytics: Navigation onglet
                         Analytics.logEvent("onglet_visite", parameters: ["onglet": "questions"])
@@ -82,14 +97,27 @@ struct TabContainerView: View {
                     }
                     .frame(maxWidth: .infinity)
                     
-                    // Favoris
+                    // Défis du jour
                     Button(action: {
+                        // 📅 LOGS DATE/HEURE DEMANDÉS - CLIC DÉFIS DU JOUR
+                        let now = Date()
+                        let formatter = DateFormatter()
+                        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                        formatter.timeZone = TimeZone.current
+                        print("🚀 === CLIC DÉFIS DU JOUR ===")
+                        print("🕐 CLIC DÉFIS: Date/Heure actuelle: \(formatter.string(from: now))")
+                        print("🌍 CLIC DÉFIS: Timezone: \(TimeZone.current.identifier)")
+                        print("📅 CLIC DÉFIS: Jour de la semaine: \(Calendar.current.component(.weekday, from: now))")
+                        print("📊 CLIC DÉFIS: Jour du mois: \(Calendar.current.component(.day, from: now))")
+                        print("📈 CLIC DÉFIS: Mois: \(Calendar.current.component(.month, from: now))")
+                        print("📉 CLIC DÉFIS: Année: \(Calendar.current.component(.year, from: now))")
+                        
                         selectedTab = 2
                         // 📊 Analytics: Navigation onglet
-                        Analytics.logEvent("onglet_visite", parameters: ["onglet": "favoris"])
-                        print("📊 Événement Firebase: onglet_visite - onglet: favoris")
+                        Analytics.logEvent("onglet_visite", parameters: ["onglet": "defis"])
+                        print("📊 Événement Firebase: onglet_visite - onglet: defis")
                     }) {
-                        Image("heart")
+                        Image("miss")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(
@@ -103,9 +131,30 @@ struct TabContainerView: View {
                     }
                     .frame(maxWidth: .infinity)
                     
-                    // Journal
+                    // Favoris
                     Button(action: {
                         selectedTab = 3
+                        // 📊 Analytics: Navigation onglet
+                        Analytics.logEvent("onglet_visite", parameters: ["onglet": "favoris"])
+                        print("📊 Événement Firebase: onglet_visite - onglet: favoris")
+                    }) {
+                        Image("heart")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(
+                                width: selectedTab == 3 ? 34 : 30,
+                                height: selectedTab == 3 ? 28 : 24
+                            )
+                            .foregroundColor(selectedTab == 3 ? Color(hex: "#FD267A") : .gray)
+                            .fontWeight(selectedTab == 3 ? .bold : .regular)
+                            .scaleEffect(selectedTab == 3 ? 1.1 : 1.0)
+                            .animation(.easeInOut(duration: 0.2), value: selectedTab)
+                    }
+                    .frame(maxWidth: .infinity)
+                    
+                    // Journal
+                    Button(action: {
+                        selectedTab = 4
                         // 📊 Analytics: Navigation onglet
                         Analytics.logEvent("onglet_visite", parameters: ["onglet": "journal"])
                         print("📊 Événement Firebase: onglet_visite - onglet: journal")
@@ -114,19 +163,19 @@ struct TabContainerView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(
-                                width: selectedTab == 3 ? 32 : 28,
-                                height: selectedTab == 3 ? 26 : 22
+                                width: selectedTab == 4 ? 32 : 28,
+                                height: selectedTab == 4 ? 26 : 22
                             )
-                            .foregroundColor(selectedTab == 3 ? Color(hex: "#FD267A") : .gray.opacity(0.8))
-                            .opacity(selectedTab == 3 ? 1.0 : 0.85)
-                            .scaleEffect(selectedTab == 3 ? 1.1 : 1.0)
+                            .foregroundColor(selectedTab == 4 ? Color(hex: "#FD267A") : .gray.opacity(0.8))
+                            .opacity(selectedTab == 4 ? 1.0 : 0.85)
+                            .scaleEffect(selectedTab == 4 ? 1.1 : 1.0)
                             .animation(.easeInOut(duration: 0.2), value: selectedTab)
                     }
                     .frame(maxWidth: .infinity)
                     
                     // Profil
                     Button(action: {
-                        selectedTab = 4
+                        selectedTab = 5
                         // 📊 Analytics: Navigation onglet
                         Analytics.logEvent("onglet_visite", parameters: ["onglet": "profil"])
                         print("📊 Événement Firebase: onglet_visite - onglet: profil")
@@ -135,12 +184,12 @@ struct TabContainerView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(
-                                width: selectedTab == 4 ? 34 : 30,
-                                height: selectedTab == 4 ? 28 : 24
+                                width: selectedTab == 5 ? 34 : 30,
+                                height: selectedTab == 5 ? 28 : 24
                             )
-                            .foregroundColor(selectedTab == 4 ? Color(hex: "#FD267A") : .gray)
-                            .fontWeight(selectedTab == 4 ? .bold : .regular)
-                            .scaleEffect(selectedTab == 4 ? 1.1 : 1.0)
+                            .foregroundColor(selectedTab == 5 ? Color(hex: "#FD267A") : .gray)
+                            .fontWeight(selectedTab == 5 ? .bold : .regular)
+                            .scaleEffect(selectedTab == 5 ? 1.1 : 1.0)
                             .animation(.easeInOut(duration: 0.2), value: selectedTab)
                     }
                     .frame(maxWidth: .infinity)

@@ -47,6 +47,12 @@ class AppState: ObservableObject {
     // NOUVEAU: Review Request Service
     @Published var reviewService: ReviewRequestService?
     
+    // NOUVEAU: Daily Challenge Service
+    @Published var dailyChallengeService: DailyChallengeService?
+    
+    // NOUVEAU: Saved Challenges Service
+    @Published var savedChallengesService: SavedChallengesService?
+    
     // Flag pour savoir si l'utilisateur est en cours d'onboarding
     @Published var isOnboardingInProgress: Bool = false
     
@@ -106,6 +112,14 @@ class AppState: ObservableObject {
         // NOUVEAU: Initialiser le ReviewRequestService
         self.reviewService = ReviewRequestService.shared
         print("🔥 AppState: ReviewRequestService initialisé")
+        
+        // NOUVEAU: Initialiser le DailyChallengeService
+        self.dailyChallengeService = DailyChallengeService.shared
+        print("🔥 AppState: DailyChallengeService initialisé")
+        
+        // NOUVEAU: Initialiser le SavedChallengesService
+        self.savedChallengesService = SavedChallengesService.shared
+        print("🔥 AppState: SavedChallengesService initialisé")
         
     // NOUVEAU: Initialiser le FCMService
     _ = FCMService.shared // Pas de demande de permission, juste initialisation

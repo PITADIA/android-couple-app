@@ -20,7 +20,7 @@ struct MenuView: View {
     @State private var showingRelationshipEdit = false
     @State private var showingLocationTutorial = false
     @State private var showingWidgets = false
-
+    
     @State private var editedName = ""
     @State private var editedRelationshipStart = ""
     
@@ -156,8 +156,6 @@ struct MenuView: View {
             WidgetsView()
                 .environmentObject(appState)
         }
-
-
         .onAppear {
             editedName = currentUserName
             editedRelationshipStart = currentRelationshipStart
@@ -397,8 +395,6 @@ struct MenuView: View {
         }
         .padding(.bottom, 40)
     }
-    
-
     
     // MARK: - Computed Properties
     

@@ -88,6 +88,9 @@
     "Annuler" : {
 
     },
+    "Aucun défi sauvegardé" : {
+
+    },
     "authorization_required" : {
       "comment" : "Authorization required title"
     },
@@ -405,6 +408,12 @@
         }
       }
     },
+    "Cette action est irréversible." : {
+
+    },
+    "Chargement de vos défis sauvegardés..." : {
+
+    },
     "Chargement..." : {
 
     },
@@ -453,6 +462,9 @@
     "En attente de votre partenaire" : {
 
     },
+    "Envoyez-lui un message pour lui dire pourquoi vous êtes reconnaissant de l'avoir dans votre vie aujourd'hui et partagez trois choses spécifiques que vous appréciez chez lui." : {
+
+    },
     "Erreur" : {
 
     },
@@ -490,6 +502,9 @@
       "comment" : "Irreversible action message"
     },
     "Jour" : {
+
+    },
+    "Jour 4" : {
 
     },
     "L" : {
@@ -573,6 +588,9 @@
     "purchases_not_authorized" : {
       "comment" : "Purchases not authorized error"
     },
+    "Quelle est la chose que tu apprécies le plus chez ton partenaire et que tu aimerais lui dire plus souvent ? Comment penses-tu que cela pourrait renforcer votre relation ?" : {
+
+    },
     "questions_cached" : {
       "comment" : "Questions cached label"
     },
@@ -591,6 +609,9 @@
     "restricted" : {
       "comment" : "Restricted location status"
     },
+    "Sauvegardez vos défis préférés pour les retrouver facilement ici !" : {
+
+    },
     "secure_account" : {
       "comment" : "Secure account title"
     },
@@ -607,6 +628,9 @@
       "comment" : "Subscribe button"
     },
     "Supprimer" : {
+
+    },
+    "Supprimer ce défi ?" : {
 
     },
     "Supprimer ce souvenir ?" : {
@@ -659,6 +683,176 @@
     },
     "Y" : {
 
+    },
+    "premium_categories_subscribed" : {
+      "comment" : "Premium categories subtitle for subscribed users",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All collections below are available to you with your subscription 💎"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les collections ci-dessous vous sont disponibles grâce à votre abonnement 💎"
+          }
+        }
+      }
+    },
+    "premium_categories_not_subscribed" : {
+      "comment" : "Premium categories subtitle for non-subscribed users",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Subscribe to unlock access to the collections below ✨"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abonnez-vous pour débloquer l'accès aux collections ci-dessous ✨"
+          }
+        }
+      }
+    },
+    "daily_question_subtitle_subscribed" : {
+      "comment" : "Daily question subtitle for subscribed users",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "💎 Included with your Premium subscription"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "💎 Inclus avec votre abonnement Premium"
+          }
+        }
+      }
+    },
+    "daily_question_subtitle_one_day_remaining" : {
+      "comment" : "Daily question subtitle with one day remaining",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✨ 1 free day remaining • Then subscription required"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✨ 1 jour gratuit restant • Ensuite, abonnement requis"
+          }
+        }
+      }
+    },
+    "daily_question_subtitle_multiple_days_remaining" : {
+      "comment" : "Daily question subtitle with multiple days remaining",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✨ %d free days remaining • Then subscription required"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✨ %d jours gratuits restants • Ensuite, abonnement requis"
+          }
+        }
+      }
+    },
+    "daily_question_subtitle_subscription_required" : {
+      "comment" : "Daily question subtitle when subscription is required",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔒 Subscription required to continue"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔒 Abonnement requis pour continuer"
+          }
+        }
+      }
+    },
+    "daily_challenge_subtitle_subscribed" : {
+      "comment" : "Daily challenge subtitle for subscribed users",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "💎 Included with your Premium subscription"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "💎 Inclus avec votre abonnement Premium"
+          }
+        }
+      }
+    },
+    "daily_challenge_subtitle_one_day_remaining" : {
+      "comment" : "Daily challenge subtitle with one day remaining",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✨ 1 free day remaining • Then subscription required"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✨ 1 jour gratuit restant • Ensuite, abonnement requis"
+          }
+        }
+      }
+    },
+    "daily_challenge_subtitle_multiple_days_remaining" : {
+      "comment" : "Daily challenge subtitle with multiple days remaining",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✨ %d free days remaining • Then subscription required"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✨ %d jours gratuits restants • Ensuite, abonnement requis"
+          }
+        }
+      }
+    },
+    "daily_challenge_subtitle_subscription_required" : {
+      "comment" : "Daily challenge subtitle when subscription is required",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔒 Subscription required to continue"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔒 Abonnement requis pour continuer"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

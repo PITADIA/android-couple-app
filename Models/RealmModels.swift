@@ -485,6 +485,49 @@ class RealmQuestionResponse: Object, Identifiable {
     }
 }
 
+// MARK: - Daily Challenge Realm Model
+
+class RealmDailyChallenge: Object, Identifiable {
+    @Persisted var id: String = UUID().uuidString
+    @Persisted var challengeKey: String = ""
+    @Persisted var challengeDay: Int = 0
+    @Persisted var scheduledDate: Date = Date()
+    @Persisted var coupleId: String = ""
+    @Persisted var isCompleted: Bool = false
+    @Persisted var completedAt: Date?
+    @Persisted var createdAt: Date = Date()
+    @Persisted var updatedAt: Date = Date()
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
+    convenience init(dailyChallenge: DailyChallenge) {
+        self.init()
+        self.id = dailyChallenge.id
+        self.challengeKey = dailyChallenge.challengeKey
+        self.challengeDay = dailyChallenge.challengeDay
+        self.scheduledDate = dailyChallenge.scheduledDate
+        self.coupleId = dailyChallenge.coupleId
+        self.isCompleted = dailyChallenge.isCompleted
+        self.completedAt = dailyChallenge.completedAt
+        self.createdAt = Date() // Valeur par défaut
+        self.updatedAt = Date() // Valeur par défaut
+    }
+    
+    func toDailyChallenge() -> DailyChallenge {
+        return DailyChallenge(
+            id: self.id,
+            challengeKey: self.challengeKey,
+            challengeDay: self.challengeDay,
+            scheduledDate: self.scheduledDate,
+            coupleId: self.coupleId,
+            isCompleted: self.isCompleted,
+            completedAt: self.completedAt
+        )
+    }
+}
+
 // MARK: - Daily Questions Cache Manager Extension
 
 extension QuestionCacheManager {
@@ -603,5 +646,126 @@ extension QuestionCacheManager {
         let newestDate = sortedQuestions.last?.scheduledDate
         
         return (totalCount, oldestDate, newestDate)
+    }
+}
+
+// MARK: - Daily Challenges Cache Extension
+
+extension QuestionCacheManager {
+    
+    // MARK: - Daily Challenges Cache
+    
+    func cacheDailyChallenge(_ challenge: DailyChallenge) {
+        guard let realm = realm else {
+            print("⚠️ RealmManager: Realm non disponible pour cache défi quotidien")
+            return
+        }
+        
+        do {
+            try realm.write {
+                let realmChallenge = RealmDailyChallenge(dailyChallenge: challenge)
+                realm.add(realmChallenge, update: .modified)
+            }
+            print("✅ RealmManager: Défi quotidien caché: \(challenge.challengeKey)")
+        } catch {
+            print("❌ RealmManager: Erreur cache défi quotidien: \(error)")
+        }
+    }
+    
+    func getCachedDailyChallenge(for coupleId: String, date: Date) -> DailyChallenge? {
+        guard let realm = realm else {
+            return nil
+        }
+        
+        let realmChallenge = realm.objects(RealmDailyChallenge.self)
+            .filter("coupleId == %@ AND scheduledDate >= %@ AND scheduledDate < %@", 
+                    coupleId, 
+                    Calendar.current.startOfDay(for: date),
+                    Calendar.current.date(byAdding: .day, value: 1, to: Calendar.current.startOfDay(for: date))!)
+            .first
+        
+        return realmChallenge?.toDailyChallenge()
+    }
+    
+    func getCachedDailyChallenges(for coupleId: String, limit: Int = 30) -> [DailyChallenge] {
+        guard let realm = realm else {
+            return []
+        }
+        
+        let realmChallenges = realm.objects(RealmDailyChallenge.self)
+            .filter("coupleId == %@", coupleId)
+            .sorted(byKeyPath: "scheduledDate", ascending: false)
+            .prefix(limit)
+        
+        return Array(realmChallenges.map { $0.toDailyChallenge() })
+    }
+    
+    func updateDailyChallengeCompletion(_ challengeId: String, isCompleted: Bool, completedAt: Date?) {
+        guard let realm = realm else {
+            print("⚠️ RealmManager: Realm non disponible pour mise à jour défi")
+            return
+        }
+        
+        do {
+            try realm.write {
+                if let realmChallenge = realm.object(ofType: RealmDailyChallenge.self, forPrimaryKey: challengeId) {
+                    realmChallenge.isCompleted = isCompleted
+                    realmChallenge.completedAt = completedAt
+                    realmChallenge.updatedAt = Date()
+                }
+            }
+            print("✅ RealmManager: État de completion mis à jour pour défi: \(challengeId)")
+        } catch {
+            print("❌ RealmManager: Erreur mise à jour completion défi: \(error)")
+        }
+    }
+    
+    func getDailyChallengesCacheInfo(for coupleId: String) -> (count: Int, oldestDate: Date?, newestDate: Date?) {
+        guard let realm = realm else {
+            return (0, nil, nil)
+        }
+        
+        let challenges = realm.objects(RealmDailyChallenge.self)
+            .filter("coupleId == %@", coupleId)
+        
+        let totalCount = challenges.count
+        
+        guard totalCount > 0 else {
+            return (0, nil, nil)
+        }
+        
+        // Trier par date pour trouver la plus ancienne et la plus récente
+        let sortedChallenges = challenges.sorted(byKeyPath: "scheduledDate")
+        let oldestDate = sortedChallenges.first?.scheduledDate
+        let newestDate = sortedChallenges.last?.scheduledDate
+        
+        return (totalCount, oldestDate, newestDate)
+    }
+    
+    func clearDailyChallengesCache(for coupleId: String? = nil) {
+        guard let realm = realm else {
+            print("⚠️ RealmManager: Realm non disponible pour nettoyer cache défis")
+            return
+        }
+        
+        do {
+            try realm.write {
+                let challengesToDelete: Results<RealmDailyChallenge>
+                
+                if let coupleId = coupleId {
+                    challengesToDelete = realm.objects(RealmDailyChallenge.self)
+                        .filter("coupleId == %@", coupleId)
+                } else {
+                    challengesToDelete = realm.objects(RealmDailyChallenge.self)
+                }
+                
+                let deleteCount = challengesToDelete.count
+                realm.delete(challengesToDelete)
+                
+                print("✅ RealmManager: \(deleteCount) défis quotidiens supprimés du cache")
+            }
+        } catch {
+            print("❌ RealmManager: Erreur nettoyage cache défis: \(error)")
+        }
     }
 } 

@@ -50,13 +50,26 @@ struct MainView: View {
                             // Liste des catégories (style rectangulaire)
                             VStack(spacing: 20) {
                                 // Utiliser toutes les catégories - le FreemiumManager gère l'accès
-                                ForEach(QuestionCategory.categories) { category in
+                                ForEach(Array(QuestionCategory.categories.enumerated()), id: \.element.id) { index, category in
                                     CategoryListCardView(category: category) {
                                         print("🔥🔥🔥 MAINVIEW CALLBACK: Catégorie sélectionnée: \(category.title)")
                                         activeSheet = .questions(category)
                                         print("🔥🔥🔥 MAINVIEW CALLBACK: activeSheet = .questions(\(category.title))")
                                     }
                                     .environmentObject(appState)
+                                    
+                                    // Ajouter le sous-titre premium après la première catégorie (Toi et moi / en-couple)
+                                    if index == 0 {
+                                        if let subtitle = getPremiumCategoriesSubtitle() {
+                                            Text(subtitle)
+                                                .font(.caption)
+                                                .foregroundColor(.secondary)
+                                                .multilineTextAlignment(.center)
+                                                .padding(.horizontal, 20)
+                                                .padding(.top, 10)
+                                                .padding(.bottom, 10)
+                                        }
+                                    }
                                 }
                             }
                             .padding(.horizontal, 20)
@@ -294,6 +307,23 @@ struct MainView: View {
                     activeSheet = .subscription
                 }
             }
+        }
+    }
+    
+    // MARK: - Premium Categories Subtitle Helper
+    
+    /// Helper pour obtenir le sous-titre des catégories premium
+    private func getPremiumCategoriesSubtitle() -> String? {
+        // Seulement si l'utilisateur a un partenaire connecté
+        guard hasConnectedPartner else {
+            return nil
+        }
+        
+        // Vérifier le statut d'abonnement
+        if appState.currentUser?.isSubscribed ?? false {
+            return NSLocalizedString("premium_categories_subscribed", comment: "Premium categories subtitle for subscribed users")
+        } else {
+            return NSLocalizedString("premium_categories_not_subscribed", comment: "Premium categories subtitle for non-subscribed users")
         }
     }
 }

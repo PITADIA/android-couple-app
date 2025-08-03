@@ -23,6 +23,8 @@ class FreemiumManager: ObservableObject {
     // NOUVEAU: Configuration freemium pour le journal
     private let freeJournalEntriesLimit = 5
     
+
+    
     init(appState: AppState) {
         self.appState = appState
         setupObservers()
@@ -367,4 +369,229 @@ extension FreemiumManager {
         // Pour l'instant, pas d'accès temporaire
         return false
     }
-} 
+}
+
+// MARK: - Extension Questions du Jour
+
+extension FreemiumManager {
+    // NOUVEAU: Configuration freemium questions du jour
+    private var freeDailyQuestionDays: Int { 3 } // 3 premiers jours gratuits
+    
+    /// Vérifie si l'utilisateur peut accéder à la question du jour actuel
+    func canAccessDailyQuestion(for questionDay: Int) -> Bool {
+        // Si l'utilisateur est abonné, accès illimité
+        if appState?.currentUser?.isSubscribed ?? false {
+            return true
+        }
+        
+        print("📅 FreemiumManager: Vérification accès jour \(questionDay)")
+        
+        // ✅ LOGIQUE FREEMIUM : Bloquer après le jour 3
+        return questionDay <= freeDailyQuestionDays
+    }
+    
+
+    
+    /// Gère l'accès aux questions du jour avec vérification du jour actuel
+    func handleDailyQuestionAccess(currentQuestionDay: Int, onSuccess: @escaping () -> Void) {
+        print("📅 FreemiumManager: Vérification accès jour \(currentQuestionDay)")
+        
+        // Vérifier si l'utilisateur est abonné
+        let isSubscribed = appState?.currentUser?.isSubscribed ?? false
+        
+        if isSubscribed {
+            print("📅 FreemiumManager: Utilisateur premium - Accès autorisé")
+            markDailyQuestionUsage(day: currentQuestionDay)
+            onSuccess()
+            return
+        }
+        
+        // ✅ VÉRIFICATION FREEMIUM
+        if currentQuestionDay <= freeDailyQuestionDays {
+            print("📅 FreemiumManager: Jour \(currentQuestionDay)/\(freeDailyQuestionDays) - Accès gratuit autorisé")
+            
+            // Marquer l'utilisation pour analytics
+            markDailyQuestionUsage(day: currentQuestionDay)
+            
+            onSuccess()
+        } else {
+            print("📅 FreemiumManager: Jour \(currentQuestionDay) > limite (\(freeDailyQuestionDays)) - Affichage paywall")
+            showDailyQuestionPaywall()
+        }
+    }
+    
+    /// NOUVEAU: Marquer l'utilisation pour analytics
+    private func markDailyQuestionUsage(day: Int) {
+        guard var user = appState?.currentUser else { return }
+        
+        // Marquer le premier accès pour tracking
+        if user.dailyQuestionFirstAccessDate == nil {
+            user.dailyQuestionFirstAccessDate = Date()
+            print("📅 FreemiumManager: Premier accès question du jour enregistré")
+        }
+        
+        // Tracker le jour le plus élevé atteint
+        if day > user.dailyQuestionMaxDayReached {
+            user.dailyQuestionMaxDayReached = day
+            print("📅 FreemiumManager: Nouveau jour max atteint: \(day)")
+            appState?.updateUser(user)
+        }
+    }
+    
+    /// Affiche le paywall spécifique aux questions du jour
+    private func showDailyQuestionPaywall() {
+        showingSubscription = true
+        
+        // 📊 Analytics: Paywall affiché pour question du jour
+        Analytics.logEvent("paywall_affiche", parameters: [
+            "source": "daily_question_freemium"
+        ])
+        print("📊 Événement Firebase: paywall_affiche - source: daily_question_freemium")
+    }
+    
+    /// Retourne le texte du sous-titre selon le statut et le jour actuel
+    func getDailyQuestionSubtitle(for questionDay: Int) -> String {
+        if appState?.currentUser?.isSubscribed ?? false {
+            return NSLocalizedString("daily_question_subtitle_subscribed", comment: "Daily question subtitle for subscribed users")
+        } else {
+            if questionDay <= freeDailyQuestionDays {
+                let remaining = freeDailyQuestionDays - questionDay + 1
+                if remaining == 1 {
+                    return NSLocalizedString("daily_question_subtitle_one_day_remaining", comment: "Daily question subtitle with one day remaining")
+                } else {
+                    let format = NSLocalizedString("daily_question_subtitle_multiple_days_remaining", comment: "Daily question subtitle with multiple days remaining")
+                    return String(format: format, remaining)
+                }
+            } else {
+                return NSLocalizedString("daily_question_subtitle_subscription_required", comment: "Daily question subtitle when subscription is required")
+            }
+        }
+    }
+    
+    /// Retourne le nombre de jours gratuits restants
+    func getRemainingFreeDaysForDailyQuestion(currentDay: Int) -> Int {
+        if appState?.currentUser?.isSubscribed ?? false {
+            return Int.max // Illimité pour les abonnés
+        }
+        
+        return max(0, freeDailyQuestionDays - currentDay + 1)
+    }
+}
+
+// MARK: - Extension Défis du Jour
+
+extension FreemiumManager {
+    // Configuration freemium défis du jour (identique aux questions)
+    private var freeDailyChallengesDays: Int { 3 } // 3 premiers jours gratuits
+    
+    /// Vérifie si l'utilisateur peut accéder au défi du jour actuel
+    func canAccessDailyChallenge(for challengeDay: Int) -> Bool {
+        // Si l'utilisateur est abonné, accès illimité
+        if appState?.currentUser?.isSubscribed ?? false {
+            return true
+        }
+        
+        print("📅 FreemiumManager: Vérification accès défi jour \(challengeDay)")
+        
+        // ✅ LOGIQUE FREEMIUM : Bloquer après le jour 3
+        return challengeDay <= freeDailyChallengesDays
+    }
+    
+    /// Gère l'accès aux défis du jour avec vérification du jour actuel
+    func handleDailyChallengeAccess(currentChallengeDay: Int, onSuccess: @escaping () -> Void) {
+        print("📅 FreemiumManager: Vérification accès défi jour \(currentChallengeDay)")
+        
+        // Vérifier si l'utilisateur est abonné
+        let isSubscribed = appState?.currentUser?.isSubscribed ?? false
+        
+        if isSubscribed {
+            print("📅 FreemiumManager: Utilisateur premium - Accès défis autorisé")
+            markDailyChallengeUsage(day: currentChallengeDay)
+            onSuccess()
+            return
+        }
+        
+        // ✅ VÉRIFICATION FREEMIUM
+        if currentChallengeDay <= freeDailyChallengesDays {
+            print("📅 FreemiumManager: Défi jour \(currentChallengeDay)/\(freeDailyChallengesDays) - Accès gratuit autorisé")
+            
+            // Marquer l'utilisation pour analytics
+            markDailyChallengeUsage(day: currentChallengeDay)
+            
+            onSuccess()
+        } else {
+            print("📅 FreemiumManager: Défi jour \(currentChallengeDay) > limite (\(freeDailyChallengesDays)) - Affichage paywall")
+            showDailyChallengePaywall()
+        }
+    }
+    
+    /// NOUVEAU: Marquer l'utilisation des défis pour analytics
+    private func markDailyChallengeUsage(day: Int) {
+        guard var user = appState?.currentUser else { return }
+        
+        // Enregistrer le premier accès
+        if user.dailyChallengeFirstAccessDate == nil {
+            user.dailyChallengeFirstAccessDate = Date()
+            print("📅 FreemiumManager: Premier accès défi du jour enregistré")
+        }
+        
+        // Mettre à jour le jour max atteint
+        if day > user.dailyChallengeMaxDayReached {
+            user.dailyChallengeMaxDayReached = day
+            print("📅 FreemiumManager: Nouveau jour max défi atteint: \(day)")
+        }
+        
+        // Sauvegarder les modifications
+        appState?.updateUser(user)
+        
+        // Analytics : utilisation défi gratuit
+        Analytics.logEvent("freemium_daily_challenge_accessed", parameters: [
+            "challenge_day": day,
+            "is_subscribed": false
+        ])
+    }
+    
+    /// NOUVEAU: Afficher le paywall spécifique aux défis
+    private func showDailyChallengePaywall() {
+        showingSubscription = true
+        
+        // Analytics : affichage paywall défis
+        Analytics.logEvent("paywall_viewed", parameters: [
+            "source": "daily_challenge_freemium",
+            "day": 1
+        ])
+        
+        Analytics.logEvent("paywall_affiche", parameters: [
+            "source": "daily_challenge_freemium"
+        ])
+        print("📊 Événement Firebase: paywall_affiche - source: daily_challenge_freemium")
+    }
+    
+    /// Retourne le texte du sous-titre selon le statut et le jour actuel (défis)
+    func getDailyChallengeSubtitle(for challengeDay: Int) -> String {
+        if appState?.currentUser?.isSubscribed ?? false {
+            return NSLocalizedString("daily_challenge_subtitle_subscribed", comment: "Daily challenge subtitle for subscribed users")
+        } else {
+            if challengeDay <= freeDailyChallengesDays {
+                let remaining = freeDailyChallengesDays - challengeDay + 1
+                if remaining == 1 {
+                    return NSLocalizedString("daily_challenge_subtitle_one_day_remaining", comment: "Daily challenge subtitle with one day remaining")
+                } else {
+                    let format = NSLocalizedString("daily_challenge_subtitle_multiple_days_remaining", comment: "Daily challenge subtitle with multiple days remaining")
+                    return String(format: format, remaining)
+                }
+            } else {
+                return NSLocalizedString("daily_challenge_subtitle_subscription_required", comment: "Daily challenge subtitle when subscription is required")
+            }
+        }
+    }
+    
+    /// Retourne le nombre de jours gratuits restants (défis)
+    func getRemainingFreeDaysForDailyChallenge(currentDay: Int) -> Int {
+        if appState?.currentUser?.isSubscribed ?? false {
+            return Int.max // Illimité pour les abonnés
+        }
+        
+        return max(0, freeDailyChallengesDays - currentDay + 1)
+    }
+}

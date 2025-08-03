@@ -7,6 +7,8 @@ class LocationEncryptionService {
     
     // MARK: - Configuration
     
+    static let ENCRYPTION_DISABLED_FOR_APPLE_REVIEW = true
+    
     /// Version actuelle du service (pour la migration progressive)
     static let currentVersion = "2.0"
     
@@ -111,6 +113,21 @@ class LocationEncryptionService {
     
     /// Écrire une localisation vers Firestore (NOUVEAU format chiffré)
     static func writeLocation(_ location: CLLocation) -> [String: Any]? {
+        if ENCRYPTION_DISABLED_FOR_APPLE_REVIEW {
+            print("⚠️ LocationEncryption: Mode non-chiffré activé")
+            return [
+                // Format standard non chiffré
+                "location": [
+                    "latitude": location.coordinate.latitude,
+                    "longitude": location.coordinate.longitude
+                ],
+                "hasLocation": true,
+                "locationVersion": "1.0-temp",
+                "migrationStatus": "unencrypted_temp",
+                "clientVersion": Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "unknown"
+            ]
+        }
+        
         guard let encryptedString = encryptLocation(location) else {
             print("❌ LocationEncryption: Échec du chiffrement")
             return nil
@@ -123,8 +140,7 @@ class LocationEncryptionService {
             "hasLocation": true,
             "encryptedAt": Date(),
             
-            // 🔄 COMPATIBILITÉ TEMPORAIRE - Pour transition douce
-            // On garde l'ancien format pendant quelques versions
+            // Rétrocompatibilité avec ancien format
             "location": [
                 "latitude": location.coordinate.latitude,
                 "longitude": location.coordinate.longitude
@@ -199,7 +215,7 @@ class LocationEncryptionService {
             
             let location = locationData.toCLLocation()
             if let newFormat = writeLocation(location) {
-                // Ajouter le nouveau format tout en gardant l'ancien temporairement
+                // Support hybride ancien et nouveau format
                 firestoreData.merge(newFormat) { (_, new) in new }
                 firestoreData["migrationDate"] = Date()
                 
@@ -215,6 +231,11 @@ extension LocationEncryptionService {
     
     /// Chiffrer un texte (messages, réponses, métadonnées)
     static func encryptText(_ text: String) -> String? {
+        if ENCRYPTION_DISABLED_FOR_APPLE_REVIEW {
+            print("⚠️ LocationEncryption: Mode texte non-chiffré activé")
+            return text // Retourner le texte en clair
+        }
+        
         let data = Data(text.utf8)
         
         do {
@@ -228,6 +249,11 @@ extension LocationEncryptionService {
     
     /// Déchiffrer un texte
     static func decryptText(_ encryptedString: String) -> String? {
+        if ENCRYPTION_DISABLED_FOR_APPLE_REVIEW {
+            print("⚠️ LocationEncryption: Mode déchiffrement non-chiffré activé")
+            return encryptedString // Retourner le texte tel quel (déjà en clair)
+        }
+        
         guard let data = Data(base64Encoded: encryptedString) else {
             print("❌ LocationEncryption: Données base64 invalides pour texte")
             return nil
@@ -247,13 +273,21 @@ extension LocationEncryptionService {
     static func processMessageForStorage(_ message: String) -> [String: Any] {
         var result: [String: Any] = [:]
         
+        if ENCRYPTION_DISABLED_FOR_APPLE_REVIEW {
+            print("⚠️ LocationEncryption: Mode stockage message non-chiffré activé")
+            result["text"] = message
+            result["textVersion"] = "1.0-temp"
+            result["migrationStatus"] = "unencrypted_temp"
+            return result
+        }
+        
         // Nouveau format chiffré
         if let encryptedMessage = encryptText(message) {
             result["encryptedText"] = encryptedMessage
             result["textVersion"] = currentVersion
         }
         
-        // Format legacy temporaire (pour transition douce)
+        // Format legacy pour rétrocompatibilité
         result["text_legacy"] = message
         result["migrationStatus"] = "hybrid_text"
         

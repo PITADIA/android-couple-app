@@ -64,7 +64,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Connecter son partenaire"
+            "value" : "Connecter votre partenaire"
           }
         }
       }
@@ -1709,6 +1709,74 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Votre espace de messagerie est en cours de création..."
+          }
+        }
+      }
+    },
+    "paywall_questions_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You've reached the end of your 3 free questions 💌"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu arrives au bout de tes 3 questions offertes 💌"
+          }
+        }
+      }
+    },
+    "paywall_questions_subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Every day, a new question to strengthen your relationship, explore your emotions, and create deep memories with your partner. Your new questions are waiting for you.."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chaque jour, une nouvelle question pour renforcer votre relation, explorer vos émotions, et créer des souvenirs profonds avec ton/ta partenaire. Vos nouvelles questions vous attendent.."
+          }
+        }
+      }
+    },
+    "paywall_page_title_questions" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daily Questions"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Questions du Jour"
+          }
+        }
+      }
+    },
+    "paywall_continue_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unlock Premium Access"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Débloque l'accès premium"
           }
         }
       }

@@ -48,7 +48,32 @@ struct DailyQuestionMainView: View {
                 Color(white: 0.97)
                     .ignoresSafeArea()
                 
-                GeometryReader { geometry in
+                VStack(spacing: 0) {
+                    // Header avec titre centré et sous-titre freemium
+                    HStack {
+                        Spacer()
+                        VStack(spacing: 4) {
+                            Text(NSLocalizedString("daily_question_title", tableName: "DailyQuestions", comment: ""))
+                                .font(.system(size: 28, weight: .bold))
+                                .foregroundColor(.black)
+                            
+                            // Sous-titre freemium sous le titre
+                            if let subtitle = getDailyQuestionSubtitle() {
+                                Text(subtitle)
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                                    .multilineTextAlignment(.center)
+                                    .padding(.top, 4)
+                            }
+                        }
+                        Spacer()
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.top, 16)
+                    .padding(.bottom, 8)
+                    
+                    // Contenu principal
+                    GeometryReader { geometry in
                     if isNoPartnerState {
                         // État sans partenaire
                         noPartnerView
@@ -82,12 +107,11 @@ struct DailyQuestionMainView: View {
                             }
                     }
                 }
+                }
             }
             .ignoresSafeArea(.keyboard)
             // ☝️ NOUVEAU: Ignorer safe area clavier car on gère manuellement avec keyboardHeight
-            .navigationTitle(NSLocalizedString("daily_question_title", tableName: "DailyQuestions", comment: ""))
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbarColorScheme(.light, for: .navigationBar) // Force le texte en noir
+            .navigationBarHidden(true)
             // .sheet(isPresented: $showChatSheet) { // SUPPRIMÉ - Plus besoin du sheet
             //     if let current = dailyQuestionService.currentQuestion {
             //         DailyQuestionMessageKitView(question: current)
@@ -98,6 +122,20 @@ struct DailyQuestionMainView: View {
             // }
         }
         .onAppear {
+            print("🚀 === DEBUG DAILYQUESTION MAIN VIEW - ON APPEAR ===")
+            
+            // 📅 LOGS DATE/HEURE DEMANDÉS
+            let now = Date()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            formatter.timeZone = TimeZone.current
+            print("🕐 DailyQuestionMainView: Date/Heure actuelle: \(formatter.string(from: now))")
+            print("🌍 DailyQuestionMainView: Timezone: \(TimeZone.current.identifier)")
+            print("📅 DailyQuestionMainView: Jour de la semaine: \(Calendar.current.component(.weekday, from: now))")
+            print("📊 DailyQuestionMainView: Jour du mois: \(Calendar.current.component(.day, from: now))")
+            print("📈 DailyQuestionMainView: Mois: \(Calendar.current.component(.month, from: now))")
+            print("📉 DailyQuestionMainView: Année: \(Calendar.current.component(.year, from: now))")
+            
             // 🧹 NETTOYER LES NOTIFICATIONS ET BADGE QUAND L'UTILISATEUR OUVRE LA VUE
             if let currentQuestion = dailyQuestionService.currentQuestion {
                 // 🎯 DOUBLE NOTIFICATION FIX: Nettoyer notifications en attente ET déjà délivrées
@@ -221,7 +259,7 @@ struct DailyQuestionMainView: View {
             Spacer()
             
             Text("daily_question_title")
-                .font(.system(size: 20, weight: .semibold))
+                .font(.system(size: 28, weight: .bold))
                 .foregroundColor(.black)
             
             Spacer()
@@ -594,6 +632,29 @@ struct DailyQuestionMainView: View {
     
     // SUPPRIMÉ: Keyboard Management - laissé à iOS
     
+    // MARK: - Freemium Subtitle Helpers
+    
+    /// Helper pour obtenir le sous-titre freemium des questions du jour
+    private func getDailyQuestionSubtitle() -> String? {
+        guard let user = appState.currentUser,
+              let partnerId = user.partnerId,
+              !partnerId.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            return nil
+        }
+        let currentDay = calculateCurrentQuestionDay()
+        return appState.freemiumManager?.getDailyQuestionSubtitle(for: currentDay)
+    }
+    
+    /// Calcul du jour actuel de question
+    private func calculateCurrentQuestionDay() -> Int {
+        guard let user = appState.currentUser,
+              let relationshipStartDate = user.relationshipStartDate else { return 1 }
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = TimeZone(identifier: "UTC")!
+        let days = calendar.dateComponents([.day], from: calendar.startOfDay(for: relationshipStartDate), to: calendar.startOfDay(for: Date())).day ?? 0
+        return days + 1
+    }
+    
     // MARK: - 🔔 NOTIFICATIONS (DailyQuestionMainView)
     
     /// Vérifie et demande immédiatement les permissions de notifications (une seule fois)
@@ -875,6 +936,7 @@ struct HistoryPreviewCard: View {
         .shadow(color: .black.opacity(0.05), radius: 4, x: 0, y: 2)
     }
     
+
 }
 
 // MARK: - Extensions

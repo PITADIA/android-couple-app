@@ -1,0 +1,686 @@
+{
+  "sourceLanguage" : "fr",
+  "strings" : {
+    "daily_challenge_1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Send them a message telling them why you're grateful to have them in your life."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envoyez-lui un message pour lui dire pourquoi vous êtes reconnaissant de l'avoir dans votre vie."
+          }
+        }
+      }
+    },
+    "daily_challenge_2" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Call them on FaceTime or phone just to say \"I love you\" and hang up right after their response."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appelez-vous par FaceTime ou téléphone juste pour dire \"je t'aime\" et raccrochez juste après sa réponse."
+          }
+        }
+      }
+    },
+    "daily_challenge_3" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ask them this question: \"What do you need from me right now?\""
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Posez-lui cette question : \"De quoi as-tu besoin de moi en ce moment ?\""
+          }
+        }
+      }
+    },
+    "daily_challenge_4" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose a song that reminds you of your relationship and send it to them."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisissez une chanson qui vous fait penser à votre relation et envoyez-la-lui."
+          }
+        }
+      }
+    },
+    "daily_challenge_5" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create together a list of 5 things you want to do as a couple."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réalisez ensemble une liste de 5 choses que vous voulez faire en couple."
+          }
+        }
+      }
+    },
+    "daily_challenge_6" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Set an alarm to remind yourself to send them \"I love you\" during the day."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mettez une alarme pour vous rappeler de lui envoyer \"je t'aime\" dans la journée."
+          }
+        }
+      }
+    },
+    "daily_challenge_7" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Take a photo of something that reminds you of your partner and send it to them."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faites une photo de quelque chose qui vous rappelle votre partenaire et envoyez-lui."
+          }
+        }
+      }
+    },
+    "daily_challenge_8" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Give them an affectionate nickname just for today."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Donnez-lui un surnom affectueux juste pour aujourd'hui."
+          }
+        }
+      }
+    },
+    "daily_challenge_9" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ask them a question you've never asked them before."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Posez-lui une question que vous ne lui avez jamais posée."
+          }
+        }
+      }
+    },
+    "daily_challenge_10" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create together a list of 10 things you love doing together."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faites ensemble une liste de 10 choses que vous aimez faire ensemble."
+          }
+        }
+      }
+    },
+    "daily_challenge_11" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compliment them on something they don't notice about themselves."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faites-lui un compliment sur quelque chose qu'il/elle ne remarque pas chez lui/elle."
+          }
+        }
+      }
+    },
+    "daily_challenge_12" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Teach them something you know how to do."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apprenez-lui quelque chose que vous savez faire."
+          }
+        }
+      }
+    },
+    "daily_challenge_13" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Before going to bed, end the day with 3 \"I love you\"s, each in a different tone or form."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avant d'aller vous coucher, terminez la journée par 3 \"je t'aime\", chacun dans un ton ou une forme différente."
+          }
+        }
+      }
+    },
+    "daily_challenge_14" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Write a digital love letter and send it by email."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Écrivez une lettre d'amour numérique et envoyez-la par mail."
+          }
+        }
+      }
+    },
+    "daily_challenge_15" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Have a video call and eat the same meal at the same time."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faites une visio et mangez le même repas en même temps."
+          }
+        }
+      }
+    },
+    "daily_challenge_16" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exchange a voice message that starts with: \"I wanted to tell you…\""
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Échangez un message vocal qui commence par : \"Je voulais te dire…\""
+          }
+        }
+      }
+    },
+    "daily_challenge_17" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Make a call where you only speak in another language (even clumsily) to laugh together."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faites un appel où vous ne parlez que dans une autre langue (même maladroitement) pour rigoler ensemble."
+          }
+        }
+      }
+    },
+    "daily_challenge_18" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Send a video where you tell them how you feel today."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envoyez une vidéo où vous lui dites ce que vous ressentez aujourd'hui."
+          }
+        }
+      }
+    },
+    "daily_challenge_19" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Send a photo of your hand with a heart drawn on it and their name inside."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envoyez une photo de votre main avec un cœur dessiné dessus et son nom dedans."
+          }
+        }
+      }
+    },
+    "daily_challenge_20" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tell them a quality they underestimate about themselves."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dites-lui une qualité qu'il/elle sous-estime chez lui/elle."
+          }
+        }
+      }
+    },
+    "daily_challenge_21" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Offer them a surprise remote order (UberEats, Amazon…). (but be careful not to exceed €12, be creative)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Offrez-lui une commande surprise à distance (UberEats, Amazon…). (mais attention cela ne doit pas dépasser les 12€, soyez créatif)"
+          }
+        }
+      }
+    },
+    "daily_challenge_22" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Send a photo of a place where you'd like to be together."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envoyez une photo d'un endroit où vous aimeriez être ensemble."
+          }
+        }
+      }
+    },
+    "daily_challenge_23" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Send a 100% physical compliment, then a 100% inner one."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envoyez un compliment 100 % physique, puis un 100 % intérieur."
+          }
+        }
+      }
+    },
+    "daily_challenge_24" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Each answer this question: \"How do you know that I love you?\""
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Répondez chacun à la question : \"Comment sais-tu que je t'aime ?\""
+          }
+        }
+      }
+    },
+    "daily_challenges_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daily Challenge"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Défi du jour"
+          }
+        }
+      }
+    },
+    "saved_challenges_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saved Challenges"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Défis sauvegardés"
+          }
+        }
+      }
+    },
+    "challenge_completed_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Complete challenge"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compléter le défi"
+          }
+        }
+      }
+    },
+    "save_challenge_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save challenge"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sauvegarder le défi"
+          }
+        }
+      }
+    },
+    "challenge_saved_confirmation" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Challenge saved!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Défi sauvegardé !"
+          }
+        }
+      }
+    },
+    "delete_challenge_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete challenge"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer le défi"
+          }
+        }
+      }
+    },
+    "loading_challenge" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading your challenge..."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chargement de votre défi..."
+          }
+        }
+      }
+    },
+    "no_challenge_available" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No challenge available"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun défi disponible"
+          }
+        }
+      }
+    },
+    "come_back_tomorrow_challenge" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Come back tomorrow to discover a new challenge!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Revenez demain pour découvrir un nouveau défi !"
+          }
+        }
+      }
+    },
+    "paywall_challenges_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You've reached the free challenges limit 🎯"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu as atteint la limite des défis gratuits 🎯"
+          }
+        }
+      }
+    },
+    "paywall_challenges_subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Every day, a new challenge to take on together. Simple but powerful gestures to nurture your complicity and break out of the routine. Your new challenges are waiting for you.."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chaque jour, un nouveau défi à relever ensemble. Des gestes simples, mais puissants pour nourrir votre complicité et sortir du quotidien. Vos nouveaux défis vous attendent.."
+          }
+        }
+      }
+    },
+    "paywall_page_title_challenges" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daily Challenges"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Défis du Jour"
+          }
+        }
+      }
+    },
+    "paywall_continue_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unlock Premium Access"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Débloque l'accès premium"
+          }
+        }
+      }
+    },
+    "daily_challenge_intro_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Take on every challenge together 🎯"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Relevez chaque défi à deux 🎯"
+          }
+        }
+      }
+    },
+    "daily_challenge_intro_subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Every day, a new challenge to strengthen your bond and grow your relationship through meaningful shared actions.\nConnect to start the journey together."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chaque jour, un nouveau défi conçu pour renforcer votre complicité et faire grandir votre relation à travers des petites actions sincères.\nConnectez-vous pour commencer l'aventure ensemble."
+          }
+        }
+      }
+    },
+    "connect_partner_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Connect my partner"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Connecter mon partenaire"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

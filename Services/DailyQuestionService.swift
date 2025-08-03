@@ -858,6 +858,19 @@ class DailyQuestionService: ObservableObject {
         
         let startTime = Date()
         print("\n🌍 === TIMEZONE OPTIMIZATION START ===")
+        
+        // 📅 LOGS DATE/HEURE DEMANDÉS - CHECK NEW QUESTION
+        let now = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        formatter.timeZone = TimeZone.current
+        print("🕐 DailyQuestionService: Date/Heure actuelle: \(formatter.string(from: now))")
+        print("🌍 DailyQuestionService: Timezone: \(TimeZone.current.identifier)")
+        print("📅 DailyQuestionService: Jour de la semaine: \(Calendar.current.component(.weekday, from: now))")
+        print("📊 DailyQuestionService: Jour du mois: \(Calendar.current.component(.day, from: now))")
+        print("📈 DailyQuestionService: Mois: \(Calendar.current.component(.month, from: now))")
+        print("📉 DailyQuestionService: Année: \(Calendar.current.component(.year, from: now))")
+        
         print("🕐 Heure locale: \(DateFormatter.timeFormatter.string(from: Date()))")
         print("🌍 Timezone: \(TimeZone.current.identifier)")
         print("🔄 isOptimizing = true → UI va afficher état de chargement")

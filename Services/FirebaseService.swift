@@ -263,7 +263,13 @@ class FirebaseService: NSObject, ObservableObject {
             "onboardingInProgress": true,  // IMPORTANT: Marquer l'onboarding comme en cours
             "relationshipImprovement": user.relationshipImprovement ?? "",
             "questionMode": user.questionMode ?? "",
-            "languageCode": Locale.current.language.languageCode?.identifier ?? "fr"
+            "languageCode": Locale.current.language.languageCode?.identifier ?? "fr",
+            // NOUVEAU: Tracking freemium questions du jour
+            "dailyQuestionFirstAccessDate": user.dailyQuestionFirstAccessDate != nil ? Timestamp(date: user.dailyQuestionFirstAccessDate!) : NSNull(),
+            "dailyQuestionMaxDayReached": user.dailyQuestionMaxDayReached,
+            // NOUVEAU: Tracking freemium défis du jour
+            "dailyChallengeFirstAccessDate": user.dailyChallengeFirstAccessDate != nil ? Timestamp(date: user.dailyChallengeFirstAccessDate!) : NSNull(),
+            "dailyChallengeMaxDayReached": user.dailyChallengeMaxDayReached
         ]
         
         // Ajouter la date de début de relation si présente
@@ -351,7 +357,13 @@ class FirebaseService: NSObject, ObservableObject {
             "updatedAt": Timestamp(date: Date()),
             "onboardingInProgress": false,  // NOUVEAU: Marquer l'onboarding comme terminé
             "relationshipImprovement": user.relationshipImprovement ?? "",
-            "questionMode": user.questionMode ?? ""
+            "questionMode": user.questionMode ?? "",
+            // NOUVEAU: Tracking freemium questions du jour
+            "dailyQuestionFirstAccessDate": user.dailyQuestionFirstAccessDate != nil ? Timestamp(date: user.dailyQuestionFirstAccessDate!) : NSNull(),
+            "dailyQuestionMaxDayReached": user.dailyQuestionMaxDayReached,
+            // NOUVEAU: Tracking freemium défis du jour
+            "dailyChallengeFirstAccessDate": user.dailyChallengeFirstAccessDate != nil ? Timestamp(date: user.dailyChallengeFirstAccessDate!) : NSNull(),
+            "dailyChallengeMaxDayReached": user.dailyChallengeMaxDayReached
         ]
         
         // Ajouter la date de début de relation si présente
@@ -534,7 +546,11 @@ class FirebaseService: NSObject, ObservableObject {
                                         subscriptionInheritedFrom: data["subscriptionSharedFrom"] as? String,  // 🔧 CORRECTION: Utiliser le bon nom de champ
                                         subscriptionInheritedAt: (data["subscriptionInheritedAt"] as? Timestamp)?.dateValue(),
                                         isSubscribed: data["isSubscribed"] as? Bool ?? false,
-                                        onboardingInProgress: true
+                                        onboardingInProgress: true,
+                                        dailyQuestionFirstAccessDate: (data["dailyQuestionFirstAccessDate"] as? Timestamp)?.dateValue(),
+                                        dailyQuestionMaxDayReached: data["dailyQuestionMaxDayReached"] as? Int ?? 0,
+                                        dailyChallengeFirstAccessDate: (data["dailyChallengeFirstAccessDate"] as? Timestamp)?.dateValue(),
+                                        dailyChallengeMaxDayReached: data["dailyChallengeMaxDayReached"] as? Int ?? 0
                                     )
                                     
                                     // Marquer comme authentifié avec l'utilisateur partiel
@@ -582,7 +598,14 @@ class FirebaseService: NSObject, ObservableObject {
                     onboardingInProgress: false,
                     relationshipStartDate: (data["relationshipStartDate"] as? Timestamp)?.dateValue(),
                     profileImageURL: data["profileImageURL"] as? String,
-                    currentLocation: self?.parseUserLocation(from: data["currentLocation"] as? [String: Any])
+                    currentLocation: self?.parseUserLocation(from: data["currentLocation"] as? [String: Any]),
+                    languageCode: data["languageCode"] as? String,
+                    // NOUVEAU: Tracking freemium questions du jour
+                    dailyQuestionFirstAccessDate: (data["dailyQuestionFirstAccessDate"] as? Timestamp)?.dateValue(),
+                    dailyQuestionMaxDayReached: data["dailyQuestionMaxDayReached"] as? Int ?? 0,
+                    // NOUVEAU: Tracking freemium défis du jour
+                    dailyChallengeFirstAccessDate: (data["dailyChallengeFirstAccessDate"] as? Timestamp)?.dateValue(),
+                    dailyChallengeMaxDayReached: data["dailyChallengeMaxDayReached"] as? Int ?? 0
                 )
                 
                 print("✅ FirebaseService: Utilisateur chargé avec données complètes: \(user.name)")
@@ -812,7 +835,14 @@ class FirebaseService: NSObject, ObservableObject {
                 onboardingInProgress: data["onboardingInProgress"] as? Bool ?? false,
                 relationshipStartDate: (data["relationshipStartDate"] as? Timestamp)?.dateValue(),
                 profileImageURL: data["profileImageURL"] as? String,
-                currentLocation: self.parseUserLocation(from: data["currentLocation"] as? [String: Any])
+                currentLocation: self.parseUserLocation(from: data["currentLocation"] as? [String: Any]),
+                languageCode: data["languageCode"] as? String,
+                // NOUVEAU: Tracking freemium questions du jour
+                dailyQuestionFirstAccessDate: (data["dailyQuestionFirstAccessDate"] as? Timestamp)?.dateValue(),
+                dailyQuestionMaxDayReached: data["dailyQuestionMaxDayReached"] as? Int ?? 0,
+                // NOUVEAU: Tracking freemium défis du jour
+                dailyChallengeFirstAccessDate: (data["dailyChallengeFirstAccessDate"] as? Timestamp)?.dateValue(),
+                dailyChallengeMaxDayReached: data["dailyChallengeMaxDayReached"] as? Int ?? 0
             )
             
             print("✅ FirebaseService: Utilisateur récupéré (direct): \(user.name)")

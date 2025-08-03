@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.9</string>
+	<string>1.81</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -59,9 +59,8 @@
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Love2Love needs access to your photos to allow you to personalize your profile and add images to your shared memories in the couple's journal.</string>
 	
-	<!-- Export Compliance pour Apple Store - CryptoKit AES-GCM utilisé -->
 	<key>ITSAppUsesNonExemptEncryption</key>
-	<true/>
+	<false/>
 	
 	<!-- Privacy Manifests - Conformité Apple iOS 17+ -->
 	<key>NSPrivacyAccessedAPITypes</key>

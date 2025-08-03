@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		110E27332E37B00200F2F6B3 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 110E27322E37B00200F2F6B3 /* MessageKit */; };
 		111C37B32E09E36100FCA06D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 111C37B22E09E36100FCA06D /* FirebaseStorage */; };
+		111FCE452E3E78EC00433835 /* DailyChallenges.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 111FCE442E3E78EC00433835 /* DailyChallenges.xcstrings */; };
 		111FEC662DF38CDD00CB1034 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 111FEC652DF38CDD00CB1034 /* ConfettiSwiftUI */; };
 		1134036D2E3B81BB00CC4CA1 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 1134036C2E3B81BB00CC4CA1 /* FirebaseCore */; };
 		11384DC02E0A6E0F004E7AF3 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11384DBF2E0A6E0F004E7AF3 /* WidgetKit.framework */; };
@@ -92,6 +93,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		111FCE442E3E78EC00433835 /* DailyChallenges.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = DailyChallenges.xcstrings; sourceTree = "<group>"; };
 		11384DBD2E0A6E0F004E7AF3 /* Love2LoveWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Love2LoveWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		11384DBF2E0A6E0F004E7AF3 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		11384DC12E0A6E0F004E7AF3 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -189,6 +191,7 @@
 		1A000030294A1234567890AB = {
 			isa = PBXGroup;
 			children = (
+				111FCE442E3E78EC00433835 /* DailyChallenges.xcstrings */,
 				1175AAD62E2599A200850937 /* InfoPlist.xcstrings */,
 				1175AAA82E252E6100850937 /* Utils */,
 				11849DDD2E251E4F000B9FCF /* MieuxEnsemble.xcstrings */,
@@ -377,6 +380,7 @@
 				11849DDE2E251E56000B9FCF /* MieuxEnsemble.xcstrings in Resources */,
 				11FE3CCF2DF0C8B600F58DB2 /* GoogleService-Info.plist in Resources */,
 				11849DDB2E251E4F000B9FCF /* LesPlus Hots.xcstrings in Resources */,
+				111FCE452E3E78EC00433835 /* DailyChallenges.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,7 +608,7 @@
 				CODE_SIGN_ENTITLEMENTS = CoupleApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = GMS9SB6YB7;
 				ENABLE_PREVIEWS = YES;
@@ -619,7 +623,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.81;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lyes.love2love;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -641,7 +645,7 @@
 				CODE_SIGN_ENTITLEMENTS = CoupleApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = GMS9SB6YB7;
 				ENABLE_PREVIEWS = YES;
@@ -656,7 +660,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.81;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lyes.love2love;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

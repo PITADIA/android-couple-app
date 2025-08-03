@@ -1,4 +1,5 @@
 import SwiftUI
+import Combine
 
 struct CoupleStatisticsView: View {
     @EnvironmentObject var appState: AppState
@@ -66,6 +67,17 @@ struct CoupleStatisticsView: View {
             }
             .padding(.horizontal, 20)
         }
+        .onAppear {
+            print("📊 CoupleStatisticsView: Vue apparue, calcul des statistiques")
+            // Forcer le recalcul en accédant à la variable
+            let _ = questionsProgressPercentage
+        }
+        .onReceive(categoryProgressService.$categoryProgress) { newProgress in
+            print("📊 CoupleStatisticsView: Progression des catégories mise à jour: \(newProgress)")
+            print("📊 CoupleStatisticsView: Recalcul du pourcentage...")
+            // Forcer le recalcul
+            let _ = questionsProgressPercentage
+        }
     }
     
     // MARK: - Computed Properties
@@ -83,20 +95,35 @@ struct CoupleStatisticsView: View {
     
     /// Pourcentage de progression total sur toutes les questions
     private var questionsProgressPercentage: Double {
+        print("📊 === CALCUL STATISTIQUES COUPLE - QUESTIONS ===")
         let categories = QuestionCategory.categories
         var totalQuestions = 0
         var totalProgress = 0
         
         for category in categories {
             let questions = getQuestionsForCategory(category.id)
-            let currentIndex = categoryProgressService.getCurrentIndex(for: category.title)
+            // ⚠️ PROBLÈME POTENTIEL: On utilisait category.title au lieu de category.id
+            let currentIndex = categoryProgressService.getCurrentIndex(for: category.id)
+            
+            print("📊 Catégorie: '\(category.title)' (ID: '\(category.id)')")
+            print("📊   - Nombre de questions: \(questions.count)")
+            print("📊   - Index actuel: \(currentIndex)")
+            print("📊   - Progression: \(min(currentIndex + 1, questions.count))/\(questions.count)")
             
             totalQuestions += questions.count
             totalProgress += min(currentIndex + 1, questions.count) // +1 car l'index commence à 0
         }
         
-        guard totalQuestions > 0 else { return 0.0 }
-        return (Double(totalProgress) / Double(totalQuestions)) * 100.0
+        print("📊 TOTAL: \(totalProgress)/\(totalQuestions) questions vues")
+        
+        guard totalQuestions > 0 else { 
+            print("📊 ⚠️ Aucune question trouvée, retour 0%")
+            return 0.0 
+        }
+        
+        let percentage = (Double(totalProgress) / Double(totalQuestions)) * 100.0
+        print("📊 ✅ Pourcentage final: \(percentage)%")
+        return percentage
     }
     
     /// Nombre de villes uniques visitées basé sur les entrées de journal

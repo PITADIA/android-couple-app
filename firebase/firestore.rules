@@ -157,6 +157,66 @@ service cloud.firestore {
                        userIsInCouple(request.auth.uid, resource.data.coupleId);
     }
     
+    // 🆕 NOUVEAU: Règles pour les défis quotidiens
+    match /dailyChallenges/{challengeId} {
+      // Lecture : utilisateur authentifié ET fait partie du couple (son ID est dans coupleId)
+      allow read: if request.auth != null && 
+                     userIsInCouple(request.auth.uid, resource.data.coupleId);
+      
+      // Création : utilisateur authentifié ET fait partie du couple ET les partenaires sont connectés
+      allow create: if request.auth != null && 
+                       userIsInCouple(request.auth.uid, request.resource.data.coupleId) &&
+                       partnersAreConnectedForCouple(request.resource.data.coupleId);
+      
+      // Modification : utilisateur authentifié ET fait partie du couple (pour isCompleted, completedAt)
+      allow update: if request.auth != null && 
+                       userIsInCouple(request.auth.uid, resource.data.coupleId) &&
+                       // Seuls ces champs peuvent être modifiés par les utilisateurs
+                       request.resource.data.diff(resource.data).affectedKeys().hasOnly(['isCompleted', 'completedAt']);
+      
+      // Suppression : utilisateur authentifié ET fait partie du couple
+      allow delete: if request.auth != null && 
+                       userIsInCouple(request.auth.uid, resource.data.coupleId);
+    }
+    
+    // 🆕 NOUVEAU: Règles pour les paramètres des défis quotidiens
+    match /dailyChallengeSettings/{coupleId} {
+      // Lecture : utilisateur authentifié ET fait partie du couple (son ID est dans coupleId)
+      allow read: if request.auth != null && 
+                     userIsInCouple(request.auth.uid, coupleId);
+      
+      // Création : utilisateur authentifié ET fait partie du couple
+      allow create: if request.auth != null && 
+                       userIsInCouple(request.auth.uid, request.resource.data.coupleId);
+      
+      // Modification : utilisateur authentifié ET fait partie du couple
+      allow update: if request.auth != null && 
+                       userIsInCouple(request.auth.uid, resource.data.coupleId);
+      
+      // Suppression : utilisateur authentifié ET fait partie du couple
+      allow delete: if request.auth != null && 
+                       userIsInCouple(request.auth.uid, resource.data.coupleId);
+    }
+    
+    // 🆕 NOUVEAU: Règles pour les défis sauvegardés
+    match /savedChallenges/{savedChallengeId} {
+      // Lecture : utilisateur authentifié ET propriétaire du défi sauvegardé
+      allow read: if request.auth != null && 
+                     request.auth.uid == resource.data.userId;
+      
+      // Création : utilisateur authentifié ET propriétaire
+      allow create: if request.auth != null && 
+                       request.auth.uid == request.resource.data.userId;
+      
+      // Modification : utilisateur authentifié ET propriétaire
+      allow update: if request.auth != null && 
+                       request.auth.uid == resource.data.userId;
+      
+      // Suppression : utilisateur authentifié ET propriétaire
+      allow delete: if request.auth != null && 
+                       request.auth.uid == resource.data.userId;
+    }
+    
     // Règles pour les signalements de contenu inapproprié
     match /content_reports/{reportId} {
       // Création : utilisateur authentifié peut créer un signalement

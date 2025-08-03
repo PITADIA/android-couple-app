@@ -225,6 +225,7 @@ struct QuestionListView: View {
                         
                         // 🔥 RESET COMPLET pour debug
                         packProgressService.resetProgress(for: category.id)
+                        print("📊 QuestionListView: RESET - Sauvegarde position 0 pour catégorie '\(category.id)'")
                         categoryProgressService.saveCurrentIndex(0, for: category.id)
                         
                         // Recharger les questions
@@ -353,6 +354,7 @@ struct QuestionListView: View {
                                                 }
                                                 
                                                 // 🔥 NOUVEAU: Sauvegarder la position actuelle
+                                                print("📊 QuestionListView: SWIPE - Sauvegarde position \(currentIndex) pour catégorie '\(category.id)'")
                                                 categoryProgressService.saveCurrentIndex(currentIndex, for: category.id)
                                                 
                                                 // 🌟 NOUVEAU: Vérifier si on doit demander un avis (basé sur questions vues)
@@ -380,6 +382,7 @@ struct QuestionListView: View {
                                                 }
                                                 
                                                 // 🔥 NOUVEAU: Sauvegarder la position actuelle
+                                                print("📊 QuestionListView: SWIPE - Sauvegarde position \(currentIndex) pour catégorie '\(category.id)'")
                                                 categoryProgressService.saveCurrentIndex(currentIndex, for: category.id)
                                                 
                                                 // 🌟 NOUVEAU: Vérifier si on doit demander un avis (basé sur questions vues)

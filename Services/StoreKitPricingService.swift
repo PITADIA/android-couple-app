@@ -135,6 +135,8 @@ class StoreKitPricingService: ObservableObject {
     private func updateLocalizedPrices(from products: [SKProduct]) {
         print("💰 StoreKitPricingService: Mise à jour des prix localisés - \(products.count) produits")
         
+
+        
         guard !products.isEmpty else {
             print("⚠️ StoreKitPricingService: Aucun produit reçu de StoreKit")
             DispatchQueue.main.async {
@@ -144,6 +146,8 @@ class StoreKitPricingService: ObservableObject {
             return
         }
         
+
+        
         var updatedPrices: [String: LocalizedPrice] = [:]
         var hasErrors = false
         
@@ -152,11 +156,7 @@ class StoreKitPricingService: ObservableObject {
                 let localizedPrice = LocalizedPrice(product: product)
                 updatedPrices[product.productIdentifier] = localizedPrice
                 
-                print("💰 StoreKitPricingService: ✅ \(product.productIdentifier)")
-                print("💰   Prix: \(localizedPrice.formattedPrice)")
-                print("💰   Prix/utilisateur: \(localizedPrice.formattedPricePerUser)")
-                print("💰   Devise: \(localizedPrice.currencyCode)")
-                print("💰   Locale: \(localizedPrice.locale.identifier)")
+
             } catch {
                 print("❌ StoreKitPricingService: Erreur traitement produit \(product.productIdentifier): \(error)")
                 hasErrors = true
@@ -196,8 +196,6 @@ class StoreKitPricingService: ObservableObject {
     }
     
     private func getFallbackPrice(for productId: String) -> String {
-        // 🔇 Log déjà fait dans getLocalizedPrice - pas de doublon
-        
         switch productId {
         case "com.lyes.love2love.subscription.weekly":
             let basePrice = "plan_weekly_price".localized
@@ -240,28 +238,45 @@ struct LocalizedPrice {
         self.productId = product.productIdentifier
         self.price = product.price
         self.locale = product.priceLocale
-        if #available(iOS 16.0, *) {
-            self.currencyCode = product.priceLocale.currency?.identifier ?? "EUR"
+        // 🎯 Choisir la locale appropriée pour le formatage
+        let systemLocale = Locale.current
+        let systemCurrency = systemLocale.currency?.identifier ?? "USD"
+        let storeKitCurrency = product.priceLocale.currency?.identifier ?? "USD"
+        
+        // Utiliser la locale système si les devises ne correspondent pas
+        let shouldUseSystemLocale = systemCurrency != storeKitCurrency
+        let formatterLocale = shouldUseSystemLocale ? systemLocale : product.priceLocale
+        
+        // Devise (utiliser celle de la locale choisie)
+        if shouldUseSystemLocale {
+            self.currencyCode = systemCurrency
         } else {
-            self.currencyCode = product.priceLocale.currencyCode ?? "EUR"
+            if #available(iOS 16.0, *) {
+                self.currencyCode = product.priceLocale.currency?.identifier ?? "EUR"
+            } else {
+                self.currencyCode = product.priceLocale.currencyCode ?? "EUR"
+            }
         }
         
         // Formatter pour le prix principal
         let priceFormatter = NumberFormatter()
         priceFormatter.numberStyle = .currency
-        priceFormatter.locale = product.priceLocale
+        priceFormatter.locale = formatterLocale
         self.formattedPrice = priceFormatter.string(from: product.price) ?? "\(product.price)"
         
         // Calcul du prix par utilisateur (prix / 2)
         let pricePerUser = product.price.dividing(by: NSDecimalNumber(value: 2))
         self.formattedPricePerUser = priceFormatter.string(from: pricePerUser) ?? "\(pricePerUser)"
         
-        print("💰 LocalizedPrice créé:")
-        print("💰   ID: \(self.productId)")
-        print("💰   Prix: \(self.formattedPrice)")
-        print("💰   Prix/utilisateur: \(self.formattedPricePerUser)")
-        print("💰   Devise: \(self.currencyCode)")
-        print("💰   Locale: \(self.locale.identifier)")
+        // Log de la correction si locale système utilisée
+        if shouldUseSystemLocale {
+            print("🔧 LocalizedPrice: CORRECTION APPLIQUÉE")
+            print("🔧   StoreKit: \(product.priceLocale.identifier) (\(storeKitCurrency))")
+            print("🔧   Système: \(systemLocale.identifier) (\(systemCurrency))")
+            print("🔧   Prix corrigé: '\(self.formattedPrice)' (était potentiellement en \(storeKitCurrency))")
+        }
+        
+
     }
 }
 
