@@ -1,4 +1,0 @@
-module s2geometry {
-umbrella "/Users/lyes/Library/Developer/Xcode/DerivedData/CoupleApp-glxefjatricjpmcyoqnzlsoilsvw/SourcePackages/checkouts/realm-core/src/external/s2"
-export *
-}
