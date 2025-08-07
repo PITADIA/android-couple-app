@@ -1,8 +1,9 @@
 import SwiftUI
 
-struct NameStepView: View {
+struct DisplayNameStepView: View {
     @ObservedObject var viewModel: OnboardingViewModel
     @FocusState private var isTextFieldFocused: Bool
+    @StateObject private var authService = AuthenticationService.shared
     
     var body: some View {
         VStack(spacing: 0) {
@@ -12,7 +13,7 @@ struct NameStepView: View {
             
             // Titre centré à gauche
             HStack {
-                Text("name_step_title".localized)
+                Text("display_name_step_title".localized)
                     .font(.system(size: 36, weight: .bold))
                     .foregroundColor(.black)
                     .multilineTextAlignment(.leading)
@@ -25,21 +26,11 @@ struct NameStepView: View {
             
             // Contenu principal centré
             VStack(spacing: 30) {
-                // Sous-titre
-                Text("name_step_description".localized)
-                    .font(.system(size: 18))
-                    .foregroundColor(.black.opacity(0.7))
-                    .multilineTextAlignment(.center)
-                    .lineLimit(nil)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .frame(maxWidth: .infinity)
-                    .padding(.horizontal, 30)
-                
                 // Champ de saisie sur carte blanche
                 VStack(spacing: 0) {
                     ZStack(alignment: .leading) {
                         if viewModel.userName.isEmpty {
-                            Text("name_placeholder".localized)
+                            Text("display_name_placeholder".localized)
                                 .foregroundColor(.black.opacity(0.5))
                                 .font(.system(size: 18))
                                 .padding(.horizontal, 20)
@@ -52,6 +43,10 @@ struct NameStepView: View {
                             .padding(.vertical, 16)
                             .focused($isTextFieldFocused)
                             .accentColor(Color(hex: "#FD267A"))
+                            .onTapGesture {
+                                // Focus sur le champ de texte uniquement quand l'utilisateur tape dessus
+                                isTextFieldFocused = true
+                            }
                     }
                 }
                 .background(
@@ -66,33 +61,55 @@ struct NameStepView: View {
             Spacer()
                 
             // Zone blanche collée en bas
-            VStack(spacing: 0) {
+            VStack(spacing: 15) {
                 Button(action: {
-                    if !viewModel.userName.isEmpty {
-                        viewModel.nextStep()
-                    }
+                    print("🔥 DisplayNameStepView: Bouton 'Continue' cliqué")
+                    viewModel.nextStep()
                 }) {
-                                            Text("continue".localized)
+                    Text("continue".localized)
                         .font(.system(size: 18, weight: .semibold))
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                         .frame(height: 56)
                         .background(Color(hex: "#FD267A"))
                         .cornerRadius(28)
-                        .opacity(viewModel.userName.isEmpty ? 0.5 : 1.0)
                 }
-                .disabled(viewModel.userName.isEmpty)
                 .padding(.horizontal, 30)
+                
+                // Bouton "Passer cette étape" identique à ProfilePhotoStepView
+                Button(action: {
+                    print("🔥 DisplayNameStepView: Bouton 'Passer cette étape' cliqué")
+                    print("🔥 DisplayNameStepView: Nom actuel avant skip: '\(viewModel.userName)'")
+                    viewModel.userName = "" // Laisser vide pour auto-génération
+                    print("🔥 DisplayNameStepView: Nom vidé pour auto-génération")
+                    print("🔥 DisplayNameStepView: Appel de nextStep()")
+                    viewModel.nextStep()
+                }) {
+                    Text("skip_step".localized)
+                        .font(.system(size: 16))
+                        .foregroundColor(.black.opacity(0.6))
+                        .underline()
+                }
             }
             .padding(.vertical, 30)
             .background(Color.white)
         }
+        .onTapGesture {
+            // Fermer le clavier de manière optimisée
+            self.hideKeyboard()
+        }
         .onAppear {
-            print("🔥 NameStepView: Vue de saisie du nom apparue")
-            // Activer automatiquement le focus pour ouvrir le clavier immédiatement
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                isTextFieldFocused = true
+            print("🔥 DisplayNameStepView: Vue de saisie du nom d'affichage apparue")
+            
+            // Pré-remplir avec le nom Apple si disponible et si le champ est vide
+            if viewModel.userName.isEmpty, let appleDisplayName = authService.appleUserDisplayName {
+                print("🔥 DisplayNameStepView: Pré-remplissage avec nom Apple: \(appleDisplayName)")
+                viewModel.userName = appleDisplayName
+            }
+            
+            // Ne plus auto-focus le clavier - l'utilisateur doit taper pour l'ouvrir
+            isTextFieldFocused = false
             }
         }
     }
-} 
+

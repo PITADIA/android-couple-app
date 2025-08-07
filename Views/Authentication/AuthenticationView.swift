@@ -94,6 +94,14 @@ struct AuthenticationView: View {
         }
         .onReceive(NotificationCenter.default.publisher(for: NSNotification.Name("UserAuthenticated"))) { _ in
             print("🔥 AuthenticationView: Notification d'authentification reçue de AuthenticationService")
+            
+            // ⚠️ IMPORTANT: Ne pas traiter si l'onboarding est déjà en cours pour éviter les conflits
+            if appState.isOnboardingInProgress {
+                print("🔥 AuthenticationView: ⚠️ Onboarding déjà en cours - Ignorer cette notification")
+                print("🔥 AuthenticationView: Laisser AuthenticationStepView gérer l'authentification")
+                return
+            }
+            
             print("🔥 AuthenticationView: Utilisateur connecté via 'J'ai déjà un compte'")
             
             // Attendre un peu que Firebase se synchronise

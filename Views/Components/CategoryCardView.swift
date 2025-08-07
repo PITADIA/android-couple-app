@@ -8,26 +8,26 @@ struct CategoryCardView: View {
     var body: some View {
         Button(action: {
             print("🔥 CategoryCardView: Tap détecté sur \(category.title)")
-            print("🔥🔥🔥 CATEGORY TAP: DEBUT GESTION")
-            print("🔥🔥🔥 CATEGORY TAP: - Catégorie: \(category.title)")
-            print("🔥🔥🔥 CATEGORY TAP: - FreemiumManager disponible: \(appState.freemiumManager != nil)")
+            print("🔥 Category tap: DEBUT GESTION")
+            print("🔥 Category tap: - Catégorie: \(category.title)")
+            print("🔥 Category tap: - FreemiumManager disponible: \(appState.freemiumManager != nil)")
             
             // Utiliser le FreemiumManager pour gérer le tap
             if let freemiumManager = appState.freemiumManager {
-                print("🔥🔥🔥 CATEGORY TAP: APPEL handleCategoryTap")
-                print("🔥🔥🔥 CATEGORY TAP: FreemiumManager trouvé: \(String(describing: freemiumManager))")
-                print("🔥🔥🔥 CATEGORY TAP: Avant appel handleCategoryTap")
+                print("🔥 Category tap: APPEL handleCategoryTap")
+                print("🔥 Category tap: FreemiumManager trouvé: \(String(describing: freemiumManager))")
+                print("🔥 Category tap: Avant appel handleCategoryTap")
                 
                 freemiumManager.handleCategoryTap(category) {
-                    print("🔥🔥🔥 CATEGORY TAP: CALLBACK EXECUTE - ACCES AUTORISE")
+                    print("🔥 Category tap: CALLBACK EXECUTE - ACCES AUTORISE")
                     action()
                 }
                 
-                print("🔥🔥🔥 CATEGORY TAP: Après appel handleCategoryTap")
+                print("🔥 Category tap: Après appel handleCategoryTap")
             } else {
-                print("🔥🔥🔥 CATEGORY TAP: FREEMIUM MANAGER MANQUANT - FALLBACK")
-                print("🔥🔥🔥 CATEGORY TAP: appState: \(appState)")
-                print("🔥🔥🔥 CATEGORY TAP: appState.freemiumManager: \(String(describing: appState.freemiumManager))")
+                print("🔥 Category tap: FREEMIUM MANAGER MANQUANT - FALLBACK")
+                print("🔥 Category tap: appState: \(appState)")
+                print("🔥 Category tap: appState.freemiumManager: \(String(describing: appState.freemiumManager))")
                 // Fallback si FreemiumManager n'est pas disponible
                 action()
             }

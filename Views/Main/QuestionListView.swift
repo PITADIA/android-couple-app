@@ -138,7 +138,7 @@ struct QuestionListView: View {
         if showPackCompletionCard { count += 1 }
         if shouldShowFreemiumPaywallPreview { count += 1 }
         
-        print("🔍 DEBUG totalItems: accessibleQuestions.count=\(accessibleQuestions.count), cachedQuestions.count=\(cachedQuestions.count), showPackCompletionCard=\(showPackCompletionCard), shouldShowFreemiumPaywallPreview=\(shouldShowFreemiumPaywallPreview), total=\(count)")
+
         
         return count
     }
@@ -186,7 +186,7 @@ struct QuestionListView: View {
         if let freemiumManager = appState.freemiumManager {
             let maxFreeQuestions = freemiumManager.getMaxFreeQuestions(for: category)
             if maxFreeQuestions < questions.count && !category.isPremium {
-                print("🔥🔥🔥 FREEMIUM: Limite à \(maxFreeQuestions) questions pour '\(category.title)' (utilisateurs gratuits)")
+                print("🔥 Freemium: Limite à \(maxFreeQuestions) questions pour '\(category.title)' (utilisateurs gratuits)")
             }
         }
     }
@@ -397,7 +397,7 @@ struct QuestionListView: View {
                                 if let freemiumManager = appState.freemiumManager {
                                     let maxFreeQuestions = freemiumManager.getMaxFreeQuestions(for: category)
                                     if nextIndex >= maxFreeQuestions && !category.isPremium && !(appState.currentUser?.isSubscribed ?? false) {
-                                        print("🔥🔥🔥 FREEMIUM: Limite atteinte à la question \(nextIndex + 1), carte paywall disponible")
+                                        print("🔥 Freemium: Limite atteinte à la question \(nextIndex + 1), carte paywall disponible")
                                         // Ne pas déclencher automatiquement le paywall, juste le rendre disponible
                                         // L'utilisateur devra cliquer sur la carte pour l'ouvrir
                                     }
@@ -478,10 +478,10 @@ struct QuestionListView: View {
     
     // NOUVEAU: Gérer le tap sur la carte paywall
     private func handlePaywallTap() {
-        print("🔥🔥🔥 FREEMIUM PAYWALL: Tap sur carte paywall")
+        print("🔥 Freemium PAYWALL: Tap sur carte paywall")
         appState.freemiumManager?.handleQuestionAccess(at: currentIndex, in: category) {
             // Cette closure ne devrait jamais être appelée ici car l'accès est bloqué
-            print("🔥🔥🔥 FREEMIUM PAYWALL: Accès autorisé inattendu")
+            print("🔥 Freemium PAYWALL: Accès autorisé inattendu")
         }
     }
     
@@ -508,7 +508,7 @@ struct QuestionListView: View {
             
             // Si on a atteint la limite freemium ET qu'on n'est pas abonné, ne pas afficher la carte de déblocage
             if accessibleQuestions.count >= maxFreeQuestions && !category.isPremium && !isSubscribed {
-                print("🔥🔥🔥 FREEMIUM: Limite atteinte (\(maxFreeQuestions) questions), pas de carte de déblocage pour utilisateur non-payant")
+                print("🔥 Freemium: Limite atteinte (\(maxFreeQuestions) questions), pas de carte de déblocage pour utilisateur non-payant")
                 return
             }
         }
@@ -568,7 +568,7 @@ struct QuestionListView: View {
             
             showFreemiumPaywallCard = true
             
-            print("🔥🔥🔥 FREEMIUM PAYWALL: Limite freemium atteinte (fallback)! Carte paywall disponible.")
+            print("🔥 Freemium PAYWALL: Limite freemium atteinte (fallback)! Carte paywall disponible.")
             print("🔍 DEBUG: currentIndex=\(currentIndex), maxFreeQuestions=\(maxFreeQuestions), cachedQuestions.count=\(cachedQuestions.count)")
         }
     }

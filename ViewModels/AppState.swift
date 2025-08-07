@@ -151,6 +151,21 @@ class AppState: ObservableObject {
             }
             .store(in: &cancellables)
         
+        // 🚀 NOUVEAU: Observer les notifications de session Firebase depuis AppDelegate
+        NotificationCenter.default.addObserver(
+            self, 
+            selector: #selector(handleFirebaseSessionRestored(_:)), 
+            name: NSNotification.Name("FirebaseSessionRestored"), 
+            object: nil
+        )
+        
+        NotificationCenter.default.addObserver(
+            self, 
+            selector: #selector(handleFirebaseSessionEmpty(_:)), 
+            name: NSNotification.Name("FirebaseSessionEmpty"), 
+            object: nil
+        )
+        
         firebaseService.$currentUser
             .receive(on: DispatchQueue.main)
             .sink { [weak self] (user: AppUser?) in
@@ -173,7 +188,7 @@ class AppState: ObservableObject {
                 
                 // MODIFICATION: Vérifier si on force l'onboarding
                 if self?.forceOnboarding == true {
-                    print("🔥🔥🔥 AppState: ONBOARDING FORCE - Pas de redirection automatique")
+                    print("🔥 AppState: ONBOARDING FORCE - Pas de redirection automatique")
                     self?.isOnboardingCompleted = false
                     self?.isOnboardingInProgress = true
                     return
@@ -309,7 +324,7 @@ class AppState: ObservableObject {
     
     // NOUVEAU: Méthode pour forcer l'onboarding
     func startOnboardingFlow() {
-        print("🔥🔥🔥 AppState: DEMARRAGE FORCE DE L'ONBOARDING")
+        print("🔥 AppState: DEMARRAGE FORCE DE L'ONBOARDING")
         forceOnboarding = true
         isOnboardingCompleted = false
         isOnboardingInProgress = true
@@ -318,7 +333,7 @@ class AppState: ObservableObject {
     
     // Méthode pour démarrer l'onboarding manuellement depuis AuthenticationView
     func startUserOnboarding() {
-        print("🔥🔥🔥 AppState: UTILISATEUR A DEMARRE L'ONBOARDING MANUELLEMENT")
+        print("🚀 Démarrage onboarding manuel")
         hasUserStartedOnboarding = true
         isOnboardingCompleted = false
         isOnboardingInProgress = true
@@ -347,7 +362,7 @@ class AppState: ObservableObject {
         
         // Configuration RevenueCat avec l'ID utilisateur Firebase
         if let firebaseUserId = Auth.auth().currentUser?.uid {
-            print("💰 AppState: Configuration RevenueCat avec userID: \(firebaseUserId)")
+            print("💰 AppState: Configuration RevenueCat avec userID")
             Purchases.shared.logIn(firebaseUserId) { (customerInfo, created, error) in
                 if let error = error {
                     print("❌ AppState: Erreur RevenueCat logIn: \(error)")
@@ -424,5 +439,23 @@ class AppState: ObservableObject {
         if currentOnboardingStep > 0 {
             currentOnboardingStep -= 1
         }
+    }
+    
+    // MARK: - Firebase Session Persistence Handlers
+    
+    @objc private func handleFirebaseSessionRestored(_ notification: Notification) {
+        print("🔥 AppState: Session Firebase restaurée détectée!")
+        
+        if let user = notification.object as? FirebaseAuth.User {
+            print("🔥 AppState: Session restaurée pour utilisateur")
+            // La session est restaurée, Firebase Service va charger les données
+            // Pas besoin d'action ici, laisser le flow normal se dérouler
+        }
+    }
+    
+    @objc private func handleFirebaseSessionEmpty(_ notification: Notification) {
+        // Aucune session à restaurer
+        // Firebase a confirmé qu'il n'y a pas de session persistée
+        // L'état d'authentification est déjà à false, rien à faire
     }
 } 

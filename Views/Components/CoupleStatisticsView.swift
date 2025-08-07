@@ -95,7 +95,6 @@ struct CoupleStatisticsView: View {
     
     /// Pourcentage de progression total sur toutes les questions
     private var questionsProgressPercentage: Double {
-        print("📊 === CALCUL STATISTIQUES COUPLE - QUESTIONS ===")
         let categories = QuestionCategory.categories
         var totalQuestions = 0
         var totalProgress = 0
@@ -105,24 +104,15 @@ struct CoupleStatisticsView: View {
             // ⚠️ PROBLÈME POTENTIEL: On utilisait category.title au lieu de category.id
             let currentIndex = categoryProgressService.getCurrentIndex(for: category.id)
             
-            print("📊 Catégorie: '\(category.title)' (ID: '\(category.id)')")
-            print("📊   - Nombre de questions: \(questions.count)")
-            print("📊   - Index actuel: \(currentIndex)")
-            print("📊   - Progression: \(min(currentIndex + 1, questions.count))/\(questions.count)")
-            
             totalQuestions += questions.count
             totalProgress += min(currentIndex + 1, questions.count) // +1 car l'index commence à 0
         }
         
-        print("📊 TOTAL: \(totalProgress)/\(totalQuestions) questions vues")
-        
         guard totalQuestions > 0 else { 
-            print("📊 ⚠️ Aucune question trouvée, retour 0%")
             return 0.0 
         }
         
         let percentage = (Double(totalProgress) / Double(totalQuestions)) * 100.0
-        print("📊 ✅ Pourcentage final: \(percentage)%")
         return percentage
     }
     

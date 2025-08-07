@@ -9,6 +9,12 @@ struct AuthenticationStepView: View {
     @StateObject private var firebaseService = FirebaseService.shared
     @StateObject private var authService = AuthenticationService.shared
     
+    // État pour éviter les appels multiples
+    @State private var hasProcessedAuthentication = false
+    
+    // État pour éviter les appels multiples (simplifié)
+    @State private var isAppleSignInInProgress = false
+    
     var body: some View {
         ZStack {
             // Fond gris clair identique aux autres pages d'onboarding
@@ -32,10 +38,13 @@ struct AuthenticationStepView: View {
                 
                 Spacer()
                 
-                // Bouton Sign in with Apple collé en bas
+                // Bouton Sign in with Apple (style simple pour éviter double déclenchement)
                 Button(action: {
-                    print("🔥 AuthenticationStepView: Déclenchement de l'authentification Apple via AuthenticationService")
-                    NSLog("🔥🔥🔥 APPLE SIGN IN: DECLENCHEMENT VIA AUTH SERVICE")
+                    print("🔐 Authentification Apple démarrée")
+                    
+                    // Marquer que Apple Sign In est en cours
+                    isAppleSignInInProgress = true
+                    
                     authService.signInWithApple()
                 }) {
                     HStack {
@@ -44,10 +53,10 @@ struct AuthenticationStepView: View {
                         Text("continue_with_apple".localized)
                             .font(.system(size: 18, weight: .semibold))
                     }
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
                     .frame(maxWidth: .infinity)
                     .frame(height: 56)
-                    .background(Color.white)
+                    .background(Color.black)
                     .cornerRadius(28)
                 }
                 .padding(.horizontal, 30)
@@ -55,20 +64,12 @@ struct AuthenticationStepView: View {
             }
         }
         .onAppear {
-            print("🔥 AuthenticationStepView: Vue d'authentification apparue")
-            NSLog("🔥🔥🔥 AUTHENTICATION: VUE APPARUE")
-            
-            // Vérifications de debug détaillées
-            print("🔥 AuthenticationStepView: Bundle ID: \(Bundle.main.bundleIdentifier ?? "nil")")
-            print("🔥 AuthenticationStepView: Environnement: \(ProcessInfo.processInfo.environment["SIMULATOR_DEVICE_NAME"] != nil ? "Simulateur" : "Appareil physique")")
-            print("🔥 AuthenticationStepView: Auth.currentUser: \(Auth.auth().currentUser?.uid ?? "nil")")
-            print("🔥 AuthenticationStepView: AppState.isAuthenticated: \(appState.isAuthenticated)")
-            NSLog("🔥🔥🔥 AUTHENTICATION: BUNDLE ID: %@", Bundle.main.bundleIdentifier ?? "nil")
             
             // Vérifier si l'utilisateur est déjà authentifié
-            if appState.isAuthenticated && Auth.auth().currentUser != nil {
-                print("🔥 AuthenticationStepView: Utilisateur déjà authentifié, passage direct à l'étape suivante")
-                NSLog("🔥🔥🔥 AUTHENTICATION: UTILISATEUR DEJA AUTHENTIFIE")
+            if appState.isAuthenticated && Auth.auth().currentUser != nil && !hasProcessedAuthentication {
+                print("✅ Utilisateur déjà authentifié")
+                
+                hasProcessedAuthentication = true
                 
                 // Créer le document utilisateur avec les données d'onboarding collectées
                 if let currentUser = Auth.auth().currentUser {
@@ -78,56 +79,35 @@ struct AuthenticationStepView: View {
                 // Passer directement à l'étape suivante
                 viewModel.completeAuthentication()
             } else {
-                print("🔥 AuthenticationStepView: Utilisateur non authentifié - prêt pour Apple Sign In")
-                NSLog("🔥🔥🔥 AUTHENTICATION: UTILISATEUR NON AUTHENTIFIE")
+                print("🔐 Prêt pour authentification")
             }
         }
-        .onReceive(NotificationCenter.default.publisher(for: NSNotification.Name("UserAuthenticated"))) { _ in
-            print("🔥 AuthenticationStepView: Notification d'authentification reçue de AuthenticationService")
-            NSLog("🔥🔥🔥 AUTHENTICATION: NOTIFICATION RECUE")
+        .task(id: authService.isAuthenticated) {
+            // Utiliser task(id:) au lieu de onChange pour éviter les bugs NavigationStack
+            guard authService.isAuthenticated && !hasProcessedAuthentication else {
+                return
+            }
             
-            // Attendre un peu que Firebase se synchronise
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                if let firebaseUser = Auth.auth().currentUser {
-                    print("🔥 AuthenticationStepView: Utilisateur Firebase trouvé: \(firebaseUser.uid)")
-                    NSLog("🔥🔥🔥 AUTHENTICATION: FIREBASE USER TROUVE")
-                    
-                    // Créer immédiatement un document utilisateur partiel avec les données d'onboarding
-                    self.createPartialUserDocument(firebaseUser: firebaseUser)
-                    
-                    // Passer à l'étape suivante (abonnement)
-                    viewModel.completeAuthentication()
-                } else {
-                    print("❌ AuthenticationStepView: Aucun utilisateur Firebase trouvé")
-                    NSLog("❌❌❌ AUTHENTICATION: AUCUN FIREBASE USER")
-                }
-            }
-        }
-        .onChange(of: authService.isAuthenticated) { _, isAuth in
-            print("🔥 AuthenticationStepView: Changement d'authentification: \(isAuth)")
-            if isAuth {
-                print("🔥 AuthenticationStepView: Authentification réussie via AuthenticationService")
-                NSLog("🔥🔥🔥 AUTHENTICATION: SUCCES VIA AUTH SERVICE")
-                
-                if let firebaseUser = Auth.auth().currentUser {
-                    createPartialUserDocument(firebaseUser: firebaseUser)
-                    viewModel.completeAuthentication()
-                }
+            print("✅ Authentification réussie")
+            
+            hasProcessedAuthentication = true
+            isAppleSignInInProgress = false // Reset du flag
+            
+            if let firebaseUser = Auth.auth().currentUser {
+                createPartialUserDocument(firebaseUser: firebaseUser)
+                viewModel.completeAuthentication()
+            } else {
+                print("❌ Aucun utilisateur trouvé")
             }
         }
     }
     
     private func createPartialUserDocument(firebaseUser: FirebaseAuth.User) {
-        print("🔥 AuthenticationStepView: Création d'un document utilisateur partiel")
-        print("🔥🔥🔥 AUTH PARTIAL: CREATION DOCUMENT PARTIEL PENDANT ONBOARDING")
-        NSLog("🔥 AuthenticationStepView: Création d'un document utilisateur partiel")
+        print("📝 Création document utilisateur")
         
-        // NOUVEAU: Marquer le début du processus d'onboarding pour éviter les redirections
+        // Marquer le début du processus d'onboarding
         FirebaseService.shared.startOnboardingProcess()
-        
-        // NOUVEAU: Aussi marquer dans AppState que l'onboarding est en cours
         appState.isOnboardingInProgress = true
-        print("🔥🔥🔥 AUTH PARTIAL: AppState.isOnboardingInProgress = true")
         
         // Créer un utilisateur avec les données d'onboarding collectées
         let partialUser = AppUser(
@@ -138,18 +118,16 @@ struct AuthenticationStepView: View {
             relationshipImprovement: viewModel.selectedImprovements.joined(separator: ", ").isEmpty ? nil : viewModel.selectedImprovements.joined(separator: ", "),
             questionMode: viewModel.questionMode.isEmpty ? nil : viewModel.questionMode,
             partnerCode: nil,
-            isSubscribed: false, // Sera mis à jour après l'abonnement
-            onboardingInProgress: true, // IMPORTANT: Marquer l'onboarding comme en cours
+            isSubscribed: false,
+            onboardingInProgress: true,
             relationshipStartDate: viewModel.relationshipStartDate,
-            profileImageURL: nil, // L'image sera uploadée plus tard
+            profileImageURL: nil,
             currentLocation: viewModel.currentLocation
         )
         
-        print("🔥 AuthenticationStepView: Sauvegarde des données partielles pour: \(partialUser.name)")
-        print("🔥🔥🔥 AUTH PARTIAL: SAUVEGARDE PARTIELLE POUR: \(partialUser.name)")
-        NSLog("🔥 AuthenticationStepView: Sauvegarde des données partielles pour: \(partialUser.name)")
+        print("💾 Sauvegarde données partielles")
         
-        // IMPORTANT: Utiliser savePartialUserData pour marquer l'onboarding comme en cours
+        // Sauvegarder les données partielles
         FirebaseService.shared.savePartialUserData(partialUser)
     }
 } 

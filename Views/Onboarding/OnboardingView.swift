@@ -13,7 +13,7 @@ struct OnboardingView: View {
                 
                 VStack(spacing: 0) {
                     // Barre de progression (masquée pour certaines pages)
-                    if viewModel.currentStep != .subscription && viewModel.currentStep != .fitnessIntro && viewModel.currentStep != .fitnessIntro2 && viewModel.currentStep != .categoriesPreview {
+                    if viewModel.currentStep != .authentication && viewModel.currentStep != .displayName && viewModel.currentStep != .profilePhoto && viewModel.currentStep != .completion && viewModel.currentStep != .loading && viewModel.currentStep != .subscription && viewModel.currentStep != .fitnessIntro && viewModel.currentStep != .fitnessIntro2 && viewModel.currentStep != .categoriesPreview {
                         ProgressBar(progress: viewModel.progressValue) {
                             viewModel.previousStep()
                         }
@@ -24,16 +24,22 @@ struct OnboardingView: View {
                     // Contenu de l'étape actuelle
                     Group {
                         switch viewModel.currentStep {
-                        case .name:
-                            NameStepView(viewModel: viewModel)
-                        case .profilePhoto:
-                            ProfilePhotoStepView(viewModel: viewModel)
                         case .relationshipGoals:
                             RelationshipGoalsStepView(viewModel: viewModel)
                         case .relationshipDate:
                             RelationshipDateStepView(viewModel: viewModel)
                         case .relationshipImprovement:
                             RelationshipImprovementStepView(viewModel: viewModel)
+                        case .authentication:
+                            AuthenticationStepView(viewModel: viewModel)
+                        case .displayName:
+                            DisplayNameStepView(viewModel: viewModel)
+                        case .profilePhoto:
+                            ProfilePhotoStepView(viewModel: viewModel)
+                        case .completion:
+                            CompletionStepView(viewModel: viewModel)
+                        case .loading:
+                            LoadingStepView(viewModel: viewModel)
                         case .partnerCode:
                             PartnerCodeStepView(viewModel: viewModel)
                         case .fitnessIntro:
@@ -44,14 +50,8 @@ struct OnboardingView: View {
                             DailyQuestionNotificationStepView(viewModel: viewModel)
                         case .categoriesPreview:
                             CategoriesPreviewStepView(viewModel: viewModel)
-                        case .completion:
-                            CompletionStepView(viewModel: viewModel)
-                        case .loading:
-                            LoadingStepView(viewModel: viewModel)
                         case .subscription:
                             SubscriptionStepView(viewModel: viewModel)
-                        case .authentication:
-                            AuthenticationStepView(viewModel: viewModel)
                         }
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -66,11 +66,11 @@ struct OnboardingView: View {
             
             // Vérification immédiate sans délai pour éviter les hangs
             if appState.isOnboardingInProgress {
-                print("🔥🔥🔥 OnboardingView: ONBOARDING DEJA EN COURS - RECUPERER ETAPE")
+                print("🔥 OnboardingView: ONBOARDING DEJA EN COURS - RECUPERER ETAPE")
                 if let user = appState.currentUser, user.onboardingInProgress {
-                    print("🔥🔥🔥 OnboardingView: USER PARTIEL DETECTE - ALLER A SUBSCRIPTION")
-                    print("🔥🔥🔥 OnboardingView: - Nom: \(user.name)")
-                    print("🔥🔥🔥 OnboardingView: - Objectifs: \(user.relationshipGoals)")
+                    print("🔥 OnboardingView: USER PARTIEL DETECTE - ALLER A SUBSCRIPTION")
+                    print("🔥 OnboardingView: - Nom: \(user.name)")
+                    print("🔥 OnboardingView: - Objectifs: \(user.relationshipGoals)")
                     
                     // Restaurer les données dans le viewModel
                     viewModel.userName = user.name
@@ -84,7 +84,7 @@ struct OnboardingView: View {
                     
                     // Aller directement à l'étape d'abonnement
                     viewModel.currentStep = .subscription
-                    print("🔥🔥🔥 OnboardingView: ETAPE FORCEE A SUBSCRIPTION")
+                    print("🔥 OnboardingView: ETAPE FORCEE A SUBSCRIPTION")
                 }
             }
         }

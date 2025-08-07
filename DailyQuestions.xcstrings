@@ -1780,6 +1780,533 @@
           }
         }
       }
+    },
+    "daily_question_21" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there something I take lightly that you take very seriously?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Est-ce qu'il y a quelque chose que je prends à la légère et que toi tu prends très au sérieux ?"
+          }
+        }
+      }
+    },
+    "daily_question_22" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you feel like I take enough time to truly get to know you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Est-ce que tu sens que je prends assez de temps pour réellement te connaître ?"
+          }
+        }
+      }
+    },
+    "daily_question_23" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "When we argue, what could I change in the way I react?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quand on se dispute, qu'est-ce que je pourrais changer dans ma manière de réagir ?"
+          }
+        }
+      }
+    },
+    "daily_question_24" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If our love went through a tough time, what would you want me to never forget to do for you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si notre amour devait traverser une période difficile, qu'aimerais-tu que je n'oublie jamais de faire pour toi ?"
+          }
+        }
+      }
+    },
+    "daily_question_25" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What version of yourself would you like to become by my side, and how can I support you on that path?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle version de toi-même aimerais-tu devenir à mes côtés, et comment puis-je t'accompagner dans ce chemin ?"
+          }
+        }
+      }
+    },
+    "daily_question_26" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there an emotional need I don't see enough in you, but that you wish I understood better?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il un besoin émotionnel que je ne vois pas assez chez toi, mais que tu aimerais que je comprenne mieux ?"
+          }
+        }
+      }
+    },
+    "daily_question_27" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What would you like me to notice more about you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu aimerais que je remarque davantage chez toi ?"
+          }
+        }
+      }
+    },
+    "daily_question_28" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do I do well that you'd like me to keep doing, even years from now?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que je fais bien et que tu aimerais que je continue, même dans les années à venir ?"
+          }
+        }
+      }
+    },
+    "daily_question_29" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "When you doubt yourself, what can I do or say to help you feel confident again?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quand tu doutes de toi, que puis-je faire ou dire pour t'aider à retrouver confiance ?"
+          }
+        }
+      }
+    },
+    "daily_question_30" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there a simple gesture I could do more often that would have a big impact on your well-being?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il un geste simple que je pourrais faire plus souvent, mais qui aurait un grand impact sur ton bien-être ?"
+          }
+        }
+      }
+    },
+    "daily_question_31" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there a side of you you'd like to show me more, but don't fully dare to yet?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y a-t-il une facette de toi que tu aimerais me montrer davantage, mais que tu n'oses pas encore ?"
+          }
+        }
+      }
+    },
+    "daily_question_32" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If I had to improve in one area of our relationship, which one would you choose first?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si je devais faire un peu mieux dans un domaine de notre couple, lequel choisirais-tu en priorité ?"
+          }
+        }
+      }
+    },
+    "daily_question_33" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What would you like me to see in you, even when you don't have the strength to show it?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'aimerais-tu que je voie en toi, même quand tu n'as pas la force de le montrer ?"
+          }
+        }
+      }
+    },
+    "daily_question_34" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there a way you'd like me to talk to you more often?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Est-ce qu'il y a une manière de te parler que tu aimerais que j'adopte plus souvent ?"
+          }
+        }
+      }
+    },
+    "daily_question_35" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "When I make a decision, do you feel like I consider you enough in it?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quand je prends une décision, est-ce que tu sens que je pense assez à toi dedans ?"
+          }
+        }
+      }
+    },
+    "daily_question_36" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What would you like me to do more spontaneously, without you having to ask?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu aimerais que je fasse plus spontanément, sans que tu aies besoin de me le demander ?"
+          }
+        }
+      }
+    },
+    "daily_question_37" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you feel like I put in enough effort to build something solid with you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Est-ce que tu sens que je fais assez d'efforts pour construire quelque chose de solide avec toi ?"
+          }
+        }
+      }
+    },
+    "daily_question_38" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "When we disagree, do you still feel respected in your opinions?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quand on est pas d'accord, est-ce que tu sens que je te respecte quand même dans ce que tu penses ?"
+          }
+        }
+      }
+    },
+    "daily_question_39" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you miss the most when we don't see each other for a few days?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce qui te manque le plus quand on ne se voit pas pendant quelques jours ?"
+          }
+        }
+      }
+    },
+    "daily_question_40" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think we laugh enough together?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Est-ce que tu trouves qu'on rigole assez ensemble ?"
+          }
+        }
+      }
+    },
+    "daily_question_41" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you feel like we're moving in the same direction together?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Est-ce que tu sens qu'on avance ensemble dans la même direction ?"
+          }
+        }
+      }
+    },
+    "daily_question_42" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "When you're having a bad day, do you feel like I respond the way you need me to?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quand tu as une mauvaise journée, est-ce que tu trouves que je réagis comme tu en aurais besoin ?"
+          }
+        }
+      }
+    },
+    "daily_question_43" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there a topic we avoid too often that we should actually talk about?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Est-ce qu'il y a un sujet qu'on évite trop souvent alors qu'on devrait en parler ?"
+          }
+        }
+      }
+    },
+    "daily_question_44" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you feel like I consider your opinion when I make important decisions?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Est-ce que tu sens que je tiens compte de ton avis quand je prends des décisions importantes ?"
+          }
+        }
+      }
+    },
+    "daily_question_45" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "When we disagree, do you feel like I genuinely try to understand you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quand on n'est pas d'accord, est-ce que tu sens que je cherche vraiment à te comprendre ?"
+          }
+        }
+      }
+    },
+    "daily_question_46" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you feel like we're building a relationship that can truly last? If yes, why? If not, what should we change?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Est-ce que tu sens qu'on construit une relation qui peut durer dans le temps ? Si oui, pourquoi ? et si non, que devrions-nous changer ?"
+          }
+        }
+      }
+    },
+    "daily_question_47" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do we enjoy simple things together enough?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Est-ce qu'on prend assez de plaisir à faire des choses simples ensemble ?"
+          }
+        }
+      }
+    },
+    "daily_question_48" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is there something I do well, but not often enough?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Est-ce qu'il y a une chose que je fais bien, mais que je ne fais pas assez souvent ?"
+          }
+        }
+      }
+    },
+    "daily_question_49" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you think I adapt well enough to the way you function?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Est-ce que tu trouves que je m'adapte assez à ta manière de fonctionner ?"
+          }
+        }
+      }
+    },
+    "daily_question_50" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you feel like I truly listen when you talk about things that matter to you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Est-ce que tu sens que je t'écoute avec attention quand tu parles de choses qui te tiennent à cœur ?"
+          }
+        }
+      }
+    },
+    "daily_question_51" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What would you like me to value more in you?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qu'est-ce que tu aimerais que je valorise davantage chez toi ?"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

@@ -210,7 +210,7 @@ struct TabContainerView: View {
             case .questions(let category):
                 QuestionListView(category: category)
                     .onAppear {
-                        print("🔥🔥🔥 TABCONTAINER SHEET: Affichage QuestionListView pour \(category.title)")
+                        print("🔥 TabContainer SHEET: Affichage QuestionListView pour \(category.title)")
                     }
                 
             case .subscription:
@@ -320,7 +320,7 @@ struct TabContainerView: View {
         .onReceive(NotificationCenter.default.publisher(for: .freemiumManagerChanged)) { _ in
             if let freemiumManager = appState.freemiumManager {
                 if freemiumManager.showingSubscription && activeSheet != .subscription {
-                    print("🔥🔥🔥 TABCONTAINER ONRECEIVE: AFFICHAGE SUBSCRIPTION DEMANDE")
+                    print("🔥 TabContainer ONRECEIVE: AFFICHAGE SUBSCRIPTION DEMANDE")
                     activeSheet = .subscription
                 }
             }

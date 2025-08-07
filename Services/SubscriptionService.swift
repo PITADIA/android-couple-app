@@ -24,7 +24,15 @@ class SubscriptionService: NSObject, ObservableObject, SKPaymentTransactionObser
     override init() {
         super.init()
         SKPaymentQueue.default().add(self)
-        loadProducts()
+        
+        // Nettoyer les transactions en attente au démarrage pour éviter les blocages
+        clearPendingTransactions()
+        
+        // Charger les produits après un court délai pour éviter les conflits
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.loadProducts()
+        }
+        
         checkSubscriptionStatus()
     }
     
@@ -33,54 +41,70 @@ class SubscriptionService: NSObject, ObservableObject, SKPaymentTransactionObser
     }
     
     func loadProducts() {
-        print("🔥 SubscriptionService: Début du chargement des produits")
-        NSLog("🔥 SubscriptionService: Début du chargement des produits")
-        print("🔥 SubscriptionService: Identifiants de produits: \(productIdentifiers)")
-        NSLog("🔥 SubscriptionService: Identifiants de produits: \(productIdentifiers)")
+        print("🔥 SubscriptionService: Chargement des produits...")
         
         let request = SKProductsRequest(productIdentifiers: productIdentifiers)
         request.delegate = self
         request.start()
         
-        print("🔥 SubscriptionService: Requête de produits lancée")
-        NSLog("🔥 SubscriptionService: Requête de produits lancée")
+        // Timeout de sécurité
+        DispatchQueue.main.asyncAfter(deadline: .now() + 30) { [weak self] in
+            if self?.products.isEmpty == true {
+                print("⚠️ SubscriptionService: Timeout - Aucune réponse d'Apple après 30s")
+                DispatchQueue.main.async {
+                    self?.errorMessage = "Impossible de charger les offres d'abonnement. Vérifiez votre connexion et réessayez."
+                }
+            }
+        }
     }
     
     func purchase(product: SKProduct) {
-        print("🔥 SubscriptionService: Tentative d'achat du produit: \(product.productIdentifier)")
-        NSLog("🔥 SubscriptionService: Tentative d'achat du produit: \(product.productIdentifier)")
+        print("🔥 SubscriptionService: Tentative d'achat: \(product.productIdentifier)")
         
         guard SKPaymentQueue.canMakePayments() else {
-            print("🔥 SubscriptionService: ERREUR - Les achats ne sont pas autorisés sur cet appareil")
-            NSLog("🔥 SubscriptionService: ERREUR - Les achats ne sont pas autorisés sur cet appareil")
+            print("❌ SubscriptionService: Achats non autorisés sur cet appareil")
             errorMessage = "Les achats ne sont pas autorisés sur cet appareil"
             return
         }
         
-        print("🔥 SubscriptionService: Les achats sont autorisés, création du paiement...")
-        NSLog("🔥 SubscriptionService: Les achats sont autorisés, création du paiement...")
-        
         isLoading = true
         let payment = SKPayment(product: product)
-        
-        print("🔥 SubscriptionService: Ajout du paiement à la queue StoreKit...")
-        NSLog("🔥 SubscriptionService: Ajout du paiement à la queue StoreKit...")
-        
         SKPaymentQueue.default().add(payment)
-        
-        print("🔥 SubscriptionService: Paiement ajouté à la queue - en attente de la réponse Apple")
-        NSLog("🔥 SubscriptionService: Paiement ajouté à la queue - en attente de la réponse Apple")
     }
     
     func restorePurchases() {
-        print("🔥 SubscriptionService: Début de la restauration des achats")
-        NSLog("🔥 SubscriptionService: Début de la restauration des achats")
+        print("🔥 SubscriptionService: Restauration des achats...")
         
         isLoading = true
         SKPaymentQueue.default().restoreCompletedTransactions()
+    }
+    
+    /// Nettoyer les transactions en attente qui peuvent bloquer les achats
+    private func clearPendingTransactions() {
+        let pendingTransactions = SKPaymentQueue.default().transactions
         
-        print("🔥 SubscriptionService: Commande de restauration envoyée")
-        NSLog("🔥 SubscriptionService: Commande de restauration envoyée")
+        guard !pendingTransactions.isEmpty else { return }
+        
+        print("🔧 SubscriptionService: Nettoyage de \(pendingTransactions.count) transaction(s) en attente")
+        
+        for transaction in pendingTransactions {
+            switch transaction.transactionState {
+            case .purchased, .restored, .failed:
+                SKPaymentQueue.default().finishTransaction(transaction)
+            case .purchasing:
+                print("⚠️ SubscriptionService: Transaction en cours d'achat détectée")
+            case .deferred:
+                print("⚠️ SubscriptionService: Transaction différée détectée")
+            @unknown default:
+                break
+            }
+        }
+        
+        // Réinitialiser l'état de chargement
+        DispatchQueue.main.async {
+            self.isLoading = false
+            self.errorMessage = nil
+        }
     }
     
     private func checkSubscriptionStatus() {
@@ -119,6 +143,24 @@ class SubscriptionService: NSObject, ObservableObject, SKPaymentTransactionObser
             case .purchasing:
                 print("🔥 SubscriptionService: Transaction PURCHASING - Sheet Apple devrait apparaître")
                 NSLog("🔥 SubscriptionService: Transaction PURCHASING - Sheet Apple devrait apparaître")
+                // S'assurer que le loading reste actif pendant l'achat
+                DispatchQueue.main.async {
+                    self.isLoading = true
+                }
+                
+                // Timeout de sécurité pour éviter le chargement infini
+                DispatchQueue.main.asyncAfter(deadline: .now() + 60) { [weak self] in
+                    // Vérifier si la transaction est toujours en cours après 60s
+                    if let currentTransaction = queue.transactions.first(where: { $0.transactionIdentifier == transaction.transactionIdentifier }),
+                       currentTransaction.transactionState == .purchasing {
+                        print("⚠️ SubscriptionService: Transaction bloquée en état purchasing depuis 60s")
+                        NSLog("⚠️ SubscriptionService: Transaction bloquée en état purchasing depuis 60s")
+                        DispatchQueue.main.async {
+                            self?.isLoading = false
+                            self?.errorMessage = "La transaction a pris trop de temps. Veuillez réessayer."
+                        }
+                    }
+                }
             @unknown default:
                 print("🔥 SubscriptionService: Transaction état inconnu: \(transaction.transactionState.rawValue)")
                 NSLog("🔥 SubscriptionService: Transaction état inconnu: \(transaction.transactionState.rawValue)")
@@ -359,43 +401,24 @@ class SubscriptionService: NSObject, ObservableObject, SKPaymentTransactionObser
 
 extension SubscriptionService: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        print("🔥 SubscriptionService: ✅ Réponse des produits reçue")
-        NSLog("🔥 SubscriptionService: ✅ Réponse des produits reçue")
-        print("🔥 SubscriptionService: Produits valides: \(response.products.count)")
-        NSLog("🔥 SubscriptionService: Produits valides: \(response.products.count)")
-        print("🔥 SubscriptionService: Identifiants invalides: \(response.invalidProductIdentifiers.count)")
-        NSLog("🔥 SubscriptionService: Identifiants invalides: \(response.invalidProductIdentifiers.count)")
+        print("🔥 SubscriptionService: Réponse reçue - \(response.products.count) produits valides")
         
         if !response.invalidProductIdentifiers.isEmpty {
-            print("🔥 SubscriptionService: ❌ Identifiants invalides: \(response.invalidProductIdentifiers)")
-            NSLog("🔥 SubscriptionService: ❌ Identifiants invalides: \(response.invalidProductIdentifiers)")
+            print("❌ SubscriptionService: Identifiants invalides: \(response.invalidProductIdentifiers)")
         }
         
         DispatchQueue.main.async {
             self.products = response.products
-            print("🔥 SubscriptionService: ✅ Produits chargés: \(self.products.count)")
-            NSLog("🔥 SubscriptionService: ✅ Produits chargés: \(self.products.count)")
-            
-            for product in self.products {
-                print("🔥 SubscriptionService: Produit: \(product.localizedTitle) - \(product.priceLocale.currencySymbol ?? "")\(product.price)")
-                NSLog("🔥 SubscriptionService: Produit: \(product.localizedTitle) - \(product.priceLocale.currencySymbol ?? "")\(product.price)")
-                print("🔥 SubscriptionService: ID: \(product.productIdentifier)")
-                NSLog("🔥 SubscriptionService: ID: \(product.productIdentifier)")
-                print("🔥 SubscriptionService: Description: \(product.localizedDescription)")
-                NSLog("🔥 SubscriptionService: Description: \(product.localizedDescription)")
-            }
             
             if self.products.isEmpty {
-                print("🔥 SubscriptionService: ❌ AUCUN PRODUIT CHARGÉ - Vérifiez App Store Connect")
-                NSLog("🔥 SubscriptionService: ❌ AUCUN PRODUIT CHARGÉ - Vérifiez App Store Connect")
+                print("❌ SubscriptionService: Aucun produit chargé")
                 self.errorMessage = "Aucun produit disponible. Vérifiez votre connexion."
             }
         }
     }
     
     func request(_ request: SKRequest, didFailWithError error: Error) {
-        print("🔥 SubscriptionService: ❌ Erreur lors du chargement des produits: \(error.localizedDescription)")
-        NSLog("🔥 SubscriptionService: ❌ Erreur lors du chargement des produits: \(error.localizedDescription)")
+        print("❌ SubscriptionService: Erreur chargement produits: \(error.localizedDescription)")
         
         DispatchQueue.main.async {
             self.errorMessage = "Erreur lors du chargement des produits: \(error.localizedDescription)"

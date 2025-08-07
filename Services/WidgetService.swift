@@ -185,9 +185,20 @@ class WidgetService: ObservableObject {
                 }
                 
                 // Créer un AppUser minimal avec les données du partenaire (sans localisation pour l'instant)
+                // Utiliser localisation pour nom partenaire par défaut
+                let locale = Locale.current
+                let languageCode: String
+                if #available(iOS 16.0, *) {
+                    languageCode = locale.language.languageCode?.identifier ?? "en"
+                } else {
+                    languageCode = locale.languageCode ?? "en"
+                }
+                
+                let defaultPartnerName = languageCode.hasPrefix("fr") ? "Partenaire" : "Partner"
+                
                 let partnerUser = AppUser(
                     id: partnerId,
-                    name: partnerInfo["name"] as? String ?? "Partenaire",
+                    name: partnerInfo["name"] as? String ?? defaultPartnerName,
                     birthDate: Date(), // Date par défaut
                     relationshipGoals: [],
                     relationshipDuration: .notInRelationship,
@@ -496,7 +507,7 @@ class WidgetService: ObservableObject {
         // Sauvegarder les noms d'utilisateurs si disponibles
         if let currentUser = currentUser {
             sharedDefaults.set(currentUser.name, forKey: "widget_user_name")
-            print("✅ WidgetService: Nom utilisateur sauvegardé: \(currentUser.name)")
+            print("✅ WidgetService: Nom utilisateur sauvegardé")
             
             // NOUVEAU: Sauvegarder le statut d'abonnement pour les widgets
             sharedDefaults.set(currentUser.isSubscribed, forKey: "widget_has_subscription")

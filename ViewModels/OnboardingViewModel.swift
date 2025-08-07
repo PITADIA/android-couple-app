@@ -5,14 +5,14 @@ import FirebaseAnalytics
 
 class OnboardingViewModel: ObservableObject {
     enum OnboardingStep: CaseIterable {
-        case name
-        case profilePhoto
         case relationshipGoals
         case relationshipDate
         case relationshipImprovement
+        case authentication
+        case displayName
+        case profilePhoto
         case completion
         case loading
-        case authentication
         case partnerCode
         case fitnessIntro
         case fitnessIntro2
@@ -21,7 +21,7 @@ class OnboardingViewModel: ObservableObject {
         case subscription
     }
     
-    @Published var currentStep: OnboardingStep = .name
+    @Published var currentStep: OnboardingStep = .relationshipGoals
     @Published var userName: String = ""
     @Published var birthDate: Date = Date()
     @Published var selectedGoals: [String] = []
@@ -121,24 +121,24 @@ class OnboardingViewModel: ObservableObject {
         print("📊 Événement Firebase: onboarding_etape - étape: \(stepNumber)")
         
         switch currentStep {
-        case .name:
-            if !userName.isEmpty {
-                currentStep = .profilePhoto
-            }
-        case .profilePhoto:
-            currentStep = .relationshipGoals
         case .relationshipGoals:
             currentStep = .relationshipDate
         case .relationshipDate:
             currentStep = .relationshipImprovement
         case .relationshipImprovement:
+            currentStep = .authentication
+        case .authentication:
+            currentStep = .displayName
+        case .displayName:
+            // Toujours permettre de passer à profilePhoto, même avec nom vide (auto-génération)
+            print("🔥 OnboardingViewModel: displayName -> profilePhoto (nom: '\(userName)')")
+            currentStep = .profilePhoto
+        case .profilePhoto:
             currentStep = .completion
         case .completion:
             currentStep = .loading
             completeDataCollection()
         case .loading:
-            currentStep = .authentication
-        case .authentication:
             if shouldSkipSubscription {
                 finalizeOnboarding(withSubscription: true)
             } else {
@@ -163,26 +163,30 @@ class OnboardingViewModel: ObservableObject {
     func previousStep() {
         print("🔥 OnboardingViewModel: Retour à l'étape précédente depuis \(currentStep)")
         switch currentStep {
-        case .name:
+        case .relationshipGoals:
             print("🔥 OnboardingViewModel: Déjà à la première étape")
             break
-        case .profilePhoto:
-            currentStep = .name
-        case .relationshipGoals:
-            currentStep = .profilePhoto
         case .relationshipDate:
             currentStep = .relationshipGoals
         case .relationshipImprovement:
             currentStep = .relationshipDate
-        case .completion:
+        case .authentication:
             currentStep = .relationshipImprovement
+        case .displayName:
+            currentStep = .authentication
+        case .profilePhoto:
+            // Retour conditionnel : si on a un nom Apple, retourner à auth, sinon à displayName
+            if let appleDisplayName = AuthenticationService.shared.appleUserDisplayName, !appleDisplayName.isEmpty {
+                currentStep = .authentication
+            } else {
+                currentStep = .displayName
+            }
+        case .completion:
+            currentStep = .profilePhoto
         case .loading:
             currentStep = .completion
-        case .authentication:
-            print("🔥 OnboardingViewModel: Impossible de revenir en arrière depuis l'authentification")
-            break
         case .partnerCode:
-            currentStep = .authentication
+            currentStep = .loading
         case .categoriesPreview:
             currentStep = .partnerCode
         case .fitnessIntro:
@@ -214,19 +218,47 @@ class OnboardingViewModel: ObservableObject {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             print("🔥 OnboardingViewModel: Fin du chargement simulé")
             self.isLoading = false
-            self.currentStep = .authentication
+            self.currentStep = .partnerCode
         }
     }
     
     func completeAuthentication() {
-        print("🔥 OnboardingViewModel: Authentification terminée, passage à l'abonnement")
-        currentStep = .partnerCode
+        print("🔥 OnboardingViewModel: Authentification terminée")
+        print("🔥 OnboardingViewModel: Attente du traitement Apple Name...")
+        
+        // NOUVEAU: Attendre que AuthenticationService ait fini de traiter appleUserDisplayName
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.checkAppleNameAndProceed()
+        }
+    }
+    
+    private func checkAppleNameAndProceed() {
+        print("🔥 OnboardingViewModel: Vérification nom Apple...")
+        
+        let appleDisplayName = AuthenticationService.shared.appleUserDisplayName
+        print("🔥 OnboardingViewModel: appleUserDisplayName = '\(appleDisplayName ?? "nil")'")
+        print("🔥 OnboardingViewModel: isEmpty = \(appleDisplayName?.isEmpty ?? true)")
+        
+        // Vérifier si Apple a fourni un nom d'affichage
+        if let appleDisplayName = appleDisplayName, !appleDisplayName.isEmpty {
+            print("🔥 OnboardingViewModel: ✅ Nom Apple fourni (\(appleDisplayName)) - Skip DisplayNameStepView")
+            // Utiliser le nom fourni par Apple
+            self.userName = appleDisplayName
+            print("🔥 OnboardingViewModel: userName défini à: '\(self.userName)'")
+            // Passer directement à la photo de profil
+            print("🔥 OnboardingViewModel: Navigation vers .profilePhoto")
+            self.currentStep = .profilePhoto
+        } else {
+            print("🔥 OnboardingViewModel: ❌ Aucun nom Apple fourni - Afficher DisplayNameStepView")
+            // Pas de nom fourni, demander un pseudonyme
+            print("🔥 OnboardingViewModel: Navigation vers .displayName")
+            self.currentStep = .displayName
+        }
     }
     
     func skipSubscription() {
         print("🔥 OnboardingViewModel: Abonnement ignoré, finalisation")
-        print("🔥🔥🔥 ONBOARDING SKIP: ABONNEMENT IGNORE - FINALISATION SANS PREMIUM")
-        NSLog("🔥🔥🔥 ONBOARDING SKIP: ABONNEMENT IGNORE")
+        print("⏭️ Onboarding sans abonnement")
         finalizeOnboarding(withSubscription: false)
     }
     
@@ -239,17 +271,13 @@ class OnboardingViewModel: ObservableObject {
         
         isCompletingSubscription = true
         print("🔥 OnboardingViewModel: Abonnement terminé, finalisation")
-        print("🔥🔥🔥 ONBOARDING COMPLETE: ABONNEMENT TERMINE - FINALISATION AVEC PREMIUM")
-        NSLog("🔥🔥🔥 ONBOARDING COMPLETE: ABONNEMENT TERMINE")
+        print("✅ Onboarding avec abonnement")
         finalizeOnboarding(withSubscription: true)
     }
     
     func finalizeOnboarding(withSubscription isSubscribed: Bool = false) {
         print("🔥 OnboardingViewModel: Finalisation complète de l'onboarding")
-        print("🔥🔥🔥 ONBOARDING FINALIZE: DEBUT FINALISATION")
-        print("🔥🔥🔥 ONBOARDING FINALIZE: - Avec abonnement: \(isSubscribed)")
-        NSLog("🔥🔥🔥 ONBOARDING: FINALISATION COMPLETE - VOUS DEVRIEZ VOIR CECI!")
-        NSLog("🔥🔥🔥 ONBOARDING: AVEC ABONNEMENT: %@", isSubscribed ? "OUI" : "NON")
+        print("🎯 Finalisation onboarding")
         
         // NOUVEAU: Désactiver l'overlay de connexion partenaire de l'onboarding
         // car MainView va prendre le relais
@@ -258,6 +286,7 @@ class OnboardingViewModel: ObservableObject {
             shouldShowPartnerConnectionSuccess = false
         }
         
+        #if DEBUG
         print("🔥 OnboardingViewModel: Création de l'utilisateur avec:")
         print("  - Nom: \(userName)")
         print("  - Objectifs: \(selectedGoals)")
@@ -265,9 +294,11 @@ class OnboardingViewModel: ObservableObject {
         print("  - Amélioration souhaitée: \(selectedImprovements)")
         print("  - Mode de questions: \(questionMode)")
         print("  - Abonné: \(isSubscribed)")
+        #else
+        print("🔥 OnboardingViewModel: Création de l'utilisateur terminée")
+        #endif
         
-        NSLog("🔥🔥🔥 ONBOARDING: CREATION USER - NOM: %@", userName)
-        NSLog("🔥🔥🔥 ONBOARDING: CREATION USER - ABONNE: %@", isSubscribed ? "OUI" : "NON")
+        print("👤 Création utilisateur final")
         
         // Convertir le tableau d'améliorations en string pour Firebase
         let improvementString = selectedImprovements.joined(separator: ", ")
@@ -289,9 +320,7 @@ class OnboardingViewModel: ObservableObject {
                 
                 if success, let user = user {
                     print("✅ OnboardingViewModel: Finalisation réussie avec préservation données partenaire")
-                    print("🔥🔥🔥 ONBOARDING FINALIZE: USER CREE - ABONNE: \(user.isSubscribed)")
-                    print("🔥🔥🔥 ONBOARDING FINALIZE: PARTNER ID: \(user.partnerId ?? "none")")
-                    NSLog("🔥🔥🔥 ONBOARDING: USER CREE - ID: %@", user.id)
+                            print("✅ Utilisateur créé avec succès")
                     
                     guard let appState = self.appState else {
                         print("❌ OnboardingViewModel: AppState manquant!")
@@ -300,8 +329,7 @@ class OnboardingViewModel: ObservableObject {
                     }
                     
                     print("🔥 OnboardingViewModel: Mise à jour de l'utilisateur via AppState")
-                    print("🔥🔥🔥 ONBOARDING FINALIZE: SAUVEGARDE FINALE AVEC ONBOARDING TERMINE")
-                    NSLog("🔥🔥🔥 ONBOARDING: MISE A JOUR VIA APPSTATE")
+                            print("📱 Mise à jour interface")
                     
                     // 📊 Analytics: Onboarding terminé
                     Analytics.logEvent("onboarding_complete", parameters: [:])
@@ -310,13 +338,12 @@ class OnboardingViewModel: ObservableObject {
                     // NOUVEAU: Marquer la fin du processus d'onboarding dans Firebase et AppState
                     FirebaseService.shared.completeOnboardingProcess()
                     appState.isOnboardingInProgress = false
-                    print("🔥🔥🔥 ONBOARDING FINALIZE: FLAGS ONBOARDING REINITIALISES")
+                    // Réinitialisation des flags d'onboarding
                     
                     appState.updateUser(user)
                     appState.completeOnboarding()
                     print("🔥 OnboardingViewModel: Onboarding terminé")
-                    print("🔥🔥🔥 ONBOARDING FINALIZE: ONBOARDING MARQUE COMME TERMINE")
-                    NSLog("🔥🔥🔥 ONBOARDING: TERMINE AVEC SUCCES!")
+                            print("🎉 Onboarding terminé avec succès")
                 } else {
                     print("❌ OnboardingViewModel: Erreur lors de la finalisation")
                     NSLog("❌❌❌ ONBOARDING: ERREUR FINALISATION!")

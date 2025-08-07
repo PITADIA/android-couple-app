@@ -6,7 +6,7 @@ import FirebaseAnalytics
 class FreemiumManager: ObservableObject {
     @Published var showingSubscription = false {
         didSet {
-            print("🔥🔥🔥 FREEMIUM MANAGER: showingSubscription changé vers \(showingSubscription)")
+            print("🔥 Freemium MANAGER: showingSubscription changé vers \(showingSubscription)")
             // Envoyer une notification pour synchroniser avec MainView
             NotificationCenter.default.post(name: .freemiumManagerChanged, object: nil)
         }
@@ -77,14 +77,14 @@ class FreemiumManager: ObservableObject {
     
     /// NOUVEAU: Gère le tap sur une question avec vérification freemium
     func handleQuestionAccess(at index: Int, in category: QuestionCategory, onSuccess: @escaping () -> Void) {
-        print("🔥🔥🔥 FREEMIUM QUESTION: Tentative accès question \(index + 1) dans \(category.title)")
+        print("🔥 Freemium QUESTION: Tentative accès question \(index + 1) dans \(category.title)")
         
         if canAccessQuestion(at: index, in: category) {
-            print("🔥🔥🔥 FREEMIUM QUESTION: Accès autorisé")
+            print("🔥 Freemium QUESTION: Accès autorisé")
             onSuccess()
         } else {
-            print("🔥🔥🔥 FREEMIUM QUESTION: Accès bloqué - Affichage paywall")
-            print("🔥🔥🔥 FREEMIUM QUESTION: Limite atteinte (64 questions) pour \(category.title)")
+            print("🔥 Freemium QUESTION: Accès bloqué - Affichage paywall")
+            print("🔥 Freemium QUESTION: Limite atteinte (64 questions) pour \(category.title)")
             
             blockedCategoryAttempt = category
             showingSubscription = true
@@ -103,33 +103,33 @@ class FreemiumManager: ObservableObject {
     /// Gère le tap sur une catégorie avec la logique freemium
     func handleCategoryTap(_ category: QuestionCategory, onSuccess: @escaping () -> Void) {
         print("🔥 FreemiumManager: Tap sur catégorie: \(category.title)")
-        print("🔥🔥🔥 FREEMIUM TAP: DEBUT GESTION TAP")
-        print("🔥🔥🔥 FREEMIUM TAP: - Catégorie: \(category.title)")
-        print("🔥🔥🔥 FREEMIUM TAP: - isPremium: \(category.isPremium)")
-        print("🔥🔥🔥 FREEMIUM TAP: - Utilisateur abonné: \(appState?.currentUser?.isSubscribed ?? false)")
-        print("🔥🔥🔥 FREEMIUM TAP: - showingSubscription AVANT: \(showingSubscription)")
+        print("🔥 Freemium TAP: DEBUT GESTION TAP")
+        print("🔥 Freemium TAP: - Catégorie: \(category.title)")
+        print("🔥 Freemium TAP: - isPremium: \(category.isPremium)")
+        print("🔥 Freemium TAP: - Utilisateur abonné: \(appState?.currentUser?.isSubscribed ?? false)")
+        print("🔥 Freemium TAP: - showingSubscription AVANT: \(showingSubscription)")
         
         // Vérifier si l'utilisateur est abonné
         let isSubscribed = appState?.currentUser?.isSubscribed ?? false
         
         // Si l'utilisateur est abonné, accès illimité
         if isSubscribed {
-            print("🔥🔥🔥 FREEMIUM TAP: UTILISATEUR ABONNE - ACCES ILLIMITE")
+            print("🔥 Freemium TAP: UTILISATEUR ABONNE - ACCES ILLIMITE")
             onSuccess()
             return
         }
         
         // Si c'est une catégorie premium et l'utilisateur n'est pas abonné
         if category.isPremium {
-            print("🔥🔥🔥 FREEMIUM TAP: CATEGORIE PREMIUM - ACCES BLOQUE")
+            print("🔥 Freemium TAP: CATEGORIE PREMIUM - ACCES BLOQUE")
             print("🔥 FreemiumManager: Accès bloqué à \(category.title) - affichage subscription")
             
             blockedCategoryAttempt = category
-            print("🔥🔥🔥 FREEMIUM TAP: - blockedCategoryAttempt défini: \(category.title)")
+            print("🔥 Freemium TAP: - blockedCategoryAttempt défini: \(category.title)")
             
-            print("🔥🔥🔥 FREEMIUM TAP: - MISE A JOUR showingSubscription vers TRUE")
+            print("🔥 Freemium TAP: - MISE A JOUR showingSubscription vers TRUE")
             showingSubscription = true
-            print("🔥🔥🔥 FREEMIUM TAP: - showingSubscription APRES: \(showingSubscription)")
+            print("🔥 Freemium TAP: - showingSubscription APRES: \(showingSubscription)")
             
             // 📊 Analytics: Paywall affiché
             Analytics.logEvent("paywall_affiche", parameters: [
@@ -139,19 +139,19 @@ class FreemiumManager: ObservableObject {
             
             // Notifier le changement
             NotificationCenter.default.post(name: .freemiumManagerChanged, object: nil)
-            print("🔥🔥🔥 FREEMIUM TAP: - NOTIFICATION ENVOYEE")
+            print("🔥 Freemium TAP: - NOTIFICATION ENVOYEE")
             
             // Analytics - track blocked category
             trackCategoryBlocked(category)
-            print("🔥🔥🔥 FREEMIUM TAP: FIN GESTION TAP BLOQUE")
+            print("🔥 Freemium TAP: FIN GESTION TAP BLOQUE")
             return
         }
         
         // Pour les catégories gratuites (comme "En couple"), permettre l'accès
         // La limitation se fera au niveau des questions dans QuestionListView
-        print("🔥🔥🔥 FREEMIUM TAP: CATEGORIE GRATUITE - ACCES AUTORISE")
+        print("🔥 Freemium TAP: CATEGORIE GRATUITE - ACCES AUTORISE")
         print("🔥 FreemiumManager: Accès autorisé à \(category.title)")
-        print("🔥🔥🔥 FREEMIUM TAP: ACCES AUTORISE - EXECUTION CALLBACK")
+        print("🔥 Freemium TAP: ACCES AUTORISE - EXECUTION CALLBACK")
         onSuccess()
     }
     
@@ -180,10 +180,10 @@ class FreemiumManager: ObservableObject {
         let isSubscribed = appState?.currentUser?.isSubscribed ?? false
         let isBlocked = category.isPremium && !isSubscribed
         
-        print("🔥🔥🔥 FREEMIUM BLOCKED CHECK: Catégorie: \(category.title)")
-        print("🔥🔥🔥 FREEMIUM BLOCKED CHECK: - isPremium: \(category.isPremium)")
-        print("🔥🔥🔥 FREEMIUM BLOCKED CHECK: - isSubscribed: \(isSubscribed)")
-        print("🔥🔥🔥 FREEMIUM BLOCKED CHECK: - isBlocked: \(isBlocked)")
+        print("🔥 Freemium BLOCKED CHECK: Catégorie: \(category.title)")
+        print("🔥 Freemium BLOCKED CHECK: - isPremium: \(category.isPremium)")
+        print("🔥 Freemium BLOCKED CHECK: - isSubscribed: \(isSubscribed)")
+        print("🔥 Freemium BLOCKED CHECK: - isBlocked: \(isBlocked)")
         
         return isBlocked
     }
@@ -195,55 +195,38 @@ class FreemiumManager: ObservableObject {
     
     /// NOUVEAU: Retourne le nombre maximum de questions gratuites pour une catégorie
     func getMaxFreeQuestions(for category: QuestionCategory) -> Int {
-        print("🔍 DEBUG getMaxFreeQuestions: ===== DEBUT =====")
-        let currentLanguage: String
-        if #available(iOS 16.0, *) {
-            currentLanguage = Locale.current.language.languageCode?.identifier ?? "unknown"
-        } else {
-            currentLanguage = Locale.current.languageCode ?? "unknown"
-        }
-        print("🔍 DEBUG getMaxFreeQuestions: - Langue: \(currentLanguage)")
-        print("🔍 DEBUG getMaxFreeQuestions: - Catégorie ID: \(category.id)")
-        print("🔍 DEBUG getMaxFreeQuestions: - Catégorie titre: \(category.title)")
-        print("🔍 DEBUG getMaxFreeQuestions: - isPremium: \(category.isPremium)")
-        
         if appState?.currentUser?.isSubscribed ?? false {
-            print("🔍 DEBUG getMaxFreeQuestions: - Utilisateur abonné -> Int.max")
             return Int.max // Illimité pour les abonnés
         }
         
         if category.isPremium {
-            print("🔍 DEBUG getMaxFreeQuestions: - Catégorie premium -> 0")
             return 0 // Aucune question gratuite pour les catégories premium
         }
         
         if category.id == "en-couple" {
-            let result = freePacksLimit * questionsPerPack // 64 questions
-            print("🔍 DEBUG getMaxFreeQuestions: - Catégorie en-couple -> \(result) questions")
-            return result
+            return freePacksLimit * questionsPerPack // 64 questions
         }
         
-        print("🔍 DEBUG getMaxFreeQuestions: - Autre catégorie gratuite -> Int.max")
         return Int.max // Autres catégories gratuites (si elles existent)
     }
     
     /// Ferme la vue de subscription
     func dismissSubscription() {
         print("🔥 FreemiumManager: Fermeture de la vue subscription")
-        print("🔥🔥🔥 FREEMIUM DISMISS: DEBUT FERMETURE")
-        print("🔥🔥🔥 FREEMIUM DISMISS: - showingSubscription AVANT: \(showingSubscription)")
-        print("🔥🔥🔥 FREEMIUM DISMISS: - blockedCategoryAttempt AVANT: \(blockedCategoryAttempt?.title ?? "nil")")
+        print("🔥 Freemium DISMISS: DEBUT FERMETURE")
+        print("🔥 Freemium DISMISS: - showingSubscription AVANT: \(showingSubscription)")
+        print("🔥 Freemium DISMISS: - blockedCategoryAttempt AVANT: \(blockedCategoryAttempt?.title ?? "nil")")
         
         showingSubscription = false
         blockedCategoryAttempt = nil
         
         // Notifier le changement
         NotificationCenter.default.post(name: .freemiumManagerChanged, object: nil)
-        print("🔥🔥🔥 FREEMIUM DISMISS: - NOTIFICATION ENVOYEE")
+        print("🔥 Freemium DISMISS: - NOTIFICATION ENVOYEE")
         
-        print("🔥🔥🔥 FREEMIUM DISMISS: - showingSubscription APRES: \(showingSubscription)")
-        print("🔥🔥🔥 FREEMIUM DISMISS: - blockedCategoryAttempt APRES: \(blockedCategoryAttempt?.title ?? "nil")")
-        print("🔥🔥🔥 FREEMIUM DISMISS: FIN FERMETURE")
+        print("🔥 Freemium DISMISS: - showingSubscription APRES: \(showingSubscription)")
+        print("🔥 Freemium DISMISS: - blockedCategoryAttempt APRES: \(blockedCategoryAttempt?.title ?? "nil")")
+        print("🔥 Freemium DISMISS: FIN FERMETURE")
     }
     
     /// NOUVEAU: Gère l'accès au widget de distance avec la logique freemium

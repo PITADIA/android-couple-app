@@ -444,6 +444,142 @@
     "current_user" : {
       "comment" : "Current user title"
     },
+    "daily_challenge_subtitle_multiple_days_remaining" : {
+      "comment" : "Daily challenge subtitle with multiple days remaining",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✨ %d free days remaining • Then subscription required"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✨ %d jours gratuits restants • Ensuite, abonnement requis"
+          }
+        }
+      }
+    },
+    "daily_challenge_subtitle_one_day_remaining" : {
+      "comment" : "Daily challenge subtitle with one day remaining",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✨ 1 free day remaining • Then subscription required"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✨ 1 jour gratuit restant • Ensuite, abonnement requis"
+          }
+        }
+      }
+    },
+    "daily_challenge_subtitle_subscribed" : {
+      "comment" : "Daily challenge subtitle for subscribed users",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "💎 Included with your Premium subscription"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "💎 Inclus avec votre abonnement Premium"
+          }
+        }
+      }
+    },
+    "daily_challenge_subtitle_subscription_required" : {
+      "comment" : "Daily challenge subtitle when subscription is required",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔒 Subscription required to continue"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔒 Abonnement requis pour continuer"
+          }
+        }
+      }
+    },
+    "daily_question_subtitle_multiple_days_remaining" : {
+      "comment" : "Daily question subtitle with multiple days remaining",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✨ %d free days remaining • Then subscription required"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✨ %d jours gratuits restants • Ensuite, abonnement requis"
+          }
+        }
+      }
+    },
+    "daily_question_subtitle_one_day_remaining" : {
+      "comment" : "Daily question subtitle with one day remaining",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✨ 1 free day remaining • Then subscription required"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✨ 1 jour gratuit restant • Ensuite, abonnement requis"
+          }
+        }
+      }
+    },
+    "daily_question_subtitle_subscribed" : {
+      "comment" : "Daily question subtitle for subscribed users",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "💎 Included with your Premium subscription"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "💎 Inclus avec votre abonnement Premium"
+          }
+        }
+      }
+    },
+    "daily_question_subtitle_subscription_required" : {
+      "comment" : "Daily question subtitle when subscription is required",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔒 Subscription required to continue"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔒 Abonnement requis pour continuer"
+          }
+        }
+      }
+    },
     "daily_question_title" : {
 
     },
@@ -519,9 +655,6 @@
     "Love2Love" : {
 
     },
-    "missing_auth_token" : {
-      "comment" : "Missing auth token error"
-    },
     "Mois" : {
 
     },
@@ -578,6 +711,40 @@
     },
     "premium_access_label" : {
       "comment" : "Premium access label"
+    },
+    "premium_categories_not_subscribed" : {
+      "comment" : "Premium categories subtitle for non-subscribed users",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Subscribe to unlock access to the collections below ✨"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abonnez-vous pour débloquer l'accès aux collections ci-dessous ✨"
+          }
+        }
+      }
+    },
+    "premium_categories_subscribed" : {
+      "comment" : "Premium categories subtitle for subscribed users",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All collections below are available to you with your subscription 💎"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les collections ci-dessous vous sont disponibles grâce à votre abonnement 💎"
+          }
+        }
+      }
     },
     "product_loading_error" : {
       "comment" : "Product loading error"
@@ -642,9 +809,6 @@
     "test_actions" : {
       "comment" : "Test actions title"
     },
-    "token_serialization_error" : {
-      "comment" : "Token serialization error"
-    },
     "Type: %@" : {
 
     },
@@ -683,176 +847,6 @@
     },
     "Y" : {
 
-    },
-    "premium_categories_subscribed" : {
-      "comment" : "Premium categories subtitle for subscribed users",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "All collections below are available to you with your subscription 💎"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Les collections ci-dessous vous sont disponibles grâce à votre abonnement 💎"
-          }
-        }
-      }
-    },
-    "premium_categories_not_subscribed" : {
-      "comment" : "Premium categories subtitle for non-subscribed users",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Subscribe to unlock access to the collections below ✨"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Abonnez-vous pour débloquer l'accès aux collections ci-dessous ✨"
-          }
-        }
-      }
-    },
-    "daily_question_subtitle_subscribed" : {
-      "comment" : "Daily question subtitle for subscribed users",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "💎 Included with your Premium subscription"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "💎 Inclus avec votre abonnement Premium"
-          }
-        }
-      }
-    },
-    "daily_question_subtitle_one_day_remaining" : {
-      "comment" : "Daily question subtitle with one day remaining",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "✨ 1 free day remaining • Then subscription required"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "✨ 1 jour gratuit restant • Ensuite, abonnement requis"
-          }
-        }
-      }
-    },
-    "daily_question_subtitle_multiple_days_remaining" : {
-      "comment" : "Daily question subtitle with multiple days remaining",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "✨ %d free days remaining • Then subscription required"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "✨ %d jours gratuits restants • Ensuite, abonnement requis"
-          }
-        }
-      }
-    },
-    "daily_question_subtitle_subscription_required" : {
-      "comment" : "Daily question subtitle when subscription is required",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🔒 Subscription required to continue"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🔒 Abonnement requis pour continuer"
-          }
-        }
-      }
-    },
-    "daily_challenge_subtitle_subscribed" : {
-      "comment" : "Daily challenge subtitle for subscribed users",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "💎 Included with your Premium subscription"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "💎 Inclus avec votre abonnement Premium"
-          }
-        }
-      }
-    },
-    "daily_challenge_subtitle_one_day_remaining" : {
-      "comment" : "Daily challenge subtitle with one day remaining",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "✨ 1 free day remaining • Then subscription required"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "✨ 1 jour gratuit restant • Ensuite, abonnement requis"
-          }
-        }
-      }
-    },
-    "daily_challenge_subtitle_multiple_days_remaining" : {
-      "comment" : "Daily challenge subtitle with multiple days remaining",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "✨ %d free days remaining • Then subscription required"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "✨ %d jours gratuits restants • Ensuite, abonnement requis"
-          }
-        }
-      }
-    },
-    "daily_challenge_subtitle_subscription_required" : {
-      "comment" : "Daily challenge subtitle when subscription is required",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🔒 Subscription required to continue"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🔒 Abonnement requis pour continuer"
-          }
-        }
-      }
     }
   },
   "version" : "1.0"

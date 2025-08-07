@@ -44,12 +44,16 @@ class FirebaseService: NSObject, ObservableObject {
                     print("🔥 FirebaseService: Providers: \(firebaseUser.providerData.map { $0.providerID })")
                     
                     // Vérifier que c'est bien une authentification Apple
+                            // Vérification des providers d'authentification
+                    
                     if firebaseUser.providerData.contains(where: { $0.providerID == "apple.com" }) {
                         print("🔥 FirebaseService: Authentification Apple confirmée")
                         self?.loadUserData(uid: firebaseUser.uid)
                     } else {
-                        print("❌ FirebaseService: Authentification non-Apple détectée, déconnexion")
-                        self?.signOut()
+                        print("⚠️ FirebaseService: Provider non-Apple détecté, mais maintien de la session")
+                        print("⚠️ Fournisseur non-Apple détecté")
+                        // Charger les données quand même pour éviter les déconnexions en boucle
+                        self?.loadUserData(uid: firebaseUser.uid)
                     }
                 } else {
                     print("🔥 FirebaseService: Aucun utilisateur Firebase")
@@ -62,13 +66,13 @@ class FirebaseService: NSObject, ObservableObject {
     
     // NOUVEAU: Méthode pour marquer le début de l'onboarding
     func startOnboardingProcess() {
-        print("🔥🔥🔥 FIREBASE: DEBUT PROCESSUS ONBOARDING - BLOCAGE REDIRECTIONS AUTO")
+        print("📝 Début processus onboarding")
         isOnboardingInProgress = true
     }
     
     // NOUVEAU: Méthode pour marquer la fin de l'onboarding
     func completeOnboardingProcess() {
-        print("🔥🔥🔥 FIREBASE: FIN PROCESSUS ONBOARDING - AUTORISATION REDIRECTIONS")
+        print("✅ Fin processus onboarding")
         isOnboardingInProgress = false
     }
     
@@ -94,7 +98,7 @@ class FirebaseService: NSObject, ObservableObject {
         }
         
         let uid = firebaseUser.uid
-        print("🔥 FirebaseService: Récupération données existantes pour UID: \(uid)")
+        print("🔥 FirebaseService: Récupération données existantes")
         
         // Récupérer les données existantes pour préserver les infos partenaire
         db.collection("users").document(uid).getDocument { [weak self] document, error in
@@ -148,11 +152,7 @@ class FirebaseService: NSObject, ObservableObject {
                     currentLocation: currentLocation ?? self.parseUserLocation(from: existingData["currentLocation"] as? [String: Any])
                 )
                 
-                print("🔥🔥🔥 FIREBASE FINALIZE: Utilisateur final créé avec:")
-                print("🔥🔥🔥 FIREBASE FINALIZE: - Nom: \(finalUser.name)")
-                print("🔥🔥🔥 FIREBASE FINALIZE: - Partner ID: \(finalUser.partnerId ?? "none")")
-                print("🔥🔥🔥 FIREBASE FINALIZE: - Connected Partner ID: \(finalUser.connectedPartnerId ?? "none")")
-                print("🔥🔥🔥 FIREBASE FINALIZE: - Abonné: \(finalUser.isSubscribed)")
+                        print("✅ Utilisateur finalisé")
                 
                 // Sauvegarder l'utilisateur final
                 self.saveUserData(finalUser)
@@ -225,8 +225,7 @@ class FirebaseService: NSObject, ObservableObject {
     // MARK: - User Data Management
     
     func savePartialUserData(_ user: AppUser) {
-        print("🔥🔥🔥 FIREBASE PARTIAL: SAUVEGARDE PARTIELLE PENDANT ONBOARDING")
-        print("🔥🔥🔥 FIREBASE PARTIAL: - Utilisateur: \(user.name)")
+        print("💾 Sauvegarde données partielles")
         
         guard let firebaseUser = Auth.auth().currentUser else {
             print("❌ FirebaseService: Aucun utilisateur Firebase connecté")
@@ -294,8 +293,7 @@ class FirebaseService: NSObject, ObservableObject {
             ]
         }
         
-        print("🔥🔥🔥 FIREBASE PARTIAL: DONNEES PARTIELLES A SAUVEGARDER:")
-        print("🔥🔥🔥 FIREBASE PARTIAL: - onboardingInProgress: true (en cours)")
+                    // Données partielles - onboarding en cours
         
         db.collection("users").document(firebaseUser.uid).setData(userData, merge: true) { [weak self] error in
             DispatchQueue.main.async {
@@ -304,7 +302,7 @@ class FirebaseService: NSObject, ObservableObject {
                     self?.errorMessage = "Erreur de sauvegarde: \(error.localizedDescription)"
                 } else {
                     print("✅ FirebaseService: Données partielles sauvegardées avec succès")
-                    print("🔥🔥🔥 FIREBASE PARTIAL: SAUVEGARDE PARTIELLE REUSSIE - ONBOARDING EN COURS")
+                    print("✅ Données partielles sauvegardées")
                     // Ne pas mettre à jour currentUser ni isAuthenticated ici
                     // pour éviter de déclencher la redirection
                 }
@@ -314,7 +312,7 @@ class FirebaseService: NSObject, ObservableObject {
     
     func saveUserData(_ user: AppUser) {
         print("🔥 FirebaseService: Tentative de sauvegarde des données utilisateur")
-        print("🔥 FirebaseService: Nom: \(user.name)")
+        print("🔥 FirebaseService: Création utilisateur")
         
         guard let firebaseUser = Auth.auth().currentUser else {
             print("❌ FirebaseService: Aucun utilisateur Firebase connecté")
@@ -322,7 +320,7 @@ class FirebaseService: NSObject, ObservableObject {
             return
         }
         
-        print("🔥 FirebaseService: Utilisateur Firebase UID: \(firebaseUser.uid)")
+        print("🔥 FirebaseService: Utilisateur Firebase connecté")
         
         // Vérifier que c'est bien Apple ID
         guard firebaseUser.providerData.contains(where: { $0.providerID == "apple.com" }) else {
@@ -331,9 +329,7 @@ class FirebaseService: NSObject, ObservableObject {
             return
         }
         
-        print("🔥🔥🔥 FIREBASE SAVE: DEBUT DE LA SAUVEGARDE")
-        print("🔥🔥🔥 FIREBASE SAVE: - Utilisateur: \(user.name)")
-        print("🔥🔥🔥 FIREBASE SAVE: - Abonné: \(user.isSubscribed)")
+        print("💾 Sauvegarde utilisateur")
         isLoading = true
         
         var userData: [String: Any] = [
@@ -392,9 +388,7 @@ class FirebaseService: NSObject, ObservableObject {
         let deviceLanguage = Locale.current.language.languageCode?.identifier ?? "fr"
         userData["languageCode"] = user.languageCode ?? deviceLanguage
         
-        print("🔥🔥🔥 FIREBASE SAVE: DONNEES A SAUVEGARDER:")
-        print("🔥🔥🔥 FIREBASE SAVE: - onboardingInProgress: false (terminé)")
-        print("🔥🔥🔥 FIREBASE SAVE: - languageCode: \(userData["languageCode"] as? String ?? "non défini")")
+                    // Finalisation des données utilisateur
         
         db.collection("users").document(firebaseUser.uid).setData(userData, merge: true) { [weak self] error in
             DispatchQueue.main.async {
@@ -405,7 +399,7 @@ class FirebaseService: NSObject, ObservableObject {
                     self?.errorMessage = "Erreur de sauvegarde: \(error.localizedDescription)"
                 } else {
                     print("✅ FirebaseService: Données utilisateur sauvegardées avec succès")
-                    print("🔥🔥🔥 FIREBASE SAVE: SAUVEGARDE REUSSIE - ONBOARDING TERMINE")
+                    print("✅ Données utilisateur sauvegardées")
                     self?.currentUser = user
                     self?.isAuthenticated = true
                     print("✅ Données utilisateur sauvegardées avec Apple ID")
@@ -415,7 +409,7 @@ class FirebaseService: NSObject, ObservableObject {
     }
     
     func loadUserData(uid: String) {
-        print("🔥 FirebaseService: Chargement des données pour UID: \(uid)")
+        print("🔥 FirebaseService: Chargement des données utilisateur")
         isLoading = true
         
         db.collection("users").document(uid).getDocument { [weak self] document, error in
@@ -495,13 +489,7 @@ class FirebaseService: NSObject, ObservableObject {
                 // NOUVEAU: Vérifier si l'utilisateur est en cours d'onboarding
                 let onboardingInProgress = data["onboardingInProgress"] as? Bool ?? false
                 
-                print("🔥🔥🔥 FIREBASE LOAD: VERIFICATION DES DONNEES")
-                print("🔥🔥🔥 FIREBASE LOAD: - Nom: '\(name)' (vide: \(name.isEmpty))")
-                print("🔥🔥🔥 FIREBASE LOAD: - Objectifs: \(relationshipGoals.count) éléments")
-                print("🔥🔥🔥 FIREBASE LOAD: - Durée relation: '\(relationshipDuration)' (vide: \(relationshipDuration.isEmpty))")
-                print("🔥🔥🔥 FIREBASE LOAD: - Date naissance: \(birthDate != nil ? "présente" : "manquante")")
-                print("🔥🔥🔥 FIREBASE LOAD: - Onboarding en cours: \(onboardingInProgress)")
-                print("🔥🔥🔥 FIREBASE LOAD: - Processus onboarding actif: \(self?.isOnboardingInProgress ?? false)")
+                        // Vérification des données utilisateur
                 
                 // Vérifier si les données d'onboarding sont complètes
                 let isOnboardingComplete = !name.isEmpty && 
@@ -511,14 +499,12 @@ class FirebaseService: NSObject, ObservableObject {
                                          !onboardingInProgress  // NOUVEAU: Ne pas marquer comme terminé si onboarding en cours
                 
                 if !isOnboardingComplete {
-                    print("🔥🔥🔥 FIREBASE LOAD: ONBOARDING INCOMPLET")
+                    print("🔥 Firebase: Onboarding incomplet")
                     if onboardingInProgress {
-                        print("🔥🔥🔥 FIREBASE LOAD: - Raison: Onboarding en cours de progression")
                         
                         // MODIFICATION: Vérifier si l'onboarding est déjà actif dans l'app
                         if self?.isOnboardingInProgress == true {
-                            print("🔥🔥🔥 FIREBASE LOAD: ONBOARDING DEJA ACTIF - IGNORER CETTE REDIRECTION")
-                            print("🔥🔥🔥 FIREBASE LOAD: Ne pas créer d'utilisateur partiel pour éviter la réinitialisation")
+                            print("🔥 Firebase: Onboarding déjà actif - ignorer redirection")
                             return
                         }
                         
@@ -526,11 +512,10 @@ class FirebaseService: NSObject, ObservableObject {
                         if let createdAt = data["createdAt"] as? Timestamp {
                             let timeSinceCreation = Date().timeIntervalSince(createdAt.dateValue())
                             if timeSinceCreation < 300 { // Moins de 5 minutes
-                                print("🔥🔥🔥 FIREBASE LOAD: UTILISATEUR RECENT - CONTINUER ONBOARDING SANS REDIRECTION")
-                                print("🔥🔥🔥 FIREBASE LOAD: Créé il y a \(timeSinceCreation) secondes")
+                                print("🔥 Firebase: Utilisateur récent - continuer onboarding")
                                 
                                 // MODIFICATION: Ne créer un utilisateur partiel QUE si ce n'est pas déjà en cours
-                                print("🔥🔥🔥 FIREBASE LOAD: VERIFICATION - Processus onboarding actif: \(self?.isOnboardingInProgress ?? false)")
+                                print("🔥 Firebase: VERIFICATION - Processus onboarding actif: \(self?.isOnboardingInProgress ?? false)")
                                 
                                 if self?.isOnboardingInProgress != true {
                                     // Créer un utilisateur partiel pour permettre la continuation de l'onboarding
@@ -556,17 +541,17 @@ class FirebaseService: NSObject, ObservableObject {
                                     // Marquer comme authentifié avec l'utilisateur partiel
                                     self?.isAuthenticated = true
                                     self?.currentUser = partialUser
-                                    print("🔥🔥🔥 FIREBASE LOAD: UTILISATEUR PARTIEL CREE POUR CONTINUER ONBOARDING")
+                                    print("🔥 Firebase: UTILISATEUR PARTIEL CREE POUR CONTINUER ONBOARDING")
                                 } else {
-                                    print("🔥🔥🔥 FIREBASE LOAD: ONBOARDING DEJA EN COURS - SKIP CREATION USER PARTIEL")
+                                    print("🔥 Firebase: ONBOARDING DEJA EN COURS - SKIP CREATION USER PARTIEL")
                                 }
                                 return
                             }
                         }
                         
-                        print("🔥🔥🔥 FIREBASE LOAD: REDIRECTION VERS ONBOARDING")
+                        print("🔥 Firebase: REDIRECTION VERS ONBOARDING")
                     } else {
-                        print("🔥🔥🔥 FIREBASE LOAD: - Raison: Données incomplètes")
+                        print("🔥 Firebase: - Raison: Données incomplètes")
                     }
                     
                     // Données incomplètes, utilisateur doit compléter l'onboarding
@@ -575,7 +560,7 @@ class FirebaseService: NSObject, ObservableObject {
                     return
                 }
                 
-                print("🔥🔥🔥 FIREBASE LOAD: DONNEES COMPLETES - CHARGEMENT UTILISATEUR")
+                print("🔥 Firebase: DONNEES COMPLETES - CHARGEMENT UTILISATEUR")
                 
                 // Convertir les données Firestore en User
                 let user = AppUser(
@@ -609,7 +594,7 @@ class FirebaseService: NSObject, ObservableObject {
                 )
                 
                 print("✅ FirebaseService: Utilisateur chargé avec données complètes: \(user.name)")
-                print("🔥🔥🔥 FIREBASE LOAD: - Onboarding en cours: \(user.onboardingInProgress)")
+                print("🔥 Firebase: - Onboarding en cours: \(user.onboardingInProgress)")
                 self?.currentUser = user
                 self?.isAuthenticated = true
                 print("✅ Données utilisateur chargées depuis Apple ID")
@@ -619,7 +604,7 @@ class FirebaseService: NSObject, ObservableObject {
                 // NOUVEAU: Démarrer l'écoute des changements d'abonnement
                 self?.startListeningForSubscriptionChanges()
                 
-                print("🔥🔥🔥 FIREBASE LOAD: UTILISATEUR CHARGE ET AUTHENTIFIE")
+                print("🔥 Firebase: UTILISATEUR CHARGE ET AUTHENTIFIE")
             }
         }
     }
@@ -678,6 +663,10 @@ class FirebaseService: NSObject, ObservableObject {
     // MARK: - Sign Out
     
     func signOut() {
+        print("🔥 Firebase signout: signOut() appelé")
+        print("🔥 Firebase signout: Thread: \(Thread.current)")
+        print("🔥 Firebase signout: Stack trace: \(Thread.callStackSymbols.prefix(5))")
+        
         do {
             try Auth.auth().signOut()
             print("🔥 FirebaseService: Déconnexion réussie")
@@ -783,22 +772,22 @@ class FirebaseService: NSObject, ObservableObject {
     
     func getUserData(userId: String, completion: @escaping (AppUser?) -> Void) {
         print("🔥 FirebaseService: Récupération données utilisateur: \(userId)")
-        print("🔥🔥🔥 FIRESTORE ACCESS: Tentative d'accès aux données de: \(userId)")
+        print("🔥 Firestore: Tentative d'accès aux données de: \(userId)")
         
         // Vérifier si c'est l'utilisateur actuel (accès direct autorisé)
         if let currentUser = Auth.auth().currentUser, currentUser.uid == userId {
-            print("🔥🔥🔥 FIRESTORE ACCESS: Accès direct autorisé (utilisateur actuel)")
+            print("🔥 Firestore: Accès direct autorisé (utilisateur actuel)")
             getUserDataDirect(userId: userId, completion: completion)
             return
         }
         
         // Pour les partenaires, utiliser la Cloud Function sécurisée
-        print("🔥🔥🔥 FIRESTORE ACCESS: Accès partenaire - Utilisation Cloud Function")
+        print("🔥 Firestore: Accès partenaire - Utilisation Cloud Function")
         getPartnerInfoViaCloudFunction(partnerId: userId, completion: completion)
     }
     
     private func getUserDataDirect(userId: String, completion: @escaping (AppUser?) -> Void) {
-        print("🔥🔥🔥 DIRECT ACCESS: Accès direct aux données de: \(userId)")
+        print("🔥 Accès direct: Accès direct aux données de: \(userId)")
         
         db.collection("users").document(userId).getDocument { document, error in
             if let error = error {
@@ -851,8 +840,8 @@ class FirebaseService: NSObject, ObservableObject {
     }
     
     private func getPartnerInfoViaCloudFunction(partnerId: String, completion: @escaping (AppUser?) -> Void) {
-        print("🔥🔥🔥 CLOUD FUNCTION: Récupération données partenaire via fonction sécurisée")
-        print("🔥🔥🔥 CLOUD FUNCTION: partnerId: \(partnerId)")
+        print("🔥 Cloud Function: Récupération données partenaire via fonction sécurisée")
+        print("🔥 Cloud Function: partnerId: \(partnerId)")
         
         let functions = Functions.functions()
         
@@ -983,7 +972,7 @@ class FirebaseService: NSObject, ObservableObject {
             return
         }
         
-        print("🔥 FirebaseService: Mise à jour nom utilisateur: \(newName)")
+        print("🔥 FirebaseService: Mise à jour nom utilisateur")
         
         db.collection("users").document(firebaseUser.uid).updateData([
             "name": newName,

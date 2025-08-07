@@ -705,7 +705,16 @@ struct ProfileCircleForWidget: View {
     
     private var userInitial: String {
         guard let userName = userName, !userName.isEmpty else {
-            return "?"
+            // Utiliser localisation pour fallback
+            let locale = Locale.current
+            let languageCode: String
+            if #available(iOS 16.0, *) {
+                languageCode = locale.language.languageCode?.identifier ?? "en"
+            } else {
+                languageCode = locale.languageCode ?? "en"
+            }
+            
+            return languageCode.hasPrefix("fr") ? "U" : "U"
         }
         return String(userName.prefix(1)).uppercased()
     }
@@ -1077,7 +1086,16 @@ struct MapDistanceRectangularWidgetView: View {
     // Fonction helper pour obtenir l'initiale de l'utilisateur
     private func getUserInitial(from userName: String?) -> String {
         guard let userName = userName, !userName.isEmpty else {
-            return "?"
+            // Utiliser localisation pour fallback
+            let locale = Locale.current
+            let languageCode: String
+            if #available(iOS 16.0, *) {
+                languageCode = locale.language.languageCode?.identifier ?? "en"
+            } else {
+                languageCode = locale.languageCode ?? "en"
+            }
+            
+            return languageCode.hasPrefix("fr") ? "U" : "U"
         }
         return String(userName.prefix(1)).uppercased()
     }

@@ -3827,6 +3827,41 @@
         }
       }
     },
+    "display_name_step_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose your nickname"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisissez votre pseudo"
+          }
+        }
+      }
+    },
+
+    "display_name_placeholder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How your partner will see you"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visible par votre partenaire"
+          }
+        }
+      }
+    },
     "network_error" : {
       "extractionState" : "manual",
       "localizations" : {

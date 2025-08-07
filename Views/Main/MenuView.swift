@@ -405,7 +405,20 @@ struct MenuView: View {
     }
     
     private var currentUserName: String {
-        appState.currentUser?.name ?? "Non défini"
+        let name = appState.currentUser?.name ?? ""
+        if name.isEmpty || name == "Non défini" {
+            // Utiliser localisation pour fallback
+            let locale = Locale.current
+            let languageCode: String
+            if #available(iOS 16.0, *) {
+                languageCode = locale.language.languageCode?.identifier ?? "en"
+            } else {
+                languageCode = locale.languageCode ?? "en"
+            }
+            
+            return languageCode.hasPrefix("fr") ? "Utilisateur" : "User"
+        }
+        return name
     }
     
     private var currentRelationshipStart: String {

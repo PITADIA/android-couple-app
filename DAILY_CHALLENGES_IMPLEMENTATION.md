@@ -554,7 +554,9 @@ Text("daily_challenges_title".localized)
 Text("challenge_completed_button".localized)
 ```
 
-#### **24 Défis Inclus**
+#### **53 Défis Inclus**
+
+**Défis 1-24 (Originaux):**
 
 1. Message reconnaissance
 2. Appel "je t'aime"
@@ -580,6 +582,8 @@ Text("challenge_completed_button".localized)
 22. Photo lieu de rêve ensemble
 23. Compliment physique + intérieur
 24. Question "Comment sais-tu que je t'aime ?"
+
+**Défis 25-53 (Nouveaux):** 25. Dessiner animal représentant partenaire 26. Décrire en 3 hashtags 27. Créer règle d'or du couple 28. Nom de duo créatif 29. Potion magique d'amour 30. Vocal narrateur animalier 31. Journée parfaite enfants 6 ans 32. Premier baiser nostalgique 33. Fruit symbolique du partenaire 34. Règle ordre mondial amoureux 35. Surnoms personnages animés 36. Couleur représentative 37. Journée imaginaire heure par heure 38. Phrase anti-dispute 39. Note vocale miroir 40. Cœur dessiné avec prénom 41. Surnom unique journée 42. Visio fixation 2 minutes 43. Question surprise immédiate 44. Phrase enfance manquée 45. "Je t'aime" langue étrangère 46. 2 sujets jamais abordés 47. 3 choses admirées 48. Souvenir fictif partagé 49. Règle créative journée 50. Photo lieu de rêve 51. Imitation vocale tendre 52. Bio Tinder mutuelle 53. Message main non-dominante
 
 ---
 

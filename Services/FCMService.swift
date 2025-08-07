@@ -45,7 +45,7 @@ class FCMService: NSObject, ObservableObject {
         // Observer les changements d'authentification
         _ = Auth.auth().addStateDidChangeListener { [weak self] _, user in
             if let user = user {
-                print("🔔 FCMService: Utilisateur connecté: \(user.uid)")
+                print("🔔 FCMService: Utilisateur connecté")
                 self?.currentUserId = user.uid
                 
                 // Attendre un peu que l'APNS token soit disponible

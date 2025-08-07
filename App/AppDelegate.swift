@@ -1,6 +1,7 @@
 import UIKit
 import StoreKit
 import FirebaseCore
+import FirebaseAuth
 import FirebaseMessaging
 import UserNotifications
 import FirebaseAppCheck
@@ -32,6 +33,11 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         FirebaseApp.configure()
         print("🔥 AppDelegate: Firebase configuré avec succès")
         
+        // 🚀 IMPORTANT: Initialiser Firebase Auth persistence immédiatement
+        print("🔥 AppDelegate: Initialisation Firebase Auth persistence...")
+        initializeFirebaseAuthPersistence()
+        print("🔥 AppDelegate: Firebase Auth persistence initialisée")
+        
         // Configuration RevenueCat (tracking uniquement)
         print("💰 AppDelegate: Configuration RevenueCat...")
         configureRevenueCat()
@@ -47,6 +53,28 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         
         print("🔥 AppDelegate: Initialisation terminée")
         return true
+    }
+    
+    // MARK: - Firebase Auth Persistence
+    
+    private func initializeFirebaseAuthPersistence() {
+        // Forcer Firebase Auth à vérifier immédiatement la session persistée
+
+        
+        // Configurer le listener global dès le démarrage
+        _ = Auth.auth().addStateDidChangeListener { auth, user in
+            DispatchQueue.main.async {
+                if let user = user {
+                    print("🔄 Session Firebase restaurée")
+                    NotificationCenter.default.post(name: NSNotification.Name("FirebaseSessionRestored"), object: user)
+                } else {
+                    NotificationCenter.default.post(name: NSNotification.Name("FirebaseSessionEmpty"), object: nil)
+                }
+            }
+        }
+        
+        // Vérifier immédiatement l'état
+
     }
     
     private func configureRevenueCat() {
@@ -78,21 +106,22 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         print("🛡️ AppCheck: Initialisation du provider...")
         
         #if DEBUG
-        // En debug : utiliser le debug provider
-        let providerFactory = AppCheckDebugProviderFactory()
-        print("🛡️ AppCheck: Mode DEBUG - Provider de développement")
+        // En debug : DÉSACTIVER complètement App Check pour éviter les erreurs 403
+        print("🛡️ AppCheck: Mode DEBUG - DÉSACTIVÉ COMPLÈTEMENT")
+        print("🛡️ AppCheck: ⚠️ App Check désactivé en développement pour éviter les erreurs 403")
+        AppCheck.setAppCheckProviderFactory(nil)
+        // Pas besoin d'instancier AppCheck en debug
         #else
         // En production : utiliser App Attest (déjà configuré dans Firebase)
         let providerFactory = CoupleAppCheckProviderFactory()
         print("🛡️ AppCheck: Mode PRODUCTION - App Attest provider")
-        #endif
-        
         AppCheck.setAppCheckProviderFactory(providerFactory)
         
         // 🎯 IMPORTANT: Mode surveillance uniquement - aucun blocage
         print("🛡️ AppCheck: ⚠️ Mode SURVEILLANCE activé - aucun service ne sera bloqué")
         print("🛡️ AppCheck: Les métriques seront collectées pendant 2-3 semaines")
         print("🛡️ AppCheck: Activation de l'enforcement sera faite manuellement plus tard")
+        #endif
     }
     
     func applicationWillTerminate(_ application: UIApplication) {

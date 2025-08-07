@@ -49,9 +49,8 @@ struct HomeContentView: View {
                             // Utiliser toutes les catégories - le FreemiumManager gère l'accès
                             ForEach(Array(QuestionCategory.categories.enumerated()), id: \.element.id) { index, category in
                                 CategoryListCardView(category: category) {
-                                    print("🔥🔥🔥 HOMECONTENTVIEW CALLBACK: Catégorie sélectionnée: \(category.title)")
+                                    print("🔥 HomeContentView: Catégorie sélectionnée: \(category.title)")
                                     activeSheet = .questions(category)
-                                    print("🔥🔥🔥 HOMECONTENTVIEW CALLBACK: activeSheet = .questions(\(category.title))")
                                 }
                                 .environmentObject(appState)
                                 

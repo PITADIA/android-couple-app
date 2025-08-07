@@ -69,9 +69,7 @@ class FavoritesService: ObservableObject {
     
     @MainActor
     func setCurrentUser(_ userId: String, name: String) {
-        print("🔥 FavoritesService: Configuration utilisateur: \(userId)")
-        print("🔥 FavoritesService: Nom utilisateur: \(name)")
-        print("🔥 FavoritesService: UID Firebase actuel: \(Auth.auth().currentUser?.uid ?? "nil")")
+        print("🔥 FavoritesService: Configuration utilisateur")
         print("🔥 FavoritesService: UID correspond: \(userId == Auth.auth().currentUser?.uid)")
         
         self.currentUserId = userId
@@ -109,11 +107,11 @@ class FavoritesService: ObservableObject {
         // Écouter les favoris partagés
         print("🔥 FavoritesService: Configuration query Firestore...")
         print("🔥 FavoritesService: - Collection: favoriteQuestions")
-        print("🔥 FavoritesService: - Filtre: partnerIds array-contains \(currentUserId)")
+        print("🔥 FavoritesService: - Filtre: partnerIds array-contains [USER_ID]")
         
         // Utiliser Firebase UID pour le listener
         let firebaseUID = Auth.auth().currentUser?.uid ?? currentUserId
-        print("🔥 FavoritesService: - Listener avec Firebase UID: \(firebaseUID)")
+        print("🔥 FavoritesService: - Listener avec Firebase UID configuré")
         
         listener = db.collection("favoriteQuestions")
             .whereField("partnerIds", arrayContains: firebaseUID)

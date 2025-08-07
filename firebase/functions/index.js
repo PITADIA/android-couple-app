@@ -3439,6 +3439,37 @@ function getTotalQuestionsCount() {
     "daily_question_18",
     "daily_question_19",
     "daily_question_20",
+    "daily_question_21",
+    "daily_question_22",
+    "daily_question_23",
+    "daily_question_24",
+    "daily_question_25",
+    "daily_question_26",
+    "daily_question_27",
+    "daily_question_28",
+    "daily_question_29",
+    "daily_question_30",
+    "daily_question_31",
+    "daily_question_32",
+    "daily_question_33",
+    "daily_question_34",
+    "daily_question_35",
+    "daily_question_36",
+    "daily_question_37",
+    "daily_question_38",
+    "daily_question_39",
+    "daily_question_40",
+    "daily_question_41",
+    "daily_question_42",
+    "daily_question_43",
+    "daily_question_44",
+    "daily_question_45",
+    "daily_question_46",
+    "daily_question_47",
+    "daily_question_48",
+    "daily_question_49",
+    "daily_question_50",
+    "daily_question_51",
   ];
 
   console.log(
@@ -5260,7 +5291,7 @@ async function generateDailyQuestionForCouple(coupleId, timezone) {
  * Retourne le nombre total de défis disponibles
  */
 function getTotalChallengesCount() {
-  return 24; // 24 défis traduits dans DailyChallenges.xcstrings
+  return 53; 
 }
 
 /**

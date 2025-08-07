@@ -10,8 +10,11 @@ class AuthenticationService: NSObject, ObservableObject {
     @Published var isLoading: Bool = false
     @Published var errorMessage: String?
     @Published var currentUser: FirebaseAuth.User?
+    @Published var appleUserDisplayName: String?
     
     private var currentNonce: String?
+    private var isSignInInProgress = false
+    private var lastProcessedCredentialTime = Date.distantPast
     
     override init() {
         super.init()
@@ -22,6 +25,9 @@ class AuthenticationService: NSObject, ObservableObject {
             NSLog("🔥 AuthenticationService: Utilisateur déjà connecté: \(user.uid)")
             self.currentUser = user
             self.isAuthenticated = true
+            
+            // Charger le nom Apple sauvegardé
+            loadSavedAppleDisplayName(for: user.uid)
         }
         
         // Écouter les changements d'authentification
@@ -31,11 +37,11 @@ class AuthenticationService: NSObject, ObservableObject {
                 self?.isAuthenticated = user != nil
                 
                 if let user = user {
-                    print("🔥 AuthenticationService: Utilisateur connecté: \(user.uid)")
-                    NSLog("🔥 AuthenticationService: Utilisateur connecté: \(user.uid)")
+                    print("✅ Utilisateur connecté")
+                    // Charger le nom Apple sauvegardé pour cet utilisateur
+                    self?.loadSavedAppleDisplayName(for: user.uid)
                 } else {
-                    print("🔥 AuthenticationService: Utilisateur déconnecté")
-                    NSLog("🔥 AuthenticationService: Utilisateur déconnecté")
+                    print("❌ Utilisateur déconnecté")
                 }
             }
         }
@@ -44,8 +50,22 @@ class AuthenticationService: NSObject, ObservableObject {
     // MARK: - Public Methods
     
     func signInWithApple() {
-        print("🔥 AuthenticationService: Début de la connexion Apple ID")
-        NSLog("🔥 AuthenticationService: Début de la connexion Apple ID")
+        // Protection contre les appels multiples
+        guard !isSignInInProgress else {
+            print("⚠️ Sign In déjà en cours")
+            return
+        }
+        
+        // Protection contre les appels trop fréquents (moins de 2 secondes)
+        let timeSinceLastCall = Date().timeIntervalSince(lastProcessedCredentialTime)
+        guard timeSinceLastCall > 2.0 else {
+            print("⚠️ Appels trop fréquents")
+            return
+        }
+        
+        print("🔐 Début authentification Apple")
+        
+        isSignInInProgress = true
         
         let nonce = randomNonceString()
         currentNonce = nonce
@@ -65,11 +85,18 @@ class AuthenticationService: NSObject, ObservableObject {
     }
     
     func signOut() {
+        print("🔥 SignOut: signOut() appelé")
+        print("🔥 SignOut: Thread: \(Thread.current)")
+        print("🔥 SignOut: Stack trace: \(Thread.callStackSymbols.prefix(5))")
         print("🔥 AuthenticationService: Déconnexion")
         NSLog("🔥 AuthenticationService: Déconnexion")
         
         do {
             try Auth.auth().signOut()
+            // Nettoyer le nom Apple sauvegardé
+            DispatchQueue.main.async {
+                self.appleUserDisplayName = nil
+            }
         } catch {
             print("🔥 AuthenticationService: Erreur de déconnexion: \(error.localizedDescription)")
             NSLog("🔥 AuthenticationService: Erreur de déconnexion: \(error.localizedDescription)")
@@ -120,42 +147,86 @@ class AuthenticationService: NSObject, ObservableObject {
         
         return hashString
     }
+    
+    // MARK: - Apple Display Name Persistence
+    
+    private func loadSavedAppleDisplayName(for userID: String) {
+        let savedName = UserDefaults.standard.string(forKey: "AppleDisplayName_\(userID)")
+        if let savedName = savedName, !savedName.isEmpty {
+            print("📱 Nom Apple restauré")
+            DispatchQueue.main.async {
+                self.appleUserDisplayName = savedName
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.appleUserDisplayName = nil
+            }
+        }
+    }
 }
 
 // MARK: - ASAuthorizationControllerDelegate
 
 extension AuthenticationService: ASAuthorizationControllerDelegate {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-        print("🔥 AuthenticationService: Autorisation Apple ID reçue")
-        NSLog("🔥 AuthenticationService: Autorisation Apple ID reçue")
+        // Protection contre le traitement multiple
+        let timeSinceLastProcessing = Date().timeIntervalSince(lastProcessedCredentialTime)
+        guard timeSinceLastProcessing > 1.0 else {
+            print("⚠️ Credentials déjà traités")
+            return
+        }
+        
+        lastProcessedCredentialTime = Date()
+        print("✅ Autorisation Apple reçue")
         
         if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+            
+            // Récupérer le nom fourni par Apple (si disponible)
+            if let fullName = appleIDCredential.fullName {
+                let displayName = PersonNameComponentsFormatter.localizedString(from: fullName, style: .long)
+                if !displayName.isEmpty {
+                    print("✅ Nom Apple récupéré")
+                    // Sauvegarder le nom dans UserDefaults pour les futures connexions
+                    let userID = appleIDCredential.user
+                    UserDefaults.standard.set(displayName, forKey: "AppleDisplayName_\(userID)")
+                    DispatchQueue.main.async {
+                        self.appleUserDisplayName = displayName
+                    }
+                } else {
+                    // Essayer de charger depuis UserDefaults
+                    loadSavedAppleDisplayName(for: appleIDCredential.user)
+                }
+            } else {
+                // Pas de nom fourni, essayer de charger depuis UserDefaults
+                loadSavedAppleDisplayName(for: appleIDCredential.user)
+            }
+            
             guard let nonce = currentNonce else {
-                print("🔥 AuthenticationService: Erreur - Nonce invalide")
-                NSLog("🔥 AuthenticationService: Erreur - Nonce invalide")
+                print("❌ Nonce invalide")
                 DispatchQueue.main.async {
                     self.isLoading = false
+                    self.isSignInInProgress = false
                     self.errorMessage = "Erreur d'authentification"
                 }
                 return
             }
             
             guard let appleIDToken = appleIDCredential.identityToken else {
-                print("🔥 AuthenticationService: Erreur - Token Apple ID manquant")
-                NSLog("🔥 AuthenticationService: Erreur - Token Apple ID manquant")
+                print("❌ Token Apple manquant")
                 DispatchQueue.main.async {
                     self.isLoading = false
-                    self.errorMessage = NSLocalizedString("missing_auth_token", comment: "Missing auth token error")
+                    self.isSignInInProgress = false
+                    self.errorMessage = "Token manquant"
                 }
                 return
             }
             
             guard let idTokenString = String(data: appleIDToken, encoding: .utf8) else {
-                print("🔥 AuthenticationService: Erreur - Impossible de sérialiser le token")
-                NSLog("🔥 AuthenticationService: Erreur - Impossible de sérialiser le token")
+                print("❌ Erreur sérialisation token")
                 DispatchQueue.main.async {
                     self.isLoading = false
-                    self.errorMessage = NSLocalizedString("token_serialization_error", comment: "Token serialization error")
+                    self.isSignInInProgress = false
+                    self.errorMessage = "Erreur token"
                 }
                 return
             }
@@ -169,17 +240,16 @@ extension AuthenticationService: ASAuthorizationControllerDelegate {
             Auth.auth().signIn(with: credential) { [weak self] result, error in
                 DispatchQueue.main.async {
                     self?.isLoading = false
+                    self?.isSignInInProgress = false
                     
                     if let error = error {
-                        print("🔥 AuthenticationService: Erreur Firebase: \(error.localizedDescription)")
-                        NSLog("🔥 AuthenticationService: Erreur Firebase: \(error.localizedDescription)")
+                        print("❌ Erreur Firebase: \(error.localizedDescription)")
                         self?.errorMessage = error.localizedDescription
                         return
                     }
                     
                     if let user = result?.user {
-                        print("🔥 AuthenticationService: ✅ Connexion réussie: \(user.uid)")
-                        NSLog("🔥 AuthenticationService: ✅ Connexion réussie: \(user.uid)")
+                        print("✅ Connexion Firebase réussie")
                         
                         // Notifier le succès de l'authentification
                         NotificationCenter.default.post(
@@ -193,32 +263,31 @@ extension AuthenticationService: ASAuthorizationControllerDelegate {
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        print("🔥 AuthenticationService: Erreur d'autorisation: \(error.localizedDescription)")
-        NSLog("🔥 AuthenticationService: Erreur d'autorisation: \(error.localizedDescription)")
-        
         DispatchQueue.main.async {
             self.isLoading = false
+            self.isSignInInProgress = false
             
             if let authError = error as? ASAuthorizationError {
                 switch authError.code {
                 case .canceled:
-                    print("🔥 AuthenticationService: Connexion annulée par l'utilisateur")
-                    NSLog("🔥 AuthenticationService: Connexion annulée par l'utilisateur")
+                    print("⚠️ Authentification annulée")
                     // Ne pas afficher d'erreur pour une annulation
                     return
                 case .failed:
                     self.errorMessage = "Échec de l'authentification"
                 case .invalidResponse:
-                    self.errorMessage = "Réponse d'authentification invalide"
+                    self.errorMessage = "Réponse invalide"
                 case .notHandled:
                     self.errorMessage = "Authentification non gérée"
                 case .unknown:
-                    self.errorMessage = "Erreur d'authentification inconnue"
+                    self.errorMessage = "Erreur inconnue"
                 default:
                     self.errorMessage = "Erreur d'authentification"
                 }
+                print("❌ Erreur authentification: \(self.errorMessage ?? "inconnue")")
             } else {
-                self.errorMessage = error.localizedDescription
+                self.errorMessage = "Erreur système"
+                print("❌ Erreur système")
             }
         }
     }
@@ -234,4 +303,4 @@ extension AuthenticationService: ASAuthorizationControllerPresentationContextPro
         }
         return window
     }
-} 
+}

@@ -55,7 +55,7 @@ class JournalService: ObservableObject {
             return
         }
         
-        print("🔥 JournalService: Configuration du listener pour: \(currentUser.uid)")
+        print("🔥 JournalService: Configuration du listener utilisateur")
         
         // Utiliser un seul listener avec une requête composite
         listener = db.collection("journalEntries")

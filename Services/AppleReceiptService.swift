@@ -146,18 +146,16 @@ class AppleReceiptService: NSObject, ObservableObject {
 extension AppleReceiptService: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         print("🔥 AppleReceiptService: Produits reçus: \(response.products.count)")
-        NSLog("🔥 AppleReceiptService: Produits reçus: \(response.products.count)")
-        print("🔥 AppleReceiptService: Produits invalides: \(response.invalidProductIdentifiers.count)")
-        NSLog("🔥 AppleReceiptService: Produits invalides: \(response.invalidProductIdentifiers.count)")
         
         if !response.invalidProductIdentifiers.isEmpty {
-            print("🔥 AppleReceiptService: IDs invalides: \(response.invalidProductIdentifiers)")
-            NSLog("🔥 AppleReceiptService: IDs invalides: \(response.invalidProductIdentifiers)")
+            print("❌ AppleReceiptService: IDs invalides: \(response.invalidProductIdentifiers)")
         }
         
-        for product in response.products {
-            print("🔥 AppleReceiptService: Produit trouvé: \(product.productIdentifier) - \(product.localizedTitle)")
-            NSLog("🔥 AppleReceiptService: Produit trouvé: \(product.productIdentifier) - \(product.localizedTitle)")
+        // Log simplifié des produits trouvés
+        if !response.products.isEmpty {
+            for product in response.products {
+                print("🔥 AppleReceiptService: Produit: \(product.productIdentifier)")
+            }
         }
         
         DispatchQueue.main.async {
@@ -178,8 +176,7 @@ extension AppleReceiptService: SKProductsRequestDelegate {
     }
     
     func request(_ request: SKRequest, didFailWithError error: Error) {
-        print("🔥 AppleReceiptService: Erreur de requête produit: \(error.localizedDescription)")
-        NSLog("🔥 AppleReceiptService: Erreur de requête produit: \(error.localizedDescription)")
+        print("❌ AppleReceiptService: Erreur requête: \(error.localizedDescription)")
         
         DispatchQueue.main.async {
             self.errorMessage = NSLocalizedString("product_loading_error", comment: "Product loading error")

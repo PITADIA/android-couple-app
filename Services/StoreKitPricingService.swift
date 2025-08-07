@@ -133,12 +133,8 @@ class StoreKitPricingService: ObservableObject {
     // MARK: - Private Methods
     
     private func updateLocalizedPrices(from products: [SKProduct]) {
-        print("💰 StoreKitPricingService: Mise à jour des prix localisés - \(products.count) produits")
-        
-
-        
         guard !products.isEmpty else {
-            print("⚠️ StoreKitPricingService: Aucun produit reçu de StoreKit")
+            print("⚠️ StoreKitPricingService: Aucun produit reçu - Utilisation des prix hardcodés")
             DispatchQueue.main.async {
                 self.isLoading = false
                 self.lastError = StoreKitPricingError.noProductsAvailable

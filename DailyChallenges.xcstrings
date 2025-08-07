@@ -680,6 +680,499 @@
           }
         }
       }
+    },
+    "daily_challenge_25" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Draw an animal that represents your partner and send it to them."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dessinez un animal qui représente votre partenaire selon vous… et envoyez-le."
+          }
+        }
+      }
+    },
+    "daily_challenge_26" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Describe your partner in 3 hashtags and share them."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Décrivez votre partenaire en 3 hashtags… et partagez-les."
+          }
+        }
+      }
+    },
+    "daily_challenge_27" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create together a golden rule for your relationship, something you'll never want to break."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créez ensemble une règle d'or de votre couple, que vous ne voudrez jamais transgresser."
+          }
+        }
+      }
+    },
+    "daily_challenge_28" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mix your name with theirs to create a duo name (like a band name or cocktail)."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transformez votre prénom + le sien en un nom de duo (comme un nom de groupe ou un cocktail.)"
+          }
+        }
+      }
+    },
+    "daily_challenge_29" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Each create a \"magic love potion\" with ingredients like \"3 tears of laughter\", \"5 pinches of stolen kisses\", etc."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inventez chacun une \"potion magique\" de votre amour (avec des ingrédients comme \"3 larmes de fou rire\", \"5 pincées de baisers volés\", etc.)"
+          }
+        }
+      }
+    },
+    "daily_challenge_30" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Record a voice message speaking like a wildlife documentary narrator describing your partner."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faites un vocal en parlant comme un narrateur de documentaire animalier décrivant l'autre."
+          }
+        }
+      }
+    },
+    "daily_challenge_31" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imagine what a perfect day would look like if you were both 6-year-old kids together."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imaginez à quoi ressemblerait une journée parfaite si vous étiez deux enfants de 6 ans."
+          }
+        }
+      }
+    },
+    "daily_challenge_32" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tell the story of your first kiss (or first special moment) as if you were old and nostalgic."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Racontez votre premier baiser ensemble (ou premier moment fort) comme si vous étiez vieux et nostalgiques."
+          }
+        }
+      }
+    },
+    "daily_challenge_33" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Each choose a fruit to symbolize your partner and explain why you picked it."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisissez chacun un fruit pour symboliser votre partenaire et expliquez pourquoi."
+          }
+        }
+      }
+    },
+    "daily_challenge_34" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create a rule for the \"world order of lovers\" that all couples should follow to be happy."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créez une règle pour \"l'ordre mondial des amoureux\", que tous les couples devraient suivre pour être heureux."
+          }
+        }
+      }
+    },
+    "daily_challenge_35" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Call each other by a cartoon character name of your choice for the whole day."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appelez-vous par le nom d'un personnage de dessin animé de votre choix toute la journée"
+          }
+        }
+      }
+    },
+    "daily_challenge_36" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Each choose a color that represents your partner and explain why."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisissez chacun une couleur qui représente l'autre et expliquez pourquoi."
+          }
+        }
+      }
+    },
+    "daily_challenge_37" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create an \"imaginary perfect day\" with an hour-by-hour schedule of what you'd do together."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créez une \"journée imaginaire\" idéale avec heure par heure ce que vous feriez ensemble."
+          }
+        }
+      }
+    },
+    "daily_challenge_38" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create a phrase to recite whenever you have doubts or during disagreements."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créez une phrase à réciter en cas de doute ou de dispute."
+          }
+        }
+      }
+    },
+    "daily_challenge_39" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Send a \"mirror voice note\": tell your love what you'd like to hear today."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faites une \"note vocale miroir\" : dites à l'autre ce que vous aimeriez entendre aujourd'hui."
+          }
+        }
+      }
+    },
+    "daily_challenge_40" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Draw a heart with your partner's name inside and send them the photo."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dessinez un cœur avec le prénom de votre partenaire puis envoyez-lui la photo."
+          }
+        }
+      }
+    },
+    "daily_challenge_41" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Give each other a unique nickname to use just for today."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Donnez-vous à chacun un surnom unique à utiliser aujourd'hui seulement."
+          }
+        }
+      }
+    },
+    "daily_challenge_42" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Have a 2-minute video call without talking - just stare at each other. First one to look away or laugh loses!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faites un visio de 2 minutes sans parler, ou vous devez-vous fixer et le premier qui tourne le regard ou rigole a perdu"
+          }
+        }
+      }
+    },
+    "daily_challenge_43" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ask your partner: If I could surprise you right now, what would you want?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Demandez à votre partenaire Si je pouvais te faire une surprise maintenant, tu voudrais quoi ?"
+          }
+        }
+      }
+    },
+    "daily_challenge_44" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Write a sentence to your partner that you wish someone had told you when you were a child."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Écrivez une phrase à votre partenaire que vous auriez aimé qu’on vous dise quand vous étiez enfant."
+          }
+        }
+      }
+    },
+    "daily_challenge_45" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Send each other \"I love you\" in a foreign language you don't speak."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envoyez-vous un \"je t'aime\" dans une langue étrangère que vous ne parlez pas."
+          }
+        }
+      }
+    },
+    "daily_challenge_46" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Find 2 topics you've never discussed together and talk about them tonight."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trouvez 2 sujets de discussion que vous n’avez jamais abordés ensemble et parlez-en ce soir"
+          }
+        }
+      }
+    },
+    "daily_challenge_47" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Write down three things you admire about each other and read them out loud."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notez trois choses que vous admirez chez l'autre et lisez-les à voix haute."
+          }
+        }
+      }
+    },
+    "daily_challenge_48" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create a fictional memory together as if you actually lived it."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inventez ensemble un souvenir fictif comme si vous l'aviez vraiment vécu."
+          }
+        }
+      }
+    },
+    "daily_challenge_49" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create a rule for the day (like: no saying \"no\", or starting every sentence with \"my love\"...)."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créez une règle pour la journée (ex : interdiction de dire \"non\", obligation de dire \"mon amour\" à chaque début de phrase…)."
+          }
+        }
+      }
+    },
+    "daily_challenge_50" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Send them a photo of a place where you'd love to go together."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envoyez-lui une photo d'un endroit où vous aimeriez aller avec lui/elle."
+          }
+        }
+      }
+    },
+    "daily_challenge_51" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imitate your partner's voice in an audio message (lovingly) and send it using their vocabulary."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imitez la voix de l'autre en audio (gentiment) et envoyez-la lui (en utilisant son vocabulaire)"
+          }
+        }
+      }
+    },
+    "daily_challenge_52" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Write a Tinder bio for each other and share them."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Écrivez une bio Tinder de l'autre et envoyez-les-vous."
+          }
+        }
+      }
+    },
+    "daily_challenge_53" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exchange a message written with your \"non-dominant hand\" (left hand if you're right-handed)."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Échangez un message écrit avec votre \"main non dominante\" (main gauche si vous êtes droitier)."
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

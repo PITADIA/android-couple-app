@@ -38,7 +38,7 @@ class PartnerCodeService: ObservableObject {
             return nil
         }
         
-        print("🔗 PartnerCodeService: Utilisateur connecté: \(currentUser.uid)")
+        print("🔗 PartnerCodeService: Utilisateur connecté")
         
         await MainActor.run {
             self.isLoading = true
@@ -187,7 +187,7 @@ class PartnerCodeService: ObservableObject {
             return false
         }
         
-        print("🔗 PartnerCodeService: Utilisateur connecté: \(currentUser.uid)")
+        print("🔗 PartnerCodeService: Utilisateur connecté")
         
         await MainActor.run {
             self.isLoading = true
@@ -329,7 +329,7 @@ class PartnerCodeService: ObservableObject {
         }
         
         do {
-            print("🔍 PartnerCodeService: checkExistingConnection - Chargement données utilisateur: \(currentUser.uid)")
+            print("🔍 PartnerCodeService: checkExistingConnection - Chargement données utilisateur")
             let doc = try await db.collection("users").document(currentUser.uid).getDocument()
             
             if let data = doc.data(),
@@ -509,7 +509,7 @@ class PartnerCodeService: ObservableObject {
         }
         
         do {
-            print("🔍 PartnerCodeService: checkForPendingConnectionMessage - Chargement données utilisateur: \(currentUser.uid)")
+            print("🔍 PartnerCodeService: checkForPendingConnectionMessage - Chargement données utilisateur")
             let doc = try await db.collection("users").document(currentUser.uid).getDocument()
             
             if let data = doc.data(),

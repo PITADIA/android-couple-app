@@ -81,9 +81,28 @@ struct AppUser: Codable, Identifiable, Equatable {
         case notInRelationship = "Je ne suis pas en couple"
     }
     
-    init(id: String = UUID().uuidString, name: String, birthDate: Date, relationshipGoals: [String] = [], relationshipDuration: RelationshipDuration = .none, relationshipImprovement: String? = nil, questionMode: String? = nil, partnerCode: String? = nil, partnerId: String? = nil, partnerConnectedAt: Date? = nil, subscriptionInheritedFrom: String? = nil, subscriptionInheritedAt: Date? = nil, connectedPartnerCode: String? = nil, connectedPartnerId: String? = nil, connectedAt: Date? = nil, isSubscribed: Bool = false, onboardingInProgress: Bool = false, relationshipStartDate: Date? = nil, profileImageURL: String? = nil, currentLocation: UserLocation? = nil, languageCode: String? = nil, dailyQuestionFirstAccessDate: Date? = nil, dailyQuestionMaxDayReached: Int = 0, dailyChallengeFirstAccessDate: Date? = nil, dailyChallengeMaxDayReached: Int = 0) {
+    init(id: String = UUID().uuidString, name: String = "", birthDate: Date, relationshipGoals: [String] = [], relationshipDuration: RelationshipDuration = .none, relationshipImprovement: String? = nil, questionMode: String? = nil, partnerCode: String? = nil, partnerId: String? = nil, partnerConnectedAt: Date? = nil, subscriptionInheritedFrom: String? = nil, subscriptionInheritedAt: Date? = nil, connectedPartnerCode: String? = nil, connectedPartnerId: String? = nil, connectedAt: Date? = nil, isSubscribed: Bool = false, onboardingInProgress: Bool = false, relationshipStartDate: Date? = nil, profileImageURL: String? = nil, currentLocation: UserLocation? = nil, languageCode: String? = nil, dailyQuestionFirstAccessDate: Date? = nil, dailyQuestionMaxDayReached: Int = 0, dailyChallengeFirstAccessDate: Date? = nil, dailyChallengeMaxDayReached: Int = 0) {
         self.id = id
-        self.name = name
+        
+        // Auto-génération si nom vide avec localisation
+        if name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            let locale = Locale.current
+            let languageCode: String
+            if #available(iOS 16.0, *) {
+                languageCode = locale.language.languageCode?.identifier ?? "en"
+            } else {
+                languageCode = locale.languageCode ?? "en"
+            }
+            
+            let shortId = String(id.prefix(4))
+            if languageCode.hasPrefix("fr") {
+                self.name = "Utilisateur\(shortId)"
+            } else {
+                self.name = "User\(shortId)"
+            }
+        } else {
+            self.name = name
+        }
         self.birthDate = birthDate
         self.relationshipGoals = relationshipGoals
         self.relationshipDuration = relationshipDuration
