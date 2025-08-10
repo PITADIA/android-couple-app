@@ -21,10 +21,12 @@ struct LaunchScreenView: View {
                 .frame(width: 200, height: 200)
         }
         .onAppear {
-            print("🚀 LaunchScreenView: Écran de chargement affiché")
+            let timestamp = Date().timeIntervalSince1970
+            print("🚀 LaunchScreenView: Écran de chargement affiché [\(timestamp)]")
         }
         .onDisappear {
-            print("🚀 LaunchScreenView: Écran de chargement masqué")
+            let timestamp = Date().timeIntervalSince1970
+            print("🚀 LaunchScreenView: Écran de chargement masqué [\(timestamp)]")
         }
     }
 }

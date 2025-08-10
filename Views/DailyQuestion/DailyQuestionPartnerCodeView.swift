@@ -302,7 +302,7 @@ struct DailyQuestionPartnerCodeView: View {
     private func connectWithCode() async {
         guard !enteredCode.isEmpty else { return }
         
-        _ = await partnerCodeService.connectWithPartnerCode(enteredCode)
+        _ = await partnerCodeService.connectWithPartnerCode(enteredCode, context: .dailyQuestion)
         
         // La connexion sera gérée par onChange(of: partnerCodeService.isConnected)
     }

@@ -1,9 +1,20 @@
 import SwiftUI
 
 struct DailyChallengeIntroView: View {
+    let showConnectButton: Bool
+    
     @EnvironmentObject var appState: AppState
+    @ObservedObject private var partnerService = PartnerConnectionNotificationService.shared  // ✅ Référence directe
     @State private var showingPartnerCodeSheet = false
     @State private var navigateToChallenge = false
+    
+    // MARK: - Initializer
+    
+    init(showConnectButton: Bool = true) {
+        self.showConnectButton = showConnectButton
+    }
+    
+    // MARK: - Computed Properties
     
     // Vérifier si l'utilisateur a un partenaire connecté
     private var hasConnectedPartner: Bool {
@@ -11,12 +22,12 @@ struct DailyChallengeIntroView: View {
         return !partnerId.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
     
-    // Texte du bouton selon le statut
+    // Texte du bouton selon le statut et le paramètre
     private var buttonText: String {
-        if hasConnectedPartner {
-            return "Continuer"
-        } else {
+        if showConnectButton && !hasConnectedPartner {
             return NSLocalizedString("connect_partner_button", tableName: "DailyChallenges", comment: "")
+        } else {
+            return NSLocalizedString("continue_button", tableName: "DailyChallenges", comment: "")
         }
     }
     
@@ -71,12 +82,13 @@ struct DailyChallengeIntroView: View {
                     // Bouton principal conditionnel
                     VStack {
                         Button {
-                            if hasConnectedPartner {
-                                // Naviguer vers les défis
-                                navigateToChallenge = true
-                            } else {
+                            if showConnectButton && !hasConnectedPartner {
                                 // Montrer le sheet de connexion partenaire
                                 showingPartnerCodeSheet = true
+                            } else {
+                                // Marquer l'intro comme vue et naviguer
+                                appState.markDailyChallengeIntroAsSeen()
+                                navigateToChallenge = true
                             }
                         } label: {
                             Text(buttonText)
@@ -110,15 +122,15 @@ struct DailyChallengeIntroView: View {
         }
         .overlay(
             Group {
-                if let partnerService = appState.partnerConnectionService,
-                   partnerService.shouldShowConnectionSuccess {
+                if partnerService.shouldShowConnectionSuccess {  // ✅ Référence directe simplifiée
                     PartnerConnectionSuccessView(
-                        partnerName: partnerService.connectedPartnerName
+                        partnerName: partnerService.connectedPartnerName,
+                        mode: .simpleDismiss,
+                        context: .dailyChallenge
                     ) {
-                        // Fermer le succès et naviguer vers les défis
-                        partnerService.dismissConnectionSuccess()
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            navigateToChallenge = true
+                        // ✅ Fermeture fluide avec animation
+                        withAnimation(.easeOut(duration: 0.3)) {
+                            partnerService.dismissConnectionSuccess()
                         }
                     }
                     .transition(.opacity)

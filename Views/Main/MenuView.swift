@@ -1,4 +1,5 @@
 import SwiftUI
+import CoreLocation
 import AuthenticationServices
 import PhotosUI
 import Photos
@@ -185,6 +186,13 @@ struct MenuView: View {
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 120, height: 120)
                             .clipShape(Circle())
+                    } else if let cachedImage = UserCacheManager.shared.getCachedProfileImage() {
+                        // 🚀 NOUVEAU: Priorité à l'image en cache pour affichage instantané
+                        Image(uiImage: cachedImage)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 120, height: 120)
+                            .clipShape(Circle())
                     } else if let imageURL = currentUserImageURL {
                         AsyncImageView(
                             imageURL: imageURL,
@@ -192,6 +200,10 @@ struct MenuView: View {
                             height: 120,
                             cornerRadius: 60
                         )
+                        .onAppear {
+                            // Télécharger et mettre en cache l'image si elle n'est pas déjà en cache
+                            downloadAndCacheProfileImageIfNeeded(from: imageURL)
+                        }
                     } else if let profileImage = profileImage {
                         Image(uiImage: profileImage)
                             .resizable()
@@ -461,16 +473,35 @@ struct MenuView: View {
             return
         }
         
-        // Afficher l'image temporairement
-        profileImage = image
+        // 🚀 NOUVELLE APPROCHE: Cache local immédiat + upload silencieux
         
-        // Utiliser la nouvelle méthode dédiée à l'upload d'image de profil
+        // 1. Mettre immédiatement l'image en cache pour affichage instantané
+        UserCacheManager.shared.cacheProfileImage(image)
+        
+        // 2. Nettoyer les états temporaires pour forcer l'utilisation du cache
+        self.croppedImage = nil
+        self.profileImage = nil
+        
+        print("✅ MenuView: Image mise en cache, affichage immédiat")
+        
+        // 3. Démarrer l'upload Firebase en arrière-plan (sans callback UI)
+        Task {
+            await uploadToFirebaseInBackground(image)
+        }
+    }
+    
+    /// Upload silencieux en arrière-plan sans affecter l'UI
+    private func uploadToFirebaseInBackground(_ image: UIImage) async {
+        print("🔄 MenuView: Début upload Firebase en arrière-plan")
+        
+        // Upload sans callback UI - juste pour synchroniser Firebase/Firestore
         FirebaseService.shared.updateProfileImage(image) { success, imageURL in
-            DispatchQueue.main.async {
-                if !success {
-                    // Réinitialiser l'image temporaire en cas d'erreur
-                    self.profileImage = nil
-                }
+            if success {
+                print("✅ MenuView: Upload Firebase terminé avec succès en arrière-plan")
+                // Pas de mise à jour UI - le cache local reste la source de vérité
+            } else {
+                print("❌ MenuView: Upload Firebase échoué en arrière-plan - retry plus tard")
+                // TODO: Optionnel - retry automatique ou notification discrète
             }
         }
     }
@@ -492,6 +523,38 @@ struct MenuView: View {
                  }
              }
          }
+    }
+    
+    /// Télécharge et met en cache l'image de profil si nécessaire
+    private func downloadAndCacheProfileImageIfNeeded(from url: String) {
+        // Ne pas retélécharger si déjà en cache (UserCacheManager)
+        if UserCacheManager.shared.hasCachedProfileImage() {
+            print("🖼️ MenuView: Image déjà en cache, pas de téléchargement nécessaire")
+            return
+        }
+
+        print("🖼️ MenuView: Téléchargement image de profil pour mise en cache (async)")
+
+        guard let imageURL = URL(string: url) else {
+            print("❌ MenuView: URL invalide pour image de profil")
+            return
+        }
+
+        let request = URLRequest(url: imageURL, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 30)
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("❌ MenuView: Erreur téléchargement image: \(error.localizedDescription)")
+                return
+            }
+            guard let data = data, let image = UIImage(data: data) else {
+                print("❌ MenuView: Données image invalides")
+                return
+            }
+            DispatchQueue.main.async {
+                UserCacheManager.shared.cacheProfileImage(image)
+                print("✅ MenuView: Image de profil mise en cache (URLSession)")
+            }
+        }.resume()
     }
     
     private func updateRelationshipStart(_ newDateString: String) {
@@ -845,6 +908,35 @@ extension MenuView {
     }
     
     private func openSettings() {
+        // ✅ Stratégie officielle et fiable : ouvrir la page Réglages de l'app
+        // et s'assurer que la section Localisation apparaît en amont.
+
+        // 1) Si services de localisation globaux désactivés, informer l'utilisateur
+        if !CLLocationManager.locationServicesEnabled() {
+            openGeneralSettings()
+            return
+        }
+
+        // 2) Pré-demande si jamais l'autorisation n'a jamais été demandée
+        let auth = CLLocationManager().authorizationStatus
+        if auth == .notDetermined {
+            let manager = CLLocationManager()
+            manager.requestWhenInUseAuthorization()
+            // Attendre un court délai pour que l'app soit listée dans Réglages > Confidentialité
+            let delay: TimeInterval
+            if #available(iOS 18.0, *) { delay = 0.6 } else { delay = 1.2 }
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                self.openGeneralSettings()
+            }
+            return
+        }
+
+        // 3) Ouvrir les réglages de l'app (page officielle et stable)
+        openGeneralSettings()
+    }
+    
+    private func openGeneralSettings() {
+        // Fallback sûr : Paramètres généraux de l'app
         if let url = URL(string: UIApplication.openSettingsURLString) {
             UIApplication.shared.open(url)
         }

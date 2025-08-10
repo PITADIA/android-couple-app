@@ -129,20 +129,31 @@ async function checkRateLimit(userId, functionName, context = {}) {
       .collection("rate_limits")
       .doc(`${userId}_${functionName}_${windowKey}`);
 
-    const doc = await rateLimitDoc.get();
-    const currentCalls = doc.exists ? doc.data().count || 0 : 0;
+    // 🔥 CORRECTION: Transaction atomique pour éviter condition de course
+    let currentCalls = 0;
+    await admin.firestore().runTransaction(async (transaction) => {
+      const doc = await transaction.get(rateLimitDoc);
+      currentCalls = doc.exists ? doc.data().count || 0 : 0;
 
-    // Incrémenter le compteur
-    await rateLimitDoc.set(
-      {
-        count: currentCalls + 1,
-        lastCall: now,
-        userId: userId,
-        function: functionName,
-        window: config.window,
-      },
-      { merge: true }
-    );
+      // Vérifier AVANT l'incrément
+      if (currentCalls >= config.calls) {
+        // La limite sera gérée après la transaction
+        return;
+      }
+
+      // Incrémenter atomiquement
+      transaction.set(
+        rateLimitDoc,
+        {
+          count: currentCalls + 1,
+          lastCall: now,
+          userId: userId,
+          function: functionName,
+          window: config.window,
+        },
+        { merge: true }
+      );
+    });
 
     // Vérifier la limite
     if (currentCalls >= config.calls) {
@@ -201,7 +212,7 @@ async function checkRateLimit(userId, functionName, context = {}) {
     );
   } catch (error) {
     // En cas d'erreur du rate limiting, on laisse passer pour ne pas casser l'app
-    if (!RATE_LIMITING_CONFIG.strictMode) {
+    if (!SECURITY_CONFIG.strictMode) {
       console.warn(
         `⚠️ RateLimit: Erreur non bloquante pour ${functionName}:`,
         error.message
@@ -3686,6 +3697,79 @@ async function getOrCreateDailyQuestionSettings(
 }
 
 /**
+ * 🔥 CORRECTION: Fonction commune pour génération questions (sans auth/rate limiting)
+ */
+async function generateDailyQuestionCore(
+  coupleId,
+  timezone,
+  questionDay = null
+) {
+  console.log(
+    `🎯 generateDailyQuestionCore: coupleId=${coupleId}, timezone=${timezone}`
+  );
+
+  try {
+    // Récupérer ou créer les settings
+    const settings = await getOrCreateDailyQuestionSettings(coupleId, timezone);
+
+    // Calculer le jour si pas fourni
+    const targetDay = questionDay || calculateCurrentQuestionDay(settings);
+
+    const today = new Date();
+    const todayString = today.toISOString().split("T")[0];
+
+    // Vérifier si question existe déjà (idempotence)
+    const questionId = `${coupleId}_${todayString}`;
+    const existingDoc = await admin
+      .firestore()
+      .collection("dailyQuestions")
+      .doc(questionId)
+      .get();
+
+    if (existingDoc.exists) {
+      console.log(
+        `✅ Question déjà existante pour ${coupleId} jour ${targetDay}`
+      );
+      return {
+        success: true,
+        question: existingDoc.data(),
+        alreadyExists: true,
+      };
+    }
+
+    // Générer nouvelle question
+    const questionKey = generateQuestionKey(targetDay);
+    const questionData = {
+      id: questionId,
+      coupleId,
+      questionKey,
+      questionDay: targetDay,
+      scheduledDate: todayString,
+      scheduledDateTime: admin.firestore.Timestamp.fromDate(today),
+      createdAt: admin.firestore.FieldValue.serverTimestamp(),
+      isCompleted: false,
+    };
+
+    // Sauvegarder
+    await admin
+      .firestore()
+      .collection("dailyQuestions")
+      .doc(questionId)
+      .set(questionData);
+
+    console.log(`✅ Question générée: ${questionKey} pour couple ${coupleId}`);
+    return {
+      success: true,
+      question: questionData,
+      generated: true,
+    };
+  } catch (error) {
+    console.error(`❌ Erreur génération question pour ${coupleId}:`, error);
+    throw error;
+  }
+}
+
+/**
  * Générer la question du jour pour un couple
  */
 exports.generateDailyQuestion = functions.https.onCall(
@@ -5264,13 +5348,8 @@ async function generateDailyQuestionForCouple(coupleId, timezone) {
 
     console.log(`📊 Settings: currentDay=${currentDay}, nextDay=${nextDay}`);
 
-    // Utiliser la logique existante de génération
-    const result = await exports.generateDailyQuestion.run({
-      coupleId,
-      userId: "system",
-      questionDay: nextDay,
-      timezone,
-    });
+    // 🔥 CORRECTION: Utiliser fonction commune au lieu de exports.run()
+    const result = await generateDailyQuestionCore(coupleId, timezone, nextDay);
 
     return {
       success: true,
@@ -5291,7 +5370,7 @@ async function generateDailyQuestionForCouple(coupleId, timezone) {
  * Retourne le nombre total de défis disponibles
  */
 function getTotalChallengesCount() {
-  return 53; 
+  return 53;
 }
 
 /**
@@ -5498,17 +5577,8 @@ async function generateDailyChallengeForCouple(coupleId, timezone) {
       `🔧 CORRECTION: Laisser generateDailyChallenge calculer automatiquement le jour (pas de forçage nextDay)`
     );
 
-    // ✅ CORRECTION: Ne pas forcer nextDay, laisser generateDailyChallenge calculer le bon jour
-    const result = await exports.generateDailyChallenge.run(
-      {
-        coupleId,
-        // challengeDay: nextDay, // ❌ SUPPRIMÉ: ne plus forcer l'incrémentation
-        timezone,
-      },
-      {
-        auth: { uid: "system" }, // Contexte d'authentification système
-      }
-    );
+    // 🔥 CORRECTION: Utiliser fonction commune au lieu de exports.run()
+    const result = await generateDailyChallengeCore(coupleId, timezone);
 
     return {
       success: true,
@@ -5519,6 +5589,79 @@ async function generateDailyChallengeForCouple(coupleId, timezone) {
   } catch (error) {
     console.log(`❌ Erreur generateDailyChallengeForCouple: ${error.message}`);
     return { success: false, error: error.message };
+  }
+}
+
+/**
+ * 🔥 CORRECTION: Fonction commune pour génération défis (sans auth/rate limiting)
+ */
+async function generateDailyChallengeCore(
+  coupleId,
+  timezone,
+  challengeDay = null
+) {
+  console.log(
+    `🎯 generateDailyChallengeCore: coupleId=${coupleId}, timezone=${timezone}`
+  );
+
+  try {
+    // Récupérer ou créer les settings
+    const settings = await getOrCreateDailyChallengeSettings(
+      coupleId,
+      timezone
+    );
+
+    // Calculer le jour si pas fourni
+    const targetDay = challengeDay || calculateCurrentChallengeDay(settings);
+
+    const today = new Date();
+    const todayString = today.toISOString().split("T")[0];
+
+    // Vérifier si défi existe déjà (idempotence)
+    const challengeId = `${coupleId}_${todayString}`;
+    const existingDoc = await admin
+      .firestore()
+      .collection("dailyChallenges")
+      .doc(challengeId)
+      .get();
+
+    if (existingDoc.exists) {
+      console.log(`✅ Défi déjà existant pour ${coupleId} jour ${targetDay}`);
+      return {
+        success: true,
+        challenge: existingDoc.data(),
+        alreadyExists: true,
+      };
+    }
+
+    // Générer nouveau défi
+    const challengeKey = generateChallengeKey(targetDay);
+    const challengeData = {
+      id: challengeId,
+      coupleId,
+      challengeKey,
+      challengeDay: targetDay,
+      scheduledDate: admin.firestore.Timestamp.fromDate(today),
+      createdAt: admin.firestore.FieldValue.serverTimestamp(),
+      isCompleted: false,
+    };
+
+    // Sauvegarder
+    await admin
+      .firestore()
+      .collection("dailyChallenges")
+      .doc(challengeId)
+      .set(challengeData);
+
+    console.log(`✅ Défi généré: ${challengeKey} pour couple ${coupleId}`);
+    return {
+      success: true,
+      challenge: challengeData,
+      generated: true,
+    };
+  } catch (error) {
+    console.error(`❌ Erreur génération défi pour ${coupleId}:`, error);
+    throw error;
   }
 }
 

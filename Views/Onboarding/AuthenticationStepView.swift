@@ -12,15 +12,13 @@ struct AuthenticationStepView: View {
     // État pour éviter les appels multiples
     @State private var hasProcessedAuthentication = false
     
-    // État pour éviter les appels multiples (simplifié)
-    @State private var isAppleSignInInProgress = false
-    
     var body: some View {
         ZStack {
             // Fond gris clair identique aux autres pages d'onboarding
             Color(red: 0.97, green: 0.97, blue: 0.98)
                 .ignoresSafeArea()
             
+            // Interface normale - toujours visible
             VStack(spacing: 0) {
                 // Espace entre la barre de progression et le titre
                 Spacer()
@@ -41,10 +39,6 @@ struct AuthenticationStepView: View {
                 // Bouton Sign in with Apple (style simple pour éviter double déclenchement)
                 Button(action: {
                     print("🔐 Authentification Apple démarrée")
-                    
-                    // Marquer que Apple Sign In est en cours
-                    isAppleSignInInProgress = true
-                    
                     authService.signInWithApple()
                 }) {
                     HStack {
@@ -59,8 +53,28 @@ struct AuthenticationStepView: View {
                     .background(Color.black)
                     .cornerRadius(28)
                 }
+                .disabled(authService.isProcessingFirebaseAuth)
+                .opacity(authService.isProcessingFirebaseAuth ? 0.6 : 1.0)
                 .padding(.horizontal, 30)
                 .padding(.bottom, 50)
+            }
+            
+            // Overlay de chargement Firebase - affiché seulement après Face ID
+            if authService.isProcessingFirebaseAuth {
+                VStack(spacing: 20) {
+                    // Spinner Apple-style
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: .black))
+                        .scaleEffect(1.5)
+                    
+                    // Texte de chargement
+                    Text("authentication_in_progress".localized)
+                        .font(.system(size: 18, weight: .medium))
+                        .foregroundColor(.black.opacity(0.7))
+                        .multilineTextAlignment(.center)
+                }
+                .transition(.opacity.combined(with: .scale))
+                .animation(.smooth(duration: 0.3), value: authService.isProcessingFirebaseAuth)
             }
         }
         .onAppear {
@@ -91,7 +105,6 @@ struct AuthenticationStepView: View {
             print("✅ Authentification réussie")
             
             hasProcessedAuthentication = true
-            isAppleSignInInProgress = false // Reset du flag
             
             if let firebaseUser = Auth.auth().currentUser {
                 createPartialUserDocument(firebaseUser: firebaseUser)

@@ -58,8 +58,8 @@ struct DailyQuestionPaywallView: View {
                                 .background(
                                     LinearGradient(
                                         gradient: Gradient(colors: [
-                                            Color(hex: "#FD267A"),
-                                            Color(hex: "#FF655B")
+                                            Color(red: 1.0, green: 0.4, blue: 0.6),
+                                            Color(red: 1.0, green: 0.6, blue: 0.8)
                                         ]),
                                         startPoint: .leading,
                                         endPoint: .trailing

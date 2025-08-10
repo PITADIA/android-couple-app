@@ -7,21 +7,36 @@ struct DailyChallengeFlowView: View {
     
     var body: some View {
         Group {
-            if let user = appState.currentUser,
-               let partnerId = user.partnerId,
-               !partnerId.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            switch currentRoute {
+            case .intro(let showConnect):
+                DailyChallengeIntroView(showConnectButton: showConnect)
+                    .environmentObject(appState)
+                    .onAppear {
+                        if !showConnect {
+                            // Analytics: intro montrée même si connecté
+                            AnalyticsService.shared.track(.introShown(screen: "daily_challenge"))
+                        }
+                    }
                 
-                // ✅ Partenaire connecté - Vérifier accès freemium
-                if shouldShowPaywall {
-                    DailyChallengePaywallView(challengeDay: currentChallengeDay)
-                        .environmentObject(appState)
-                } else {
-                    DailyChallengeMainView()
-                        .environmentObject(appState)
-                }
-            } else {
-                // ❌ Pas de partenaire ⇒ Intro pour connexion avec bouton "Continuer"
-                DailyChallengeIntroView()
+            case .paywall(let day):
+                DailyChallengePaywallView(challengeDay: day)
+                    .environmentObject(appState)
+                
+            case .main:
+                DailyChallengeMainView()
+                    .environmentObject(appState)
+                
+            case .error(let message):
+                DailyChallengeErrorView(
+                    message: message,
+                    onRetry: {
+                        configureServiceIfNeeded()
+                    }
+                )
+                .environmentObject(appState)
+                
+            case .loading:
+                DailyChallengeLoadingView()
                     .environmentObject(appState)
             }
         }
@@ -30,16 +45,38 @@ struct DailyChallengeFlowView: View {
         }
     }
     
-    // NOUVEAU: Calculer le jour actuel du défi
+    // MARK: - Computed Properties
+    
+    /// Route actuelle selon l'état de l'application
+    private var currentRoute: DailyContentRoute {
+        return DailyContentRouteCalculator.calculateRoute(
+            for: .dailyChallenge,
+            hasConnectedPartner: hasConnectedPartner,
+            hasSeenIntro: appState.introFlags.dailyChallenge,
+            shouldShowPaywall: shouldShowPaywall,
+            paywallDay: currentChallengeDay,
+            serviceHasError: false, // DailyChallengeService n'a pas de gestion d'erreur pour l'instant
+            serviceErrorMessage: nil,
+            serviceIsLoading: dailyChallengeService.isLoading && dailyChallengeService.currentChallenge == nil
+        )
+    }
+    
+    /// Vérifier si un partenaire est connecté
+    private var hasConnectedPartner: Bool {
+        guard let user = appState.currentUser,
+              let partnerId = user.partnerId else { return false }
+        return !partnerId.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+    
+    /// Calculer le jour actuel du défi
     private var currentChallengeDay: Int {
-        // Récupérer le jour depuis DailyChallengeService ou settings
         if let settings = dailyChallengeService.currentSettings {
             return calculateExpectedDay(from: settings)
         }
         return 1 // Défaut
     }
     
-    // NOUVEAU: Vérifier si on doit afficher le paywall
+    /// Vérifier si on doit afficher le paywall
     private var shouldShowPaywall: Bool {
         let isSubscribed = appState.currentUser?.isSubscribed ?? false
         if isSubscribed {
@@ -52,16 +89,41 @@ struct DailyChallengeFlowView: View {
     }
     
     private func configureServiceIfNeeded() {
+        // 🚨 CORRECTION CRITIQUE: Vérifier partenaire ET intro vue
         guard let currentUser = appState.currentUser, 
               let partnerId = currentUser.partnerId,
               !partnerId.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            print("⏳ DailyChallengeFlowView: En attente connexion partenaire")
             return
+        }
+        
+        // Vérifier que l'intro a été vue
+        guard appState.introFlags.dailyChallenge else {
+            print("⏳ DailyChallengeFlowView: En attente intro utilisateur")
+            return
+        }
+        
+        // 🚀 OPTIMISATION CACHE: Vérifier si les données sont déjà disponibles ET récentes
+        if let currentChallenge = dailyChallengeService.currentChallenge {
+            // Vérifier si le défi est pour aujourd'hui
+            let today = Date()
+            let calendar = Calendar.current
+            let challengeDate = currentChallenge.scheduledDate
+            
+            if calendar.isDate(challengeDate, inSameDayAs: today) {
+                print("⚡ DailyChallengeFlowView: Défi d'aujourd'hui déjà disponible - Pas de reconfiguration")
+                return
+            } else {
+                let formatter = DateFormatter()
+                formatter.dateStyle = .short
+                print("🔄 DailyChallengeFlowView: Défi existant mais pas pour aujourd'hui (\(formatter.string(from: challengeDate)) vs \(formatter.string(from: today)))")
+            }
         }
         
         // ✅ Gérer l'accès freemium AVANT de configurer le service
         appState.freemiumManager?.handleDailyChallengeAccess(currentChallengeDay: currentChallengeDay) {
             // Accès autorisé - Configurer le service
-            print("✅ DailyChallengeFlowView: Accès autorisé - Configuration service")
+            print("🔄 DailyChallengeFlowView: Configuration service pour récupérer défi du jour")
             dailyChallengeService.configure(with: appState)
         }
     }

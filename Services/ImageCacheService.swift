@@ -64,6 +64,22 @@ class ImageCacheService {
         print("🖼️ ImageCacheService: Image mise en cache pour: \(urlString)")
     }
     
+    func clearCachedImage(for urlString: String) {
+        let cacheKey = cacheKeyForURL(urlString)
+        
+        // 1. Supprimer du cache mémoire
+        memoryCache.removeObject(forKey: cacheKey as NSString)
+        
+        // 2. Supprimer du cache disque
+        Task.detached { [weak self] in
+            guard let self = self else { return }
+            let fileURL = self.cacheDirectory.appendingPathComponent("\(cacheKey).jpg")
+            try? self.fileManager.removeItem(at: fileURL)
+        }
+        
+        print("🗑️ ImageCacheService: Image supprimée du cache pour: \(urlString)")
+    }
+    
     func clearCache() {
         // Vider le cache mémoire
         memoryCache.removeAllObjects()

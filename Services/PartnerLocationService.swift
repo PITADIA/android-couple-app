@@ -162,13 +162,28 @@ class PartnerLocationService: ObservableObject {
         partnerName = partnerInfo["name"] as? String
         
         // Récupérer l'URL de l'image de profil
-        partnerProfileImageURL = partnerInfo["profileImageURL"] as? String
+        let newProfileURL = partnerInfo["profileImageURL"] as? String
         
-        if let profileURL = partnerProfileImageURL {
-            print("🌍 PartnerLocationService: Photo profil partenaire: \(profileURL)")
+        // Vérifier si l'URL a changé et mettre à jour le cache si nécessaire
+        if let newURL = newProfileURL {
+            print("🌍 PartnerLocationService: Photo profil partenaire: \(newURL)")
+            
+            // Vérifier si l'URL a changé pour déclencher une mise à jour du cache
+            if UserCacheManager.shared.hasPartnerImageChanged(newURL: newURL) {
+                print("🔄 PartnerLocationService: URL partenaire changée, téléchargement en arrière-plan...")
+                downloadAndCachePartnerImage(from: newURL)
+            }
         } else {
             print("🌍 PartnerLocationService: Pas de photo profil pour le partenaire")
+            
+            // Si plus d'image, nettoyer le cache
+            if UserCacheManager.shared.hasCachedPartnerImage() {
+                UserCacheManager.shared.clearCachedPartnerImage()
+                print("🗑️ PartnerLocationService: Cache image partenaire nettoyé (plus d'URL)")
+            }
         }
+        
+        partnerProfileImageURL = newProfileURL
         
         // VÉRIFIER SI LOCALISATION PARTENAIRE PRÉSENTE
         if let locationData = partnerInfo["currentLocation"] as? [String: Any] {
@@ -282,5 +297,36 @@ class PartnerLocationService: ObservableObject {
         // Reset des caches aussi
         lastFetchTime = Date.distantPast
         lastLocationFetchTime = Date.distantPast
+    }
+    
+    // MARK: - Cache Management
+    
+    /// Télécharge et met en cache l'image du partenaire en arrière-plan
+    private func downloadAndCachePartnerImage(from url: String) {
+        Task {
+            do {
+                guard let imageUrl = URL(string: url) else {
+                    print("❌ PartnerLocationService: URL invalide: \(url)")
+                    return
+                }
+                
+                print("🤝 PartnerLocationService: Téléchargement image partenaire: \(url)")
+                let (data, _) = try await URLSession.shared.data(from: imageUrl)
+                
+                guard let image = UIImage(data: data) else {
+                    print("❌ PartnerLocationService: Impossible de créer UIImage depuis les données")
+                    return
+                }
+                
+                // Mettre en cache l'image du partenaire
+                await MainActor.run {
+                    UserCacheManager.shared.cachePartnerImage(image, url: url)
+                    print("✅ PartnerLocationService: Image partenaire mise en cache")
+                }
+                
+            } catch {
+                print("❌ PartnerLocationService: Erreur téléchargement image partenaire: \(error)")
+            }
+        }
     }
 } 

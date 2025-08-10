@@ -3,6 +3,16 @@ import Combine
 import FirebaseAuth
 import RevenueCat
 
+// MARK: - IntroFlags Structure
+
+/// Flags pour traquer si l'utilisateur a vu les pages d'introduction
+struct IntroFlags: Codable {
+    var dailyQuestion: Bool = false
+    var dailyChallenge: Bool = false
+    
+    static let `default` = IntroFlags()
+}
+
 class AppState: ObservableObject {
     @Published var isOnboardingCompleted: Bool = false
     @Published var isAuthenticated: Bool = false
@@ -62,11 +72,33 @@ class AppState: ObservableObject {
     // Flag pour savoir si l'utilisateur a volontairement commencé l'onboarding
     @Published var hasUserStartedOnboarding: Bool = false
     
+    // NOUVEAU: Flags d'introduction par couple
+    @Published var introFlags: IntroFlags = IntroFlags.default
+    
     private let firebaseService = FirebaseService.shared
     private var cancellables = Set<AnyCancellable>()
     
     init() {
         print("AppState: Initialisation")
+        
+        // 🚀 NOUVEAU: Charger l'utilisateur depuis le cache IMMÉDIATEMENT
+        if let cachedUser = UserCacheManager.shared.getCachedUser() {
+            print("🚀 AppState: Utilisateur trouvé en cache: \(cachedUser.name)")
+            self.currentUser = cachedUser
+            self.isAuthenticated = true
+            self.isOnboardingCompleted = !cachedUser.onboardingInProgress
+            
+            // 🎯 CORRECTION: Charger les introFlags IMMÉDIATEMENT pour éviter le flash d'intro
+            self.loadIntroFlagsSync()
+            
+            // Délai très court pour affichage fluide (0.3s)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                print("AppState: ✅ Cache utilisateur → Fin chargement immédiate")
+                self.hasMinimumLoadingTimeElapsed = true
+                self.firebaseDataLoaded = true // Marquer comme chargé depuis le cache
+                self.checkIfLoadingComplete()
+            }
+        }
         
         // Initialiser le FreemiumManager
         self.freemiumManager = FreemiumManager(appState: self)
@@ -143,7 +175,15 @@ class AppState: ObservableObject {
         firebaseService.$isAuthenticated
             .receive(on: DispatchQueue.main)
             .sink { [weak self] isAuth in
-                print("AppState: Auth changé: \(isAuth)")
+                let timestamp = Date().timeIntervalSince1970
+                print("AppState: received isAuthenticated = \(isAuth) [\(timestamp)]")
+                
+                // 🚀 NOUVEAU: Protéger le cache - Ne pas écraser isAuthenticated=true avec false
+                if self?.isAuthenticated == true && isAuth == false && self?.currentUser != nil {
+                    print("🛡️ AppState: Cache protégé - isAuthenticated=false ignoré (utilisateur en cache)")
+                    return
+                }
+                
                 self?.isAuthenticated = isAuth
                 
                 // MODIFIÉ: Ne plus arrêter le chargement ici directement
@@ -151,25 +191,21 @@ class AppState: ObservableObject {
             }
             .store(in: &cancellables)
         
-        // 🚀 NOUVEAU: Observer les notifications de session Firebase depuis AppDelegate
-        NotificationCenter.default.addObserver(
-            self, 
-            selector: #selector(handleFirebaseSessionRestored(_:)), 
-            name: NSNotification.Name("FirebaseSessionRestored"), 
-            object: nil
-        )
-        
-        NotificationCenter.default.addObserver(
-            self, 
-            selector: #selector(handleFirebaseSessionEmpty(_:)), 
-            name: NSNotification.Name("FirebaseSessionEmpty"), 
-            object: nil
-        )
-        
         firebaseService.$currentUser
             .receive(on: DispatchQueue.main)
             .sink { [weak self] (user: AppUser?) in
-                print("AppState: User changé: \(user?.name ?? "nil")")
+                let timestamp = Date().timeIntervalSince1970
+                print("AppState: User changé: \(user?.name ?? "nil") [\(timestamp)]")
+                
+                // 🚀 NOUVEAU: Protéger le cache - Ne pas écraser si on a déjà un utilisateur du cache
+                if self?.currentUser != nil && user == nil {
+                    print("🛡️ AppState: Cache protégé - Utilisateur Firebase nil ignoré")
+                    // Ne pas écraser le cache avec nil, juste marquer Firebase comme chargé
+                    print("AppState: currentUser arrived, setting firebaseDataLoaded = true [\(timestamp)]")
+                    self?.firebaseDataLoaded = true
+                    self?.checkIfLoadingComplete()
+                    return
+                }
                 
                 // NOUVEAU: Détecter les changements d'abonnement
                 if let oldUser = self?.currentUser, let newUser = user {
@@ -180,15 +216,32 @@ class AppState: ObservableObject {
                     }
                 }
                 
-                self?.currentUser = user
+                // 🚀 NOUVELLE APPROCHE: Cache local = source de vérité
+                // Plus besoin de détecter des incohérences d'upload
+                
+                // Protection contre snapshots obsolètes pour l'image de profil
+                if let incoming = user, let existing = self?.currentUser,
+                   let existingTs = existing.profileImageUpdatedAt, let incomingTs = incoming.profileImageUpdatedAt,
+                   incomingTs < existingTs {
+                    print("🛡️ AppState: Snapshot obsolète ignoré (profileImageUpdatedAt)")
+                    // Ne pas écraser; continuer avec l'utilisateur existant
+                } else {
+                    // Seulement mettre à jour si on a une vraie donnée Firebase OU pas de cache
+                    if user != nil || self?.currentUser == nil {
+                        self?.currentUser = user
+                    } else {
+                        print("🛡️ AppState: Cache preservé - Firebase user=nil ignoré")
+                    }
+                }
                 
                 // MODIFIÉ: Marquer que Firebase a terminé, mais ne pas arrêter le chargement directement
+                print("AppState: currentUser arrived, setting firebaseDataLoaded = true [\(timestamp)]")
                 self?.firebaseDataLoaded = true
                 self?.checkIfLoadingComplete()
                 
                 // MODIFICATION: Vérifier si on force l'onboarding
                 if self?.forceOnboarding == true {
-                    print("🔥 AppState: ONBOARDING FORCE - Pas de redirection automatique")
+                    print("🔥🔥🔥 AppState: ONBOARDING FORCE - Pas de redirection automatique")
                     self?.isOnboardingCompleted = false
                     self?.isOnboardingInProgress = true
                     return
@@ -213,6 +266,12 @@ class AppState: ObservableObject {
                                 favoritesService.setCurrentUser(firebaseUID, name: user.name)
                             }
                         }
+                        
+                        // NOUVEAU: Charger les flags d'intro pour le couple actuel
+                        self?.loadIntroFlags()
+                        
+                        // NOUVEAU: Initialiser les flags pour les utilisateurs existants (migration)
+                        self?.initializeIntroFlagsForExistingUsers()
                         
                         // Configurer le PartnerLocationService si un partenaire est connecté
                         // NOTE: Ce sera géré par l'observer firebaseService.$currentUser plus bas
@@ -303,28 +362,40 @@ class AppState: ObservableObject {
                 self?.widgetService?.refreshData()
             }
             .store(in: &cancellables)
+        
+        // NOUVEAU: Listener pour reset des introFlags
+        NotificationCenter.default.publisher(for: .introFlagsDidReset)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                print("🔄 AppState: Reset des introFlags détecté - Rechargement")
+                self?.loadIntroFlags()
+            }
+            .store(in: &cancellables)
     }
     
     // NOUVEAU: Vérifier si le chargement peut se terminer
     private func checkIfLoadingComplete() {
-        print("AppState: Vérification fin de chargement")
+        let timestamp = Date().timeIntervalSince1970
+        print("AppState: Vérification fin de chargement [\(timestamp)]")
         print("AppState: - Délai minimum écoulé: \(hasMinimumLoadingTimeElapsed)")
         print("AppState: - Données Firebase chargées: \(firebaseDataLoaded)")
+        print("AppState: - isAuthenticated: \(isAuthenticated)")
         
-        // Le chargement se termine seulement quand TOUTES les conditions sont remplies:
-        // 1. Le délai minimum s'est écoulé (2.5s pour voir le LaunchScreen)
-        // 2. Firebase a terminé de charger les données
+        // RETOUR À LA LOGIQUE SIMPLE DE L'ANCIEN CODE:
+        // Le chargement se termine quand TOUTES les conditions sont remplies:
+        // 1. Le délai minimum s'est écoulé (1s pour voir le LaunchScreen)
+        // 2. Firebase a terminé de charger les données (même si currentUser = nil)
         if hasMinimumLoadingTimeElapsed && firebaseDataLoaded {
-            print("AppState: ✅ Conditions remplies - Fin du chargement")
+            print("AppState: ✅ Conditions remplies - Fin du chargement [\(timestamp)]")
             self.isLoading = false
         } else {
-            print("AppState: ⏳ Attente des conditions pour finir le chargement")
+            print("AppState: ⏳ Attente des conditions pour finir le chargement [\(timestamp)]")
         }
     }
     
     // NOUVEAU: Méthode pour forcer l'onboarding
     func startOnboardingFlow() {
-        print("🔥 AppState: DEMARRAGE FORCE DE L'ONBOARDING")
+        print("🔥🔥🔥 AppState: DEMARRAGE FORCE DE L'ONBOARDING")
         forceOnboarding = true
         isOnboardingCompleted = false
         isOnboardingInProgress = true
@@ -333,7 +404,7 @@ class AppState: ObservableObject {
     
     // Méthode pour démarrer l'onboarding manuellement depuis AuthenticationView
     func startUserOnboarding() {
-        print("🚀 Démarrage onboarding manuel")
+        print("🔥🔥🔥 AppState: UTILISATEUR A DEMARRE L'ONBOARDING MANUELLEMENT")
         hasUserStartedOnboarding = true
         isOnboardingCompleted = false
         isOnboardingInProgress = true
@@ -362,7 +433,7 @@ class AppState: ObservableObject {
         
         // Configuration RevenueCat avec l'ID utilisateur Firebase
         if let firebaseUserId = Auth.auth().currentUser?.uid {
-            print("💰 AppState: Configuration RevenueCat avec userID")
+            print("💰 AppState: Configuration RevenueCat avec userID: \(firebaseUserId)")
             Purchases.shared.logIn(firebaseUserId) { (customerInfo, created, error) in
                 if let error = error {
                     print("❌ AppState: Erreur RevenueCat logIn: \(error)")
@@ -377,6 +448,9 @@ class AppState: ObservableObject {
     }
     
     func signOut() {
+        // 🗑️ NOUVEAU: Nettoyer le cache utilisateur
+        UserCacheManager.shared.clearCache()
+        
         // Déconnexion RevenueCat
         print("💰 AppState: Déconnexion RevenueCat")
         Purchases.shared.logOut { (customerInfo, error) in
@@ -398,6 +472,9 @@ class AppState: ObservableObject {
     
     func deleteAccount() {
         print("AppState: Suppression du compte")
+        
+        // 🗑️ NOUVEAU: Nettoyer le cache utilisateur
+        UserCacheManager.shared.clearCache()
         
         // Déconnexion RevenueCat lors de la suppression
         print("💰 AppState: Déconnexion RevenueCat (suppression compte)")
@@ -441,21 +518,147 @@ class AppState: ObservableObject {
         }
     }
     
-    // MARK: - Firebase Session Persistence Handlers
+    // MARK: - IntroFlags Management
     
-    @objc private func handleFirebaseSessionRestored(_ notification: Notification) {
-        print("🔥 AppState: Session Firebase restaurée détectée!")
+    /// Génère l'ID du couple basé sur les UIDs triés
+    private func generateCoupleId() -> String? {
+        guard let firebaseUser = Auth.auth().currentUser,
+              let appUser = currentUser,
+              let partnerId = appUser.partnerId,
+              !partnerId.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            return nil
+        }
         
-        if let user = notification.object as? FirebaseAuth.User {
-            print("🔥 AppState: Session restaurée pour utilisateur")
-            // La session est restaurée, Firebase Service va charger les données
-            // Pas besoin d'action ici, laisser le flow normal se dérouler
+        return [firebaseUser.uid, partnerId].sorted().joined(separator: "_")
+    }
+    
+    /// Charge les flags d'intro depuis UserDefaults pour le couple actuel
+    func loadIntroFlags() {
+        guard let coupleId = generateCoupleId() else {
+            print("🔍 IntroFlags: Impossible de générer coupleId - pas de partenaire connecté")
+            introFlags = IntroFlags.default
+            return
+        }
+        
+        let key = ConnectionConfig.introFlagsKey(for: coupleId)
+        
+        if let data = UserDefaults.standard.data(forKey: key),
+           let flags = try? JSONDecoder().decode(IntroFlags.self, from: data) {
+            introFlags = flags
+            print("✅ IntroFlags: Flags chargés pour couple \(coupleId): \(flags)")
+        } else {
+            introFlags = IntroFlags.default
+            print("🔍 IntroFlags: Aucun flag sauvegardé pour couple \(coupleId) - valeurs par défaut")
         }
     }
     
-    @objc private func handleFirebaseSessionEmpty(_ notification: Notification) {
-        // Aucune session à restaurer
-        // Firebase a confirmé qu'il n'y a pas de session persistée
-        // L'état d'authentification est déjà à false, rien à faire
+    /// Version synchrone de loadIntroFlags() pour le chargement initial dans init()
+    private func loadIntroFlagsSync() {
+        guard let coupleId = generateCoupleId() else {
+            print("🔍 IntroFlags (SYNC): Impossible de générer coupleId - pas de partenaire connecté")
+            introFlags = IntroFlags.default
+            return
+        }
+        
+        let key = ConnectionConfig.introFlagsKey(for: coupleId)
+        
+        if let data = UserDefaults.standard.data(forKey: key),
+           let flags = try? JSONDecoder().decode(IntroFlags.self, from: data) {
+            introFlags = flags
+            print("✅ IntroFlags (SYNC): Flags chargés immédiatement pour couple \(coupleId): \(flags)")
+        } else {
+            introFlags = IntroFlags.default
+            print("🔍 IntroFlags (SYNC): Aucun flag sauvegardé pour couple \(coupleId) - valeurs par défaut")
+        }
+    }
+    
+    /// Sauvegarde les flags d'intro dans UserDefaults pour le couple actuel
+    func saveIntroFlags() {
+        guard let coupleId = generateCoupleId() else {
+            print("❌ IntroFlags: Impossible de sauvegarder - pas de partenaire connecté")
+            return
+        }
+        
+        let key = ConnectionConfig.introFlagsKey(for: coupleId)
+        
+        if let data = try? JSONEncoder().encode(introFlags) {
+            UserDefaults.standard.set(data, forKey: key)
+            print("✅ IntroFlags: Flags sauvegardés pour couple \(coupleId): \(introFlags)")
+        } else {
+            print("❌ IntroFlags: Erreur encodage flags pour couple \(coupleId)")
+        }
+    }
+    
+    /// Reset les flags lors d'un changement de partenaire
+    func resetIntroFlagsOnPartnerChange() {
+        introFlags = IntroFlags.default
+        
+        // Sauvegarder immédiatement pour le nouveau couple (ou absence de couple)
+        if let coupleId = generateCoupleId() {
+            let key = ConnectionConfig.introFlagsKey(for: coupleId)
+            if let data = try? JSONEncoder().encode(introFlags) {
+                UserDefaults.standard.set(data, forKey: key)
+                print("🔄 IntroFlags: Flags reset et sauvegardés pour nouveau couple \(coupleId)")
+            }
+        } else {
+            print("🔄 IntroFlags: Flags reset - aucun partenaire connecté")
+        }
+    }
+    
+    /// Marque l'intro Daily Question comme vue
+    func markDailyQuestionIntroAsSeen() {
+        introFlags.dailyQuestion = true
+        saveIntroFlags()
+        AnalyticsService.shared.track(.introContinue(screen: "daily_question"))
+    }
+    
+    /// Marque l'intro Daily Challenge comme vue
+    func markDailyChallengeIntroAsSeen() {
+        introFlags.dailyChallenge = true
+        saveIntroFlags()
+        AnalyticsService.shared.track(.introContinue(screen: "daily_challenge"))
+    }
+    
+    /// Initialise les flags d'intro pour les utilisateurs existants (migration)
+    func initializeIntroFlagsForExistingUsers() {
+        guard let coupleId = generateCoupleId() else { return }
+        
+        let key = ConnectionConfig.introFlagsKey(for: coupleId)
+        
+        // Si aucun flag n'existe, vérifier si c'est vraiment un utilisateur existant
+        if UserDefaults.standard.data(forKey: key) == nil {
+            // 🚨 HEURISTIQUE: Différencier utilisateur existant vs nouvelle connexion
+            if isLikelyExistingUser() {
+                // Utilisateur existant → marquer comme vu pour éviter l'intro
+                introFlags = IntroFlags(dailyQuestion: true, dailyChallenge: true)
+                print("🔄 IntroFlags: Migration - utilisateur existant détecté - flags marqués comme vus")
+            } else {
+                // Nouvelle connexion → garder comme non vu pour afficher l'intro
+                introFlags = IntroFlags.default
+                print("🔄 IntroFlags: Nouvelle connexion détectée - intro sera affichée")
+            }
+            saveIntroFlags()
+        }
+    }
+    
+    /// Heuristique pour déterminer si c'est un utilisateur existant vs nouvelle connexion
+    private func isLikelyExistingUser() -> Bool {
+        // Vérifier si l'utilisateur a déjà utilisé les features Daily Question/Challenge
+        let hasUsedDailyQuestion = currentUser?.dailyQuestionFirstAccessDate != nil
+        let hasUsedDailyChallenge = currentUser?.dailyChallengeFirstAccessDate != nil
+        
+        // Vérifier si l'utilisateur a un historique d'activité
+        let hasQuestionHistory = currentUser?.dailyQuestionMaxDayReached ?? 0 > 1
+        let hasChallengeHistory = currentUser?.dailyChallengeMaxDayReached ?? 0 > 1
+        
+        let isExistingUser = hasUsedDailyQuestion || hasUsedDailyChallenge || hasQuestionHistory || hasChallengeHistory
+        
+        if isExistingUser {
+            print("✅ IntroFlags: Utilisateur existant - Historique trouvé (Q:\(hasUsedDailyQuestion), C:\(hasUsedDailyChallenge), MaxQ:\(currentUser?.dailyQuestionMaxDayReached ?? 0), MaxC:\(currentUser?.dailyChallengeMaxDayReached ?? 0))")
+        } else {
+            print("🆕 IntroFlags: Nouvel utilisateur - Aucun historique trouvé")
+        }
+        
+        return isExistingUser
     }
 } 

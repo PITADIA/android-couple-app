@@ -8,7 +8,9 @@ struct ContentView: View {
     @State private var isOnboardingActive = false
     
     var body: some View {
-        ZStack {
+        let _ = Self._printCurrentRoute(appState: appState, isTransitioning: isTransitioning)
+        
+        return ZStack {
             Group {
                 if appState.isLoading {
                     LaunchScreenView()
@@ -173,6 +175,23 @@ struct ContentView: View {
             // Cassure de série
             UserDefaults.standard.set(today, forKey: "streak_start_date")
             return 1
+        }
+    }
+    
+    // Helper method for logging current route
+    private static func _printCurrentRoute(appState: AppState, isTransitioning: Bool) {
+        if appState.isLoading {
+            print("ContentView: showing LaunchScreen [loading=true]")
+        } else if isTransitioning {
+            print("ContentView: showing LoadingTransition [transitioning=true]")
+        } else if !appState.isAuthenticated {
+            print("ContentView: showing AuthenticationView [authenticated=false]")
+        } else if appState.isAuthenticated && !appState.hasUserStartedOnboarding && !appState.isOnboardingCompleted {
+            print("ContentView: showing AuthenticationView [authenticated=true, !hasUserStarted && !completed]")
+        } else if appState.isAuthenticated && (appState.hasUserStartedOnboarding || appState.forceOnboarding) && !appState.isOnboardingCompleted {
+            print("ContentView: showing OnboardingView [authenticated=true, (hasUserStarted || force) && !completed]")
+        } else {
+            print("ContentView: showing TabContainerView [authenticated=true, onboarding completed]")
         }
     }
 }

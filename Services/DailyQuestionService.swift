@@ -26,6 +26,10 @@ class DailyQuestionService: ObservableObject {
     // CORRECTION: Référence weak à AppState pour éviter les cycles de référence
     private weak var appState: AppState?
     
+    // 🚀 OPTIMISATION: Éviter les reconfigurations redondantes
+    private var isConfigured: Bool = false
+    private var currentCoupleId: String?
+    
     private init() {
         // Les listeners seront configurés via configure(with:)
     }
@@ -39,12 +43,33 @@ class DailyQuestionService: ObservableObject {
     // MARK: - Configuration
     
     func configure(with appState: AppState) {
+        // 🚀 OPTIMISATION: Éviter les reconfigurations redondantes
+        let newCoupleId = generateCoupleId(from: appState)
+        
+        if isConfigured && currentCoupleId == newCoupleId {
+            print("⚡ DailyQuestionService: Déjà configuré pour couple \(newCoupleId ?? "nil") - Pas de reconfiguration")
+            return
+        }
+        
+        print("🔄 DailyQuestionService: Configuration pour couple \(newCoupleId ?? "nil")")
         self.appState = appState
+        self.currentCoupleId = newCoupleId
+        self.isConfigured = true
         
         // 🌍 Sauvegarder la langue utilisateur pour les notifications localisées
         saveUserLanguageToFirebase()
         
         setupListeners()
+    }
+    
+    private func generateCoupleId(from appState: AppState) -> String? {
+        guard let currentUser = Auth.auth().currentUser,
+              let appUser = appState.currentUser,
+              let partnerId = appUser.partnerId,
+              !partnerId.isEmpty else {
+            return nil
+        }
+        return [currentUser.uid, partnerId].sorted().joined(separator: "_")
     }
     
     // MARK: - Setup et Lifecycle
@@ -62,13 +87,37 @@ class DailyQuestionService: ObservableObject {
         // CORRECTION: Créer le coupleId comme dans le reste de l'app
         let coupleId = [currentUser.uid, partnerId].sorted().joined(separator: "_")
         print("🔥 DailyQuestionService: Écoute des questions pour couple: \(coupleId)")
+        
+        // 🚀 OPTIMISATION CACHE: Charger depuis le cache d'abord pour un affichage immédiat
+        Task {
+            await loadFromCacheFirst(coupleId: coupleId)
+        }
             
         // Écouter les settings
         setupSettingsListener(for: coupleId)
         
         // Écouter les questions
         setupQuestionsListener(for: coupleId)
+    }
+    
+    /// 🚀 Charge les données depuis le cache pour un affichage immédiat
+    private func loadFromCacheFirst(coupleId: String) async {
+        let cachedQuestions = QuestionCacheManager.shared.getCachedDailyQuestions(for: coupleId, limit: 5)
+        
+        if !cachedQuestions.isEmpty {
+            print("⚡ DailyQuestionService: Chargement immédiat depuis cache - \(cachedQuestions.count) questions")
+            
+            await MainActor.run {
+                if self.currentQuestion == nil {
+                    self.questionHistory = cachedQuestions
+                    self.currentQuestion = cachedQuestions.first
+                    // 🚀 Stopper immédiatement l'état de chargement pour éviter le flash d'intro
+                    self.isLoading = false
+                    print("⚡ DailyQuestionService: Question affichée depuis cache: \(cachedQuestions.first?.questionKey ?? "nil")")
+                }
             }
+        }
+    }
             
     private func setupSettingsListener(for coupleId: String) {
         settingsListener?.remove()

@@ -34,11 +34,11 @@ struct DailyChallengeMainView: View {
                         }
                         Spacer()
                         
-                        // Icône défis sauvegardés en haut à droite
+                                                // Icône défis sauvegardés en haut à droite
                         Button(action: {
-                            showingSavedChallenges = true
+showingSavedChallenges = true
                         }) {
-                            Image(systemName: "bookmark.fill")
+                            Image(systemName: "bookmark")
                                 .font(.system(size: 20))
                                 .foregroundColor(.black)
                         }

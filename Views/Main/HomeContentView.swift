@@ -125,11 +125,7 @@ struct HomeContentView: View {
     
     /// Helper pour obtenir le sous-titre des catégories premium
     private func getPremiumCategoriesSubtitle() -> String? {
-        // Seulement si l'utilisateur a un partenaire connecté
-        guard hasConnectedPartner else {
-            return nil
-        }
-        
+        // ✅ CORRECTION: Afficher le message pour tous les utilisateurs, pas seulement ceux avec partenaire
         // Vérifier le statut d'abonnement
         if appState.currentUser?.isSubscribed ?? false {
             return NSLocalizedString("premium_categories_subscribed", comment: "Premium categories subtitle for subscribed users")

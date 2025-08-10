@@ -58,13 +58,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Connect your partner"
+            "value" : "Connect my partner"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Connecter votre partenaire"
+            "value" : "Connecter mon partenaire"
           }
         }
       }
@@ -88,6 +88,23 @@
     },
     "continue_without_notifications_button" : {
 
+    },
+    "continue_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continue"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuer"
+          }
+        }
+      }
     },
     "daily_question_1" : {
       "extractionState" : "manual",
@@ -2304,6 +2321,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'est-ce que tu aimerais que je valorise davantage chez toi ?"
+          }
+        }
+      }
+    },
+    "daily_question_preparing" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preparing…"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Préparation en cours…"
+          }
+        }
+      }
+    },
+    "daily_question_preparing_subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We are preparing your chat space"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nous préparons votre espace de discussion"
           }
         }
       }

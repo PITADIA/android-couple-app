@@ -62,6 +62,7 @@ struct AppUser: Codable, Identifiable, Equatable {
     var onboardingInProgress: Bool
     var relationshipStartDate: Date?
     var profileImageURL: String?
+    var profileImageUpdatedAt: Date?
     var currentLocation: UserLocation?
     var languageCode: String? // NOUVEAU: Code langue pour localisation notifications
     
@@ -81,7 +82,7 @@ struct AppUser: Codable, Identifiable, Equatable {
         case notInRelationship = "Je ne suis pas en couple"
     }
     
-    init(id: String = UUID().uuidString, name: String = "", birthDate: Date, relationshipGoals: [String] = [], relationshipDuration: RelationshipDuration = .none, relationshipImprovement: String? = nil, questionMode: String? = nil, partnerCode: String? = nil, partnerId: String? = nil, partnerConnectedAt: Date? = nil, subscriptionInheritedFrom: String? = nil, subscriptionInheritedAt: Date? = nil, connectedPartnerCode: String? = nil, connectedPartnerId: String? = nil, connectedAt: Date? = nil, isSubscribed: Bool = false, onboardingInProgress: Bool = false, relationshipStartDate: Date? = nil, profileImageURL: String? = nil, currentLocation: UserLocation? = nil, languageCode: String? = nil, dailyQuestionFirstAccessDate: Date? = nil, dailyQuestionMaxDayReached: Int = 0, dailyChallengeFirstAccessDate: Date? = nil, dailyChallengeMaxDayReached: Int = 0) {
+    init(id: String = UUID().uuidString, name: String = "", birthDate: Date, relationshipGoals: [String] = [], relationshipDuration: RelationshipDuration = .none, relationshipImprovement: String? = nil, questionMode: String? = nil, partnerCode: String? = nil, partnerId: String? = nil, partnerConnectedAt: Date? = nil, subscriptionInheritedFrom: String? = nil, subscriptionInheritedAt: Date? = nil, connectedPartnerCode: String? = nil, connectedPartnerId: String? = nil, connectedAt: Date? = nil, isSubscribed: Bool = false, onboardingInProgress: Bool = false, relationshipStartDate: Date? = nil, profileImageURL: String? = nil, profileImageUpdatedAt: Date? = nil, currentLocation: UserLocation? = nil, languageCode: String? = nil, dailyQuestionFirstAccessDate: Date? = nil, dailyQuestionMaxDayReached: Int = 0, dailyChallengeFirstAccessDate: Date? = nil, dailyChallengeMaxDayReached: Int = 0) {
         self.id = id
         
         // Auto-génération si nom vide avec localisation
@@ -120,6 +121,7 @@ struct AppUser: Codable, Identifiable, Equatable {
         self.onboardingInProgress = onboardingInProgress
         self.relationshipStartDate = relationshipStartDate
         self.profileImageURL = profileImageURL
+        self.profileImageUpdatedAt = profileImageUpdatedAt
         self.currentLocation = currentLocation
         self.languageCode = languageCode
         self.dailyQuestionFirstAccessDate = dailyQuestionFirstAccessDate

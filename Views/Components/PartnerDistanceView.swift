@@ -326,7 +326,14 @@ struct UserProfileImage: View {
                 .frame(width: size + 12, height: size + 12)
                 .blur(radius: 6)
             
-            if let imageURL = imageURL, !imageURL.isEmpty {
+            if let cachedImage = UserCacheManager.shared.getCachedProfileImage() {
+                // 🚀 PRIORITÉ: Image en cache pour affichage instantané
+                Image(uiImage: cachedImage)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: size, height: size)
+                    .clipShape(Circle())
+            } else if let imageURL = imageURL, !imageURL.isEmpty {
                 // Image de profil utilisateur (taille complète)
                 AsyncImageView(
                     imageURL: imageURL,
@@ -365,6 +372,52 @@ struct PartnerProfileImage: View {
     let partnerName: String
     let size: CGFloat
     
+    @State private var cacheUpdateTrigger = false
+    
+    /// Vérifie si l'URL du partenaire a changé et met à jour le cache si nécessaire
+    private func checkAndUpdatePartnerImageIfNeeded() {
+        guard let currentURL = imageURL, !currentURL.isEmpty else { return }
+        
+        // Vérifier si l'URL a changé
+        if UserCacheManager.shared.hasPartnerImageChanged(newURL: currentURL) {
+            print("🔄 PartnerProfileImage: URL partenaire changée, re-téléchargement...")
+            downloadAndCachePartnerImageIfNeeded(from: currentURL)
+        }
+    }
+    
+    /// Télécharge et met en cache l'image du partenaire
+    private func downloadAndCachePartnerImageIfNeeded(from url: String) {
+        print("🤝 PartnerProfileImage: Téléchargement image partenaire: \(url)")
+        
+        Task {
+            do {
+                guard let imageUrl = URL(string: url) else {
+                    print("❌ PartnerProfileImage: URL invalide: \(url)")
+                    return
+                }
+                
+                let (data, _) = try await URLSession.shared.data(from: imageUrl)
+                
+                guard let image = UIImage(data: data) else {
+                    print("❌ PartnerProfileImage: Impossible de créer UIImage depuis les données")
+                    return
+                }
+                
+                // Mettre en cache l'image du partenaire
+                await MainActor.run {
+                    UserCacheManager.shared.cachePartnerImage(image, url: url)
+                    print("✅ PartnerProfileImage: Image partenaire mise en cache")
+                    
+                    // Déclencher une mise à jour de la vue
+                    cacheUpdateTrigger.toggle()
+                }
+                
+            } catch {
+                print("❌ PartnerProfileImage: Erreur téléchargement image partenaire: \(error)")
+            }
+        }
+    }
+    
     var body: some View {
         ZStack {
             // Léger effet de surbrillance autour
@@ -374,7 +427,18 @@ struct PartnerProfileImage: View {
                 .blur(radius: 6)
             
             if hasPartner {
-                if let imageURL = imageURL, !imageURL.isEmpty {
+                if let cachedPartnerImage = UserCacheManager.shared.getCachedPartnerImage() {
+                    // 🚀 PRIORITÉ: Image partenaire en cache pour affichage instantané
+                    Image(uiImage: cachedPartnerImage)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: size, height: size)
+                        .clipShape(Circle())
+                        .onAppear {
+                            // Vérifier en arrière-plan si l'URL a changé
+                            checkAndUpdatePartnerImageIfNeeded()
+                        }
+                } else if let imageURL = imageURL, !imageURL.isEmpty {
                     // Image de profil du partenaire (taille complète)
                     AsyncImageView(
                         imageURL: imageURL,
@@ -382,6 +446,10 @@ struct PartnerProfileImage: View {
                         height: size,
                         cornerRadius: size / 2
                     )
+                    .onAppear {
+                        // Pas d'image en cache, télécharger et mettre en cache
+                        downloadAndCachePartnerImageIfNeeded(from: imageURL)
+                    }
                 } else {
                     // Afficher les initiales avec fond coloré si partenaire connecté et pas d'image
                     if !partnerName.isEmpty {
@@ -413,6 +481,9 @@ struct PartnerProfileImage: View {
             Circle()
                 .stroke(hasPartner ? Color.white : Color.white.opacity(0.4), lineWidth: 3)
                 .frame(width: size, height: size)
+        }
+        .onChange(of: cacheUpdateTrigger) { _, _ in
+            // Forcer un re-render quand l'image est mise en cache
         }
     }
 }

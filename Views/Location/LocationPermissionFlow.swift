@@ -370,12 +370,38 @@ class PermissionLocationManager: NSObject, ObservableObject, CLLocationManagerDe
     }
     
     private func openSettings() {
+        // ✅ Stratégie officielle et fiable
+        DispatchQueue.main.async {
+            // 1) Si services de localisation globaux désactivés, ouvrir les réglages de l'app
+            if !CLLocationManager.locationServicesEnabled() {
+                self.openGeneralSettings()
+                return
+            }
+
+            // 2) Si jamais demandé, faire une pré-demande puis ouvrir Réglages app
+            let status = CLLocationManager().authorizationStatus
+            if status == .notDetermined {
+                let mgr = CLLocationManager()
+                mgr.requestWhenInUseAuthorization()
+                let delay: TimeInterval
+                if #available(iOS 18.0, *) { delay = 0.6 } else { delay = 1.2 }
+                DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                    self.openGeneralSettings()
+                }
+                return
+            }
+
+            // 3) Ouvrir directement Réglages de l'app
+            self.openGeneralSettings()
+        }
+    }
+    
+    private func openGeneralSettings() {
+        // Fallback sûr : Paramètres généraux de l'app
         guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
         
         DispatchQueue.main.async {
-            if UIApplication.shared.canOpenURL(settingsUrl) {
-                UIApplication.shared.open(settingsUrl)
-            }
+            UIApplication.shared.open(settingsUrl)
         }
     }
     

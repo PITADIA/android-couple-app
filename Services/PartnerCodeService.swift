@@ -176,8 +176,14 @@ class PartnerCodeService: ObservableObject {
     
     // MARK: - Connexion avec un code partenaire
     
-    func connectWithPartnerCode(_ code: String) async -> Bool {
-        print("🔗 PartnerCodeService: connectWithPartnerCode - Code: \(code)")
+    func connectWithPartnerCode(
+        _ code: String, 
+        context: ConnectionConfig.ConnectionContext = .onboarding
+    ) async -> Bool {
+        print("🔗 PartnerCodeService: connectWithPartnerCode - Code: \(code) - Context: \(context.rawValue)")
+        
+        // Analytics: Track connection start
+        AnalyticsService.shared.track(.connectStart(source: context.rawValue))
         
         guard let currentUser = Auth.auth().currentUser else {
             print("❌ PartnerCodeService: Utilisateur non connecté")
@@ -249,13 +255,37 @@ class PartnerCodeService: ObservableObject {
                 }
             }
             
-            // Envoyer les notifications de connexion réussie
-            notifyConnectionSuccess(partnerName: partnerName, subscriptionInherited: subscriptionInherited)
-            
-            // NOUVEAU: Forcer le rechargement immédiat des données utilisateur
-            // pour que l'interface se mette à jour sans redémarrage de l'app
+            // NOUVEAU: Forcer le rechargement immédiat des données utilisateur AVANT la notification
+            // pour que le partnerId soit disponible pour le reset des flags
             print("🔄 PartnerCodeService: Rechargement immédiat des données utilisateur")
             FirebaseService.shared.forceRefreshUserData()
+            
+            // 🚨 FIX CRITIQUE: Reset des flags SYNCHRONIQUEMENT dès que partnerId confirmé
+            // (pas de délai arbitraire fragile)
+            if let refreshedUser = FirebaseService.shared.currentUser,
+               let confirmedPartnerId = refreshedUser.partnerId,
+               !confirmedPartnerId.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                
+                // Reset flags immédiatement avec partnerId confirmé
+                resetIntroFlagsForNewCouple(partnerId: confirmedPartnerId)
+                
+                // Puis envoyer notifications
+                notifyConnectionSuccess(
+                    partnerName: partnerName, 
+                    subscriptionInherited: subscriptionInherited,
+                    context: context
+                )
+            } else {
+                print("❌ PartnerCodeService: PartnerId pas encore disponible après refresh - fallback")
+                // Fallback sur l'ancienne méthode si refresh pas encore terminé
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+                    self?.notifyConnectionSuccess(
+                        partnerName: partnerName, 
+                        subscriptionInherited: subscriptionInherited,
+                        context: context
+                    )
+                }
+            }
             
             return true
             
@@ -293,30 +323,88 @@ class PartnerCodeService: ObservableObject {
         }
     }
     
+    // MARK: - Reset des flags d'intro
+    
+    private func resetIntroFlagsForNewCouple(partnerId: String) {
+        guard let firebaseUID = Auth.auth().currentUser?.uid else {
+            print("❌ PartnerCodeService: Utilisateur non connecté pour reset flags")
+            return
+        }
+        
+        // 🚨 FIX CRITIQUE: Calculer coupleId avec partnerId explicite (pas déduit du nom)
+        let newCoupleId = [firebaseUID, partnerId].sorted().joined(separator: "_")
+        let oldCoupleId = UserDefaults.standard.string(forKey: "lastCoupleId")
+        
+        if newCoupleId != oldCoupleId {
+            print("🔄 PartnerCodeService: Nouveau couple détecté: \(oldCoupleId ?? "nil") → \(newCoupleId)")
+            
+            // Reset flags en utilisant le nouveau coupleId directement
+            let key = ConnectionConfig.introFlagsKey(for: newCoupleId)
+            let resetFlags = IntroFlags.default
+            
+            if let data = try? JSONEncoder().encode(resetFlags) {
+                UserDefaults.standard.set(data, forKey: key)
+                print("✅ PartnerCodeService: Flags reset directement pour couple: \(newCoupleId)")
+            }
+            
+            // Sauvegarder le nouveau coupleId pour futures comparaisons
+            UserDefaults.standard.set(newCoupleId, forKey: "lastCoupleId")
+            
+            // Forcer le rechargement des flags dans AppState sur le main thread
+            DispatchQueue.main.async {
+                // Pour AppState, on peut utiliser NotificationCenter pour déclencher le reload
+                NotificationCenter.default.post(name: .introFlagsDidReset, object: nil)
+                print("✅ PartnerCodeService: Signal de rechargement des flags envoyé")
+            }
+        } else {
+            print("⚡ PartnerCodeService: Même couple - Pas de reset des flags")
+        }
+    }
+    
+
+    
     // MARK: - Notifications de connexion réussie
     
-    private func notifyConnectionSuccess(partnerName: String, subscriptionInherited: Bool) {
+    private func notifyConnectionSuccess(
+        partnerName: String, 
+        subscriptionInherited: Bool,
+        context: ConnectionConfig.ConnectionContext = .onboarding
+    ) {
+        // Analytics: Track connection success
+        AnalyticsService.shared.track(.connectSuccess(
+            inheritedSub: subscriptionInherited,
+            context: context.rawValue
+        ))
+        
         // Notifier l'héritage d'abonnement si applicable
         if subscriptionInherited {
             print("✅ PartnerCodeService: Notification héritage abonnement envoyée")
             NotificationCenter.default.post(name: .subscriptionInherited, object: nil)
         }
         
-        // Notifier la connexion réussie - CORRECTION: utiliser .partnerConnected
+        // Notifier la connexion réussie avec contexte
         NotificationCenter.default.post(
             name: .partnerConnected, 
             object: nil, 
-            userInfo: ["partnerName": partnerName, "isSubscribed": subscriptionInherited]
+            userInfo: [
+                "partnerName": partnerName, 
+                "isSubscribed": subscriptionInherited,
+                "context": context.rawValue
+            ]
         )
         
         // Aussi envoyer l'ancienne notification pour compatibilité
         NotificationCenter.default.post(
             name: .partnerConnectionSuccess, 
             object: nil, 
-            userInfo: ["partnerName": partnerName, "isSubscribed": subscriptionInherited]
+            userInfo: [
+                "partnerName": partnerName, 
+                "isSubscribed": subscriptionInherited,
+                "context": context.rawValue
+            ]
         )
         
-        print("✅ PartnerCodeService: Notifications de connexion envoyées")
+        print("✅ PartnerCodeService: Notifications de connexion envoyées avec contexte: \(context.rawValue)")
     }
     
     // MARK: - Vérifier la connexion existante
@@ -433,6 +521,10 @@ class PartnerCodeService: ObservableObject {
                 self.partnerInfo = nil
                 self.isLoading = false
             }
+            
+            // 🚨 FIX: Vider lastCoupleId à la déconnexion pour éviter faux positifs
+            UserDefaults.standard.removeObject(forKey: "lastCoupleId")
+            print("✅ PartnerCodeService: lastCoupleId vidé à la déconnexion")
             
             // Notifier la déconnexion
             await MainActor.run {
@@ -577,4 +669,5 @@ extension Notification.Name {
     static let subscriptionUpdated = Notification.Name("subscriptionUpdated")
     static let partnerSubscriptionShared = Notification.Name("partnerSubscriptionShared")
     static let partnerSubscriptionRevoked = Notification.Name("partnerSubscriptionRevoked")
+    static let introFlagsDidReset = Notification.Name("introFlagsDidReset")
 } 

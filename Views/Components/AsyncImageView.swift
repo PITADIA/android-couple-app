@@ -74,7 +74,13 @@ struct AsyncImageView: View {
             loadImageIfNeeded()
         }
         .onChange(of: imageURL) { oldValue, newValue in
-            loadImageIfNeeded()
+            // Réinitialiser l'image chargée si l'URL change pour forcer un nouveau chargement
+            if newValue != oldValue {
+                self.loadedImage = nil
+                self.hasError = false
+                self.isLoading = false
+                loadImageIfNeeded()
+            }
         }
     }
     

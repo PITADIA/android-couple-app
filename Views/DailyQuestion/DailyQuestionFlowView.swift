@@ -3,24 +3,41 @@ import SwiftUI
 struct DailyQuestionFlowView: View {
     @EnvironmentObject var appState: AppState
     @StateObject private var dailyQuestionService = DailyQuestionService.shared
-
+    
     var body: some View {
         Group {
-            if let user = appState.currentUser,
-               let partnerId = user.partnerId,
-               !partnerId.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            switch currentRoute {
+            case .intro(let showConnect):
+                DailyQuestionIntroView(showConnectButton: showConnect)
+                    .environmentObject(appState)
+                    .onAppear {
+                        if !showConnect {
+                            // Analytics: intro montrée même si connecté
+                            AnalyticsService.shared.track(.introShown(screen: "daily_question"))
+                        }
+                    }
                 
-                // ✅ Partenaire connecté - Vérifier accès freemium
-                if shouldShowPaywall {
-                    DailyQuestionPaywallView(questionDay: currentQuestionDay)
-                        .environmentObject(appState)
-                } else {
-                    DailyQuestionMainView()
-                        .environmentObject(appState)
-                }
-            } else {
-                // ❌ Pas de partenaire ⇒ Intro pour connexion
-                DailyQuestionIntroView()
+            case .paywall(let day):
+                DailyQuestionPaywallView(questionDay: day)
+                    .environmentObject(appState)
+                
+            case .main:
+                DailyQuestionMainView()
+                    .environmentObject(appState)
+                
+            case .error(let message):
+                DailyQuestionErrorView(
+                    message: message,
+                    onRetry: {
+                        configureServiceIfNeeded()
+                    }
+                )
+                .environmentObject(appState)
+                
+            case .loading:
+                // ✅ REDIRECTION: Plus de DailyQuestionLoadingView, mais redirection vers .main
+                // Le chargement est maintenant géré directement dans DailyQuestionMainView
+                DailyQuestionMainView()
                     .environmentObject(appState)
             }
         }
@@ -29,16 +46,38 @@ struct DailyQuestionFlowView: View {
         }
     }
     
-    // NOUVEAU: Calculer le jour actuel de la question
+    // MARK: - Computed Properties
+    
+    /// Route actuelle selon l'état de l'application
+    private var currentRoute: DailyContentRoute {
+        return DailyContentRouteCalculator.calculateRoute(
+            for: .dailyQuestion,
+            hasConnectedPartner: hasConnectedPartner,
+            hasSeenIntro: appState.introFlags.dailyQuestion,
+            shouldShowPaywall: shouldShowPaywall,
+            paywallDay: currentQuestionDay,
+            serviceHasError: false, // DailyQuestionService n'a pas de gestion d'erreur pour l'instant
+            serviceErrorMessage: nil,
+            serviceIsLoading: dailyQuestionService.isLoading && dailyQuestionService.currentQuestion == nil
+        )
+    }
+    
+    /// Vérifier si un partenaire est connecté
+    private var hasConnectedPartner: Bool {
+        guard let user = appState.currentUser,
+              let partnerId = user.partnerId else { return false }
+        return !partnerId.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+    
+    /// Calculer le jour actuel de la question
     private var currentQuestionDay: Int {
-        // Récupérer le jour depuis DailyQuestionService ou settings
         if let settings = dailyQuestionService.currentSettings {
             return calculateExpectedDay(from: settings)
         }
         return 1 // Défaut
     }
     
-    // NOUVEAU: Vérifier si on doit afficher le paywall
+    /// Vérifier si on doit afficher le paywall
     private var shouldShowPaywall: Bool {
         let isSubscribed = appState.currentUser?.isSubscribed ?? false
         if isSubscribed {
@@ -51,15 +90,36 @@ struct DailyQuestionFlowView: View {
     }
     
     private func configureServiceIfNeeded() {
+        // 🚨 CORRECTION CRITIQUE: Vérifier partenaire ET intro vue
         guard let currentUser = appState.currentUser, 
               let partnerId = currentUser.partnerId,
               !partnerId.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            print("⏳ DailyQuestionFlowView: En attente connexion partenaire")
             return
+        }
+        
+        // Vérifier que l'intro a été vue
+        guard appState.introFlags.dailyQuestion else {
+            print("⏳ DailyQuestionFlowView: En attente intro utilisateur")
+            return
+        }
+        
+        // 🚀 OPTIMISATION CACHE: Vérifier si les données sont déjà disponibles ET récentes
+        if let currentQuestion = dailyQuestionService.currentQuestion {
+            // Vérifier si la question est pour aujourd'hui
+            let today = DateFormatter.dayFormatter.string(from: Date())
+            if currentQuestion.scheduledDate == today {
+                print("⚡ DailyQuestionFlowView: Question d'aujourd'hui déjà disponible - Pas de reconfiguration")
+                return
+            } else {
+                print("🔄 DailyQuestionFlowView: Question existante mais pas pour aujourd'hui (\(currentQuestion.scheduledDate) vs \(today))")
+            }
         }
         
         // ✅ Gérer l'accès freemium AVANT de configurer le service
         appState.freemiumManager?.handleDailyQuestionAccess(currentQuestionDay: currentQuestionDay) {
             // Accès autorisé - Configurer le service
+            print("🔄 DailyQuestionFlowView: Configuration service pour récupérer question du jour")
             dailyQuestionService.configure(with: appState)
         }
     }

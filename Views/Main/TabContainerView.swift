@@ -294,7 +294,8 @@ struct TabContainerView: View {
             }
         }
         .onAppear {
-            print("🔥 TabContainer: Vue principale apparue")
+            let timestamp = Date().timeIntervalSince1970
+            print("🔥 TabContainer: Vue principale apparue [\(timestamp)]")
             
             // NOUVEAU: Observer les notifications de clavier pour cacher le menu
             NotificationCenter.default.addObserver(
@@ -328,7 +329,8 @@ struct TabContainerView: View {
         .onDisappear {
             // NOUVEAU: Les observateurs avec closure sont automatiquement nettoyés
             // Pas besoin de removeObserver explicite
-            print("🔥 TabContainer: Vue principale disparue")
+            let timestamp = Date().timeIntervalSince1970
+            print("🔥 TabContainer: Vue principale disparue [\(timestamp)]")
         }
     }
 } 

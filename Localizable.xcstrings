@@ -679,6 +679,9 @@
     "no_purchase_to_restore" : {
       "comment" : "No purchase to restore error"
     },
+    "Nous préparons vos défis quotidiens" : {
+
+    },
     "OK" : {
 
     },
@@ -690,6 +693,9 @@
     },
     "others" : {
       "comment" : "Others text"
+    },
+    "Oups, une erreur est survenue" : {
+
     },
     "Partner must\nenable location" : {
 
@@ -746,6 +752,9 @@
         }
       }
     },
+    "Préparation en cours..." : {
+
+    },
     "product_loading_error" : {
       "comment" : "Product loading error"
     },
@@ -766,6 +775,9 @@
     },
     "receipt_validation_failed" : {
       "comment" : "Receipt validation failed error"
+    },
+    "Réessayer" : {
+
     },
     "refresh" : {
       "comment" : "Refresh button"

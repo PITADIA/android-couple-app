@@ -96,7 +96,9 @@ struct OnboardingView: View {
             Group {
                 if viewModel.shouldShowPartnerConnectionSuccess {
                     PartnerConnectionSuccessView(
-                        partnerName: viewModel.connectedPartnerName
+                        partnerName: viewModel.connectedPartnerName,
+                        mode: .waitForServices,
+                        context: .onboarding
                     ) {
                         viewModel.dismissPartnerConnectionSuccess()
                         // Si on était sur l'étape partenaire, continuer l'onboarding

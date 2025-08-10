@@ -11,6 +11,7 @@ class AuthenticationService: NSObject, ObservableObject {
     @Published var errorMessage: String?
     @Published var currentUser: FirebaseAuth.User?
     @Published var appleUserDisplayName: String?
+    @Published var isProcessingFirebaseAuth: Bool = false
     
     private var currentNonce: String?
     private var isSignInInProgress = false
@@ -179,6 +180,11 @@ extension AuthenticationService: ASAuthorizationControllerDelegate {
         lastProcessedCredentialTime = Date()
         print("✅ Autorisation Apple reçue")
         
+        // Indiquer que le traitement Firebase commence
+        DispatchQueue.main.async {
+            self.isProcessingFirebaseAuth = true
+        }
+        
         if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
             
             // Récupérer le nom fourni par Apple (si disponible)
@@ -206,6 +212,7 @@ extension AuthenticationService: ASAuthorizationControllerDelegate {
                 DispatchQueue.main.async {
                     self.isLoading = false
                     self.isSignInInProgress = false
+                    self.isProcessingFirebaseAuth = false
                     self.errorMessage = "Erreur d'authentification"
                 }
                 return
@@ -216,6 +223,7 @@ extension AuthenticationService: ASAuthorizationControllerDelegate {
                 DispatchQueue.main.async {
                     self.isLoading = false
                     self.isSignInInProgress = false
+                    self.isProcessingFirebaseAuth = false
                     self.errorMessage = "Token manquant"
                 }
                 return
@@ -226,6 +234,7 @@ extension AuthenticationService: ASAuthorizationControllerDelegate {
                 DispatchQueue.main.async {
                     self.isLoading = false
                     self.isSignInInProgress = false
+                    self.isProcessingFirebaseAuth = false
                     self.errorMessage = "Erreur token"
                 }
                 return
@@ -241,6 +250,7 @@ extension AuthenticationService: ASAuthorizationControllerDelegate {
                 DispatchQueue.main.async {
                     self?.isLoading = false
                     self?.isSignInInProgress = false
+                    self?.isProcessingFirebaseAuth = false
                     
                     if let error = error {
                         print("❌ Erreur Firebase: \(error.localizedDescription)")

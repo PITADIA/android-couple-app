@@ -9,6 +9,7 @@ import FirebaseAnalytics
 struct DailyQuestionMainView: View {
     @EnvironmentObject var appState: AppState
     @StateObject private var dailyQuestionService = DailyQuestionService.shared
+    @ObservedObject private var partnerService = PartnerConnectionNotificationService.shared  // ✅ Référence directe
     @Environment(\.dismiss) private var dismiss
     
     @State private var responseText = ""
@@ -27,6 +28,9 @@ struct DailyQuestionMainView: View {
     // 🔔 NOTIFICATIONS: Demande de permission (une seule fois)
     @State private var hasRequestedNotificationsThisSession = false
     
+    // ✅ ANIMATION pour le loader unifié
+    @State private var isAnimating = false
+    
     // 🎯 EXPERT SOLUTION: Extension UIKit pour fermeture clavier
     private func hideKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
@@ -39,6 +43,11 @@ struct DailyQuestionMainView: View {
     private var hasConnectedPartner: Bool {
         guard let partnerId = appState.currentUser?.partnerId else { return false }
         return !partnerId.isEmpty
+    }
+    
+    // ✅ CONDITION UNIFIÉE pour centraliser le chargement
+    private var isBusy: Bool {
+        dailyQuestionService.isLoading || dailyQuestionService.isOptimizing
     }
     
     var body: some View {
@@ -88,8 +97,8 @@ struct DailyQuestionMainView: View {
                             .onTapGesture {
                                 handleBackgroundTap()
                             }
-                    } else if (dailyQuestionService.isLoading || dailyQuestionService.isOptimizing) && dailyQuestionService.currentQuestion == nil {
-                        // État de chargement (génération de question OU optimisation timezone)
+                    } else if isBusy && dailyQuestionService.currentQuestion == nil {
+                        // ✅ ÉTAT DE CHARGEMENT UNIFIÉ avec condition isBusy
                         loadingView
                             .contentShape(Rectangle())
                             .onTapGesture {
@@ -146,7 +155,11 @@ struct DailyQuestionMainView: View {
             // Reset général du badge
             BadgeManager.clearBadge()
             
-            if dailyQuestionService.currentQuestion == nil && !dailyQuestionService.allQuestionsExhausted {
+            // ✅ GARDE IDEMPOTENTE - Éviter double appel et flicker
+            if !dailyQuestionService.isLoading && 
+               !dailyQuestionService.isOptimizing &&
+               dailyQuestionService.currentQuestion == nil && 
+               !dailyQuestionService.allQuestionsExhausted {
                 Task {
                     await dailyQuestionService.checkForNewQuestionWithTimezoneOptimization()
                 }
@@ -166,18 +179,21 @@ struct DailyQuestionMainView: View {
         .overlay(
             // 🎉 SYSTÈME DE NOTIFICATION DE CONNEXION PARTENAIRE
             Group {
-                if let partnerService = appState.partnerConnectionService,
-                   partnerService.shouldShowConnectionSuccess {
+                if partnerService.shouldShowConnectionSuccess {  // ✅ Référence directe simplifiée
                     PartnerConnectionSuccessView(
-                        partnerName: partnerService.connectedPartnerName
+                        partnerName: partnerService.connectedPartnerName,
+                        mode: .simpleDismiss,
+                        context: .dailyQuestion
                     ) {
-                        // Fermer le message de succès
-                        partnerService.dismissConnectionSuccess()
-                }
+                        // ✅ Fermeture fluide avec animation
+                        withAnimation(.easeOut(duration: 0.3)) {
+                            partnerService.dismissConnectionSuccess()
+                        }
+                    }
                     .transition(.opacity)
                     .zIndex(1000)
+                }
             }
-        }
         )
     }
     
@@ -303,17 +319,44 @@ struct DailyQuestionMainView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
+    // ✅ LOADING VIEW UNIFIÉ - même style que DailyQuestionLoadingView
     private var loadingView: some View {
-        VStack(spacing: 20) {
-            ProgressView()
-                .scaleEffect(1.5)
-                .tint(Color(hex: "#FD267A"))
+        VStack(spacing: 30) {
+            Spacer()
             
-            Text(dailyQuestionService.isOptimizing ? NSLocalizedString("messaging_space_creation", tableName: "DailyQuestions", comment: "") : NSLocalizedString("daily_question_loading", tableName: "DailyQuestions", comment: ""))
-                .font(.system(size: 16, weight: .medium))
+            // Animation identique à DailyQuestionLoadingView
+            ZStack {
+                Circle()
+                    .stroke(Color.gray.opacity(0.3), lineWidth: 4)
+                    .frame(width: 60, height: 60)
+                
+                Circle()
+                    .trim(from: 0, to: 0.75)
+                    .stroke(Color(hex: "#FD267A"), lineWidth: 4)
+                    .frame(width: 60, height: 60)
+                    .rotationEffect(Angle(degrees: isAnimating ? 360 : 0))
+                    .animation(
+                        Animation.linear(duration: 1.0).repeatForever(autoreverses: false),
+                        value: isAnimating
+                    )
+            }
+            
+            // ✅ TRADUCTIONS SPÉCIALISÉES DAILY QUESTION
+            Text(NSLocalizedString("daily_question_preparing", tableName: "DailyQuestions", comment: ""))
+                .font(.system(size: 24, weight: .bold))
                 .foregroundColor(.black)
+                .multilineTextAlignment(.center)
+            
+            Text(NSLocalizedString("daily_question_preparing_subtitle", tableName: "DailyQuestions", comment: ""))
+                .font(.system(size: 16))
+                .foregroundColor(.black.opacity(0.7))
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 30)
+            
+            Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .onAppear { isAnimating = true }
     }
     
     private var noQuestionView: some View {
@@ -610,6 +653,12 @@ struct DailyQuestionMainView: View {
 
             await MainActor.run {
                 if success {
+                    // ✅ NOUVEAU: Demande d'avis après action réussie (4ème jour complété)
+                    if let windowScene = UIApplication.shared.connectedScenes
+                        .compactMap({ $0 as? UIWindowScene }).first {
+                        ReviewRequestService.shared.maybeRequestReviewAfterDailyCompletion(in: windowScene)
+                    }
+                    
                     // 🎯 NOUVEAU: Fermer le chat après envoi réussi du message
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                         dismiss()
@@ -689,7 +738,7 @@ struct DailyQuestionMainView: View {
             print("❌ Notifications: Erreur lors de la demande - \(error)")
         }
     }
-}
+
 
 struct DailyQuestionCard: View {
     let question: DailyQuestion
@@ -708,8 +757,8 @@ struct DailyQuestionCard: View {
             .background(
                 LinearGradient(
                     gradient: Gradient(colors: [
-                        Color(hex: "#FD267A"),
-                        Color(hex: "#FF655B")
+                        Color(red: 1.0, green: 0.4, blue: 0.6),
+                        Color(red: 1.0, green: 0.6, blue: 0.8)
                     ]),
                     startPoint: .leading,
                     endPoint: .trailing
@@ -935,9 +984,8 @@ struct HistoryPreviewCard: View {
         .cornerRadius(12)
         .shadow(color: .black.opacity(0.05), radius: 4, x: 0, y: 2)
     }
-    
-
 }
+} // Accolade fermante finale pour DailyQuestionMainView
 
 // MARK: - Extensions
 
@@ -985,8 +1033,7 @@ extension Date {
 
 #Preview {
     Group {
-    DailyQuestionMainView()
-        .environmentObject(AppState())
+        DailyQuestionMainView()
+            .environmentObject(AppState())
     }
-} 
-
+}

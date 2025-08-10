@@ -23,6 +23,10 @@ class DailyChallengeService: ObservableObject {
     // CORRECTION: Référence weak à AppState pour éviter les cycles de référence
     private weak var appState: AppState?
     
+    // 🚀 OPTIMISATION: Éviter les reconfigurations redondantes
+    private var isConfigured: Bool = false
+    private var currentCoupleId: String?
+    
     private init() {
         // Les listeners seront configurés via configure(with:)
     }
@@ -35,12 +39,33 @@ class DailyChallengeService: ObservableObject {
     // MARK: - Configuration
     
     func configure(with appState: AppState) {
+        // 🚀 OPTIMISATION: Éviter les reconfigurations redondantes
+        let newCoupleId = generateCoupleId(from: appState)
+        
+        if isConfigured && currentCoupleId == newCoupleId {
+            print("⚡ DailyChallengeService: Déjà configuré pour couple \(newCoupleId ?? "nil") - Pas de reconfiguration")
+            return
+        }
+        
+        print("🔄 DailyChallengeService: Configuration pour couple \(newCoupleId ?? "nil")")
         self.appState = appState
+        self.currentCoupleId = newCoupleId
+        self.isConfigured = true
         
         // 🌍 Sauvegarder la langue utilisateur pour les notifications localisées
         saveUserLanguageToFirebase()
         
         setupListeners()
+    }
+    
+    private func generateCoupleId(from appState: AppState) -> String? {
+        guard let firebaseUser = Auth.auth().currentUser,
+              let appUser = appState.currentUser,
+              let partnerId = appUser.partnerId,
+              !partnerId.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            return nil
+        }
+        return [firebaseUser.uid, partnerId].sorted().joined(separator: "_")
     }
     
     // MARK: - Setup et Lifecycle
@@ -61,11 +86,41 @@ class DailyChallengeService: ObservableObject {
         print("🔥 DailyChallengeService: Partner ID: \(partnerId)")
         print("🔥 DailyChallengeService: CoupleId corrigé: \(coupleId)")
         
-        // 🔥 NOUVEAU: Appeler Firebase Function pour générer/récupérer le défi du jour
-        generateTodaysChallenge(coupleId: coupleId)
+        // 🚀 OPTIMISATION CACHE: Charger depuis le cache d'abord pour un affichage immédiat
+        Task {
+            await loadFromCacheFirst(coupleId: coupleId)
+            
+            // 🎯 CORRECTION: Ne générer que si aucun défi d'aujourd'hui n'est en cache
+            await MainActor.run {
+                if shouldGenerateToday() {
+                    generateTodaysChallenge(coupleId: coupleId)
+                } else {
+                    print("⚡ DailyChallengeService: Défi d'aujourd'hui déjà disponible - Pas de génération")
+                }
+            }
+        }
         
         setupChallengeListener(coupleId: coupleId)
         setupSettingsListener(coupleId: coupleId)
+    }
+    
+    /// 🚀 Charge les données depuis le cache pour un affichage immédiat
+    private func loadFromCacheFirst(coupleId: String) async {
+        let cachedChallenges = QuestionCacheManager.shared.getCachedDailyChallenges(for: coupleId, limit: 5)
+        
+        if !cachedChallenges.isEmpty {
+            print("⚡ DailyChallengeService: Chargement immédiat depuis cache - \(cachedChallenges.count) défis")
+            
+            await MainActor.run {
+                if self.currentChallenge == nil {
+                    self.challengeHistory = cachedChallenges
+                    self.currentChallenge = cachedChallenges.first
+                    // 🚀 Stopper l'état de chargement pour éviter le flash d'intro
+                    self.isLoading = false
+                    print("⚡ DailyChallengeService: Défi affiché depuis cache: \(cachedChallenges.first?.challengeKey ?? "nil")")
+                }
+            }
+        }
     }
     
     private func setupChallengeListener(coupleId: String) {
@@ -259,6 +314,24 @@ class DailyChallengeService: ObservableObject {
             print("🔄 DailyChallengeService: Changement de défi:")
             print("   - Ancien: \(previous.challengeKey) (jour \(previous.challengeDay))")
             print("   - Nouveau: \(current.challengeKey) (jour \(current.challengeDay))")
+        }
+    }
+    
+    /// Vérifie si on doit générer le défi d'aujourd'hui
+    private func shouldGenerateToday() -> Bool {
+        guard let currentChallenge = currentChallenge else {
+            return true // Pas de défi → générer
+        }
+        
+        // Vérifier si le défi actuel est pour aujourd'hui
+        let today = Date()
+        let calendar = Calendar.current
+        let challengeDate = currentChallenge.scheduledDate
+        
+        if calendar.isDate(challengeDate, inSameDayAs: today) {
+            return false // Défi d'aujourd'hui déjà disponible
+        } else {
+            return true // Défi d'un autre jour → générer
         }
     }
     

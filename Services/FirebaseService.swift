@@ -38,9 +38,10 @@ class FirebaseService: NSObject, ObservableObject {
     func checkAuthenticationState() {
         print("🔥 FirebaseService: Vérification de l'état d'authentification")
         _ = Auth.auth().addStateDidChangeListener { [weak self] _, firebaseUser in
+            let timestamp = Date().timeIntervalSince1970
             DispatchQueue.main.async {
                 if let firebaseUser = firebaseUser {
-                    print("🔥 FirebaseService: Utilisateur Firebase trouvé - UID: \(firebaseUser.uid)")
+                    print("🔥 FirebaseService: Auth listener triggered - UID: \(firebaseUser.uid) [\(timestamp)]")
                     print("🔥 FirebaseService: Providers: \(firebaseUser.providerData.map { $0.providerID })")
                     
                     // Vérifier que c'est bien une authentification Apple
@@ -276,10 +277,13 @@ class FirebaseService: NSObject, ObservableObject {
             userData["relationshipStartDate"] = Timestamp(date: relationshipStartDate)
         }
         
-        // Ajouter l'URL de photo de profil si présente
-        if let profileImageURL = user.profileImageURL {
-            userData["profileImageURL"] = profileImageURL
-        }
+            // Ajouter l'URL de photo de profil et sa version si présentes
+            if let profileImageURL = user.profileImageURL {
+                userData["profileImageURL"] = profileImageURL
+            }
+            if let profileImageUpdatedAt = user.profileImageUpdatedAt {
+                userData["profileImageUpdatedAt"] = Timestamp(date: profileImageUpdatedAt)
+            }
         
         // Ajouter la localisation actuelle si présente
         if let currentLocation = user.currentLocation {
@@ -367,9 +371,12 @@ class FirebaseService: NSObject, ObservableObject {
             userData["relationshipStartDate"] = Timestamp(date: relationshipStartDate)
         }
         
-        // Ajouter l'URL de photo de profil si présente
+        // Ajouter l'URL de photo de profil et sa version si présentes
         if let profileImageURL = user.profileImageURL {
             userData["profileImageURL"] = profileImageURL
+        }
+        if let profileImageUpdatedAt = user.profileImageUpdatedAt {
+            userData["profileImageUpdatedAt"] = Timestamp(date: profileImageUpdatedAt)
         }
         
         // Ajouter la localisation actuelle si présente
@@ -398,6 +405,8 @@ class FirebaseService: NSObject, ObservableObject {
                     print("❌ FirebaseService: Erreur de sauvegarde Firestore: \(error.localizedDescription)")
                     self?.errorMessage = "Erreur de sauvegarde: \(error.localizedDescription)"
                 } else {
+                    // 💾 NOUVEAU: Mettre à jour le cache après sauvegarde réussie
+                    UserCacheManager.shared.cacheUser(user)
                     print("✅ FirebaseService: Données utilisateur sauvegardées avec succès")
                     print("✅ Données utilisateur sauvegardées")
                     self?.currentUser = user
@@ -583,6 +592,7 @@ class FirebaseService: NSObject, ObservableObject {
                     onboardingInProgress: false,
                     relationshipStartDate: (data["relationshipStartDate"] as? Timestamp)?.dateValue(),
                     profileImageURL: data["profileImageURL"] as? String,
+                    profileImageUpdatedAt: (data["profileImageUpdatedAt"] as? Timestamp)?.dateValue(),
                     currentLocation: self?.parseUserLocation(from: data["currentLocation"] as? [String: Any]),
                     languageCode: data["languageCode"] as? String,
                     // NOUVEAU: Tracking freemium questions du jour
@@ -595,7 +605,13 @@ class FirebaseService: NSObject, ObservableObject {
                 
                 print("✅ FirebaseService: Utilisateur chargé avec données complètes: \(user.name)")
                 print("🔥 Firebase: - Onboarding en cours: \(user.onboardingInProgress)")
+                
+                // 💾 NOUVEAU: Mettre à jour le cache utilisateur
+                UserCacheManager.shared.cacheUser(user)
+                
                 self?.currentUser = user
+                let authTimestamp = Date().timeIntervalSince1970
+                print("🔥 FirebaseService: loadUserData completed, setting isAuthenticated = true [\(authTimestamp)]")
                 self?.isAuthenticated = true
                 print("✅ Données utilisateur chargées depuis Apple ID")
                 
@@ -824,6 +840,7 @@ class FirebaseService: NSObject, ObservableObject {
                 onboardingInProgress: data["onboardingInProgress"] as? Bool ?? false,
                 relationshipStartDate: (data["relationshipStartDate"] as? Timestamp)?.dateValue(),
                 profileImageURL: data["profileImageURL"] as? String,
+                profileImageUpdatedAt: (data["profileImageUpdatedAt"] as? Timestamp)?.dateValue(),
                 currentLocation: self.parseUserLocation(from: data["currentLocation"] as? [String: Any]),
                 languageCode: data["languageCode"] as? String,
                 // NOUVEAU: Tracking freemium questions du jour
@@ -916,13 +933,24 @@ class FirebaseService: NSObject, ObservableObject {
         db.collection("users").document(firebaseUser.uid).updateData([
             "currentLocation": locationData,
             "updatedAt": Timestamp(date: Date())
-        ]) { error in
-            if let error = error {
-                print("❌ FirebaseService: Erreur mise à jour localisation: \(error.localizedDescription)")
-                completion(false)
-            } else {
-                print("✅ FirebaseService: Localisation mise à jour avec succès")
-                completion(true)
+        ]) { [weak self] error in
+            DispatchQueue.main.async {
+                if let error = error {
+                    print("❌ FirebaseService: Erreur mise à jour localisation: \(error.localizedDescription)")
+                    completion(false)
+                } else {
+                    print("✅ FirebaseService: Localisation mise à jour avec succès")
+                    // Mettre à jour l'utilisateur local
+                    if var currentUser = self?.currentUser {
+                        currentUser.currentLocation = location
+                        self?.currentUser = currentUser
+                        
+                        // 🚀 NOUVEAU: Mettre à jour le cache immédiatement
+                        UserCacheManager.shared.cacheUser(currentUser)
+                        print("💾 FirebaseService: Cache utilisateur mis à jour avec nouvelle localisation")
+                    }
+                    completion(true)
+                }
             }
         }
     }
@@ -988,6 +1016,10 @@ class FirebaseService: NSObject, ObservableObject {
                     if var currentUser = self?.currentUser {
                         currentUser.name = newName
                         self?.currentUser = currentUser
+                        
+                        // 🚀 NOUVEAU: Mettre à jour le cache immédiatement
+                        UserCacheManager.shared.cacheUser(currentUser)
+                        print("💾 FirebaseService: Cache utilisateur mis à jour avec nouveau nom")
                     }
                     completion(true)
                 }
@@ -1018,6 +1050,10 @@ class FirebaseService: NSObject, ObservableObject {
                     if var currentUser = self?.currentUser {
                         currentUser.relationshipStartDate = date
                         self?.currentUser = currentUser
+                        
+                        // 🚀 NOUVEAU: Mettre à jour le cache immédiatement
+                        UserCacheManager.shared.cacheUser(currentUser)
+                        print("💾 FirebaseService: Cache utilisateur mis à jour avec nouvelle date relation")
                     }
                     completion(true)
                 }
@@ -1042,7 +1078,18 @@ class FirebaseService: NSObject, ObservableObject {
             if let imageURL = imageURL {
                 print("✅ FirebaseService: Image uploadée avec succès, mise à jour utilisateur...")
                 
-                // Mettre à jour l'utilisateur avec la nouvelle URL d'image
+                // 🚀 NOUVEAU: Mettre en cache l'image immédiatement pour affichage instantané
+                UserCacheManager.shared.cacheProfileImage(image)
+                print("🖼️ FirebaseService: Image mise en cache pour affichage instantané")
+                
+                // 🔄 NOUVEAU: Invalider le cache ImageCacheService pour l'ancienne URL
+                // pour forcer l'utilisation de notre cache UserCacheManager
+                if let oldURL = currentUser.profileImageURL {
+                    ImageCacheService.shared.clearCachedImage(for: oldURL)
+                    print("🗑️ FirebaseService: Cache ancien URL invalidé: \(oldURL)")
+                }
+                
+                // Mettre à jour l'utilisateur avec la nouvelle URL d'image (avec cache-buster) et timestamp
                 var updatedUser = currentUser
                 updatedUser = AppUser(
                     id: updatedUser.id,
@@ -1064,10 +1111,21 @@ class FirebaseService: NSObject, ObservableObject {
                     onboardingInProgress: updatedUser.onboardingInProgress,
                     relationshipStartDate: updatedUser.relationshipStartDate,
                     profileImageURL: imageURL,
+                    profileImageUpdatedAt: Date(),
                     currentLocation: updatedUser.currentLocation
                 )
                 
-                // Sauvegarder l'utilisateur mis à jour
+                // 🔄 NOUVEAU: Mettre l'image dans le cache ImageCacheService avec la nouvelle URL
+                // pour que AsyncImageView la trouve immédiatement
+                ImageCacheService.shared.cacheImage(image, for: imageURL)
+                print("🖼️ FirebaseService: Image mise en cache ImageCacheService avec nouvelle URL")
+
+                // ✅ NOUVEAU: Propager immédiatement la nouvelle URL dans l'UI
+                // pour éviter que d'autres vues n'utilisent l'ancienne URL
+                self.currentUser = updatedUser
+                UserCacheManager.shared.cacheUser(updatedUser)
+
+                // Sauvegarder l'utilisateur mis à jour (Firestore)
                 self.saveUserData(updatedUser)
                 completion(true, imageURL)
             } else {
@@ -1086,6 +1144,25 @@ class FirebaseService: NSObject, ObservableObject {
             return
         }
         
+        // 🔄 NOUVEAU: Demander du temps d'exécution en arrière-plan pour upload
+        var backgroundTask: UIBackgroundTaskIdentifier = .invalid
+        
+        backgroundTask = UIApplication.shared.beginBackgroundTask(withName: "ProfileImageUpload") {
+            // Cette closure est appelée si le temps d'arrière-plan expire
+            print("⏰ FirebaseService: Temps d'arrière-plan expiré pour upload")
+            UIApplication.shared.endBackgroundTask(backgroundTask)
+            backgroundTask = .invalid
+        }
+        
+        // Fonction helper pour nettoyer la background task
+        let endBackgroundTask = {
+            if backgroundTask != .invalid {
+                print("✅ FirebaseService: Fin de la tâche d'arrière-plan")
+                UIApplication.shared.endBackgroundTask(backgroundTask)
+                backgroundTask = .invalid
+            }
+        }
+        
         print("🔥 FirebaseService: Utilisateur authentifié: \(firebaseUser.uid)")
         print("🔥 FirebaseService: Providers: \(firebaseUser.providerData.map { $0.providerID })")
         
@@ -1093,6 +1170,7 @@ class FirebaseService: NSObject, ObservableObject {
         guard let resizedImage = resizeImage(image, to: CGSize(width: 300, height: 300)),
               let imageData = resizedImage.jpegData(compressionQuality: 0.8) else {
             print("❌ FirebaseService: Erreur traitement image")
+            endBackgroundTask()
             completion(nil)
             return
         }
@@ -1126,6 +1204,7 @@ class FirebaseService: NSObject, ObservableObject {
                     print("❌ FirebaseService: UserInfo: \(storageError.userInfo)")
                 }
                 
+                endBackgroundTask()
                 completion(nil)
                 return
             }
@@ -1139,13 +1218,16 @@ class FirebaseService: NSObject, ObservableObject {
                 
                 if let urlError = urlError {
                     print("❌ FirebaseService: Erreur récupération URL: \(urlError.localizedDescription)")
+                    endBackgroundTask()
                     completion(nil)
                 } else if let downloadURL = url {
                     print("✅ FirebaseService: URL de téléchargement sécurisée obtenue")
                     print("🛡️ FirebaseService: URL expiration gérée par Firebase Security Rules")
+                    endBackgroundTask()
                     completion(downloadURL.absoluteString)
                 } else {
                     print("❌ FirebaseService: URL de téléchargement nil inexpliquée")
+                    endBackgroundTask()
                     completion(nil)
                 }
             }

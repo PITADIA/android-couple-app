@@ -1,9 +1,20 @@
 import SwiftUI
 
 struct DailyQuestionIntroView: View {
+    let showConnectButton: Bool
+    
     @EnvironmentObject var appState: AppState
+    @ObservedObject private var partnerService = PartnerConnectionNotificationService.shared  // ✅ Référence directe
     @State private var showingPartnerCodeSheet = false
     @State private var navigateToChat = false
+    
+    // MARK: - Initializer
+    
+    init(showConnectButton: Bool = true) {
+        self.showConnectButton = showConnectButton
+    }
+    
+    // MARK: - Computed Properties
     
     // Vérifier si l'utilisateur a un partenaire connecté
     private var hasConnectedPartner: Bool {
@@ -11,12 +22,12 @@ struct DailyQuestionIntroView: View {
         return !partnerId.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
     
-    // Texte du bouton selon le statut
+    // Texte du bouton selon le statut et le paramètre
     private var buttonText: String {
-        if hasConnectedPartner {
-            return "Continuer"
-        } else {
+        if showConnectButton && !hasConnectedPartner {
             return NSLocalizedString("connect_partner_button", tableName: "DailyQuestions", comment: "")
+        } else {
+            return NSLocalizedString("continue_button", tableName: "DailyQuestions", comment: "")
         }
     }
     
@@ -71,12 +82,13 @@ struct DailyQuestionIntroView: View {
                     // Bouton principal conditionnel
                     VStack {
                     Button {
-                            if hasConnectedPartner {
-                                // Naviguer vers le chat
-                                navigateToChat = true
-                            } else {
+                            if showConnectButton && !hasConnectedPartner {
                                 // Montrer le sheet de connexion partenaire
-                        showingPartnerCodeSheet = true
+                                showingPartnerCodeSheet = true
+                            } else {
+                                // Marquer l'intro comme vue et naviguer
+                                appState.markDailyQuestionIntroAsSeen()
+                                navigateToChat = true
                             }
                     } label: {
                             Text(buttonText)
@@ -109,15 +121,15 @@ struct DailyQuestionIntroView: View {
         }
         .overlay(
             Group {
-                if let partnerService = appState.partnerConnectionService,
-                   partnerService.shouldShowConnectionSuccess {
+                if partnerService.shouldShowConnectionSuccess {  // ✅ Référence directe simplifiée
                     PartnerConnectionSuccessView(
-                        partnerName: partnerService.connectedPartnerName
+                        partnerName: partnerService.connectedPartnerName,
+                        mode: .simpleDismiss,
+                        context: .dailyQuestion
                     ) {
-                        // Fermer le succès et naviguer vers le chat
-                        partnerService.dismissConnectionSuccess()
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            navigateToChat = true
+                        // ✅ Fermeture fluide avec animation
+                        withAnimation(.easeOut(duration: 0.3)) {
+                            partnerService.dismissConnectionSuccess()
                         }
                     }
                     .transition(.opacity)

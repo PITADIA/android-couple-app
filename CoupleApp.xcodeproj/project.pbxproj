@@ -133,6 +133,7 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		11384DC32E0A6E0F004E7AF3 /* Love2LoveWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (11384DD72E0A6E11004E7AF3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Love2LoveWidget; sourceTree = "<group>"; };
 		1175AAA82E252E6100850937 /* Utils */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Utils; sourceTree = "<group>"; };
+		11B0679B2E476A5A006AB9D0 /* Config */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Config; sourceTree = "<group>"; };
 		11FE3C9C2DF0C8B600F58DB2 /* App */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = App; sourceTree = "<group>"; };
 		11FE3CA62DF0C8B600F58DB2 /* Models */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Models; sourceTree = "<group>"; };
 		11FE3CAD2DF0C8B600F58DB2 /* Services */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Services; sourceTree = "<group>"; };
@@ -221,6 +222,7 @@
 				11384DBE2E0A6E0F004E7AF3 /* Frameworks */,
 				1A000032294A1234567890AB /* Products */,
 				11A0B95C2E30270000508826 /* DailyQuestions.xcstrings */,
+				11B0679B2E476A5A006AB9D0 /* Config */,
 			);
 			sourceTree = "<group>";
 		};
@@ -275,6 +277,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				1175AAA82E252E6100850937 /* Utils */,
+				11B0679B2E476A5A006AB9D0 /* Config */,
 				11FE3C9C2DF0C8B600F58DB2 /* App */,
 				11FE3CA62DF0C8B600F58DB2 /* Models */,
 				11FE3CAD2DF0C8B600F58DB2 /* Services */,

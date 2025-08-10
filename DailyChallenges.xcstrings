@@ -613,6 +613,23 @@
         }
       }
     },
+    "continue_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continue"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuer"
+          }
+        }
+      }
+    },
     "paywall_continue_button" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1170,6 +1187,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Échangez un message écrit avec votre \"main non dominante\" (main gauche si vous êtes droitier)."
+          }
+        }
+      }
+    },
+    "daily_challenge_preparing" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preparing…"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Préparation en cours…"
+          }
+        }
+      }
+    },
+    "daily_challenge_preparing_subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We are preparing your challenge"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nous préparons votre défi"
           }
         }
       }

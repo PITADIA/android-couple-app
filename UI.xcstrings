@@ -361,6 +361,23 @@
         }
       }
     },
+    "authentication_in_progress" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Authentication in progress"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Authentification en cours"
+          }
+        }
+      }
+    },
     "authorization_required" : {
       "comment" : "UI Strings - Alerts",
       "extractionState" : "manual",

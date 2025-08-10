@@ -1,11 +1,48 @@
 import SwiftUI
+import FirebaseAnalytics
 
 struct PartnerConnectionSuccessView: View {
+    
+    // MARK: - Mode Enum
+    
+    enum Mode {
+        case simpleDismiss        // Menu/Photo de profil - fermeture immédiate
+        case waitForServices      // Questions/Défis - attendre services
+        
+        var displayName: String {
+            switch self {
+            case .simpleDismiss: return "simple"
+            case .waitForServices: return "wait_services"
+            }
+        }
+    }
+    
+    // MARK: - Properties
+    
     let partnerName: String
+    let mode: Mode
+    let context: ConnectionConfig.ConnectionContext
     let onContinue: () -> Void
+    
     @State private var showAnimation = false
-    @State private var isLoading = false
+    @State private var isWaiting = false
+    @State private var waitStartTime: Date?
+    @State private var isCancelled = false
     @StateObject private var dailyQuestionService = DailyQuestionService.shared
+    
+    // MARK: - Initializer
+    
+    init(
+        partnerName: String,
+        mode: Mode = .waitForServices,
+        context: ConnectionConfig.ConnectionContext = .onboarding,
+        onContinue: @escaping () -> Void
+    ) {
+        self.partnerName = partnerName
+        self.mode = mode
+        self.context = context
+        self.onContinue = onContinue
+    }
     
     var body: some View {
         ZStack {
@@ -126,29 +163,31 @@ struct PartnerConnectionSuccessView: View {
                 
                 Spacer()
                 
-                // Bouton Continuer - Style identique au tutoriel
+                // Bouton Continuer - Style adapté selon le mode
                 Button(action: {
                     Task {
                         await handleContinue()
                     }
                 }) {
                     HStack(spacing: 12) {
-                        if isLoading {
+                        if isWaiting && mode == .waitForServices {
                             ProgressView()
                                 .progressViewStyle(CircularProgressViewStyle(tint: .white))
                                 .scaleEffect(0.9)
                         }
                         
-                        Text(isLoading ? "preparation_in_progress".localized : "continue".localized)
+                        Text(buttonText)
                             .font(.system(size: 18, weight: .semibold))
                             .foregroundColor(.white)
                     }
                     .frame(maxWidth: .infinity)
                     .frame(height: 56)
-                    .background(Color(hex: "#FD267A").opacity(isLoading ? 0.7 : 1.0))
+                    .background(
+                        Color(hex: "#FD267A")
+                            .opacity((isWaiting && mode == .waitForServices) ? 0.7 : 1.0)
+                    )
                     .clipShape(RoundedRectangle(cornerRadius: 28))
                 }
-                .disabled(isLoading)
                 .padding(.horizontal, 20)
                 .padding(.bottom, 40)
                 .opacity(showAnimation ? 1.0 : 0.0)
@@ -156,48 +195,119 @@ struct PartnerConnectionSuccessView: View {
             }
         }
         .onAppear {
-            print("🎉 PartnerConnectionSuccessView: Vue apparue pour partenaire: \(partnerName)")
+            print("🎉 PartnerConnectionSuccessView: Vue apparue pour partenaire: \(partnerName) - Mode: \(mode.displayName)")
             showAnimation = true
+            
+            // Analytics
+            AnalyticsService.shared.track(.successViewShown(
+                mode: mode.displayName,
+                context: context.rawValue
+            ))
+        }
+        .onDisappear {
+            // Annuler l'attente si la vue disparaît
+            isCancelled = true
         }
     }
     
-    /// Gère le clic sur "Continuer" avec attente que le service soit prêt
-    private func handleContinue() async {
-        print("🎉 PartnerConnectionSuccessView: Bouton Continuer pressé")
-        isLoading = true
-        
-        // Délai minimum pour montrer l'effet de chargement (1.5 secondes)
-        let minimumLoadingTime: TimeInterval = 1.5
-        let loadingStart = Date()
-        
-        // Attendre le délai minimum ET que le service soit prêt
-        while Date().timeIntervalSince(loadingStart) < minimumLoadingTime {
-            try? await Task.sleep(nanoseconds: 100_000_000) // 100ms
+    // MARK: - Computed Properties
+    
+    /// Texte du bouton selon le mode et l'état
+    private var buttonText: String {
+        switch mode {
+        case .simpleDismiss:
+            return "continue".localized
+        case .waitForServices:
+            if isWaiting {
+                return "preparation_in_progress".localized
+            } else {
+                return "continue".localized
+            }
         }
+    }
+    
+    // MARK: - Methods
+    
+    /// Gère le clic sur "Continuer" selon le mode
+    @MainActor
+    private func handleContinue() async {
+        let startTime = Date()
+        print("🎉 PartnerConnectionSuccessView: Bouton Continuer pressé - Mode: \(mode.displayName)")
         
-        // Attendre que le service soit dans un état stable (max 8 secondes supplémentaires)
-        let maxAdditionalWait: TimeInterval = 8.0
-        let serviceWaitStart = Date()
+        switch mode {
+        case .simpleDismiss:
+            // Mode simple : fermeture immédiate
+            print("🎉 Fermeture immédiate (mode simple)")
+            AnalyticsService.shared.track(.successViewContinue(
+                mode: mode.displayName,
+                waitTime: 0
+            ))
+            onContinue()
+            
+        case .waitForServices:
+            // Mode attente : préparer les services
+            isWaiting = true
+            waitStartTime = startTime
+            
+            let success = await waitForServicesReady(timeout: ConnectionConfig.preparingMaxTimeout)
+            let totalWaitTime = Date().timeIntervalSince(startTime)
+            
+            await MainActor.run {
+                isWaiting = false
+                
+                // Analytics
+                AnalyticsService.shared.track(.successViewContinue(
+                    mode: mode.displayName,
+                    waitTime: totalWaitTime
+                ))
+                
+                if !success {
+                    AnalyticsService.shared.track(.readyTimeout(
+                        duration: totalWaitTime,
+                        context: context.rawValue
+                    ))
+                }
+                
+                print("🎉 PartnerConnectionSuccessView: Préparation terminée - Fermeture (success: \(success))")
+                onContinue()
+            }
+        }
+    }
+    
+    /// Attendre que les services soient prêts avec timeout
+    private func waitForServicesReady(timeout: TimeInterval) async -> Bool {
+        let start = Date()
         
-        while Date().timeIntervalSince(serviceWaitStart) < maxAdditionalWait {
+        // Délai minimum pour l'UX
+        let minimumWait = ConnectionConfig.preparingMinDuration
+        let minimumEndTime = start.addingTimeInterval(minimumWait)
+        
+        // Vérification périodique de readiness
+        while Date().timeIntervalSince(start) < timeout && !isCancelled {
             let isServiceReady = !dailyQuestionService.isLoading && 
                                 !dailyQuestionService.isOptimizing &&
                                 (dailyQuestionService.currentQuestion != nil || dailyQuestionService.allQuestionsExhausted)
             
             if isServiceReady {
-                print("🎉 PartnerConnectionSuccessView: Service prêt après \(Date().timeIntervalSince(loadingStart))s")
-                break
+                // Attendre au minimum le délai UX
+                let now = Date()
+                if now < minimumEndTime {
+                    let remainingMinWait = minimumEndTime.timeIntervalSince(now)
+                    print("🎉 Service prêt, mais attente minimum restante: \(remainingMinWait)s")
+                    try? await Task.sleep(nanoseconds: UInt64(remainingMinWait * 1_000_000_000))
+                }
+                
+                print("🎉 Services prêts après \(Date().timeIntervalSince(start))s")
+                return true
             }
             
-            try? await Task.sleep(nanoseconds: 100_000_000) // 100ms
+            // Attendre avant la prochaine vérification
+            try? await Task.sleep(nanoseconds: UInt64(ConnectionConfig.readinessCheckInterval * 1_000_000_000))
         }
         
-        print("🎉 PartnerConnectionSuccessView: Préparation terminée - Fermeture de la vue")
-        
-        // Fermer la vue (garder isLoading=true jusqu'à l'appel d'onContinue)
-        await MainActor.run {
-            onContinue()
-            // Note: isLoading reste true jusqu'à ce que la vue se ferme
-        }
+        // Timeout ou annulation
+        let duration = Date().timeIntervalSince(start)
+        print("⚠️ Timeout ou annulation après \(duration)s (cancelled: \(isCancelled))")
+        return false
     }
 } 

@@ -107,7 +107,9 @@ struct PartnerManagementView: View {
                 if let partnerService = appState.partnerConnectionService,
                    partnerService.shouldShowConnectionSuccess {
                     PartnerConnectionSuccessView(
-                        partnerName: partnerService.connectedPartnerName
+                        partnerName: partnerService.connectedPartnerName,
+                        mode: .simpleDismiss,
+                        context: .menu
                     ) {
                         partnerService.dismissConnectionSuccess()
                         // Fermer la vue après connexion réussie
@@ -298,7 +300,7 @@ struct PartnerManagementView: View {
             // Bouton "Connecter" avec effet de carte et élévation
             Button(action: {
                 Task {
-                    await partnerCodeService.connectWithPartnerCode(enteredCode)
+                    await partnerCodeService.connectWithPartnerCode(enteredCode, context: .menu)
                 }
             }) {
                 HStack {

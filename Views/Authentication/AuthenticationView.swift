@@ -92,6 +92,14 @@ struct AuthenticationView: View {
             OnboardingView()
                 .environmentObject(appState)
         }
+        .onAppear {
+            let timestamp = Date().timeIntervalSince1970
+            print("🔥 AuthenticationView: appear [\(timestamp)]")
+        }
+        .onDisappear {
+            let timestamp = Date().timeIntervalSince1970
+            print("🔥 AuthenticationView: disappear [\(timestamp)]")
+        }
         .onReceive(NotificationCenter.default.publisher(for: NSNotification.Name("UserAuthenticated"))) { _ in
             print("🔥 AuthenticationView: Notification d'authentification reçue de AuthenticationService")
             
