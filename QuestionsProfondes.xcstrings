@@ -16,6 +16,12 @@
             "state" : "translated",
             "value" : "Si tu pouvais te libérer d'un poids intérieur aujourd'hui, lequel choisirais-tu ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du dich heute von einer inneren Last befreien könntest, welche würdest du wählen?"
+          }
         }
       }
     },
@@ -32,6 +38,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "À ton avis, Internet, les smartphones et les nouvelles technologies ont-ils rendu le monde meilleur ou pire ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Findest du, dass Internet, Smartphones und neue Technologien die Welt besser oder schlechter gemacht haben?"
           }
         }
       }
@@ -50,6 +62,12 @@
             "state" : "translated",
             "value" : "Quelle vérité sur toi-même t'effraie encore un peu d'affronter ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Wahrheit über dich macht dir noch Angst, dich ihr zu stellen?"
+          }
         }
       }
     },
@@ -66,6 +84,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comment ta vie serait-elle différente si tu avais été né dans l'autre genre ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie anders wäre dein Leben, wenn du als das andere Geschlecht zur Welt gekommen wärst?"
           }
         }
       }
@@ -84,6 +108,12 @@
             "state" : "translated",
             "value" : "Quelle partie de ton passé as-tu appris à aimer, malgré la douleur ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welchen Teil deiner Vergangenheit hast du trotz des Schmerzes lieben gelernt?"
+          }
         }
       }
     },
@@ -100,6 +130,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'est-ce que tu caches derrière ton masque que tu portes en public ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was versteckst du hinter der Maske, die du in der Öffentlichkeit trägst?"
           }
         }
       }
@@ -118,6 +154,12 @@
             "state" : "translated",
             "value" : "Quelle émotion enfouie essaie encore de ressurgir parfois ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche vergrabene Emotion kommt manchmal noch an die Oberfläche?"
+          }
         }
       }
     },
@@ -134,6 +176,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tu devais recommencer ta vie demain, que ferais-tu différemment dès le début ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du dein Leben morgen neu starten müsstest, was würdest du von Anfang an anders machen?"
           }
         }
       }
@@ -152,6 +200,12 @@
             "state" : "translated",
             "value" : "Penses-tu qu'on peut être ami avec quelqu'un qui nous attire ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Glaubst du, man kann mit jemandem befreundet sein, zu dem man sich hingezogen fühlt?"
+          }
         }
       }
     },
@@ -168,6 +222,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle blessure émotionnelle essaie-tu encore de guérir aujourd'hui ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche emotionale Wunde versuchst du heute noch zu heilen?"
           }
         }
       }
@@ -186,6 +246,12 @@
             "state" : "translated",
             "value" : "Y a-t-il un moment de ta vie où tu t'es senti(e) complètement perdu(e) ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gab es einen Moment in deinem Leben, in dem du dich komplett verloren gefühlt hast?"
+          }
         }
       }
     },
@@ -202,6 +268,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle personne a eu le plus grand impact sur ta vie ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Person hat dein Leben am stärksten geprägt?"
           }
         }
       }
@@ -220,6 +292,12 @@
             "state" : "translated",
             "value" : "S'il y avait un sujet à retirer de l'école, lequel choisirais-tu, et par quoi le remplacerais-tu ? Pourquoi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn es ein Schulfach gäbe, das man streichen sollte: Welches würdest du wählen und womit würdest du es ersetzen? Warum?"
+          }
         }
       }
     },
@@ -236,6 +314,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'est-ce que tu n'as jamais osé dire à tes parents alors que tu aurais aimé le dire ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was hast du deinen Eltern nie gesagt, obwohl du es gern getan hättest?"
           }
         }
       }
@@ -254,6 +338,12 @@
             "state" : "translated",
             "value" : "D'après toi, qu'est-ce qui comptera le plus pour notre société dans les 50 prochaines années : préserver nos traditions ou les changer ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was wird in den nächsten 50 Jahren für unsere Gesellschaft wichtiger sein: Traditionen bewahren oder sie verändern?"
+          }
         }
       }
     },
@@ -270,6 +360,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'est-ce que tu as appris sur toi à travers l'amour ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was hast du durch die Liebe über dich selbst gelernt?"
           }
         }
       }
@@ -288,6 +384,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce que tu aimerais qu'on retienne de toi après ta mort ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wofür möchtest du nach deinem Tod in Erinnerung bleiben?"
+          }
         }
       }
     },
@@ -304,6 +406,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle est la plus grande erreur que tu aies faite et qui t'a appris quelque chose ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcher große Fehler hat dir am meisten beigebracht?"
           }
         }
       }
@@ -322,6 +430,12 @@
             "state" : "translated",
             "value" : "Qui a été la personne dans ton passé qui s'est transformé en leçon ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wer aus deiner Vergangenheit ist am Ende zu einer Lektion geworden?"
+          }
         }
       }
     },
@@ -338,6 +452,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quand as-tu ressenti de la honte pour la dernière fois ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wann hast du dich zuletzt geschämt?"
           }
         }
       }
@@ -356,6 +476,12 @@
             "state" : "translated",
             "value" : "S'il y a une année de ta vie que tu pourrais revivre encore et encore, ce serait laquelle ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du ein Jahr deines Lebens immer wieder erleben könntest – welches wäre es?"
+          }
         }
       }
     },
@@ -372,6 +498,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quel trait de caractère de ton enfance as-tu gardé jusqu'à aujourd'hui ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Eigenschaft aus deiner Kindheit hast du bis heute behalten?"
           }
         }
       }
@@ -390,6 +522,12 @@
             "state" : "translated",
             "value" : "Que penses-tu de l'astrologie et des horoscopes ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was hältst du von Astrologie und Horoskopen?"
+          }
         }
       }
     },
@@ -406,6 +544,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'elle est la chose qui te rend le plus fière de toi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Worauf bist du an dir selbst am meisten stolz?"
           }
         }
       }
@@ -424,6 +568,12 @@
             "state" : "translated",
             "value" : "Quel aspect de toi te fait le plus souffrir en silence ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcher Aspekt an dir lässt dich am meisten still leiden?"
+          }
         }
       }
     },
@@ -440,6 +590,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quel est le combat intérieur que tu mènes sans en parler à personne ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welchen inneren Kampf führst du, ohne mit jemandem darüber zu reden?"
           }
         }
       }
@@ -458,6 +614,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce que l'amitié représente pour toi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was bedeutet Freundschaft für dich?"
+          }
         }
       }
     },
@@ -474,6 +636,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Que penses-tu de l'amitié homme/femme ? Est-elle sincèrement possible ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was hältst du von Freundschaft zwischen Mann und Frau? Ist das ehrlich möglich?"
           }
         }
       }
@@ -492,6 +660,12 @@
             "state" : "translated",
             "value" : "En regardant ces dix dernières années, comment as-tu changé ? Et es-tu content de cette évolution ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du auf die letzten zehn Jahre zurückblickst: Wie hast du dich verändert? Und bist du mit dieser Entwicklung zufrieden?"
+          }
         }
       }
     },
@@ -508,6 +682,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comment aimerais-tu te sentir dans dix ans, émotionnellement ou intérieurement ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie würdest du dich in zehn Jahren gern fühlen – emotional oder innerlich?"
           }
         }
       }
@@ -526,6 +706,12 @@
             "state" : "translated",
             "value" : "Quelle est ta plus grande réussite et ton plus gros échec ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was ist dein größter Erfolg – und dein größter Misserfolg?"
+          }
         }
       }
     },
@@ -542,6 +728,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle personne a eu l'impact le plus fort sur ta manière de voir la vie ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wer hat deine Sicht aufs Leben am meisten beeinflusst?"
           }
         }
       }
@@ -560,6 +752,12 @@
             "state" : "translated",
             "value" : "Quelle erreur t'a le plus appris dans la vie ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcher Fehler hat dich im Leben am meisten gelehrt?"
+          }
         }
       }
     },
@@ -576,6 +774,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'est-ce que tu attends vraiment d'une relation amoureuse ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was erwartest du wirklich von einer Liebesbeziehung?"
           }
         }
       }
@@ -594,6 +798,12 @@
             "state" : "translated",
             "value" : "Comment aimerais-tu être vu ou perçu par les autres ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie möchtest du von anderen gesehen oder wahrgenommen werden?"
+          }
         }
       }
     },
@@ -610,6 +820,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quels sont les plus gros défis que tu traverses en ce moment ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was sind gerade die größten Herausforderungen, die du durchmachst?"
           }
         }
       }
@@ -628,6 +844,12 @@
             "state" : "translated",
             "value" : "As-tu déjà été ton propre ennemi ? Dans quel contexte ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Warst du schon mal dein eigener Feind? In welchem Kontext?"
+          }
         }
       }
     },
@@ -644,6 +866,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il quelque chose que tu rêves de faire, mais que tu n'oses pas commencer ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es etwas, wovon du träumst, es zu tun, dich aber nicht traust anzufangen?"
           }
         }
       }
@@ -662,6 +890,12 @@
             "state" : "translated",
             "value" : "De quoi es-tu le plus reconnaissant dans ta vie aujourd'hui ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wofür bist du in deinem Leben heute am dankbarsten?"
+          }
         }
       }
     },
@@ -678,6 +912,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il un sujet ou un concept que tu as du mal à comprendre ou même à imaginer ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es ein Thema oder Konzept, das du schwer verstehst oder dir kaum vorstellen kannst?"
           }
         }
       }
@@ -696,6 +936,12 @@
             "state" : "translated",
             "value" : "Quelle vérité refuses-tu d'admettre sur toi-même ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Wahrheit über dich willst du dir selbst nicht eingestehen?"
+          }
         }
       }
     },
@@ -712,6 +958,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comment gères-tu tes tristesses passagères ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie gehst du mit deinen traurigen Phasen um?"
           }
         }
       }
@@ -730,6 +982,12 @@
             "state" : "translated",
             "value" : "Quel est le souvenir qui t'a le plus marqué avec ton père ou ta mère ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Erinnerung mit deinem Vater oder deiner Mutter hat dich am meisten geprägt?"
+          }
         }
       }
     },
@@ -746,6 +1004,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tu pouvais effacer un souvenir, lequel ce serait ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du eine Erinnerung löschen könntest – welche wäre es?"
           }
         }
       }
@@ -764,6 +1028,12 @@
             "state" : "translated",
             "value" : "Comment définis-tu la réussite ? Et quand as-tu eu le sentiment d'avoir vraiment réussi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie definierst du Erfolg? Und wann hattest du das Gefühl, wirklich erfolgreich zu sein?"
+          }
         }
       }
     },
@@ -780,6 +1050,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quel choix difficile as-tu dû faire dans ta vie ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche schwierige Entscheidung musstest du in deinem Leben treffen?"
           }
         }
       }
@@ -798,6 +1074,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce qui t'énerve ou te met facilement en colère ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was nervt dich oder macht dich leicht wütend?"
+          }
         }
       }
     },
@@ -814,6 +1096,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle quête ou objectif t'as longtemps obsédé, mais que tu as fini par laisser tomber ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Suche oder welches Ziel hat dich lange beschäftigt, das du am Ende aufgegeben hast?"
           }
         }
       }
@@ -832,6 +1120,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce qui occupe ton esprit et t'empêche parfois de dormir ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was beschäftigt deinen Kopf und raubt dir manchmal den Schlaf?"
+          }
         }
       }
     },
@@ -848,6 +1142,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Penses-tu réellement te connaitre toi même ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Glaubst du, dass du dich selbst wirklich kennst?"
           }
         }
       }
@@ -866,6 +1166,12 @@
             "state" : "translated",
             "value" : "Pour toi, c'est quoi le véritable amour ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was bedeutet echte Liebe für dich?"
+          }
         }
       }
     },
@@ -882,6 +1188,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il un trait de caractère chez moi que tu ne comprends pas encore, mais que tu aimerais mieux saisir ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es einen Charakterzug an mir, den du noch nicht so richtig verstehst, aber gern besser verstehen würdest?"
           }
         }
       }
@@ -900,6 +1212,12 @@
             "state" : "translated",
             "value" : "Comment ta première impression de moi a-t-elle évolué depuis notre rencontre ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie hat sich dein erster Eindruck von mir seit unserem Kennenlernen verändert?"
+          }
         }
       }
     },
@@ -916,6 +1234,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'est-ce que tes parents ont fait que tu refuses de reproduire dans ta vie ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was haben deine Eltern getan, was du in deinem eigenen Leben auf keinen Fall wiederholen willst?"
           }
         }
       }
@@ -934,6 +1258,12 @@
             "state" : "translated",
             "value" : "Selon toi, c'est quoi réussir sa vie ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was heißt für dich: im Leben erfolgreich sein?"
+          }
         }
       }
     },
@@ -950,6 +1280,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "De quoi as-tu le plus manqué dans ton enfance ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Woran hat es dir in deiner Kindheit am meisten gefehlt?"
           }
         }
       }
@@ -968,6 +1304,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce qui t'a poussé à chercher une relation ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was hat dich dazu gebracht, eine Beziehung zu wollen?"
+          }
         }
       }
     },
@@ -984,6 +1326,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Selon toi, est-ce que la durée d'une relation rend plus enclin à pardonner une infidélité ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Findest du, die Dauer einer Beziehung macht es leichter, eine Untreue zu verzeihen?"
           }
         }
       }
@@ -1002,6 +1350,12 @@
             "state" : "translated",
             "value" : "Est-ce que tu as changé depuis qu'on est en couple ? Et trouves-tu que ces changements sont positifs ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Findest du, du hast dich verändert, seit wir zusammen sind? Und sind diese Veränderungen positiv?"
+          }
         }
       }
     },
@@ -1018,6 +1372,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quels sont, selon toi, les trois plus grands points communs qu'on partage ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was sind deiner Meinung nach unsere drei größten Gemeinsamkeiten?"
           }
         }
       }
@@ -1036,6 +1396,12 @@
             "state" : "translated",
             "value" : "Quelle est notre plus grande différence selon toi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was ist deiner Meinung nach unser größter Unterschied?"
+          }
         }
       }
     },
@@ -1052,6 +1418,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Crois-tu que certaines choses sont écrites d'avance, comme le destin ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Glaubst du, dass manche Dinge vorbestimmt sind so etwas wie das Schicksal?"
           }
         }
       }
@@ -1070,6 +1442,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce que tu ressens quand tu penses à l'avenir ? Te sens tu stressé ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was fühlst du, wenn du an die Zukunft denkst? Stresst dich das?"
+          }
         }
       }
     },
@@ -1086,6 +1464,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Es-tu quelqu'un qui a peur du jugement des autres ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bist du jemand, der Angst vor dem Urteil anderer hat?"
           }
         }
       }
@@ -1104,6 +1488,12 @@
             "state" : "translated",
             "value" : "Quel moment qu'on a vécu ensemble te fait toujours sourire ? Qu'est-ce qui l'a rendu si spécial ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcher Moment, den wir zusammen erlebt haben, bringt dich immer noch zum Lächeln? Was hat ihn so besonders gemacht?"
+          }
         }
       }
     },
@@ -1120,6 +1510,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dans une relation, quel espace de liberté est essentiel pour toi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In einer Beziehung: Welcher Freiraum ist für dich unbedingt nötig?"
           }
         }
       }
@@ -1138,6 +1534,12 @@
             "state" : "translated",
             "value" : "Quelle est ta définition de la paix intérieure ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was ist für dich innere Ruhe?"
+          }
         }
       }
     },
@@ -1154,6 +1556,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Est-ce que tu nous considères comme une famille ? Si non, que représente la famille pour toi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siehst du uns als Familie? Wenn nicht, was bedeutet Familie für dich?"
           }
         }
       }
@@ -1172,6 +1580,12 @@
             "state" : "translated",
             "value" : "Quel est le moment où tu as eu l'impression de renaître ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wann hattest du das Gefühl, als wärst du neu geboren?"
+          }
         }
       }
     },
@@ -1188,6 +1602,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "As-tu déjà eu peur d'aimer trop fort ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hattest du schon mal Angst, zu sehr zu lieben?"
           }
         }
       }
@@ -1206,6 +1626,12 @@
             "state" : "translated",
             "value" : "Surprends-moi : dis-moi quelque chose sur toi que je ne sais pas encore."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Überrasch mich: Erzähl mir etwas über dich, das ich noch nicht weiß."
+          }
         }
       }
     },
@@ -1222,6 +1648,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quel est le message que tu donnerais à l'humanité entière si tu avais un micro géant ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du ein Riesenmikro hättest, welche Botschaft würdest du der ganzen Welt geben?"
           }
         }
       }
@@ -1240,6 +1672,12 @@
             "state" : "translated",
             "value" : "Cite trois choses qui te sont arrivées la semaine dernière et pour lesquelles tu ressens de la gratitude."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenne drei Dinge aus der letzten Woche, für die du dankbar bist."
+          }
         }
       }
     },
@@ -1256,6 +1694,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Es-tu plutôt du genre à donner, à recevoir, ou un équilibre entre les deux ? Qu'est-ce qui influence ton comportement ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bist du eher jemand, der gibt, der nimmt oder eine Mischung aus beidem? Was beeinflusst dein Verhalten?"
           }
         }
       }
@@ -1274,6 +1718,12 @@
             "state" : "translated",
             "value" : "Quelles sont cinq choses importantes que tu aimerais accomplir avant de mourir ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche fünf wichtigen Dinge willst du unbedingt schaffen, bevor du stirbst?"
+          }
         }
       }
     },
@@ -1290,6 +1740,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'est-ce qui te fait pleurer mais que tu caches aux autres ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was bringt dich zum Weinen, das du vor anderen versteckst?"
           }
         }
       }
@@ -1308,6 +1764,12 @@
             "state" : "translated",
             "value" : "À qui fais-tu vraiment confiance aujourd'hui autour de toi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wem in deinem Umfeld vertraust du gerade wirklich?"
+          }
         }
       }
     },
@@ -1324,6 +1786,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle émotion te traverse le plus souvent ces derniers temps ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Emotion spürst du in letzter Zeit am häufigsten?"
           }
         }
       }
@@ -1342,6 +1810,12 @@
             "state" : "translated",
             "value" : "Quel rôle joue la communication au sein d'un couple selon toi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Rolle spielt Kommunikation in einer Beziehung deiner Meinung nach?"
+          }
         }
       }
     },
@@ -1358,6 +1832,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tu pouvais appuyer sur un bouton 'reset de ta vie', le ferais-tu ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn es einen Reset-Knopf fürs Leben gäbe – würdest du draufdrücken?"
           }
         }
       }
@@ -1376,6 +1856,12 @@
             "state" : "translated",
             "value" : "Quelle est la chose que tu sais être vraie, même si tu ne peux pas la prouver ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was weißt du tief in dir als wahr, auch wenn du es nicht beweisen kannst?"
+          }
         }
       }
     },
@@ -1392,6 +1878,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tu pouvais voyager dans le temps, à quelle époque irais-tu ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du durch die Zeit reisen könntest, in welche Epoche würdest du gehen?"
           }
         }
       }
@@ -1410,6 +1902,12 @@
             "state" : "translated",
             "value" : "Peux-tu me raconter l'histoire de ta vie en 4 minutes, avec le plus de détails possible ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erzähl mir deine Lebensgeschichte in 4 Minuten – so detailliert wie möglich."
+          }
         }
       }
     },
@@ -1426,6 +1924,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle est la pensée qui revient le plus souvent quand tu es seul(e) ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcher Gedanke kommt dir am häufigsten, wenn du allein bist?"
           }
         }
       }
@@ -1444,6 +1948,12 @@
             "state" : "translated",
             "value" : "As-tu déjà senti que tu ne méritais pas d'être aimé(e) ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hattest du schon mal das Gefühl, Liebe nicht zu verdienen?"
+          }
         }
       }
     },
@@ -1460,6 +1970,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Et si on partage chacun trois qualités que nous voyons en l'autre ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie wär’s, wenn wir beide drei Eigenschaften nennen, die wir am anderen sehen?"
           }
         }
       }
@@ -1478,6 +1994,12 @@
             "state" : "translated",
             "value" : "Quel était ton endroit préféré quand tu étais enfant, et qu'est-ce qui le rendait spécial ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was war als Kind dein Lieblingsort und was hat ihn so besonders gemacht?"
+          }
         }
       }
     },
@@ -1494,6 +2016,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si ton cœur pouvait parler, que dirait-il ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn dein Herz sprechen könnte, was würde es sagen?"
           }
         }
       }
@@ -1512,6 +2040,12 @@
             "state" : "translated",
             "value" : "Qui est la personne que tu admires le plus ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wer ist die Person, die du am meisten bewunderst?"
+          }
         }
       }
     },
@@ -1528,6 +2062,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il une période de ta vie que tu aimerais revivre pour la réparer ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es eine Phase in deinem Leben, die du gern noch mal erleben würdest, um etwas zu reparieren?"
           }
         }
       }
@@ -1546,6 +2086,12 @@
             "state" : "translated",
             "value" : "À quoi ressemblerait pour toi une journée vraiment parfaite ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie würde für dich ein richtig perfekter Tag aussehen?"
+          }
         }
       }
     },
@@ -1562,6 +2108,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tu avais 100 000 € à donner à une cause, laquelle choisirais-tu, et pourquoi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du 100.000 € für einen guten Zweck hättest, wofür würdest du es geben – und warum?"
           }
         }
       }
@@ -1580,6 +2132,12 @@
             "state" : "translated",
             "value" : "Parle-moi d'un jour que tu n'oublieras jamais—qu'il soit bon ou mauvais."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erzähl mir von einem Tag, den du nie vergessen wirst – egal ob gut oder schlecht."
+          }
         }
       }
     },
@@ -1596,6 +2154,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Penses-tu que ton entourage te comprends vraiment ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denkst du, dass dich dein Umfeld wirklich versteht?"
           }
         }
       }
@@ -1614,6 +2178,12 @@
             "state" : "translated",
             "value" : "Quelle est la chose qui te fait le plus plaisir lorsqu'on te le dit ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was hörst du am liebsten über dich?"
+          }
         }
       }
     },
@@ -1630,6 +2200,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comment décrirais-tu l'intelligence émotionelle ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie würdest du emotionale Intelligenz beschreiben?"
           }
         }
       }
@@ -1648,6 +2224,12 @@
             "state" : "translated",
             "value" : "Quelle est la personne sur qui tu comptes le plus ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auf wen kannst du dich am meisten verlassen?"
+          }
         }
       }
     },
@@ -1664,6 +2246,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tu avais un journal intime, qu'est-ce que tu écrirais dans la première page ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du ein Tagebuch hättest, was stünde auf der ersten Seite?"
           }
         }
       }
@@ -1682,6 +2270,12 @@
             "state" : "translated",
             "value" : "Si tu pouvais montrer ton monde intérieur en images, à quoi ressemblerait-il ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du deine innere Welt in Bildern zeigen könntest – wie sähe sie aus?"
+          }
         }
       }
     },
@@ -1698,6 +2292,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Penses-tu avoir confiance en toi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Findest du, dass du Selbstvertrauen hast?"
           }
         }
       }
@@ -1716,6 +2316,12 @@
             "state" : "translated",
             "value" : "Quelle injustice as-tu déjà vécu et que tu n'as jamais oubliée ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Ungerechtigkeit hast du erlebt, die du nie vergessen hast?"
+          }
         }
       }
     },
@@ -1732,6 +2338,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Penses-tu que l'univers nous donne ce que l'on mérite ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Glaubst du, das Universum gibt uns, was wir verdienen?"
           }
         }
       }
@@ -1750,6 +2362,12 @@
             "state" : "translated",
             "value" : "Penses-tu que la vie est juste ou injuste ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Findest du, das Leben ist eher fair oder unfair?"
+          }
         }
       }
     },
@@ -1766,6 +2384,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Penses-tu que les expériences que l'on vit sont là pour nous enseigner des choses que l'on a besoin d'apprendre ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denkst du, dass Erlebnisse da sind, um uns genau das beizubringen, was wir lernen müssen?"
           }
         }
       }
@@ -1784,6 +2408,12 @@
             "state" : "translated",
             "value" : "As-tu déjà eu l'impression que personne ne te comprenait vraiment ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hattest du schon mal das Gefühl, dass dich niemand so richtig versteht?"
+          }
         }
       }
     },
@@ -1800,6 +2430,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tu pouvais réparer une seule chose de ton passé, que changerais-tu en priorité ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du nur eine Sache aus deiner Vergangenheit reparieren könntest – was würdest du als Erstes ändern?"
           }
         }
       }
@@ -1818,6 +2454,12 @@
             "state" : "translated",
             "value" : "Penses-tu que les musiques que l'on écoute peuvent influencer notre mood ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Glaubst du, dass Musik unsere Stimmung beeinflussen kann?"
+          }
         }
       }
     },
@@ -1834,6 +2476,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quand était la dernière fois ou tu étais en colère contre toi même ? et pourquoi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wann warst du das letzte Mal richtig sauer auf dich – und warum?"
           }
         }
       }
@@ -1852,6 +2500,12 @@
             "state" : "translated",
             "value" : "Quelle est la chose que tu aimerais améliorer chez toi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was würdest du gern an dir verbessern?"
+          }
         }
       }
     },
@@ -1868,6 +2522,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Que ressens-tu quand tu es face à ton reflet dans le miroir ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was fühlst du, wenn du deinem Spiegelbild gegenüberstehst?"
           }
         }
       }
@@ -1886,6 +2546,12 @@
             "state" : "translated",
             "value" : "Que penses-tu du monde du travail—est-il fait pour toi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was hältst du von der Arbeitswelt – ist das was für dich?"
+          }
         }
       }
     },
@@ -1902,6 +2568,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'est-ce que tu aurais aimé entendre plus souvent dans ton enfance ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was hättest du dir in deiner Kindheit öfter gewünscht zu hören?"
           }
         }
       }
@@ -1920,6 +2592,12 @@
             "state" : "translated",
             "value" : "Quel impact à la relation parent/enfant dans la vie d'un adulte selon toi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welchen Einfluss hat die Eltern-Kind-Beziehung deiner Meinung nach auf das spätere Leben?"
+          }
         }
       }
     },
@@ -1936,6 +2614,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tu avais des enfants, quelle est la chose que tu leur apprendrais en premier ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du Kinder hättest, was würdest du ihnen als Erstes beibringen?"
           }
         }
       }
@@ -1954,6 +2638,12 @@
             "state" : "translated",
             "value" : "Penses-tu exploiter pleinement ton potentiel ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denkst du, dass du dein Potenzial voll ausschöpfst?"
+          }
         }
       }
     },
@@ -1970,6 +2660,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Que penses-tu des nouvelles générations ? Était-ce mieux avant ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was hältst du von den neuen Generationen? War früher wirklich alles besser?"
           }
         }
       }
@@ -1988,6 +2684,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce qui est plus important dans un couple selon toi, l'amour ou l'honnêteté ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was ist in einer Beziehung wichtiger für dich: Liebe oder Ehrlichkeit?"
+          }
         }
       }
     },
@@ -2004,6 +2706,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Te décrirais-tu comme quelqu'un de sensible ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du dich als sensibel bezeichnen?"
           }
         }
       }
@@ -2022,6 +2730,12 @@
             "state" : "translated",
             "value" : "Si tu devais choisir un mot pour résumer ton passé, lequel choisirais-tu ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du deine Vergangenheit mit einem Wort beschreiben müsstest – welches?"
+          }
         }
       }
     },
@@ -2038,6 +2752,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle est la plus grande leçon de vie que tu as appris l'année dernière ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was war die größte Lektion, die du letztes Jahr gelernt hast?"
           }
         }
       }
@@ -2056,6 +2776,12 @@
             "state" : "translated",
             "value" : "Quelle est la chose que tu aimerais laisser derrière toi une bonne fois pour toutes ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was würdest du gern ein für alle Mal hinter dir lassen?"
+          }
         }
       }
     },
@@ -2072,6 +2798,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Souhaiterais-tu changer ta vie actuelle ? Si oui qu'est-ce qui te dérange le plus aujourd'hui ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du dein aktuelles Leben ändern? Wenn ja, was nervt dich gerade am meisten?"
           }
         }
       }
@@ -2090,6 +2822,12 @@
             "state" : "translated",
             "value" : "T'arrives-tu parfois d'être en depression ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hast du manchmal Phasen, in denen du dich wirklich niedergeschlagen fühlst?"
+          }
         }
       }
     },
@@ -2106,6 +2844,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle douleur as-tu normalisée avec le temps ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Belastung hast du mit der Zeit einfach als normal akzeptiert?"
           }
         }
       }
@@ -2124,6 +2868,12 @@
             "state" : "translated",
             "value" : "Qui est la personne qui te rend le plus heureux(se) actuellement"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wer macht dich gerade am glücklichsten?"
+          }
         }
       }
     },
@@ -2140,6 +2890,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Penses-tu que des séances chez le psychologue te ferait du bien ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denkst du, Sessions bei einer Psychologin oder einem Psychologen würden dir gut tun?"
           }
         }
       }
@@ -2158,6 +2914,12 @@
             "state" : "translated",
             "value" : "Quelle est ta façon à toi de traverser tes tempêtes intérieures ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was ist dein Weg, mit inneren Stürmen umzugehen?"
+          }
         }
       }
     },
@@ -2174,6 +2936,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tes pensées intérieurs sont-elles souvent avec toi ou contre toi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sind deine Gedanken häufiger auf deiner Seite oder eher gegen dich?"
           }
         }
       }
@@ -2192,6 +2960,12 @@
             "state" : "translated",
             "value" : "Est-ce que tu te considères comme quelqu'un qui a réussi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siehst du dich selbst als erfolgreich?"
+          }
         }
       }
     },
@@ -2208,6 +2982,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comment tes parents ont-ils influencé ta vision de l'amour et des relations ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie haben deine Eltern deine Sicht auf Liebe und Beziehungen geprägt?"
           }
         }
       }
@@ -2226,6 +3006,12 @@
             "state" : "translated",
             "value" : "Que penses-tu qu'il se passe après la mort ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was glaubst du, was nach dem Tod passiert?"
+          }
         }
       }
     },
@@ -2242,6 +3028,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Penses-tu que mentir peut être acceptable ? Dans quels cas ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Findest du, Lügen kann okay sein? In welchen Fällen?"
           }
         }
       }
@@ -2260,6 +3052,12 @@
             "state" : "translated",
             "value" : "Quelle est une chose que tu n'avais jamais remarquée sur toi avant que quelqu'un te le fasse remarquer ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was an dir hast du erst bemerkt, nachdem es dir jemand gesagt hat?"
+          }
         }
       }
     },
@@ -2276,6 +3074,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Le fait de vieillir te fait-il peur ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Macht dir das Älterwerden Angst?"
           }
         }
       }
@@ -2294,6 +3098,12 @@
             "state" : "translated",
             "value" : "Si jamais on se dispute par message, préfères-tu régler ça tout de suite ou attendre de se voir en face à face ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn wir uns mal per Nachricht streiten, klärst du’s lieber sofort oder wartest du, bis wir uns persönlich sehen?"
+          }
         }
       }
     },
@@ -2310,6 +3120,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comment les autres te traitaient-ils au lycée ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie haben dich die anderen in der Schulzeit behandelt?"
           }
         }
       }
@@ -2328,6 +3144,12 @@
             "state" : "translated",
             "value" : "Serais-tu prêt(e) à renoncer à certains de tes rêves ou objectifs professionnels par amour ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wärst du bereit, für die Liebe auf manche Träume oder Karriereziele zu verzichten?"
+          }
         }
       }
     },
@@ -2344,6 +3166,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Me dirais-tu si je disais ou faisais quelque chose qui t'a blessé(e) ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du mir sagen, wenn ich etwas sage oder tue, das dich verletzt?"
           }
         }
       }
@@ -2362,6 +3190,12 @@
             "state" : "translated",
             "value" : "Comment fais-tu pour faire face aux moments difficiles ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie gehst du mit schwierigen Momenten um?"
+          }
         }
       }
     },
@@ -2378,6 +3212,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Crois-tu au coup de foudre ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Glaubst du an Liebe auf den ersten Blick?"
           }
         }
       }
@@ -2396,6 +3236,12 @@
             "state" : "translated",
             "value" : "Où devrions-nous partir en vacances la prochaine fois ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wohin sollen wir nächstes Mal in den Urlaub fahren?"
+          }
         }
       }
     },
@@ -2412,6 +3258,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'est-ce que tu aimes dans le fait d'être en couple avec moi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was magst du daran, mit mir zusammen zu sein?"
           }
         }
       }
@@ -2430,6 +3282,12 @@
             "state" : "translated",
             "value" : "As-tu l'impression d'être devenu(e) une meilleure version de toi-même avec le temps ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hast du das Gefühl, mit der Zeit eine bessere Version von dir selbst geworden zu sein?"
+          }
         }
       }
     },
@@ -2446,6 +3304,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Passons-nous assez de temps ensemble selon toi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verbringen wir deiner Meinung nach genug Zeit miteinander?"
           }
         }
       }
@@ -2464,6 +3328,12 @@
             "state" : "translated",
             "value" : "As-tu déjà eu l'impression d'être en retard sur ta propre vie ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hattest du schon mal das Gefühl, in deinem eigenen Leben „hinterher“ zu sein?"
+          }
         }
       }
     },
@@ -2480,6 +3350,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Penses-tu que passer du temps ensemble est aussi important que d'en passer séparer ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Findest du, gemeinsame Zeit ist genauso wichtig wie Zeit für sich allein?"
           }
         }
       }
@@ -2498,6 +3374,12 @@
             "state" : "translated",
             "value" : "Quelle est la phrase qui pourrait résumer ce que tu ressens en ce moment ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcher Satz beschreibt am besten, was du gerade fühlst?"
+          }
         }
       }
     },
@@ -2514,6 +3396,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "As-tu une croyance qui te tient debout malgré tout ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hast du eine Überzeugung, die dich trotz allem aufrecht hält?"
           }
         }
       }
@@ -2532,6 +3420,12 @@
             "state" : "translated",
             "value" : "Si quelqu'un entrait dans ton monde intérieur, que découvrirait-il en premier ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn jemand in deine Innenwelt eintauchen würde, was würde er oder sie als Erstes entdecken?"
+          }
         }
       }
     },
@@ -2548,6 +3442,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Est-ce que tu te sens écouté(e) quand on est ensemble ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fühlst du dich gehört, wenn wir zusammen sind?"
           }
         }
       }
@@ -2566,6 +3466,12 @@
             "state" : "translated",
             "value" : "Quelle partie de toi aimerais-tu voir évoluer dans les années à venir ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welchen Teil von dir würdest du in den nächsten Jahren gern weiterentwickeln?"
+          }
         }
       }
     },
@@ -2582,6 +3488,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Penses-tu que la jalousie est une preuve d'amour dans un couple ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ist Eifersucht für dich ein Liebesbeweis in einer Beziehung?"
           }
         }
       }
@@ -2600,6 +3512,12 @@
             "state" : "translated",
             "value" : "Es-tu la même personne qu'il y'a 5 ans ? Si non, qu'est-ce qui a changé chez toi depuis ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bist du noch dieselbe Person wie vor 5 Jahren? Wenn nicht, was hat sich seitdem an dir verändert?"
+          }
         }
       }
     },
@@ -2616,6 +3534,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle habitude te protège mais t'empêche peut-être d'avancer ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Gewohnheit schützt dich, hält dich aber vielleicht auch vom Weiterkommen ab?"
           }
         }
       }
@@ -2634,6 +3558,12 @@
             "state" : "translated",
             "value" : "Si tu pouvais poser une question à ton futur toi, que lui demanderais-tu ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du deinem zukünftigen Ich eine Frage stellen könntest – welche wäre das?"
+          }
         }
       }
     },
@@ -2650,6 +3580,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères les soirées en amoureux planifiées ou improvisées ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Magst du Date-Abende lieber geplant oder spontan?"
           }
         }
       }
@@ -2668,6 +3604,12 @@
             "state" : "translated",
             "value" : "D'après toi, comment peut-on entretenir la flamme dans notre relation ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie können wir deiner Meinung nach die Flamme in unserer Beziehung am Leben halten?"
+          }
         }
       }
     },
@@ -2684,6 +3626,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Crois-tu au destin ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Glaubst du an Schicksal?"
           }
         }
       }
@@ -2702,6 +3650,12 @@
             "state" : "translated",
             "value" : "As-tu confiance quand tu penses à ton futur ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hast du Vertrauen, wenn du an deine Zukunft denkst?"
+          }
         }
       }
     },
@@ -2718,6 +3672,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comment décrirais-tu ton love langage à un(e) inconnu ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie würdest du deine Love Language einem Fremden erklären?"
           }
         }
       }
@@ -2736,6 +3696,12 @@
             "state" : "translated",
             "value" : "Penses-tu que certaines personnes sont faites l'une pour l'autre ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Glaubst du, dass manche Menschen füreinander bestimmt sind?"
+          }
         }
       }
     },
@@ -2752,6 +3718,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si toi et moi étions la preuve de quelque chose, on serait la preuve de quoi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn wir beide der Beweis für etwas wären – wofür wären wir der Beweis?"
           }
         }
       }
@@ -2770,6 +3742,12 @@
             "state" : "translated",
             "value" : "Quel est ton film préféré pour une soirée en amoureux ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was ist dein Lieblingsfilm für einen romantischen Abend?"
+          }
         }
       }
     },
@@ -2786,6 +3764,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Arrives-tu vraiment à garder un secret ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kannst du wirklich ein Geheimnis für dich behalten?"
           }
         }
       }
@@ -2804,6 +3788,12 @@
             "state" : "translated",
             "value" : "Que penses-tu des démonstrations d'affection en public ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was hältst du von Zärtlichkeiten in der Öffentlichkeit?"
+          }
         }
       }
     },
@@ -2820,6 +3810,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Souhaites-tu te marier un jour ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Möchtest du irgendwann heiraten?"
           }
         }
       }
@@ -2838,6 +3834,12 @@
             "state" : "translated",
             "value" : "Que penses-tu de la solitude ? Est-ce la même chose que l'isolement selon toi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was hältst du von Einsamkeit? Ist das für dich dasselbe wie Isolation?"
+          }
         }
       }
     },
@@ -2854,6 +3856,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "As-tu déjà eu besoin de prendre de la distance pour ne pas te perdre dans une relation ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Musstest du schon mal Abstand nehmen, damit du dich in einer Beziehung nicht selbst verlierst?"
           }
         }
       }
@@ -2872,6 +3880,12 @@
             "state" : "translated",
             "value" : "Comment me décris-tu à tes amis ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie beschreibst du mich deinen Freunden?"
+          }
         }
       }
     },
@@ -2888,6 +3902,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il quelque chose que je faisais avant et qui te manque aujourd'hui ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es etwas, das ich früher gemacht habe und dir jetzt fehlt?"
           }
         }
       }
@@ -2906,6 +3926,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce que tomber amoureux(se) signifie pour toi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was bedeutet Verliebtsein für dich?"
+          }
         }
       }
     },
@@ -2922,6 +3948,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comment raconterais-tu notre histoire d'amour ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie würdest du unsere Liebesgeschichte erzählen?"
           }
         }
       }
@@ -2940,6 +3972,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce que tu valorises le plus dans une relation ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was ist dir in einer Beziehung am wichtigsten?"
+          }
         }
       }
     },
@@ -2956,6 +3994,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "As-tu déjà changé pour quelqu'un d'autre, au point de ne plus te reconnaître ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hast du dich schon mal für jemanden so verändert, dass du dich selbst kaum wiedererkannt hast?"
           }
         }
       }
@@ -2974,6 +4018,12 @@
             "state" : "translated",
             "value" : "Quand tu passes une mauvaise journée, qu'est-ce que je peux faire pour t'aider à aller mieux ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du einen miesen Tag hast, was kann ich tun, damit es dir besser geht?"
+          }
         }
       }
     },
@@ -2990,6 +4040,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Crois-tu aux âmes sœurs ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Glaubst du an Seelenverwandte?"
           }
         }
       }
@@ -3008,6 +4064,12 @@
             "state" : "translated",
             "value" : "Penses-tu que les expériences négatives peuvent nous transformer en personne meilleur ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Glaubst du, dass negative Erfahrungen uns zu besseren Menschen machen können?"
+          }
         }
       }
     },
@@ -3024,6 +4086,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelles sont les choses que tu aurais aimé apprendre plus tôt dans la vie ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Dinge hättest du gerne früher im Leben gelernt?"
           }
         }
       }
@@ -3042,6 +4110,12 @@
             "state" : "translated",
             "value" : "Quand as-tu senti que tu commençais à tomber amoureux(se) de moi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wann hattest du das Gefühl, dass du anfängst, dich in mich zu verlieben?"
+          }
         }
       }
     },
@@ -3058,6 +4132,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quel est le geste le plus mémorable que j'ai fait pour toi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Geste von mir ist dir am meisten im Gedächtnis geblieben?"
           }
         }
       }
@@ -3076,6 +4156,12 @@
             "state" : "translated",
             "value" : "Quelle est la partie de ton histoire que tu racontes rarement ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welchen Teil deiner Geschichte erzählst du kaum?"
+          }
         }
       }
     },
@@ -3092,6 +4178,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quel moment de ta vie mériterait d'être raconté dans un livre ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcher Moment deines Lebens hätte ein Buch verdient?"
           }
         }
       }
@@ -3110,6 +4202,12 @@
             "state" : "translated",
             "value" : "C'est quoi, pour toi, des vacances vraiment romantiques ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was ist für dich wirklich romantischer Urlaub?"
+          }
         }
       }
     },
@@ -3126,6 +4224,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle promesse as-tu faite un jour, mais que tu n'as pas tenue ? et pourquoi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welches Versprechen hast du mal gegeben, aber nicht gehalten? Und warum?"
           }
         }
       }
@@ -3144,6 +4248,12 @@
             "state" : "translated",
             "value" : "Comment imagines-tu notre avenir ensemble ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie stellst du dir unsere gemeinsame Zukunft vor?"
+          }
         }
       }
     },
@@ -3160,6 +4270,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle est ta partie préférée de notre relation ? Et celle que tu aimes le moins ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was magst du an unserer Beziehung am meisten? Und was am wenigsten?"
           }
         }
       }
@@ -3178,6 +4294,12 @@
             "state" : "translated",
             "value" : "M'as-tu déjà menti en répondant à ces questions ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hast du mir beim Beantworten dieser Fragen schon mal gelogen?"
+          }
         }
       }
     },
@@ -3194,6 +4316,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "T'es-tu déjà enfui(e) d'une situation ? Comment ça s'est passé ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bist du schon mal vor einer Situation weggelaufen? Wie ist es ausgegangen?"
           }
         }
       }
@@ -3212,6 +4340,12 @@
             "state" : "translated",
             "value" : "Y a-t-il des signes qui montrent que tu ne vas pas bien, que je devrais apprendre à repérer ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es Zeichen, an denen ich erkennen kann, dass es dir nicht gut geht und die ich lernen sollte zu beachten?"
+          }
         }
       }
     },
@@ -3228,6 +4362,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'est-ce que tu préfères chez toi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was magst du an dir selbst am liebsten?"
           }
         }
       }
@@ -3246,6 +4386,12 @@
             "state" : "translated",
             "value" : "Comment fais-tu pour te défouler ou relâcher la pression ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie baust du Stress ab bzw. lässt Dampf ab?"
+          }
         }
       }
     },
@@ -3262,6 +4408,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il des qualités précises que tu recherches chez tes amis ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es bestimmte Eigenschaften, die du bei Freunden suchst?"
           }
         }
       }
@@ -3280,6 +4432,12 @@
             "state" : "translated",
             "value" : "Comment définis-tu une relation solide ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie definierst du eine stabile Beziehung?"
+          }
         }
       }
     },
@@ -3296,6 +4454,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle émotion as-tu appris à cacher avec le temps ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Emotion hast du mit der Zeit gelernt zu verstecken?"
           }
         }
       }
@@ -3314,6 +4478,12 @@
             "state" : "translated",
             "value" : "Si tu pouvais vivre un instant encore une fois, sans le changer, lequel choisirais-tu ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du einen Moment noch mal erleben könntest, ohne etwas zu ändern – welchen würdest du wählen?"
+          }
         }
       }
     },
@@ -3330,6 +4500,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Penses-tu qu'il est important de porter un masque en public ou faut-il être pleinement soi même ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Findest du, man sollte in der Öffentlichkeit eine Maske tragen, oder lieber komplett man selbst sein?"
           }
         }
       }
@@ -3348,6 +4524,12 @@
             "state" : "translated",
             "value" : "Quel est le plus beau compliment que je pourrais te faire ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was wäre das schönste Kompliment, das ich dir machen könnte?"
+          }
         }
       }
     },
@@ -3364,6 +4546,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Penses-tu que je suis assez reconnaissant(e) avec toi ? et que je te le montre ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Findest du, ich bin dir gegenüber dankbar genug? Und zeige ich das auch?"
           }
         }
       }
@@ -3382,6 +4570,12 @@
             "state" : "translated",
             "value" : "Quelle importance accordes-tu à la famille ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Bedeutung hat Familie für dich?"
+          }
         }
       }
     },
@@ -3398,6 +4592,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle importance accordes-tu à la religion ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Bedeutung hat Religion für dich?"
           }
         }
       }
@@ -3416,6 +4616,12 @@
             "state" : "translated",
             "value" : "Tu préfères un mensonge qui fait du bien ou une vérité qui blesse ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Magst du lieber eine Lüge, die gut tut, oder eine Wahrheit, die weh tut?"
+          }
         }
       }
     },
@@ -3432,6 +4638,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle blessure a formé une partie de ta personnalité ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Wunde hat einen Teil deiner Persönlichkeit geprägt?"
           }
         }
       }
@@ -3450,6 +4662,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce que tu aimerais transmettre à un enfant que tu élèverais ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was würdest du einem Kind, das du erziehst, gerne mitgeben?"
+          }
         }
       }
     },
@@ -3466,6 +4684,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "As-tu déjà renoncé à une relation par amour de toi-même ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hast du schon mal eine Beziehung aus Selbstliebe beendet?"
           }
         }
       }
@@ -3484,6 +4708,12 @@
             "state" : "translated",
             "value" : "Est-ce que tu as l'impression que je t'empêche de faire certaines choses ? Si oui, penses-tu que c'est une bonne chose ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hast du das Gefühl, dass ich dich von bestimmten Dingen abhalte? Wenn ja, findest du das gut?"
+          }
         }
       }
     },
@@ -3500,6 +4730,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Crois-tu en la chance ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Glaubst du an Glück?"
           }
         }
       }
@@ -3518,6 +4754,12 @@
             "state" : "translated",
             "value" : "Comment tes ex te décriraient-ils/elles ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie würden dich deine Ex beschreiben?"
+          }
         }
       }
     },
@@ -3534,6 +4776,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelles formes d'intimité non sexuelles apprécies-tu particulièrement ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Formen von nicht-sexueller Nähe magst du besonders?"
           }
         }
       }
@@ -3552,6 +4800,12 @@
             "state" : "translated",
             "value" : "As-tu envie de vivre un jour dans une autre ville ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Möchtest du irgendwann in einer anderen Stadt leben?"
+          }
         }
       }
     },
@@ -3568,6 +4822,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pour toi, à quel moment sait-on qu'il faut rompre avec quelqu'un ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Woran merkst du, dass es Zeit ist, mit jemandem Schluss zu machen?"
           }
         }
       }
@@ -3586,6 +4846,12 @@
             "state" : "translated",
             "value" : "Quels sont tes réflexes quand tu es stressé(e) ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was sind deine typischen Reaktionen, wenn du gestresst bist?"
+          }
         }
       }
     },
@@ -3602,6 +4868,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tu pouvais écrire une lettre à ton futur toi, que contiendrait-elle ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du deinem zukünftigen Ich einen Brief schreiben könntest – was stünde drin?"
           }
         }
       }
@@ -3620,6 +4892,12 @@
             "state" : "translated",
             "value" : "Quelle est la conversation la plus marquante que tu aies eue ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was war das bedeutungsvollste Gespräch, das du geführt hast?"
+          }
         }
       }
     },
@@ -3636,6 +4914,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Est-ce que tu te considères comme une bonne personne ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hältst du dich für einen guten Menschen?"
           }
         }
       }
@@ -3654,6 +4938,12 @@
             "state" : "translated",
             "value" : "Quel est ton mécanisme de défense que peu de gens remarquent ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welchen Abwehrmechanismus hast du, den kaum jemand bemerkt?"
+          }
         }
       }
     },
@@ -3670,6 +4960,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'est-ce que tu ressens quand tu regardes le ciel la nuit ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was fühlst du, wenn du nachts in den Himmel schaust?"
           }
         }
       }
@@ -3688,6 +4984,12 @@
             "state" : "translated",
             "value" : "As-tu déjà eu envie de disparaître pour voir qui te chercherait en premier ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hattest du schon mal den Wunsch, zu verschwinden, um zu sehen, wer dich zuerst suchen würde?"
+          }
         }
       }
     },
@@ -3704,6 +5006,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle chose banale te touche profondément sans que tu ne saches pourquoi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche ganz alltägliche Sache berührt dich tief, ohne dass du weißt warum?"
           }
         }
       }
@@ -3722,6 +5030,12 @@
             "state" : "translated",
             "value" : "Penses-tu que les erreurs sont importantes pour son propre développement ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Findest du, dass Fehler wichtig für die eigene Entwicklung sind?"
+          }
         }
       }
     },
@@ -3738,6 +5052,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'espères-tu de toi même pour les prochaines années ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was erhoffst du dir von dir selbst für die nächsten Jahre?"
           }
         }
       }
@@ -3756,6 +5076,12 @@
             "state" : "translated",
             "value" : "Qui a été la personne la plus bienveillante avec toi durant ton enfance ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wer war in deiner Kindheit am fürsorglichsten zu dir?"
+          }
         }
       }
     },
@@ -3772,6 +5098,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comment décrirais-tu ta relation avec tes grands-parents ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie würdest du deine Beziehung zu deinen Großeltern beschreiben?"
           }
         }
       }
@@ -3790,6 +5122,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce qui est le plus important selon toi dans un couple ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was ist deiner Meinung nach das Wichtigste in einer Beziehung?"
+          }
         }
       }
     },
@@ -3806,6 +5144,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle est la qualité qu'un homme devrait avoir selon toi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Eigenschaft sollte ein Mann deiner Meinung nach unbedingt haben?"
           }
         }
       }
@@ -3824,6 +5168,12 @@
             "state" : "translated",
             "value" : "Quelle est la qualité qu'une femme devrait avoir selon toi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Eigenschaft sollte eine Frau deiner Meinung nach unbedingt haben?"
+          }
         }
       }
     },
@@ -3840,6 +5190,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "As-tu besoin de souvent passer du temps seul, avec toi même ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brauchst du oft Zeit nur für dich ganz allein?"
           }
         }
       }
@@ -3858,6 +5214,12 @@
             "state" : "translated",
             "value" : "Que penses-tu de la vulgarité dans un couple ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was hältst du von vulgärer Sprache oder vulgärem Verhalten in einer Beziehung?"
+          }
         }
       }
     },
@@ -3874,6 +5236,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Penses-tu que nos ancêtres nous observe ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Glaubst du, dass unsere Vorfahren über uns wachen?"
           }
         }
       }
@@ -3892,6 +5260,12 @@
             "state" : "translated",
             "value" : "Quel est l'évènement historique que tu aimes le plus ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welches historische Ereignis findest du am spannendsten?"
+          }
         }
       }
     },
@@ -3908,6 +5282,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "As-tu déjà aimé quelqu'un d'un amour que tu ne comprenais pas toi-même ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hast du schon mal jemanden geliebt, auf eine Art, die du selbst nicht verstanden hast?"
           }
         }
       }
@@ -3926,6 +5306,12 @@
             "state" : "translated",
             "value" : "Te sens-tu en paix avec ton passé ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bist du mit deiner Vergangenheit im Reinen?"
+          }
         }
       }
     },
@@ -3942,6 +5328,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tu avais des démons du passé à combattre, pourrais-tu me les décrire ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du alte Dämonen bekämpfen müsstest – wie würdest du sie beschreiben?"
           }
         }
       }
@@ -3960,6 +5352,12 @@
             "state" : "translated",
             "value" : "Si tu devais te décrire à un inconnu mais sans aucun filtre, que dirais-tu ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du dich einem Fremden ganz ungefiltert beschreiben müsstest – was würdest du sagen?"
+          }
         }
       }
     },
@@ -3976,6 +5374,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle vérité as-tu envie de crier mais que tu gardes encore en toi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Wahrheit würdest du am liebsten rausbrüllen, behältst sie aber noch für dich?"
           }
         }
       }
@@ -3994,6 +5398,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce qui, chez toi, mérite d'être reconnu davantage ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was an dir sollte viel mehr anerkannt werden?"
+          }
         }
       }
     },
@@ -4010,6 +5420,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Te sens-tu compris(e) par tes parents ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fühlst du dich von deinen Eltern verstanden?"
           }
         }
       }
@@ -4028,6 +5444,12 @@
             "state" : "translated",
             "value" : "Qui est la dernière personne que tu as eu peur de perdre ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wen hattest du zuletzt Angst zu verlieren?"
+          }
         }
       }
     },
@@ -4044,6 +5466,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Décris-moi ce que je pourrais faire pour te rendre encore plus heureux(se)"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beschreib, was ich tun könnte, um dich noch glücklicher zu machen."
           }
         }
       }
@@ -4062,6 +5490,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce que tu aimerais qu'on comprenne enfin sur toi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was sollen die Leute endlich über dich verstehen?"
+          }
         }
       }
     },
@@ -4078,6 +5512,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle est la question que tu poses souvent aux autres mais que tu fuis toi-même ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Frage stellst du oft anderen, gehst ihr aber selbst aus dem Weg?"
           }
         }
       }
@@ -4096,6 +5536,12 @@
             "state" : "translated",
             "value" : "Quel est le plus beau risque que tu aies pris dans ta vie ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was war das schönste Risiko, das du in deinem Leben eingegangen bist?"
+          }
         }
       }
     },
@@ -4112,6 +5558,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "As-tu déjà ressenti un amour plus fort que la raison ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hast du schon mal eine Liebe gefühlt, die stärker war als die Vernunft?"
           }
         }
       }
@@ -4130,6 +5582,12 @@
             "state" : "translated",
             "value" : "Penses-tu que l'amour est indispensable pour avoir une vie épanouie ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Findest du, dass Liebe für ein erfülltes Leben unverzichtbar ist?"
+          }
         }
       }
     },
@@ -4146,6 +5604,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'est-ce que tu aimerais apprendre à aimer en toi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was würdest du gerne an dir selbst lieben lernen?"
           }
         }
       }
@@ -4164,6 +5628,12 @@
             "state" : "translated",
             "value" : "Es-tu fière de la personne que tu deviens ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bist du stolz auf die Person, die du gerade wirst?"
+          }
         }
       }
     },
@@ -4180,6 +5650,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'est ce que nous pourrions faire ensemble pour s'aider à se comprendre encore plus ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was könnten wir zusammen tun, um uns noch besser zu verstehen?"
           }
         }
       }
@@ -4198,6 +5674,12 @@
             "state" : "translated",
             "value" : "Si tu pouvais donner un conseil à tous les adolescent(e)s du monde, que dirais-tu ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du allen Jugendlichen dieser Welt einen Rat geben könntest – was würdest du sagen?"
+          }
         }
       }
     },
@@ -4214,6 +5696,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'est ce que tu respectes le plus chez moi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was respektierst du am meisten an mir?"
           }
         }
       }
@@ -4232,6 +5720,12 @@
             "state" : "translated",
             "value" : "Si tu avais le pouvoir de changer une chose dans ce monde, tu changerais quoi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du die Macht hättest, eine Sache auf der Welt zu ändern – was würdest du ändern?"
+          }
         }
       }
     },
@@ -4248,6 +5742,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Penses-tu que les moments de silences partagés dans un couple sont important ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Findest du gemeinsame Momente der Stille in einer Beziehung wichtig?"
           }
         }
       }
@@ -4266,6 +5766,12 @@
             "state" : "translated",
             "value" : "Quelle est la part de toi qui a le plus évolué ces dernières années ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcher Teil von dir hat sich in den letzten Jahren am meisten weiterentwickelt?"
+          }
         }
       }
     },
@@ -4282,6 +5788,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Penses-tu que l'ennuie est une bonne chose pour le développement d'un enfant ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Findest du, dass Langeweile gut für die Entwicklung eines Kindes ist?"
           }
         }
       }
@@ -4300,6 +5812,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce qui pourrait te libérer émotionnellement si tu l'exprimais enfin ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was könnte dich emotional befreien, wenn du es endlich aussprechen würdest?"
+          }
         }
       }
     },
@@ -4317,6 +5835,12 @@
             "state" : "translated",
             "value" : "As-tu déjà ressenti que ton cœur parlait un langage que personne ne comprenait ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hattest du schon mal das Gefühl, dass dein Herz eine Sprache spricht, die niemand versteht?"
+          }
         }
       }
     },
@@ -4333,6 +5857,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle est la question que tu n'aimerais jamais qu'on te pose ? Pourquoi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Frage willst du niemals gestellt bekommen? Warum?"
           }
         }
       }

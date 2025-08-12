@@ -57,7 +57,7 @@ struct FavoritesCardView: View {
                 if favoritesService.getAllFavorites().isEmpty {
                     // État vide avec layout identique au journal
                     VStack(spacing: 30) {
-                        Image(LocalizationService.localizedImageName(frenchImage: "mili", defaultImage: "manon"))
+                        Image(LocalizationService.localizedImageName(frenchImage: "mili", defaultImage: "manon", germanImage: "crypto"))
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 240, height: 240)

@@ -75,7 +75,18 @@
     {
       "id" : "21482467",
       "localizations" : [
-
+        {
+          "locale" : "fr",
+          "name" : "Premium"
+        },
+        {
+          "locale" : "en",
+          "name" : "Premium"
+        },
+        {
+          "locale" : "de",
+          "name" : "Premium"
+        }
       ],
       "name" : "Premium",
       "subscriptions" : [
@@ -100,9 +111,19 @@
               "description" : "Accès illimité aux questions de couple",
               "displayName" : "Premium Hebdomadaire",
               "locale" : "fr"
+            },
+            {
+              "description" : "Unlimited access to couple questions",
+              "displayName" : "Premium Weekly",
+              "locale" : "en"
+            },
+            {
+              "description" : "Unbegrenzter Zugang zu Paar‑Fragen",
+              "displayName" : "Premium Wöchentlich",
+              "locale" : "de"
             }
           ],
-          "productID" : "com.lyes.love2love.subscription.weekly",
+          "productID" : "com.lyes.love2love.subscription.weekly.mi",
           "recurringSubscriptionPeriod" : "P1W",
           "referenceName" : "Premium Weekly",
           "subscriptionGroupID" : "21482467",
@@ -132,9 +153,19 @@
               "description" : "Accès illimité aux questions de couple - Formule mensuelle",
               "displayName" : "Premium Mensuel",
               "locale" : "fr"
+            },
+            {
+              "description" : "Unlimited access to couple questions – Monthly plan",
+              "displayName" : "Premium Monthly",
+              "locale" : "en"
+            },
+            {
+              "description" : "Unbegrenzter Zugang zu Paar‑Fragen – Monatsabo",
+              "displayName" : "Premium Monatlich",
+              "locale" : "de"
             }
           ],
-          "productID" : "com.lyes.love2love.subscription.monthly",
+          "productID" : "com.lyes.love2love.subscription.monthly.mi",
           "recurringSubscriptionPeriod" : "P1M",
           "referenceName" : "Premium Monthly",
           "subscriptionGroupID" : "21482467",

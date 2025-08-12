@@ -179,15 +179,18 @@ struct DailyQuestionPartnerCodeView: View {
                 .foregroundColor(.black)
                 .multilineTextAlignment(.center)
             
-            // Code avec effet de carte sophistiqué et élévation
+            // Code avec effet de carte sophistiqué et élévation, responsive
             VStack(spacing: 10) {
                 Text(code)
                     .font(.system(size: 48, weight: .bold, design: .monospaced))
                     .foregroundColor(Color(hex: "#FD267A"))
                     .tracking(8)
+                    .minimumScaleFactor(0.5)
+                    .lineLimit(1)
+                    .allowsTightening(true)
             }
             .padding(.vertical, 25)
-            .padding(.horizontal, 30)
+            .padding(.horizontal, 20)
             .background(
                 RoundedRectangle(cornerRadius: 16)
                     .fill(Color.white.opacity(0.95))

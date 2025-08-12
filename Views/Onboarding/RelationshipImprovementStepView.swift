@@ -37,7 +37,10 @@ struct RelationshipImprovementStepView: View {
                             Text(improvement)
                                 .font(.system(size: 16))
                                 .foregroundColor(viewModel.selectedImprovements.contains(improvement) ? .white : .black)
-                                .frame(maxWidth: .infinity)
+                                .multilineTextAlignment(.leading)
+                                .lineLimit(nil)
+                                .fixedSize(horizontal: false, vertical: true)
+                                .frame(maxWidth: .infinity, alignment: .leading)
                                 .padding(.vertical, 16)
                                 .padding(.horizontal, 20)
                                 .background(

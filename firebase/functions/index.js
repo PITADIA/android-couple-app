@@ -262,8 +262,12 @@ const APP_STORE_CONNECT_CONFIG = {
 
 // Produits d'abonnement supportés
 const SUBSCRIPTION_PRODUCTS = {
+  // Anciens IDs (compatibilité versions en prod)
   WEEKLY: "com.lyes.love2love.subscription.weekly",
   MONTHLY: "com.lyes.love2love.subscription.monthly",
+  // Nouveaux IDs (prochain build)
+  WEEKLY_MI: "com.lyes.love2love.subscription.weekly.mi",
+  MONTHLY_MI: "com.lyes.love2love.subscription.monthly.mi",
 };
 
 /**

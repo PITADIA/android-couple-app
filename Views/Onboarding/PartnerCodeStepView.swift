@@ -191,15 +191,18 @@ struct PartnerCodeStepView: View {
                 .foregroundColor(.black.opacity(0.7))
                 .multilineTextAlignment(.center)
             
-            // Code avec style adapté au fond gris
+            // Code avec style adapté au fond gris et responsive
             VStack(spacing: 10) {
                 Text(code)
                     .font(.system(size: 48, weight: .bold, design: .monospaced))
                     .foregroundColor(Color(hex: "#FD267A"))
                     .tracking(8)
+                    .minimumScaleFactor(0.5)
+                    .lineLimit(1)
+                    .allowsTightening(true)
             }
             .padding(.vertical, 25)
-            .padding(.horizontal, 30)
+            .padding(.horizontal, 20)
             .background(
                 RoundedRectangle(cornerRadius: 16)
                     .fill(Color.white)

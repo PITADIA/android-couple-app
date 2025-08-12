@@ -471,12 +471,7 @@ struct DailyQuestionMainView: View {
                     .id("\(response.id)-stable")
                 }
                 
-                // Message d'attente si nécessaire
-                if question.shouldShowWaitingMessage(for: currentUserId ?? "", withSettings: dailyQuestionService.currentSettings) {
-                    WaitingMessageView()
-                        .id("waiting_message")
-                        .padding(.top, 8) // 🎯 COMPACT: Petit espacement pour message attente
-                }
+                // Message d'attente supprimé (ne plus afficher de bandeau lorsque le partenaire n'a pas encore répondu)
                 
                 // Spacer invisible pour le scroll automatique
                 Color.clear.frame(height: 1) // 🎯 EXPERT: Remplacer Spacer par frame fixe
@@ -908,36 +903,7 @@ struct ChatMessageView: View {
     }
 }
 
-struct WaitingMessageView: View {
-    var body: some View {
-        HStack {
-            Image(systemName: "hourglass")
-                .font(.title3)
-                .foregroundColor(.blue)
-            
-            VStack(alignment: .leading, spacing: 2) {
-                Text("En attente de votre partenaire")
-                    .font(.body)
-                    .fontWeight(.medium)
-                
-                Text("Votre partenaire n'a pas encore répondu")
-                    .font(.caption)
-                    .foregroundColor(.secondary)
-            }
-            
-            Spacer()
-            }
-        .padding(.horizontal, 20)
-        .padding(.vertical, 16)
-        .background(
-            RoundedRectangle(cornerRadius: 12)
-                .fill(Color.blue.opacity(0.1))
-                .stroke(Color.blue.opacity(0.3), lineWidth: 1)
-        )
-        .padding(.horizontal, 16)
-        .padding(.vertical, 8)
-    }
-}
+// WaitingMessageView supprimé volontairement
 
 // MARK: - History Preview Card
 

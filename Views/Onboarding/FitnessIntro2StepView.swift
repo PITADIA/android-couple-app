@@ -22,8 +22,8 @@ struct FitnessIntro2StepView: View {
             // Premier Spacer pour centrer le contenu
             Spacer()
             
-            // Image localisée selon la langue
-            Image(LocalizationService.localizedImageName(frenchImage: "hajar", defaultImage: "wework"))
+            // Image localisée selon la langue (FR/EN existants + DE ajouté)
+            Image(LocalizationService.localizedImageName(frenchImage: "hajar", defaultImage: "wework", germanImage: "okh"))
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(maxWidth: .infinity, maxHeight: 400)
@@ -31,7 +31,7 @@ struct FitnessIntro2StepView: View {
                 .cornerRadius(30)
                 .padding(.horizontal, 30)
                 .onAppear {
-                    let selectedImage = LocalizationService.localizedImageName(frenchImage: "hajar", defaultImage: "wework")
+                    let selectedImage = LocalizationService.localizedImageName(frenchImage: "hajar", defaultImage: "wework", germanImage: "okh")
                     print("🖼️ FitnessIntro2StepView: Vue apparue - Affichage de l'image: \(selectedImage)")
                     print("🖼️ FitnessIntro2StepView: Titre de la page: \"create_memory_card\"")
                 }

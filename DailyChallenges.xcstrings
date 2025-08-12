@@ -15,6 +15,12 @@
             "state" : "translated",
             "value" : "Envoyez-lui un message pour lui dire pourquoi vous êtes reconnaissant de l'avoir dans votre vie."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schick deinem Partner/deiner Partnerin eine Nachricht und sag, warum du dankbar bist, dass er/sie in deinem Leben ist."
+          }
         }
       }
     },
@@ -31,6 +37,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Appelez-vous par FaceTime ou téléphone juste pour dire \"je t'aime\" et raccrochez juste après sa réponse."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ruf per FaceTime oder Telefon nur an, sag \"Ich liebe dich\" und leg direkt nach der Antwort wieder auf."
           }
         }
       }
@@ -49,6 +61,12 @@
             "state" : "translated",
             "value" : "Posez-lui cette question : \"De quoi as-tu besoin de moi en ce moment ?\""
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stell diese Frage: \"Was brauchst du gerade von mir?\""
+          }
         }
       }
     },
@@ -65,6 +83,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Choisissez une chanson qui vous fait penser à votre relation et envoyez-la-lui."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Such dir ein Lied aus, das dich an eure Beziehung erinnert, und schick es ihm/ihr."
           }
         }
       }
@@ -83,6 +107,12 @@
             "state" : "translated",
             "value" : "Réalisez ensemble une liste de 5 choses que vous voulez faire en couple."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erstellt zusammen eine Liste mit 5 Dingen, die ihr als Paar machen wollt."
+          }
         }
       }
     },
@@ -99,6 +129,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mettez une alarme pour vous rappeler de lui envoyer \"je t'aime\" dans la journée."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stell dir einen Alarm, um ihm/ihr heute \"Ich liebe dich\" zu schicken."
           }
         }
       }
@@ -117,6 +153,12 @@
             "state" : "translated",
             "value" : "Faites une photo de quelque chose qui vous rappelle votre partenaire et envoyez-lui."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mach ein Foto von etwas, das dich an deinen Partner/deine Partnerin erinnert, und sende es."
+          }
         }
       }
     },
@@ -133,6 +175,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Donnez-lui un surnom affectueux juste pour aujourd'hui."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gib ihm/ihr nur für heute einen süßen Spitznamen."
           }
         }
       }
@@ -151,6 +199,12 @@
             "state" : "translated",
             "value" : "Posez-lui une question que vous ne lui avez jamais posée."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stell ihm/ihr eine Frage, die du noch nie gestellt hast."
+          }
         }
       }
     },
@@ -167,6 +221,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Faites ensemble une liste de 10 choses que vous aimez faire ensemble."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erstellt zusammen eine Liste mit 10 Sachen, die ihr gern zusammen macht."
           }
         }
       }
@@ -185,6 +245,12 @@
             "state" : "translated",
             "value" : "Faites-lui un compliment sur quelque chose qu'il/elle ne remarque pas chez lui/elle."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mach ihm/ihr ein Kompliment für etwas, das er/sie an sich selbst nicht sieht."
+          }
         }
       }
     },
@@ -201,6 +267,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Apprenez-lui quelque chose que vous savez faire."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bring ihm/ihr etwas bei, das du kannst."
           }
         }
       }
@@ -219,6 +291,12 @@
             "state" : "translated",
             "value" : "Avant d'aller vous coucher, terminez la journée par 3 \"je t'aime\", chacun dans un ton ou une forme différente."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bevor ihr schlafen geht: Sagt dreimal \"Ich liebe dich\" – jedes Mal in einem anderen Ton/Stil."
+          }
         }
       }
     },
@@ -235,6 +313,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Écrivez une lettre d'amour numérique et envoyez-la par mail."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schreib einen digitalen Liebesbrief und schick ihn per Mail."
           }
         }
       }
@@ -253,6 +337,12 @@
             "state" : "translated",
             "value" : "Faites une visio et mangez le même repas en même temps."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Macht einen Video-Call und esst zur gleichen Zeit dasselbe Gericht."
+          }
         }
       }
     },
@@ -269,6 +359,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Échangez un message vocal qui commence par : \"Je voulais te dire…\""
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tauscht eine Sprachnachricht aus, die mit: \"Ich wollte dir sagen…\" beginnt."
           }
         }
       }
@@ -287,6 +383,12 @@
             "state" : "translated",
             "value" : "Faites un appel où vous ne parlez que dans une autre langue (même maladroitement) pour rigoler ensemble."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Macht einen Call, in dem ihr nur in einer anderen Sprache sprecht (auch wenn’s holprig ist) – zum Lachen."
+          }
         }
       }
     },
@@ -303,6 +405,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Envoyez une vidéo où vous lui dites ce que vous ressentez aujourd'hui."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schick ein Video, in dem du sagst, wie du dich heute fühlst."
           }
         }
       }
@@ -321,6 +429,12 @@
             "state" : "translated",
             "value" : "Envoyez une photo de votre main avec un cœur dessiné dessus et son nom dedans."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schick ein Foto von deiner Hand mit einem gemalten Herz und seinem/ihrem Namen darin."
+          }
         }
       }
     },
@@ -337,6 +451,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dites-lui une qualité qu'il/elle sous-estime chez lui/elle."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sag ihm/ihr eine Eigenschaft, die er/sie an sich unterschätzt."
           }
         }
       }
@@ -355,6 +475,12 @@
             "state" : "translated",
             "value" : "Offrez-lui une commande surprise à distance (UberEats, Amazon…). (mais attention cela ne doit pas dépasser les 12€, soyez créatif)"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bestell eine Überraschung aus der Ferne (UberEats, Amazon…) bleib unter 12 € und sei kreativ."
+          }
         }
       }
     },
@@ -371,6 +497,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Envoyez une photo d'un endroit où vous aimeriez être ensemble."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schick ein Foto von einem Ort, an dem ihr gern zusammen wärt."
           }
         }
       }
@@ -389,6 +521,12 @@
             "state" : "translated",
             "value" : "Envoyez un compliment 100 % physique, puis un 100 % intérieur."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schick zuerst ein 100 % äußerliches Kompliment und danach ein 100 % inneres."
+          }
         }
       }
     },
@@ -405,6 +543,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Répondez chacun à la question : \"Comment sais-tu que je t'aime ?\""
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beantwortet beide die Frage: \"Woran merkst du, dass ich dich liebe?\""
           }
         }
       }
@@ -423,6 +567,12 @@
             "state" : "translated",
             "value" : "Défi du jour"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tages‑Challenge"
+          }
         }
       }
     },
@@ -439,6 +589,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Défis sauvegardés"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gespeicherte Challenges"
           }
         }
       }
@@ -457,6 +613,12 @@
             "state" : "translated",
             "value" : "Compléter le défi"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Challenge erledigen"
+          }
         }
       }
     },
@@ -473,6 +635,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sauvegarder le défi"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Challenge speichern"
           }
         }
       }
@@ -491,6 +659,12 @@
             "state" : "translated",
             "value" : "Défi sauvegardé !"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Challenge gespeichert!"
+          }
         }
       }
     },
@@ -507,6 +681,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Supprimer le défi"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Challenge löschen"
           }
         }
       }
@@ -525,6 +705,12 @@
             "state" : "translated",
             "value" : "Chargement de votre défi..."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deine Challenge wird geladen..."
+          }
         }
       }
     },
@@ -541,6 +727,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aucun défi disponible"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine Challenge verfügbar"
           }
         }
       }
@@ -559,6 +751,12 @@
             "state" : "translated",
             "value" : "Revenez demain pour découvrir un nouveau défi !"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Komm morgen wieder und entdecke eine neue Challenge!"
+          }
         }
       }
     },
@@ -575,6 +773,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu as atteint la limite des défis gratuits 🎯"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du hast das Limit der Gratis‑Challenges erreicht 🎯"
           }
         }
       }
@@ -593,6 +797,12 @@
             "state" : "translated",
             "value" : "Chaque jour, un nouveau défi à relever ensemble. Des gestes simples, mais puissants pour nourrir votre complicité et sortir du quotidien. Vos nouveaux défis vous attendent.."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeden Tag eine neue Challenge für euch. Einfache, aber starke Gesten, um eure Verbundenheit zu pflegen und der Routine zu entkommen. Eure neuen Challenges warten auf euch.."
+          }
         }
       }
     },
@@ -609,6 +819,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Défis du Jour"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tägliche Challenges"
           }
         }
       }
@@ -627,6 +843,12 @@
             "state" : "translated",
             "value" : "Continuer"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weiter"
+          }
         }
       }
     },
@@ -643,6 +865,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Débloque l'accès premium"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Premium freischalten"
           }
         }
       }
@@ -661,6 +889,12 @@
             "state" : "translated",
             "value" : "Relevez chaque défi à deux 🎯"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nehmt jede Challenge gemeinsam an 🎯"
+          }
         }
       }
     },
@@ -677,6 +911,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chaque jour, un nouveau défi conçu pour renforcer votre complicité et faire grandir votre relation à travers des petites actions sincères.\nConnectez-vous pour commencer l'aventure ensemble."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeden Tag eine neue Challenge, die eure Bindung stärkt und eure Beziehung mit echten, kleinen Taten wachsen lässt.\nVerbindet euch, um gemeinsam zu starten."
           }
         }
       }
@@ -695,6 +935,12 @@
             "state" : "translated",
             "value" : "Connecter mon partenaire"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meinen Partner verbinden"
+          }
         }
       }
     },
@@ -711,6 +957,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dessinez un animal qui représente votre partenaire selon vous… et envoyez-le."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zeichne ein Tier, das deinen Partner/deine Partnerin symbolisiert, und schick es rüber."
           }
         }
       }
@@ -729,6 +981,12 @@
             "state" : "translated",
             "value" : "Décrivez votre partenaire en 3 hashtags… et partagez-les."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beschreibe deinen Partner/deine Partnerin in 3 Hashtags und teile sie."
+          }
         }
       }
     },
@@ -745,6 +1003,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Créez ensemble une règle d'or de votre couple, que vous ne voudrez jamais transgresser."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erstellt zusammen eine goldene Regel für eure Beziehung, die ihr nie brechen wollt."
           }
         }
       }
@@ -763,6 +1027,12 @@
             "state" : "translated",
             "value" : "Transformez votre prénom + le sien en un nom de duo (comme un nom de groupe ou un cocktail.)"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Misch deinen Namen mit seinem/ihrem und erfindet einen Duo‑Namen (Bandname oder Cocktail‑Style)."
+          }
         }
       }
     },
@@ -772,13 +1042,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Each create a \"magic love potion\" with ingredients like \"3 tears of laughter\", \"5 pinches of stolen kisses\", etc."
+            "value" : "Each create a \"magic love potion\" with ingredients like \"3 tears of laughter\", \"5 pinches of kisses\", etc."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Inventez chacun une \"potion magique\" de votre amour (avec des ingrédients comme \"3 larmes de fou rire\", \"5 pincées de baisers volés\", etc.)"
+            "value" : "Inventez chacun une \"potion magique\" de votre amour (avec des ingrédients comme \"3 larmes de fou rire\", \"5 pincées de baisers\", etc.)"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erfindet jeweils eine \"magische Liebes‑Potion\" mit Zutaten wie \"3 Tränen vor Lachen\", \"5 Prisen geklauter Küsse\" …"
           }
         }
       }
@@ -797,6 +1073,12 @@
             "state" : "translated",
             "value" : "Faites un vocal en parlant comme un narrateur de documentaire animalier décrivant l'autre."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nimm eine Sprachnachricht auf, als wärst du Doku‑Sprecher über deinen Partner/deine Partnerin."
+          }
         }
       }
     },
@@ -813,6 +1095,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Imaginez à quoi ressemblerait une journée parfaite si vous étiez deux enfants de 6 ans."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stellt euch vor, wie ein perfekter Tag wäre, wenn ihr zusammen 6 Jahre alt wärt."
           }
         }
       }
@@ -831,6 +1119,12 @@
             "state" : "translated",
             "value" : "Racontez votre premier baiser ensemble (ou premier moment fort) comme si vous étiez vieux et nostalgiques."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erzählt eure erste Kuss‑Story (oder den ersten besonderen Moment), als wärt ihr alt und nostalgisch."
+          }
         }
       }
     },
@@ -847,6 +1141,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Choisissez chacun un fruit pour symboliser votre partenaire et expliquez pourquoi."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wählt jeweils eine Frucht, die euren Partner/eure Partnerin symbolisiert, und erklärt warum."
           }
         }
       }
@@ -865,6 +1165,12 @@
             "state" : "translated",
             "value" : "Créez une règle pour \"l'ordre mondial des amoureux\", que tous les couples devraient suivre pour être heureux."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erfindet eine Regel für die \"Weltordnung der Verliebten\", damit Paare glücklich sind."
+          }
         }
       }
     },
@@ -881,6 +1187,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Appelez-vous par le nom d'un personnage de dessin animé de votre choix toute la journée"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nennt euch den ganzen Tag über mit einem Cartoon‑Figur‑Namen eurer Wahl."
           }
         }
       }
@@ -899,6 +1211,12 @@
             "state" : "translated",
             "value" : "Choisissez chacun une couleur qui représente l'autre et expliquez pourquoi."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wählt jeweils eine Farbe, die den anderen repräsentiert, und erklärt warum."
+          }
         }
       }
     },
@@ -915,6 +1233,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Créez une \"journée imaginaire\" idéale avec heure par heure ce que vous feriez ensemble."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plant einen \"perfekten Fantasie‑Tag\" mit Stundenplan, was ihr zusammen macht."
           }
         }
       }
@@ -933,6 +1257,12 @@
             "state" : "translated",
             "value" : "Créez une phrase à réciter en cas de doute ou de dispute."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erfindet einen Satz, den ihr bei Zweifeln oder Diskussionen aufsagt."
+          }
         }
       }
     },
@@ -949,6 +1279,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Faites une \"note vocale miroir\" : dites à l'autre ce que vous aimeriez entendre aujourd'hui."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schickt eine \"Spiegel‑Sprachnachricht\": Sag deinem Schatz, was du heute selbst gern hören würdest."
           }
         }
       }
@@ -967,6 +1303,12 @@
             "state" : "translated",
             "value" : "Dessinez un cœur avec le prénom de votre partenaire puis envoyez-lui la photo."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zeichne ein Herz mit dem Namen deines Partners/deiner Partnerin hinein und schick das Foto."
+          }
         }
       }
     },
@@ -983,6 +1325,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Donnez-vous à chacun un surnom unique à utiliser aujourd'hui seulement."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gebt euch gegenseitig einen einzigartigen Spitznamen nur für heute."
           }
         }
       }
@@ -1001,6 +1349,12 @@
             "state" : "translated",
             "value" : "Faites un visio de 2 minutes sans parler, ou vous devez-vous fixer et le premier qui tourne le regard ou rigole a perdu"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Macht einen 2‑Minuten‑Video‑Call ohne zu reden – nur anstarren. Wer zuerst wegschaut oder lacht, verliert!"
+          }
         }
       }
     },
@@ -1017,6 +1371,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Demandez à votre partenaire Si je pouvais te faire une surprise maintenant, tu voudrais quoi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frag deinen Partner/deine Partnerin: Wenn ich dich jetzt überraschen könnte – was würdest du dir wünschen?"
           }
         }
       }
@@ -1035,6 +1395,12 @@
             "state" : "translated",
             "value" : "Écrivez une phrase à votre partenaire que vous auriez aimé qu’on vous dise quand vous étiez enfant."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schreib deinem Schatz einen Satz, den du dir als Kind gewünscht hättest."
+          }
         }
       }
     },
@@ -1051,6 +1417,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Envoyez-vous un \"je t'aime\" dans une langue étrangère que vous ne parlez pas."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schickt euch \"Ich liebe dich\" in einer Fremdsprache, die ihr nicht sprecht."
           }
         }
       }
@@ -1069,6 +1441,12 @@
             "state" : "translated",
             "value" : "Trouvez 2 sujets de discussion que vous n’avez jamais abordés ensemble et parlez-en ce soir"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Findet 2 Themen, über die ihr noch nie geredet habt, und sprecht heute Abend darüber."
+          }
         }
       }
     },
@@ -1085,6 +1463,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Notez trois choses que vous admirez chez l'autre et lisez-les à voix haute."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schreibt drei Dinge auf, die ihr am anderen bewundert, und lest sie laut vor."
           }
         }
       }
@@ -1103,6 +1487,12 @@
             "state" : "translated",
             "value" : "Inventez ensemble un souvenir fictif comme si vous l'aviez vraiment vécu."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erfindet gemeinsam eine fiktive Erinnerung, als hättet ihr sie wirklich erlebt."
+          }
         }
       }
     },
@@ -1119,6 +1509,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Créez une règle pour la journée (ex : interdiction de dire \"non\", obligation de dire \"mon amour\" à chaque début de phrase…)."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erstellt eine Tagesregel (z. B.: kein \"Nein\" sagen oder jeden Satz mit \"mein Schatz\" beginnen)."
           }
         }
       }
@@ -1137,6 +1533,12 @@
             "state" : "translated",
             "value" : "Envoyez-lui une photo d'un endroit où vous aimeriez aller avec lui/elle."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schick ein Foto von einem Ort, an den du sehr gern zusammen fahren würdest. "
+          }
         }
       }
     },
@@ -1153,6 +1555,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Imitez la voix de l'autre en audio (gentiment) et envoyez-la lui (en utilisant son vocabulaire)"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imitiere liebevoll die Stimme deines Partners/deiner Partnerin in einer Sprachnachricht mit seinem/ihrem typischen Vokabular."
           }
         }
       }
@@ -1171,6 +1579,12 @@
             "state" : "translated",
             "value" : "Écrivez une bio Tinder de l'autre et envoyez-les-vous."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schreibt jeweils ein Tinder-Profil füreinander und teilt es."
+          }
         }
       }
     },
@@ -1187,6 +1601,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Échangez un message écrit avec votre \"main non dominante\" (main gauche si vous êtes droitier)."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tauscht eine Nachricht aus, die ihr mit eurer \"nicht‑dominanten Hand\" geschrieben habt (links, wenn du Rechtshänder bist)."
           }
         }
       }
@@ -1205,6 +1625,12 @@
             "state" : "translated",
             "value" : "Préparation en cours…"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wird vorbereitet…"
+          }
         }
       }
     },
@@ -1221,6 +1647,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nous préparons votre défi"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wir bereiten deine Challenge vor"
           }
         }
       }

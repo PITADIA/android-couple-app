@@ -22,15 +22,15 @@ struct FitnessIntroStepView: View {
             // Premier Spacer pour centrer le contenu
             Spacer()
             
-            // Image localisée selon la langue
-            Image(LocalizationService.localizedImageName(frenchImage: "marie", defaultImage: "macafee"))
+            // Image localisée selon la langue (FR/EN existants + DE ajouté)
+            Image(LocalizationService.localizedImageName(frenchImage: "marie", defaultImage: "macafee", germanImage: "trying"))
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(maxWidth: .infinity, maxHeight: 700)
                 .cornerRadius(20)
                 .padding(.horizontal, 15)
                 .onAppear {
-                    let selectedImage = LocalizationService.localizedImageName(frenchImage: "marie", defaultImage: "macafee")
+                    let selectedImage = LocalizationService.localizedImageName(frenchImage: "marie", defaultImage: "macafee", germanImage: "trying")
                     print("🖼️ FitnessIntroStepView: Vue apparue - Affichage de l'image: \(selectedImage)")
                     print("🖼️ FitnessIntroStepView: Titre de la page: \"save_moments_together\"")
                 }

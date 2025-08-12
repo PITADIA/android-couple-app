@@ -139,6 +139,12 @@
     "category_a_distance_subtitle" : {
       "comment" : "Subtitle for Through Distance category",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weit weg, doch im Herzen ganz nah."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -156,6 +162,12 @@
     "category_a_distance_title" : {
       "comment" : "Title for Through Distance category",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fernbeziehung"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -173,6 +185,12 @@
     "category_desirs_inavoues_subtitle" : {
       "comment" : "Subtitle for Unspoken Desires category",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Teilt eure Wünsche und lernt euch noch besser kennen."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -190,6 +208,12 @@
     "category_desirs_inavoues_title" : {
       "comment" : "Title for Unspoken Desires category",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geheime Wünsche"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -207,6 +231,12 @@
     "category_en_couple_subtitle" : {
       "comment" : "Subtitle for In a Relationship category",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fragen, die zeigen, was uns wirklich verbindet."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -224,6 +254,12 @@
     "category_en_couple_title" : {
       "comment" : "Title for In a Relationship category",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du und ich"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -241,6 +277,12 @@
     "category_mieux_ensemble_subtitle" : {
       "comment" : "Subtitle for Healing Our Love category",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieben heißt auch, gemeinsam zu heilen."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -258,6 +300,12 @@
     "category_mieux_ensemble_title" : {
       "comment" : "Title for Healing Our Love category",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unsere Liebe heilen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -275,6 +323,12 @@
     "category_pour_rire_subtitle" : {
       "comment" : "Subtitle for Laugh Together category",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denn Lieben heißt auch, zusammen zu lachen."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -292,6 +346,12 @@
     "category_pour_rire_title" : {
       "comment" : "Title for Laugh Together category",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zusammen lachen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -309,6 +369,12 @@
     "category_pour_un_date_subtitle" : {
       "comment" : "Subtitle for On a Date category",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fragen, die helfen, hinter die Fassade zu schauen."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -326,6 +392,12 @@
     "category_pour_un_date_title" : {
       "comment" : "Title for On a Date category",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beim Date"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -343,6 +415,12 @@
     "category_questions_profondes_subtitle" : {
       "comment" : "Subtitle for Deep Questions category",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entdecke Gedanken, die du nicht immer laut aussprichst."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -360,6 +438,12 @@
     "category_questions_profondes_title" : {
       "comment" : "Title for Deep Questions category",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tiefe Fragen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -377,6 +461,12 @@
     "category_tu_preferes_subtitle" : {
       "comment" : "Subtitle for Would You Rather category",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fragen, die zeigen, was dir wirklich wichtig ist."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -394,6 +484,12 @@
     "category_tu_preferes_title" : {
       "comment" : "Title for Would You Rather category",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du eher...?"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -447,6 +543,12 @@
     "daily_challenge_subtitle_multiple_days_remaining" : {
       "comment" : "Daily challenge subtitle with multiple days remaining",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✨ Noch %d Tage gratis • Danach Abo nötig"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -464,6 +566,12 @@
     "daily_challenge_subtitle_one_day_remaining" : {
       "comment" : "Daily challenge subtitle with one day remaining",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✨ Noch 1 Tag gratis • Danach Abo nötig"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -481,6 +589,12 @@
     "daily_challenge_subtitle_subscribed" : {
       "comment" : "Daily challenge subtitle for subscribed users",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "💎 In deinem Premium-Abo inklusive"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -498,6 +612,12 @@
     "daily_challenge_subtitle_subscription_required" : {
       "comment" : "Daily challenge subtitle when subscription is required",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔒 Weiter geht’s nur mit Abo"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -515,6 +635,12 @@
     "daily_question_subtitle_multiple_days_remaining" : {
       "comment" : "Daily question subtitle with multiple days remaining",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✨ Noch %d Tage gratis • Danach Abo nötig"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -532,6 +658,12 @@
     "daily_question_subtitle_one_day_remaining" : {
       "comment" : "Daily question subtitle with one day remaining",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✨ Noch 1 Tag gratis • Danach Abo nötig"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -549,6 +681,12 @@
     "daily_question_subtitle_subscribed" : {
       "comment" : "Daily question subtitle for subscribed users",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "💎 In deinem Premium-Abo inklusive"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -566,6 +704,12 @@
     "daily_question_subtitle_subscription_required" : {
       "comment" : "Daily question subtitle when subscription is required",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔒 Weiter geht’s nur mit Abo"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -594,9 +738,6 @@
     },
     "ellipsis" : {
       "comment" : "Ellipsis"
-    },
-    "En attente de votre partenaire" : {
-
     },
     "Envoyez-lui un message pour lui dire pourquoi vous êtes reconnaissant de l'avoir dans votre vie aujourd'hui et partagez trois choses spécifiques que vous appréciez chez lui." : {
 
@@ -721,6 +862,12 @@
     "premium_categories_not_subscribed" : {
       "comment" : "Premium categories subtitle for non-subscribed users",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hol dir ein Abo und schalte die Sammlungen unten frei ✨"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -738,6 +885,12 @@
     "premium_categories_subscribed" : {
       "comment" : "Premium categories subtitle for subscribed users",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mit deinem Abo sind alle Sammlungen unten für dich freigeschaltet 💎"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -846,9 +999,6 @@
       "comment" : "View all button"
     },
     "Votre nom" : {
-
-    },
-    "Votre partenaire n'a pas encore répondu" : {
 
     },
     "when_in_use_authorized" : {

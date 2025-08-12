@@ -16,6 +16,12 @@
             "state" : "translated",
             "value" : "Tu préfères partager tous tes souvenirs d'enfance ou tous tes rêves d'avenir ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber jede Emotion sehr intensiv fühlen oder ganz ohne Gefühle leben?"
+          }
         }
       }
     },
@@ -32,6 +38,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères construire une vie simple à deux ou vivre une vie luxueuse en solitaire ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber ein simples Leben zu zweit aufbauen oder alleine luxuriös leben?"
           }
         }
       }
@@ -50,6 +62,12 @@
             "state" : "translated",
             "value" : "Tu préfères qu'il/elle te voie vulnérable ou qu'il/elle te pense toujours fort(e) ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du dich lieber verletzlich zeigen oder willst du, dass alle dich immer für stark halten?"
+          }
         }
       }
     },
@@ -66,6 +84,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères ressentir chaque émotion plus fort ou vivre sans émotions ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber jede Emotion mega intensiv fühlen oder ganz ohne Gefühle leben?"
           }
         }
       }
@@ -84,6 +108,12 @@
             "state" : "translated",
             "value" : "Tu préfères passer un mois à revivre vos plus beaux souvenirs ou un mois à créer de nouveaux moments ensemble ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber einen Monat lang eure schönsten Erinnerungen nochmal erleben oder einen Monat lang neue Momente zusammen schaffen?"
+          }
         }
       }
     },
@@ -100,6 +130,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères connaître la fin d'une histoire d'amour dès le début ou ne jamais savoir quand elle s'arrête ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber das Ende einer Liebesgeschichte von Anfang an kennen oder nie wissen, wann sie endet?"
           }
         }
       }
@@ -118,6 +154,12 @@
             "state" : "translated",
             "value" : "Tu préfères pouvoir voir 10 minutes dans le futur ou 150 ans dans le futur  "
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber 10 Minuten in die Zukunft sehen oder 150 Jahre voraus?"
+          }
         }
       }
     },
@@ -134,6 +176,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères comprendre tout ce que ton/ta partenaire ressent ou qu'il/elle comprenne tout ce que tu ressens ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber alles verstehen, was dein Partner/deine Partnerin fühlt, oder lieber, dass er/sie alles versteht, was du fühlst?"
           }
         }
       }
@@ -152,6 +200,12 @@
             "state" : "translated",
             "value" : "Tu préfères revivre votre première conversation ou votre premier regard ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber eure erste Unterhaltung noch einmal erleben oder euren ersten Blick?"
+          }
         }
       }
     },
@@ -168,6 +222,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères passer 5 ans en prison ou 10 ans dans le coma ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber 5 Jahre in den Knast oder 10 Jahre ins Koma?"
           }
         }
       }
@@ -186,6 +246,12 @@
             "state" : "translated",
             "value" : "Tu préfères toujours dire ce que tu penses ou ne plus jamais pouvoir parler ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber immer sagen, was du denkst, oder nie wieder sprechen können?"
+          }
         }
       }
     },
@@ -202,6 +268,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères être aimé mais incompris ou compris mais pas aimé ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber geliebt, aber missverstanden sein, oder verstanden, aber nicht geliebt?"
           }
         }
       }
@@ -220,6 +292,12 @@
             "state" : "translated",
             "value" : "Tu préfères vivre sans musique ou sans films ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber ohne Musik leben oder ohne Filme?"
+          }
         }
       }
     },
@@ -236,6 +314,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères perdre la vue ou perdre tes souvenirs ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber dein Augenlicht verlieren oder deine Erinnerungen?"
           }
         }
       }
@@ -254,6 +338,12 @@
             "state" : "translated",
             "value" : "Tu préfères vomir sur ta célébrité préférée ou que ta célébrité préférée vomisse sur toi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du dich lieber auf deinen Lieblingspromi übergeben oder lieber, dass er/sie sich auf dich übergibt?"
+          }
         }
       }
     },
@@ -270,6 +360,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères ne plus jamais avoir internet ou ne plus jamais pouvoir prendre l'avion ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber nie wieder Internet haben oder nie wieder fliegen können?"
           }
         }
       }
@@ -288,6 +384,12 @@
             "state" : "translated",
             "value" : "Tu préfères être un roi/reine il y a 1 000 ans ou une personne lambda aujourd'hui ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber vor 1000 Jahren König/Königin sein oder heute eine ganz normale Person?"
+          }
         }
       }
     },
@@ -304,6 +406,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères te détendre au bord de la piscine ou sur la plage ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber am Pool entspannen oder am Strand?"
           }
         }
       }
@@ -322,6 +430,12 @@
             "state" : "translated",
             "value" : "Tu préfères vivre sans amour ou vivre sans amitié ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber ohne Liebe leben oder ohne Freundschaft?"
+          }
         }
       }
     },
@@ -338,6 +452,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères trouver un rat dans ta cuisine ou un cafard dans ton lit ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber eine Ratte in deiner Küche finden oder eine Kakerlake in deinem Bett?"
           }
         }
       }
@@ -356,6 +476,12 @@
             "state" : "translated",
             "value" : "Tu préfères avoir un bouton pause ou un bouton revenir en arrière dans ta vie ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber einen Pause-Button oder einen Zurückspul-Button für dein Leben haben?"
+          }
         }
       }
     },
@@ -372,6 +498,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères perdre toutes tes dents ou perdre un jour de ta vie à chaque fois que tu embrasses quelqu'un ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber alle deine Zähne verlieren oder jedes Mal, wenn du jemanden küsst, einen Tag deines Lebens verlieren?"
           }
         }
       }
@@ -390,6 +522,12 @@
             "state" : "translated",
             "value" : "Tu préfères mourir dans 5 ans sans aucun regret ou vivre jusqu'à 100 ans avec beaucoup de regrets ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber in 5 Jahren ohne Reue sterben oder 100 werden und vieles bereuen?"
+          }
         }
       }
     },
@@ -406,6 +544,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères tout savoir sur l'univers ou tout savoir sur après la mort ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber alles über das Universum wissen oder alles darüber, was nach dem Tod passiert?"
           }
         }
       }
@@ -424,6 +568,12 @@
             "state" : "translated",
             "value" : "Tu préfères mourir avant ou après moi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber vor mir sterben oder nach mir?"
+          }
         }
       }
     },
@@ -440,6 +590,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères avoir un bouton pause dans ta vie ou un bouton redémarrer ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber einen Pause-Button in deinem Leben oder einen Neustart-Button haben?"
           }
         }
       }
@@ -458,6 +614,12 @@
             "state" : "translated",
             "value" : "Tu préfères pouvoir manger sans jamais grossir ou dormir 1h et être totalement reposé ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber essen, ohne jemals zuzunehmen, oder nur 1 Stunde schlafen und komplett erholt sein?"
+          }
         }
       }
     },
@@ -474,6 +636,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères vivre une vie de film romantique ou une vie de film d'aventure ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber ein Leben wie in einem Romantikfilm oder wie in einem Abenteuerfilm leben?"
           }
         }
       }
@@ -492,6 +660,12 @@
             "state" : "translated",
             "value" : "Tu préfères être le meilleur dans un domaine que personne ne prend au sérieux, ou moyen dans un domaine très respecté ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber der/die Beste in einem Bereich sein, den niemand ernst nimmt, oder durchschnittlich in einem sehr angesehenen Bereich?"
+          }
         }
       }
     },
@@ -508,6 +682,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères chasser et découper ta propre viande ou ne plus jamais manger de viande ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber dein Fleisch selbst jagen und zerlegen oder nie wieder Fleisch essen?"
           }
         }
       }
@@ -526,6 +706,12 @@
             "state" : "translated",
             "value" : "Tu préfères ne jamais être jaloux(se) ou ne jamais être en colère ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber nie eifersüchtig sein oder nie wütend werden?"
+          }
         }
       }
     },
@@ -542,6 +728,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères avoir une batterie illimitée sur tous tes appareils ou le WiFi gratuit partout où tu vas ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber unendlichen Akku auf allen Geräten haben oder überall gratis WLAN?"
           }
         }
       }
@@ -560,6 +752,12 @@
             "state" : "translated",
             "value" : "Tu préfères recevoir des fleurs chaque semaine ou une lettre d'amour chaque mois ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber jede Woche Blumen bekommen oder jeden Monat einen Liebesbrief?"
+          }
         }
       }
     },
@@ -576,6 +774,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères pouvoir créer ton avenir ou effacer une erreur du passé ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber deine Zukunft selbst gestalten oder einen Fehler aus der Vergangenheit löschen?"
           }
         }
       }
@@ -594,6 +798,12 @@
             "state" : "translated",
             "value" : "Tu préfères être toujours la personne qui aime le plus ou celle qui est la plus aimée ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber immer die Person sein, die mehr liebt, oder die, die mehr geliebt wird?"
+          }
         }
       }
     },
@@ -610,6 +820,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères résoudre la faim dans le monde ou le réchauffement climatique ? "
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber den Welthunger beenden oder den Klimawandel stoppen?"
           }
         }
       }
@@ -628,6 +844,12 @@
             "state" : "translated",
             "value" : "Tu préfères ne plus jamais tomber amoureux ou toujours tomber amoureux trop vite ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du dich lieber nie wieder verlieben oder immer viel zu schnell?"
+          }
         }
       }
     },
@@ -644,6 +866,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères gagner 25 000 € ou que ton/ta meilleur(e) ami(e) gagne 100 000€ mais ne pourra rien te donner ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber 25.000 € gewinnen oder dass deine beste Freundin/dein bester Freund 100.000 € gewinnt, dir aber nichts geben kann?"
           }
         }
       }
@@ -662,6 +890,12 @@
             "state" : "translated",
             "value" : "Tu préfères revivre ton adolescence ou découvrir qui tu seras dans 30 ans ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber deine Jugend nochmal erleben oder schon jetzt wissen, wer du in 30 Jahren sein wirst?"
+          }
         }
       }
     },
@@ -678,6 +912,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères vivre un amour passionnel mais court ou un amour sans plus mais éternel ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber eine leidenschaftliche, aber kurze Liebe leben oder eine ruhige, aber ewige?"
           }
         }
       }
@@ -696,6 +936,12 @@
             "state" : "translated",
             "value" : "Tu préfères tomber amoureux d'un(e) inconnu(e) chaque jour ou aimer la même personne pour toujours ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du dich lieber jeden Tag in eine(n) Fremde(n) verlieben oder dieselbe Person für immer lieben?"
+          }
         }
       }
     },
@@ -712,6 +958,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères que l'amour soit toujours simple ou parfois conflictuel ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber, dass Liebe immer einfach ist, oder dass es auch mal Konflikte gibt?"
           }
         }
       }
@@ -730,6 +982,12 @@
             "state" : "translated",
             "value" : "Tu préfères qu'on t'écrive un poème ou une chanson ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber, dass dir jemand ein Gedicht schreibt oder einen Song?"
+          }
         }
       }
     },
@@ -746,6 +1004,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères un baiser sous la pluie ou un câlin au coin du feu ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber einen Kuss im Regen oder eine Umarmung am Kamin?"
           }
         }
       }
@@ -764,6 +1028,12 @@
             "state" : "translated",
             "value" : "Tu préfères être connu(e) dans les livres d'histoire pour quelque chose de terrible ou être totalement oublié(e) après ta mort ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber in den Geschichtsbüchern für etwas Schlimmes bekannt sein oder nach deinem Tod komplett vergessen werden?"
+          }
         }
       }
     },
@@ -780,6 +1050,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères retourner dans le passé pour rencontrer des proches disparus ou aller dans le futur pour rencontrer tes enfants ou petits-enfants ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber in die Vergangenheit reisen, um verstorbene Liebste wiederzusehen, oder in die Zukunft, um deine Kinder oder Enkel kennenzulernen?"
           }
         }
       }
@@ -798,6 +1074,12 @@
             "state" : "translated",
             "value" : "Tu préfères voyager gratuitement dans le monde entier pendant un an ou recevoir 50 000 € à dépenser comme tu veux ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber ein Jahr lang kostenlos um die Welt reisen oder 50.000 € bekommen, die du ausgeben kannst, wie du willst?"
+          }
         }
       }
     },
@@ -814,6 +1096,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères dire 'je t'aime' une seule fois dans ta vie mais sincèrement, ou pouvoir le dire chaque jour sans que ça ait la même force ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber ‚Ich liebe dich‘ nur einmal im Leben aufrichtig sagen oder es jeden Tag sagen können, ohne dass es die gleiche Bedeutung hat?"
           }
         }
       }
@@ -832,6 +1120,12 @@
             "state" : "translated",
             "value" : "Tu préfères vivre une apocalypse zombie ou une apocalypse robotique ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber eine Zombie-Apokalypse erleben oder eine Roboter-Apokalypse?"
+          }
         }
       }
     },
@@ -848,6 +1142,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères un amour à distance mais fort ou un amour proche mais très instable ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber eine starke Fernbeziehung haben oder eine Beziehung vor Ort, die sehr instabil ist?"
           }
         }
       }
@@ -866,6 +1166,12 @@
             "state" : "translated",
             "value" : "Tu préfères pouvoir revivre un moment avec quelqu'un que tu as perdu ou passer une journée avec ton futur enfant ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber einen Moment mit jemandem, den du verloren hast, noch einmal erleben oder einen Tag mit deinem zukünftigen Kind verbringen?"
+          }
         }
       }
     },
@@ -882,6 +1188,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères recevoir une déclaration d'amour en public ou en privé ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber eine Liebeserklärung öffentlich oder privat bekommen?"
           }
         }
       }
@@ -900,6 +1212,12 @@
             "state" : "translated",
             "value" : "Tu préfères tout (vraiment tout y compris moi) partager ou tout garder pour toi et laisser les autres avec rien ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber alles teilen (wirklich alles, inklusive mir) oder alles für dich behalten und die anderen leer ausgehen lassen?"
+          }
         }
       }
     },
@@ -916,6 +1234,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères l'amour qui fait rêver ou l'amour qui fait grandir ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber Liebe, die dich träumen lässt, oder Liebe, die dich wachsen lässt?"
           }
         }
       }
@@ -934,6 +1258,12 @@
             "state" : "translated",
             "value" : "Tu préfères être seul(e) toute ta vie ou entouré(e) de gens très agaçants ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber dein ganzes Leben allein sein oder von sehr lästigen Leuten umgeben sein?"
+          }
         }
       }
     },
@@ -950,6 +1280,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères ne plus avoir de téléphone pendant un mois ou ne plus te laver pendant un mois ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber einen Monat lang kein Handy haben oder einen Monat lang nicht duschen?"
           }
         }
       }
@@ -968,6 +1304,12 @@
             "state" : "translated",
             "value" : "Tu préfères tomber amoureux en un regard (quitte à te tromper) ou après uniquement après trois ans ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du dich lieber auf den ersten Blick verlieben (auch wenn du dich irrst) oder erst nach drei Jahren?"
+          }
         }
       }
     },
@@ -984,6 +1326,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères acheter uniquement des sous-vêtements utilisés ou uniquement des brosses à dents utilisés ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber nur gebrauchte Unterwäsche oder nur gebrauchte Zahnbürsten kaufen?"
           }
         }
       }
@@ -1002,6 +1350,12 @@
             "state" : "translated",
             "value" : "Tu préfères perdre la capacité de lire ou la capacité de parler ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber die Fähigkeit zu lesen verlieren oder die zu sprechen?"
+          }
         }
       }
     },
@@ -1018,6 +1372,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères être beau/belle mais bête ou moche mais ultra intelligent(e) ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber schön, aber dumm sein, oder hässlich, aber ultra intelligent?"
           }
         }
       }
@@ -1036,6 +1396,12 @@
             "state" : "translated",
             "value" : "Au travil, tu préfères qu'on t'aime ou qu'on te craigne ? et pourquoi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Im Job: Würdest du lieber gemocht werden oder gefürchtet? Warum?"
+          }
         }
       }
     },
@@ -1052,6 +1418,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères connaître l'amour parfait dans un rêve ou un amour imparfait mais réel ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber perfekte Liebe im Traum erleben oder unperfekte, aber echte Liebe?"
           }
         }
       }
@@ -1070,6 +1442,12 @@
             "state" : "translated",
             "value" : "Tu préfères demander un service à ton ex ou à un inconnu total ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber deinen Ex/deine Ex um einen Gefallen bitten oder eine komplett fremde Person?"
+          }
         }
       }
     },
@@ -1086,6 +1464,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères être incroyablement riche mais complètement seul(e), ou avoir juste de quoi vivre mais être entouré(e) d'amour et d'amis ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber sehr reich sein und komplett allein, oder gerade genug zum Leben haben, dafür aber von Liebe und Freunden umgeben?"
           }
         }
       }
@@ -1104,6 +1488,12 @@
             "state" : "translated",
             "value" : "Tu préfères sacrifier ton bonheur pour le bien de beaucoup d'autres personnes, ou mettre ton bonheur personnel au-dessus de tout ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber dein Glück für das Wohl vieler opfern oder dein eigenes Glück über alles stellen?"
+          }
         }
       }
     },
@@ -1120,6 +1510,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères avoir le pouvoir de sauver une seule personne que tu aimes ou cinq inconnus ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber eine geliebte Person retten oder fünf Fremde?"
           }
         }
       }
@@ -1138,6 +1534,12 @@
             "state" : "translated",
             "value" : "Tu préfères voir la justice appliquée même si la punition est sévère, ou privilégier la clémence et offrir une seconde chance ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber strenge Gerechtigkeit sehen, auch wenn die Strafe hart ist, oder Milde zeigen und eine zweite Chance geben?"
+          }
         }
       }
     },
@@ -1154,6 +1556,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères être respecté(e) par tous mais peu aimé(e), ou adoré(e) par quelques-uns mais critiqué(e) par beaucoup ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber von allen respektiert, aber wenig geliebt werden, oder von wenigen vergöttert und von vielen kritisiert?"
           }
         }
       }
@@ -1172,6 +1580,12 @@
             "state" : "translated",
             "value" : "Tu préfères aimer quelqu'un sans jamais pouvoir lui dire ou être aimé sans le savoir ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber jemanden lieben, ohne es jemals sagen zu können, oder geliebt werden, ohne es zu wissen?"
+          }
         }
       }
     },
@@ -1188,6 +1602,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères aimer intensément une fois ou modérément toute ta vie ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber einmal richtig heftig lieben oder dein ganzes Leben lang eher ruhig und moderat?"
           }
         }
       }
@@ -1206,6 +1626,12 @@
             "state" : "translated",
             "value" : "Tu préfères un amour à l'ancienne ou une relation moderne et libre ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber eine altmodische Liebe haben oder eine moderne, freie Beziehung?"
+          }
         }
       }
     },
@@ -1222,6 +1648,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères recevoir une preuve d'amour chaque jour ou un immense geste une fois par an ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber jeden Tag kleine Liebesbeweise bekommen oder einmal im Jahr eine riesige Geste?"
           }
         }
       }
@@ -1240,6 +1672,12 @@
             "state" : "translated",
             "value" : "Tu préfères trouver un portefeuille rempli d'argent et le rendre à son propriétaire, ou le garder sans que personne ne le sache jamais ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber eine Geldbörse voller Geld finden und sie zurückgeben oder sie behalten, ohne dass es jemals jemand erfährt?"
+          }
         }
       }
     },
@@ -1256,6 +1694,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères être le premier amour de quelqu'un ou le dernier ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber jemandes erste Liebe sein oder die letzte?"
           }
         }
       }
@@ -1274,6 +1718,12 @@
             "state" : "translated",
             "value" : "Tu préfères une relation fusionnelle ou une relation où chacun garde son indépendance émotionnelle ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber eine sehr enge, fast verschmolzene Beziehung haben oder eine, in der beide ihre emotionale Unabhängigkeit behalten?"
+          }
         }
       }
     },
@@ -1290,6 +1740,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères vivre dans un monde parfaitement sûr mais sans liberté, ou un monde totalement libre mais très dangereux ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber in einer komplett sicheren Welt ohne Freiheit leben oder in einer total freien, aber sehr gefährlichen Welt?"
           }
         }
       }
@@ -1308,6 +1764,12 @@
             "state" : "translated",
             "value" : "Tu préfères faire l'amour sans amour ou aimer sans jamais faire l'amour ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber Liebe machen ohne Liebe zu empfinden oder lieben, ohne jemals Liebe zu machen?"
+          }
         }
       }
     },
@@ -1324,6 +1786,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères qu'on se souvienne de toi pour ta gentillesse ou pour ton intelligence ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber für deine Freundlichkeit oder für deine Intelligenz in Erinnerung bleiben?"
           }
         }
       }
@@ -1342,6 +1810,12 @@
             "state" : "translated",
             "value" : "Tu préfères être admiré(e) pour ton apparence physique ou pour la profondeur de ta personnalité ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber für dein Aussehen bewundert werden oder für die Tiefe deiner Persönlichkeit?"
+          }
         }
       }
     },
@@ -1358,6 +1832,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères que l'amour soit facile et rapide à conquérir ou qu'il se mérite ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber, dass Liebe leicht und schnell kommt, oder dass man sie sich verdienen muss?"
           }
         }
       }
@@ -1376,6 +1856,12 @@
             "state" : "translated",
             "value" : "Tu préfères que ton partenaire soit ultra romantique ou alors super drôle ? Sois l'un soit l'autre."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber, dass dein Partner/deine Partnerin ultra romantisch oder super witzig ist? Eins von beidem."
+          }
         }
       }
     },
@@ -1392,6 +1878,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères avoir une confiance en toi inébranlable mais être vu(e) comme arrogant(e), ou douter souvent de toi mais être apprécié(e) par tout le monde ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber unerschütterliches Selbstvertrauen haben und als arrogant gelten, oder oft an dir zweifeln, dafür von allen gemocht werden?"
           }
         }
       }
@@ -1410,6 +1902,12 @@
             "state" : "translated",
             "value" : "Tu préfères vivre une vie pleine de passions intenses mais aussi de grandes douleurs, ou une vie calme, stable et sans extrêmes ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber ein Leben voller intensiver Leidenschaften, aber auch großer Schmerzen leben, oder ein ruhiges, stabiles Leben ohne Extreme?"
+          }
         }
       }
     },
@@ -1426,6 +1924,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères une relation pleine de surprises ou pleine de stabilité ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber eine Beziehung voller Überraschungen oder voller Stabilität?"
           }
         }
       }
@@ -1444,6 +1948,12 @@
             "state" : "translated",
             "value" : "Tu préfères être connu(e) comme quelqu'un de très drôle ou de très fiable ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber als sehr witzig oder als sehr zuverlässig gelten?"
+          }
         }
       }
     },
@@ -1460,6 +1970,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères que ton partenaire soit ultra tactile ou très verbal ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber, dass dein Partner/deine Partnerin ultra berührungsfreudig oder sehr verbal ist?"
           }
         }
       }
@@ -1478,6 +1994,12 @@
             "state" : "translated",
             "value" : "Tu préfères être pleinement satisfait(e) de ce que tu as maintenant ou toujours vouloir plus ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber komplett zufrieden sein mit dem, was du hast, oder immer mehr wollen?"
+          }
         }
       }
     },
@@ -1494,6 +2016,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères avoir une intuition très forte qui te guide, ou un esprit d'analyse ultra-développé ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber eine richtig starke Intuition haben, die dich leitet, oder einen ultra ausgeprägten analytischen Verstand?"
           }
         }
       }
@@ -1512,9 +2040,16 @@
             "state" : "translated",
             "value" : "Tu préfères connaître la date exacte de ta mort ou ne jamais rien savoir ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber das genaue Datum deines Todes kennen oder nie irgendetwas darüber wissen?"
+          }
         }
       }
     },
+    
     "tp_91" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1528,6 +2063,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères recevoir 1 000 € maintenant ou 10 000 € dans cinq ans ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber jetzt 1.000 € bekommen oder 10.000 € in fünf Jahren?"
           }
         }
       }
@@ -1546,6 +2087,12 @@
             "state" : "translated",
             "value" : "Tu préfères corriger une grosse erreur de ton passé ou recevoir un conseil crucial de ton toi du futur ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber einen großen Fehler aus deiner Vergangenheit korrigieren oder einen entscheidenden Tipp von deinem Zukunfts-Ich bekommen?"
+          }
         }
       }
     },
@@ -1562,6 +2109,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères une surprise prévue depuis des mois ou improvisée à la dernière minute ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber eine Überraschung, die monatelang geplant wurde, oder eine Last-Minute-Überraschung?"
           }
         }
       }
@@ -1580,6 +2133,12 @@
             "state" : "translated",
             "value" : "Tu préfères qu'on t'appelle toujours par un surnom mignon ou toujours par ton prénom ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber immer mit einem süßen Spitznamen angesprochen werden oder immer mit deinem Vornamen?"
+          }
         }
       }
     },
@@ -1596,6 +2155,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères que je te tienne la main ou que je te regarde profondément dans les yeux ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber, dass ich deine Hand halte oder dir tief in die Augen schaue?"
           }
         }
       }
@@ -1614,6 +2179,12 @@
             "state" : "translated",
             "value" : "Tu préfères te souvenir de tous tes rêves en détail ou ne plus jamais faire de cauchemars ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber dich an all deine Träume im Detail erinnern oder nie wieder Albträume haben?"
+          }
         }
       }
     },
@@ -1630,6 +2201,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères connaître à l'avance tous les bons moments à venir ou tous les mauvais ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber alle guten Momente im Voraus kennen oder alle schlechten?"
           }
         }
       }
@@ -1648,6 +2225,12 @@
             "state" : "translated",
             "value" : "Tu préfères te réveiller chaque matin avec un compliment ou un câlin ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber jeden Morgen mit einem Kompliment oder mit einer Umarmung aufwachen?"
+          }
         }
       }
     },
@@ -1664,6 +2247,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères laisser un héritage matériel (argent, biens) ou un héritage immatériel (valeurs, souvenirs) ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber ein materielles Erbe (Geld, Besitz) hinterlassen oder ein immaterielles (Werte, Erinnerungen)?"
           }
         }
       }
@@ -1682,6 +2271,12 @@
             "state" : "translated",
             "value" : "Tu préfères une relation à 100 à l'heure ou qui prend tout son temps ? (parfois trop)"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber eine Beziehung mit Vollgas oder eine, die sich alle Zeit der Welt lässt (manchmal zu viel)?"
+          }
         }
       }
     },
@@ -1698,6 +2293,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères découvrir une vérité douloureuse sur quelqu'un que tu aimes ou vivre dans une illusion confortable ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber eine schmerzhafte Wahrheit über jemanden, den du liebst, herausfinden oder in einer bequemen Illusion leben?"
           }
         }
       }
@@ -1716,6 +2317,12 @@
             "state" : "translated",
             "value" : "Tu préfères un amour silencieux mais profond ou bavard mais chaotique ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber eine stille, aber tiefe Liebe oder eine sehr gesprächige, aber chaotische?"
+          }
         }
       }
     },
@@ -1732,6 +2339,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères un partenaire toujours prévisible ou toujours (trop) surprenant ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber einen Partner/eine Partnerin, der/die immer vorhersehbar ist, oder jemanden, der/die ständig (zu) überraschend ist?"
           }
         }
       }
@@ -1750,6 +2363,12 @@
             "state" : "translated",
             "value" : "Tu préfères être populaire avec beaucoup de connaissances superficielles ou avoir peu d'amis mais des liens profonds ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber bei vielen oberflächlichen Bekanntschaften beliebt sein oder wenige Freundschaften mit tiefen Verbindungen haben?"
+          }
         }
       }
     },
@@ -1766,6 +2385,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères rire chaque jour avec l'autre ou pleurer une seule fois de bonheur intense ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber jeden Tag zusammen lachen oder einmal vor purem Glück weinen?"
           }
         }
       }
@@ -1784,6 +2409,12 @@
             "state" : "translated",
             "value" : "Tu préfères avoir une conversation profonde avec un(e) inconnu(e) ou une conversation légère avec ton/ta meilleur(e) ami(e) ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber ein tiefes Gespräch mit einem Fremden führen oder ein leichtes Gespräch mit deinem besten Freund/deiner besten Freundin?"
+          }
         }
       }
     },
@@ -1800,6 +2431,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères être celui/celle qui écoute toujours les problèmes des autres ou celui/celle qui a toujours besoin de se confier ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber die Person sein, die immer zuhört, oder die, die sich ständig aussprechen muss?"
           }
         }
       }
@@ -1818,6 +2455,12 @@
             "state" : "translated",
             "value" : "Tu préfères confronter directement quelqu'un qui parle dans ton dos ou l'ignorer et passer à autre chose ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber jemanden direkt konfrontieren, der hinter deinem Rücken redet, oder es ignorieren und weitermachen?"
+          }
         }
       }
     },
@@ -1834,6 +2477,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères comprendre le sens de l'univers ou connaître le secret du bonheur personnel ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber den Sinn des Universums verstehen oder das Geheimnis persönlichen Glücks kennen?"
           }
         }
       }
@@ -1852,6 +2501,12 @@
             "state" : "translated",
             "value" : "Tu préfères pouvoir goûter toutes les saveurs du monde ou entendre toute la musique jamais composée ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber jede Geschmacksrichtung der Welt probieren können oder jedes je komponierte Musikstück hören?"
+          }
         }
       }
     },
@@ -1868,6 +2523,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères comprendre parfaitement le fonctionnement du cerveau humain ou parfaitement celui de l'intelligence artificielle ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber perfekt verstehen, wie das menschliche Gehirn funktioniert, oder künstliche Intelligenz perfekt verstehen?"
           }
         }
       }
@@ -1886,6 +2547,12 @@
             "state" : "translated",
             "value" : "Tu préfères que je te comprenne sans un mot ou que je t'écoute pendant des heures ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber, dass ich dich ohne ein Wort verstehe, oder dass ich dir stundenlang zuhöre?"
+          }
         }
       }
     },
@@ -1902,6 +2569,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères découvrir un secret historique majeur ou inventer une technologie révolutionnaire ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber ein großes historisches Geheimnis entdecken oder eine revolutionäre Technologie erfinden?"
           }
         }
       }
@@ -1920,6 +2593,12 @@
             "state" : "translated",
             "value" : "Tu préfères vivre dans un monde sans maladies mais où les émotions sont supprimées, ou dans notre monde actuel avec ses joies et ses peines ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber in einer Welt ohne Krankheiten leben, in der Emotionen unterdrückt werden, oder in unserer jetzigen Welt mit all ihren Höhen und Tiefen?"
+          }
         }
       }
     },
@@ -1936,6 +2615,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères avoir le pouvoir d'exaucer un vœu pour toi-même ou trois vœux pour d'autres personnes ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber die Macht haben, dir selbst einen Wunsch zu erfüllen, oder drei Wünsche für andere?"
           }
         }
       }
@@ -1954,6 +2639,12 @@
             "state" : "translated",
             "value" : "Tu préfères découvrir tout de moi dès le début ou apprendre à me connaître durant toute ta vie ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber von Anfang an alles über mich erfahren oder mich ein Leben lang nach und nach kennenlernen?"
+          }
         }
       }
     },
@@ -1970,6 +2661,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères renaître dans une nouvelle vie en oubliant tout de celle-ci ou vivre éternellement dans ta vie actuelle ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber in einem neuen Leben wiedergeboren werden und alles vergessen oder ewig in deinem jetzigen Leben weiterleben?"
           }
         }
       }
@@ -1988,6 +2685,12 @@
             "state" : "translated",
             "value" : "Tu préfères que l'amour vienne de façon inattendue ou qu'il soit le fruit d'un long chemin ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber, dass die Liebe überraschend kommt, oder dass sie das Ergebnis eines langen Weges ist?"
+          }
         }
       }
     },
@@ -2004,6 +2707,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères aimer avec passion mais risquer de souffrir ou aimer prudemment et ne jamais avoir mal ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber leidenschaftlich lieben und das Risiko eingehen zu leiden, oder vorsichtig lieben und dich nie verletzen?"
           }
         }
       }
@@ -2022,6 +2731,12 @@
             "state" : "translated",
             "value" : "Tu préfères une relation qui t'apaise ou une relation qui te stimule ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber eine Beziehung, die dich beruhigt, oder eine, die dich antreibt?"
+          }
         }
       }
     },
@@ -2038,6 +2753,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères revivre notre premier baiser ou entendre pour la première fois 'je t'aime' venant de moi à nouveau ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber unseren ersten Kuss nochmal erleben oder wieder zum ersten Mal 'Ich liebe dich' von mir hören?"
           }
         }
       }
@@ -2056,6 +2777,12 @@
             "state" : "translated",
             "value" : "Tu préfères savoir à l'avance comment toutes tes relations (amicales, amoureuses) vont se terminer, ou vivre dans l'incertitude ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber im Voraus wissen, wie all deine Beziehungen (freundschaftlich, romantisch) enden, oder in Ungewissheit leben?"
+          }
         }
       }
     },
@@ -2072,6 +2799,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères vivre dans un monde où tout le monde pense comme toi, ou dans un monde où personne n'est jamais d'accord ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber in einer Welt leben, in der alle ticken wie du, oder in einer, in der sich nie jemand einig wird?"
           }
         }
       }
@@ -2090,6 +2823,12 @@
             "state" : "translated",
             "value" : "Tu préfères que je te surprenne tous les jours ou que je te rassure tous les jours ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Möchtest du lieber, dass ich dich jeden Tag überrasche oder dich jeden Tag beruhige?"
+          }
         }
       }
     },
@@ -2106,6 +2845,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères aimer avec le cœur ou avec la tête ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber mit dem Herzen oder mit dem Kopf lieben?"
           }
         }
       }
@@ -2124,6 +2869,12 @@
             "state" : "translated",
             "value" : "Tu préfères construire un avenir solide ou vivre un présent magique avec un avenir incertain ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber eine solide Zukunft aufbauen oder eine magische Gegenwart mit ungewisser Zukunft leben?"
+          }
         }
       }
     },
@@ -2140,6 +2891,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères avoir la réponse à sommes-nous seuls dans l'univers ? ou à que se passe-t-il après la mort ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hättest du lieber die Antwort auf 'Sind wir allein im Universum?' oder auf 'Was passiert nach dem Tod?'"
           }
         }
       }
@@ -2158,6 +2915,12 @@
             "state" : "translated",
             "value" : "Tu préfères avoir l'amour mais pas la paix ou la paix mais pas l'amour ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber Liebe ohne Frieden oder Frieden ohne Liebe haben?"
+          }
         }
       }
     },
@@ -2174,6 +2937,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères effacer un seul regret de ta vie ou ajouter un souvenir heureux parfait ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber ein einziges Bedauern aus deinem Leben löschen oder eine perfekte, glückliche Erinnerung hinzufügen?"
           }
         }
       }
@@ -2192,6 +2961,12 @@
             "state" : "translated",
             "value" : "Tu préfères vivre un amour à distance qui dure ou un amour proche qui s'éteint vite ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber eine Fernbeziehung führen, die hält, oder eine Beziehung in der Nähe, die schnell vergeht?"
+          }
         }
       }
     },
@@ -2208,6 +2983,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères un amour qui te rende meilleur(e) ou un amour qui t'accepte tel(le) que tu es ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber eine Liebe, die dich besser macht, oder eine Liebe, die dich so akzeptiert, wie du bist?"
           }
         }
       }
@@ -2226,6 +3007,12 @@
             "state" : "translated",
             "value" : "Tu préfères perdre tous tes souvenirs liés à ta famille ou tous ceux liés à tes amis ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber alle Erinnerungen an deine Familie verlieren oder alle an deine Freunde?"
+          }
         }
       }
     },
@@ -2242,6 +3029,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères savoir ce que ton animal pense vraiment de toi ou ne jamais le savoir ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber wissen, was dein Haustier wirklich über dich denkt, oder es nie erfahren?"
           }
         }
       }
@@ -2260,6 +3053,12 @@
             "state" : "translated",
             "value" : "Tu préfères vivre dans un monde sans musique ou dans un monde sans livres ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber in einer Welt ohne Musik oder in einer Welt ohne Bücher leben?"
+          }
         }
       }
     },
@@ -2276,6 +3075,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères avoir un bouton Annuler l'envoi pour les conversations dans la vraie vie ou un bouton Rejouer pour les meilleurs moments de ta vie ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hättest du lieber einen 'Senden rückgängig'-Button für echte Gespräche oder einen 'Replay'-Button für die besten Momente deines Lebens?"
           }
         }
       }
@@ -2294,6 +3099,12 @@
             "state" : "translated",
             "value" : "Tu préfères tomber amoureux d'une voix ou d'un regard ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du dich lieber in eine Stimme oder in einen Blick verlieben?"
+          }
         }
       }
     },
@@ -2310,6 +3121,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères découvrir que ta vie est un rêve ou que tu es un personnage de roman ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber herausfinden, dass dein Leben ein Traum ist, oder dass du eine Figur in einem Roman bist?"
           }
         }
       }
@@ -2328,6 +3145,12 @@
             "state" : "translated",
             "value" : "Tu préfères recevoir des cadeaux surprises ou passer du temps de qualité ensemble ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber Überraschungsgeschenke bekommen oder gemeinsame Quality Time verbringen?"
+          }
         }
       }
     },
@@ -2344,6 +3167,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères que je te manque souvent ou que je soit toujours (parfois trop) là ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du mich lieber oft vermissen oder mich immer (manchmal zu oft) an deiner Seite haben?"
           }
         }
       }
@@ -2362,6 +3191,12 @@
             "state" : "translated",
             "value" : "Tu préfères résoudre un conflit tout de suite ou attendre que l'on soit calme pour en parler ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber einen Konflikt sofort klären oder warten, bis wir wieder ruhig sind, um darüber zu reden?"
+          }
         }
       }
     },
@@ -2378,6 +3213,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères construire une maison ensemble ou parcourir le monde ensemble ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber zusammen ein Haus bauen oder gemeinsam die Welt bereisen?"
           }
         }
       }
@@ -2396,6 +3237,12 @@
             "state" : "translated",
             "value" : "Tu préfères cuisiner à deux et passer un bon moment ou commander à emporter et se détendre ensemble ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber zusammen kochen und eine gute Zeit haben oder Essen bestellen und zusammen chillen?"
+          }
         }
       }
     },
@@ -2412,6 +3259,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères vivre une relation simple et sincère ou intense et complexe ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber eine einfache, ehrliche Beziehung oder eine intensive, komplexe Beziehung leben?"
           }
         }
       }
@@ -2430,6 +3283,12 @@
             "state" : "translated",
             "value" : "Tu préfères avoir des objectifs clairs à deux pour l'avenir ou vivre plus au jour le jour ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber klare gemeinsame Ziele für die Zukunft haben oder eher von Tag zu Tag leben?"
+          }
         }
       }
     },
@@ -2446,6 +3305,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères une relation pleine de rituels ou de surprises ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber eine Beziehung voller Rituale oder voller Überraschungen haben?"
           }
         }
       }
@@ -2464,6 +3329,12 @@
             "state" : "translated",
             "value" : "Tu préfères dire je t'aime souvent ou le montrer uniquement par des actions ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber 'Ich liebe dich' oft sagen oder es nur durch Taten zeigen?"
+          }
         }
       }
     },
@@ -2480,6 +3351,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères que chacun sorte de son côté avec ses amis ou que l'on sorte plus souvent ensemble ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber, dass wir jeweils getrennt mit Freunden ausgehen, oder öfter zusammen?"
           }
         }
       }
@@ -2498,6 +3375,12 @@
             "state" : "translated",
             "value" : "Tu préfères qu'on te complimente sur ton intelligence ou sur ton physique ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber Komplimente für deine Intelligenz oder für dein Aussehen bekommen?"
+          }
         }
       }
     },
@@ -2514,6 +3397,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères faire du sport ensemble ou partager des activités créatives ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber zusammen Sport machen oder kreative Aktivitäten teilen?"
           }
         }
       }
@@ -2532,6 +3421,12 @@
             "state" : "translated",
             "value" : "Tu préfères que l'amour soit un choix ou une évidence ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sollte Liebe für dich lieber eine Entscheidung sein oder etwas, das sich ganz offensichtlich richtig anfühlt?"
+          }
         }
       }
     },
@@ -2548,6 +3443,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères un amour qui t'apprenne à te connaître ou un amour qui t'aide à oublier ton passé ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber eine Liebe, die dir hilft, dich selbst kennenzulernen, oder eine, die dir hilft, deine Vergangenheit zu vergessen?"
           }
         }
       }
@@ -2566,6 +3467,12 @@
             "state" : "translated",
             "value" : "Tu préfères garder quelques petits secrets ou tout partager sans exception ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber ein paar kleine Geheimnisse behalten oder wirklich alles ohne Ausnahme teilen?"
+          }
         }
       }
     },
@@ -2582,6 +3489,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères vous réconcilier après une dispute avec un gros câlin ou une discussion calme ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du dich nach einem Streit lieber mit einer großen Umarmung versöhnen oder mit einem ruhigen Gespräch?"
           }
         }
       }
@@ -2600,6 +3513,12 @@
             "state" : "translated",
             "value" : "Tu préfères partir en road trip sans argent avec tes amis ou en vacances de luxe avec ta famille ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber ohne Geld mit deinen Freunden auf Roadtrip gehen oder mit deiner Familie Luxusurlaub machen?"
+          }
         }
       }
     },
@@ -2616,6 +3535,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères que ton/ta meilleur(e) ami(e) sorte avec ton ex ou qu'il/elle te cache une énorme erreur ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber, dass deine beste Freundin oder dein bester Freund mit deinem/deiner Ex zusammen ist, oder dass er/sie dir einen riesigen Fehler verheimlicht?"
           }
         }
       }
@@ -2634,6 +3559,12 @@
             "state" : "translated",
             "value" : "Tu préfères organiser une fête surprise pour un(e) ami(e) ou qu'on en organise une pour toi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber eine Überraschungsparty für einen Freund oder eine Freundin organisieren oder eine für dich organisiert bekommen?"
+          }
         }
       }
     },
@@ -2644,6 +3575,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather your friends always tell you the truth, even if it hurts, or sugar-coat things a bit?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber, dass deine Freunde dir immer die Wahrheit sagen, auch wenn's weh tut, oder die Dinge ein bisschen schönreden?"
           }
         },
         "fr" : {
@@ -2663,6 +3600,12 @@
             "value" : "Would you rather love arrive too early or too late in your life?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber, dass die Liebe in deinem Leben zu früh kommt oder zu spät?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2678,6 +3621,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather love change you or reveal you?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber, dass die Liebe dich verändert oder dich so zeigt, wie du wirklich bist?"
           }
         },
         "fr" : {
@@ -2697,6 +3646,12 @@
             "value" : "Would you rather have a board game night or an evening deeply discussing everything and nothing?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber einen Spieleabend oder einen Abend mit tiefgründigen Gesprächen über alles und nichts?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2712,6 +3667,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather your love grow through trials or through sweetness?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber, dass eure Liebe durch Herausforderungen wächst oder durch Zärtlichkeit?"
           }
         },
         "fr" : {
@@ -2731,6 +3692,12 @@
             "value" : "Would you rather be friends with someone very different from you or very similar?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber mit jemandem befreundet sein, der ganz anders ist als du, oder dir sehr ähnlich?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2746,6 +3713,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather be very rich but alone, or have little money but be surrounded by love?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wärst du lieber sehr reich, aber allein, oder hättest du wenig Geld, dafür aber von Liebe umgeben zu sein?"
           }
         },
         "fr" : {
@@ -2765,6 +3738,12 @@
             "value" : "Would you rather go back to the past to correct a mistake or see your future in 10 years?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber in die Vergangenheit zurück, um einen Fehler zu korrigieren, oder deine Zukunft in 10 Jahren sehen?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2780,6 +3759,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather be famous for something you didn't do or unknown despite an incredible feat?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber berühmt für etwas sein, das du nicht getan hast, oder unbekannt bleiben trotz einer beeindruckenden Leistung?"
           }
         },
         "fr" : {
@@ -2799,6 +3784,12 @@
             "value" : "Would you rather sacrifice your personal happiness for the common good or prioritize yourself?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du dein persönliches Glück fürs Gemeinwohl opfern oder dich selbst priorisieren?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2814,6 +3805,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather the other find you physically or mentally irresistible?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber, dass die andere Person dich körperlich oder mental unwiderstehlich findet?"
           }
         },
         "fr" : {
@@ -2833,6 +3830,12 @@
             "value" : "Would you rather live a short and intense life or a long but somewhat monotonous life?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber ein kurzes, intensives Leben oder ein langes, aber etwas monotones Leben?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2848,6 +3851,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather easily forgive someone who hurt you or hold a grudge for a long time?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du jemandem, der dich verletzt hat, lieber schnell verzeihen oder lange nachtragend sein?"
           }
         },
         "fr" : {
@@ -2867,6 +3876,12 @@
             "value" : "Would you rather read others' minds (hear everything) or have them be able to read yours?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber die Gedanken anderer lesen können (alles mitbekommen) oder dass andere deine Gedanken lesen können?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2882,6 +3897,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather live a life full of different loves or one story that transcends time?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber ein Leben voller verschiedener Lieben oder eine einzige Geschichte, die die Zeit überdauert?"
           }
         },
         "fr" : {
@@ -2901,6 +3922,12 @@
             "value" : "Would you rather have a passionate but very poorly paid job or a boring but very well-paid job?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber einen Job, der dich begeistert, aber schlecht bezahlt ist, oder einen langweiligen, der sehr gut bezahlt ist?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2916,6 +3943,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather I could read your heart or read your thoughts?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Soll ich lieber in dein Herz schauen oder deine Gedanken lesen?"
           }
         },
         "fr" : {
@@ -2935,6 +3968,12 @@
             "value" : "Would you rather have the answer to all scientific questions or all philosophical questions?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber die Antwort auf alle wissenschaftlichen Fragen oder auf alle philosophischen Fragen haben?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2950,6 +3989,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather be respected or be loved?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber respektiert werden oder geliebt werden?"
           }
         },
         "fr" : {
@@ -2969,6 +4014,12 @@
             "value" : "Would you rather live under the sea or in space?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber immer formell gekleidet sein oder immer lässig gekleidet?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2984,6 +4035,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather live without your phone or without your computer?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber ohne dein Handy oder ohne deinen Computer leben?"
           }
         },
         "fr" : {
@@ -3003,6 +4060,12 @@
             "value" : "Would you rather have love that surprises you or that secures you?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber eine Liebe, die dich überrascht, oder eine, die dir Sicherheit gibt?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3018,6 +4081,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather spend a year in prison or a year on the streets?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber ein Jahr im Gefängnis verbringen oder ein Jahr auf der Straße?"
           }
         },
         "fr" : {
@@ -3037,6 +4106,12 @@
             "value" : "Would you rather be on a losing team with your friends or on the rival team and win?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber in einem Team, das verliert, zusammen mit deinen Freunden sein oder im gegnerischen Team und gewinnen?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3052,6 +4127,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather I be your first message of the morning or your last of the evening?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Soll ich lieber deine erste Nachricht am Morgen oder deine letzte am Abend sein?"
           }
         },
         "fr" : {
@@ -3071,6 +4152,12 @@
             "value" : "Would you rather solve climate change or end all conflicts in the world?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber die Klimakrise lösen oder alle Konflikte auf der Welt beenden?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3086,6 +4173,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather have a partner who challenges you or who reassures you?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber einen Partner, der dich herausfordert, oder einen, der dich beruhigt?"
           }
         },
         "fr" : {
@@ -3105,6 +4198,12 @@
             "value" : "Would you rather our relationship be like fireworks, or like a cozy fireplace?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber, dass unsere Beziehung wie ein Feuerwerk ist oder wie ein gemütliches Kaminfeuer?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3120,6 +4219,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather cheat at a game and win or lose knowing you gave everything?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber bei einem Spiel schummeln und gewinnen oder verlieren und wissen, dass du alles gegeben hast?"
           }
         },
         "fr" : {
@@ -3139,6 +4244,12 @@
             "value" : "Would you rather eat at your usual favorite restaurant or try a new one that just opened?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber zusammen kochen und eine gute Zeit haben oder Essen bestellen und zusammen entspannen?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3154,6 +4265,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather lend €500 to someone without them returning it or borrow €500 from someone without ever returning it?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber jemandem 500 € leihen, ohne sie zurückzubekommen, oder 500 € von jemandem leihen und sie nie zurückgeben?"
           }
         },
         "fr" : {
@@ -3173,6 +4290,12 @@
             "value" : "Would you rather I know you by heart or rediscover you every day?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber, dass ich dich in- und auswendig kenne, oder dich jeden Tag neu entdecke?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3188,6 +4311,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather write a book together or live a song together?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber zusammen ein Buch schreiben oder gemeinsam einen Song erleben?"
           }
         },
         "fr" : {
@@ -3207,6 +4336,12 @@
             "value" : "Would you rather love, or be loved?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber lieben oder geliebt werden?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3222,6 +4357,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather lose your sight or lose your memory?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber dein Augenlicht verlieren oder dein Gedächtnis?"
           }
         },
         "fr" : {
@@ -3241,6 +4382,12 @@
             "value" : "Would you rather lose all your teeth or all your hair?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber alle Zähne verlieren oder alle Haare?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3256,6 +4403,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather never use social media again or never watch movies again?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber nie wieder soziale Medien nutzen oder nie wieder Filme schauen?"
           }
         },
         "fr" : {
@@ -3275,6 +4428,12 @@
             "value" : "Would you rather spend your weekends indoors or outdoors?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber deine Wochenenden drinnen oder draußen verbringen?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3290,6 +4449,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather be the smartest or the funniest person in the room?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber die klügste oder die witzigste Person im Raum sein?"
           }
         },
         "fr" : {
@@ -3309,6 +4474,12 @@
             "value" : "Would you rather love like the first day or love better each day?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber lieben wie am ersten Tag oder jeden Tag ein bisschen besser lieben?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3324,6 +4495,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather never doubt again or never be afraid again?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber nie wieder zweifeln oder nie wieder Angst haben?"
           }
         },
         "fr" : {
@@ -3343,6 +4520,12 @@
             "value" : "Would you rather our relationship be a haven of peace or a great adventure?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber, dass unsere Beziehung ein sicherer Hafen ist oder ein großes Abenteuer?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3358,6 +4541,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather meet famous people today or those who will become famous in a year?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber heute berühmte Menschen treffen oder die, die in einem Jahr berühmt sein werden?"
           }
         },
         "fr" : {
@@ -3377,6 +4566,12 @@
             "value" : "Would you rather our love be sung in a song or painted in a painting?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber, dass unsere Liebe in einem Song besungen oder in einem Gemälde verewigt wird?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3392,6 +4587,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather our love be a constant refuge or a perpetual source of challenges?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber, dass unsere Liebe ein ständiger Rückzugsort ist oder eine permanente Quelle von Herausforderungen?"
           }
         },
         "fr" : {
@@ -3411,6 +4612,12 @@
             "value" : "Would you rather every kiss say 'I love you' or 'I understand you'?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Soll jeder Kuss eher 'Ich liebe dich' sagen oder 'Ich verstehe dich'?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3426,6 +4633,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather always be the center of attention or stay discreet during gatherings?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber immer im Mittelpunkt stehen oder bei Treffen eher unauffällig bleiben?"
           }
         },
         "fr" : {
@@ -3445,6 +4658,12 @@
             "value" : "Would you rather have a small circle of close friends or a large group of acquaintances?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber einen kleinen Kreis enger Freunde oder eine große Gruppe von Bekannten?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3460,6 +4679,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather attend a party where you know everyone but it's boring or a lively party with strangers?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber auf eine Party gehen, wo du alle kennst, die aber langweilig ist, oder auf eine lebhafte Party mit Fremden?"
           }
         },
         "fr" : {
@@ -3479,6 +4704,12 @@
             "value" : "Would you rather we part with a smile or stay together in doubt?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Würdest du lieber, dass wir uns mit einem Lächeln trennen oder zusammenbleiben und ständig zweifeln?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3494,6 +4725,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather I know your entire past or only your present?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber, dass ich deine ganze Vergangenheit kenne, oder nur dein Jetzt?"
           }
         },
         "fr" : {
@@ -3513,6 +4750,12 @@
             "value" : "Would you rather have a long-distance relationship full of messages or a close one with little communication?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber Fernbeziehung mit vielen Messages oder nah, aber mit wenig Kommunikation?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3528,6 +4771,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather always have to publicly announce your personal successes or keep them completely secret?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber deine Erfolge immer öffentlich teilen oder komplett für dich behalten?"
           }
         },
         "fr" : {
@@ -3547,6 +4796,12 @@
             "value" : "Would you rather know when you're being lied to or never know?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber immer merken, wenn man dich anlügt, oder es nie wissen?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3562,6 +4817,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather be stuck on an island with someone you don't like or be there completely alone?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber auf einer Insel mit jemandem, den du nicht magst, oder ganz allein?"
           }
         },
         "fr" : {
@@ -3581,6 +4842,12 @@
             "value" : "Would you rather never be able to say what you think or always have to tell the truth?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber nie sagen können, was du denkst, oder immer die Wahrheit sagen müssen?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3596,6 +4863,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather be homeless but surrounded by your family and friends, or live comfortably but alone?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber obdachlos, aber mit Familie und Freunden, oder bequem leben, aber allein?"
           }
         },
         "fr" : {
@@ -3615,6 +4888,12 @@
             "value" : "Would you rather travel to the past to meet your ancestors or to the future to meet your descendants?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber in die Vergangenheit reisen und deine Vorfahren treffen oder in die Zukunft und deine Nachkommen?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3630,6 +4909,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather always arrive 10 minutes late or 2 hours early to every appointment?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber immer 10 Minuten zu spät oder 2 Stunden zu früh?"
           }
         },
         "fr" : {
@@ -3649,6 +4934,12 @@
             "value" : "Would you rather our story be told or kept secret?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber, dass unsere Story erzählt wird, oder dass sie geheim bleibt?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3664,6 +4955,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather be right in an argument or make peace quickly?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber in einer Diskussion Recht haben oder schnell Frieden schließen?"
           }
         },
         "fr" : {
@@ -3683,6 +4980,12 @@
             "value" : "Would you rather participate in a reality TV show that films your life 24/7 or live alone in total isolation?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber bei einer Reality-Show mitmachen, die 24/7 dein Leben filmt, oder komplett allein in totaler Isolation leben?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3698,6 +5001,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather have love that arrives too early or takes too long to come?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber Liebe, die zu früh kommt, oder eine, die ewig auf sich warten lässt?"
           }
         },
         "fr" : {
@@ -3717,6 +5026,12 @@
             "value" : "Would you rather live in a hot or cold place all year round?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber das ganze Jahr heiß oder kalt wohnen?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3732,6 +5047,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather have a partner who's always honest even when it hurts or a liar who doesn't hurt you?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber eine:n Partner:in, der/die immer ehrlich ist, auch wenn's weh tut, oder jemanden, der lügt, dich aber nicht verletzt?"
           }
         },
         "fr" : {
@@ -3751,6 +5072,12 @@
             "value" : "Would you rather have a relationship full of projects or full of adventure?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber eine Beziehung voller Projekte oder voller Abenteuer?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3766,6 +5093,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather live a wonderful life until 100, or spend 100 years at the age of your choice?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber ein wunderbares Leben bis 100 oder 100 Jahre im Alter deiner Wahl verbringen?"
           }
         },
         "fr" : {
@@ -3785,6 +5118,12 @@
             "value" : "Would you rather be reborn in the same country or in another of your choice?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber im selben Land wiedergeboren werden oder in einem Land deiner Wahl?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3800,6 +5139,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather live in a country with four distinct seasons or in a country that's always sunny and warm?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber in einem Land mit vier klaren Jahreszeiten oder immer sonnig und warm?"
           }
         },
         "fr" : {
@@ -3819,6 +5164,12 @@
             "value" : "Would you rather live by the sea or in the mountains?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber am Meer oder in den Bergen wohnen?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3834,6 +5185,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather live in a castle with secret passages or in a modern manor with all the latest technology?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber in einem Schloss mit Geheimgängen oder in einer modernen Villa mit neuester Technik?"
           }
         },
         "fr" : {
@@ -3853,6 +5210,12 @@
             "value" : "Would you rather follow a strict routine every day or have total spontaneity in your schedule?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber jeden Tag eine strikte Routine haben oder völlig spontan planen?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3868,6 +5231,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather always have to dress formally or always wear casual clothes?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber immer formell gekleidet sein oder immer locker?"
           }
         },
         "fr" : {
@@ -3887,6 +5256,12 @@
             "value" : "Would you rather feel like you never do enough or that I never do enough?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber das Gefühl haben, du machst nie genug, oder dass ich nie genug mache?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3902,6 +5277,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather be able to eat as much as you want without ever gaining weight, or feel perfectly rested after only three hours of sleep?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber essen, so viel du willst, ohne zuzunehmen, oder nach 3 Stunden Schlaf komplett ausgeruht sein?"
           }
         },
         "fr" : {
@@ -3921,6 +5302,12 @@
             "value" : "Would you rather be the luckiest person in the world or know that you earned everything through your work?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber die glücklichste Person der Welt sein oder wissen, dass du alles durch deine Arbeit verdient hast?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3936,6 +5323,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather have a noisy neighbor or a too-curious neighbor?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber einen lauten Nachbarn oder einen zu neugierigen?"
           }
         },
         "fr" : {
@@ -3955,6 +5348,12 @@
             "value" : "Would you rather be surprised every day or understand me effortlessly?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber jeden Tag überrascht werden oder mich ohne Mühe verstehen?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3970,6 +5369,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather have lots of energy or lots of money?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber viel Energie oder viel Geld?"
           }
         },
         "fr" : {
@@ -3989,6 +5394,12 @@
             "value" : "Would you rather be a genius that everyone thinks is an idiot or an idiot that everyone thinks is a genius?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber ein Genie, das alle für unwissend halten, oder ein Unwissender, den alle für ein Genie halten?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4004,6 +5415,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather hear 'I love you' often or feel it without words?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber oft 'Ich liebe dich' hören oder es ohne Worte fühlen?"
           }
         },
         "fr" : {
@@ -4023,6 +5440,12 @@
             "value" : "Would you rather relive our first date, or our first uncontrollable laughter?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber unser erstes Date nochmal erleben oder unseren ersten Lachflash?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4038,6 +5461,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather I show my love through actions or through looks?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber, dass ich meine Liebe durch Taten zeige oder durch Blicke?"
           }
         },
         "fr" : {
@@ -4057,6 +5486,12 @@
             "value" : "Would you rather always have the right questions or always have the right answers?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber immer die richtigen Fragen oder immer die richtigen Antworten haben?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4072,6 +5507,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather have the opportunity to travel around the world for a year or speak 10 languages fluently?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber ein Jahr um die Welt reisen oder 10 Sprachen fließend sprechen?"
           }
         },
         "fr" : {
@@ -4091,6 +5532,12 @@
             "value" : "Would you rather I tell you my dreams or my fears?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber, dass ich dir von meinen Träumen erzähle oder von meinen Ängsten?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4106,6 +5553,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather be someone's obvious choice or their brave choice?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber für jemanden die offensichtliche Wahl sein oder die mutige Wahl?"
           }
         },
         "fr" : {
@@ -4125,6 +5578,12 @@
             "value" : "Would you rather have a relationship where we share everything or where each keeps their secret garden?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber eine Beziehung, in der wir alles teilen, oder eine, in der jeder seinen geheimen Garten behält?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4140,6 +5599,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather have the chance to fix your biggest mistake or never make a mistake again?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber die Chance, deinen größten Fehler zu reparieren, oder nie wieder einen Fehler machen?"
           }
         },
         "fr" : {
@@ -4159,6 +5624,12 @@
             "value" : "Would you rather be very intelligent or very attractive?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber sehr intelligent oder sehr attraktiv?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4174,6 +5645,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather be loved for who you are or for who you could become?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber für das geliebt werden, was du bist, oder für das, was du werden könntest?"
           }
         },
         "fr" : {
@@ -4193,6 +5670,12 @@
             "value" : "Would you rather have no photos but remember perfectly all the places you've visited, or have lots of photos but no memories?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber keine Fotos, aber perfekte Erinnerungen an alle Orte, oder viele Fotos, aber keine Erinnerungen?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4208,6 +5691,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather I write to you every day or speak to you once with intensity?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber, dass ich dir jeden Tag schreibe, oder einmal intensiv mit dir reden?"
           }
         },
         "fr" : {
@@ -4227,6 +5716,12 @@
             "value" : "Would you rather be told in advance all the beautiful things awaiting you, or discover them by surprise?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber vorher alles Schöne erfahren, was dich erwartet, oder es überraschend entdecken?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4242,6 +5737,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather always be in my arms or always in my thoughts?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber immer in meinen Armen sein oder immer in meinen Gedanken?"
           }
         },
         "fr" : {
@@ -4261,6 +5762,12 @@
             "value" : "Would you rather have a relationship that starts unexpectedly, or one that feels meant to be?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber eine Beziehung, die unerwartet startet, oder eine, die sich wie Schicksal anfühlt?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4276,6 +5783,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather love as if it were the first time or as if it were the last?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber lieben, als wäre es das erste Mal, oder als wäre es das letzte?"
           }
         },
         "fr" : {
@@ -4295,6 +5808,12 @@
             "value" : "Would you rather win the Nobel Peace Prize or 5 million dollars?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber den Friedensnobelpreis gewinnen oder 5 Millionen Dollar?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4312,6 +5831,12 @@
             "value" : "Would you rather be my refuge in storms or my daily ray of sunshine?"
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber mein Safe Space im Sturm sein oder mein täglicher Sonnenschein?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4327,6 +5852,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather never age or never worry about money?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieber nie altern oder nie Geldsorgen haben?"
           }
         },
         "fr" : {

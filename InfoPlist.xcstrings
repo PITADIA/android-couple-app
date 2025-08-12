@@ -9,6 +9,12 @@
             "state" : "translated",
             "value" : "Love2Love"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Love2Love"
+          }
         }
       }
     },
@@ -16,6 +22,12 @@
       "comment" : "Bundle name",
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CoupleApp"
+          }
+        },
+        "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "CoupleApp"
@@ -48,6 +60,12 @@
             "state" : "translated",
             "value" : "Love2Love utilise votre localisation pour calculer la distance entre vous et votre partenaire, et pour vous permettre d'ajouter des lieux à vos souvenirs partagés."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Love2Love nutzt deinen Standort, um die Entfernung zwischen dir und deinem Partner bzw. deiner Partnerin zu berechnen und damit du Orte zu euren gemeinsamen Erinnerungen hinzufügen kannst."
+          }
         }
       }
     },
@@ -64,6 +82,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Love2Love a besoin d'accéder à vos photos pour vous permettre de personnaliser votre profil et d'ajouter des images à vos souvenirs partagés dans le journal de couple."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Love2Love benötigt Zugriff auf deine Fotos, damit du dein Profil personalisieren und Bilder zu euren gemeinsamen Erinnerungen im Paar-Tagebuch hinzufügen kannst."
           }
         }
       }
@@ -82,6 +106,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Love2Love vous envoie des notifications lorsque votre partenaire vous écrit un message. Vous pouvez désactiver ces notifications à tout moment dans les Réglages."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Love2Love sendet dir Benachrichtigungen, wenn dein Partner bzw. deine Partnerin dir schreibt. Du kannst diese Benachrichtigungen jederzeit in den Einstellungen deaktivieren."
           }
         }
       }

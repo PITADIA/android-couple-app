@@ -16,6 +16,12 @@
             "state" : "translated",
             "value" : "À propos de moi"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Über mich"
+          }
         }
       }
     },
@@ -32,6 +38,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ajouter 1 favori"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 Favorit hinzufügen"
           }
         }
       }
@@ -50,6 +62,12 @@
             "state" : "translated",
             "value" : "Ajouter 5 favoris"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5 Favoriten hinzufügen"
+          }
         }
       }
     },
@@ -66,6 +84,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ajouter en favoris"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zu Favoriten hinzufügen"
           }
         }
       }
@@ -84,6 +108,12 @@
             "state" : "translated",
             "value" : "Ajoutez vos questions préférées aux favoris."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Speichere deine Lieblingsfragen"
+          }
         }
       }
     },
@@ -100,6 +130,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ajoutez des questions aux favoris en tapant sur le cœur sous les cartes et vous les verrez apparaître ici. \n\nVos questions favorites seront automatiquement partagées avec votre partenaire."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tippe auf das Herz unter einer Karte, um sie hier zu speichern – dein Partner sieht sie auch.\n\nDeine Favoriten werden automatisch mit deinem Partner geteilt."
           }
         }
       }
@@ -118,6 +154,12 @@
             "state" : "translated",
             "value" : "Ajouter des événements à votre journal"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Füge deinem Journal Erinnerungen hinzu"
+          }
         }
       }
     },
@@ -134,6 +176,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ajouter une photo"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foto hinzufügen"
           }
         }
       }
@@ -152,6 +200,12 @@
             "state" : "translated",
             "value" : "Ajouter une photo de profil"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Profilfoto hinzufügen"
+          }
         }
       }
     },
@@ -169,6 +223,12 @@
             "state" : "translated",
             "value" : "Ajoutez votre date de début de relation dans les paramètres"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trage euer Beziehungsstartdatum in den Einstellungen ein"
+          }
         }
       }
     },
@@ -185,6 +245,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ajouter vos widgets"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Füge deine Widgets hinzu"
           }
         }
       }
@@ -204,6 +270,12 @@
             "state" : "translated",
             "value" : "Tout terminé"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alles erledigt"
+          }
         }
       }
     },
@@ -220,6 +292,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "J'ai déjà un compte"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ich habe schon einen Account"
           }
         }
       }
@@ -238,6 +316,12 @@
             "state" : "translated",
             "value" : "Toujours autorisé"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Immer erlaubt"
+          }
         }
       }
     },
@@ -254,6 +338,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "et"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "und"
           }
         }
       }
@@ -272,6 +362,12 @@
             "state" : "translated",
             "value" : "Redécouvrez-vous à travers des questions qui raviveront votre amour et sauvegardez les moments passés ensemble."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vertieft eure Bindung mit spaßigen und intimen Fragen."
+          }
         }
       }
     },
@@ -286,6 +382,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Love2Love"
+          }
+        },
+        "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Love2Love"
@@ -307,6 +409,12 @@
             "state" : "translated",
             "value" : "L'application qui vous rapproche"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die App, die euch näher zusammenbringt"
+          }
         }
       }
     },
@@ -323,6 +431,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Application"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App"
           }
         }
       }
@@ -341,6 +455,12 @@
             "state" : "translated",
             "value" : "Erreur d'authentification"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anmeldefehler"
+          }
         }
       }
     },
@@ -358,6 +478,12 @@
             "state" : "translated",
             "value" : "Authentification Apple requise"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple-Anmeldung erforderlich"
+          }
         }
       }
     },
@@ -374,6 +500,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Authentification en cours"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anmeldung läuft"
           }
         }
       }
@@ -393,6 +525,12 @@
             "state" : "translated",
             "value" : "Autorisation requise"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Berechtigung erforderlich"
+          }
         }
       }
     },
@@ -409,6 +547,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Retour"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zurück"
           }
         }
       }
@@ -427,6 +571,12 @@
             "state" : "translated",
             "value" : "Tous les deux ont accès"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beide haben Zugriff"
+          }
         }
       }
     },
@@ -443,6 +593,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cette action supprimera toutes les questions mises en cache. Elles seront automatiquement rechargées à la prochaine utilisation."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diese Aktion löscht alle zwischengespeicherten Fragen. Sie werden bei der nächsten Nutzung automatisch neu geladen."
           }
         }
       }
@@ -461,6 +617,12 @@
             "state" : "translated",
             "value" : "Taille du cache"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cache-Größe"
+          }
         }
       }
     },
@@ -477,6 +639,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "VEN"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FR"
           }
         }
       }
@@ -495,6 +663,12 @@
             "state" : "translated",
             "value" : "LUN"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MO"
+          }
         }
       }
     },
@@ -511,6 +685,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "SAM"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SA"
           }
         }
       }
@@ -529,6 +709,12 @@
             "state" : "translated",
             "value" : "DIM"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SO"
+          }
         }
       }
     },
@@ -545,6 +731,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "JEU"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DO"
           }
         }
       }
@@ -563,6 +755,12 @@
             "state" : "translated",
             "value" : "MAR"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DI"
+          }
         }
       }
     },
@@ -579,6 +777,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "MER"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MI"
           }
         }
       }
@@ -597,6 +801,12 @@
             "state" : "translated",
             "value" : "Peut demander un avis :"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Kann um Bewertung bitten:"
+            }
         }
       }
     },
@@ -614,6 +824,12 @@
             "state" : "translated",
             "value" : "Annuler"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Abbrechen"
+            }
         }
       }
     },
@@ -631,6 +847,12 @@
             "state" : "translated",
             "value" : "Annuler"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Abo kündigen"
+            }
         }
       }
     },
@@ -648,6 +870,12 @@
             "state" : "translated",
             "value" : "Impossible de lire le reçu d'achat"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Kaufbeleg konnte nicht gelesen werden"
+            }
         }
       }
     },
@@ -665,6 +893,12 @@
             "state" : "translated",
             "value" : "J'ai hâte de te voir"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Ich kann es kaum erwarten, dich zu sehen"
+            }
         }
       }
     },
@@ -682,6 +916,12 @@
             "state" : "translated",
             "value" : "Catégories"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Kategorien"
+            }
         }
       }
     },
@@ -699,6 +939,12 @@
             "state" : "translated",
             "value" : "Choisir un lieu"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Ort auswählen"
+            }
         }
       }
     },
@@ -716,6 +962,12 @@
             "state" : "translated",
             "value" : "Choisir une photo"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Foto auswählen"
+            }
         }
       }
     },
@@ -733,6 +985,12 @@
             "state" : "translated",
             "value" : "Choisis ton plan"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Wähle deinen Plan"
+            }
         }
       }
     },
@@ -750,6 +1008,12 @@
             "state" : "translated",
             "value" : "Choisir l'heure"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Zeit auswählen"
+            }
         }
       }
     },
@@ -767,6 +1031,12 @@
             "state" : "translated",
             "value" : "🧹 Nettoyer les codes orphelins"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "🧹 Verwaiste Codes bereinigen"
+            }
         }
       }
     },
@@ -784,6 +1054,12 @@
             "state" : "translated",
             "value" : "Vider le cache"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Cache leeren"
+            }
         }
       }
     },
@@ -802,6 +1078,12 @@
             "state" : "translated",
             "value" : "Fermer"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Schließen"
+            }
         }
       }
     },
@@ -819,6 +1101,12 @@
             "state" : "translated",
             "value" : "Génération du code..."
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Code wird generiert..."
+            }
         }
       }
     },
@@ -836,6 +1124,12 @@
             "state" : "translated",
             "value" : "Guide complet"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Komplette Anleitung"
+            }
         }
       }
     },
@@ -853,7 +1147,13 @@
             "state" : "translated",
             "value" : "Félicitations"
           }
-        }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Herzlichen Glückwunsch"
+            }
+          }
             }
     },
     "congratulations_pack" : {
@@ -871,6 +1171,12 @@
             "state" : "translated",
             "value" : "Félicitations !"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Herzlichen Glückwunsch!"
+            }
         }
       }
     },
@@ -888,6 +1194,12 @@
             "state" : "translated",
             "value" : "Connecter"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Verbinden"
+            }
         }
       }
     },
@@ -905,6 +1217,12 @@
             "state" : "translated",
             "value" : "Connecte-toi avec ton partenaire pour partager ton journal avec lui, et profiter de tous les avantages de l'application."
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Verbinde dich mit deinem Partner, teile dein Tagebuch und nutze alle Features der App."
+            }
         }
       }
     },
@@ -922,6 +1240,12 @@
             "state" : "translated",
             "value" : "Connecte-toi avec ton partenaire"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mit deinem Partner verbinden"
+            }
         }
       }
     },
@@ -939,6 +1263,12 @@
             "state" : "translated",
             "value" : "Connecté le"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Verbunden am"
+            }
         }
       }
     },
@@ -956,6 +1286,12 @@
             "state" : "translated",
             "value" : "Connecté avec %@"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Verbunden mit %@"
+            }
         }
       }
     },
@@ -973,6 +1309,12 @@
             "state" : "translated",
             "value" : "Vous êtes connectés 💞"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Ihr seid verbunden 💞"
+            }
         }
       }
     },
@@ -990,6 +1332,12 @@
             "state" : "translated",
             "value" : "Connexion en cours..."
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Verbinden..."
+            }
         }
       }
     },
@@ -1007,6 +1355,12 @@
             "state" : "translated",
             "value" : "Connexion en cours..."
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Verbinden..."
+            }
         }
       }
     },
@@ -1024,6 +1378,12 @@
             "state" : "translated",
             "value" : "Erreur de connexion"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Verbindungsfehler"
+            }
         }
       }
     },
@@ -1041,6 +1401,12 @@
             "state" : "translated",
             "value" : "Connexion réussie !"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Verbindung erfolgreich!"
+            }
         }
       }
     },
@@ -1058,6 +1424,12 @@
             "state" : "translated",
             "value" : "Connexion réussie..."
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Verbindung erfolgreich..."
+            }
         }
       }
     },
@@ -1075,6 +1447,12 @@
             "state" : "translated",
             "value" : "Nous contacter"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Kontaktiere uns"
+            }
         }
       }
     },
@@ -1093,6 +1471,12 @@
             "state" : "translated",
             "value" : "Continuer"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Weiter"
+            }
         }
       }
     },
@@ -1111,6 +1495,12 @@
             "state" : "translated",
             "value" : "Préparation..."
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Wird vorbereitet..."
+            }
         }
       }
     },
@@ -1128,6 +1518,12 @@
             "state" : "translated",
             "value" : "Continuer avec la version gratuite"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mit der kostenlosen Version fortfahren"
+            }
         }
       }
     },
@@ -1145,6 +1541,12 @@
             "state" : "translated",
             "value" : "✨ Continuer"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "✨ Weiter"
+            }
         }
       }
     },
@@ -1162,6 +1564,12 @@
             "state" : "translated",
             "value" : "Ajustez votre photo de profil"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Passe dein Profilfoto an"
+            }
         }
       }
     },
@@ -1179,6 +1587,12 @@
             "state" : "translated",
             "value" : "Valider"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Bestätigen"
+            }
         }
       }
     },
@@ -1196,6 +1610,12 @@
             "state" : "translated",
             "value" : "Continuer avec Apple"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mit Apple fortfahren"
+            }
         }
       }
     },
@@ -1213,6 +1633,12 @@
             "state" : "translated",
             "value" : "Compte à rebours"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Countdown"
+            }
         }
       }
     },
@@ -1230,6 +1656,12 @@
             "state" : "translated",
             "value" : "Vos statistiques de couple"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Eure Paarstatistiken"
+            }
         }
       }
     },
@@ -1247,6 +1679,12 @@
             "state" : "translated",
             "value" : "Créer"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Erstellen"
+            }
         }
       }
     },
@@ -1264,6 +1702,12 @@
             "state" : "translated",
             "value" : "Créer un compte"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Account erstellen"
+            }
         }
       }
     },
@@ -1281,6 +1725,12 @@
             "state" : "translated",
             "value" : "Crée un compte pour garder l'historique de tes activités et retrouver facilement tes conversations préférées à tout moment !"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Erstelle einen Account, damit dein Aktivitätsverlauf gespeichert wird und du deine Lieblingsgespräche jederzeit schnell wiederfindest!"
+            }
         }
       }
     },
@@ -1298,6 +1748,12 @@
             "state" : "translated",
             "value" : "Créez votre carte à souvenirs"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Erstelle eure Erinnerungskarte"
+            }
         }
       }
     },
@@ -1315,6 +1771,12 @@
             "state" : "translated",
             "value" : "Répondez à la question du jours"
           }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Beantworte die Frage des Tages"
+            }
         }
       }
     },
@@ -1333,6 +1795,12 @@
             "state" : "translated",
             "value" : "Crée ton compte et sécurise tes données"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erstell dir einen Account und sichere deine Daten"
+          }
         }
       }
     },
@@ -1349,6 +1817,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Créé par"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erstellt von"
           }
         }
       }
@@ -1367,6 +1841,12 @@
             "state" : "translated",
             "value" : "Statut actuel :"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktueller Status:"
+          }
         }
       }
     },
@@ -1383,6 +1863,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "👤 Utilisateur Actuel"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "👤 Aktueller User"
           }
         }
       }
@@ -1401,6 +1887,12 @@
             "state" : "translated",
             "value" : "Tapez le bouton 'Personnaliser' pour configurer vos widgets."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tippe auf \"Anpassen\", um deine Widgets einzurichten."
+          }
         }
       }
     },
@@ -1414,6 +1906,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "----"
+          }
+        },
+        "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "----"
@@ -1435,6 +1933,12 @@
             "state" : "translated",
             "value" : "--"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "--"
+          }
         }
       }
     },
@@ -1451,6 +1955,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "jours"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tage"
           }
         }
       }
@@ -1469,6 +1979,12 @@
             "state" : "translated",
             "value" : "jours avant votre prochain anniversaire"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tage bis zu eurem nächsten Jahrestag"
+          }
         }
       }
     },
@@ -1485,6 +2001,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jours ensemble"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tage zusammen"
           }
         }
       }
@@ -1504,6 +2026,12 @@
             "state" : "translated",
             "value" : "Système de Debug Review"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Debug-Review-System"
+          }
         }
       }
     },
@@ -1520,6 +2048,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "🔄 Debug - Sync Abonnements"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔄 Debug – Abos synchronisieren"
           }
         }
       }
@@ -1538,6 +2072,12 @@
             "state" : "translated",
             "value" : "Supprimer le compte"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Account löschen"
+          }
         }
       }
     },
@@ -1554,6 +2094,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cette action est irréversible. Toutes vos données seront définitivement supprimées.\n\nApple pourrait vous demander de vous réauthentifier pour confirmer cette action."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diese Aktion kann nicht rückgängig gemacht werden. Alle deine Daten werden dauerhaft gelöscht.\n\nApple kann dich bitten, dich erneut zu authentifizieren, um diese Aktion zu bestätigen."
           }
         }
       }
@@ -1572,6 +2118,12 @@
             "state" : "translated",
             "value" : "Suppression du compte..."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Account wird gelöscht..."
+          }
         }
       }
     },
@@ -1588,6 +2140,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Déconnecter"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trennen"
           }
         }
       }
@@ -1606,6 +2164,12 @@
             "state" : "translated",
             "value" : "Êtes-vous sûr de vouloir vous déconnecter de votre partenaire ? Cette action supprimera le partage de données."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bist du sicher, dass du die Verbindung zu deinem Partner trennen möchtest? Dadurch wird das Teilen von Daten deaktiviert."
+          }
         }
       }
     },
@@ -1622,6 +2186,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Découvrir Premium"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Premium entdecken"
           }
         }
       }
@@ -1640,6 +2210,12 @@
             "state" : "translated",
             "value" : "distance"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Distanz"
+          }
         }
       }
     },
@@ -1657,6 +2233,12 @@
             "state" : "translated",
             "value" : "Terminé"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fertig"
+          }
         }
       }
     },
@@ -1670,6 +2252,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "..."
+          }
+        },
+        "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "..."
@@ -1691,6 +2279,12 @@
             "state" : "translated",
             "value" : "Votre journal de souvenirs est vide"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dein Erinnerungsjournal ist leer"
+          }
         }
       }
     },
@@ -1707,6 +2301,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Profitez-en !"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Viel Spaß!"
           }
         }
       }
@@ -1725,6 +2325,12 @@
             "state" : "translated",
             "value" : "Entrez le code"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Code eingeben"
+          }
         }
       }
     },
@@ -1741,6 +2347,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Entrez le code de votre partenaire"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gib den Code deines Partners ein"
           }
         }
       }
@@ -1759,6 +2371,12 @@
             "state" : "translated",
             "value" : "Saisis le code"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gib den Code ein"
+          }
         }
       }
     },
@@ -1775,6 +2393,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Erreur de création d'entrée"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fehler beim Erstellen des Eintrags"
           }
         }
       }
@@ -1793,6 +2417,12 @@
             "state" : "translated",
             "value" : "Erreur"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fehler"
+          }
         }
       }
     },
@@ -1809,6 +2439,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Erreur : Image non trouvée"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fehler: Bild nicht gefunden"
           }
         }
       }
@@ -1828,6 +2464,12 @@
             "state" : "translated",
             "value" : "Date de l'événement"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ereignisdatum"
+          }
         }
       }
     },
@@ -1845,6 +2487,12 @@
             "state" : "translated",
             "value" : "Heure"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uhrzeit"
+          }
         }
       }
     },
@@ -1861,6 +2509,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "événements"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ereignisse"
           }
         }
       }
@@ -1880,6 +2534,12 @@
             "state" : "translated",
             "value" : "Événements du"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ereignisse vom"
+          }
         }
       }
     },
@@ -1896,6 +2556,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : " !"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "!"
           }
         }
       }
@@ -1914,6 +2580,12 @@
             "state" : "translated",
             "value" : "Contenu premium exclusif"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exklusive Premium-Inhalte"
+          }
         }
       }
     },
@@ -1930,6 +2602,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Favoris"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favoriten"
           }
         }
       }
@@ -1948,6 +2626,12 @@
             "state" : "translated",
             "value" : "Favoris :"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favoriten:"
+          }
         }
       }
     },
@@ -1964,6 +2648,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "sur"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "von"
           }
         }
       }
@@ -1982,6 +2672,12 @@
             "state" : "translated",
             "value" : "Pour vous sentir encore plus proches de votre partenaire."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Damit ihr euch noch näher fühlt."
+          }
         }
       }
     },
@@ -1998,6 +2694,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "✓ Aimez-vous encore plus fort"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✓ Vertieft eure Verbindung"
           }
         }
       }
@@ -2016,6 +2718,12 @@
             "state" : "translated",
             "value" : "Débloquez nos plus de 1800 questions à la fois fun, profondes, rassurantes, et passez un merveilleux moment ensemble."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erhaltet Zugang zu 1800+ Fragen, um zu lachen, euch zu öffnen und euch noch näher zu kommen."
+          }
         }
       }
     },
@@ -2032,6 +2740,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "✓ Construisez votre coffre à souvenir"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✓ Bewahrt eure schönsten Erinnerungen an einem Ort auf"
           }
         }
       }
@@ -2050,6 +2764,12 @@
             "state" : "translated",
             "value" : "Parce que chaque souvenir mérite sa place. Rassemblez vos plus beaux moments dans un journal intime, unique et partagé, rien qu'à vous deux."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weil jeder Moment einen besonderen Platz verdient. Bewahrt eure schönsten Erinnerungen in einem gemeinsamen Tagebuch auf – nur für euch zwei."
+          }
         }
       }
     },
@@ -2059,13 +2779,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "✓ Create your love map"
+            "value" : "✓ A new challenge every day"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "✓ Créez la carte de votre amour"
+            "value" : "✓ Un nouveau défi chaque jour"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✓ Jeden Tag eine neue Herausforderung"
           }
         }
       }
@@ -2076,13 +2802,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "See your memories on a unique map, and relive every moment that made your love special."
+            "value" : "Receive a romantic challenge every day to grow closer, even from afar."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Retrouvez vos souvenirs sur une carte unique, et revivez les moments qui ont marqué votre amour."
+            "value" : "Recevez tous les jours un défi romantique pour vous rapprocher encore plus, même à distance."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✓ Erhaltet jeden Tag eine romantische Herausforderung, um euch noch näher zu kommen auch auf Distanz."
           }
         }
       }
@@ -2101,6 +2833,12 @@
             "state" : "translated",
             "value" : "💌 Créer une vraie connexion"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "💌 Baut eine tiefere Verbindung auf"
+          }
         }
       }
     },
@@ -2117,6 +2855,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "🔥 Parler enfin des sujets qu'on évite"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔥 Reden über Themen, die wir sonst vermeiden"
           }
         }
       }
@@ -2135,6 +2879,12 @@
             "state" : "translated",
             "value" : "🌶️ Faire monter la passion entre nous"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🌶️ Die Leidenschaft zwischen uns steigern"
+          }
         }
       }
     },
@@ -2151,6 +2901,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "🎉 Partager plus de rires ensemble"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎉 Mehr zusammen lachen"
           }
         }
       }
@@ -2169,6 +2925,12 @@
             "state" : "translated",
             "value" : "💕 Retrouver une vraie complicité"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "💕 Wieder so nah sein wie früher"
+          }
         }
       }
     },
@@ -2185,6 +2947,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "✨ Créer un moment fort à deux"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✨ Etwas Bedeutungsvolles zusammen teilen"
           }
         }
       }
@@ -2203,6 +2971,12 @@
             "state" : "translated",
             "value" : "💕 Raviver notre connexion"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "💕 Unsere Verbindung wiederbeleben"
+          }
         }
       }
     },
@@ -2219,6 +2993,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "🔄 Sortir de la routine"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔄 Aus der Routine ausbrechen"
           }
         }
       }
@@ -2237,6 +3017,12 @@
             "state" : "translated",
             "value" : "🤍 Se dire ce qu'on n'a jamais dit"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🤍 So offen sein wie noch nie"
+          }
         }
       }
     },
@@ -2253,6 +3039,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hebdomadaire"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wöchentlich"
           }
         }
       }
@@ -2271,6 +3063,12 @@
             "state" : "translated",
             "value" : "Mensuel - 3 jours gratuits"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monatlich – 3 Tage gratis"
+          }
         }
       }
     },
@@ -2284,6 +3082,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "4,99€"
+          }
+        },
+        "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "4,99€"
@@ -2305,6 +3109,12 @@
             "state" : "translated",
             "value" : "14,99€"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "14,99€"
+          }
         }
       }
     },
@@ -2321,6 +3131,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "semaine"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Woche"
           }
         }
       }
@@ -2339,6 +3155,12 @@
             "state" : "translated",
             "value" : "mois"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monat"
+          }
         }
       }
     },
@@ -2352,6 +3174,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2,50€"
+          }
+        },
+        "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "2,50€"
@@ -2373,6 +3201,12 @@
             "state" : "translated",
             "value" : "7,50€"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "7,50€"
+          }
         }
       }
     },
@@ -2389,6 +3223,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Janvier"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Januar"
           }
         }
       }
@@ -2407,6 +3247,12 @@
             "state" : "translated",
             "value" : "Février"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Februar"
+          }
         }
       }
     },
@@ -2423,6 +3269,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mars"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "März"
           }
         }
       }
@@ -2441,6 +3293,12 @@
             "state" : "translated",
             "value" : "Avril"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "April"
+          }
         }
       }
     },
@@ -2454,6 +3312,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mai"
+          }
+        },
+        "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mai"
@@ -2475,6 +3339,12 @@
             "state" : "translated",
             "value" : "Juin"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Juni"
+          }
         }
       }
     },
@@ -2491,6 +3361,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Juillet"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Juli"
           }
         }
       }
@@ -2509,6 +3385,12 @@
             "state" : "translated",
             "value" : "Août"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "August"
+          }
         }
       }
     },
@@ -2525,6 +3407,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Septembre"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "September"
           }
         }
       }
@@ -2543,6 +3431,12 @@
             "state" : "translated",
             "value" : "Octobre"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oktober"
+          }
         }
       }
     },
@@ -2559,6 +3453,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Novembre"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "November"
           }
         }
       }
@@ -2577,6 +3477,12 @@
             "state" : "translated",
             "value" : "Décembre"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dezember"
+          }
         }
       }
     },
@@ -2593,6 +3499,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Laissez nous un avis"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gib uns eine Bewertung"
           }
         }
       }
@@ -2611,6 +3523,12 @@
             "state" : "translated",
             "value" : "Gérer son abonnement"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abo verwalten"
+          }
         }
       }
     },
@@ -2627,6 +3545,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comment activer la localisation"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "So aktivierst du den Standort"
           }
         }
       }
@@ -2645,7 +3569,13 @@
             "state" : "translated",
             "value" : "Appuyez sur Autoriser"
           }
-        }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Tippe auf „Zulassen“"
+            }
+          }
       }
     },
     "for_2_users" : {
@@ -2662,7 +3592,13 @@
             "state" : "translated",
             "value" : " pour 2 utilisateurs"
           }
-        }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : " für 2 Personen"
+            }
+          }
       }
     },
     "for_surprise" : {
@@ -2679,7 +3615,13 @@
             "state" : "translated",
             "value" : "pour une"
           }
-        }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "für eine"
+            }
+          }
       }
     },
     "free_entries" : {
@@ -2696,7 +3638,13 @@
             "state" : "translated",
             "value" : "entrée"
           }
-        }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Eintrag"
+            }
+          }
       }
     },
     "free_entries_plural" : {
@@ -2713,7 +3661,13 @@
             "state" : "translated",
             "value" : "entrées"
           }
-        }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Einträge"
+            }
+          }
       }
     },
     "free_text" : {
@@ -2730,7 +3684,13 @@
             "state" : "translated",
             "value" : "gratuite"
           }
-        }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "gratis"
+            }
+          }
       }
     },
     "free_text_plural" : {
@@ -2747,7 +3707,13 @@
             "state" : "translated",
             "value" : "gratuites"
           }
-        }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "gratis"
+            }
+          }
       }
     },
     "freemium_check_failed" : {
@@ -2764,7 +3730,13 @@
             "state" : "translated",
             "value" : "Erreur de vérification de limite"
           }
-        }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Fehler bei der Limit‑Prüfung"
+            }
+          }
       }
     },
     "freemium_limit_reached" : {
@@ -2781,7 +3753,13 @@
             "state" : "translated",
             "value" : "Limite d'entrées gratuites atteinte"
           }
-        }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Gratis‑Limit erreicht"
+            }
+          }
       }
     },
     "generating" : {
@@ -2798,7 +3776,13 @@
             "state" : "translated",
             "value" : "Génération..."
           }
-        }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Wird erstellt..."
+            }
+          }
       }
     },
     "generation_error" : {
@@ -2815,7 +3799,13 @@
             "state" : "translated",
             "value" : "Erreur de génération"
           }
-        }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Fehler bei der Erstellung"
+            }
+          }
       }
     },
     "generic_partner" : {
@@ -2832,7 +3822,13 @@
             "state" : "translated",
             "value" : "votre partenaire"
           }
-        }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "dein:e Partner:in"
+            }
+          }
       }
     },
     "get_premium" : {
@@ -2850,7 +3846,13 @@
             "state" : "translated",
             "value" : "Obtenir Premium"
           }
-        }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Premium freischalten"
+            }
+          }
       }
     },
     "happy_anniversary" : {
@@ -2867,7 +3869,13 @@
             "state" : "translated",
             "value" : "Joyeux anniversaire ! 🎉"
           }
-        }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Alles Gute zum Jahrestag! 🎉"
+            }
+          }
       }
     },
     "hold_description" : {
@@ -2884,7 +3892,13 @@
             "state" : "translated",
             "value" : "Maintenez votre doigt sur un espace vide de l'écran d'accueil pour entrer en mode édition."
           }
-        }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Halte einen freien Bereich gedrückt, um den Bearbeitungsmodus zu öffnen."
+            }
+          }
       }
     },
     "hold_home_screen" : {
@@ -2901,7 +3915,13 @@
             "state" : "translated",
             "value" : "Maintenez appuyé n'importe où sur votre écran d'accueil"
           }
-        }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Halte irgendwo auf deinem Homescreen gedrückt"
+            }
+          }
       }
     },
     "home" : {
@@ -2918,7 +3938,13 @@
             "state" : "translated",
             "value" : "Accueil"
           }
-        }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Home"
+            }
+          }
       }
     },
     "home_screen" : {
@@ -2935,7 +3961,13 @@
             "state" : "translated",
             "value" : "Écran d'accueil"
           }
-        }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Startbildschirm"
+            }
+          }
       }
     },
     "home_screen_widget" : {
@@ -2944,17 +3976,23 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Home Screen Widget"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Widget Écran d'Accueil"
+              "value" : "Home Screen Widget"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Widget Écran d'Accueil"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+          "value" : "Startbildschirm‑Widget"
+            }
           }
         }
-      }
-    },
+      },
     "hours" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2968,6 +4006,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "heures"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stunden"
           }
         }
       }
@@ -2986,6 +4030,12 @@
             "state" : "translated",
             "value" : "Comment les ajouter ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie fügst du sie hinzu?"
+          }
         }
       }
     },
@@ -3002,6 +4052,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ID :"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ID:"
           }
         }
       }
@@ -3020,6 +4076,12 @@
             "state" : "translated",
             "value" : "Image non disponible"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bild nicht verfügbar"
+          }
         }
       }
     },
@@ -3037,6 +4099,12 @@
             "state" : "translated",
             "value" : "Le traitement de l'image a échoué"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bildverarbeitung fehlgeschlagen"
+          }
         }
       }
     },
@@ -3053,6 +4121,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "En couple depuis"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zusammen seit"
           }
         }
       }
@@ -3072,6 +4146,12 @@
             "state" : "translated",
             "value" : "Inviter votre partenaire"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lade deine:n Partner:in ein"
+          }
         }
       }
     },
@@ -3088,6 +4168,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Profitez de l'expérience complète de l'application ensemble !"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erlebt die komplette App gemeinsam!"
           }
         }
       }
@@ -3106,6 +4192,12 @@
             "state" : "translated",
             "value" : "Cette action est irréversible. Le souvenir sera définitivement supprimé."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diese Aktion kann nicht rückgängig gemacht werden. Die Erinnerung wird dauerhaft gelöscht."
+          }
         }
       }
     },
@@ -3119,6 +4211,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Journal"
+          }
+        },
+        "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Journal"
@@ -3141,6 +4239,12 @@
             "state" : "translated",
             "value" : "Gardez ici vos plus beaux souvenirs ensemble pour vous sentir encore plus proches l'un de l'autre. \n\nVotre partenaire pourra voir les souvenirs que vous avez créés."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Speichere hier eure Lieblingsmomente und fühlt euch noch näher. \n\nDein:e Partner:in sieht alles, was du hinzufügst."
+          }
         }
       }
     },
@@ -3154,6 +4258,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "km"
+          }
+        },
+        "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "km"
@@ -3175,6 +4285,12 @@
             "state" : "translated",
             "value" : "C'est parti !"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Los geht's!"
+          }
         }
       }
     },
@@ -3191,6 +4307,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Limite atteinte"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Limit erreicht"
           }
         }
       }
@@ -3209,6 +4331,12 @@
             "state" : "translated",
             "value" : "Chargement..."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wird geladen..."
+          }
         }
       }
     },
@@ -3225,6 +4353,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "CHARGEMENT..."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WIRD GELADEN..."
           }
         }
       }
@@ -3243,6 +4377,12 @@
             "state" : "translated",
             "value" : "Erreur de chargement"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ladefehler"
+          }
         }
       }
     },
@@ -3260,6 +4400,12 @@
             "state" : "translated",
             "value" : "Personnalisation de votre expérience..."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wir personalisieren dein Erlebnis..."
+          }
         }
       }
     },
@@ -3276,6 +4422,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Analyse de vos préférences..."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wir analysieren deine Vorlieben..."
           }
         }
       }
@@ -3295,6 +4447,12 @@
             "state" : "translated",
             "value" : "Préparation de votre profil..."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dein Profil wird vorbereitet..."
+          }
         }
       }
     },
@@ -3311,6 +4469,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chargement..."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wird geladen..."
           }
         }
       }
@@ -3329,6 +4493,12 @@
             "state" : "translated",
             "value" : "Lieu"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standort"
+          }
         }
       }
     },
@@ -3345,6 +4515,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Autorisation d'accès à la localisation"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Berechtigung für Standortzugriff"
           }
         }
       }
@@ -3363,6 +4539,12 @@
             "state" : "translated",
             "value" : "Localisation"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standort"
+          }
         }
       }
     },
@@ -3379,6 +4561,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Les services de localisation sont nécessaires pour que l'application calcule la distance entre vous et votre partenaire."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standortdienste werden benötigt, damit die App die Distanz zwischen dir und deinem/deiner Partner:in berechnen kann."
           }
         }
       }
@@ -3397,6 +4585,12 @@
             "state" : "translated",
             "value" : "Localisation"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standort"
+          }
         }
       }
     },
@@ -3413,6 +4607,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tutoriel localisation"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standort‑Tutorial"
           }
         }
       }
@@ -3432,6 +4632,12 @@
             "state" : "translated",
             "value" : "Écran de verrouillage"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sperrbildschirm"
+          }
         }
       }
     },
@@ -3448,6 +4654,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tapez l'écran de verrouillage pour entrer en mode édition."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tippe auf deinen Sperrbildschirm, um zu bearbeiten."
           }
         }
       }
@@ -3466,6 +4678,12 @@
             "state" : "translated",
             "value" : "Widget Écran de Verrouillage"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sperrbildschirm‑Widget"
+          }
         }
       }
     },
@@ -3483,6 +4701,12 @@
             "state" : "translated",
             "value" : "Contenu Premium"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Premium‑Inhalt"
+          }
         }
       }
     },
@@ -3496,6 +4720,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔒"
+          }
+        },
+        "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "🔒"
@@ -3517,6 +4747,12 @@
             "state" : "translated",
             "value" : "🔒"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔒"
+          }
         }
       }
     },
@@ -3533,6 +4769,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Retrouvez vos souvenirs sur une carte unique, et revivez les moments qui ont marqué votre amour."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finde eure Erinnerungen auf einer einzigartigen Karte und erlebe die Momente neu, die eure Liebe geprägt haben."
           }
         }
       }
@@ -3551,6 +4793,12 @@
             "state" : "translated",
             "value" : "✓ Créez votre carte d'amour"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✓ Erstelle eure Love‑Map"
+          }
         }
       }
     },
@@ -3567,6 +4815,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Débloquez nos plus de 2000 questions qui sont amusantes, profondes, rassurantes, et passez un merveilleux moment ensemble."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schalte 2000+ Fragen frei – witzig, tiefgründig, beruhigend – und habt zusammen eine richtig gute Zeit."
           }
         }
       }
@@ -3586,6 +4840,12 @@
             "state" : "translated",
             "value" : "✓ Aimez-vous encore plus fort"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✓ Liebt euch noch stärker"
+          }
         }
       }
     },
@@ -3602,6 +4862,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "64 questions max (catégorie gratuite)"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Max. 64 Fragen (Gratis‑Kategorie)"
           }
         }
       }
@@ -3620,6 +4886,12 @@
             "state" : "translated",
             "value" : "Tous vos souvenirs partagés apparaîtront sur cette carte"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle eure besonderen Momente erscheinen hier auf der Karte."
+          }
         }
       }
     },
@@ -3636,6 +4908,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Parce que chaque souvenir mérite sa place. Rassemblez vos plus beaux moments dans un journal intime, unique et partagé, rien que pour vous deux."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jede Erinnerung verdient einen Platz. Sammle eure schönsten Momente in einem intimen, einzigartigen, gemeinsamen Tagebuch – nur für euch zwei."
           }
         }
       }
@@ -3654,6 +4932,12 @@
             "state" : "translated",
             "value" : "✓ Construisez votre boîte à souvenirs"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✓ Baut eure Memory‑Box"
+          }
         }
       }
     },
@@ -3670,6 +4954,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "minutes"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Minuten"
           }
         }
       }
@@ -3688,6 +4978,12 @@
             "state" : "translated",
             "value" : "Tu me manques tellement"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ich vermisse dich so sehr"
+          }
         }
       }
     },
@@ -3704,6 +5000,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Token d'authentification manquant"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Authentifizierungs‑Token fehlt"
           }
         }
       }
@@ -3722,6 +5024,12 @@
             "state" : "translated",
             "value" : "Plus de 1800 questions à poser à votre âme sœur"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mehr als 1800 Fragen für deine:n Seelenverwandte:n"
+          }
         }
       }
     },
@@ -3738,6 +5046,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Plus de"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mehr als"
           }
         }
       }
@@ -3756,6 +5070,12 @@
             "state" : "translated",
             "value" : "Mes Favoris"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meine Favoriten"
+          }
         }
       }
     },
@@ -3772,6 +5092,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nom"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name"
           }
         }
       }
@@ -3790,6 +5116,12 @@
             "state" : "translated",
             "value" : "Nom :"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name:"
+          }
         }
       }
     },
@@ -3806,6 +5138,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Entrez votre prénom"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gib deinen Vornamen ein"
           }
         }
       }
@@ -3824,6 +5162,12 @@
             "state" : "translated",
             "value" : "Cette information nous permettra de personnaliser votre expérience."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diese Infos helfen uns, dein Erlebnis zu personalisieren."
+          }
         }
       }
     },
@@ -3841,6 +5185,12 @@
             "state" : "translated",
             "value" : "Comment tu t'appelles ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie heißt du?"
+          }
         }
       }
     },
@@ -3857,6 +5207,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Choisissez votre pseudo"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wähle deinen Spitznamen"
           }
         }
       }
@@ -3876,6 +5232,12 @@
             "state" : "translated",
             "value" : "Visible par votre partenaire"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "So sieht dich dein:e Partner:in"
+          }
         }
       }
     },
@@ -3892,6 +5254,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Erreur réseau"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Netzwerkfehler"
           }
         }
       }
@@ -3910,6 +5278,12 @@
             "state" : "translated",
             "value" : "nouvelles cartes"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "neue Karten"
+          }
         }
       }
     },
@@ -3926,6 +5300,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nouvelles cartes ajoutées !"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neue Karten hinzugefügt!"
           }
         }
       }
@@ -3944,6 +5324,12 @@
             "state" : "translated",
             "value" : "Nouvelles fonctionnalités débloquées"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neue Features freigeschaltet"
+          }
         }
       }
     },
@@ -3960,6 +5346,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Non"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nein"
           }
         }
       }
@@ -3978,6 +5370,12 @@
             "state" : "translated",
             "value" : "Aucune photo accessible"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine zugänglichen Fotos"
+          }
         }
       }
     },
@@ -3994,6 +5392,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aucun engagement, annulez à tout moment"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kein Abonnement verpflichtend, jederzeit kündbar"
           }
         }
       }
@@ -4012,6 +5416,12 @@
             "state" : "translated",
             "value" : "Aucun événement aujourd'hui"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heute keine Events"
+          }
         }
       }
     },
@@ -4028,6 +5438,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pas encore de favoris"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noch keine Favoriten"
           }
         }
       }
@@ -4046,6 +5462,12 @@
             "state" : "translated",
             "value" : "Aucune image"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kein Bild"
+          }
         }
       }
     },
@@ -4062,6 +5484,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aucun partenaire connecté"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Partner:in nicht verbunden"
           }
         }
       }
@@ -4080,6 +5508,12 @@
             "state" : "translated",
             "value" : "Aucun paiement requis maintenant"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Starte deine Testphase – heute keine Kosten"
+          }
         }
       }
     },
@@ -4096,6 +5530,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aucune photo accessible"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine Fotos zugänglich"
           }
         }
       }
@@ -4114,6 +5554,12 @@
             "state" : "translated",
             "value" : "Pas d'accès premium"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kein Premium-Zugang"
+          }
         }
       }
     },
@@ -4130,6 +5576,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aucun produit disponible. Vérifiez votre connexion."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine Produkte verfügbar. Check deine Verbindung."
           }
         }
       }
@@ -4148,6 +5600,12 @@
             "state" : "translated",
             "value" : "Aucun achat à restaurer"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kein Kauf zum Wiederherstellen"
+          }
         }
       }
     },
@@ -4164,6 +5622,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aucune date de relation définie"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kein Beziehungsdatum festgelegt"
           }
         }
       }
@@ -4182,6 +5646,12 @@
             "state" : "translated",
             "value" : "Vous n'êtes pas autorisé à effectuer cette action"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du bist nicht berechtigt, diese Aktion auszuführen"
+          }
         }
       }
     },
@@ -4195,6 +5665,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "OK"
@@ -4217,6 +5693,12 @@
             "state" : "translated",
             "value" : "sur"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "von"
+          }
         }
       }
     },
@@ -4233,6 +5715,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "moi"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ich"
           }
         }
       }
@@ -4251,6 +5739,12 @@
             "state" : "translated",
             "value" : "PLUS QU'UNE ÉTAPE !"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NUR NOCH EIN SCHRITT!"
+          }
         }
       }
     },
@@ -4267,6 +5761,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ouvrir les Paramètres"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einstellungen öffnen"
           }
         }
       }
@@ -4285,6 +5785,12 @@
             "state" : "translated",
             "value" : "Ouvrir les paramètres"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einstellungen öffnen"
+          }
         }
       }
     },
@@ -4301,6 +5807,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "autres..."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "andere..."
           }
         }
       }
@@ -4319,6 +5831,12 @@
             "state" : "translated",
             "value" : "Notre distance : "
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unsere Distanz: "
+          }
         }
       }
     },
@@ -4335,6 +5853,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Notre journal"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unser Journal"
           }
         }
       }
@@ -4353,6 +5877,12 @@
             "state" : "translated",
             "value" : "Vous avez terminé le pack."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du hast das Pack abgeschlossen."
+          }
         }
       }
     },
@@ -4369,6 +5899,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "le pack..."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "das Pack..."
           }
         }
       }
@@ -4387,6 +5923,12 @@
             "state" : "translated",
             "value" : "Partenaire"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Partner:in"
+          }
         }
       }
     },
@@ -4403,6 +5945,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Code partenaire"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Partnercode"
           }
         }
       }
@@ -4421,6 +5969,12 @@
             "state" : "translated",
             "value" : "Partenaire connecté :"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Partner:in verbunden:"
+          }
         }
       }
     },
@@ -4437,6 +5991,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "👥 Partenaire Connecté"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "👥 Partner:in verbunden"
           }
         }
       }
@@ -4455,6 +6015,12 @@
             "state" : "translated",
             "value" : "Demandez à votre partenaire de faire de même pour activer sa localisation, sinon la distance entre vous ne pourra pas être calculée."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitte sag deinem/deiner Partner:in, auch die Standortfreigabe zu aktivieren – sonst können wir eure Distanz nicht berechnen."
+          }
         }
       }
     },
@@ -4471,6 +6037,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Partenaire :"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Partner:in:"
           }
         }
       }
@@ -4489,6 +6061,12 @@
             "state" : "translated",
             "value" : "Votre partenaire n'aura rien à payer"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dein:e Partner:in muss nichts bezahlen"
+          }
         }
       }
     },
@@ -4506,6 +6084,12 @@
             "state" : "translated",
             "value" : "Partenaire non connecté"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Partner:in nicht verbunden"
+          }
         }
       }
     },
@@ -4522,6 +6106,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Partagé par : %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geteilt von: %@"
           }
         }
       }
@@ -4541,6 +6131,12 @@
             "state" : "translated",
             "value" : "👥 Statut Partenaire"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "👥 Partner-Status"
+          }
         }
       }
     },
@@ -4559,6 +6155,12 @@
             "state" : "translated",
             "value" : "👥 Statut Partenaire"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "👥 Partner-Status"
+          }
         }
       }
     },
@@ -4575,6 +6177,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "/ utilisateur /"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "/ Nutzer:in /"
           }
         }
       }
@@ -4593,6 +6201,12 @@
             "state" : "translated",
             "value" : "Permission"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Berechtigung"
+          }
         }
       }
     },
@@ -4609,6 +6223,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Autorisation de localisation"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standortberechtigung"
           }
         }
       }
@@ -4627,6 +6247,12 @@
             "state" : "translated",
             "value" : "Autorisation d'accès aux photos"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotofreigabe-Berechtigung"
+          }
         }
       }
     },
@@ -4643,6 +6269,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Love2Love n'accèdera qu'aux photos que vous autorisez"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Love2Love greift nur auf Fotos zu, die du freigibst"
           }
         }
       }
@@ -4662,6 +6294,12 @@
             "state" : "translated",
             "value" : "Autorisation d'accès aux photos"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotofreigabe-Berechtigung"
+          }
         }
       }
     },
@@ -4678,6 +6316,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pour utiliser cette fonctionnalité, veuillez autoriser l'accès aux photos dans les Paramètres."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktiviere den Fotozugriff in den Einstellungen, um das Feature zu nutzen."
           }
         }
       }
@@ -4696,6 +6340,12 @@
             "state" : "translated",
             "value" : "Tapez le bouton + en haut à gauche pour ajouter un nouveau widget."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tippe oben links auf +, um ein neues Widget hinzuzufügen."
+          }
         }
       }
     },
@@ -4709,6 +6359,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Premium"
+          }
+        },
+        "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Premium"
@@ -4730,6 +6386,12 @@
             "state" : "translated",
             "value" : "🎯 Accès Premium :"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎯 Premium-Zugang:"
+          }
         }
       }
     },
@@ -4746,6 +6408,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "🎯 Accès Premium :"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎯 Premium-Zugang:"
           }
         }
       }
@@ -4765,6 +6433,12 @@
             "state" : "translated",
             "value" : "Accès Premium perdu"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Premium-Zugang verloren"
+          }
         }
       }
     },
@@ -4781,6 +6455,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Catégories Premium verrouillées"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Premium-Kategorien gesperrt"
           }
         }
       }
@@ -4799,6 +6479,12 @@
             "state" : "translated",
             "value" : "Contenu Premium indisponible"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Premium-Inhalte nicht verfügbar"
+          }
         }
       }
     },
@@ -4815,6 +6501,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Toutes les catégories débloquées"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle Kategorien freigeschaltet"
           }
         }
       }
@@ -4833,6 +6525,12 @@
             "state" : "translated",
             "value" : "%@ a partagé son abonnement Premium avec vous !\n\nVous avez maintenant accès à toutes les fonctionnalités premium."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ hat sein/ihr Premium-Abo mit dir geteilt!\n\nDu hast jetzt Zugriff auf alle Premium-Features."
+          }
         }
       }
     },
@@ -4849,6 +6547,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Passez au Premium pour créer des souvenirs illimités avec votre partenaire"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hol dir Premium und sammle unbegrenzt Erinnerungen mit deinem/deiner Partner:in"
           }
         }
       }
@@ -4867,6 +6571,12 @@
             "state" : "translated",
             "value" : "🎉 Premium débloqué !"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎉 Premium freigeschaltet!"
+          }
         }
       }
     },
@@ -4883,6 +6593,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Précédent"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zurück"
           }
         }
       }
@@ -4901,6 +6617,12 @@
             "state" : "translated",
             "value" : "Nous promettons de toujours garder vos informations personnelles privées et sécurisées."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wir schützen deine Daten – privat und sicher. Versprochen."
+          }
         }
       }
     },
@@ -4917,6 +6639,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Politique de confidentialité"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datenschutzrichtlinie"
           }
         }
       }
@@ -4935,6 +6663,12 @@
             "state" : "translated",
             "value" : "Nous promettons de toujours garder vos informations personnelles privées et sécurisées."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wir schützen deine Daten – privat und sicher. Versprochen."
+          }
         }
       }
     },
@@ -4951,6 +6685,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Erreur lors du chargement du produit"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fehler beim Laden des Produkts"
           }
         }
       }
@@ -4969,6 +6709,12 @@
             "state" : "translated",
             "value" : "Échec du chargement du produit"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Produktladen fehlgeschlagen"
+          }
         }
       }
     },
@@ -4986,6 +6732,12 @@
             "state" : "translated",
             "value" : "Produit non disponible"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Produkt nicht verfügbar"
+          }
         }
       }
     },
@@ -4999,6 +6751,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Profil"
+          }
+        },
+        "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Profil"
@@ -5020,6 +6778,12 @@
             "state" : "translated",
             "value" : "Achat annulé par l'utilisateur"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kauf vom Nutzer storniert"
+          }
         }
       }
     },
@@ -5036,6 +6800,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Erreur d'achat"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kauf-Fehler"
           }
         }
       }
@@ -5054,6 +6824,12 @@
             "state" : "translated",
             "value" : "Les achats ne sont pas autorisés sur cet appareil"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Käufe sind auf diesem Gerät nicht erlaubt"
+          }
         }
       }
     },
@@ -5070,6 +6846,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Les achats ne sont pas autorisés sur cet appareil"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Käufe sind auf diesem Gerät nicht freigegeben"
           }
         }
       }
@@ -5088,6 +6870,12 @@
             "state" : "translated",
             "value" : "Questions mises en cache"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fragen gecached"
+          }
         }
       }
     },
@@ -5104,6 +6892,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "⚡️ Actions Rapides"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⚡️ Schnellaktionen"
           }
         }
       }
@@ -5122,6 +6916,12 @@
             "state" : "translated",
             "value" : "Distance en temps réel"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Distanz in Echtzeit"
+          }
         }
       }
     },
@@ -5138,6 +6938,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "La validation du reçu a échoué"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belegprüfung fehlgeschlagen"
           }
         }
       }
@@ -5156,6 +6962,12 @@
             "state" : "translated",
             "value" : "Récupérez votre accès à toutes les autres questions et catégories"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hol dir den Zugriff auf alle anderen Fragen und Kategorien zurück"
+          }
         }
       }
     },
@@ -5172,6 +6984,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "🔄 Actualiser"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔄 Aktualisieren"
           }
         }
       }
@@ -5190,6 +7008,12 @@
             "state" : "translated",
             "value" : "Depuis quand êtes-vous ensemble ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seit wann seid ihr zusammen?"
+          }
         }
       }
     },
@@ -5206,6 +7030,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quels sont vos objectifs de couple ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was sind eure Beziehungsziele?"
           }
         }
       }
@@ -5224,6 +7054,12 @@
             "state" : "translated",
             "value" : "Qu'aimeriez-vous améliorer dans votre relation ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was wollt ihr in eurer Beziehung verbessern?"
+          }
         }
       }
     },
@@ -5240,6 +7076,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Recharger le cache"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cache neu laden"
           }
         }
       }
@@ -5258,6 +7100,12 @@
             "state" : "translated",
             "value" : "Seulement"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nur"
+          }
         }
       }
     },
@@ -5274,6 +7122,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Seulement %d %@ entr%@ restante%@ !"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nur noch %d %@ Eintr%@ übrig!"
           }
         }
       }
@@ -5292,6 +7146,12 @@
             "state" : "translated",
             "value" : "Retirer 1 favori"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 Favorit entfernen"
+          }
         }
       }
     },
@@ -5308,6 +7168,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Voulez-vous retirer cette question de vos favoris ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Willst du diese Frage aus deinen Favoriten entfernen?"
           }
         }
       }
@@ -5326,6 +7192,12 @@
             "state" : "translated",
             "value" : "Retirer des favoris"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aus Favoriten entfernen"
+          }
         }
       }
     },
@@ -5342,6 +7214,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Retirer"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entfernen"
           }
         }
       }
@@ -5360,6 +7238,12 @@
             "state" : "translated",
             "value" : "Nécessite un abonnement"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abo erforderlich"
+          }
         }
       }
     },
@@ -5376,6 +7260,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Réinitialiser"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zurücksetzen"
           }
         }
       }
@@ -5394,6 +7284,12 @@
             "state" : "translated",
             "value" : "Restaurer"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wiederherstellen"
+          }
         }
       }
     },
@@ -5410,6 +7306,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Erreur de restauration"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wiederherstellungsfehler"
           }
         }
       }
@@ -5428,6 +7330,12 @@
             "state" : "translated",
             "value" : "Restreint"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eingeschränkt"
+          }
         }
       }
     },
@@ -5444,6 +7352,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Réessayer"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nochmal versuchen"
           }
         }
       }
@@ -5462,6 +7376,12 @@
             "state" : "translated",
             "value" : "Enregistrer"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Speichern"
+          }
         }
       }
     },
@@ -5478,6 +7398,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sauvegardez vos moments passés ensemble"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Speichere eure Lieblingsmomente"
           }
         }
       }
@@ -5496,6 +7422,12 @@
             "state" : "translated",
             "value" : "Enregistrement..."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wird gespeichert..."
+          }
         }
       }
     },
@@ -5512,6 +7444,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rechercher..."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suchen..."
           }
         }
       }
@@ -5530,6 +7468,12 @@
             "state" : "translated",
             "value" : "Lieu sélectionné"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ausgewählter Ort"
+          }
         }
       }
     },
@@ -5546,6 +7490,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Localisation personnalisée"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eigener Ort"
           }
         }
       }
@@ -5564,6 +7514,12 @@
             "state" : "translated",
             "value" : "Lieu"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ort"
+          }
         }
       }
     },
@@ -5580,6 +7536,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Inconnu"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unbekannt"
           }
         }
       }
@@ -5598,6 +7560,12 @@
             "state" : "translated",
             "value" : "Ville inconnue"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unbekannte Stadt"
+          }
         }
       }
     },
@@ -5614,6 +7582,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "pays"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Länder"
           }
         }
       }
@@ -5632,6 +7606,12 @@
             "state" : "translated",
             "value" : "pays"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Land"
+          }
         }
       }
     },
@@ -5648,6 +7628,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "villes"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Städte"
           }
         }
       }
@@ -5666,6 +7652,12 @@
             "state" : "translated",
             "value" : "ville"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stadt"
+          }
         }
       }
     },
@@ -5682,6 +7674,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Titre de votre souvenir"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Titel deiner Erinnerung"
           }
         }
       }
@@ -5700,6 +7698,12 @@
             "state" : "translated",
             "value" : "Écrivez quelques mots sur ce souvenir"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beschreibe, was diesen Moment besonders gemacht hat"
+          }
         }
       }
     },
@@ -5716,6 +7720,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Date de l'événement"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Event-Datum"
           }
         }
       }
@@ -5734,6 +7744,12 @@
             "state" : "translated",
             "value" : "Choisir la date"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datum wählen"
+          }
         }
       }
     },
@@ -5750,6 +7766,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "L'accès à votre galerie est nécessaire pour ajouter une photo. Veuillez l'activer dans les paramètres de votre appareil."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zugriff auf die Galerie ist nötig, um ein Foto hinzuzufügen. Bitte in den Geräteeinstellungen aktivieren."
           }
         }
       }
@@ -5768,6 +7790,12 @@
             "state" : "translated",
             "value" : "Erreur d'accès à la galerie"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fehler beim Zugriff auf die Galerie"
+          }
         }
       }
     },
@@ -5784,6 +7812,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Recherchez Love2Love dans la barre de recherche puis choisissez le widget que vous voulez."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suche nach 'Love2Love' und wähle das gewünschte Widget aus."
           }
         }
       }
@@ -5802,6 +7836,12 @@
             "state" : "translated",
             "value" : "Recherchez Love2Love dans la barre de recherche puis choisissez le widget que vous voulez."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suche nach 'Love2Love' und wähle das gewünschte Widget aus."
+          }
         }
       }
     },
@@ -5818,6 +7858,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Recherchez love2love"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "love2love suchen"
           }
         }
       }
@@ -5836,6 +7882,12 @@
             "state" : "translated",
             "value" : "Recherchez Love2Love"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Love2Love suchen"
+          }
         }
       }
     },
@@ -5852,6 +7904,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Accéder aux photos"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auf Fotos zugreifen"
           }
         }
       }
@@ -5870,6 +7928,12 @@
             "state" : "translated",
             "value" : "Chargement..."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wird geladen..."
+          }
         }
       }
     },
@@ -5886,6 +7950,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Accès aux photos requis"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotozugriff erforderlich"
           }
         }
       }
@@ -5904,6 +7974,12 @@
             "state" : "translated",
             "value" : "Au tour de votre partenaire"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dein Partner ist dran"
+          }
         }
       }
     },
@@ -5920,6 +7996,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Continuer"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weiter"
           }
         }
       }
@@ -5938,6 +8020,12 @@
             "state" : "translated",
             "value" : "Autoriser"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erlauben"
+          }
         }
       }
     },
@@ -5954,6 +8042,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "L'accès à votre galerie est nécessaire pour ajouter une photo de profil. Veuillez l'activer dans les paramètres de votre appareil."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zum Hinzufügen eines Profilfotos ist der Zugriff auf die Galerie nötig. Bitte in den Geräteeinstellungen aktivieren."
           }
         }
       }
@@ -5972,6 +8066,12 @@
             "state" : "translated",
             "value" : "L'accès à votre galerie est nécessaire pour changer votre photo de profil. Veuillez l'activer dans les paramètres de votre appareil."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zum Ändern deines Profilfotos ist der Zugriff auf die Galerie nötig. Bitte in den Geräteeinstellungen aktivieren."
+          }
         }
       }
     },
@@ -5988,6 +8088,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Erreur d'accès à la galerie"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fehler beim Zugriff auf die Galerie"
           }
         }
       }
@@ -6006,6 +8112,12 @@
             "state" : "translated",
             "value" : "Pour ajouter des photos, veuillez autoriser l'accès dans les Réglages"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um Fotos hinzuzufügen, erlaube den Zugriff in den Einstellungen"
+          }
         }
       }
     },
@@ -6022,6 +8134,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aucune photo accessible"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine zugänglichen Fotos"
           }
         }
       }
@@ -6040,6 +8158,12 @@
             "state" : "translated",
             "value" : "Vous pouvez sélectionner plus de photos dans les Réglages"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du kannst in den Einstellungen mehr Fotos auswählen"
+          }
         }
       }
     },
@@ -6056,6 +8180,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Permission"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Berechtigung"
           }
         }
       }
@@ -6074,6 +8204,12 @@
             "state" : "translated",
             "value" : "secondes"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sekunden"
+          }
         }
       }
     },
@@ -6090,6 +8226,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jours\nensemble"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tage\ngemeinsam"
           }
         }
       }
@@ -6108,6 +8250,12 @@
             "state" : "translated",
             "value" : "Réponses\naux questions"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fragen\nbeantwortet"
+          }
         }
       }
     },
@@ -6124,6 +8272,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Villes\nvisitées"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Besuchte\nStädte"
           }
         }
       }
@@ -6142,6 +8296,12 @@
             "state" : "translated",
             "value" : "Pays\nvisités"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Besuchte\nLänder"
+          }
         }
       }
     },
@@ -6158,6 +8318,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "an"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jahr"
           }
         }
       }
@@ -6176,6 +8342,12 @@
             "state" : "translated",
             "value" : "ans"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jahre"
+          }
         }
       }
     },
@@ -6192,6 +8364,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "mois"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monat"
           }
         }
       }
@@ -6210,6 +8388,12 @@
             "state" : "translated",
             "value" : "mois"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monate"
+          }
         }
       }
     },
@@ -6226,6 +8410,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "jour"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tag"
           }
         }
       }
@@ -6244,6 +8434,12 @@
             "state" : "translated",
             "value" : "jours"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tage"
+          }
         }
       }
     },
@@ -6260,6 +8456,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "et"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "und"
           }
         }
       }
@@ -6278,6 +8480,12 @@
             "state" : "translated",
             "value" : "💕 Je pense à toi"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "💕 Ich denk an dich"
+          }
         }
       }
     },
@@ -6294,6 +8502,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "SÉCURISE TON COMPTE"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SICHERE DEIN KONTO"
           }
         }
       }
@@ -6312,6 +8526,12 @@
             "state" : "translated",
             "value" : "Sélectionner"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auswählen"
+          }
         }
       }
     },
@@ -6328,6 +8548,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sélectionnez Autoriser Quand l'App est Active"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wähle „Beim Verwenden der App erlauben“"
           }
         }
       }
@@ -6346,6 +8572,12 @@
             "state" : "translated",
             "value" : "Sélectionnez votre écran de verrouillage"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wähle deinen Sperrbildschirm"
+          }
         }
       }
     },
@@ -6362,6 +8594,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vous pouvez sélectionner plus de photos dans les Paramètres"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du kannst in den Einstellungen mehr Fotos auswählen"
           }
         }
       }
@@ -6380,6 +8618,12 @@
             "state" : "translated",
             "value" : "Sélectionner une photo"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foto auswählen"
+          }
         }
       }
     },
@@ -6397,6 +8641,12 @@
             "state" : "translated",
             "value" : "Lieu sélectionné"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ausgewählter Ort"
+          }
         }
       }
     },
@@ -6413,6 +8663,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Envoyer le code"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Code senden"
           }
         }
       }
@@ -6432,6 +8688,12 @@
             "state" : "translated",
             "value" : "Envoyez ce code à votre partenaire"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schick diesen Code an deinen Partner"
+          }
         }
       }
     },
@@ -6448,6 +8710,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Voici mon code partenaire Love2Love: {code}"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hier ist mein Love2Love-Partnercode: {code}"
           }
         }
       }
@@ -6466,6 +8734,12 @@
             "state" : "translated",
             "value" : "Envoyer le code partenaire"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Partnercode senden"
+          }
         }
       }
     },
@@ -6482,6 +8756,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Paramètres"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einstellungen"
           }
         }
       }
@@ -6500,6 +8780,12 @@
             "state" : "translated",
             "value" : "Questions favorites partagées"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geteilte Lieblingsfragen"
+          }
         }
       }
     },
@@ -6516,6 +8802,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Questions du jours disponible"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tägliche Fragen sind da"
           }
         }
       }
@@ -6534,6 +8826,12 @@
             "state" : "translated",
             "value" : "Journal partagé"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gemeinsames Tagebuch"
+          }
         }
       }
     },
@@ -6550,6 +8848,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Abonnement Premium partagé"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geteiltes Premium-Abonnement"
           }
         }
       }
@@ -6568,6 +8872,12 @@
             "state" : "translated",
             "value" : "Continuer avec Apple"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mit Apple fortfahren"
+          }
         }
       }
     },
@@ -6584,6 +8894,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Simuler une connexion partenaire"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Partnerverbindung simulieren"
           }
         }
       }
@@ -6602,6 +8918,12 @@
             "state" : "translated",
             "value" : "❌ Simuler Révocation"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "❌ Widerruf simulieren"
+          }
         }
       }
     },
@@ -6618,6 +8940,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "🔥 Simuler Abonnement"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔥 Abo simulieren"
           }
         }
       }
@@ -6636,6 +8964,12 @@
             "state" : "translated",
             "value" : "Depuis"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seit"
+          }
         }
       }
     },
@@ -6652,6 +8986,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Passer"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Überspringen"
           }
         }
       }
@@ -6670,6 +9010,12 @@
             "state" : "translated",
             "value" : "Passer cette étape"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diesen Schritt überspringen"
+          }
         }
       }
     },
@@ -6686,6 +9032,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Commencer Gratuitement"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kostenlos ausprobieren"
           }
         }
       }
@@ -6704,6 +9056,12 @@
             "state" : "translated",
             "value" : "COMMENCER L'ESSAI"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TESTVERSION STARTEN"
+          }
         }
       }
     },
@@ -6720,6 +9078,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Étape %d sur %d"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schritt %d von %d"
           }
         }
       }
@@ -6738,6 +9102,12 @@
             "state" : "translated",
             "value" : "S'abonner"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abonnieren"
+          }
         }
       }
     },
@@ -6754,6 +9124,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Abonnez-vous pour accéder à toutes les questions"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abonniere, um alle Fragen freizuschalten"
           }
         }
       }
@@ -6772,6 +9148,12 @@
             "state" : "translated",
             "value" : "S'abonner"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abonnieren"
+          }
         }
       }
     },
@@ -6788,6 +9170,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ a annulé son abonnement Premium.\n\nVous n'avez maintenant accès qu'aux fonctionnalités gratuites."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ hat sein Premium-Abo gekündigt.\n\nDu hast jetzt nur noch Zugriff auf kostenlose Funktionen."
           }
         }
       }
@@ -6806,6 +9194,12 @@
             "state" : "translated",
             "value" : "Votre partenaire n'aura rien à payer"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dein Partner muss nichts zahlen"
+          }
         }
       }
     },
@@ -6822,6 +9216,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Choisissez votre plan"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wähle dein Abo"
           }
         }
       }
@@ -6840,6 +9240,12 @@
             "state" : "translated",
             "value" : "surprise"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Überraschung"
+          }
         }
       }
     },
@@ -6856,6 +9262,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Balayez vers le bas pour afficher votre écran de verrouillage puis maintenez votre doigt dessus."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wische nach unten, um deinen Sperrbildschirm anzuzeigen, dann tippe und halte gedrückt."
           }
         }
       }
@@ -6875,6 +9287,12 @@
             "state" : "translated",
             "value" : "Balayez vers le bas"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nach unten wischen"
+          }
         }
       }
     },
@@ -6891,6 +9309,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Synchronisation..."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wird synchronisiert..."
           }
         }
       }
@@ -6909,6 +9333,12 @@
             "state" : "translated",
             "value" : "Tapez le bouton Personnaliser"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tippe auf „Anpassen“"
+          }
         }
       }
     },
@@ -6925,6 +9355,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tapez sur"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tippe auf"
           }
         }
       }
@@ -6943,6 +9379,12 @@
             "state" : "translated",
             "value" : "Tapez le bouton +"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tippe auf den „+“-Button"
+          }
         }
       }
     },
@@ -6959,6 +9401,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tapez pour débloquer"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zum Entsperren tippen"
           }
         }
       }
@@ -6977,6 +9425,12 @@
             "state" : "translated",
             "value" : "Tapez sur moi pour débloquer une surprise"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tippe auf mich, um eine Überraschung freizuschalten"
+          }
         }
       }
     },
@@ -6993,6 +9447,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Conditions"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AGB"
           }
         }
       }
@@ -7011,6 +9471,12 @@
             "state" : "translated",
             "value" : "Termes et conditions"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nutzungsbedingungen"
+          }
         }
       }
     },
@@ -7027,6 +9493,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "⚡️ Actions Test"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⚡️ Test-Aktionen"
           }
         }
       }
@@ -7045,6 +9517,12 @@
             "state" : "translated",
             "value" : "Merci de nous"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Danke für"
+          }
         }
       }
     },
@@ -7061,6 +9539,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Merci de nous"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Danke für"
           }
         }
       }
@@ -7079,6 +9563,12 @@
             "state" : "translated",
             "value" : "Je pense à toi"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ich denke an dich"
+          }
         }
       }
     },
@@ -7095,6 +9585,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Temps ensemble"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gemeinsame Zeit"
           }
         }
       }
@@ -7113,6 +9609,12 @@
             "state" : "translated",
             "value" : "ensemble"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "zusammen"
+          }
         }
       }
     },
@@ -7129,6 +9631,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Erreur de sérialisation du token"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Token-Serialisierungsfehler"
           }
         }
       }
@@ -7147,6 +9655,12 @@
             "state" : "translated",
             "value" : "faire confiance."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "uns zu vertrauen."
+          }
         }
       }
     },
@@ -7163,6 +9677,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "faire confiance."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "uns zu vertrauen."
           }
         }
       }
@@ -7181,6 +9701,12 @@
             "state" : "translated",
             "value" : "Type :"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Typ:"
+          }
         }
       }
     },
@@ -7197,6 +9723,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "J'ai compris !"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alles klar!"
           }
         }
       }
@@ -7215,6 +9747,12 @@
             "state" : "translated",
             "value" : "Authentification non gérée"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nicht behandelte Authentifizierung"
+          }
         }
       }
     },
@@ -7231,6 +9769,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Inconnu"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unbekannt"
           }
         }
       }
@@ -7249,6 +9793,12 @@
             "state" : "translated",
             "value" : "Erreur d'authentification inconnue"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unbekannter Anmeldefehler"
+          }
         }
       }
     },
@@ -7265,6 +9815,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Questions illimitées"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unbegrenzte Fragen"
           }
         }
       }
@@ -7283,6 +9839,12 @@
             "state" : "translated",
             "value" : "Débloquer Premium"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Premium freischalten"
+          }
         }
       }
     },
@@ -7299,6 +9861,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Débloquer Premium"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Premium freischalten"
           }
         }
       }
@@ -7317,6 +9885,12 @@
             "state" : "translated",
             "value" : "Utilisateur non authentifié"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Benutzer nicht authentifiziert"
+          }
         }
       }
     },
@@ -7333,6 +9907,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Utilisateur non connecté"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Benutzer nicht verbunden"
           }
         }
       }
@@ -7351,6 +9931,12 @@
             "state" : "translated",
             "value" : "Partagé par : %@"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geteilt von: %@"
+          }
         }
       }
     },
@@ -7367,6 +9953,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Voir tout"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle anzeigen"
           }
         }
       }
@@ -7385,6 +9977,12 @@
             "state" : "translated",
             "value" : "Bienvenue"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Willkommen"
+          }
         }
       }
     },
@@ -7401,6 +9999,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quand l'app est utilisée"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beim Verwenden der App"
           }
         }
       }
@@ -7419,6 +10023,12 @@
             "state" : "translated",
             "value" : "Complet"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fertig"
+          }
         }
       }
     },
@@ -7435,6 +10045,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Compte à rebours"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Countdown"
           }
         }
       }
@@ -7453,6 +10069,12 @@
             "state" : "translated",
             "value" : "-- jours"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "-- Tage"
+          }
         }
       }
     },
@@ -7466,6 +10088,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "-- km"
+          }
+        },
+        "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "-- km"
@@ -7487,6 +10115,12 @@
             "state" : "translated",
             "value" : "-- m"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "-- m"
+          }
         }
       }
     },
@@ -7503,6 +10137,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "1 jour"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 Tag"
           }
         }
       }
@@ -7522,6 +10162,12 @@
             "state" : "translated",
             "value" : "jours"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tage"
+          }
         }
       }
     },
@@ -7538,6 +10184,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jours ensemble"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gemeinsame Tage"
           }
         }
       }
@@ -7556,6 +10208,12 @@
             "state" : "translated",
             "value" : "Notre distance"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unsere Entfernung"
+          }
         }
       }
     },
@@ -7572,6 +10230,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "distance"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entfernung"
           }
         }
       }
@@ -7590,6 +10254,12 @@
             "state" : "translated",
             "value" : "Distance"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entfernung"
+          }
         }
       }
     },
@@ -7606,6 +10276,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Grand widget"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Großes Widget"
           }
         }
       }
@@ -7624,6 +10300,12 @@
             "state" : "translated",
             "value" : "Petit widget"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kleines Widget"
+          }
         }
       }
     },
@@ -7641,6 +10323,12 @@
             "state" : "translated",
             "value" : "ensemble"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "zusammen"
+          }
         }
       }
     },
@@ -7654,6 +10342,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Widgets"
+          }
+        },
+        "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Widgets"
@@ -7675,6 +10369,12 @@
             "state" : "translated",
             "value" : "Widgets disponibles"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Widgets verfügbar"
+          }
         }
       }
     },
@@ -7691,6 +10391,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Oui"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ja"
           }
         }
       }
@@ -7709,6 +10415,12 @@
             "state" : "translated",
             "value" : "Vous"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du"
+          }
         }
       }
     },
@@ -7725,6 +10437,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu me manques"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du vermisst mich"
           }
         }
       }
@@ -7743,6 +10461,12 @@
             "state" : "translated",
             "value" : "Suivez votre relation avec votre partenaire. Le grand widget nécessite un abonnement."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Behalte eure Beziehung im Blick. Das große Widget erfordert ein Abo."
+          }
         }
       }
     },
@@ -7759,6 +10483,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Affichez la distance qui vous sépare de votre partenaire."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zeigt die Entfernung zwischen dir und deinem Partner."
           }
         }
       }
@@ -7777,6 +10507,12 @@
             "state" : "translated",
             "value" : "Ce Widget nécessite la localisation activée des deux partenaires."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dieses Widget benötigt aktivierte Ortungsdienste bei beiden Partnern."
+          }
         }
       }
     },
@@ -7790,6 +10526,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Love2Love"
+          }
+        },
+        "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Love2Love"
@@ -7811,6 +10553,12 @@
             "state" : "translated",
             "value" : "Love2Love Distance"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Love2Love Entfernung"
+          }
         }
       }
     },
@@ -7827,6 +10575,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Distance Love2Love"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Love2Love Distanz"
           }
         }
       }
@@ -7845,6 +10599,12 @@
             "state" : "translated",
             "value" : "jours"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tage"
+          }
         }
       }
     },
@@ -7861,6 +10621,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Notre distance:"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unsere Entfernung:"
           }
         }
       }
@@ -7879,6 +10645,12 @@
             "state" : "translated",
             "value" : "de distance"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "entfernt"
+          }
         }
       }
     },
@@ -7895,6 +10667,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Activez votre localisation"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktiviere deinen Standort"
           }
         }
       }
@@ -7913,6 +10691,12 @@
             "state" : "translated",
             "value" : "Partenaire doit activer sa localisation"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dein Partner muss den Standort aktivieren"
+          }
         }
       }
     },
@@ -7930,6 +10714,12 @@
             "state" : "translated",
             "value" : "Activez vos localisations"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktiviere deine Ortungsdienste"
+          }
         }
       }
     },
@@ -7946,6 +10736,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Continuez et débloquez toutes les autres questions et catégories."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bleib dran und schalte alle weiteren Fragen und Kategorien frei"
           }
         }
       }

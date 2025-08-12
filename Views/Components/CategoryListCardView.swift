@@ -28,6 +28,9 @@ struct CategoryListCardView: View {
                          .font(.system(size: 20, weight: .bold))
                          .foregroundColor(.black)
                          .multilineTextAlignment(.leading)
+                         .lineLimit(nil)
+                         .fixedSize(horizontal: false, vertical: true)
+                         .frame(maxWidth: .infinity, alignment: .leading)
                      
                      // Sous-titre (original)
                      HStack(spacing: 4) {
@@ -35,6 +38,9 @@ struct CategoryListCardView: View {
                              .font(.system(size: 14))
                              .foregroundColor(.gray)
                              .multilineTextAlignment(.leading)
+                             .lineLimit(nil)
+                             .fixedSize(horizontal: false, vertical: true)
+                             .frame(maxWidth: .infinity, alignment: .leading)
                          
                          // Cadenas pour les catégories premium - emoji traditionnel
                          if category.isPremium && !(appState.currentUser?.isSubscribed ?? false) {

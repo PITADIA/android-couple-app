@@ -58,18 +58,7 @@ struct MainView: View {
                                     }
                                     .environmentObject(appState)
                                     
-                                    // Ajouter le sous-titre premium après la première catégorie (Toi et moi / en-couple)
-                                    if index == 0 {
-                                        if let subtitle = getPremiumCategoriesSubtitle() {
-                                            Text(subtitle)
-                                                .font(.caption)
-                                                .foregroundColor(.secondary)
-                                                .multilineTextAlignment(.center)
-                                                .padding(.horizontal, 20)
-                                                .padding(.top, 10)
-                                                .padding(.bottom, 10)
-                                        }
-                                    }
+                                    // Phrase supprimée - ne plus afficher le sous-titre premium dans la page principale
                                 }
                             }
                             .padding(.horizontal, 20)

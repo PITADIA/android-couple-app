@@ -22,15 +22,15 @@ struct DailyQuestionNotificationStepView: View {
             // Premier Spacer pour centrer le contenu
             Spacer()
             
-            // Image localisée selon la langue
-            Image(LocalizationService.localizedImageName(frenchImage: "mimarouf", defaultImage: "aroufmima"))
+            // Image localisée selon la langue (FR/EN existants + DE ajouté)
+            Image(LocalizationService.localizedImageName(frenchImage: "mimarouf", defaultImage: "aroufmima", germanImage: "mimallemand"))
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(maxWidth: .infinity, maxHeight: 500)
                 .cornerRadius(30)
                 .padding(.horizontal, 30)
                 .onAppear {
-                    let selectedImage = LocalizationService.localizedImageName(frenchImage: "mimarouf", defaultImage: "aroufmima")
+                    let selectedImage = LocalizationService.localizedImageName(frenchImage: "mimarouf", defaultImage: "aroufmima", germanImage: "mimallemand")
                     print("🖼️ DailyQuestionNotificationStepView: Vue apparue - Affichage de l'image: \(selectedImage)")
                     print("🖼️ DailyQuestionNotificationStepView: Titre de la page: \"daily_question_onboarding_title\"")
                 }

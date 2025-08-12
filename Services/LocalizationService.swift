@@ -150,6 +150,30 @@ class LocalizationService {
             return defaultImage
         }
     }
+
+    /// Retourne le nom de l'image localisée avec support spécifique pour l'allemand
+    /// - Parameters:
+    ///   - frenchImage: nom de l'image en français
+    ///   - defaultImage: nom de l'image par défaut (anglais et autres)
+    ///   - germanImage: nom de l'image pour l'allemand
+    /// - Returns: le nom d'image correspondant à la langue système
+    static func localizedImageName(frenchImage: String, defaultImage: String, germanImage: String) -> String {
+        let languageCode = Locale.current.language.languageCode?.identifier ?? "en"
+
+        if lastLoggedLanguage != languageCode {
+            print("🖼️ LocalizationService: Langue système détectée: \(languageCode)")
+            lastLoggedLanguage = languageCode
+        }
+
+        switch languageCode {
+        case "fr":
+            return frenchImage
+        case "de":
+            return germanImage
+        default:
+            return defaultImage
+        }
+    }
 }
 
 // MARK: - Extension pour Question

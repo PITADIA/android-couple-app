@@ -16,6 +16,12 @@
             "state" : "translated",
             "value" : "As-tu l'impression que tu peux être complètement honnête avec moi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hast du das Gefühl, dass du komplett ehrlich mit mir sein kannst?"
+          }
         }
       }
     },
@@ -32,6 +38,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il quelque chose que tu aimerais faire en couple et que nous n'avons pas encore fait ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es etwas, das du gern als Paar mit mir machen würdest, was wir noch nicht gemacht haben?"
           }
         }
       }
@@ -50,6 +62,12 @@
             "state" : "translated",
             "value" : "Y a-t-il un sujet dont tu penses que nous ne parlons pas assez ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es ein Thema, über das wir deiner Meinung nach zu wenig reden?"
+          }
         }
       }
     },
@@ -66,6 +84,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "As-tu l'impression que nous évoluons ensemble ou que nous nous éloignons ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hast du das Gefühl, dass wir zusammen wachsen oder uns eher voneinander entfernen?"
           }
         }
       }
@@ -84,6 +108,12 @@
             "state" : "translated",
             "value" : "Quelles peurs ressens-tu quand tu penses à notre avenir ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Ängste hast du, wenn du an unsere Zukunft denkst?"
+          }
         }
       }
     },
@@ -100,6 +130,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Est-ce que tu te sens vraiment écouté(e) et compris(e) dans notre relation ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fühlst du dich in unserer Beziehung wirklich gehört und verstanden?"
           }
         }
       }
@@ -118,6 +154,12 @@
             "state" : "translated",
             "value" : "Quel genre de mots ou gestes de ma part te rendraient vraiment du bien ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Worte oder Gesten von mir würden dich wirklich trösten?"
+          }
         }
       }
     },
@@ -134,6 +176,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "As-tu l'impression qu'il manque quelque chose dans notre relation ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hast du das Gefühl, dass in unserer Beziehung etwas fehlt?"
           }
         }
       }
@@ -152,6 +200,12 @@
             "state" : "translated",
             "value" : "Quelle force ou trait de caractère chez moi t'inspire le plus ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Stärke oder welcher Charakterzug an mir inspiriert dich am meisten?"
+          }
         }
       }
     },
@@ -168,6 +222,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelles petites choses te font sentir profondément aimé(e) par moi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche kleinen Dinge geben dir das Gefühl, von mir richtig geliebt zu werden?"
           }
         }
       }
@@ -186,6 +246,12 @@
             "state" : "translated",
             "value" : "Y a-t-il quelque chose dont tu aurais besoin davantage de ma part sur le plan émotionnel ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es etwas, wovon du emotional mehr von mir bräuchtest?"
+          }
         }
       }
     },
@@ -202,6 +268,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle est ta plus grande peur pour notre couple ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was ist deine größte Angst für unsere Beziehung?"
           }
         }
       }
@@ -220,6 +292,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce que tu apprécies dans notre façon de communiquer ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was schätzt du an unserer Art zu kommunizieren?"
+          }
         }
       }
     },
@@ -236,6 +314,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tu pouvais revivre un moment avec moi, lequel choisirais-tu ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du einen Moment mit mir noch mal erleben könntest, welchen würdest du wählen?"
           }
         }
       }
@@ -254,6 +338,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce qui te rend fier(ère) de nous ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Worauf bist du bei uns stolz?"
+          }
         }
       }
     },
@@ -270,6 +360,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle est une chose que tu hésites à me dire à propos de ta famille ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es etwas über deine Familie, das du mir zu erzählen zögerst?"
           }
         }
       }
@@ -288,6 +384,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce que tu aimerais améliorer dans notre relation ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was würdest du in unserer Beziehung gern verbessern?"
+          }
         }
       }
     },
@@ -304,6 +406,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'est-ce que tu ressens quand on se prend dans les bras ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was fühlst du, wenn wir uns in den Arm nehmen?"
           }
         }
       }
@@ -322,6 +430,12 @@
             "state" : "translated",
             "value" : "Y a-t-il une habitude que j'ai et que tu trouves adorable ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es eine Angewohnheit von mir, die du total süß findest?"
+          }
         }
       }
     },
@@ -338,6 +452,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quand as-tu su que tu étais amoureux(se) ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wann wusstest du, dass du verliebt bist?"
           }
         }
       }
@@ -356,6 +476,12 @@
             "state" : "translated",
             "value" : "Si on écrivait un livre sur notre histoire, quel serait le titre ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn wir ein Buch über unsere Geschichte schreiben würden, wie wäre der Titel?"
+          }
         }
       }
     },
@@ -372,6 +498,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle chanson te fait penser à nous ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcher Song lässt dich an uns denken?"
           }
         }
       }
@@ -390,6 +522,12 @@
             "state" : "translated",
             "value" : "Penses-tu que nous soutenons mutuellement nos rêves ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denkst du, dass wir die Träume des anderen gegenseitig unterstützen?"
+          }
         }
       }
     },
@@ -406,6 +544,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quel petit geste de ma part te touche particulièrement ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche kleine Geste von mir berührt dich am meisten?"
           }
         }
       }
@@ -424,6 +568,12 @@
             "state" : "translated",
             "value" : "Quelle est ta définition d'un couple heureux ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was ist deine Definition von einem glücklichen Paar?"
+          }
         }
       }
     },
@@ -440,6 +590,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "As-tu l'impression qu'on s'amuse assez ensemble ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hast du das Gefühl, dass wir genug Spaß zusammen haben?"
           }
         }
       }
@@ -458,6 +614,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce que notre couple t'a appris sur toi-même ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was hat dir unsere Beziehung über dich selbst beigebracht?"
+          }
         }
       }
     },
@@ -474,6 +636,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "As-tu un fantasme amoureux ou romantique que tu aimerais partager avec moi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hast du eine romantische Fantasie, die du mit mir teilen möchtest?"
           }
         }
       }
@@ -492,6 +660,12 @@
             "state" : "translated",
             "value" : "Y a-t-il une partie de ton passé que tu as peur de partager avec moi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es einen Teil deiner Vergangenheit, den du dich nicht traust, mir zu erzählen?"
+          }
         }
       }
     },
@@ -508,6 +682,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Que penses-tu de la façon dont nous gérons notre vie sociale en couple ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was hältst du davon, wie wir unser soziales Leben als Paar managen?"
           }
         }
       }
@@ -526,6 +706,12 @@
             "state" : "translated",
             "value" : "Quelle est la plus belle preuve d'amour que tu aies reçue de ma part ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was ist der schönste Liebesbeweis, den du von mir bekommen hast?"
+          }
         }
       }
     },
@@ -542,6 +728,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quel est ton moment préféré de notre quotidien ensemble ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was ist dein Lieblingsmoment in unserem Alltag zusammen?"
           }
         }
       }
@@ -560,6 +752,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce que tu aimerais que je comprenne mieux à propos de toi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was möchtest du, dass ich besser über dich verstehe?"
+          }
         }
       }
     },
@@ -576,6 +774,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si on faisait une promesse aujourd'hui, laquelle serait la plus importante pour toi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn wir uns heute etwas versprechen würden, was wäre dir am wichtigsten?"
           }
         }
       }
@@ -594,6 +798,12 @@
             "state" : "translated",
             "value" : "As-tu parfois l'impression que je ne t'écoute pas ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hast du manchmal das Gefühl, dass ich dir nicht richtig zuhöre?"
+          }
         }
       }
     },
@@ -610,6 +820,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il quelque chose que tu aimerais faire en couple et que nous n'avons pas encore fait ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es etwas, das du gern als Paar mit mir machen würdest, was wir noch nicht gemacht haben?"
           }
         }
       }
@@ -628,6 +844,12 @@
             "state" : "translated",
             "value" : "Quel est le plus beau compliment que tu aies reçu de ma part ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was ist das schönste Kompliment, das du von mir bekommen hast?"
+          }
         }
       }
     },
@@ -644,6 +866,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tu devais me décrire à un inconnu, que dirais-tu ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie würdest du mich einem Fremden beschreiben?"
           }
         }
       }
@@ -662,6 +890,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce que tu aimerais qu'on essaie ensemble pour sortir de la routine ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was würdest du gern mit mir ausprobieren, um aus der Routine auszubrechen?"
+          }
         }
       }
     },
@@ -678,6 +912,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il un moment difficile qu'on a traversé ensemble dont tu es fier(ère) ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es einen schwierigen Moment, den wir zusammen gemeistert haben, auf den du stolz bist?"
           }
         }
       }
@@ -696,6 +936,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce que tu trouves le plus beau dans notre histoire ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was findest du am schönsten an unserer Geschichte?"
+          }
         }
       }
     },
@@ -712,6 +958,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle est une chose dont tu penses que nous ne parlons pas assez ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was ist etwas, über das wir deiner Meinung nach zu wenig reden?"
           }
         }
       }
@@ -730,6 +982,12 @@
             "state" : "translated",
             "value" : "As-tu l'impression que nous avons suffisamment de conversations profondes ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hast du das Gefühl, dass wir genug tiefgehende Gespräche führen?"
+          }
         }
       }
     },
@@ -746,6 +1004,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il quelque chose que tu as peur de perdre en étant dans cette relation ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es etwas, das du durch diese Beziehung zu verlieren fürchtest?"
           }
         }
       }
@@ -764,6 +1028,12 @@
             "state" : "translated",
             "value" : "Quelle est une chose sur laquelle tu penses que nous devons travailler en tant que couple ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Woran sollten wir deiner Meinung nach als Paar arbeiten?"
+          }
         }
       }
     },
@@ -780,6 +1050,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle nouvelle habitude de couple aimerais-tu qu'on instaure ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche neue Paar-Gewohnheit würdest du gern mit mir einführen?"
           }
         }
       }
@@ -798,6 +1074,12 @@
             "state" : "translated",
             "value" : "Y a-t-il quelque chose que tu aimerais oser me dire mais que tu n'as jamais osé ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es etwas, das du mir gern sagen würdest, dich aber nie getraut hast?"
+          }
         }
       }
     },
@@ -814,6 +1096,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "As-tu l'impression que notre relation est équilibrée entre ce que l'on donne et ce que l'on reçoit ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hast du das Gefühl, dass unsere Beziehung zwischen Geben und Nehmen im Gleichgewicht ist?"
           }
         }
       }
@@ -832,6 +1120,12 @@
             "state" : "translated",
             "value" : "Quelle est une chose que tu aimerais que je change chez moi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was würdest du dir wünschen, dass ich an mir ändere?"
+          }
         }
       }
     },
@@ -848,6 +1142,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quel geste ou mot te redonne confiance en notre amour ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Geste oder welches Wort gibt dir wieder Vertrauen in unsere Liebe?"
           }
         }
       }
@@ -866,6 +1166,12 @@
             "state" : "translated",
             "value" : "Y a-t-il un film ou une série qui te fait penser à notre relation ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es einen Film oder eine Serie, die dich an unsere Beziehung erinnert?"
+          }
         }
       }
     },
@@ -882,6 +1188,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'aimerais-tu qu'on construise ensemble dans l'année à venir ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was würdest du gern im kommenden Jahr mit mir aufbauen?"
           }
         }
       }
@@ -900,6 +1212,12 @@
             "state" : "translated",
             "value" : "Est-ce qu'il y a quelque chose que je fais qui te fait te sentir non aimé(e) ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es etwas, das ich tue, wodurch du dich ungeliebt fühlst?"
+          }
         }
       }
     },
@@ -916,6 +1234,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelles sont les petites choses du quotidien qui nourrissent notre amour ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche kleinen Dinge im Alltag nähren unsere Liebe?"
           }
         }
       }
@@ -934,6 +1258,12 @@
             "state" : "translated",
             "value" : "Que ressens-tu à propos de notre avenir ensemble ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie fühlst du dich, wenn du an unsere gemeinsame Zukunft denkst?"
+          }
         }
       }
     },
@@ -950,6 +1280,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'aimerais-tu que je comprenne sans que tu aies besoin de le dire ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was soll ich besser verstehen, ohne dass du es aussprechen musst?"
           }
         }
       }
@@ -968,6 +1304,12 @@
             "state" : "translated",
             "value" : "Quelle est ta vision d'un couple épanoui sur le long terme ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie stellst du dir ein erfülltes Langzeit-Paar vor?"
+          }
         }
       }
     },
@@ -984,6 +1326,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle question aimerais-tu que je te pose plus souvent ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Frage würdest du dir von mir öfter wünschen?"
           }
         }
       }
@@ -1002,6 +1350,12 @@
             "state" : "translated",
             "value" : "Quel est le plus beau cadeau que tu aimerais recevoir de moi (non matériel) ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was wäre das schönste Geschenk von mir (nicht materiell), das du dir wünschst?"
+          }
         }
       }
     },
@@ -1018,6 +1372,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si on avait une journée entière sans aucune contrainte, que voudrais-tu qu'on fasse ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn wir einen ganzen Tag ohne Verpflichtungen hätten, was würdest du gern mit mir machen?"
           }
         }
       }
@@ -1036,6 +1396,12 @@
             "state" : "translated",
             "value" : "Comment sais-tu que je t'aime, même quand je ne le dis pas ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Woran merkst du, dass ich dich liebe, auch wenn ich es nicht sage?"
+          }
         }
       }
     },
@@ -1052,6 +1418,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle est la mauvaise habitude que j'ai et qui affecte notre relation ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche schlechte Angewohnheit von mir beeinflusst unsere Beziehung?"
           }
         }
       }
@@ -1070,6 +1442,12 @@
             "state" : "translated",
             "value" : "Est-ce qu'il t'arrive de sentir que tu ne peux pas être toi-même avec moi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hast du manchmal das Gefühl, bei mir nicht ganz du selbst sein zu können?"
+          }
         }
       }
     },
@@ -1086,6 +1464,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il une façon dont je pourrais mieux te soutenir dans tes objectifs personnels ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es eine Art, wie ich dich bei deinen persönlichen Zielen besser unterstützen kann?"
           }
         }
       }
@@ -1104,6 +1488,12 @@
             "state" : "translated",
             "value" : "Qu'aimes-tu dans la façon dont on prend soin l'un de l'autre ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was liebst du daran, wie wir füreinander da sind?"
+          }
         }
       }
     },
@@ -1120,6 +1510,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quel est le plus beau moment romantique qu'on ait vécu ensemble ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was war der schönste romantische Moment, den wir zusammen erlebt haben?"
           }
         }
       }
@@ -1138,6 +1534,12 @@
             "state" : "translated",
             "value" : "Comment pourrais-je te faire sentir encore plus aimé(e) ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie könnte ich dir das Gefühl geben, noch mehr geliebt zu werden?"
+          }
         }
       }
     },
@@ -1154,6 +1556,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Que ressens-tu par rapport à l'état actuel de notre relation ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie fühlst du dich mit dem aktuellen Stand unserer Beziehung?"
           }
         }
       }
@@ -1172,6 +1580,12 @@
             "state" : "translated",
             "value" : "À quel point te sens-tu aimé(e) et apprécié(e) de ma part ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie geliebt und wertgeschätzt fühlst du dich wirklich von mir?"
+          }
         }
       }
     },
@@ -1188,6 +1602,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelles sont tes attentes envers moi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was erwartest du von mir?"
           }
         }
       }
@@ -1206,6 +1626,12 @@
             "state" : "translated",
             "value" : "Qu'aimes-tu le plus dans notre relation ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was liebst du am meisten an unserer Beziehung?"
+          }
         }
       }
     },
@@ -1222,6 +1648,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelles activités préfères-tu faire avec moi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Aktivitäten machst du am liebsten mit mir?"
           }
         }
       }
@@ -1240,6 +1672,12 @@
             "state" : "translated",
             "value" : "De manière réaliste, comment vois-tu notre avenir ensemble ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Realistisch gesehen: Wie siehst du unsere gemeinsame Zukunft?"
+          }
         }
       }
     },
@@ -1256,6 +1694,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quels sont tes rêves et objectifs pour nous en tant que couple ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was sind deine Träume und Ziele für uns als Paar?"
           }
         }
       }
@@ -1274,6 +1718,12 @@
             "state" : "translated",
             "value" : "Qu'aimerais-tu que nous fassions plus souvent ensemble ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was würdest du gern öfter mit mir machen?"
+          }
         }
       }
     },
@@ -1290,6 +1740,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Selon toi, quelle est notre plus grande force en tant que couple ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was ist deiner Meinung nach unsere größte Stärke als Paar?"
           }
         }
       }
@@ -1308,6 +1764,12 @@
             "state" : "translated",
             "value" : "Quel est ton plus beau souvenir de notre premier date ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was ist deine schönste Erinnerung an unser erstes Date?"
+          }
         }
       }
     },
@@ -1324,6 +1786,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tu devais définir notre couple en trois mots, lesquels choisirais-tu ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du unsere Beziehung in drei Wörtern beschreiben müsstest, welche wären das?"
           }
         }
       }
@@ -1342,6 +1810,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce qui rend notre relation unique à tes yeux ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was macht unsere Beziehung in deinen Augen einzigartig?"
+          }
         }
       }
     },
@@ -1358,6 +1832,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il un voyage qu'on n'a pas encore fait mais que tu rêves de faire avec moi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es eine Reise, die wir noch nicht gemacht haben, von der du mit mir träumst?"
           }
         }
       }
@@ -1376,6 +1856,12 @@
             "state" : "translated",
             "value" : "Comment passerais-tu un week-end idéal avec moi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie würdest du ein perfektes Wochenende mit mir verbringen?"
+          }
         }
       }
     },
@@ -1392,6 +1878,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Penses-tu que l'infidélité est toujours un point de non-retour, peu importe les circonstances ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Findest du, dass Untreue immer ein Punkt ohne Rückkehr ist egal unter welchen Umständen?"
           }
         }
       }
@@ -1410,6 +1902,12 @@
             "state" : "translated",
             "value" : "Quelle partie de moi trouves-tu la plus belle (physiquement ou intérieurement) ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welchen Teil von mir findest du am schönsten (äußerlich oder innerlich)?"
+          }
         }
       }
     },
@@ -1426,6 +1924,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il un geste de ma part que tu aimerais qu'on rende un peu plus régulier ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es eine Geste von mir, die du gern zu einem kleinen Ritual zwischen uns machen würdest?"
           }
         }
       }
@@ -1444,6 +1948,12 @@
             "state" : "translated",
             "value" : "Que veux-tu protéger à tout prix dans notre relation ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was willst du in unserer Beziehung um jeden Preis schützen?"
+          }
         }
       }
     },
@@ -1460,6 +1970,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle place prend l'humour dans notre couple selon toi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Rolle spielt Humor in unserer Beziehung für dich?"
           }
         }
       }
@@ -1478,6 +1994,12 @@
             "state" : "translated",
             "value" : "Qui est le plus enclin à faire confiance, toi ou moi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wer vertraut schneller, du oder ich?"
+          }
         }
       }
     },
@@ -1494,6 +2016,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'est-ce qui te rend le plus heureux(se) quand on est ensemble ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was macht dich am glücklichsten, wenn wir zusammen sind?"
           }
         }
       }
@@ -1512,6 +2040,12 @@
             "state" : "translated",
             "value" : "Quelle partie de notre quotidien te semble magique, même si elle est simple ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcher Teil unseres Alltags wirkt für dich magisch, auch wenn er ganz simpel ist?"
+          }
         }
       }
     },
@@ -1528,6 +2062,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si notre amour était une couleur, laquelle serait-elle et pourquoi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn unsere Liebe eine Farbe wäre, welche wäre es und warum?"
           }
         }
       }
@@ -1546,6 +2086,12 @@
             "state" : "translated",
             "value" : "Qui est le plus susceptible d'être jaloux(se), toi ou moi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wer wird eher eifersüchtig, du oder ich?"
+          }
         }
       }
     },
@@ -1562,6 +2108,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quel conseil donnérais-tu à un couple qui débute, à partir de notre expérience ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welchen Tipp würdest du einem frisch gestarteten Paar geben – basierend auf unserer Erfahrung?"
           }
         }
       }
@@ -1580,6 +2132,12 @@
             "state" : "translated",
             "value" : "Y a-t-il un moment avec moi que tu aimerais graver pour toujours ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es einen Moment mit mir, den du für immer festhalten würdest?"
+          }
         }
       }
     },
@@ -1596,6 +2154,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle est la première chose que tu as trouvée attirante chez moi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was war das Erste, das du an mir attraktiv fandest?"
           }
         }
       }
@@ -1614,6 +2178,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce que notre couple a surmonté et dont tu es fier(ère) ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was hat unsere Beziehung überwunden, worauf du stolz bist?"
+          }
         }
       }
     },
@@ -1630,6 +2200,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comment fais-tu pour cacher ta colère quand tu ne veux pas la montrer ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie versteckst du deine Wut, wenn du sie nicht zeigen willst?"
           }
         }
       }
@@ -1648,6 +2224,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce que tu ressens quand tu penses à moi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was fühlst du, wenn du an mich denkst?"
+          }
         }
       }
     },
@@ -1664,6 +2246,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'est-ce que tu aimerais apprendre de moi ou avec moi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was würdest du gern von mir oder mit mir lernen?"
           }
         }
       }
@@ -1682,6 +2270,12 @@
             "state" : "translated",
             "value" : "Quelle est la petite chose que tu fais pour moi sans que je m'en rende compte ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche kleine Sache machst du für mich, ohne dass ich es mitbekomme?"
+          }
         }
       }
     },
@@ -1698,6 +2292,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Me trouves-tu assez reconnaissant(e) ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Findest du, ich zeige dir genug Dankbarkeit?"
           }
         }
       }
@@ -1716,6 +2316,12 @@
             "state" : "translated",
             "value" : "Qui prend le plus de risques entre toi et moi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wer von uns beiden geht mehr Risiken ein – du oder ich?"
+          }
         }
       }
     },
@@ -1732,6 +2338,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelles sont les valeurs les plus importantes pour toi dans un couple ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Werte sind dir in einer Beziehung am wichtigsten?"
           }
         }
       }
@@ -1750,6 +2362,12 @@
             "state" : "translated",
             "value" : "Si un film était réalisé sur ta vie, quel acteur choisirais-tu pour jouer ton rôle ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn ein Film über dein Leben gedreht würde, welche Schauspielerin oder welcher Schauspieler sollte dich spielen?"
+          }
         }
       }
     },
@@ -1766,6 +2384,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aimerais-tu que je sois un peu plus à ton écoute ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hättest du gern, dass ich dir noch ein bisschen mehr zuhöre?"
           }
         }
       }
@@ -1784,6 +2408,12 @@
             "state" : "translated",
             "value" : "Comment te sens-tu lorsque nous sommes en désaccord ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie fühlst du dich, wenn wir unterschiedlicher Meinung sind?"
+          }
         }
       }
     },
@@ -1800,6 +2430,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il quelque chose de ton passé amoureux qui influence encore notre relation ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es etwas aus deiner Liebesvergangenheit, das unsere Beziehung noch beeinflusst?"
           }
         }
       }
@@ -1818,6 +2454,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce que tu n'aimes pas faire mais que tu fais pour moi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was tust du nicht gern, machst es aber mir zuliebe?"
+          }
         }
       }
     },
@@ -1834,6 +2476,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Te considères-tu comme optimiste ou pessimiste ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siehst du dich eher als optimistisch oder pessimistisch?"
           }
         }
       }
@@ -1852,6 +2500,12 @@
             "state" : "translated",
             "value" : "Crois-tu que tout arrive pour une raison ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Glaubst du, dass alles aus einem bestimmten Grund passiert?"
+          }
         }
       }
     },
@@ -1868,6 +2522,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle est une chose que tu as peur de me dire ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was hast du Angst, mir zu sagen?"
           }
         }
       }
@@ -1886,6 +2546,12 @@
             "state" : "translated",
             "value" : "As-tu des complexes physiques qui affectent ta confiance en toi dans notre relation ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hast du körperliche Unsicherheiten, die dein Selbstvertrauen in unserer Beziehung beeinflussen?"
+          }
         }
       }
     },
@@ -1902,6 +2568,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il des moments dans notre relation où tu te sens incertain(e) ou pas sûr(e) de ce que je ressens pour toi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es Momente in unserer Beziehung, in denen du unsicher bist, was ich für dich empfinde?"
           }
         }
       }
@@ -1920,6 +2592,12 @@
             "state" : "translated",
             "value" : "T'est-il déjà arrivé de te sentir pas assez bien pour moi ou de penser que je méritais mieux ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hattest du schon mal das Gefühl, nicht gut genug für mich zu sein oder dass ich was Besseres verdient hätte?"
+          }
         }
       }
     },
@@ -1936,6 +2614,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'est-ce qui t'a le plus surpris dans notre relation ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was hat dich an unserer Beziehung am meisten überrascht?"
           }
         }
       }
@@ -1954,6 +2638,12 @@
             "state" : "translated",
             "value" : "As-tu peur que nos différences deviennent un problème à l'avenir ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hast du Angst, dass unsere Unterschiede später mal zum Problem werden könnten?"
+          }
         }
       }
     },
@@ -1970,6 +2660,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'est-ce que tu aimerais que je comprenne à propos de ta manière d'aimer, profondément ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was würdest du dir wünschen, dass ich über deine Art zu lieben wirklich verstehe?"
           }
         }
       }
@@ -1988,6 +2684,12 @@
             "state" : "translated",
             "value" : "Quel rôle aimerais-tu avoir dans notre vie de couple dans 10 ans ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Rolle hättest du in 10 Jahren gern in unserer Beziehung?"
+          }
         }
       }
     },
@@ -2004,6 +2706,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aimes-tu mon love language ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Magst du meine Love Language?"
           }
         }
       }
@@ -2022,6 +2730,12 @@
             "state" : "translated",
             "value" : "Y a-t-il un secret ou un non-dit que tu voudrais un jour me révéler ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es ein Geheimnis oder einen unausgesprochenen Punkt, den du mir irgendwann erzählen möchtest?"
+          }
         }
       }
     },
@@ -2038,6 +2752,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tu savais tout ce que tu sais aujourd'hui, me choisirait-tu encore ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du alles wüsstest, was du heute weißt, würdest du mich wieder wählen?"
           }
         }
       }
@@ -2056,6 +2776,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce que tu ressens lorsque je ne vais pas bien ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was fühlst du, wenn es mir nicht gut geht?"
+          }
         }
       }
     },
@@ -2072,6 +2798,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il un moment où tu ne t'es pas senti(e) écouté(e) par moi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gab es einen Moment, in dem du dich von mir nicht gehört gefühlt hast?"
           }
         }
       }
@@ -2090,6 +2822,12 @@
             "state" : "translated",
             "value" : "Quel est le plus grand malentendu qu'on a eu selon toi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was war deiner Meinung nach unser größtes Missverständnis?"
+          }
         }
       }
     },
@@ -2106,6 +2844,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'est-ce que tu as appris sur l'amour grâce à moi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was hast du durch mich über Liebe gelernt?"
           }
         }
       }
@@ -2124,6 +2868,12 @@
             "state" : "translated",
             "value" : "Quelle blessure du passé aimerais-tu que je connaisse mieux pour te comprendre ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche alte Wunde würdest du dir wünschen, dass ich besser kenne, um dich zu verstehen?"
+          }
         }
       }
     },
@@ -2140,6 +2890,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'est-ce que tu ressens lorsque je réussis ou que j'ai du succès ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was fühlst du, wenn ich Erfolg habe oder etwas schaffe?"
           }
         }
       }
@@ -2158,6 +2914,12 @@
             "state" : "translated",
             "value" : "Quelle est l'une des expériences les plus difficiles que tu aies traversées ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was ist eine der schwierigsten Erfahrungen, die du gemacht hast?"
+          }
         }
       }
     },
@@ -2174,6 +2936,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il des sujets que tu évites volontairement avec moi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es Themen, die du mit mir absichtlich vermeidest?"
           }
         }
       }
@@ -2192,6 +2960,12 @@
             "state" : "translated",
             "value" : "Comment ton passé a-t-il influencé ta manière de communiquer avec moi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie hat deine Vergangenheit deine Art beeinflusst, mit mir zu kommunizieren?"
+          }
         }
       }
     },
@@ -2208,6 +2982,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quel a été le plus grand changement dans ta vie depuis qu'on est ensemble ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was war die größte Veränderung in deinem Leben, seit wir zusammen sind?"
           }
         }
       }
@@ -2226,6 +3006,12 @@
             "state" : "translated",
             "value" : "Y a-t-il des choses précises sur lesquelles tu aimerais que je sois attentif(ve) à cause de ce que tu as vécu ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es bestimmte Dinge, auf die ich wegen deiner Erfahrungen besonders achten soll?"
+          }
         }
       }
     },
@@ -2242,6 +3028,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comment définirais-tu l'équilibre entre donner et recevoir dans notre relation ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie würdest du die Balance zwischen Geben und Nehmen in unserer Beziehung beschreiben?"
           }
         }
       }
@@ -2260,6 +3052,12 @@
             "state" : "translated",
             "value" : "T'est-il déjà arrivé de ne pas réussir à me faire pleinement confiance à cause de ton passé ? Penses-tu qu'on pourrait en parler ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kam es vor, dass du mir wegen deiner Vergangenheit nicht voll vertrauen konntest? Meinst du, wir könnten darüber reden?"
+          }
         }
       }
     },
@@ -2276,6 +3074,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'est-ce que tu veux préserver coûte que coûte entre nous ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was willst du zwischen uns um jeden Preis bewahren?"
           }
         }
       }
@@ -2294,6 +3098,12 @@
             "state" : "translated",
             "value" : "Quel est ton plus grand espoir pour notre futur ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was ist deine größte Hoffnung für unsere Zukunft?"
+          }
         }
       }
     },
@@ -2310,6 +3120,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'est-ce qui te fait douter parfois de nous ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was bringt dich manchmal daran zu zweifeln, dass wir funktionieren?"
           }
         }
       }
@@ -2328,6 +3144,12 @@
             "state" : "translated",
             "value" : "Quelle est la chose que tu fais uniquement avec moi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was machst du nur mit mir?"
+          }
         }
       }
     },
@@ -2344,6 +3166,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quel est le plus beau sacrifice que tu aies fait par amour pour moi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was ist das schönste Opfer, das du aus Liebe zu mir gebracht hast?"
           }
         }
       }
@@ -2362,6 +3190,12 @@
             "state" : "translated",
             "value" : "Y a-t-il une partie de ta personnalité que tu caches par peur que je ne t'aime plus ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es einen Teil deiner Persönlichkeit, den du versteckst aus Angst, ich würde dich dann nicht mehr lieben?"
+          }
         }
       }
     },
@@ -2378,6 +3212,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle est l'émotion que tu as le plus de mal à partager avec moi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Emotion fällt dir am schwersten, mit mir zu teilen?"
           }
         }
       }
@@ -2396,6 +3236,12 @@
             "state" : "translated",
             "value" : "Comment ton éducation a-t-elle influencé ta vision de l'amour et des relations ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie hat deine Erziehung dein Bild von Liebe und Beziehungen geprägt?"
+          }
         }
       }
     },
@@ -2412,6 +3258,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle importance accordes-tu à l'honnêteté et à la communication dans une relation ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie wichtig sind dir Ehrlichkeit und Kommunikation in einer Beziehung?"
           }
         }
       }
@@ -2430,6 +3282,12 @@
             "state" : "translated",
             "value" : "Crois-tu au pardon dans une relation ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Glaubst du an Vergebung in einer Beziehung?"
+          }
         }
       }
     },
@@ -2446,6 +3304,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'est-ce qui te bloque parfois dans notre communication ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was hält dich manchmal in unserer Kommunikation zurück?"
           }
         }
       }
@@ -2464,6 +3328,12 @@
             "state" : "translated",
             "value" : "Penses-tu qu'il est sain d'avoir des centres d'intérêt séparés dans un couple ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Findest du es gesund, in einer Beziehung auch eigene Interessen zu haben?"
+          }
         }
       }
     },
@@ -2480,6 +3350,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Penses-tu que nous devrions passé un peu plus de temps séparé pour mieux se manquer ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Findest du, wir sollten ein bisschen mehr Zeit getrennt verbringen, um uns wieder mehr zu vermissen?"
           }
         }
       }
@@ -2498,6 +3374,12 @@
             "state" : "translated",
             "value" : "Où vois-tu notre relation dans cinq ans ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wo siehst du unsere Beziehung in fünf Jahren?"
+          }
         }
       }
     },
@@ -2514,6 +3396,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il une vérité difficile que tu aimerais entendre de moi, même si elle fait mal ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es eine harte Wahrheit, die du von mir hören willst – auch wenn sie wehtut?"
           }
         }
       }
@@ -2532,6 +3420,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce que tu ne m'as jamais dit parce que tu ne savais pas comment le formuler ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was hast du mir noch nie gesagt, weil du nicht wusstest, wie du es formulieren sollst?"
+          }
         }
       }
     },
@@ -2548,6 +3442,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle est une chose que tu aimerais que l'on fasse plus souvent en tant que couple ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was würdest du gern öfter mit mir als Paar machen?"
           }
         }
       }
@@ -2566,6 +3466,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce que tu apprécies dans notre relation mais que tu ne m'as jamais dit auparavant ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was schätzt du an unserer Beziehung, was du mir noch nie gesagt hast?"
+          }
         }
       }
     },
@@ -2582,6 +3488,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il des qualités chez toi que tu voudrais que je valide davantage ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es Eigenschaften an dir, die du dir wünschst, dass ich öfter anerkenne?"
           }
         }
       }
@@ -2600,6 +3512,12 @@
             "state" : "translated",
             "value" : "Quelle est la nouveauté que tu aimerais essayer dans notre relation ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was Neues würdest du gern in unserer Beziehung ausprobieren?"
+          }
         }
       }
     },
@@ -2616,6 +3534,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comment pourrions-nous mieux nous soutenir mutuellement dans nos objectifs personnels ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie könnten wir uns bei unseren persönlichen Zielen besser unterstützen?"
           }
         }
       }
@@ -2634,6 +3558,12 @@
             "state" : "translated",
             "value" : "Quelle serait une manière significative de célébrer les grandes étapes de notre relation ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie könnten wir die großen Meilensteine unserer Beziehung sinnvoll feiern?"
+          }
         }
       }
     },
@@ -2650,6 +3580,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il des mots que je dis qui te marquent plus que je ne le pense ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es Worte von mir, die dich stärker treffen, als ich denke?"
           }
         }
       }
@@ -2668,6 +3604,12 @@
             "state" : "translated",
             "value" : "Quelle est la chose la plus importante à dire mais qu'on ne dit pas assez souvent ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was ist das Wichtigste, das man sagen sollte, das wir aber nicht oft genug sagen?"
+          }
         }
       }
     },
@@ -2684,6 +3626,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle est une nouvelle façon dont nous pourrions exprimer notre amour et notre reconnaissance l'un envers l'autre ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche neue Art könnten wir finden, unsere Liebe und Wertschätzung füreinander zu zeigen?"
           }
         }
       }
@@ -2702,6 +3650,12 @@
             "state" : "translated",
             "value" : "Quelle est une chose que tu aimerais que je remarque plus souvent chez toi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was würdest du dir wünschen, dass ich bei dir öfter bemerke?"
+          }
         }
       }
     },
@@ -2718,6 +3672,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il un geste ou une phrase qui t'a blessé et dont on n'a jamais reparlé ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es eine Geste oder einen Satz, der dich verletzt hat und über den wir nie wieder geredet haben?"
           }
         }
       }
@@ -2736,6 +3696,12 @@
             "state" : "translated",
             "value" : "Quelle est une chanson qui te rappelle instantanément un moment spécial que nous avons partagé ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcher Song erinnert dich sofort an einen besonderen Moment von uns?"
+          }
         }
       }
     },
@@ -2752,6 +3718,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Que signifie pour toi la vulnérabilité dans une relation ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was bedeutet Verletzlichkeit für dich in einer Beziehung?"
           }
         }
       }
@@ -2770,6 +3742,12 @@
             "state" : "translated",
             "value" : "Si nous devions être enfermés dans un magasin pour une nuit, lequel choisirions-nous ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn wir für eine Nacht in einem Laden eingeschlossen wären – welchen würden wir wählen?"
+          }
         }
       }
     },
@@ -2786,6 +3764,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il quelque chose que tu regrettes de ne pas m'avoir dit plus tôt ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es etwas, das du bereust, mir nicht früher gesagt zu haben?"
           }
         }
       }
@@ -2804,6 +3788,12 @@
             "state" : "translated",
             "value" : "Comment te sens-tu quand tu n'as pas de nouvelles de moi pendant un moment ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie fühlst du dich, wenn du länger nichts von mir hörst?"
+          }
         }
       }
     },
@@ -2820,6 +3810,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle est une chose à laquelle tu penses souvent, mais que tu gardes pour toi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was beschäftigt dich oft, das du aber für dich behältst?"
           }
         }
       }
@@ -2838,6 +3834,12 @@
             "state" : "translated",
             "value" : "Comment veux-tu qu'on se soutienne mutuellement dans nos momens de faiblesses ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie wünschst du dir, dass wir uns in unseren schwachen Momenten gegenseitig unterstützen?"
+          }
         }
       }
     },
@@ -2854,6 +3856,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si je pouvais faire disparaître une peur ou un doute en toi, lequel ce serait ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn ich dir eine Angst oder einen Zweifel nehmen könnte, welcher wäre das?"
           }
         }
       }
@@ -2872,6 +3880,12 @@
             "state" : "translated",
             "value" : "Si nous devions coller une étiquette sur notre couple, elle dirait quoi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn wir unserer Beziehung ein Label geben müssten, was würde draufstehen?"
+          }
         }
       }
     },
@@ -2888,6 +3902,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quel aspect de ta personnalité aimerais-tu que j'accepte davantage ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welchen Aspekt deiner Persönlichkeit würdest du dir wünschen, dass ich mehr akzeptiere?"
           }
         }
       }
@@ -2906,6 +3926,12 @@
             "state" : "translated",
             "value" : "En quoi notre relation est-elle différente de celle de tes parents ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Worin unterscheidet sich unsere Beziehung von der deiner Eltern?"
+          }
         }
       }
     },
@@ -2922,6 +3948,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il quelque chose que tu ressens mais que tu ne veux pas m'imposer ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es etwas, das du fühlst, mir aber nicht zumuten willst?"
           }
         }
       }
@@ -2940,6 +3972,12 @@
             "state" : "translated",
             "value" : "En quoi penses-tu que nous nous équilibrons l'un l'autre ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie findest du, gleichen wir uns gegenseitig aus?"
+          }
         }
       }
     },
@@ -2956,6 +3994,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle est ta façon préférée de te détendre après une longue journée ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie entspannst du am liebsten nach einem langen Tag?"
           }
         }
       }
@@ -2974,6 +4018,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce qui t'aide à pardonner quand je te blesse ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was hilft dir zu vergeben, wenn ich dich verletzt habe?"
+          }
         }
       }
     },
@@ -2990,6 +4040,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si nous pouvions créer une nouvelle tradition romantique, laquelle serait-ce ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn wir eine neue romantische Tradition einführen könnten, welche wäre das?"
           }
         }
       }
@@ -3008,6 +4064,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce que tu aimes secrètement dans notre routine ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was liebst du insgeheim an unserer Routine?"
+          }
         }
       }
     },
@@ -3024,6 +4086,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il quelque chose que tu crains de me dire par peur de ma réaction ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es etwas, das du mir aus Angst vor meiner Reaktion nicht sagen willst?"
           }
         }
       }
@@ -3042,6 +4110,12 @@
             "state" : "translated",
             "value" : "Quelle est la chose que tu ne voudrais jamais que je banalise dans ta vie ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was in deinem Leben soll ich auf keinen Fall herunterspielen?"
+          }
         }
       }
     },
@@ -3058,6 +4132,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle est une bêtise qu'on devrait faire au moins une fois juste pour l'histoire ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche verrückte Sache sollten wir einmal nur für die Story machen?"
           }
         }
       }
@@ -3076,6 +4156,12 @@
             "state" : "translated",
             "value" : "Si on devait résumer notre histoire d'amour en trois émojis, lesquels choisirais-tu ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn wir unsere Liebesgeschichte in drei Emojis zusammenfassen müssten, welche würdest du wählen?"
+          }
         }
       }
     },
@@ -3092,6 +4178,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si on devait inventer un défi l'un pour l'autre, que proposerais-tu ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn wir uns gegenseitig eine Challenge ausdenken müssten, was würdest du vorschlagen?"
           }
         }
       }
@@ -3110,6 +4202,12 @@
             "state" : "translated",
             "value" : "Si on devait se faire des tatouages assortis, quel design choisirions-nous ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn wir uns passende Tattoos stechen lassen würden, welches Design würden wir nehmen?"
+          }
         }
       }
     },
@@ -3126,6 +4224,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si nous devions résumer notre histoire d'amour en une seule phrase, que dirait-elle ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn wir unsere Liebesgeschichte in einem Satz zusammenfassen müssten, wie würde er lauten?"
           }
         }
       }
@@ -3144,6 +4248,12 @@
             "state" : "translated",
             "value" : "Quel est le compliment que tu n'oublieras jamais de ma part ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welches Kompliment von mir wirst du nie vergessen?"
+          }
         }
       }
     },
@@ -3160,6 +4270,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si on créait un bocal à souvenirs, quelle serait la première chose qu'on écrirait sur un petit papier ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn wir ein Erinnerungs-Glas machen würden, was wäre das Erste, das wir auf einen kleinen Zettel schreiben?"
           }
         }
       }
@@ -3178,6 +4294,12 @@
             "state" : "translated",
             "value" : "Si on faisait une playlist pour un road trip, quelle serait la première chanson qu'on y mettrait ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn wir eine Playlist für einen Roadtrip machen, welcher Song kommt als Erstes drauf?"
+          }
         }
       }
     },
@@ -3194,6 +4316,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quand as-tu senti qu'on formait une vraie équipe ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wann hattest du das Gefühl, dass wir ein richtiges Team geworden sind?"
           }
         }
       }
@@ -3212,6 +4340,12 @@
             "state" : "translated",
             "value" : "Si nous devions écrire le profil de rencontre de l'autre, que mettrais-tu dedans ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn wir das Dating-Profil des anderen schreiben müssten, was würdest du reinschreiben?"
+          }
         }
       }
     },
@@ -3228,6 +4362,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si nous pouvions revivre une journée parfaite de notre relation, laquelle choisirais-tu ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn wir einen perfekten Tag unserer Beziehung nochmal erleben könnten, welchen würdest du wählen?"
           }
         }
       }
@@ -3246,6 +4386,12 @@
             "state" : "translated",
             "value" : "As-tu l'impression que nous passons suffisamment de temps ensemble ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hast du das Gefühl, dass wir genug Zeit zusammen verbringen?"
+          }
         }
       }
     },
@@ -3262,6 +4408,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il quelque chose qui te dérange en ce moment mais dont nous n'avons pas encore parlé ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es gerade etwas, das dich beschäftigt und worüber wir noch nicht gesprochen haben?"
           }
         }
       }
@@ -3280,6 +4432,12 @@
             "state" : "translated",
             "value" : "Quelles sont les choses que j'ai faites ce mois-ci (ou cette semaine) que tu as appréciées ou qui t'ont fait te sentir aimé(e) ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was habe ich diesen Monat (oder diese Woche) getan, was du geschätzt hast oder wodurch du dich geliebt gefühlt hast?"
+          }
         }
       }
     },
@@ -3296,6 +4454,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sur quoi aimerais-tu que nous travaillions ensemble ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Woran würdest du gerne mit mir arbeiten?"
           }
         }
       }
@@ -3314,6 +4478,12 @@
             "state" : "translated",
             "value" : "Quelle est ta manière préférée de recevoir de l'amour dans mes gestes ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie bekommst du Liebe durch meine Gesten am liebsten gezeigt?"
+          }
         }
       }
     },
@@ -3330,6 +4500,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il de nouvelles expériences que tu aimerais vivre avec moi bientôt ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es neue Erfahrungen, die du bald mit mir machen möchtest?"
           }
         }
       }
@@ -3348,6 +4524,12 @@
             "state" : "translated",
             "value" : "Quels sont tes objectifs personnels pour ce mois-ci, et comment puis-je t'aider à les atteindre ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was sind deine persönlichen Ziele für diesen Monat und wie kann ich dich dabei unterstützen?"
+          }
         }
       }
     },
@@ -3364,6 +4546,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'est-ce que tu aimerais que je protège en toi, même quand tu doutes ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was in dir soll ich schützen, selbst wenn du zweifelst?"
           }
         }
       }
@@ -3382,6 +4570,12 @@
             "state" : "translated",
             "value" : "Quel souvenir de nous aimerais-tu revivre encore une fois ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche gemeinsame Erinnerung würdest du gerne noch einmal erleben?"
+          }
         }
       }
     },
@@ -3398,6 +4592,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il quelque chose dont tu aurais besoin et que je ne t'apporte pas en ce moment ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es etwas, das du brauchst und das ich dir gerade nicht gebe?"
           }
         }
       }
@@ -3416,6 +4616,12 @@
             "state" : "translated",
             "value" : "Quand as-tu eu l'impression que je t'ai vraiment compris(e) sans que tu dises un mot ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wann hattest du das Gefühl, dass ich dich wirklich verstanden habe, ohne dass du ein Wort gesagt hast?"
+          }
         }
       }
     },
@@ -3432,6 +4638,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Que puis-je faire pour rendre tes journées plus agréables ou plus faciles ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was kann ich tun, um deine Tage angenehmer oder leichter zu machen?"
           }
         }
       }
@@ -3450,6 +4662,12 @@
             "state" : "translated",
             "value" : "Y a-t-il un moment de notre relation que tu revis parfois en pensée ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es einen Moment in unserer Beziehung, den du manchmal in Gedanken noch einmal erlebst?"
+          }
         }
       }
     },
@@ -3466,6 +4684,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comment pourrais-je mieux répondre à tes besoins émotionnels ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie könnte ich besser auf deine emotionalen Bedürfnisse eingehen?"
           }
         }
       }
@@ -3484,6 +4708,12 @@
             "state" : "translated",
             "value" : "Si on pouvait se parler sans filtre, de quoi voudrais-tu qu'on parle aujourd'hui ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn wir ganz ungefiltert reden könnten, worüber würdest du heute sprechen wollen?"
+          }
         }
       }
     },
@@ -3500,6 +4730,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'est-ce que je fais en ce moment que tu aimes ou apprécies particulièrement ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was mache ich gerade, das du besonders liebst oder schätzt?"
           }
         }
       }
@@ -3518,6 +4754,12 @@
             "state" : "translated",
             "value" : "Quels sont, selon toi, mes plus grands axes d'amélioration ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was sind deiner Meinung nach meine größten Baustellen?"
+          }
         }
       }
     },
@@ -3534,6 +4776,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il une chose que je faisais au début de notre relation et que je ne fais plus autant, que tu aimerais retrouver ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es etwas, das ich am Anfang unserer Beziehung oft getan habe und jetzt weniger, das du dir zurückwünschst?"
           }
         }
       }
@@ -3552,6 +4800,12 @@
             "state" : "translated",
             "value" : "Penses-tu que je te considère comme acquis(e) ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denkst du, ich halte dich für selbstverständlich?"
+          }
         }
       }
     },
@@ -3568,6 +4822,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il quelque chose de stressant en ce moment dans ta vie que je devrais savoir ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es gerade etwas Stressiges in deinem Leben, von dem ich wissen sollte?"
           }
         }
       }
@@ -3586,6 +4846,12 @@
             "state" : "translated",
             "value" : "T'es-tu senti(e) globalement heureux(se) ces derniers temps ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hast du dich in letzter Zeit insgesamt glücklich gefühlt?"
+          }
         }
       }
     },
@@ -3602,6 +4868,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comment puis-je mieux accompagner ton évolution personnelle ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie kann ich dein persönliches Wachstum besser unterstützen?"
           }
         }
       }
@@ -3620,6 +4892,12 @@
             "state" : "translated",
             "value" : "Y a-t-il quelque chose que tu aimerais faire différemment ou essayer dans notre intimité ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es etwas, das du in unserer Intimität anders machen oder ausprobieren möchtest?"
+          }
         }
       }
     },
@@ -3636,6 +4914,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qu'aimerais-tu qu'on se dise plus souvent ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was würdest du dir wünschen, dass wir uns öfter sagen?"
           }
         }
       }
@@ -3654,6 +4938,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce que tu attends avec impatience cette semaine / ce mois-ci ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Worauf freust du dich diese Woche/diesen Monat?"
+          }
         }
       }
     },
@@ -3670,6 +4960,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si on devait se réinventer en tant que couple, que garderais-tu absolument ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn wir uns als Paar neu erfinden müssten, was würdest du auf jeden Fall behalten?"
           }
         }
       }
@@ -3688,6 +4984,12 @@
             "state" : "translated",
             "value" : "Y a-t-il une promesse que tu aimerais qu'on se fasse ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es ein Versprechen, das du dir wünschst, dass wir uns geben?"
+          }
         }
       }
     },
@@ -3704,6 +5006,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Souhaites-tu que l'on parle de nos objectifs d'avenir ? Y a-t-il des choses à mettre à jour, à ajuster ou à discuter ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hast du Lust, über unsere Ziele für die Zukunft zu sprechen? Müssen wir etwas aktualisieren, anpassen oder besprechen?"
           }
         }
       }
@@ -3722,6 +5030,12 @@
             "state" : "translated",
             "value" : "Quelles sont les façons dont on pourrait s'amuser davantage ensemble dans notre relation ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie könnten wir in unserer Beziehung noch mehr Spaß zusammen haben?"
+          }
         }
       }
     },
@@ -3738,6 +5052,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il une chose que je fais qui t'éloigne sans que je m'en rende compte ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es etwas, das ich tue, das dich wegstößt, ohne dass ich es merke?"
           }
         }
       }
@@ -3756,6 +5076,12 @@
             "state" : "translated",
             "value" : "Si notre relation était une citation, quelle serait-elle ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn unsere Beziehung ein Zitat wäre, welches wäre es?"
+          }
         }
       }
     },
@@ -3772,6 +5098,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quand sens-tu que notre couple grandit ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wann hast du das Gefühl, dass unsere Beziehung wächst?"
           }
         }
       }
@@ -3790,6 +5122,12 @@
             "state" : "translated",
             "value" : "Y a-t-il des dates importantes à venir que je devrais connaître ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stehen bald wichtige Termine an, die ich wissen sollte?"
+          }
         }
       }
     },
@@ -3806,6 +5144,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Penses-tu que nous partageons la même vision de notre avenir ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denkst du, wir teilen dieselbe Vorstellung von unserer Zukunft?"
           }
         }
       }
@@ -3824,6 +5168,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce qui t'attire le plus chez moi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was findest du am attraktivsten an mir?"
+          }
         }
       }
     },
@@ -3840,6 +5190,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tu pouvais choisir un mot pour symboliser notre relation, lequel ce serait ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du ein Wort wählen könntest, das unsere Beziehung beschreibt, welches wäre es?"
           }
         }
       }
@@ -3858,6 +5214,12 @@
             "state" : "translated",
             "value" : "Y a-t-il un conflit qu'on n'a jamais vraiment résolu selon toi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es deiner Meinung nach einen Konflikt, den wir nie wirklich gelöst haben?"
+          }
         }
       }
     },
@@ -3874,6 +5236,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Selon toi, quelle est l'une de mes meilleures qualités ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was ist deiner Meinung nach eine meiner besten Eigenschaften?"
           }
         }
       }
@@ -3892,6 +5260,12 @@
             "state" : "translated",
             "value" : "Quelle est la première chose que tu as remarquée chez moi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was ist das Erste, das dir an mir aufgefallen ist?"
+          }
         }
       }
     },
@@ -3908,6 +5282,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si notre couple était une œuvre d'art, à quoi ressemblerait-elle ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn unsere Beziehung ein Kunstwerk wäre, wie würde sie aussehen?"
           }
         }
       }
@@ -3926,6 +5306,12 @@
             "state" : "translated",
             "value" : "Quel serait pour toi l'endroit idéal pour prendre ta retraite ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was wäre für dich der ideale Ort, um später in Rente zu gehen?"
+          }
         }
       }
     },
@@ -3942,6 +5328,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle difficulté surmontée de notre couple a renforcé ton amour pour moi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche überwundene Schwierigkeit in unserer Beziehung hat deine Liebe zu mir stärker gemacht?"
           }
         }
       }
@@ -3960,6 +5352,12 @@
             "state" : "translated",
             "value" : "À quoi ressemblerait un date idéal selon toi ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie sieht für dich ein perfektes Date aus?"
+          }
         }
       }
     },
@@ -3976,6 +5374,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle partie de ton histoire aimerais-tu que je connaisse mieux ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welchen Teil deiner Geschichte würdest du dir wünschen, dass ich besser kenne?"
           }
         }
       }
@@ -3994,6 +5398,12 @@
             "state" : "translated",
             "value" : "Qu'est-ce qui t'aide à rester engagé(e) dans notre relation ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was hilft dir, unserer Beziehung treu und engagiert zu bleiben?"
+          }
         }
       }
     },
@@ -4010,6 +5420,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle est la chose numéro un sur ta liste de cadeaux rêvés ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was steht ganz oben auf deiner Wunschliste?"
           }
         }
       }
@@ -4028,6 +5444,12 @@
             "state" : "translated",
             "value" : "Y a-t-il quelque chose chez moi que tu aimerais pouvoir changer ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es etwas an mir, das du gern ändern würdest?"
+          }
         }
       }
     },
@@ -4044,6 +5466,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Es-tu heureux(se) dans cette relation ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bist du in dieser Beziehung glücklich?"
           }
         }
       }
@@ -4062,6 +5490,12 @@
             "state" : "translated",
             "value" : "Quelle est la plus belle chose que notre couple t'a révélée sur toi-même ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was ist das Schönste, das dir unsere Beziehung über dich selbst gezeigt hat?"
+          }
         }
       }
     },
@@ -4078,6 +5512,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comment veux-tu qu'on s'aime dans 10 ans ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie möchtest du, dass wir uns in 10 Jahren lieben?"
           }
         }
       }
@@ -4096,6 +5536,12 @@
             "state" : "translated",
             "value" : "Penses-tu que notre relation avance dans la bonne direction ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Findest du, dass unsere Beziehung in die richtige Richtung geht?"
+          }
         }
       }
     },
@@ -4112,6 +5558,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quel petit rituel quotidien renforcerait notre complicité ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welches kleine tägliche Ritual würde unsere Verbindung stärken?"
           }
         }
       }
@@ -4130,6 +5582,12 @@
             "state" : "translated",
             "value" : "Y a-t-il des limites que tu souhaiterais poser ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es Grenzen, die du setzen möchtest?"
+          }
         }
       }
     },
@@ -4146,6 +5604,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tu pouvais me confier une chose sans crainte d'être jugé(e), ce serait quoi ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du mir eine Sache ohne Angst, verurteilt zu werden, anvertrauen könntest, welche wäre das?"
           }
         }
       }
@@ -4164,6 +5628,12 @@
             "state" : "translated",
             "value" : "Quelle importance accordes-tu au pardon dans notre relation ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie wichtig ist dir Verzeihen in unserer Beziehung?"
+          }
         }
       }
     },
@@ -4180,6 +5650,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "En quoi nos personnalités se complètent-elles ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie ergänzen sich unsere Persönlichkeiten?"
           }
         }
       }
@@ -4198,6 +5674,12 @@
             "state" : "translated",
             "value" : "Quel héritage aimerais-tu que nous construisions ensemble ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welche Spuren möchtest du, dass wir zusammen hinterlassen?"
+          }
         }
       }
     },
@@ -4214,6 +5696,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Crois-tu que nous étions destinés à être ensemble ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Glaubst du, dass wir füreinander bestimmt sind?"
           }
         }
       }
@@ -4232,6 +5720,12 @@
             "state" : "translated",
             "value" : "Quels seront, selon toi, les plus grands défis que nous aurons à relever dans notre avenir commun ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was werden deiner Meinung nach die größten Herausforderungen in unserer gemeinsamen Zukunft sein?"
+          }
         }
       }
     },
@@ -4248,6 +5742,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Que signifie, selon toi, être un(e) bon(ne) partenaire ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was bedeutet es für dich, ein guter Partner/eine gute Partnerin zu sein?"
           }
         }
       }
@@ -4266,6 +5766,12 @@
             "state" : "translated",
             "value" : "Comment aimes-tu faire la paix après une dispute ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie machst du nach einem Streit am liebsten wieder Frieden?"
+          }
         }
       }
     },
@@ -4282,6 +5788,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle est, selon toi, la chose la plus importante pour qu'une relation à long terme fonctionne ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was ist deiner Meinung nach das Wichtigste, damit eine langfristige Beziehung funktioniert?"
           }
         }
       }
@@ -4300,6 +5812,12 @@
             "state" : "translated",
             "value" : "Comment pourrions-nous renforcer la confiance entre nous ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie könnten wir das Vertrauen zwischen uns stärken?"
+          }
         }
       }
     },
@@ -4316,6 +5834,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cites 3 choses pour lesquelles tu es reconnaissant(e) vis à vis de moi"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenne 3 Dinge, für die du mir gegenüber dankbar bist."
           }
         }
       }
@@ -4334,6 +5858,12 @@
             "state" : "translated",
             "value" : "Peux-tu me dire que tu m'aimes maintenant ?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kannst du mir jetzt sofort sagen, dass du mich liebst?"
+          }
         }
       }
     },
@@ -4350,6 +5880,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Y a-t-il autre chose dont tu aimerais qu'on parle ?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es noch etwas, worüber du gern sprechen möchtest?"
           }
         }
       }
