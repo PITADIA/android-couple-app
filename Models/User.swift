@@ -162,8 +162,8 @@ typealias User = AppUser
 // MARK: - Subscription Models
 
 enum SubscriptionPlanType: String, CaseIterable {
-    case weekly = "com.lyes.love2love.subscription.weekly.mi"
-    case monthly = "com.lyes.love2love.subscription.monthly.mi"
+    case weekly = "com.lyes.love2love.subscription.weekly"
+    case monthly = "com.lyes.love2love.subscription.monthly"
     
     var displayName: String {
         switch self {

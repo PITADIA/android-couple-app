@@ -123,7 +123,7 @@
               "locale" : "de"
             }
           ],
-          "productID" : "com.lyes.love2love.subscription.weekly.mi",
+          "productID" : "com.lyes.love2love.subscription.weekly",
           "recurringSubscriptionPeriod" : "P1W",
           "referenceName" : "Premium Weekly",
           "subscriptionGroupID" : "21482467",
@@ -165,7 +165,7 @@
               "locale" : "de"
             }
           ],
-          "productID" : "com.lyes.love2love.subscription.monthly.mi",
+          "productID" : "com.lyes.love2love.subscription.monthly",
           "recurringSubscriptionPeriod" : "P1M",
           "referenceName" : "Premium Monthly",
           "subscriptionGroupID" : "21482467",

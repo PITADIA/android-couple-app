@@ -9,10 +9,10 @@ class ReviewRequestService: ObservableObject {
     
     private let userDefaults = UserDefaults.standard
     
-    // ✅ NOUVEAU SYSTÈME : Daily Questions (4 jours complétés)
+    // ✅ NOUVEAU SYSTÈME : Daily Questions (5 jours complétés)
     private var dailyQuestionsThreshold: Int {
         // A/B testing via UserDefaults override (sera Remote Config plus tard)
-        userDefaults.object(forKey: "review_threshold_override") as? Int ?? 4
+        userDefaults.object(forKey: "review_threshold_override") as? Int ?? 5
     }
     
     // ✅ ANCIEN SYSTÈME : Legacy fallback
@@ -110,7 +110,7 @@ class ReviewRequestService: ObservableObject {
         }
         
         // ✅ TOUTES CONDITIONS REMPLIES
-        print("🌟 ✅ 4ème JOUR COMPLÉTÉ - DEMANDE D'AVIS!")
+        print("🌟 ✅ 5ème JOUR COMPLÉTÉ - DEMANDE D'AVIS!")
         Analytics.logEvent("review_check", parameters: [
             "eligible": true,
             "reason": "all_conditions_met",

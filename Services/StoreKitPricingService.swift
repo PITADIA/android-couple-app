@@ -35,8 +35,8 @@ class StoreKitPricingService: ObservableObject {
     
     // MARK: - Private Properties
     private let productIdentifiers: Set<String> = [
-        "com.lyes.love2love.subscription.weekly.mi",
-        "com.lyes.love2love.subscription.monthly.mi"
+        "com.lyes.love2love.subscription.weekly",
+        "com.lyes.love2love.subscription.monthly"
     ]
     
     private var cancellables = Set<AnyCancellable>()
@@ -160,7 +160,7 @@ class StoreKitPricingService: ObservableObject {
         }
         
         // Vérifier qu'on a les produits essentiels
-        let requiredProducts = ["com.lyes.love2love.subscription.weekly.mi", "com.lyes.love2love.subscription.monthly.mi"]
+        let requiredProducts = ["com.lyes.love2love.subscription.weekly", "com.lyes.love2love.subscription.monthly"]
         let missingProducts = requiredProducts.filter { !updatedPrices.keys.contains($0) }
         
         if !missingProducts.isEmpty {
@@ -193,10 +193,10 @@ class StoreKitPricingService: ObservableObject {
     
     private func getFallbackPrice(for productId: String) -> String {
         switch productId {
-        case "com.lyes.love2love.subscription.weekly.mi":
+        case "com.lyes.love2love.subscription.weekly":
             let basePrice = "plan_weekly_price".localized
             return LocalizationService.localizedCurrencySymbol(for: basePrice)
-        case "com.lyes.love2love.subscription.monthly.mi":
+        case "com.lyes.love2love.subscription.monthly":
             let basePrice = "plan_monthly_price".localized
             return LocalizationService.localizedCurrencySymbol(for: basePrice)
         default:
@@ -208,10 +208,10 @@ class StoreKitPricingService: ObservableObject {
         // 🔇 Log déjà fait dans getLocalizedPrice - pas de doublon
         
         switch productId {
-        case "com.lyes.love2love.subscription.weekly.mi":
+        case "com.lyes.love2love.subscription.weekly":
             let basePrice = "plan_weekly_price_per_user".localized
             return LocalizationService.localizedCurrencySymbol(for: basePrice)
-        case "com.lyes.love2love.subscription.monthly.mi":
+        case "com.lyes.love2love.subscription.monthly":
             let basePrice = "plan_monthly_price_per_user".localized
             return LocalizationService.localizedCurrencySymbol(for: basePrice)
         default:
@@ -220,7 +220,7 @@ class StoreKitPricingService: ObservableObject {
     }
 }
 
-// MARK: - LocalizedPrice Model
+// MARK: - LocalizedPrice Model 
 
 struct LocalizedPrice {
     let productId: String

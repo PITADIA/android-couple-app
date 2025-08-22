@@ -15,8 +15,8 @@ class SubscriptionService: NSObject, ObservableObject, SKPaymentTransactionObser
     @Published var errorMessage: String?
     
     private let productIdentifiers: Set<String> = [
-        "com.lyes.love2love.subscription.weekly.mi",
-        "com.lyes.love2love.subscription.monthly.mi"
+        "com.lyes.love2love.subscription.weekly",
+        "com.lyes.love2love.subscription.monthly"
     ]
     
     private var cancellables = Set<AnyCancellable>()
