@@ -259,7 +259,11 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
+<<<<<<< HEAD
             "value" : "Deseos secretos"
+=======
+            "value" : "Deseos ocultos"
+>>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
           }
         },
         "fr" : {
@@ -375,7 +379,11 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
+<<<<<<< HEAD
             "value" : "Curando nuestro amor"
+=======
+            "value" : "Sanando nuestro amor"
+>>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
           }
         },
         "fr" : {

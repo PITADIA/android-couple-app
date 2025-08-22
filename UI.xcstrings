@@ -7789,7 +7789,11 @@
         "es": {
           "stringUnit": {
             "state": "translated",
+<<<<<<< HEAD
             "value": "/ usuario /"
+=======
+            "value": "/ user /"
+>>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
           }
         }
       }
@@ -8051,7 +8055,11 @@
         "es": {
           "stringUnit": {
             "state": "translated",
+<<<<<<< HEAD
             "value": "🎯 Acceso Premium:"
+=======
+            "value": "🎯 Premium Access:"
+>>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
           }
         }
       }
@@ -8080,7 +8088,11 @@
         "es": {
           "stringUnit": {
             "state": "translated",
+<<<<<<< HEAD
             "value": "🎯 Acceso Premium:"
+=======
+            "value": "🎯 Premium Access:"
+>>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
           }
         }
       }
@@ -8110,7 +8122,11 @@
         "es": {
           "stringUnit": {
             "state": "translated",
+<<<<<<< HEAD
             "value": "Acceso Premium perdido"
+=======
+            "value": "Premium Access Lost"
+>>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
           }
         }
       }
@@ -8139,7 +8155,11 @@
         "es": {
           "stringUnit": {
             "state": "translated",
+<<<<<<< HEAD
             "value": "Categorías Premium bloqueadas"
+=======
+            "value": "Premium categories locked"
+>>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
           }
         }
       }
@@ -8168,7 +8188,11 @@
         "es": {
           "stringUnit": {
             "state": "translated",
+<<<<<<< HEAD
             "value": "Contenido Premium no disponible"
+=======
+            "value": "Premium content unavailable"
+>>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
           }
         }
       }
@@ -8197,7 +8221,11 @@
         "es": {
           "stringUnit": {
             "state": "translated",
+<<<<<<< HEAD
             "value": "Todas las categorías desbloqueadas"
+=======
+            "value": "All categories unlocked"
+>>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
           }
         }
       }
@@ -8226,7 +8254,11 @@
         "es": {
           "stringUnit": {
             "state": "translated",
+<<<<<<< HEAD
             "value": "%@ ha compartido su suscripción Premium contigo.\n\nAhora tienes acceso a todas las funciones Premium."
+=======
+            "value": "%@ shared their Premium subscription with you!\n\nYou now have access to all premium features."
+>>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
           }
         }
       }
@@ -8255,7 +8287,11 @@
         "es": {
           "stringUnit": {
             "state": "translated",
+<<<<<<< HEAD
             "value": "Hazte Premium para crear recuerdos ilimitados con tu pareja"
+=======
+            "value": "Go Premium to create unlimited memories with your partner"
+>>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
           }
         }
       }
@@ -8284,7 +8320,11 @@
         "es": {
           "stringUnit": {
             "state": "translated",
+<<<<<<< HEAD
             "value": "🎉 ¡Premium desbloqueado!"
+=======
+            "value": "🎉 Premium unlocked!"
+>>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
           }
         }
       }
@@ -8313,7 +8353,11 @@
         "es": {
           "stringUnit": {
             "state": "translated",
+<<<<<<< HEAD
             "value": "Anterior"
+=======
+            "value": "Previous"
+>>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
           }
         }
       }
@@ -9560,7 +9604,11 @@
         "es": {
           "stringUnit": {
             "state": "translated",
+<<<<<<< HEAD
             "value": "Países"
+=======
+            "value": "countries"
+>>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
           }
         }
       }
@@ -9589,7 +9637,11 @@
         "es": {
           "stringUnit": {
             "state": "translated",
+<<<<<<< HEAD
             "value": "País"
+=======
+            "value": "country"
+>>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
           }
         }
       }
@@ -12636,7 +12688,11 @@
         "es": {
           "stringUnit": {
             "state": "translated",
+<<<<<<< HEAD
             "value": "-- días"
+=======
+            "value": "-- days"
+>>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
           }
         }
       }
@@ -13246,7 +13302,11 @@
         "es": {
           "stringUnit": {
             "state": "translated",
+<<<<<<< HEAD
             "value": "Distancia Love2Love"
+=======
+            "value": "Love2Love Distance"
+>>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
           }
         }
       }
@@ -13275,7 +13335,11 @@
         "es": {
           "stringUnit": {
             "state": "translated",
+<<<<<<< HEAD
             "value": "Mapa Love2Love"
+=======
+            "value": "Distance Love2Love"
+>>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
           }
         }
       }
@@ -13485,4 +13549,8 @@
     }
   },
   "version": "1.0"
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2

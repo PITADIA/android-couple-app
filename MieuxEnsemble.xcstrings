@@ -577,7 +577,11 @@
         "es": {
           "stringUnit": {
             "state": "translated",
+<<<<<<< HEAD
             "value": "¿Hay algo que nunca te hayas atrevido a preguntarme?"
+=======
+            "value": "¿Hay algo que nunca te hayas atrevido a pedirme?"
+>>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
           }
         }
       }
@@ -809,7 +813,11 @@
         "es": {
           "stringUnit": {
             "state": "translated",
+<<<<<<< HEAD
             "value": "¿A veces sientes que no eres suficiente para nuestra relación?"
+=======
+            "value": "¿A veces sientes que no eres suficiente en nuestra pareja?"
+>>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
           }
         }
       }
@@ -1882,7 +1890,11 @@
         "es": {
           "stringUnit": {
             "state": "translated",
+<<<<<<< HEAD
             "value": "¿Hay algo que hago que te haga sentir menos amado?"
+=======
+            "value": "¿Hay algo que haga que te haga sentir menos amado?"
+>>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
           }
         }
       }
@@ -3100,7 +3112,11 @@
         "es": {
           "stringUnit": {
             "state": "translated",
+<<<<<<< HEAD
             "value": "¿Cómo puedes sentirte más libre en nuestra relación sin alejarte?"
+=======
+            "value": "¿Cómo puedes sentirte más libre en nuestra pareja sin despegarte?"
+>>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
           }
         }
       }
@@ -3535,7 +3551,11 @@
         "es": {
           "stringUnit": {
             "state": "translated",
+<<<<<<< HEAD
             "value": "¿Cómo te gustaría que reaccionara cuando estás enfadado?"
+=======
+            "value": "¿Cómo te gustaría que reaccionara cuando estás enojado?"
+>>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
           }
         }
       }
