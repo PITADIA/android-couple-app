@@ -14,6 +14,12 @@
             "state" : "new",
             "value" : "%1$@ / %2$@"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ / %2$@"
+          }
         }
       }
     },
@@ -24,6 +30,12 @@
             "state" : "new",
             "value" : "%1$@ %2$@"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ %2$@"
+          }
         }
       }
     },
@@ -32,6 +44,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "new",
+            "value" : "%1$@, %2$@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "%1$@, %2$@"
           }
         }
@@ -151,6 +169,12 @@
             "value" : "Far from the eyes, close to the heart."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lejos de los ojos, cerca del corazón."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -172,6 +196,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Long Distance Relationship"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Relación a distancia"
           }
         },
         "fr" : {
@@ -197,6 +227,12 @@
             "value" : "Share your desires and discover each other more deeply."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comparte tus deseos y descúbranse más a fondo."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -218,6 +254,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hidden Desires"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deseos secretos"
           }
         },
         "fr" : {
@@ -243,6 +285,12 @@
             "value" : "Questions to remember what unites us."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preguntas para recordar lo que nos une."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -264,6 +312,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "You and Me"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tú y yo"
           }
         },
         "fr" : {
@@ -289,6 +343,12 @@
             "value" : "Loving also means learning to heal."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Amar también significa aprender a sanar."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -310,6 +370,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Healing Our Love"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Curando nuestro amor"
           }
         },
         "fr" : {
@@ -335,6 +401,12 @@
             "value" : "Because love also means laughing together."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Porque el amor también es reír juntos."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -356,6 +428,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Laugh Together"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reír juntos"
           }
         },
         "fr" : {
@@ -381,6 +459,12 @@
             "value" : "Questions to see each other beyond appearances."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preguntas para ver al otro más allá de las apariencias."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -402,6 +486,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "On a Date"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En una cita"
           }
         },
         "fr" : {
@@ -427,6 +517,12 @@
             "value" : "Discover the thoughts you don’t always say out loud."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descubre los pensamientos que no siempre dices en voz alta."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -448,6 +544,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Deep Questions"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preguntas profundas"
           }
         },
         "fr" : {
@@ -473,6 +575,12 @@
             "value" : "Questions that reveal what really matters to you."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preguntas que revelan lo que realmente te importa."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -494,6 +602,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Would you rather?"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Qué prefieres?"
           }
         },
         "fr" : {
@@ -555,6 +669,12 @@
             "value" : "✨ %d free days remaining • Then subscription required"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✨ Quedan %d días gratis • Luego se requiere suscripción"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -576,6 +696,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "✨ 1 free day remaining • Then subscription required"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✨ Queda 1 día gratis • Luego se requiere suscripción"
           }
         },
         "fr" : {
@@ -601,6 +727,12 @@
             "value" : "💎 Included with your Premium subscription"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "💎 Incluido con tu suscripción Premium"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -622,6 +754,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "🔒 Subscription required to continue"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔒 Se requiere suscripción para continuar"
           }
         },
         "fr" : {
@@ -647,6 +785,12 @@
             "value" : "✨ %d free days remaining • Then subscription required"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✨ Quedan %d días gratis • Luego se requiere suscripción"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -668,6 +812,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "✨ 1 free day remaining • Then subscription required"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✨ Queda 1 día gratis • Luego se requiere suscripción"
           }
         },
         "fr" : {
@@ -693,6 +843,12 @@
             "value" : "💎 Included with your Premium subscription"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "💎 Incluido con tu suscripción Premium"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -714,6 +870,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "🔒 Subscription required to continue"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔒 Se requiere suscripción para continuar"
           }
         },
         "fr" : {
@@ -874,6 +1036,12 @@
             "value" : "Subscribe to unlock access to the collections below ✨"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suscríbete para desbloquear el acceso a las colecciones de abajo ✨"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -895,6 +1063,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "All collections below are available to you with your subscription 💎"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todas las colecciones de abajo están disponibles para ti con tu suscripción 💎"
           }
         },
         "fr" : {
