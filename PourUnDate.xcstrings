@@ -28,6 +28,12 @@
             "state": "translated",
             "value": "¿Qué cualidad rara en alguien te atrae de inmediato?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quale qualità rara in qualcuno ti attrae immediatamente?"
+          }
         }
       }
     },
@@ -56,6 +62,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Hay algún recuerdo de la infancia que te gustaría revivir hoy?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "C'è un ricordo d'infanzia che vorresti rivivere oggi?"
           }
         }
       }
@@ -86,6 +98,12 @@
             "state": "translated",
             "value": "¿Quién es la persona a la que estás más unido en tu vida y por qué?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chi è la persona a cui sei più vicino nella tua vita e perché?"
+          }
         }
       }
     },
@@ -114,6 +132,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿De qué estás más orgulloso, aunque rara vez hables de ello?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Di cosa sei più orgoglioso, anche se ne parli raramente?"
           }
         }
       }
@@ -144,6 +168,12 @@
             "state": "translated",
             "value": "¿Crees que las personas entran en tu vida por una razón?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pensi che le persone entrino nella tua vita per una ragione?"
+          }
         }
       }
     },
@@ -172,6 +202,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Hay alguna pregunta que estés intentando responder ahora mismo en tu vida?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "C'è una domanda a cui stai cercando di rispondere in questo momento della tua vita?"
           }
         }
       }
@@ -202,6 +238,12 @@
             "state": "translated",
             "value": "¿Hay un momento al que te gustaría regresar y cambiar?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "C'è un momento al quale vorresti tornare indietro per cambiarlo?"
+          }
         }
       }
     },
@@ -230,6 +272,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Si tuvieras que describir una relación equilibrada en tres palabras, ¿cuáles serían?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se dovessi descrivere una relazione equilibrata in tre parole, quali sarebbero?"
           }
         }
       }
@@ -260,6 +308,12 @@
             "state": "translated",
             "value": "¿Qué es una cosa sobre ti que nunca querrías cambiar?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qual è una cosa di te che non vorresti mai cambiare?"
+          }
         }
       }
     },
@@ -288,6 +342,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuándo fue la última vez que tuviste una relación seria?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quando hai avuto l'ultima volta una relazione seria?"
           }
         }
       }
@@ -318,6 +378,12 @@
             "state": "translated",
             "value": "Descríbeme tu lenguaje del amor."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descrivimi il tuo linguaggio dell'amore."
+          }
         }
       }
     },
@@ -346,6 +412,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué cambió tu visión de las relaciones?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cosa ha cambiato la tua visione delle relazioni?"
           }
         }
       }
@@ -376,6 +448,12 @@
             "state": "translated",
             "value": "Si tuvieras que partir mañana para un viaje romántico, ¿a dónde irías?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se dovessi partire domani per un viaggio romantico, dove andresti?"
+          }
         }
       }
     },
@@ -404,6 +482,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuál es tu mayor sueño en la vida?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qual è il tuo sogno più grande nella vita?"
           }
         }
       }
@@ -434,6 +518,12 @@
             "state": "translated",
             "value": "¿Qué harías de forma diferente en tu última relación, si pudieras?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cosa faresti diversamente nella tua ultima relazione, se potessi?"
+          }
         }
       }
     },
@@ -462,6 +552,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué canción toca tu corazón?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quale canzone ti tocca il cuore?"
           }
         }
       }
@@ -492,6 +588,12 @@
             "state": "translated",
             "value": "Si pudieras invitar a cenar a cualquier persona en el mundo, ¿a quién elegirías?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se potessi invitare chiunque al mondo a cena, chi sceglieresti?"
+          }
         }
       }
     },
@@ -520,6 +622,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Antes de hacer una llamada telefónica, ¿ensayas lo que vas a decir? ¿Por qué?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prima di fare una telefonata, ti capita di provare cosa dirai? Perché?"
           }
         }
       }
@@ -550,6 +658,12 @@
             "state": "translated",
             "value": "¿De verdad crees en el amor a primera vista?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Credi davvero nell'amore a prima vista?"
+          }
         }
       }
     },
@@ -578,6 +692,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cómo sería un día \"perfecto\" para ti?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A cosa assomiglierebbe per te una giornata 'perfetta'?"
           }
         }
       }
@@ -608,6 +728,12 @@
             "state": "translated",
             "value": "¿Cuándo fue la última vez que cantaste? ¿Para ti? ¿Para alguien más?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quando hai cantato l'ultima volta? Per te stesso? Per qualcun altro?"
+          }
         }
       }
     },
@@ -636,6 +762,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Tienes una sensación secreta sobre cómo vas a morir?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hai un presentimento segreto su come morirai?"
           }
         }
       }
@@ -666,6 +798,12 @@
             "state": "translated",
             "value": "¿Por qué te sientes más agradecido en la vida?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Per cosa ti senti più grato nella tua vita?"
+          }
         }
       }
     },
@@ -694,6 +832,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Si pudieras cambiar algo de la forma en que fuiste criado, ¿qué cambiarías?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se potessi cambiare qualcosa del modo in cui sei stato cresciuto, cosa cambieresti?"
           }
         }
       }
@@ -724,6 +868,12 @@
             "state": "translated",
             "value": "Si pudieras despertar mañana habiendo adquirido una cualidad o habilidad, ¿cuál sería?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se potessi svegliarti domani con una qualità o abilità in più, quale sarebbe?"
+          }
         }
       }
     },
@@ -752,6 +902,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Hay algo que has soñado hacer durante mucho tiempo? ¿Por qué aún no lo has hecho?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "C'è qualcosa che sogni di fare da molto tempo? Perché non l'hai ancora fatto?"
           }
         }
       }
@@ -782,6 +938,12 @@
             "state": "translated",
             "value": "¿Cuál es el mayor logro de tu vida?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qual è il più grande traguardo della tua vita?"
+          }
         }
       }
     },
@@ -810,6 +972,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuál es tu recuerdo más doloroso?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qual è il tuo ricordo più doloroso?"
           }
         }
       }
@@ -840,6 +1008,12 @@
             "state": "translated",
             "value": "Si supieras que vas a morir repentinamente en un año, ¿cambiarías algo de la forma en que vives actualmente? ¿Por qué?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se sapessi che morirai improvvisamente tra un anno, cambieresti qualcosa del tuo modo di vivere attuale? Perché?"
+          }
         }
       }
     },
@@ -868,6 +1042,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Eres más apasionado o lógico en el amor?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sei più passionale o logico in amore?"
           }
         }
       }
@@ -898,6 +1078,12 @@
             "state": "translated",
             "value": "¿Cuál es la primera cosa que notas en alguien?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qual è la prima cosa che noti in qualcuno?"
+          }
         }
       }
     },
@@ -926,6 +1112,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuál es tu idea de una noche perfecta para dos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qual è la tua idea di una serata perfetta per due?"
           }
         }
       }
@@ -956,6 +1148,12 @@
             "state": "translated",
             "value": "¿Alguna vez te han roto el corazón?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ti hanno mai spezzato il cuore?"
+          }
         }
       }
     },
@@ -984,6 +1182,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué rasgo de personalidad te derrite por alguien?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quale tratto di personalità ti fa sciogliere per qualcuno?"
           }
         }
       }
@@ -1014,6 +1218,12 @@
             "state": "translated",
             "value": "¿Qué papel juegan el amor y el afecto en tu vida?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Che ruolo hanno l'amore e l'affetto nella tua vita?"
+          }
         }
       }
     },
@@ -1042,6 +1252,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué es lo más importante al causar una primera impresión?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qual è la cosa più importante quando si fa una prima impressione?"
           }
         }
       }
@@ -1072,6 +1288,12 @@
             "state": "translated",
             "value": "¿Qué tan unida y cálida es tu familia? ¿Crees que tu infancia fue más feliz que la de la mayoría?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quanto è unita e affettuosa la tua famiglia? Pensi che la tua infanzia sia stata più felice di quella della maggior parte delle persone?"
+          }
         }
       }
     },
@@ -1100,6 +1322,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué sientes acerca de tu relación con tu madre?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Come ti senti riguardo al rapporto con tua madre?"
           }
         }
       }
@@ -1130,6 +1358,12 @@
             "state": "translated",
             "value": "¿Qué sientes acerca de tu relación con tu padre?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Come ti senti riguardo al rapporto con tuo padre?"
+          }
         }
       }
     },
@@ -1158,6 +1392,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Crees en las almas gemelas?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Credi nelle anime gemelle?"
           }
         }
       }
@@ -1188,6 +1428,12 @@
             "state": "translated",
             "value": "¿Qué hace que alguien sea inolvidable en tu opinión?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cosa rende qualcuno indimenticabile secondo te?"
+          }
         }
       }
     },
@@ -1216,6 +1462,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Completa esta frase: Ojalá tuviera a alguien con quien pudiera compartir..."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Completa questa frase: Vorrei avere qualcuno con cui poter condividere..."
           }
         }
       }
@@ -1246,6 +1498,12 @@
             "state": "translated",
             "value": "¿Cuál es tu mayor expectativa en una relación?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qual è la tua aspettativa più grande in una relazione?"
+          }
         }
       }
     },
@@ -1274,6 +1532,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué película o serie te dan ganas de estar enamorado?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quale film o serie ti fa venire voglia di essere innamorato?"
           }
         }
       }
@@ -1304,6 +1568,12 @@
             "state": "translated",
             "value": "¿Prefieres declaraciones discretas o grandiosas?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferisci dichiarazioni discrete o eclatanti?"
+          }
         }
       }
     },
@@ -1332,6 +1602,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuándo fue la última vez que lloraste frente a alguien? ¿Y solo?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quando hai pianto l'ultima volta davanti a qualcuno? E da solo?"
           }
         }
       }
@@ -1362,6 +1638,12 @@
             "state": "translated",
             "value": "¿Hay algo sobre lo que crees que nunca se debería bromear?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "C'è qualcosa su cui pensi non si dovrebbe mai scherzare?"
+          }
         }
       }
     },
@@ -1390,6 +1672,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Si murieras esta noche sin la posibilidad de hablar con nadie, ¿de qué te arrepentirías más de no haberle dicho a alguien? ¿Por qué aún no se lo has dicho?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se dovessi morire stanotte senza la possibilità di parlare con nessuno, cosa rimpiangeresti di più di non aver detto a qualcuno? Perché non gliel'hai ancora detto?"
           }
         }
       }
@@ -1420,6 +1708,12 @@
             "state": "translated",
             "value": "¿Alguna vez has sentido una conexión inmediata con alguien?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hai mai sentito una connessione immediata con qualcuno?"
+          }
         }
       }
     },
@@ -1448,6 +1742,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué sientes cuando te enamoras?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cosa provi quando ti innamori?"
           }
         }
       }
@@ -1478,6 +1778,12 @@
             "state": "translated",
             "value": "Si pudieras revivir un año de tu vida, ¿qué edad elegirías?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se potessi rivivere un anno della tua vita, quale età sceglieresti?"
+          }
         }
       }
     },
@@ -1506,6 +1812,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Eres el tipo de persona que cree en las señales del destino?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sei il tipo di persona che crede nei segni del destino?"
           }
         }
       }
@@ -1536,6 +1848,12 @@
             "state": "translated",
             "value": "¿Qué tipo de cumplido realmente te conmueve?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Che tipo di complimento ti tocca davvero?"
+          }
         }
       }
     },
@@ -1564,6 +1882,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Si tuvieras que resumir el amor en una palabra, ¿cuál sería?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se dovessi riassumere l'amore in una parola, quale sarebbe?"
           }
         }
       }
@@ -1594,6 +1918,12 @@
             "state": "translated",
             "value": "¿Qué otro trabajo crees que te encantaría hacer?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quale altro lavoro pensi ti piacerebbe fare?"
+          }
         }
       }
     },
@@ -1622,6 +1952,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿A qué atribuyes tus mayores éxitos en la vida? ¿Y tus mayores fracasos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A cosa attribuisci i tuoi maggiori successi nella vita? E i tuoi più grandi fallimenti?"
           }
         }
       }
@@ -1652,6 +1988,12 @@
             "state": "translated",
             "value": "Si solo pudieras comer una comida por el resto de tu vida, ¿cuál sería?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se potessi mangiare un solo pasto per il resto della tua vita, quale sarebbe?"
+          }
         }
       }
     },
@@ -1680,6 +2022,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Si la seguridad no fuera un problema, ¿qué fenómeno o desastre natural te gustaría experimentar?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se la sicurezza non fosse un problema, quale fenomeno naturale o disastro ti piacerebbe vivere?"
           }
         }
       }
@@ -1710,6 +2058,12 @@
             "state": "translated",
             "value": "¿Qué pregunta te gustaría hacerle a alguien antes de enamorarte?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quale domanda vorresti fare a qualcuno prima di innamorarti?"
+          }
         }
       }
     },
@@ -1738,6 +2092,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuál es tu manera favorita de mostrar afecto?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qual è il tuo modo preferito di dimostrare affetto?"
           }
         }
       }
@@ -1768,6 +2128,12 @@
             "state": "translated",
             "value": "¿Quién es una persona en tu vida a la que respetas profundamente? ¿Por qué?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chi è una persona della tua vita che rispetti profondamente? Perché?"
+          }
         }
       }
     },
@@ -1796,6 +2162,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Si tuvieras que elegir una frase como mantra de vida, ¿cuál sería?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se dovessi scegliere una frase come mantra di vita, quale sarebbe?"
           }
         }
       }
@@ -1826,6 +2198,12 @@
             "state": "translated",
             "value": "¿Qué es algo que te alegra no tener que hacer nunca más?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qual è qualcosa che sei felice di non dover mai più fare?"
+          }
         }
       }
     },
@@ -1854,6 +2232,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué tipo de momentos fortalecen el vínculo entre dos personas en tu opinión?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Che tipo di momenti rafforzano il legame tra due persone secondo te?"
           }
         }
       }
@@ -1884,6 +2268,12 @@
             "state": "translated",
             "value": "Tu casa está en llamas. Después de salvar a tus seres queridos y mascotas, tienes tiempo de agarrar un objeto. ¿Cuál? ¿Por qué?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La tua casa è in fiamme. Dopo aver salvato i tuoi cari e i tuoi animali, hai il tempo di prendere un solo oggetto. Quale? Perché?"
+          }
         }
       }
     },
@@ -1912,6 +2302,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿En qué sientes que eres mejor?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In cosa senti di essere più bravo?"
           }
         }
       }
@@ -1942,6 +2338,12 @@
             "state": "translated",
             "value": "¿Qué esperas de una cita ideal?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cosa ti aspetti da un primo appuntamento ideale?"
+          }
         }
       }
     },
@@ -1970,6 +2372,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Si pudieras cambiar algo de tu apariencia, ¿qué sería?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se potessi cambiare una cosa del tuo aspetto, quale sarebbe?"
           }
         }
       }
@@ -2000,6 +2408,12 @@
             "state": "translated",
             "value": "¿Qué te hace decir: 'Esta es la persona indicada'?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cosa ti fa dire: 'Questa è la persona giusta'?"
+          }
         }
       }
     },
@@ -2028,6 +2442,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Prefieres miradas significativas o largas conversaciones?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferisci sguardi significativi o lunghe conversazioni?"
           }
         }
       }
@@ -2058,6 +2478,12 @@
             "state": "translated",
             "value": "¿Cómo te comportas cuando te enamoras?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Come ti comporti quando ti innamori?"
+          }
         }
       }
     },
@@ -2086,6 +2512,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué nuevo pasatiempo te gustaría probar?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quale nuovo hobby ti piacerebbe provare?"
           }
         }
       }
@@ -2116,6 +2548,12 @@
             "state": "translated",
             "value": "¿Juegas videojuegos? Si es así, ¿cuál?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Giochi ai videogiochi? Se sì, a quale?"
+          }
         }
       }
     },
@@ -2144,6 +2582,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Eres más de mensajes largos o de llamadas espontáneas?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sei più da lunghi messaggi o da chiamate spontanee?"
           }
         }
       }
@@ -2174,6 +2618,12 @@
             "state": "translated",
             "value": "¿Qué crees que hace que una relación dure?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cosa pensi che faccia durare una relazione?"
+          }
         }
       }
     },
@@ -2202,6 +2652,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué parte de tu cuerpo te gusta más físicamente?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quale parte del tuo corpo ti piace di più fisicamente?"
           }
         }
       }
@@ -2232,6 +2688,12 @@
             "state": "translated",
             "value": "¿Cuál es uno de tus recuerdos favoritos de la infancia?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qual è uno dei tuoi ricordi d'infanzia preferiti?"
+          }
         }
       }
     },
@@ -2260,6 +2722,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Si pudieras vivir en cualquier lugar del mundo durante un año, ¿a dónde irías?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se potessi vivere ovunque nel mondo per un anno, dove andresti?"
           }
         }
       }
@@ -2290,6 +2758,12 @@
             "state": "translated",
             "value": "¿Alguna vez has vivido un momento que parecía sacado de una película?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hai mai vissuto un momento che sembrava uscito da un film?"
+          }
         }
       }
     },
@@ -2318,6 +2792,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Si pudieras tener un superpoder, ¿cuál elegirías?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se potessi avere un superpotere, quale sceglieresti?"
           }
         }
       }
@@ -2348,6 +2828,12 @@
             "state": "translated",
             "value": "Si el amor fuera una estación, ¿cuál te representaría mejor?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se l'amore fosse una stagione, quale ti rappresenterebbe meglio?"
+          }
         }
       }
     },
@@ -2376,6 +2862,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué tipo de lenguaje del amor te seduce más en alguien?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quale tipo di linguaggio dell'amore ti seduce di più in qualcuno?"
           }
         }
       }
@@ -2406,6 +2898,12 @@
             "state": "translated",
             "value": "¿Crees que serías un buen crítico gastronómico?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pensi che saresti un buon critico gastronomico?"
+          }
         }
       }
     },
@@ -2434,6 +2932,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Si pudieras conocer a una celebridad, viva o muerta, ¿a quién elegirías?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se potessi incontrare una celebrità, viva o morta, chi sceglieresti?"
           }
         }
       }
@@ -2464,6 +2968,12 @@
             "state": "translated",
             "value": "¿Cuál es el detalle más pequeño que puede cambiarlo todo en una cita?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qual è il più piccolo dettaglio che può cambiare tutto durante un appuntamento?"
+          }
         }
       }
     },
@@ -2492,6 +3002,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿A cuál de tus padres te pareces más?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A quale dei tuoi genitori assomigli di più?"
           }
         }
       }
@@ -2522,6 +3038,12 @@
             "state": "translated",
             "value": "¿Tienes una visión del amor que ha cambiado con el tiempo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hai una visione dell'amore che è cambiata nel tempo?"
+          }
         }
       }
     },
@@ -2550,6 +3072,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cómo te gustaría ser recordado después de tu muerte?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Come ti piacerebbe essere ricordato dopo la tua morte?"
           }
         }
       }
@@ -2580,6 +3108,12 @@
             "state": "translated",
             "value": "¿Qué crees que eres capaz de lograr en tu vida?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Di cosa credi di essere capace nella tua vita?"
+          }
         }
       }
     },
@@ -2608,6 +3142,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué valores son esenciales para ti en una relación?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quali valori sono essenziali per te in una relazione?"
           }
         }
       }
@@ -2638,6 +3178,12 @@
             "state": "translated",
             "value": "¿Quién es tu persona favorita a la que seguir en Instagram?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qual è la persona che preferisci seguire su Instagram?"
+          }
         }
       }
     },
@@ -2666,6 +3212,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué puede hacer una persona para impresionarte al instante?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qual è una cosa che una persona può fare per impressionarti all'istante?"
           }
         }
       }
@@ -2696,6 +3248,12 @@
             "state": "translated",
             "value": "¿Tienes un secreto que sueñas con compartir algún día con la persona adecuada?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hai un segreto che sogni di condividere un giorno con la persona giusta?"
+          }
         }
       }
     },
@@ -2724,6 +3282,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué tipo de conexión buscas con alguien?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Che tipo di connessione cerchi con qualcuno?"
           }
         }
       }
@@ -2754,6 +3318,12 @@
             "state": "translated",
             "value": "¿Cuál crees que es el comienzo más hermoso?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qual è, secondo te, l'inizio più bello?"
+          }
         }
       }
     },
@@ -2782,6 +3352,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuál es tu cumplido favorito para recibir?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qual è il tuo complimento preferito da ricevere?"
           }
         }
       }
@@ -2812,6 +3388,12 @@
             "state": "translated",
             "value": "¿Qué te hace sonreír incluso en un día muy malo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cosa ti fa sorridere anche in una giornata davvero brutta?"
+          }
         }
       }
     },
@@ -2840,6 +3422,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Tienes una frase o idea que te gustaría que la gente recordara de ti?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hai una frase o un'idea che vorresti che le persone ricordassero di te?"
           }
         }
       }
@@ -2870,6 +3458,12 @@
             "state": "translated",
             "value": "¿Tienes mascotas? Si es así, ¿cuál?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hai animali domestici? Se sì, quali?"
+          }
         }
       }
     },
@@ -2898,6 +3492,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías tener perros o gatos por el resto de tu vida?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti avere cani o gatti per il resto della tua vita?"
           }
         }
       }
@@ -2928,6 +3528,12 @@
             "state": "translated",
             "value": "¿Crees en los sueños proféticos?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Credi nei sogni premonitori?"
+          }
         }
       }
     },
@@ -2956,6 +3562,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué es lo que más te gusta de mí?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Che cosa preferisci di me?"
           }
         }
       }
@@ -2986,6 +3598,12 @@
             "state": "translated",
             "value": "¿Qué gesto simple crees que puede transmitir mucho amor?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quale gesto semplice pensi possa trasmettere molto amore?"
+          }
         }
       }
     },
@@ -3014,6 +3632,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuál ha sido el viaje más genial que has hecho?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qual è stato il viaggio più bello che hai fatto?"
           }
         }
       }
@@ -3044,6 +3668,12 @@
             "state": "translated",
             "value": "¿Eres del tipo que da el primer paso?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sei il tipo che fa la prima mossa?"
+          }
         }
       }
     },
@@ -3072,6 +3702,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuál es tu definición de confianza en una pareja?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qual è la tua definizione di fiducia in una coppia?"
           }
         }
       }
@@ -3102,6 +3738,12 @@
             "state": "translated",
             "value": "Nombra un país que realmente sueñas con visitar."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nomina un paese che sogni davvero di visitare."
+          }
         }
       }
     },
@@ -3130,6 +3772,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Eres más de abrirte fácilmente o de tomarte tu tiempo?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sei il tipo che si apre facilmente o che si prende il suo tempo?"
           }
         }
       }
@@ -3160,6 +3808,12 @@
             "state": "translated",
             "value": "¿Prefieres ir de camping o salir de fiesta?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferisci andare in campeggio o uscire in discoteca?"
+          }
         }
       }
     },
@@ -3188,6 +3842,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué es algo que siempre te enfada?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qual è una cosa che ti fa arrabbiare sempre?"
           }
         }
       }
@@ -3218,6 +3878,12 @@
             "state": "translated",
             "value": "¿Tienes una anécdota que cuentes a menudo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hai un aneddoto che racconti spesso?"
+          }
         }
       }
     },
@@ -3246,6 +3912,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué es algo que te encanta de donde vives?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qual è una cosa che ami del posto in cui vivi?"
           }
         }
       }
@@ -3276,6 +3948,12 @@
             "state": "translated",
             "value": "¿Qué es algo que odias de donde vives?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qual è una cosa che odi del posto in cui vivi?"
+          }
         }
       }
     },
@@ -3304,6 +3982,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué tipo de momentos simples te hacen profundamente feliz?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Che tipo di momenti semplici ti rendono profondamente felice?"
           }
         }
       }
@@ -3334,6 +4018,12 @@
             "state": "translated",
             "value": "¿Tienes un miedo relacionado con el amor que te gustaría superar?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hai una paura legata all'amore che vorresti superare?"
+          }
         }
       }
     },
@@ -3362,6 +4052,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuál es tu manera de seducir a alguien?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qual è il tuo modo di sedurre qualcuno?"
           }
         }
       }
@@ -3392,6 +4088,12 @@
             "state": "translated",
             "value": "Si pudieras recibir solo un regalo, ¿cuál sería?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se potessi ricevere un solo regalo, quale sarebbe?"
+          }
         }
       }
     },
@@ -3420,6 +4122,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Prefieres recibir un regalo físico, una tarjeta de regalo o dinero?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferisci ricevere un regalo fisico, una gift card o denaro?"
           }
         }
       }
@@ -3450,6 +4158,12 @@
             "state": "translated",
             "value": "¿Te describirías como introvertido o extrovertido?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ti descriveresti come introverso o estroverso?"
+          }
         }
       }
     },
@@ -3478,6 +4192,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Si pudieras revivir un momento de tu vida, ¿cuál elegirías?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se potessi rivivere un momento della tua vita, quale sceglieresti?"
           }
         }
       }
@@ -3508,6 +4228,12 @@
             "state": "translated",
             "value": "¿Cómo sabes que te estás enamorando?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Come capisci che ti stai innamorando?"
+          }
         }
       }
     },
@@ -3536,6 +4262,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué puede transformar un hermoso encuentro en una relación profunda?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cosa può trasformare un bell'incontro in una relazione profonda?"
           }
         }
       }
@@ -3566,6 +4298,12 @@
             "state": "translated",
             "value": "¿Alguna vez sentiste que alguien podía leerte como un libro abierto?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ti sei mai sentito come se qualcuno potesse leggerti come un libro aperto?"
+          }
         }
       }
     },
@@ -3594,6 +4332,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué es algo que sientes pero rara vez expresas?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qual è qualcosa che senti ma esprimi raramente?"
           }
         }
       }
@@ -3624,6 +4368,12 @@
             "state": "translated",
             "value": "¿Qué frase te conmovió o te tocó profundamente alguna vez?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quale frase ti ha commosso o toccato profondamente una volta?"
+          }
         }
       }
     },
@@ -3652,6 +4402,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuál es tu lugar favorito para relajarte?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qual è il tuo posto preferito per rilassarti?"
           }
         }
       }
@@ -3682,6 +4438,12 @@
             "state": "translated",
             "value": "¿Prefieres ir al gimnasio o entrenar en casa?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferisci andare in palestra o allenarti a casa?"
+          }
         }
       }
     },
@@ -3710,6 +4472,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué es algo que una persona podría hacerte que nunca podrías perdonar?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qual è una cosa che una persona potrebbe farti e che non potresti mai perdonare?"
           }
         }
       }
@@ -7399,8 +8167,4 @@
     }
   },
   "version": "1.0"
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
