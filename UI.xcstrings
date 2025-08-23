@@ -9115,7 +9115,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "👥 Partner Connected"
+            "value": "👥 Partner connesso"
           }
         }
       }
@@ -9397,7 +9397,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "/ user /"
+            "value": "/ utente /"
           }
         }
       }
@@ -9819,7 +9819,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Premium categories locked"
+            "value": "Categorie Premium bloccate"
           }
         }
       }
@@ -9924,7 +9924,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ shared their Premium subscription with you!\n\nYou now have access to all premium features."
+              "value": "%@ ha condiviso con te il suo abbonamento Premium!\n\nOra hai accesso a tutte le funzioni Premium."
           }
         }
       }
@@ -9994,7 +9994,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "🎉 Premium unlocked!"
+            "value": "🎉 Premium sbloccato!"
           }
         }
       }
@@ -10099,7 +10099,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Privacy policy"
+            "value": "Informativa sulla privacy"
           }
         }
       }
@@ -10309,7 +10309,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Purchase cancelled by user"
+            "value": "Acquisto annullato dall’utente"
           }
         }
       }
@@ -10344,7 +10344,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Purchase error"
+            "value": "Errore di acquisto"
           }
         }
       }
@@ -10379,7 +10379,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Purchases are not allowed on this device"
+            "value": "Gli acquisti non sono consentiti su questo dispositivo"
           }
         }
       }
@@ -10414,7 +10414,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Purchases are not authorized on this device"
+            "value": "Gli acquisti non sono autorizzati su questo dispositivo"
           }
         }
       }
@@ -10764,7 +10764,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reload cache"
+            "value": "Ricarica cache"
           }
         }
       }
@@ -10904,7 +10904,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Do you want to remove this question from your favorites?"
+            "value": "Vuoi rimuovere questa domanda dai preferiti?"
           }
         }
       }
