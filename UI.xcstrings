@@ -8660,7 +8660,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "of"
+            "value": "di"
           }
         }
       }
@@ -9080,7 +9080,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Partner connected:"
+            "value": "Partner connesso:"
           }
         }
       }
@@ -9255,7 +9255,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Partner not connected"
+            "value": "Partner non connesso"
           }
         }
       }
@@ -9290,7 +9290,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Shared by: %@"
+            "value": "Condiviso da: %@"
           }
         }
       }
@@ -9326,7 +9326,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "👥 Partner Status"
+            "value": "👥 Stato partner"
           }
         }
       }
@@ -9362,7 +9362,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "👥 Partner Status"
+            "value": "👥 Stato partner"
           }
         }
       }
@@ -9467,7 +9467,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Location permission"
+            "value": "Autorizzazione posizione"
           }
         }
       }
@@ -9502,7 +9502,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Photo access permission"
+            "value": "Autorizzazione di accesso alle foto"
           }
         }
       }
@@ -9537,7 +9537,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Love2Love will only access photos you authorize"
+            "value": "Love2Love accederà solo alle foto che autorizzi"
           }
         }
       }
@@ -9608,7 +9608,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "To use this feature, please authorize photo access in Settings."
+            "value": "Per usare questa funzione, autorizza l’accesso alle foto in Impostazioni."
           }
         }
       }
@@ -9748,7 +9748,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "🎯 Premium Access:"
+            "value": "🎯 Accesso Premium:"
           }
         }
       }
@@ -9784,7 +9784,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Premium Access Lost"
+            "value": "Accesso Premium revocato"
           }
         }
       }
@@ -9889,7 +9889,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "All categories unlocked"
+            "value": "Tutte le categorie sbloccate"
           }
         }
       }
@@ -9959,7 +9959,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Go Premium to create unlimited memories with your partner"
+            "value": "Passa a Premium per creare ricordi illimitati con il tuo partner"
           }
         }
       }
@@ -10134,7 +10134,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "We promise to always keep your personal information private and secure."
+            "value": "Promettiamo di mantenere sempre private e al sicuro le tue informazioni personali."
           }
         }
       }
@@ -10169,7 +10169,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Error loading product"
+            "value": "Errore nel caricamento del prodotto"
           }
         }
       }
@@ -10204,7 +10204,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Product loading failed"
+            "value": "Caricamento del prodotto non riuscito"
           }
         }
       }
@@ -10239,7 +10239,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Product not available"
+            "value": "Prodotto non disponibile"
           }
         }
       }
@@ -10274,7 +10274,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Profile"
+            "value": "Profilo"
           }
         }
       }
@@ -10624,7 +10624,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "🔄 Refresh"
+            "value": "🔄 Aggiorna"
           }
         }
       }
@@ -10659,7 +10659,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "How long have you been together?"
+            "value": "Da quanto tempo state insieme?"
           }
         }
       }
@@ -10694,7 +10694,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "What are your relationship goals?"
+            "value": "Quali sono i vostri obiettivi di coppia?"
           }
         }
       }
@@ -10729,7 +10729,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "What would you like to improve in your relationship?"
+            "value": "Cosa vorresti migliorare nella tua relazione?"
           }
         }
       }
@@ -10799,7 +10799,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Only"
+            "value": "Solo"
           }
         }
       }
@@ -10834,7 +10834,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Only %d %@ entr%@ remaining!"
+            "value": "Solo %d %@ voc%@ rimanent@!"
           }
         }
       }
@@ -10974,7 +10974,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Remove"
+            "value": "Rimuovi"
           }
         }
       }
@@ -11079,7 +11079,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Restore"
+            "value": "Ripristina"
           }
         }
       }
@@ -11289,7 +11289,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Saving..."
+            "value": "Salvataggio..."
           }
         }
       }
@@ -15982,7 +15982,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Love2Love Distance"
+            "value": "Distanza Love2Love"
           }
         }
       }
@@ -16017,7 +16017,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Distance Love2Love"
+            "value": "Mappa Love2Love"
           }
         }
       }
