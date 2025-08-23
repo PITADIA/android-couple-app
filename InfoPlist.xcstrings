@@ -21,6 +21,12 @@
             "state" : "translated",
             "value" : "Love2Love"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Love2Love"
+          }
         }
       }
     },
@@ -44,6 +50,12 @@
             "state" : "translated",
             "value" : "CoupleApp"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CoupleApp"
+          }
         }
       }
     },
@@ -57,6 +69,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : ""
@@ -90,6 +108,12 @@
             "state" : "translated",
             "value" : "Love2Love utiliza tu ubicación para calcular la distancia entre tú y tu pareja, y para permitirte añadir lugares a vuestros recuerdos compartidos."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Love2Love utilizza la tua posizione per calcolare la distanza tra te e il tuo partner e per permetterti di aggiungere luoghi ai vostri ricordi condivisi."
+          }
         }
       }
     },
@@ -118,6 +142,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Love2Love necesita acceder a tus fotos para permitirte personalizar tu perfil y añadir imágenes a tus recuerdos compartidos en el diario de pareja."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Love2Love ha bisogno di accedere alle tue foto per permetterti di personalizzare il tuo profilo e aggiungere immagini ai vostri ricordi condivisi nel diario di coppia."
           }
         }
       }
@@ -148,6 +178,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Love2Love te envía notificaciones cuando tu pareja te envía un mensaje. Puedes desactivar estas notificaciones en cualquier momento en Ajustes."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Love2Love ti invia notifiche quando il tuo partner ti invia un messaggio. Puoi disattivare queste notifiche in qualsiasi momento nelle Impostazioni."
           }
         }
       }
