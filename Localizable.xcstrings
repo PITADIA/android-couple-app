@@ -20,6 +20,12 @@
             "state" : "translated",
             "value" : "%1$@ / %2$@"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ / %2$@"
+          }
         }
       }
     },
@@ -36,6 +42,12 @@
             "state" : "translated",
             "value" : "%1$@ %2$@"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ %2$@"
+          }
         }
       }
     },
@@ -48,6 +60,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@, %2$@"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%1$@, %2$@"
@@ -180,6 +198,12 @@
             "state" : "translated",
             "value" : "Loin des yeux près du coeur."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lontano dagli occhi, vicino al cuore."
+          }
         }
       }
     },
@@ -208,6 +232,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Relation à distance"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Relazione a distanza"
           }
         }
       }
@@ -238,6 +268,12 @@
             "state" : "translated",
             "value" : "Dévoilez vos envies pour mieux vous comprendre."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Condividete i vostri desideri e scopritevi più profondamente."
+          }
         }
       }
     },
@@ -259,17 +295,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-<<<<<<< HEAD
-            "value" : "Deseos secretos"
-=======
             "value" : "Deseos ocultos"
->>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Désirs Inavoués"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desideri nascosti"
           }
         }
       }
@@ -300,6 +338,12 @@
             "state" : "translated",
             "value" : "Des questions pour se rappeler ce qui nous unit."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Domande per ricordare ciò che ci unisce."
+          }
         }
       }
     },
@@ -328,6 +372,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Toi et Moi"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu e io"
           }
         }
       }
@@ -358,6 +408,12 @@
             "state" : "translated",
             "value" : "S'aimer, c'est aussi apprendre à se réparer."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Amare significa anche imparare a guarire."
+          }
         }
       }
     },
@@ -379,17 +435,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-<<<<<<< HEAD
-            "value" : "Curando nuestro amor"
-=======
             "value" : "Sanando nuestro amor"
->>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Réparer notre amour"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guarire il nostro amore"
           }
         }
       }
@@ -420,6 +478,12 @@
             "state" : "translated",
             "value" : "Parceque s'aimer c'est aussi s'amuser ensemble"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perché amare significa anche ridere insieme."
+          }
         }
       }
     },
@@ -448,6 +512,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pour rire à deux"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ridere insieme"
           }
         }
       }
@@ -478,6 +548,12 @@
             "state" : "translated",
             "value" : "Des questions pour voir l'autre au-delà des apparences."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Domande per vedere l'altro oltre le apparenze."
+          }
         }
       }
     },
@@ -506,6 +582,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "En date"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A un appuntamento"
           }
         }
       }
@@ -536,6 +618,12 @@
             "state" : "translated",
             "value" : "Pour explorer ce que l'on garde en soi, en silence."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scopri i pensieri che non sempre dici ad alta voce."
+          }
         }
       }
     },
@@ -564,6 +652,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Des questions profondes"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Domande profonde"
           }
         }
       }
@@ -594,6 +688,12 @@
             "state" : "translated",
             "value" : "Des questions qui touchent à ce qui te définit."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Domande che rivelano ciò che conta davvero per te."
+          }
         }
       }
     },
@@ -622,6 +722,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu préfères quoi ?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cosa preferiresti?"
           }
         }
       }
@@ -688,6 +794,12 @@
             "state" : "translated",
             "value" : "✨ %d jours gratuits restants • Ensuite, abonnement requis"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✨ %d giorni gratuiti restanti • Poi è necessario l'abbonamento"
+          }
         }
       }
     },
@@ -716,6 +828,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "✨ 1 jour gratuit restant • Ensuite, abonnement requis"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✨ 1 giorno gratuito restante • Poi è necessario l'abbonamento"
           }
         }
       }
@@ -746,6 +864,12 @@
             "state" : "translated",
             "value" : "💎 Inclus avec votre abonnement Premium"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "💎 Incluso nel tuo abbonamento Premium"
+          }
         }
       }
     },
@@ -774,6 +898,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "🔒 Abonnement requis pour continuer"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔒 È necessario un abbonamento per continuare"
           }
         }
       }
@@ -804,6 +934,12 @@
             "state" : "translated",
             "value" : "✨ %d jours gratuits restants • Ensuite, abonnement requis"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✨ %d giorni gratuiti restanti • Poi è necessario l'abbonamento"
+          }
         }
       }
     },
@@ -832,6 +968,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "✨ 1 jour gratuit restant • Ensuite, abonnement requis"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✨ 1 giorno gratuito restante • Poi è necessario l'abbonamento"
           }
         }
       }
@@ -862,6 +1004,12 @@
             "state" : "translated",
             "value" : "💎 Inclus avec votre abonnement Premium"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "💎 Incluso nel tuo abbonamento Premium"
+          }
         }
       }
     },
@@ -890,6 +1038,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "🔒 Abonnement requis pour continuer"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔒 È necessario un abbonamento per continuare"
           }
         }
       }
@@ -1055,6 +1209,12 @@
             "state" : "translated",
             "value" : "Abonnez-vous pour débloquer l'accès aux collections ci-dessous ✨"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abbonati per sbloccare l'accesso alle collezioni qui sotto ✨"
+          }
         }
       }
     },
@@ -1083,6 +1243,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Les collections ci-dessous vous sont disponibles grâce à votre abonnement 💎"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tutte le collezioni qui sotto sono disponibili con il tuo abbonamento 💎"
           }
         }
       }
