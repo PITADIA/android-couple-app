@@ -28,6 +28,12 @@
             "state" : "translated",
             "value" : "¿Qué es lo más ridículo que has hecho para evitar una conversación incómoda?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la cosa più ridicola che hai fatto per evitare una conversazione imbarazzante?"
+          }
         }
       }
     },
@@ -56,6 +62,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tuvieras que crear un perfume que huela como tu personalidad, ¿a qué olería?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se dovessi creare un profumo che odora come la tua personalità, che odore avrebbe?"
           }
         }
       }
@@ -86,6 +98,12 @@
             "state" : "translated",
             "value" : "¿Cuál es la mentira más absurda que contaste de niño y que realmente creíste?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la bugia più assurda che hai raccontato da bambino e in cui credevi davvero?"
+          }
         }
       }
     },
@@ -114,6 +132,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si pudieras reemplazar todas las bocinas de los autos por cualquier sonido, ¿cuál elegirías?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi sostituire tutti i clacson delle auto con qualsiasi suono, quale sceglieresti?"
           }
         }
       }
@@ -144,6 +168,12 @@
             "state" : "translated",
             "value" : "¿Qué es lo más extraño que has encontrado en tu refrigerador sin recordar haberlo puesto allí?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la cosa più strana che hai trovato nel frigorifero e di cui non ricordi di averla messa lì?"
+          }
         }
       }
     },
@@ -172,6 +202,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tuvieras que sobrevivir una semana solo con los objetos que tienes ahora en tu bolsillo/bolsa, ¿cómo te las arreglarías?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se dovessi sopravvivere una settimana solo con gli oggetti che hai ora in tasca/borsa, come te la caveresti?"
           }
         }
       }
@@ -202,6 +238,12 @@
             "state" : "translated",
             "value" : "¿Cuál es el sueño más raro que has tenido y aún recuerdas?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è il sogno più strano che hai avuto e che ricordi ancora?"
+          }
         }
       }
     },
@@ -230,6 +272,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si pudieras hacer que un alimento gritara cuando lo comen, ¿cuál elegirías para crear el mayor caos?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi far urlare un cibo quando viene mangiato, quale sceglieresti per creare il massimo caos?"
           }
         }
       }
@@ -260,6 +308,12 @@
             "state" : "translated",
             "value" : "¿Qué es lo más tonto que has hecho por pereza?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la cosa più stupida che hai fatto per pigrizia?"
+          }
         }
       }
     },
@@ -288,6 +342,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tuvieras que crear un nuevo baile basado en una actividad cotidiana, ¿cuál elegirías?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se dovessi inventare un nuovo ballo basato su un'attività quotidiana, quale sceglieresti?"
           }
         }
       }
@@ -318,6 +378,12 @@
             "state" : "translated",
             "value" : "¿Cuál fue la vez más vergonzosa en la que te sorprendieron hablando solo?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la volta più imbarazzante in cui ti hanno sorpreso a parlare da solo?"
+          }
         }
       }
     },
@@ -346,6 +412,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si pudieras tener cualquier animal como medio de transporte, ¿cuál elegirías?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi usare qualsiasi animale come mezzo di trasporto, quale sceglieresti?"
           }
         }
       }
@@ -376,6 +448,12 @@
             "state" : "translated",
             "value" : "¿Qué es lo más ridículo que has comprado por internet a las 3 de la mañana?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la cosa più ridicola che hai comprato online alle 3 di notte?"
+          }
         }
       }
     },
@@ -404,6 +482,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tuvieras que crear un nuevo deporte usando objetos cotidianos, ¿cómo sería?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se dovessi inventare un nuovo sport usando oggetti quotidiani, come sarebbe?"
           }
         }
       }
@@ -434,6 +518,12 @@
             "state" : "translated",
             "value" : "¿Cuál es la mentira más creativa que has inventado para evitar un evento social?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la bugia più creativa che hai inventato per evitare un evento sociale?"
+          }
         }
       }
     },
@@ -462,6 +552,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si pudieras reemplazar tu voz por la de alguien más por un día, ¿a quién elegirías?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi sostituire la tua voce con quella di chiunque per un giorno, chi sceglieresti?"
           }
         }
       }
@@ -492,6 +588,12 @@
             "state" : "translated",
             "value" : "¿Qué es lo más extraño que has hecho cuando pensabas que estabas solo?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la cosa più strana che hai fatto pensando di essere da solo?"
+          }
         }
       }
     },
@@ -520,6 +622,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tuvieras que crear un emoji nuevo, ¿cómo sería?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se dovessi creare una nuova emoji, come sarebbe?"
           }
         }
       }
@@ -550,6 +658,12 @@
             "state" : "translated",
             "value" : "¿Cuál fue el momento más absurdo en el que estallaste de risa?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è il momento più assurdo in cui sei scoppiato a ridere?"
+          }
         }
       }
     },
@@ -578,6 +692,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si pudieras hacer que un objeto inanimado hablara, ¿cuál elegirías y por qué?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi far parlare un oggetto inanimato, quale sceglieresti e perché?"
           }
         }
       }
@@ -608,6 +728,12 @@
             "state" : "translated",
             "value" : "¿Qué es lo más ridículo que has hecho para impresionar a alguien?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la cosa più ridicola che hai fatto per impressionare qualcuno?"
+          }
         }
       }
     },
@@ -636,6 +762,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tuvieras que crear un nuevo concurso de televisión completamente absurdo, ¿cuál sería la regla principal?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se dovessi inventare un nuovo game show televisivo completamente assurdo, quale sarebbe la regola principale?"
           }
         }
       }
@@ -666,6 +798,12 @@
             "state" : "translated",
             "value" : "¿Cuál fue el momento más vergonzoso en que confundiste a alguien con otra persona?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è il momento più imbarazzante in cui hai confuso qualcuno con qualcun altro?"
+          }
         }
       }
     },
@@ -694,6 +832,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si pudieras tener una habilidad inútil pero impresionante, ¿cuál elegirías?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi avere qualsiasi abilità inutile ma impressionante, quale sceglieresti?"
           }
         }
       }
@@ -724,6 +868,12 @@
             "state" : "translated",
             "value" : "¿Qué es lo más extraño que has hecho por costumbre sin darte cuenta?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la cosa più strana che hai fatto per abitudine senza rendertene conto?"
+          }
         }
       }
     },
@@ -752,6 +902,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tuvieras que crear un nuevo trabajo completamente inútil, ¿cuál sería?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se dovessi creare un lavoro completamente inutile, quale sarebbe?"
           }
         }
       }
@@ -782,6 +938,12 @@
             "state" : "translated",
             "value" : "¿Cuál fue el momento más absurdo en el que intentaste aparentar que sabías algo que no sabías?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è il momento più assurdo in cui hai finto di sapere qualcosa che non sapevi?"
+          }
         }
       }
     },
@@ -810,6 +972,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si pudieras reemplazar todos los ascensores por cualquier otro medio de transporte, ¿cuál elegirías?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi sostituire tutti gli ascensori con qualsiasi altro mezzo di trasporto, quale sceglieresti?"
           }
         }
       }
@@ -840,6 +1008,12 @@
             "state" : "translated",
             "value" : "¿Qué es lo más ridículo que has hecho cuando estabas enfermo?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la cosa più ridicola che hai fatto quando eri malato?"
+          }
         }
       }
     },
@@ -868,6 +1042,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tuvieras que crear una nueva tradición familiar completamente absurda, ¿cuál sería?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se dovessi inventare una nuova tradizione familiare completamente assurda, quale sarebbe?"
           }
         }
       }
@@ -898,6 +1078,12 @@
             "state" : "translated",
             "value" : "¿Cuál fue la vez más vergonzosa en la que pronunciaste mal una palabra frente a una multitud?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la volta più imbarazzante in cui hai pronunciato male una parola davanti a una folla?"
+          }
         }
       }
     },
@@ -926,6 +1112,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si pudieras hacer que un sonido siguiera por todas partes a alguien que no te cae bien, ¿qué sonido elegirías?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi far seguire a qualcuno che non ti piace un suono ovunque, quale suono sceglieresti?"
           }
         }
       }
@@ -956,6 +1148,12 @@
             "state" : "translated",
             "value" : "¿Qué es lo más tonto que has hecho tratando de parecer inteligente?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la cosa più stupida che hai fatto cercando di sembrare intelligente?"
+          }
         }
       }
     },
@@ -984,6 +1182,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tuvieras que crear un nuevo tipo de restaurante con un concepto totalmente loco, ¿cómo sería?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se dovessi creare un nuovo tipo di ristorante con un concept completamente folle, quale sarebbe?"
           }
         }
       }
@@ -1014,6 +1218,12 @@
             "state" : "translated",
             "value" : "¿Cuál fue el momento más absurdo en el que intentaste mentirle a tus padres?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è il momento più assurdo in cui hai provato a mentire ai tuoi genitori?"
+          }
         }
       }
     },
@@ -1042,6 +1252,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si pudieras reemplazar todas las manijas de las puertas por otra cosa, ¿qué elegirías?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi sostituire tutte le maniglie delle porte con qualsiasi altra cosa, cosa sceglieresti?"
           }
         }
       }
@@ -1072,6 +1288,12 @@
             "state" : "translated",
             "value" : "¿Qué es lo más ridículo que has hecho pensando que nadie te veía?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la cosa più ridicola che hai fatto pensando che nessuno ti stesse guardando?"
+          }
         }
       }
     },
@@ -1100,6 +1322,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tuvieras que crear un nuevo tipo de transporte público, ¿cómo sería?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se dovessi inventare un nuovo tipo di trasporto pubblico, come sarebbe?"
           }
         }
       }
@@ -1130,6 +1358,12 @@
             "state" : "translated",
             "value" : "¿Cuál fue la vez más vergonzosa en que te descubrieron procrastinando?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la volta più imbarazzante in cui ti hanno colto a procrastinare?"
+          }
         }
       }
     },
@@ -1158,6 +1392,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si pudieras hacer enorme un objeto cotidiano, ¿cuál elegirías para crear el mayor caos?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi rendere enorme un oggetto quotidiano, quale sceglieresti per creare il massimo caos?"
           }
         }
       }
@@ -1188,6 +1428,12 @@
             "state" : "translated",
             "value" : "¿Qué es lo más absurdo que has hecho para evitar limpiar?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la cosa più assurda che hai fatto per evitare di pulire?"
+          }
         }
       }
     },
@@ -1216,6 +1462,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tuvieras que crear un nuevo tipo de ejercicio basado en una actividad ridícula, ¿cuál sería?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se dovessi creare un nuovo tipo di esercizio basato su un'attività ridicola, quale sarebbe?"
           }
         }
       }
@@ -1246,6 +1498,12 @@
             "state" : "translated",
             "value" : "¿Cuál fue el momento más tonto en que intentaste hacer algo que viste en una película?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è il momento più stupido in cui hai provato a fare qualcosa visto in un film?"
+          }
         }
       }
     },
@@ -1274,6 +1532,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si pudieras reemplazar todos los semáforos por otra cosa, ¿qué elegirías?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi sostituire tutti i semafori con qualsiasi altra cosa, cosa sceglieresti?"
           }
         }
       }
@@ -1304,6 +1568,12 @@
             "state" : "translated",
             "value" : "¿Qué es lo más ridículo que has hecho medio dormido?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la cosa più ridicola che hai fatto mezzo addormentato?"
+          }
         }
       }
     },
@@ -1332,6 +1602,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tuvieras que crear un concurso completamente absurdo, ¿cuál sería el desafío principal?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se dovessi inventare una nuova gara completamente assurda, quale sarebbe la sfida principale?"
           }
         }
       }
@@ -1362,6 +1638,12 @@
             "state" : "translated",
             "value" : "¿Cuál fue el momento más vergonzoso en que intentaste ser cool y todo salió mal?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è il momento più imbarazzante in cui hai cercato di fare il cool ma è andato tutto storto?"
+          }
         }
       }
     },
@@ -1390,6 +1672,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si pudieras hacer que un alimento tuviera una textura completamente distinta, ¿cuál elegirías?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi far avere a un cibo una consistenza completamente diversa, quale sceglieresti?"
           }
         }
       }
@@ -1420,6 +1708,12 @@
             "state" : "translated",
             "value" : "¿Qué es lo más tonto que has hecho intentando ahorrar dinero?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la cosa più stupida che hai fatto cercando di risparmiare?"
+          }
         }
       }
     },
@@ -1448,6 +1742,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tuvieras que crear un nuevo tipo de tienda con un concepto totalmente loco, ¿cómo sería?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se dovessi creare un nuovo tipo di negozio con un concept completamente folle, quale sarebbe?"
           }
         }
       }
@@ -1478,6 +1778,12 @@
             "state" : "translated",
             "value" : "¿Cuál fue el momento más absurdo en que intentaste arreglar algo y lo rompiste todo?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è il momento più assurdo in cui hai provato ad aggiustare qualcosa e hai rotto tutto?"
+          }
         }
       }
     },
@@ -1506,6 +1812,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si pudieras reemplazar todos los teléfonos por cualquier otro objeto para comunicarte, ¿cuál elegirías?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi sostituire tutti i telefoni con qualsiasi altro oggetto per comunicare, quale sceglieresti?"
           }
         }
       }
@@ -1536,6 +1848,12 @@
             "state" : "translated",
             "value" : "¿Qué es lo más ridículo que has hecho para impresionar a tus amigos?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la cosa più ridicola che hai fatto per impressionare i tuoi amici?"
+          }
         }
       }
     },
@@ -1564,6 +1882,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tuvieras que crear un nuevo tipo de entretenimiento basado en una actividad aburrida, ¿cuál sería?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se dovessi creare un nuovo tipo di intrattenimento basato su un'attività noiosa, quale sarebbe?"
           }
         }
       }
@@ -1594,6 +1918,12 @@
             "state" : "translated",
             "value" : "¿Cuál fue el momento más vergonzoso en que confundiste a dos personas por teléfono?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è il momento più imbarazzante in cui hai confuso due persone al telefono?"
+          }
         }
       }
     },
@@ -1622,6 +1952,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si pudieras hacer que una prenda de ropa tuviera una función completamente inútil, ¿cuál elegirías?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi far avere a un capo d'abbigliamento una funzione completamente inutile, quale sceglieresti?"
           }
         }
       }
@@ -1652,6 +1988,12 @@
             "state" : "translated",
             "value" : "¿Qué es lo más absurdo que has hecho intentando que te notaran?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la cosa più assurda che hai fatto per farti notare?"
+          }
         }
       }
     },
@@ -1680,6 +2022,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tuvieras que crear un nuevo juego de mesa con reglas totalmente locas, ¿cómo sería?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se dovessi creare un nuovo gioco da tavolo con regole completamente folli, come sarebbe?"
           }
         }
       }
@@ -1710,6 +2058,12 @@
             "state" : "translated",
             "value" : "¿Cuál fue la vez más tonta en que intentaste hacer algo romántico y salió mal?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la volta più stupida in cui hai provato a fare qualcosa di romantico ma è finita male?"
+          }
         }
       }
     },
@@ -1738,6 +2092,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si pudieras reemplazar todos los espejos por otra cosa, ¿qué elegirías?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi sostituire tutti gli specchi con qualsiasi altra cosa, cosa sceglieresti?"
           }
         }
       }
@@ -1768,6 +2128,12 @@
             "state" : "translated",
             "value" : "¿Qué es lo más ridículo que has hecho intentando vengarte de alguien?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la cosa più ridicola che hai fatto per vendicarti di qualcuno?"
+          }
         }
       }
     },
@@ -1796,6 +2162,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tuvieras que crear un curso totalmente inútil, ¿cuál sería?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se dovessi creare un nuovo corso completamente inutile, quale sarebbe?"
           }
         }
       }
@@ -1826,6 +2198,12 @@
             "state" : "translated",
             "value" : "¿Cuál fue la vez más vergonzosa en que fingiste que te gustaba algo que odiabas?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la volta più imbarazzante in cui hai finto di apprezzare qualcosa che odiavi?"
+          }
         }
       }
     },
@@ -1854,6 +2232,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si pudieras hacer que un mueble tuviera una función completamente distinta, ¿cuál elegirías?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi far avere a un mobile una funzione completamente diversa, quale sceglieresti?"
           }
         }
       }
@@ -1884,6 +2268,12 @@
             "state" : "translated",
             "value" : "¿Qué es lo más absurdo que has hecho tratando de conseguir perdón?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la cosa più assurda che hai fatto per ottenere il perdono?"
+          }
         }
       }
     },
@@ -1912,6 +2302,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tuvieras que crear un nuevo tipo de festival con un tema totalmente loco, ¿cuál sería?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se dovessi creare un nuovo tipo di festival con un tema completamente folle, quale sarebbe?"
           }
         }
       }
@@ -1942,6 +2338,12 @@
             "state" : "translated",
             "value" : "¿Cuál fue el momento más tonto en que intentaste hacer algo creativo y fue un desastre?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è il momento più stupido in cui hai provato a fare qualcosa di creativo ma è stato un disastro?"
+          }
         }
       }
     },
@@ -1970,6 +2372,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si pudieras reemplazar todas las sillas por cualquier otro tipo de asiento, ¿cuál elegirías?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi sostituire tutte le sedie con qualsiasi altro tipo di seduta, quale sceglieresti?"
           }
         }
       }
@@ -2000,6 +2408,12 @@
             "state" : "translated",
             "value" : "¿Qué es lo más ridículo que has hecho para evitar a alguien?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la cosa più ridicola che hai fatto per evitare qualcuno?"
+          }
         }
       }
     },
@@ -2028,6 +2442,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tuvieras que crear un nuevo tipo de terapia basada en una actividad ridícula, ¿cuál sería?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se dovessi creare una nuova terapia basata su un'attività ridicola, quale sarebbe?"
           }
         }
       }
@@ -2058,6 +2478,12 @@
             "state" : "translated",
             "value" : "¿Cuál fue la vez más vergonzosa en que intentaste hacer un chiste y nadie se rió?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la volta più imbarazzante in cui hai provato a fare una battuta che è caduta nel vuoto?"
+          }
         }
       }
     },
@@ -2086,6 +2512,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si pudieras darle personalidad a un electrodoméstico, ¿cuál elegirías?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi dare una personalità a un elettrodomestico, quale sceglieresti?"
           }
         }
       }
@@ -2116,6 +2548,12 @@
             "state" : "translated",
             "value" : "¿Qué es lo más absurdo que has hecho tratando de relajarte?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la cosa più assurda che hai fatto cercando di rilassarti?"
+          }
         }
       }
     },
@@ -2144,6 +2582,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tuvieras que crear un nuevo tipo de competencia con reglas totalmente locas, ¿cómo sería?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se dovessi creare una nuova competizione con regole completamente folli, quale sarebbe?"
           }
         }
       }
@@ -2174,6 +2618,12 @@
             "state" : "translated",
             "value" : "¿Cuál fue el momento más tonto en que intentaste hacer algo heroico y fracasaste?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è il momento più stupido in cui hai provato a fare qualcosa di eroico ma hai fallito?"
+          }
         }
       }
     },
@@ -2202,6 +2652,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si pudieras reemplazar todas las escaleras por otra forma de subir, ¿cuál elegirías?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi sostituire tutte le scale con qualsiasi altro modo di salire, quale sceglieresti?"
           }
         }
       }
@@ -2232,6 +2688,12 @@
             "state" : "translated",
             "value" : "¿Qué es lo más ridículo que has hecho tratando de hacer amigos?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la cosa più ridicola che hai fatto per farti degli amici?"
+          }
         }
       }
     },
@@ -2260,6 +2722,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tuvieras que crear un nuevo tipo de música basada en sonidos cotidianos, ¿cómo sonaría?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se dovessi creare un nuovo tipo di musica basato sui suoni quotidiani, come sarebbe?"
           }
         }
       }
@@ -2290,6 +2758,12 @@
             "state" : "translated",
             "value" : "¿Cuál fue la vez más vergonzosa en que intentaste bailar y todos te miraron?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la volta più imbarazzante in cui hai provato a ballare e tutti ti hanno guardato?"
+          }
         }
       }
     },
@@ -2318,6 +2792,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si pudieras hacer que un objeto de oficina tuviera una función completamente distinta, ¿cuál elegirías?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi far avere a un oggetto da ufficio una funzione completamente diversa, quale sceglieresti?"
           }
         }
       }
@@ -2348,6 +2828,12 @@
             "state" : "translated",
             "value" : "¿Qué es lo más absurdo que has hecho intentando educarte?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la cosa più assurda che hai fatto cercando di istruirti?"
+          }
         }
       }
     },
@@ -2376,6 +2862,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tuvieras que crear un nuevo tipo de vacaciones con un concepto totalmente loco, ¿cuál sería?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se dovessi creare un nuovo tipo di vacanza con un concept completamente folle, quale sarebbe?"
           }
         }
       }
@@ -2406,6 +2898,12 @@
             "state" : "translated",
             "value" : "¿Cuál fue el momento más tonto en que intentaste hacer algo sofisticado y salió mal?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è il momento più stupido in cui hai provato a fare qualcosa di sofisticato ma hai fallito?"
+          }
         }
       }
     },
@@ -2434,6 +2932,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si pudieras reemplazar todas las puertas por cualquier otro tipo de entrada, ¿cuál elegirías?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi sostituire tutte le porte con qualsiasi altro tipo d'ingresso, quale sceglieresti?"
           }
         }
       }
@@ -2464,6 +2968,12 @@
             "state" : "translated",
             "value" : "¿Qué es lo más ridículo que has hecho intentando ahorrar tiempo?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la cosa più ridicola che hai fatto cercando di risparmiare tempo?"
+          }
         }
       }
     },
@@ -2492,6 +3002,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tuvieras que crear un hobby totalmente inútil, ¿cuál sería?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se dovessi creare un nuovo hobby completamente inutile, quale sarebbe?"
           }
         }
       }
@@ -2522,6 +3038,12 @@
             "state" : "translated",
             "value" : "¿Cuál fue la vez más vergonzosa en que intentaste fingir que entendías algo que no entendías?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la volta più imbarazzante in cui hai finto di capire qualcosa che non capivi?"
+          }
         }
       }
     },
@@ -2550,6 +3072,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si pudieras hacer que una mascota tuviera una habilidad humana, ¿cuál elegirías?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi dare a un animale domestico un'abilità umana, quale sceglieresti?"
           }
         }
       }
@@ -2580,6 +3108,12 @@
             "state" : "translated",
             "value" : "¿Qué es lo más absurdo que has hecho intentando motivarte?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la cosa più assurda che hai fatto per motivarti?"
+          }
         }
       }
     },
@@ -2608,6 +3142,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tuvieras que crear un nuevo tipo de restaurante donde todo esté al revés, ¿cómo sería?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se dovessi creare un nuovo ristorante dove tutto è sottosopra, come sarebbe?"
           }
         }
       }
@@ -2638,6 +3178,12 @@
             "state" : "translated",
             "value" : "¿Cuál fue el momento más tonto en que intentaste hacer algo romántico para ti mismo?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è il momento più stupido in cui hai provato a fare qualcosa di romantico per te stesso?"
+          }
         }
       }
     },
@@ -2666,6 +3212,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si pudieras reemplazar todas las camas por cualquier otra forma de dormir, ¿cuál elegirías?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi sostituire tutti i letti con qualsiasi altro modo di dormire, quale sceglieresti?"
           }
         }
       }
@@ -2696,6 +3248,12 @@
             "state" : "translated",
             "value" : "¿Qué es lo más ridículo que has hecho para que tu crush se fijara en ti?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la cosa più ridicola che hai fatto per farti notare dal tuo crush?"
+          }
         }
       }
     },
@@ -2724,6 +3282,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tuvieras que crear un nuevo deporte en el que haya que ser lo más lento posible, ¿cómo sería?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se dovessi creare un nuovo sport in cui bisogna essere il più lenti possibile, come sarebbe?"
           }
         }
       }
@@ -2754,6 +3318,12 @@
             "state" : "translated",
             "value" : "¿Cuál fue la vez más vergonzosa en que intentaste hacer algo cool delante de tus padres?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la volta più imbarazzante in cui hai provato a fare qualcosa di cool davanti ai tuoi genitori?"
+          }
         }
       }
     },
@@ -2782,6 +3352,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si pudieras hacer que una verdura supiera a postre, ¿cuál elegirías?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi far avere a una verdura il gusto di un dessert, quale sceglieresti?"
           }
         }
       }
@@ -2812,6 +3388,12 @@
             "state" : "translated",
             "value" : "¿Qué es lo más absurdo que has hecho para evitar hacer algo importante?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la cosa più assurda che hai fatto per evitare di fare qualcosa di importante?"
+          }
         }
       }
     },
@@ -2840,6 +3422,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tuvieras que crear un nuevo tipo de transporte que funcione con emociones, ¿cómo funcionaría?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se dovessi creare un nuovo mezzo di trasporto che funziona con le emozioni, come funzionerebbe?"
           }
         }
       }
@@ -2870,6 +3458,12 @@
             "state" : "translated",
             "value" : "¿Cuál fue el momento más tonto en que intentaste hacer algo maduro pero actuaste como un niño?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è il momento più stupido in cui hai provato a fare qualcosa di maturo ma ti sei comportato da bambino?"
+          }
         }
       }
     },
@@ -2898,6 +3492,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si pudieras reemplazar todas las ventanas por otra cosa, ¿qué elegirías?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi sostituire tutte le finestre con qualsiasi altra cosa, cosa sceglieresti?"
           }
         }
       }
@@ -2928,6 +3528,12 @@
             "state" : "translated",
             "value" : "¿Qué es lo más ridículo que has hecho para que tu mascota te perdonara?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la cosa più ridicola che hai fatto per farti perdonare dal tuo animale domestico?"
+          }
         }
       }
     },
@@ -2956,6 +3562,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tuvieras que crear un nuevo tipo de clase de cocina con ingredientes totalmente locos, ¿cómo sería?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se dovessi creare un nuovo corso di cucina con ingredienti completamente folli, quale sarebbe?"
           }
         }
       }
@@ -2986,6 +3598,12 @@
             "state" : "translated",
             "value" : "¿Cuál fue el momento más vergonzoso en que intentaste hacer algo artístico y fue un desastre?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è il momento più imbarazzante in cui hai provato a fare qualcosa di artistico ma è stato un disastro?"
+          }
         }
       }
     },
@@ -3014,6 +3632,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si pudieras hacer que un objeto del baño tuviera una función completamente distinta, ¿cuál elegirías?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi far avere a un oggetto da bagno una funzione completamente diversa, quale sceglieresti?"
           }
         }
       }
@@ -3044,6 +3668,12 @@
             "state" : "translated",
             "value" : "¿Qué es lo más absurdo que has hecho para destacar entre la multitud?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la cosa più assurda che hai fatto per distinguerti in mezzo alla folla?"
+          }
         }
       }
     },
@@ -3072,6 +3702,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tuvieras que crear un nuevo tipo de teatro donde los actores solo puedan susurrar, ¿cómo sería?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se dovessi creare un nuovo tipo di teatro in cui gli attori possono solo sussurrare, come sarebbe?"
           }
         }
       }
@@ -3102,6 +3738,12 @@
             "state" : "translated",
             "value" : "¿Cuál fue el momento más tonto en que intentaste hacer algo generoso y salió mal?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è il momento più stupido in cui hai provato a fare qualcosa di generoso ma è andato storto?"
+          }
         }
       }
     },
@@ -3130,6 +3772,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si pudieras reemplazar todos los grifos por cualquier otra forma de obtener agua, ¿cuál elegirías?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi sostituire tutti i rubinetti con qualsiasi altro modo per ottenere l'acqua, quale sceglieresti?"
           }
         }
       }
@@ -3160,6 +3808,12 @@
             "state" : "translated",
             "value" : "¿Qué es lo más ridículo que has hecho tratando de crear recuerdos?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la cosa più ridicola che hai fatto per creare ricordi?"
+          }
         }
       }
     },
@@ -3188,6 +3842,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tuvieras que crear un nuevo tipo de biblioteca con un concepto totalmente loco, ¿cómo sería?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se dovessi creare una nuova biblioteca con un concept completamente folle, quale sarebbe?"
           }
         }
       }
@@ -3218,6 +3878,12 @@
             "state" : "translated",
             "value" : "¿Cuál fue la vez más vergonzosa en que intentaste hacer algo espontáneo pero lo planificaste todo?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la volta più imbarazzante in cui hai provato a fare qualcosa di spontaneo ma hai programmato tutto?"
+          }
         }
       }
     },
@@ -3246,6 +3912,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si tu vida tuviera un reel de bloopers, ¿cuál sería el momento estelar?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se la tua vita avesse un blooper reel, qual sarebbe il momento clou?"
           }
         }
       }
@@ -3276,6 +3948,12 @@
             "state" : "translated",
             "value" : "Si pudieras conversar con un objeto, ¿cuál elegirías y por qué?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi avere una conversazione con un oggetto, quale sceglieresti e perché?"
+          }
         }
       }
     },
@@ -3304,6 +3982,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si pudieras crear un nuevo sabor de helado inspirado en tu personalidad, ¿cómo se llamaría?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi creare un nuovo gusto di gelato ispirato alla tua personalità, come si chiamerebbe?"
           }
         }
       }
@@ -3334,6 +4018,12 @@
             "state" : "translated",
             "value" : "Si pudieras tener a un personaje ficticio como compañero de cuarto, ¿a quién elegirías y por qué?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi avere un personaggio di finzione come coinquilino, chi sceglieresti e perché?"
+          }
         }
       }
     },
@@ -3362,6 +4052,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "¿Qué sonido animal puedes imitar mejor? ¡Quiero escucharlo!"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Che verso animale sai imitare meglio? Voglio sentirlo!!"
           }
         }
       }
@@ -3392,6 +4088,12 @@
             "state" : "translated",
             "value" : "¿Cuál es la razón más ridícula por la que te reíste a carcajadas en una situación seria?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la ragione più ridicola per cui sei scoppiato a ridere in una situazione seria?"
+          }
         }
       }
     },
@@ -3420,6 +4122,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si pudieras hablar con tu yo del pasado, ¿qué consejo hilarante te daría?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se potessi parlare con il tuo passato, che consiglio esilarante ti darebbe?"
           }
         }
       }
@@ -3450,6 +4158,12 @@
             "state" : "translated",
             "value" : "¿Qué letra de canción escuchaste mal y cantaste con toda confianza?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quale testo di una canzone hai capito male e cantato con convinzione?"
+          }
         }
       }
     },
@@ -3478,6 +4192,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "¿Qué es lo más gracioso que he hecho desde que estamos juntos?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è la cosa più divertente che ho fatto da quando stiamo insieme?"
           }
         }
       }
@@ -3508,6 +4228,12 @@
             "state" : "translated",
             "value" : "Si yo fuera una pizza, ¿cuál sería mi ingrediente? ¿Y por qué?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se fossi una pizza, quale sarebbe il mio condimento? E perché?"
+          }
         }
       }
     },
@@ -3536,6 +4262,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si yo fuera un objeto, ¿cuál sería y por qué?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se fossi un oggetto, quale sarei e perché?"
           }
         }
       }
@@ -3566,6 +4298,12 @@
             "state" : "translated",
             "value" : "¿Alguna vez tuviste un sueño tan gracioso que te despertaste riendo?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hai mai fatto un sogno così divertente da svegliarti ridendo?"
+          }
         }
       }
     },
@@ -3594,6 +4332,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cuéntame del peor corte de pelo que hayas tenido."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raccontami del peggior taglio di capelli che hai mai avuto."
           }
         }
       }
@@ -3624,6 +4368,12 @@
             "state" : "translated",
             "value" : "Cuéntame de una vez que intentaste ser discreto y te descubrieron."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raccontami di una volta in cui hai cercato di essere discreto e sei stato scoperto."
+          }
         }
       }
     },
@@ -3652,6 +4402,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cuéntame de una vez que te reíste cuando absolutamente no deberías."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raccontami di una volta in cui hai riso quando proprio non dovevi."
           }
         }
       }
