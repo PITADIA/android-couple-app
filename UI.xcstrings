@@ -6802,7 +6802,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Loading..."
+            "value": "Caricamento..."
           }
         }
       }
@@ -9045,7 +9045,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Partner code"
+            "value": "Codice partner"
           }
         }
       }
@@ -9150,7 +9150,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ask your partner to do the same to activate their location, otherwise the distance between you cannot be calculated."
+            "value": "Chiedi anche al tuo partner di attivare la posizione, altrimenti non sarà possibile calcolare la distanza tra voi."
           }
         }
       }
@@ -9220,7 +9220,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Your partner won't have to pay anything"
+            "value": "Il tuo partner non dovrà pagare nulla"
           }
         }
       }
@@ -9432,7 +9432,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Permission"
+            "value": "Autorizzazione"
           }
         }
       }
@@ -9573,7 +9573,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Photo access permission"
+            "value": "Autorizzazione di accesso alle foto"
           }
         }
       }
@@ -9643,7 +9643,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tap the + button in the top left to add a new widget."
+            "value": "Tocca il pulsante + in alto a sinistra per aggiungere un nuovo widget."
           }
         }
       }
@@ -9713,7 +9713,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "🎯 Premium Access:"
+            "value": "🎯 Accesso Premium:"
           }
         }
       }
@@ -9854,7 +9854,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Premium content unavailable"
+            "value": "Contenuti Premium non disponibili"
           }
         }
       }
@@ -10029,7 +10029,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Previous"
+            "value": "Precedente"
           }
         }
       }
@@ -10064,7 +10064,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "We promise to always keep your personal information private and secure."
+            "value": "Promettiamo di mantenere sempre private e al sicuro le tue informazioni personali."
           }
         }
       }
@@ -10449,7 +10449,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Questions cached"
+            "value": "Domande salvate in cache"
           }
         }
       }
@@ -10484,7 +10484,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "⚡️ Quick Actions"
+            "value": "⚡️ Azioni rapide"
           }
         }
       }
@@ -10519,7 +10519,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Real-time distance"
+            "value": "Distanza in tempo reale"
           }
         }
       }
@@ -10554,7 +10554,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Receipt validation failed"
+            "value": "Convalida della ricevuta non riuscita"
           }
         }
       }
@@ -10589,7 +10589,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Recover your access to all other questions and categories"
+            "value": "Recupera l’accesso a tutte le altre domande e categorie"
           }
         }
       }
@@ -10869,7 +10869,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Remove 1 favorite"
+            "value": "Rimuovi 1 preferito"
           }
         }
       }
@@ -10939,7 +10939,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Remove from favorites"
+            "value": "Rimuovi dai preferiti"
           }
         }
       }
@@ -11009,7 +11009,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Requires subscription"
+            "value": "Richiede abbonamento"
           }
         }
       }
@@ -11044,7 +11044,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reset"
+            "value": "Reimposta"
           }
         }
       }
@@ -11114,7 +11114,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Restore error"
+            "value": "Errore di ripristino"
           }
         }
       }
@@ -11149,7 +11149,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Restricted"
+            "value": "Limitato"
           }
         }
       }
@@ -11184,7 +11184,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Retry"
+            "value": "Riprova"
           }
         }
       }
@@ -11219,7 +11219,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Save"
+            "value": "Salva"
           }
         }
       }
@@ -11254,7 +11254,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Save your favorite moments together"
+            "value": "Salva i vostri momenti preferiti insieme"
           }
         }
       }
@@ -11324,7 +11324,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Search..."
+            "value": "Cerca..."
           }
         }
       }
@@ -11359,7 +11359,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Selected location"
+            "value": "Posizione selezionata"
           }
         }
       }
@@ -11394,7 +11394,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Custom location"
+            "value": "Posizione personalizzata"
           }
         }
       }
@@ -11429,7 +11429,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Place"
+            "value": "Luogo"
           }
         }
       }
@@ -11464,7 +11464,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Unknown"
+            "value": "Sconosciuto"
           }
         }
       }
@@ -11499,7 +11499,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Unknown city"
+            "value": "Città sconosciuta"
           }
         }
       }
@@ -11534,7 +11534,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "countries"
+            "value": "paesi"
           }
         }
       }
@@ -11569,7 +11569,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "country"
+            "value": "paese"
           }
         }
       }
@@ -11604,7 +11604,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "cities"
+            "value": "città"
           }
         }
       }
@@ -11639,7 +11639,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "city"
+            "value": "città"
           }
         }
       }
@@ -11674,7 +11674,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Title of your memory"
+            "value": "Titolo del tuo ricordo"
           }
         }
       }
@@ -11709,7 +11709,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Describe what made this moment special"
+            "value": "Descrivi cosa ha reso speciale questo momento"
           }
         }
       }
@@ -11744,7 +11744,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Event date"
+            "value": "Data dell’evento"
           }
         }
       }
@@ -11779,7 +11779,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Choose date"
+            "value": "Scegli data"
           }
         }
       }
@@ -11814,7 +11814,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Gallery access is required to add a photo. Please enable it in your device settings."
+            "value": "Per aggiungere una foto è necessario l’accesso alla galleria. Abilitalo nelle impostazioni del dispositivo."
           }
         }
       }
@@ -11849,7 +11849,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Gallery access error"
+            "value": "Errore di accesso alla galleria"
           }
         }
       }
@@ -11884,7 +11884,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Search for 'Love2Love', then pick the widget you want."
+            "value": "Cerca 'Love2Love', poi scegli il widget che desideri."
           }
         }
       }
@@ -11919,7 +11919,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Search for 'Love2Love', then pick the widget you want."
+            "value": "Cerca 'Love2Love', poi scegli il widget che desideri."
           }
         }
       }
@@ -11954,7 +11954,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Search love2love"
+            "value": "Cerca love2love"
           }
         }
       }
@@ -11989,7 +11989,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Search Love2Love"
+            "value": "Cerca Love2Love"
           }
         }
       }
@@ -12024,7 +12024,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Access Photos"
+            "value": "Accedi alle foto"
           }
         }
       }
@@ -12059,7 +12059,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Loading..."
+            "value": "Caricamento..."
           }
         }
       }
@@ -12094,7 +12094,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Photo access required"
+            "value": "Accesso alle foto richiesto"
           }
         }
       }
@@ -12129,7 +12129,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Your partner's turn"
+            "value": "Tocca al tuo partner"
           }
         }
       }
@@ -12164,7 +12164,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Continue"
+            "value": "Continua"
           }
         }
       }
@@ -12199,7 +12199,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Authorize"
+            "value": "Autorizza"
           }
         }
       }
@@ -12234,7 +12234,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Photo gallery access is required to add a profile photo. Please enable it in your device settings."
+            "value": "Per aggiungere una foto profilo è necessario l’accesso alla galleria. Abilitalo nelle impostazioni del dispositivo."
           }
         }
       }
@@ -12269,7 +12269,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Photo gallery access is required to change your profile photo. Please enable it in your device settings."
+            "value": "Per cambiare la foto profilo è necessario l’accesso alla galleria. Abilitalo nelle impostazioni del dispositivo."
           }
         }
       }
@@ -12304,7 +12304,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Photo gallery access error"
+            "value": "Errore di accesso alla galleria"
           }
         }
       }
@@ -12339,7 +12339,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "To add photos, please authorize access in Settings"
+            "value": "Per aggiungere foto, autorizza l’accesso in Impostazioni"
           }
         }
       }
@@ -12374,7 +12374,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "No accessible photos"
+            "value": "Nessuna foto accessibile"
           }
         }
       }
@@ -12409,7 +12409,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "You can select more photos in Settings"
+            "value": "Puoi selezionare più foto in Impostazioni"
           }
         }
       }
@@ -12444,7 +12444,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "seconds"
+            "value": "secondi"
           }
         }
       }
@@ -12479,7 +12479,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Questions\nanswered"
+            "value": "Domande\nrisposte"
           }
         }
       }
@@ -12514,7 +12514,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Cities\nvisited"
+            "value": "Città\nvisitate"
           }
         }
       }
@@ -12549,7 +12549,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Countries\nvisited"
+            "value": "Paesi\nvisitati"
           }
         }
       }
@@ -12584,7 +12584,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "year"
+            "value": "anno"
           }
         }
       }
@@ -12619,7 +12619,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "years"
+            "value": "anni"
           }
         }
       }
@@ -12654,7 +12654,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "month"
+            "value": "mese"
           }
         }
       }
@@ -12689,7 +12689,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "months"
+            "value": "mesi"
           }
         }
       }
@@ -12724,7 +12724,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "day"
+            "value": "giorno"
           }
         }
       }
@@ -12759,7 +12759,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "days"
+            "value": "giorni"
           }
         }
       }
@@ -12794,7 +12794,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "and"
+            "value": "e"
           }
         }
       }
@@ -12829,7 +12829,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "💕 Thinking of you"
+            "value": "💕 Penso a te"
           }
         }
       }
@@ -12864,7 +12864,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "SECURE YOUR ACCOUNT"
+            "value": "METTI AL SICURO IL TUO ACCOUNT"
           }
         }
       }
@@ -12899,7 +12899,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Select"
+            "value": "Seleziona"
           }
         }
       }
@@ -12934,7 +12934,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Select Allow When App is Active"
+            "value": "Seleziona Consenti quando l’app è attiva"
           }
         }
       }
@@ -12969,7 +12969,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Select your lock screen"
+            "value": "Seleziona la schermata di blocco"
           }
         }
       }
@@ -13004,7 +13004,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "You can select more photos in Settings"
+            "value": "Puoi selezionare più foto in Impostazioni"
           }
         }
       }
@@ -13039,7 +13039,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Select photo"
+            "value": "Seleziona foto"
           }
         }
       }
@@ -13074,7 +13074,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Selected location"
+            "value": "Posizione selezionata"
           }
         }
       }
@@ -13109,7 +13109,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Send code"
+            "value": "Invia codice"
           }
         }
       }
@@ -13145,7 +13145,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Send this code to your partner"
+            "value": "Invia questo codice al tuo partner"
           }
         }
       }
@@ -13180,7 +13180,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Here is my Love2Love partner code: {code}"
+            "value": "Ecco il mio codice partner Love2Love: {code}"
           }
         }
       }
@@ -13215,7 +13215,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Send partner code"
+            "value": "Invia codice partner"
           }
         }
       }
@@ -13250,7 +13250,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Settings"
+            "value": "Impostazioni"
           }
         }
       }
@@ -13285,7 +13285,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Shared favorite questions"
+            "value": "Domande preferite condivise"
           }
         }
       }
@@ -13320,7 +13320,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Daily questions available"
+            "value": "Domande del giorno disponibili"
           }
         }
       }
@@ -13355,7 +13355,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Shared journal"
+            "value": "Diario condiviso"
           }
         }
       }
@@ -13390,7 +13390,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Shared Premium subscription"
+            "value": "Abbonamento Premium condiviso"
           }
         }
       }
@@ -13425,7 +13425,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Continue with Apple"
+            "value": "Continua con Apple"
           }
         }
       }
@@ -13460,7 +13460,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Simulate partner connection"
+            "value": "Simula connessione con il partner"
           }
         }
       }
@@ -13495,7 +13495,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "❌ Simulate Revocation"
+            "value": "❌ Simula revoca"
           }
         }
       }
@@ -13530,7 +13530,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "🔥 Simulate Subscription"
+            "value": "🔥 Simula abbonamento"
           }
         }
       }
@@ -13565,7 +13565,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Since"
+            "value": "Da"
           }
         }
       }
@@ -13600,7 +13600,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Skip"
+            "value": "Salta"
           }
         }
       }
@@ -13635,7 +13635,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Skip this step"
+            "value": "Salta questo passaggio"
           }
         }
       }
@@ -13670,7 +13670,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Try For Free"
+            "value": "Prova gratis"
           }
         }
       }
@@ -13705,7 +13705,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "START TRIAL"
+            "value": "INIZIA PROVA"
           }
         }
       }
@@ -13740,7 +13740,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Step %d of %d"
+            "value": "Passo %d di %d"
           }
         }
       }
@@ -13775,7 +13775,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Subscribe"
+            "value": "Abbonati"
           }
         }
       }
@@ -13810,7 +13810,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Subscribe to access all questions"
+            "value": "Abbonati per accedere a tutte le domande"
           }
         }
       }
@@ -13845,7 +13845,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Subscribe"
+            "value": "Abbonati"
           }
         }
       }
@@ -13880,7 +13880,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ cancelled their Premium subscription.\n\nYou now only have access to free features."
+            "value": "%@ ha annullato il suo abbonamento Premium.\n\nOra hai accesso solo alle funzioni gratuite."
           }
         }
       }
@@ -13915,7 +13915,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Your partner won't have to pay anything"
+            "value": "Il tuo partner non dovrà pagare nulla"
           }
         }
       }
@@ -13950,7 +13950,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Choose your plan"
+            "value": "Scegli il tuo piano"
           }
         }
       }
@@ -13985,7 +13985,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "surprise"
+            "value": "sorpresa"
           }
         }
       }
@@ -14020,7 +14020,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Swipe down to show your lock screen, then press and hold."
+            "value": "Scorri verso il basso per mostrare la schermata di blocco, poi tieni premuto."
           }
         }
       }
@@ -14056,7 +14056,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Swipe down"
+            "value": "Scorri verso il basso"
           }
         }
       }
@@ -14091,7 +14091,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Syncing..."
+            "value": "Sincronizzazione..."
           }
         }
       }
@@ -14126,7 +14126,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tap the Customize button"
+            "value": "Tocca il pulsante Personalizza"
           }
         }
       }
@@ -14161,7 +14161,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tap on"
+            "value": "Tocca"
           }
         }
       }
@@ -14196,7 +14196,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tap the + button"
+            "value": "Tocca il pulsante +"
           }
         }
       }
@@ -14231,7 +14231,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tap to unlock"
+            "value": "Tocca per sbloccare"
           }
         }
       }
@@ -14266,7 +14266,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tap on me to unlock a surprise"
+            "value": "Toccami per sbloccare una sorpresa"
           }
         }
       }
@@ -14301,7 +14301,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Terms"
+            "value": "Termini"
           }
         }
       }
@@ -14336,7 +14336,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Terms and conditions"
+            "value": "Termini e condizioni"
           }
         }
       }
@@ -14371,7 +14371,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "⚡️ Test Actions"
+            "value": "⚡️ Azioni di test"
           }
         }
       }
@@ -14406,7 +14406,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Thank you for"
+            "value": "Grazie per"
           }
         }
       }
@@ -14441,7 +14441,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Thank you for"
+            "value": "Grazie per"
           }
         }
       }
@@ -14476,7 +14476,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "I'm thinking of you"
+            "value": "Sto pensando a te"
           }
         }
       }
@@ -14511,7 +14511,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Time together"
+            "value": "Tempo insieme"
           }
         }
       }
@@ -14546,7 +14546,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "together"
+            "value": "insieme"
           }
         }
       }
@@ -14581,7 +14581,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Token serialization error"
+            "value": "Errore di serializzazione del token"
           }
         }
       }
@@ -14616,7 +14616,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "trusting us."
+            "value": "di averci dato fiducia."
           }
         }
       }
@@ -14651,7 +14651,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "trusting us."
+            "value": "per la fiducia."
           }
         }
       }
@@ -14686,7 +14686,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Type:"
+            "value": "Tipo:"
           }
         }
       }
@@ -14721,7 +14721,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Got it!"
+            "value": "Capito!"
           }
         }
       }
@@ -14756,7 +14756,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Unhandled authentication"
+            "value": "Autenticazione non gestita"
           }
         }
       }
@@ -14791,7 +14791,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Unknown"
+            "value": "Sconosciuto"
           }
         }
       }
@@ -14826,7 +14826,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Unknown authentication error"
+            "value": "Errore di autenticazione sconosciuto"
           }
         }
       }
@@ -14861,7 +14861,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Unlimited questions"
+            "value": "Domande illimitate"
           }
         }
       }
@@ -14896,7 +14896,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Unlock Premium"
+            "value": "Sblocca Premium"
           }
         }
       }
@@ -14931,7 +14931,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Unlock Premium"
+            "value": "Sblocca Premium"
           }
         }
       }
@@ -14966,7 +14966,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "User not authenticated"
+            "value": "Utente non autenticato"
           }
         }
       }
@@ -15001,7 +15001,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "User not connected"
+            "value": "Utente non connesso"
           }
         }
       }
@@ -15036,7 +15036,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Shared by: %@"
+            "value": "Condiviso da: %@"
           }
         }
       }
@@ -15071,7 +15071,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "View all"
+            "value": "Vedi tutto"
           }
         }
       }
@@ -15106,7 +15106,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Welcome"
+            "value": "Benvenuto"
           }
         }
       }
@@ -15141,7 +15141,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "When app is in use"
+            "value": "Quando l’app è in uso"
           }
         }
       }
@@ -15176,7 +15176,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Complete"
+            "value": "Completato"
           }
         }
       }
@@ -15211,7 +15211,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Countdown"
+            "value": "Conto alla rovescia"
           }
         }
       }
@@ -15246,7 +15246,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "-- days"
+            "value": "-- giorni"
           }
         }
       }
@@ -15351,7 +15351,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "1 day"
+            "value": "1 giorno"
           }
         }
       }
@@ -15387,7 +15387,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "days"
+            "value": "giorni"
           }
         }
       }
@@ -15422,7 +15422,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Days together"
+            "value": "Giorni insieme"
           }
         }
       }
@@ -15457,7 +15457,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Our distance"
+            "value": "La nostra distanza"
           }
         }
       }
@@ -15492,7 +15492,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "distance"
+            "value": "distanza"
           }
         }
       }
@@ -15527,7 +15527,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Distance"
+            "value": "Distanza"
           }
         }
       }
@@ -15562,7 +15562,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Large widget"
+            "value": "Widget grande"
           }
         }
       }
@@ -15597,7 +15597,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Small widget"
+            "value": "Widget piccolo"
           }
         }
       }
@@ -15632,7 +15632,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "together"
+            "value": "insieme"
           }
         }
       }
@@ -15702,7 +15702,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Widgets available"
+            "value": "Widget disponibili"
           }
         }
       }
@@ -15737,7 +15737,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Yes"
+            "value": "Sì"
           }
         }
       }
@@ -15772,7 +15772,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "You"
+            "value": "Tu"
           }
         }
       }
@@ -15807,7 +15807,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "You miss me"
+            "value": "Ti manco"
           }
         }
       }
@@ -15842,7 +15842,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Track your relationship with your partner. The large widget requires a subscription."
+            "value": "Tieni traccia della tua relazione con il partner. Il widget grande richiede un abbonamento."
           }
         }
       }
@@ -15877,7 +15877,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Display the distance between you and your partner."
+            "value": "Mostra la distanza tra te e il tuo partner."
           }
         }
       }
@@ -15912,7 +15912,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "This widget requires location enabled for both partners."
+            "value": "Questo widget richiede la posizione attivata per entrambi i partner."
           }
         }
       }
@@ -16052,7 +16052,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "days"
+            "value": "giorni"
           }
         }
       }
@@ -16087,7 +16087,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Our distance:"
+            "value": "La nostra distanza:"
           }
         }
       }
@@ -16122,7 +16122,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "away"
+            "value": "di distanza"
           }
         }
       }
@@ -16157,7 +16157,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Enable your location"
+            "value": "Attiva la tua posizione"
           }
         }
       }
@@ -16192,7 +16192,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Partner must enable location"
+            "value": "Il partner deve attivare la posizione"
           }
         }
       }
@@ -16227,7 +16227,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Enable your locations"
+            "value": "Attiva le tue posizioni"
           }
         }
       }
@@ -16262,7 +16262,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Keep going and unlock all other questions and categories."
+            "value": "Continua e sblocca tutte le altre domande e categorie."
           }
         }
       }
