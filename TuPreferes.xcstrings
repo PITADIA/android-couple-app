@@ -28,6 +28,12 @@
             "state": "translated",
             "value": "¿Preferirías compartir todos tus recuerdos de infancia o todos tus sueños futuros?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti condividere tutti i tuoi ricordi d'infanzia o tutti i tuoi sogni futuri?"
+          }
         }
       }
     },
@@ -56,6 +62,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías construir una vida sencilla juntos o vivir una vida lujosa en soledad?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti costruire una vita semplice insieme o vivere una vita lussuosa da solo?"
           }
         }
       }
@@ -86,6 +98,12 @@
             "state": "translated",
             "value": "¿Preferirías que te vean vulnerable o que siempre piensen que eres fuerte?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti lasciarli vederti vulnerabile, o far sì che pensino sempre che tu sia forte?"
+          }
         }
       }
     },
@@ -114,6 +132,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías sentir cada emoción más intensamente o vivir sin emociones?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti sentire ogni emozione più intensamente o vivere senza emozioni?"
           }
         }
       }
@@ -144,6 +168,12 @@
             "state": "translated",
             "value": "¿Preferirías pasar un mes reviviendo tus recuerdos más hermosos o un mes creando nuevos momentos juntos?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti passare un mese rivivendo i tuoi ricordi più belli o un mese creando nuovi momenti insieme?"
+          }
         }
       }
     },
@@ -172,6 +202,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías conocer el final de una historia de amor desde el principio o nunca saber cuándo termina?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti conoscere la fine di una storia d'amore dall'inizio o non sapere mai quando finisce?"
           }
         }
       }
@@ -202,6 +238,12 @@
             "state": "translated",
             "value": "¿Preferirías poder ver 10 minutos en el futuro o 150 años en el futuro?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti poter vedere 10 minuti nel futuro o 150 anni nel futuro?"
+          }
         }
       }
     },
@@ -230,6 +272,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías comprender todo lo que siente tu pareja o que ella comprenda todo lo que sientes tú?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti capire tutto ciò che prova il tuo partner o che lui/lei capisca tutto ciò che provi tu?"
           }
         }
       }
@@ -260,6 +308,12 @@
             "state": "translated",
             "value": "¿Preferirías revivir nuestra primera conversación o nuestra primera mirada?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti rivivere la vostra prima conversazione o il vostro primo sguardo?"
+          }
         }
       }
     },
@@ -288,6 +342,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías pasar 5 años en prisión o 10 años en coma?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti passare 5 anni in prigione o 10 anni in coma?"
           }
         }
       }
@@ -318,6 +378,12 @@
             "state": "translated",
             "value": "¿Preferirías decir siempre lo que piensas o no poder volver a hablar?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti decir siempre lo que piensas o no poder volver a hablar?"
+          }
         }
       }
     },
@@ -346,6 +412,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías ser amado pero incomprendido o comprendido pero no amado?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti ser amado pero incomprendido o comprendido pero no amado?"
           }
         }
       }
@@ -376,6 +448,12 @@
             "state": "translated",
             "value": "¿Preferirías vivir sin música o sin películas?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti vivir sin música o sin películas?"
+          }
         }
       }
     },
@@ -404,6 +482,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías perder la vista o perder tus recuerdos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti perder la vista o perder tus recuerdos?"
           }
         }
       }
@@ -434,6 +518,12 @@
             "state": "translated",
             "value": "¿Preferirías vomitar sobre tu celebridad favorita o que tu celebridad favorita vomite sobre ti?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti vomitar sobre tu celebridad favorita o que tu celebridad favorita vomite sobre ti?"
+          }
         }
       }
     },
@@ -462,6 +552,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías no tener internet nunca más o no poder volar nunca más?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti no tener internet nunca más o no poder volar nunca más?"
           }
         }
       }
@@ -492,6 +588,12 @@
             "state": "translated",
             "value": "¿Preferirías ser rey o reina hace 1.000 años o una persona común hoy?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti ser rey o reina hace 1.000 años o una persona común hoy?"
+          }
         }
       }
     },
@@ -520,6 +622,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías relajarte junto a la piscina o en la playa?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti relajarte junto a la piscina o en la playa?"
           }
         }
       }
@@ -550,6 +658,12 @@
             "state": "translated",
             "value": "¿Preferirías vivir sin amor o vivir sin amistad?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti vivir sin amor o vivir sin amistad?"
+          }
         }
       }
     },
@@ -578,6 +692,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías encontrar una rata en tu cocina o una cucaracha en tu cama?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti encontrar una rata en tu cocina o una cucaracha en tu cama?"
           }
         }
       }
@@ -608,6 +728,12 @@
             "state": "translated",
             "value": "¿Preferirías tener un botón de pausa o un botón de retroceso en tu vida?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti tener un botón de pausa o un botón de retroceso en tu vida?"
+          }
         }
       }
     },
@@ -636,6 +762,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías perder todos tus dientes o perder un día de tu vida cada vez que besas a alguien?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti perder todos tus dientes o perder un día de tu vida cada vez que besas a alguien?"
           }
         }
       }
@@ -666,6 +798,12 @@
             "state": "translated",
             "value": "¿Preferirías morir en 5 años sin arrepentimientos o vivir hasta los 100 con muchos arrepentimientos?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti morir en 5 años sin arrepentimientos o vivir hasta los 100 con muchos arrepentimientos?"
+          }
         }
       }
     },
@@ -694,6 +832,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías saber todo sobre el universo o todo sobre lo que sucede después de la muerte?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti saber todo sobre el universo o todo sobre lo que sucede después de la muerte?"
           }
         }
       }
@@ -724,6 +868,12 @@
             "state": "translated",
             "value": "¿Preferirías morir antes o después que yo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti morir antes o después que yo?"
+          }
         }
       }
     },
@@ -752,6 +902,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías tener un botón de pausa en tu vida o un botón de reinicio?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti tener un botón de pausa en tu vida o un botón de reinicio?"
           }
         }
       }
@@ -782,6 +938,12 @@
             "state": "translated",
             "value": "¿Preferirías poder comer sin subir de peso o dormir una hora y estar completamente descansado?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti poder comer sin subir de peso o dormir una hora y estar completamente descansado?"
+          }
         }
       }
     },
@@ -810,6 +972,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías vivir una vida de película romántica o una vida de película de aventuras?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti vivir una vida de película romántica o una vida de película de aventuras?"
           }
         }
       }
@@ -840,6 +1008,12 @@
             "state": "translated",
             "value": "¿Preferirías ser el mejor en un campo que nadie toma en serio o ser promedio en un campo muy respetado?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti ser el mejor en un campo que nadie toma en serio o ser promedio en un campo muy respetado?"
+          }
         }
       }
     },
@@ -868,6 +1042,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías cazar y preparar tu propia carne o no volver a comer carne?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti cazar y preparar tu propia carne o no volver a comer carne?"
           }
         }
       }
@@ -898,6 +1078,12 @@
             "state": "translated",
             "value": "¿Preferirías no sentir celos nunca o no enfadarte nunca?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti no sentir celos nunca o no enfadarte nunca?"
+          }
         }
       }
     },
@@ -926,6 +1112,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías tener batería ilimitada en todos tus dispositivos o WiFi gratis donde vayas?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti tener batería ilimitada en todos tus dispositivos o WiFi gratis donde vayas?"
           }
         }
       }
@@ -956,6 +1148,12 @@
             "state": "translated",
             "value": "¿Preferirías recibir flores cada semana o una carta de amor cada mes?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti recibir flores cada semana o una carta de amor cada mes?"
+          }
         }
       }
     },
@@ -984,6 +1182,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías poder crear tu futuro o borrar un error del pasado?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti poder crear tu futuro o borrar un error del pasado?"
           }
         }
       }
@@ -1014,6 +1218,12 @@
             "state": "translated",
             "value": "¿Preferirías ser siempre quien ama más o quien es más amado?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti ser siempre quien ama más o quien es más amado?"
+          }
         }
       }
     },
@@ -1042,6 +1252,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías resolver el hambre en el mundo o el cambio climático?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti resolver el hambre en el mundo o el cambio climático?"
           }
         }
       }
@@ -1072,6 +1288,12 @@
             "state": "translated",
             "value": "¿Preferirías no volver a enamorarte nunca o enamorarte siempre demasiado rápido?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti no volver a enamorarte nunca o enamorarte siempre demasiado rápido?"
+          }
         }
       }
     },
@@ -1100,6 +1322,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías ganar 25.000 € o que tu mejor amigo gane 100.000 € sin poder darte nada?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti ganar 25.000 € o que tu mejor amigo gane 100.000 € sin poder darte nada?"
           }
         }
       }
@@ -1130,6 +1358,12 @@
             "state": "translated",
             "value": "¿Preferirías revivir tu adolescencia o descubrir quién serás dentro de 30 años?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti revivir tu adolescencia o descubrir quién serás dentro de 30 años?"
+          }
         }
       }
     },
@@ -1158,6 +1392,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías vivir un amor apasionado pero corto o un amor tranquilo pero eterno?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti vivir un amor apasionado pero corto o un amor tranquilo pero eterno?"
           }
         }
       }
@@ -1188,6 +1428,12 @@
             "state": "translated",
             "value": "¿Preferirías enamorarte de un desconocido cada día o amar a la misma persona para siempre?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti enamorarte de un desconocido cada día o amar a la misma persona para siempre?"
+          }
         }
       }
     },
@@ -1216,6 +1462,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías que el amor sea siempre simple o que a veces tenga conflictos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que el amor sea siempre simple o que a veces tenga conflictos?"
           }
         }
       }
@@ -1246,6 +1498,12 @@
             "state": "translated",
             "value": "¿Preferirías que alguien te escriba un poema o una canción?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que alguien te escriba un poema o una canción?"
+          }
         }
       }
     },
@@ -1274,6 +1532,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías un beso bajo la lluvia o un abrazo junto a la chimenea?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti un beso bajo la lluvia o un abrazo junto a la chimenea?"
           }
         }
       }
@@ -1304,6 +1568,12 @@
             "state": "translated",
             "value": "¿Preferirías ser conocido en los libros de historia por algo terrible o ser completamente olvidado después de tu muerte?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti ser conocido en los libros de historia por algo terrible o ser completamente olvidado después de tu muerte?"
+          }
         }
       }
     },
@@ -1332,6 +1602,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías volver al pasado para ver a seres queridos fallecidos o ir al futuro para conocer a tus hijos o nietos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti volver al pasado para ver a seres queridos fallecidos o ir al futuro para conocer a tus hijos o nietos?"
           }
         }
       }
@@ -1362,6 +1638,12 @@
             "state": "translated",
             "value": "¿Preferirías viajar por el mundo gratis durante un año o recibir 50.000 € para gastar como quieras?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti viajar por el mundo gratis durante un año o recibir 50.000 € para gastar como quieras?"
+          }
         }
       }
     },
@@ -1390,6 +1672,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías decir 'te amo' solo una vez en tu vida pero sinceramente, o poder decirlo cada día sin que tenga el mismo poder?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti decir 'te amo' solo una vez en tu vida pero sinceramente, o poder decirlo cada día sin que tenga el mismo poder?"
           }
         }
       }
@@ -1420,6 +1708,12 @@
             "state": "translated",
             "value": "¿Preferirías vivir un apocalipsis zombi o un apocalipsis de robots?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti vivir un apocalipsis zombi o un apocalipsis de robots?"
+          }
         }
       }
     },
@@ -1448,6 +1742,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías tener un amor a distancia pero fuerte o un amor cercano pero muy inestable?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti tener un amor a distancia pero fuerte o un amor cercano pero muy inestable?"
           }
         }
       }
@@ -1478,6 +1778,12 @@
             "state": "translated",
             "value": "¿Preferirías revivir un momento con alguien que perdiste o pasar un día con tu futuro hijo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti revivir un momento con alguien que perdiste o pasar un día con tu futuro hijo?"
+          }
         }
       }
     },
@@ -1506,6 +1812,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías recibir una declaración de amor en público o en privado?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti recibir una declaración de amor en público o en privado?"
           }
         }
       }
@@ -1536,6 +1848,12 @@
             "state": "translated",
             "value": "¿Preferirías compartir todo (todo de verdad, incluso a mí) o quedártelo todo y dejar a los demás sin nada?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti compartir todo (todo de verdad, incluso a mí) o quedártelo todo y dejar a los demás sin nada?"
+          }
         }
       }
     },
@@ -1564,6 +1882,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías un amor que te haga soñar o un amor que te haga crecer?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti un amor que te haga soñar o un amor que te haga crecer?"
           }
         }
       }
@@ -1594,6 +1918,12 @@
             "state": "translated",
             "value": "¿Preferirías estar solo toda tu vida o rodeado de personas muy molestas?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti estar solo toda tu vida o rodeado de personas muy molestas?"
+          }
         }
       }
     },
@@ -1622,6 +1952,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías estar un mes sin teléfono o un mes sin lavarte?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti estar un mes sin teléfono o un mes sin lavarte?"
           }
         }
       }
@@ -1652,6 +1988,12 @@
             "state": "translated",
             "value": "¿Preferirías enamorarte a primera vista (aunque te equivoques) o solo después de tres años?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti enamorarte a primera vista (aunque te equivoques) o solo después de tres años?"
+          }
         }
       }
     },
@@ -1680,6 +2022,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías comprar solo ropa interior usada o solo cepillos de dientes usados?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti comprar solo ropa interior usada o solo cepillos de dientes usados?"
           }
         }
       }
@@ -1710,6 +2058,12 @@
             "state": "translated",
             "value": "¿Preferirías perder la capacidad de leer o la capacidad de hablar?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti perder la capacidad de leer o la capacidad de hablar?"
+          }
         }
       }
     },
@@ -1738,6 +2092,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías ser guapo pero tonto o feo pero súper inteligente?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti ser guapo pero tonto o feo pero súper inteligente?"
           }
         }
       }
@@ -1768,6 +2128,12 @@
             "state": "translated",
             "value": "En el trabajo, ¿preferirías ser amado o temido? ¿Por qué?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En el trabajo, preferirías ser amado o temido? Por qué?"
+          }
         }
       }
     },
@@ -1796,6 +2162,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías conocer el amor perfecto en un sueño o un amor imperfecto pero real?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti conocer el amor perfecto en un sueño o un amor imperfecto pero real?"
           }
         }
       }
@@ -1826,6 +2198,12 @@
             "state": "translated",
             "value": "¿Preferirías pedir un favor a tu ex o a un completo desconocido?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti pedir un favor a tu ex o a un completo desconocido?"
+          }
         }
       }
     },
@@ -1854,6 +2232,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías ser increíblemente rico pero completamente solo o tener lo justo para vivir pero rodeado de amor y amigos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti ser increíblemente rico pero completamente solo o tener lo justo para vivir pero rodeado de amor y amigos?"
           }
         }
       }
@@ -1884,6 +2268,12 @@
             "state": "translated",
             "value": "¿Preferirías sacrificar tu felicidad por el bien de muchas personas o poner tu felicidad personal por encima de todo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti sacrificar tu felicidad por el bien de muchas personas o poner tu felicidad personal por encima de todo?"
+          }
         }
       }
     },
@@ -1912,6 +2302,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías tener el poder de salvar a una persona que amas o a cinco desconocidos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti tener el poder de salvar a una persona que amas o a cinco desconocidos?"
           }
         }
       }
@@ -1942,6 +2338,12 @@
             "state": "translated",
             "value": "¿Preferirías ver la justicia aplicada aunque el castigo sea severo o favorecer la clemencia y ofrecer una segunda oportunidad?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti ver la justicia aplicada aunque el castigo sea severo o favorecer la clemencia y ofrecer una segunda oportunidad?"
+          }
         }
       }
     },
@@ -1970,6 +2372,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirirías ser respetado por todos pero poco amado o adorado por pocos pero criticado por muchos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferirirías ser respetado por todos pero poco amado o adorado por pocos pero criticado por muchos?"
           }
         }
       }
@@ -2000,6 +2408,12 @@
             "state": "translated",
             "value": "¿Preferirías amar a alguien sin poder decírselo o ser amado sin saberlo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti amar a alguien sin poder decírselo o ser amado sin saberlo?"
+          }
         }
       }
     },
@@ -2028,6 +2442,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías amar intensamente una vez o moderadamente toda tu vida?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti amar intensamente una vez o moderadamente toda tu vida?"
           }
         }
       }
@@ -2058,6 +2478,12 @@
             "state": "translated",
             "value": "¿Preferirías un amor a la antigua o una relación moderna y libre?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti un amor a la antigua o una relación moderna y libre?"
+          }
         }
       }
     },
@@ -2086,6 +2512,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías recibir pruebas de amor cada día o un gesto inmenso una vez al año?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti recibir pruebas de amor cada día o un gesto inmenso una vez al año?"
           }
         }
       }
@@ -2116,6 +2548,12 @@
             "state": "translated",
             "value": "¿Preferirías encontrar una cartera llena de dinero y devolverla a su dueño o quedártela sin que nadie lo sepa?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti encontrar una cartera llena de dinero y devolverla a su dueño o quedártela sin que nadie lo sepa?"
+          }
         }
       }
     },
@@ -2144,6 +2582,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías ser el primer amor de alguien o el último?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti ser el primer amor de alguien o el último?"
           }
         }
       }
@@ -2174,6 +2618,12 @@
             "state": "translated",
             "value": "¿Preferirías una relación fusionada o una relación donde cada uno mantiene su independencia emocional?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti una relación fusionada o una relación donde cada uno mantiene su independencia emocional?"
+          }
         }
       }
     },
@@ -2202,6 +2652,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías vivir en un mundo perfectamente seguro pero sin libertad o en uno totalmente libre pero muy peligroso?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti vivir en un mundo perfectamente seguro pero sin libertad o en uno totalmente libre pero muy peligroso?"
           }
         }
       }
@@ -2232,6 +2688,12 @@
             "state": "translated",
             "value": "¿Preferirías hacer el amor sin amor o amar sin hacer nunca el amor?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti hacer el amor sin amor o amar sin hacer nunca el amor?"
+          }
         }
       }
     },
@@ -2260,6 +2722,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías que te recuerden por tu bondad o por tu inteligencia?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que te recuerden por tu bondad o por tu inteligencia?"
           }
         }
       }
@@ -2290,6 +2758,12 @@
             "state": "translated",
             "value": "¿Preferirías que te admiren por tu apariencia física o por la profundidad de tu personalidad?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que te admiren por tu apariencia física o por la profundidad de tu personalidad?"
+          }
         }
       }
     },
@@ -2318,6 +2792,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías que el amor sea fácil y rápido de conquistar o algo que deba ganarse?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que el amor sea fácil y rápido de conquistar o algo que deba ganarse?"
           }
         }
       }
@@ -2348,6 +2828,12 @@
             "state": "translated",
             "value": "¿Preferirías que tu pareja sea ultra romántica o súper divertida? Tienes que elegir una u otra."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que tu pareja sea ultra romántica o súper divertida? Tienes que elegir una u otra."
+          }
         }
       }
     },
@@ -2376,6 +2862,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías tener una autoconfianza inquebrantable pero parecer arrogante o dudar a menudo de ti mismo pero ser apreciado por todos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti tener una autoconfianza inquebrantable pero parecer arrogante o dudar a menudo de ti mismo pero ser apreciado por todos?"
           }
         }
       }
@@ -2406,6 +2898,12 @@
             "state": "translated",
             "value": "¿Preferirías vivir una vida llena de pasiones intensas pero también de gran dolor o una vida calma y estable sin extremos?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti vivir una vida llena de pasiones intensas pero también de gran dolor o una vida calma y estable sin extremos?"
+          }
         }
       }
     },
@@ -2434,6 +2932,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías una relación llena de sorpresas o llena de estabilidad?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti una relación llena de sorpresas o llena de estabilidad?"
           }
         }
       }
@@ -2464,6 +2968,12 @@
             "state": "translated",
             "value": "¿Preferirías que te conozcan como alguien muy divertido o muy confiable?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que te conozcan como alguien muy divertido o muy confiable?"
+          }
         }
       }
     },
@@ -2492,6 +3002,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías que tu pareja sea muy táctil o muy verbal?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que tu pareja sea muy táctil o muy verbal?"
           }
         }
       }
@@ -2522,6 +3038,12 @@
             "state": "translated",
             "value": "¿Preferirías estar completamente satisfecho con lo que tienes ahora o querer siempre más?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti estar completamente satisfecho con lo que tienes ahora o querer siempre más?"
+          }
         }
       }
     },
@@ -2550,6 +3072,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías tener una intuición muy fuerte que te guíe o una mente analítica ultradesarrollada?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti tener una intuición muy fuerte que te guíe o una mente analítica ultradesarrollada?"
           }
         }
       }
@@ -2580,6 +3108,12 @@
             "state": "translated",
             "value": "¿Preferirías saber la fecha exacta de tu muerte o no saber nunca nada?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti saber la fecha exacta de tu muerte o no saber nunca nada?"
+          }
         }
       }
     },
@@ -2608,6 +3142,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías recibir 1.000 € ahora o 10.000 € en cinco años?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti recibir 1.000 € ahora o 10.000 € en cinco años?"
           }
         }
       }
@@ -2638,6 +3178,12 @@
             "state": "translated",
             "value": "¿Preferirías corregir un gran error de tu pasado o recibir un consejo crucial de tu yo futuro?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti corregir un gran error de tu pasado o recibir un consejo crucial de tu yo futuro?"
+          }
         }
       }
     },
@@ -2666,6 +3212,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías tener una sorpresa planeada durante meses o improvisada en el último minuto?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti tener una sorpresa planeada durante meses o improvisada en el último minuto?"
           }
         }
       }
@@ -2696,6 +3248,12 @@
             "state": "translated",
             "value": "¿Preferirías que siempre te llamen por un apodo cariñoso o siempre por tu nombre?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que siempre te llamen por un apodo cariñoso o siempre por tu nombre?"
+          }
         }
       }
     },
@@ -2724,6 +3282,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías que te tome de la mano o que te mire profundamente a los ojos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que te tome de la mano o que te mire profundamente a los ojos?"
           }
         }
       }
@@ -2754,6 +3318,12 @@
             "state": "translated",
             "value": "¿Preferirías recordar todos tus sueños con detalle o no volver a tener pesadillas?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti recordar todos tus sueños con detalle o no volver a tener pesadillas?"
+          }
         }
       }
     },
@@ -2782,6 +3352,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías saber de antemano todos los buenos momentos que vendrán o todos los malos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti saber de antemano todos los buenos momentos que vendrán o todos los malos?"
           }
         }
       }
@@ -2812,6 +3388,12 @@
             "state": "translated",
             "value": "¿Preferirías despertarte cada mañana con un cumplido o con un abrazo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti despertarte cada mañana con un cumplido o con un abrazo?"
+          }
         }
       }
     },
@@ -2840,6 +3422,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías dejar un legado material (dinero, bienes) o un legado inmaterial (valores, recuerdos)?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti dejar un legado material (dinero, bienes) o un legado inmaterial (valores, recuerdos)?"
           }
         }
       }
@@ -2870,6 +3458,12 @@
             "state": "translated",
             "value": "¿Preferirías tener una relación a 100 por hora o una que se tome todo su tiempo (a veces demasiado)?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti tener una relación a 100 por hora o una que se tome todo su tiempo (a veces demasiado)?"
+          }
         }
       }
     },
@@ -2898,6 +3492,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías descubrir una verdad dolorosa sobre alguien que amas o vivir en una ilusión cómoda?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti descubrir una verdad dolorosa sobre alguien que amas o vivir en una ilusión cómoda?"
           }
         }
       }
@@ -2928,6 +3528,12 @@
             "state": "translated",
             "value": "¿Preferirías tener un amor silencioso pero profundo o un amor hablador pero caótico?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti tener un amor silencioso pero profundo o un amor hablador pero caótico?"
+          }
         }
       }
     },
@@ -2956,6 +3562,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías que tu pareja sea siempre predecible o siempre (demasiado) sorprendente?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que tu pareja sea siempre predecible o siempre (demasiado) sorprendente?"
           }
         }
       }
@@ -2986,6 +3598,12 @@
             "state": "translated",
             "value": "¿Preferirías ser popular con muchas relaciones superficiales o tener pocos amigos pero conexiones profundas?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti ser popular con muchas relaciones superficiales o tener pocos amigos pero conexiones profundas?"
+          }
         }
       }
     },
@@ -3014,6 +3632,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías reír cada día con el otro o llorar una vez de felicidad intensa?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti reír cada día con el otro o llorar una vez de felicidad intensa?"
           }
         }
       }
@@ -3044,6 +3668,12 @@
             "state": "translated",
             "value": "¿Preferirías tener una conversación profunda con un desconocido o una conversación ligera con tu mejor amigo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti tener una conversación profunda con un desconocido o una conversación ligera con tu mejor amigo?"
+          }
         }
       }
     },
@@ -3072,6 +3702,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías ser quien siempre escucha los problemas de los demás o quien siempre necesita desahogarse?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti ser quien siempre escucha los problemas de los demás o quien siempre necesita desahogarse?"
           }
         }
       }
@@ -3102,6 +3738,12 @@
             "state": "translated",
             "value": "¿Preferirías confrontar directamente a alguien que habla a tus espaldas o ignorarlo y seguir adelante?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti confrontar directamente a alguien que habla a tus espaldas o ignorarlo y seguir adelante?"
+          }
         }
       }
     },
@@ -3130,6 +3772,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías entender el sentido del universo o conocer el secreto de la felicidad personal?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti entender el sentido del universo o conocer el secreto de la felicidad personal?"
           }
         }
       }
@@ -3160,6 +3808,12 @@
             "state": "translated",
             "value": "¿Preferirías poder saborear todos los sabores del mundo o escuchar cada pieza de música jamás compuesta?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti poder saborear todos los sabores del mundo o escuchar cada pieza de música jamás compuesta?"
+          }
         }
       }
     },
@@ -3188,6 +3842,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías entender perfectamente cómo funciona el cerebro humano o entender perfectamente la inteligencia artificial?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti entender perfectamente cómo funciona el cerebro humano o entender perfectamente la inteligencia artificial?"
           }
         }
       }
@@ -3218,6 +3878,12 @@
             "state": "translated",
             "value": "¿Preferirías que te entienda sin una palabra o que te escuche durante horas?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que te entienda sin una palabra o que te escuche durante horas?"
+          }
         }
       }
     },
@@ -3246,6 +3912,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías descubrir un gran secreto histórico o inventar una tecnología revolucionaria?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti descubrir un gran secreto histórico o inventar una tecnología revolucionaria?"
           }
         }
       }
@@ -3276,6 +3948,12 @@
             "state": "translated",
             "value": "¿Preferirías vivir en un mundo sin enfermedades pero sin emociones, o en nuestro mundo actual con sus alegrías y penas?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti vivir en un mundo sin enfermedades pero sin emociones, o en nuestro mundo actual con sus alegrías y penas?"
+          }
         }
       }
     },
@@ -3304,6 +3982,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías tener el poder de concederte un deseo a ti mismo o tres deseos a otras personas?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti tener el poder de concederte un deseo a ti mismo o tres deseos a otras personas?"
           }
         }
       }
@@ -3334,6 +4018,12 @@
             "state": "translated",
             "value": "¿Preferirías descubrir todo sobre mí desde el principio o aprender a conocerme a lo largo de tu vida?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti descubrir todo sobre mí desde el principio o aprender a conocerme a lo largo de tu vida?"
+          }
         }
       }
     },
@@ -3362,6 +4052,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías renacer en una nueva vida olvidando todo sobre esta o vivir eternamente en tu vida actual?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti renacer en una nueva vida olvidando todo sobre esta o vivir eternamente en tu vida actual?"
           }
         }
       }
@@ -3392,6 +4088,12 @@
             "state": "translated",
             "value": "¿Preferirías que el amor llegue inesperadamente o que sea el resultado de un largo camino?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que el amor llegue inesperadamente o que sea el resultado de un largo camino?"
+          }
         }
       }
     },
@@ -3420,6 +4122,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías amar con pasión pero arriesgarte a sufrir o amar con cautela y nunca salir herido?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti amar con pasión pero arriesgarte a sufrir o amar con cautela y nunca salir herido?"
           }
         }
       }
@@ -3450,6 +4158,12 @@
             "state": "translated",
             "value": "¿Preferirías tener una relación que te calme o una relación que te estimule?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti tener una relación que te calme o una relación que te estimule?"
+          }
         }
       }
     },
@@ -3478,6 +4192,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías revivir nuestro primer beso o escuchar de nuevo 'te amo' por primera vez?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti revivir nuestro primer beso o escuchar de nuevo 'te amo' por primera vez?"
           }
         }
       }
@@ -3508,6 +4228,12 @@
             "state": "translated",
             "value": "¿Preferirías saber de antemano cómo terminarán todas tus relaciones (amistosas, románticas) o vivir en la incertidumbre?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti saber de antemano cómo terminarán todas tus relaciones (amistosas, románticas) o vivir en la incertidumbre?"
+          }
         }
       }
     },
@@ -3536,6 +4262,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías vivir en un mundo donde todos piensen como tú o en un mundo donde nadie esté de acuerdo jamás?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti vivir en un mundo donde todos piensen como tú o en un mundo donde nadie esté de acuerdo jamás?"
           }
         }
       }
@@ -3566,6 +4298,12 @@
             "state": "translated",
             "value": "¿Preferirías que te sorprenda cada día o que te tranquilice cada día?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que te sorprenda cada día o que te tranquilice cada día?"
+          }
         }
       }
     },
@@ -3594,6 +4332,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías amar con el corazón o con la cabeza?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti amar con el corazón o con la cabeza?"
           }
         }
       }
@@ -3624,6 +4368,12 @@
             "state": "translated",
             "value": "¿Preferirías construir un futuro sólido o vivir un presente mágico con un futuro incierto?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti construir un futuro sólido o vivir un presente mágico con un futuro incierto?"
+          }
         }
       }
     },
@@ -3652,6 +4402,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías tener la respuesta a '¿estamos solos en el universo?' o a '¿qué pasa después de la muerte?'"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti tener la respuesta a 'estamos solos en el universo?' o a 'qué pasa después de la muerte?'"
           }
         }
       }
@@ -3682,6 +4438,12 @@
             "state": "translated",
             "value": "¿Preferirías tener amor pero no paz o paz pero no amor?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti tener amor pero no paz o paz pero no amor?"
+          }
         }
       }
     },
@@ -3710,6 +4472,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías borrar un arrepentimiento de tu vida o añadir un recuerdo feliz perfecto?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti borrar un arrepentimiento de tu vida o añadir un recuerdo feliz perfecto?"
           }
         }
       }
@@ -3740,6 +4508,12 @@
             "state": "translated",
             "value": "¿Preferirías vivir un amor a distancia que dure o un amor cercano que se desvanezca rápido?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti vivir un amor a distancia que dure o un amor cercano que se desvanezca rápido?"
+          }
         }
       }
     },
@@ -3768,6 +4542,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías un amor que te mejore o un amor que te acepte tal como eres?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti un amor que te mejore o un amor que te acepte tal como eres?"
           }
         }
       }
@@ -3798,6 +4578,12 @@
             "state": "translated",
             "value": "¿Preferirías perder todos tus recuerdos de la familia o todos los relacionados con tus amigos?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti perder todos tus recuerdos de la familia o todos los relacionados con tus amigos?"
+          }
         }
       }
     },
@@ -3826,6 +4612,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías saber lo que tu mascota realmente piensa de ti o no saberlo nunca?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti saber lo que tu mascota realmente piensa de ti o no saberlo nunca?"
           }
         }
       }
@@ -3856,6 +4648,12 @@
             "state": "translated",
             "value": "¿Preferirías vivir en un mundo sin música o en un mundo sin libros?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti vivir en un mundo sin música o en un mundo sin libros?"
+          }
         }
       }
     },
@@ -3884,6 +4682,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías tener un botón de Deshacer Envío para las conversaciones reales o un botón de Repetición para los mejores momentos de tu vida?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti tener un botón de Deshacer Envío para las conversaciones reales o un botón de Repetición para los mejores momentos de tu vida?"
           }
         }
       }
@@ -3914,6 +4718,12 @@
             "state": "translated",
             "value": "¿Preferirías enamorarte de una voz o de una mirada?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti enamorarte de una voz o de una mirada?"
+          }
         }
       }
     },
@@ -3942,6 +4752,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías descubrir que tu vida es un sueño o que eres un personaje de una novela?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti descubrir que tu vida es un sueño o que eres un personaje de una novela?"
           }
         }
       }
@@ -3972,6 +4788,12 @@
             "state": "translated",
             "value": "¿Preferirías recibir regalos sorpresa o pasar tiempo de calidad juntos?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti recibir regalos sorpresa o pasar tiempo de calidad juntos?"
+          }
         }
       }
     },
@@ -4000,6 +4822,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías extrañarme a menudo o tenerme siempre (a veces demasiado) a tu lado?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti extrañarme a menudo o tenerme siempre (a veces demasiado) a tu lado?"
           }
         }
       }
@@ -4030,6 +4858,12 @@
             "state": "translated",
             "value": "¿Preferirías resolver un conflicto enseguida o esperar a que estemos tranquilos para hablarlo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti resolver un conflicto enseguida o esperar a que estemos tranquilos para hablarlo?"
+          }
         }
       }
     },
@@ -4058,6 +4892,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías construir una casa juntos o viajar por el mundo juntos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti construir una casa juntos o viajar por el mundo juntos?"
           }
         }
       }
@@ -4088,6 +4928,12 @@
             "state": "translated",
             "value": "¿Preferirías cocinar juntos y pasar un buen rato o pedir comida y relajarnos juntos?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti cocinar juntos y pasar un buen rato o pedir comida y relajarnos juntos?"
+          }
         }
       }
     },
@@ -4116,6 +4962,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías vivir una relación simple y sincera o una intensa y compleja?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti vivir una relación simple y sincera o una intensa y compleja?"
           }
         }
       }
@@ -4146,6 +4998,12 @@
             "state": "translated",
             "value": "¿Preferirías tener objetivos claros juntos para el futuro o vivir más el día a día?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti tener objetivos claros juntos para el futuro o vivir más el día a día?"
+          }
         }
       }
     },
@@ -4174,6 +5032,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías una relación llena de rituales o de sorpresas?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti una relación llena de rituales o de sorpresas?"
           }
         }
       }
@@ -4204,6 +5068,12 @@
             "state": "translated",
             "value": "¿Preferirías decir «te quiero» a menudo o demostrarlo solo con acciones?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti decir «te quiero» a menudo o demostrarlo solo con acciones?"
+          }
         }
       }
     },
@@ -4232,6 +5102,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías que cada uno salga por su lado con sus amigos o salir juntos más seguido?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que cada uno salga por su lado con sus amigos o salir juntos más seguido?"
           }
         }
       }
@@ -4262,6 +5138,12 @@
             "state": "translated",
             "value": "¿Preferirías que te halagaran por tu inteligencia o por tu apariencia?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que te halagaran por tu inteligencia o por tu apariencia?"
+          }
         }
       }
     },
@@ -4290,6 +5172,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías hacer deporte juntos o compartir actividades creativas?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti hacer deporte juntos o compartir actividades creativas?"
           }
         }
       }
@@ -4320,6 +5208,12 @@
             "state": "translated",
             "value": "¿Preferirías que el amor fuera una elección o algo que se sintiera evidente?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que el amor fuera una elección o algo que se sintiera evidente?"
+          }
         }
       }
     },
@@ -4348,6 +5242,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías un amor que te enseñe a conocerte o un amor que te ayude a olvidar tu pasado?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti un amor que te enseñe a conocerte o un amor que te ayude a olvidar tu pasado?"
           }
         }
       }
@@ -4378,6 +5278,12 @@
             "state": "translated",
             "value": "¿Preferirías guardar algunos pequeños secretos o compartirlo todo sin excepción?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti guardar algunos pequeños secretos o compartirlo todo sin excepción?"
+          }
         }
       }
     },
@@ -4406,6 +5312,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías reconciliarte después de una pelea con un gran abrazo o con una charla tranquila?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti reconciliarte después de una pelea con un gran abrazo o con una charla tranquila?"
           }
         }
       }
@@ -4436,6 +5348,12 @@
             "state": "translated",
             "value": "¿Preferirías hacer un viaje por carretera sin dinero con tus amigos o unas vacaciones de lujo con tu familia?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti hacer un viaje por carretera sin dinero con tus amigos o unas vacaciones de lujo con tu familia?"
+          }
         }
       }
     },
@@ -4464,6 +5382,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías que tu mejor amigo saliera con tu ex o que te ocultara un error enorme?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que tu mejor amigo saliera con tu ex o que te ocultara un error enorme?"
           }
         }
       }
@@ -4494,6 +5418,12 @@
             "state": "translated",
             "value": "¿Preferirías organizar una fiesta sorpresa para un amigo o que la organicen para ti?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti organizar una fiesta sorpresa para un amigo o que la organicen para ti?"
+          }
         }
       }
     },
@@ -4522,6 +5452,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías que tus amigos siempre te dijeran la verdad, aunque duela, o que te endulzaran un poco las cosas?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que tus amigos siempre te dijeran la verdad, aunque duela, o que te endulzaran un poco las cosas?"
           }
         }
       }
@@ -4552,6 +5488,12 @@
             "state": "translated",
             "value": "¿Preferirías que el amor llegara demasiado pronto o demasiado tarde en tu vida?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que el amor llegara demasiado pronto o demasiado tarde en tu vida?"
+          }
         }
       }
     },
@@ -4580,6 +5522,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías que el amor te cambiara o que te revelara?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que el amor te cambiara o que te revelara?"
           }
         }
       }
@@ -4610,6 +5558,12 @@
             "state": "translated",
             "value": "¿Preferirías una noche de juegos de mesa o una velada conversando profundamente de todo y de nada?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti una noche de juegos de mesa o una velada conversando profundamente de todo y de nada?"
+          }
         }
       }
     },
@@ -4638,6 +5592,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías que nuestro amor creciera a través de las pruebas o de la ternura?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que nuestro amor creciera a través de las pruebas o de la ternura?"
           }
         }
       }
@@ -4668,6 +5628,12 @@
             "state": "translated",
             "value": "¿Preferirías ser amigo de alguien muy diferente a ti o muy parecido?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti ser amigo de alguien muy diferente a ti o muy parecido?"
+          }
         }
       }
     },
@@ -4696,6 +5662,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías ser muy rico pero estar solo, o tener poco dinero pero estar rodeado de amor?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti ser muy rico pero estar solo, o tener poco dinero pero estar rodeado de amor?"
           }
         }
       }
@@ -4726,6 +5698,12 @@
             "state": "translated",
             "value": "¿Preferirías volver al pasado para corregir un error o ver tu futuro dentro de 10 años?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti volver al pasado para corregir un error o ver tu futuro dentro de 10 años?"
+          }
         }
       }
     },
@@ -4754,6 +5732,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías ser famoso por algo que no hiciste o ser desconocido a pesar de una hazaña increíble?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti ser famoso por algo que no hiciste o ser desconocido a pesar de una hazaña increíble?"
           }
         }
       }
@@ -4784,6 +5768,12 @@
             "state": "translated",
             "value": "¿Preferirías sacrificar tu felicidad personal por el bien común o priorizarte a ti mismo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti sacrificar tu felicidad personal por el bien común o priorizarte a ti mismo?"
+          }
         }
       }
     },
@@ -4812,6 +5802,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías que el otro te encontrara irresistible físicamente o mentalmente?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que el otro te encontrara irresistible físicamente o mentalmente?"
           }
         }
       }
@@ -4842,6 +5838,12 @@
             "state": "translated",
             "value": "¿Preferirías vivir una vida corta e intensa o una larga pero algo monótona?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti vivir una vida corta e intensa o una larga pero algo monótona?"
+          }
         }
       }
     },
@@ -4870,6 +5872,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías perdonar fácilmente a quien te hizo daño o guardar rencor durante mucho tiempo?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti perdonar fácilmente a quien te hizo daño o guardar rencor durante mucho tiempo?"
           }
         }
       }
@@ -4900,6 +5908,12 @@
             "state": "translated",
             "value": "¿Preferirías leer la mente de los demás (escuchar todo) o que ellos pudieran leer la tuya?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti leer la mente de los demás (escuchar todo) o que ellos pudieran leer la tuya?"
+          }
         }
       }
     },
@@ -4928,6 +5942,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías vivir una vida llena de amores diferentes o una historia que trascienda el tiempo?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti vivir una vida llena de amores diferentes o una historia que trascienda el tiempo?"
           }
         }
       }
@@ -4958,6 +5978,12 @@
             "state": "translated",
             "value": "¿Preferirías un trabajo apasionante pero muy mal pagado o uno aburrido pero muy bien pagado?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti un trabajo apasionante pero muy mal pagado o uno aburrido pero muy bien pagado?"
+          }
         }
       }
     },
@@ -4986,6 +6012,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías que pudiera leer tu corazón o tus pensamientos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que pudiera leer tu corazón o tus pensamientos?"
           }
         }
       }
@@ -5016,6 +6048,12 @@
             "state": "translated",
             "value": "¿Preferirías tener la respuesta a todas las preguntas científicas o a todas las filosóficas?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti tener la respuesta a todas las preguntas científicas o a todas las filosóficas?"
+          }
         }
       }
     },
@@ -5044,6 +6082,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías ser respetado o ser amado?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti ser respetado o ser amado?"
           }
         }
       }
@@ -5074,6 +6118,12 @@
             "state": "translated",
             "value": "¿Preferirías vivir bajo el mar o en el espacio?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti vivir bajo el mar o en el espacio?"
+          }
         }
       }
     },
@@ -5102,6 +6152,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías vivir sin tu teléfono o sin tu ordenador?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti vivir sin tu teléfono o sin tu ordenador?"
           }
         }
       }
@@ -5132,6 +6188,12 @@
             "state": "translated",
             "value": "¿Preferirías un amor que te sorprenda o que te dé seguridad?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti un amor que te sorprenda o que te dé seguridad?"
+          }
         }
       }
     },
@@ -5160,6 +6222,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías pasar un año en prisión o un año en la calle?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti pasar un año en prisión o un año en la calle?"
           }
         }
       }
@@ -5190,6 +6258,12 @@
             "state": "translated",
             "value": "¿Preferirías estar en un equipo perdedor con tus amigos o en el equipo rival y ganar?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti estar en un equipo perdedor con tus amigos o en el equipo rival y ganar?"
+          }
         }
       }
     },
@@ -5218,6 +6292,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías que yo fuera tu primer mensaje de la mañana o el último de la noche?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que yo fuera tu primer mensaje de la mañana o el último de la noche?"
           }
         }
       }
@@ -5248,6 +6328,12 @@
             "state": "translated",
             "value": "¿Preferirías resolver el cambio climático o acabar con todos los conflictos del mundo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti resolver el cambio climático o acabar con todos los conflictos del mundo?"
+          }
         }
       }
     },
@@ -5276,6 +6362,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías tener una pareja que te desafíe o que te tranquilice?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti tener una pareja que te desafíe o que te tranquilice?"
           }
         }
       }
@@ -5306,6 +6398,12 @@
             "state": "translated",
             "value": "¿Preferirías que nuestra relación fuera como fuegos artificiales o como una acogedora chimenea?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que nuestra relación fuera como fuegos artificiales o como una acogedora chimenea?"
+          }
         }
       }
     },
@@ -5334,6 +6432,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías hacer trampa en un juego y ganar o perder sabiendo que diste todo?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti hacer trampa en un juego y ganar o perder sabiendo que diste todo?"
           }
         }
       }
@@ -5364,6 +6468,12 @@
             "state": "translated",
             "value": "¿Preferirías comer en tu restaurante favorito de siempre o probar uno nuevo que acaba de abrir?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti comer en tu restaurante favorito de siempre o probar uno nuevo que acaba de abrir?"
+          }
         }
       }
     },
@@ -5392,6 +6502,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías prestar 500 € a alguien sin que te lo devuelva o pedir 500 € prestados y no devolverlos nunca?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti prestar 500 € a alguien sin que te lo devuelva o pedir 500 € prestados y no devolverlos nunca?"
           }
         }
       }
@@ -5422,6 +6538,12 @@
             "state": "translated",
             "value": "¿Preferirías que te conociera de memoria o que te redescubriera cada día?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que te conociera de memoria o que te redescubriera cada día?"
+          }
         }
       }
     },
@@ -5450,6 +6572,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías escribir un libro juntos o vivir una canción juntos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti escribir un libro juntos o vivir una canción juntos?"
           }
         }
       }
@@ -5480,6 +6608,12 @@
             "state": "translated",
             "value": "¿Preferirías amar o ser amado?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti amar o ser amado?"
+          }
         }
       }
     },
@@ -5508,6 +6642,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías perder la vista o perder la memoria?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti perder la vista o perder la memoria?"
           }
         }
       }
@@ -5538,6 +6678,12 @@
             "state": "translated",
             "value": "¿Preferirías perder todos tus dientes o todo tu cabello?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti perder todos tus dientes o todo tu cabello?"
+          }
         }
       }
     },
@@ -5566,6 +6712,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías no volver a usar las redes sociales o no volver a ver películas?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti no volver a usar las redes sociales o no volver a ver películas?"
           }
         }
       }
@@ -5596,6 +6748,12 @@
             "state": "translated",
             "value": "¿Preferirías pasar tus fines de semana en casa o al aire libre?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti pasar tus fines de semana en casa o al aire libre?"
+          }
         }
       }
     },
@@ -5624,6 +6782,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías ser la persona más inteligente o la más divertida de la sala?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti ser la persona más inteligente o la más divertida de la sala?"
           }
         }
       }
@@ -5654,6 +6818,12 @@
             "state": "translated",
             "value": "¿Preferirías amar como el primer día o amar mejor cada día?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti amar como el primer día o amar mejor cada día?"
+          }
         }
       }
     },
@@ -5682,6 +6852,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías no volver a dudar nunca o no volver a tener miedo?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti no volver a dudar nunca o no volver a tener miedo?"
           }
         }
       }
@@ -5712,6 +6888,12 @@
             "state": "translated",
             "value": "¿Preferirías que nuestra relación fuera un remanso de paz o una gran aventura?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que nuestra relación fuera un remanso de paz o una gran aventura?"
+          }
         }
       }
     },
@@ -5740,6 +6922,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías conocer a personas famosas hoy o a quienes se harán famosas dentro de un año?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti conocer a personas famosas hoy o a quienes se harán famosas dentro de un año?"
           }
         }
       }
@@ -5770,6 +6958,12 @@
             "state": "translated",
             "value": "¿Preferirías que nuestro amor fuera cantado en una canción o pintado en un cuadro?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que nuestro amor fuera cantado en una canción o pintado en un cuadro?"
+          }
         }
       }
     },
@@ -5798,6 +6992,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías que nuestro amor fuera un refugio constante o una fuente perpetua de desafíos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que nuestro amor fuera un refugio constante o una fuente perpetua de desafíos?"
           }
         }
       }
@@ -5828,6 +7028,12 @@
             "state": "translated",
             "value": "¿Preferirías que cada beso dijera \"te amo\" o \"te entiendo\"?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que cada beso dijera \"te amo\" o \"te entiendo\"?"
+          }
         }
       }
     },
@@ -5856,6 +7062,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías ser siempre el centro de atención o permanecer discreto en las reuniones?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti ser siempre el centro de atención o permanecer discreto en las reuniones?"
           }
         }
       }
@@ -5886,6 +7098,12 @@
             "state": "translated",
             "value": "¿Preferirías tener un pequeño círculo de amigos cercanos o un gran grupo de conocidos?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti tener un pequeño círculo de amigos cercanos o un gran grupo de conocidos?"
+          }
         }
       }
     },
@@ -5914,6 +7132,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías asistir a una fiesta donde conozcas a todos pero sea aburrida o a una fiesta animada con desconocidos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti asistir a una fiesta donde conozcas a todos pero sea aburrida o a una fiesta animada con desconocidos?"
           }
         }
       }
@@ -5944,6 +7168,12 @@
             "state": "translated",
             "value": "¿Preferirías que nos separáramos con una sonrisa o quedarnos juntos con la duda?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que nos separáramos con una sonrisa o quedarnos juntos con la duda?"
+          }
         }
       }
     },
@@ -5972,6 +7202,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías que conociera todo tu pasado o solo tu presente?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que conociera todo tu pasado o solo tu presente?"
           }
         }
       }
@@ -6002,6 +7238,12 @@
             "state": "translated",
             "value": "¿Preferirías una relación a distancia llena de mensajes o una cercana con poca comunicación?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti una relación a distancia llena de mensajes o una cercana con poca comunicación?"
+          }
         }
       }
     },
@@ -6030,6 +7272,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías tener que anunciar públicamente todos tus éxitos personales o mantenerlos completamente en secreto?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti tener que anunciar públicamente todos tus éxitos personales o mantenerlos completamente en secreto?"
           }
         }
       }
@@ -6060,6 +7308,12 @@
             "state": "translated",
             "value": "¿Preferirías saber cuándo te mienten o no saberlo nunca?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti saber cuándo te mienten o no saberlo nunca?"
+          }
         }
       }
     },
@@ -6088,6 +7342,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías quedarte atrapado en una isla con alguien que no te cae bien o estar allí completamente solo?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti quedarte atrapado en una isla con alguien que no te cae bien o estar allí completamente solo?"
           }
         }
       }
@@ -6118,6 +7378,12 @@
             "state": "translated",
             "value": "¿Preferirías no poder decir nunca lo que piensas o tener que decir siempre la verdad?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti no poder decir nunca lo que piensas o tener que decir siempre la verdad?"
+          }
         }
       }
     },
@@ -6146,6 +7412,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías estar sin hogar pero rodeado de tu familia y amigos o vivir cómodamente pero solo?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti estar sin hogar pero rodeado de tu familia y amigos o vivir cómodamente pero solo?"
           }
         }
       }
@@ -6176,6 +7448,12 @@
             "state": "translated",
             "value": "¿Preferirías viajar al pasado para conocer a tus antepasados o al futuro para conocer a tus descendientes?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti viajar al pasado para conocer a tus antepasados o al futuro para conocer a tus descendientes?"
+          }
         }
       }
     },
@@ -6204,6 +7482,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías llegar siempre 10 minutos tarde o 2 horas temprano a cada cita?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti llegar siempre 10 minutos tarde o 2 horas temprano a cada cita?"
           }
         }
       }
@@ -6234,6 +7518,12 @@
             "state": "translated",
             "value": "¿Preferirías que nuestra historia se contara o que se mantuviera en secreto?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que nuestra historia se contara o que se mantuviera en secreto?"
+          }
         }
       }
     },
@@ -6262,6 +7552,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías tener la razón en una discusión o hacer las paces rápidamente?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti tener la razón en una discusión o hacer las paces rápidamente?"
           }
         }
       }
@@ -6292,6 +7588,12 @@
             "state": "translated",
             "value": "¿Preferirías participar en un reality show que filme tu vida las 24 horas o vivir solo en total aislamiento?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti participar en un reality show que filme tu vida las 24 horas o vivir solo en total aislamiento?"
+          }
         }
       }
     },
@@ -6320,6 +7622,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías un amor que llegue demasiado pronto o que tarde demasiado en llegar?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti un amor que llegue demasiado pronto o que tarde demasiado en llegar?"
           }
         }
       }
@@ -6350,6 +7658,12 @@
             "state": "translated",
             "value": "¿Preferirías vivir en un lugar caluroso o en uno frío todo el año?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti vivir en un lugar caluroso o en uno frío todo el año?"
+          }
         }
       }
     },
@@ -6378,6 +7692,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías una pareja siempre honesta aunque duela o un mentiroso que no te hiera?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti una pareja siempre honesta aunque duela o un mentiroso que no te hiera?"
           }
         }
       }
@@ -6408,6 +7728,12 @@
             "state": "translated",
             "value": "¿Preferirías una relación llena de proyectos o llena de aventuras?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti una relación llena de proyectos o llena de aventuras?"
+          }
         }
       }
     },
@@ -6436,6 +7762,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías vivir una vida maravillosa hasta los 100, o pasar 100 años con la edad que elijas?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti vivir una vida maravillosa hasta los 100, o pasar 100 años con la edad que elijas?"
           }
         }
       }
@@ -6466,6 +7798,12 @@
             "state": "translated",
             "value": "¿Preferirías renacer en el mismo país o en otro de tu elección?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti renacer en el mismo país o en otro de tu elección?"
+          }
         }
       }
     },
@@ -6494,6 +7832,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías vivir en un país con cuatro estaciones bien marcadas o en uno siempre soleado y cálido?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti vivir en un país con cuatro estaciones bien marcadas o en uno siempre soleado y cálido?"
           }
         }
       }
@@ -6524,6 +7868,12 @@
             "state": "translated",
             "value": "¿Preferirías vivir junto al mar o en la montaña?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti vivir junto al mar o en la montaña?"
+          }
         }
       }
     },
@@ -6552,6 +7902,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías vivir en un castillo con pasajes secretos o en una mansión moderna con toda la tecnología de punta?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti vivir en un castillo con pasajes secretos o en una mansión moderna con toda la tecnología de punta?"
           }
         }
       }
@@ -6582,6 +7938,12 @@
             "state": "translated",
             "value": "¿Preferirías seguir una rutina estricta cada día o tener total espontaneidad en tu agenda?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti seguir una rutina estricta cada día o tener total espontaneidad en tu agenda?"
+          }
         }
       }
     },
@@ -6610,6 +7972,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías tener que vestir siempre de forma formal o llevar siempre ropa casual?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti tener que vestir siempre de forma formal o llevar siempre ropa casual?"
           }
         }
       }
@@ -6640,6 +8008,12 @@
             "state": "translated",
             "value": "¿Preferirías sentir que nunca haces lo suficiente o que yo nunca hago lo suficiente?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti sentir que nunca haces lo suficiente o que yo nunca hago lo suficiente?"
+          }
         }
       }
     },
@@ -6668,6 +8042,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías poder comer todo lo que quisieras sin engordar nunca o sentirte perfectamente descansado tras solo tres horas de sueño?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti poder comer todo lo que quisieras sin engordar nunca o sentirte perfectamente descansado tras solo tres horas de sueño?"
           }
         }
       }
@@ -6698,6 +8078,12 @@
             "state": "translated",
             "value": "¿Preferirías ser la persona más afortunada del mundo o saber que ganaste todo gracias a tu trabajo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti ser la persona más afortunada del mundo o saber que ganaste todo gracias a tu trabajo?"
+          }
         }
       }
     },
@@ -6726,6 +8112,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías tener un vecino ruidoso o uno demasiado curioso?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti tener un vecino ruidoso o uno demasiado curioso?"
           }
         }
       }
@@ -6756,6 +8148,12 @@
             "state": "translated",
             "value": "¿Preferirías que te sorprendiera cada día o comprenderme sin esfuerzo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que te sorprendiera cada día o comprenderme sin esfuerzo?"
+          }
         }
       }
     },
@@ -6784,6 +8182,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías tener mucha energía o mucho dinero?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti tener mucha energía o mucho dinero?"
           }
         }
       }
@@ -6814,6 +8218,12 @@
             "state": "translated",
             "value": "¿Preferirías ser un genio al que todos creen idiota o un idiota al que todos creen un genio?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti ser un genio al que todos creen idiota o un idiota al que todos creen un genio?"
+          }
         }
       }
     },
@@ -6842,6 +8252,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías escuchar «te amo» a menudo o sentirlo sin palabras?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti escuchar «te amo» a menudo o sentirlo sin palabras?"
           }
         }
       }
@@ -6872,6 +8288,12 @@
             "state": "translated",
             "value": "¿Preferirías revivir nuestra primera cita o nuestra primera carcajada incontrolable?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti revivir nuestra primera cita o nuestra primera carcajada incontrolable?"
+          }
         }
       }
     },
@@ -6900,6 +8322,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías que mostrara mi amor con acciones o con miradas?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que mostrara mi amor con acciones o con miradas?"
           }
         }
       }
@@ -6930,6 +8358,12 @@
             "state": "translated",
             "value": "¿Preferirías tener siempre las preguntas correctas o siempre las respuestas correctas?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti tener siempre las preguntas correctas o siempre las respuestas correctas?"
+          }
         }
       }
     },
@@ -6958,6 +8392,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías tener la oportunidad de viajar por el mundo durante un año o hablar 10 idiomas con fluidez?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti tener la oportunidad de viajar por el mundo durante un año o hablar 10 idiomas con fluidez?"
           }
         }
       }
@@ -6988,6 +8428,12 @@
             "state": "translated",
             "value": "¿Preferirías que te contara mis sueños o mis miedos?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que te contara mis sueños o mis miedos?"
+          }
         }
       }
     },
@@ -7016,6 +8462,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías ser la elección obvia de alguien o su elección valiente?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti ser la elección obvia de alguien o su elección valiente?"
           }
         }
       }
@@ -7046,6 +8498,12 @@
             "state": "translated",
             "value": "¿Preferirías una relación en la que compartamos todo o en la que cada uno conserve su jardín secreto?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti una relación en la que compartamos todo o en la que cada uno conserve su jardín secreto?"
+          }
         }
       }
     },
@@ -7074,6 +8532,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías tener la oportunidad de arreglar tu mayor error o no volver a equivocarte nunca?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti tener la oportunidad de arreglar tu mayor error o no volver a equivocarte nunca?"
           }
         }
       }
@@ -7104,6 +8568,12 @@
             "state": "translated",
             "value": "¿Preferirías ser muy inteligente o muy atractivo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti ser muy inteligente o muy atractivo?"
+          }
         }
       }
     },
@@ -7132,6 +8602,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías ser amado por quien eres o por quien podrías llegar a ser?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti ser amado por quien eres o por quien podrías llegar a ser?"
           }
         }
       }
@@ -7162,6 +8638,12 @@
             "state": "translated",
             "value": "¿Preferirías no tener fotos pero recordar perfectamente todos los lugares que has visitado, o tener muchas fotos pero ningún recuerdo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti no tener fotos pero recordar perfectamente todos los lugares que has visitado, o tener muchas fotos pero ningún recuerdo?"
+          }
         }
       }
     },
@@ -7190,6 +8672,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías que te escribiera todos los días o hablarte una sola vez con intensidad?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que te escribiera todos los días o hablarte una sola vez con intensidad?"
           }
         }
       }
@@ -7220,6 +8708,12 @@
             "state": "translated",
             "value": "¿Preferirías que te dijeran de antemano todas las cosas bonitas que te esperan o descubrirlas por sorpresa?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti que te dijeran de antemano todas las cosas bonitas que te esperan o descubrirlas por sorpresa?"
+          }
         }
       }
     },
@@ -7248,6 +8742,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías estar siempre en mis brazos o siempre en mis pensamientos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti estar siempre en mis brazos o siempre en mis pensamientos?"
           }
         }
       }
@@ -7278,6 +8778,12 @@
             "state": "translated",
             "value": "¿Preferirías una relación que empiece de manera inesperada o una que parezca destinada?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti una relación que empiece de manera inesperada o una que parezca destinada?"
+          }
         }
       }
     },
@@ -7306,6 +8812,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías amar como si fuera la primera vez o como si fuera la última?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti amar como si fuera la primera vez o como si fuera la última?"
           }
         }
       }
@@ -7336,6 +8848,12 @@
             "state": "translated",
             "value": "¿Preferirías ganar el Premio Nobel de la Paz o 5 millones de dólares?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti ganar el Premio Nobel de la Paz o 5 millones de dólares?"
+          }
         }
       }
     },
@@ -7365,6 +8883,12 @@
             "state": "translated",
             "value": "¿Preferirías ser mi refugio en las tormentas o mi rayo de sol diario?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti ser mi refugio en las tormentas o mi rayo de sol diario?"
+          }
         }
       }
     },
@@ -7393,6 +8917,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Preferirías no envejecer nunca o no preocuparte nunca por el dinero?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiresti no envejecer nunca o no preocuparte nunca por el dinero?"
           }
         }
       }
