@@ -32,7 +32,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "About me"
+            "value": "Informazioni su di me"
           }
         }
       }
@@ -67,7 +67,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Add 1 favorite"
+            "value": "Aggiungi 1 preferito"
           }
         }
       }
@@ -102,7 +102,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Add 5 favorites"
+            "value": "Aggiungi 5 preferiti"
           }
         }
       }
@@ -137,7 +137,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Add to favorites"
+            "value": "Aggiungi ai preferiti"
           }
         }
       }
@@ -172,7 +172,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Save your favorite questions"
+            "value": "Salva le tue domande preferite"
           }
         }
       }
@@ -207,7 +207,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tap the heart below a card to save it here, your partner will see them too."
+            "value": "Tocca il cuore sotto una carta per salvarla qui; anche il tuo partner le vedrà.\n\nLe tue domande preferite saranno condivise automaticamente con il tuo partner."
           }
         }
       }
@@ -242,7 +242,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Add memories to your journal"
+            "value": "Aggiungi ricordi al tuo diario"
           }
         }
       }
@@ -277,7 +277,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Add photo"
+            "value": "Aggiungi foto"
           }
         }
       }
@@ -312,7 +312,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Add profile photo"
+            "value": "Aggiungi foto del profilo"
           }
         }
       }
@@ -347,7 +347,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Add your relationship start date in settings"
+            "value": "Aggiungi la data di inizio della relazione nelle impostazioni"
           }
         }
       }
@@ -382,7 +382,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Add your widgets"
+            "value": "Aggiungi i tuoi widget"
           }
         }
       }
@@ -418,7 +418,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "All completed"
+            "value": "Tutto completato"
           }
         }
       }
@@ -453,7 +453,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "I already have an account"
+            "value": "Ho già un account"
           }
         }
       }
@@ -488,7 +488,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Always authorized"
+            "value": "Sempre autorizzato"
           }
         }
       }
@@ -523,7 +523,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "and"
+            "value": "e"
           }
         }
       }
@@ -558,7 +558,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Deepen your bond through fun and intimate questions."
+            "value": "Approfondisci il tuo legame attraverso domande divertenti e intime."
           }
         }
       }
@@ -629,7 +629,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "The app that brings you closer"
+            "value": "L'app che vi avvicina"
           }
         }
       }
@@ -664,7 +664,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Application"
+            "value": "Applicazione"
           }
         }
       }
@@ -699,7 +699,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Authentication error"
+            "value": "Errore di autenticazione"
           }
         }
       }
@@ -734,7 +734,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Apple authentication required"
+            "value": "Autenticazione Apple richiesta"
           }
         }
       }
@@ -769,7 +769,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Authentication in progress"
+            "value": "Autenticazione in corso"
           }
         }
       }
@@ -805,7 +805,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Authorization required"
+            "value": "Autorizzazione richiesta"
           }
         }
       }
@@ -840,7 +840,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Back"
+            "value": "Indietro"
           }
         }
       }
@@ -875,7 +875,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Both have access"
+            "value": "Entrambi hanno accesso"
           }
         }
       }
@@ -910,7 +910,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "This action will delete all cached questions. They will be automatically reloaded on next use."
+            "value": "Questa azione eliminerà tutte le domande nella cache. Verranno ricaricate automaticamente al prossimo utilizzo."
           }
         }
       }
@@ -945,7 +945,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Cache size"
+            "value": "Dimensione cache"
           }
         }
       }
@@ -980,7 +980,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "FRI"
+            "value": "VEN"
           }
         }
       }
@@ -1015,7 +1015,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "MON"
+            "value": "LUN"
           }
         }
       }
@@ -1050,7 +1050,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "SAT"
+            "value": "SAB"
           }
         }
       }
@@ -1085,7 +1085,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "SUN"
+            "value": "DOM"
           }
         }
       }
@@ -1120,7 +1120,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "THU"
+            "value": "GIO"
           }
         }
       }
@@ -1155,7 +1155,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "TUE"
+            "value": "MAR"
           }
         }
       }
@@ -1190,7 +1190,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "WED"
+            "value": "MER"
           }
         }
       }
@@ -1225,7 +1225,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Can request review:"
+            "value": "Può richiedere una recensione:"
           }
         }
       }
@@ -1260,7 +1260,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Cancel"
+            "value": "Annulla"
           }
         }
       }
@@ -1295,7 +1295,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Cancel"
+            "value": "Annulla abbonamento"
           }
         }
       }
@@ -1330,7 +1330,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Cannot read purchase receipt"
+            "value": "Impossibile leggere la ricevuta d'acquisto"
           }
         }
       }
@@ -1365,7 +1365,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "I can't wait to see you"
+            "value": "Non vedo l'ora di vederti"
           }
         }
       }
@@ -1400,7 +1400,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Categories"
+            "value": "Categorie"
           }
         }
       }
@@ -1435,7 +1435,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Choose location"
+            "value": "Scegli posizione"
           }
         }
       }
@@ -1470,7 +1470,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Choose photo"
+            "value": "Scegli foto"
           }
         }
       }
@@ -1505,7 +1505,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Choose your plan"
+            "value": "Scegli il tuo piano"
           }
         }
       }
@@ -1540,7 +1540,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Choose time"
+            "value": "Scegli l'orario"
           }
         }
       }
@@ -1575,7 +1575,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "🧹 Clean orphan codes"
+            "value": "🧹 Pulisci i codici orfani"
           }
         }
       }
@@ -1610,7 +1610,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Clear cache"
+            "value": "Svuota cache"
           }
         }
       }
@@ -1646,7 +1646,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Close"
+            "value": "Chiudi"
           }
         }
       }
@@ -1681,7 +1681,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Code generation..."
+            "value": "Generazione codice..."
           }
         }
       }
@@ -1716,7 +1716,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Complete guide"
+            "value": "Guida completa"
           }
         }
       }
@@ -1751,7 +1751,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Congratulations"
+            "value": "Congratulazioni"
           }
         }
       }
@@ -1787,7 +1787,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Congratulations!"
+            "value": "Congratulazioni!"
           }
         }
       }
@@ -1822,7 +1822,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Connect"
+            "value": "Connetti"
           }
         }
       }
@@ -1857,7 +1857,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Connect with your partner to share your journal with them, and enjoy all the app's features."
+            "value": "Connettiti con il tuo partner per condividere il diario e usufruire di tutte le funzionalità dell'app."
           }
         }
       }
@@ -1892,7 +1892,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Connect with your partner"
+            "value": "Connettiti con il tuo partner"
           }
         }
       }
@@ -1927,7 +1927,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Connected on"
+            "value": "Connesso il"
           }
         }
       }
@@ -1962,7 +1962,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Connected with %@"
+            "value": "Connesso con %@"
           }
         }
       }
@@ -1997,7 +1997,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "You are connected 💞"
+            "value": "Siete connessi 💞"
           }
         }
       }
@@ -2032,7 +2032,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Connecting..."
+            "value": "Connessione..."
           }
         }
       }
@@ -2067,7 +2067,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Connecting..."
+            "value": "Connessione..."
           }
         }
       }
@@ -2102,7 +2102,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Connection error"
+            "value": "Errore di connessione"
           }
         }
       }
@@ -2137,7 +2137,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Connection successful!"
+            "value": "Connessione riuscita!"
           }
         }
       }
@@ -2172,7 +2172,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Connection successful..."
+            "value": "Connessione riuscita..."
           }
         }
       }
@@ -2207,7 +2207,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Contact us"
+            "value": "Contattaci"
           }
         }
       }
@@ -2243,7 +2243,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Continue"
+            "value": "Continua"
           }
         }
       }
@@ -2279,7 +2279,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Preparing..."
+            "value": "Preparazione..."
           }
         }
       }
@@ -2314,7 +2314,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Continue with free version"
+            "value": "Continua con la versione gratuita"
           }
         }
       }
@@ -2349,7 +2349,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "✨ Continue"
+            "value": "✨ Continua"
           }
         }
       }
@@ -2384,7 +2384,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Adjust your profile photo"
+            "value": "Regola la tua foto del profilo"
           }
         }
       }
@@ -2419,7 +2419,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Validate"
+            "value": "Conferma"
           }
         }
       }
@@ -2454,7 +2454,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Continue with Apple"
+            "value": "Continua con Apple"
           }
         }
       }
@@ -2489,7 +2489,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Countdown timer"
+            "value": "Timer conto alla rovescia"
           }
         }
       }
@@ -2524,7 +2524,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Your couple statistics"
+            "value": "Statistiche di coppia"
           }
         }
       }
@@ -2559,7 +2559,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Create"
+            "value": "Crea"
           }
         }
       }
@@ -2594,7 +2594,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Create account"
+            "value": "Crea account"
           }
         }
       }
@@ -2629,7 +2629,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Create an account to keep your activity history and easily find your favorite conversations anytime!"
+            "value": "Crea un account per salvare la cronologia delle tue attività e ritrovare facilmente le tue conversazioni preferite in qualsiasi momento!"
           }
         }
       }
@@ -2664,7 +2664,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Create your memory map"
+            "value": "Crea la tua mappa dei ricordi"
           }
         }
       }
@@ -2699,7 +2699,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Answer the question of the day"
+            "value": "Rispondi alla domanda del giorno"
           }
         }
       }
@@ -2735,7 +2735,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Create your account and secure your data"
+            "value": "Crea il tuo account e proteggi i tuoi dati"
           }
         }
       }
@@ -2770,7 +2770,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Created by"
+            "value": "Creato da"
           }
         }
       }
@@ -2805,7 +2805,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Current status:"
+            "value": "Stato attuale:"
           }
         }
       }
@@ -2840,7 +2840,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "👤 Current User"
+            "value": "👤 Utente attuale"
           }
         }
       }
@@ -2875,7 +2875,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tap ‘Customize' to set up your widgets."
+            "value": "Tocca 'Personalizza' per configurare i tuoi widget."
           }
         }
       }
@@ -2980,7 +2980,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "days"
+            "value": "giorni"
           }
         }
       }
@@ -3015,7 +3015,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "days before your next anniversary"
+            "value": "giorni prima del vostro prossimo anniversario"
           }
         }
       }
@@ -3050,7 +3050,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Days\ntogether"
+            "value": "Giorni\ninsieme"
           }
         }
       }
@@ -3086,7 +3086,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Debug Review System"
+            "value": "Sistema di revisione debug"
           }
         }
       }
@@ -3121,7 +3121,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "🔄 Debug - Sync Subscriptions"
+            "value": "🔄 Debug - Sincronizza abbonamenti"
           }
         }
       }
@@ -3156,7 +3156,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Delete account"
+            "value": "Elimina account"
           }
         }
       }
@@ -3191,7 +3191,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "This action is irreversible. All your data will be permanently deleted.\n\nApple may ask you to re-authenticate to confirm this action."
+            "value": "Questa azione è irreversibile. Tutti i tuoi dati verranno eliminati definitivamente.\n\nApple potrebbe chiederti di riautenticarti per confermare questa azione."
           }
         }
       }
@@ -3226,7 +3226,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Deleting account..."
+            "value": "Eliminazione account..."
           }
         }
       }
@@ -3261,7 +3261,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Disconnect"
+            "value": "Disconnetti"
           }
         }
       }
@@ -3296,7 +3296,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Are you sure you want to disconnect from your partner? This action will remove data sharing."
+            "value": "Sei sicuro di voler disconnetterti dal tuo partner? Questa azione rimuoverà la condivisione dei dati."
           }
         }
       }
@@ -3331,7 +3331,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Discover Premium"
+            "value": "Scopri Premium"
           }
         }
       }
@@ -3366,7 +3366,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "distance"
+            "value": "distanza"
           }
         }
       }
@@ -3401,7 +3401,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Done"
+            "value": "Fatto"
           }
         }
       }
@@ -3471,7 +3471,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Your memory journal is empty"
+            "value": "Il tuo diario dei ricordi è vuoto"
           }
         }
       }
@@ -3506,7 +3506,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Enjoy!"
+            "value": "Divertiti!"
           }
         }
       }
@@ -3541,7 +3541,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Enter code"
+            "value": "Inserisci codice"
           }
         }
       }
@@ -3576,7 +3576,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Enter your partner's code"
+            "value": "Inserisci il codice del tuo partner"
           }
         }
       }
@@ -3611,7 +3611,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Enter the code"
+            "value": "Inserisci il codice"
           }
         }
       }
@@ -3646,7 +3646,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Entry creation error"
+            "value": "Errore creazione voce"
           }
         }
       }
@@ -3681,7 +3681,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Error"
+            "value": "Errore"
           }
         }
       }
@@ -3716,7 +3716,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Error: Image not found"
+            "value": "Errore: immagine non trovata"
           }
         }
       }
@@ -3752,7 +3752,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Event date"
+            "value": "Data dell'evento"
           }
         }
       }
@@ -3787,7 +3787,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Time"
+            "value": "Ora"
           }
         }
       }
@@ -3822,7 +3822,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "events"
+            "value": "eventi"
           }
         }
       }
@@ -3858,7 +3858,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Events of"
+            "value": "Eventi del"
           }
         }
       }
@@ -3928,7 +3928,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Exclusive premium content"
+            "value": "Contenuto premium esclusivo"
           }
         }
       }
@@ -3963,7 +3963,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Favorites"
+            "value": "Preferiti"
           }
         }
       }
@@ -3998,7 +3998,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Favorites:"
+            "value": "Preferiti:"
           }
         }
       }
@@ -4033,7 +4033,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "of"
+            "value": "di"
           }
         }
       }
@@ -4068,7 +4068,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "To feel even closer to your partner."
+            "value": "Per sentirti ancora più vicino al tuo partner."
           }
         }
       }
@@ -4103,7 +4103,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "✓ Deepen your connection"
+            "value": "✓ Rafforza la tua connessione"
           }
         }
       }
@@ -4138,7 +4138,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Get access to 1800+ questions to laugh, open up, and grow closer together."
+            "value": "Accedi a oltre 1800 domande per ridere, aprirti e avvicinarti di più."
           }
         }
       }
@@ -4173,7 +4173,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "✓ Keep your best memories in one place"
+            "value": "✓ Conserva i tuoi ricordi migliori in un unico posto"
           }
         }
       }
@@ -4208,7 +4208,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Because every moment deserves a special place. Keep your most beautiful memories in a shared journal made just for the two of you."
+            "value": "Perché ogni momento merita un posto speciale. Conserva i tuoi ricordi più belli in un diario condiviso fatto solo per voi due."
           }
         }
       }
@@ -4243,7 +4243,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "✓ A new challenge every day"
+            "value": "✓ Una nuova sfida ogni giorno"
           }
         }
       }
@@ -4278,7 +4278,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Receive a romantic challenge every day to grow closer, even from afar."
+            "value": "Ricevi ogni giorno una sfida romantica per avvicinarti, anche a distanza."
           }
         }
       }
@@ -4313,7 +4313,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "💌 Build a deeper connection"
+            "value": "💌 Crea una connessione più profonda"
           }
         }
       }
@@ -4348,7 +4348,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "🔥 Talk about what we usually avoid"
+            "value": "🔥 Parla di ciò che di solito evitiamo"
           }
         }
       }
@@ -4383,7 +4383,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "🌶️ Increase the passion between us"
+            "value": "🌶️ Aumenta la passione tra noi"
           }
         }
       }
@@ -4418,7 +4418,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "🎉 Share more laughs together"
+            "value": "🎉 Condividiamo più risate insieme"
           }
         }
       }
@@ -4453,7 +4453,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "💕 Feel close again, like before"
+            "value": "💕 Ritrovare una vera complicità"
           }
         }
       }
@@ -4488,7 +4488,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "✨ Share something meaningful together"
+            "value": "✨ Condividi qualcosa di significativo insieme"
           }
         }
       }
@@ -4523,7 +4523,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "💕 Revive our connection"
+            "value": "💕 Ravviviamo la nostra connessione"
           }
         }
       }
@@ -4558,7 +4558,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "🔄 Break out of the routine"
+            "value": "🔄 Spezza la routine"
           }
         }
       }
@@ -4593,7 +4593,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "🤍 Open up like never before"
+            "value": "🤍 Aprirsi come mai prima d'ora"
           }
         }
       }
@@ -4628,7 +4628,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Weekly"
+            "value": "Settimanale"
           }
         }
       }
@@ -4663,7 +4663,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Monthly - 3 days free"
+            "value": "Mensile - 3 giorni gratis"
           }
         }
       }
@@ -4768,7 +4768,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "week"
+            "value": "settimana"
           }
         }
       }
@@ -4803,7 +4803,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "month"
+            "value": "mese"
           }
         }
       }
@@ -4908,7 +4908,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "January"
+            "value": "Gennaio"
           }
         }
       }
@@ -4943,7 +4943,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "February"
+            "value": "Febbraio"
           }
         }
       }
@@ -4978,7 +4978,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "March"
+            "value": "Marzo"
           }
         }
       }
@@ -5013,7 +5013,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "April"
+            "value": "Aprile"
           }
         }
       }
@@ -5048,7 +5048,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "May"
+            "value": "Maggio"
           }
         }
       }
@@ -5083,7 +5083,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "June"
+            "value": "Giugno"
           }
         }
       }
@@ -5118,7 +5118,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "July"
+            "value": "Luglio"
           }
         }
       }
@@ -5153,7 +5153,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "August"
+            "value": "Agosto"
           }
         }
       }
@@ -5188,7 +5188,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "September"
+            "value": "Settembre"
           }
         }
       }
@@ -5223,7 +5223,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "October"
+            "value": "Ottobre"
           }
         }
       }
@@ -5258,7 +5258,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "November"
+            "value": "Novembre"
           }
         }
       }
@@ -5293,7 +5293,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "December"
+            "value": "Dicembre"
           }
         }
       }
@@ -5328,7 +5328,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Leave us a review"
+            "value": "Lasciaci una recensione"
           }
         }
       }
@@ -5363,7 +5363,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Manage subscription"
+            "value": "Gestisci abbonamento"
           }
         }
       }
@@ -5398,7 +5398,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "How to enable location"
+            "value": "Come abilitare la posizione"
           }
         }
       }
@@ -5433,7 +5433,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tap on Authorize"
+            "value": "Tocca Autorizza"
           }
         }
       }
@@ -5468,7 +5468,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": " for 2 users"
+            "value": " per 2 utenti"
           }
         }
       }
@@ -5503,7 +5503,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "for a"
+            "value": "per una"
           }
         }
       }
@@ -5538,7 +5538,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "entry"
+            "value": "voce"
           }
         }
       }
@@ -5573,7 +5573,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "entries"
+            "value": "voci"
           }
         }
       }
@@ -5608,7 +5608,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "free"
+            "value": "gratuito"
           }
         }
       }
@@ -5643,7 +5643,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "free"
+            "value": "gratuite"
           }
         }
       }
@@ -5678,7 +5678,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Limit check error"
+            "value": "Errore di verifica limite"
           }
         }
       }
@@ -5713,7 +5713,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Free entries limit reached"
+            "value": "Limite voci gratuite raggiunto"
           }
         }
       }
@@ -5748,7 +5748,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Generating..."
+            "value": "Generazione..."
           }
         }
       }
@@ -5783,7 +5783,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Generation error"
+            "value": "Errore di generazione"
           }
         }
       }
@@ -5818,7 +5818,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "your partner"
+            "value": "il tuo partner"
           }
         }
       }
@@ -5854,7 +5854,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Get Premium"
+            "value": "Ottieni Premium"
           }
         }
       }
@@ -5889,7 +5889,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Happy anniversary! 🎉"
+            "value": "Buon anniversario! 🎉"
           }
         }
       }
@@ -5924,7 +5924,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Touch and hold an empty area to enter edit mode."
+            "value": "Tocca e tieni premuto su un'area vuota per entrare in modalità modifica."
           }
         }
       }
@@ -5959,7 +5959,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Touch and hold anywhere on your home screen"
+            "value": "Tieni premuto in un punto qualsiasi della schermata Home"
           }
         }
       }
@@ -6029,7 +6029,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Home screen"
+            "value": "Schermata Home"
           }
         }
       }
@@ -6064,7 +6064,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Home Screen Widget"
+            "value": "Widget Schermata Home"
           }
         }
       }
@@ -6099,7 +6099,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "hours"
+            "value": "ore"
           }
         }
       }
@@ -6134,7 +6134,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "How to add them?"
+            "value": "Come aggiungerli?"
           }
         }
       }
@@ -6204,7 +6204,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Image not available"
+            "value": "Immagine non disponibile"
           }
         }
       }
@@ -6239,7 +6239,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Image processing failed"
+            "value": "Elaborazione immagine non riuscita"
           }
         }
       }
@@ -6274,7 +6274,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Together since"
+            "value": "Insieme dal"
           }
         }
       }
@@ -6310,7 +6310,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Invite your partner"
+            "value": "Invita il tuo partner"
           }
         }
       }
@@ -6345,7 +6345,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Enjoy the complete app experience together!"
+            "value": "Godetevi insieme l'esperienza completa dell'app!"
           }
         }
       }
@@ -6380,7 +6380,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "This action is irreversible. The memory will be permanently deleted."
+            "value": "Questa azione è irreversibile. Il ricordo verrà eliminato definitivamente."
           }
         }
       }
@@ -6415,7 +6415,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Journal"
+            "value": "Diario"
           }
         }
       }
@@ -6451,7 +6451,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Start saving your favorite moments here and feel even closer together. \n\nYour partner will be able to see everything you add."
+            "value": "Inizia a salvare qui i tuoi momenti preferiti e sentitevi ancora più vicini.\n\nIl tuo partner potrà vedere tutto ciò che aggiungi."
           }
         }
       }
@@ -6521,7 +6521,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Let's go!"
+            "value": "Andiamo!"
           }
         }
       }
@@ -6556,7 +6556,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Limit reached"
+            "value": "Limite raggiunto"
           }
         }
       }
@@ -6591,7 +6591,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Loading..."
+            "value": "Caricamento..."
           }
         }
       }
@@ -6626,7 +6626,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "LOADING..."
+            "value": "CARICAMENTO..."
           }
         }
       }
@@ -6661,7 +6661,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Loading error"
+            "value": "Errore di caricamento"
           }
         }
       }
@@ -6696,7 +6696,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Personalizing your experience..."
+            "value": "Personalizzazione della tua esperienza..."
           }
         }
       }
@@ -6731,7 +6731,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Analyzing your preferences..."
+            "value": "Analisi delle tue preferenze..."
           }
         }
       }
@@ -6767,7 +6767,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Preparing your profile..."
+            "value": "Preparazione del tuo profilo..."
           }
         }
       }
@@ -6837,7 +6837,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Location"
+            "value": "Posizione"
           }
         }
       }
@@ -6872,7 +6872,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Location access permission"
+            "value": "Autorizzazione di accesso alla posizione"
           }
         }
       }
@@ -6907,7 +6907,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Location"
+            "value": "Autorizzazione posizione"
           }
         }
       }
@@ -6942,7 +6942,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Location services are needed for the app to calculate the distance between you and your partner."
+            "value": "I servizi di localizzazione sono necessari affinché l'app calcoli la distanza tra te e il tuo partner."
           }
         }
       }
@@ -6977,7 +6977,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Location"
+            "value": "Posizione"
           }
         }
       }
@@ -7012,7 +7012,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Location tutorial"
+            "value": "Tutorial sulla posizione"
           }
         }
       }
@@ -7048,7 +7048,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Lock screen"
+            "value": "Schermata di blocco"
           }
         }
       }
@@ -7083,7 +7083,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tap your lock screen to start editing."
+            "value": "Tocca la schermata di blocco per iniziare a modificare."
           }
         }
       }
@@ -7118,7 +7118,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Lock Screen Widget"
+            "value": "Widget schermata di blocco"
           }
         }
       }
@@ -7153,7 +7153,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Premium Content"
+            "value": "Contenuto Premium"
           }
         }
       }
@@ -7258,7 +7258,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Find your memories on a unique map, and relive the moments that marked your love."
+            "value": "Trova i tuoi ricordi su una mappa unica e rivivi i momenti che hanno segnato il vostro amore."
           }
         }
       }
@@ -7293,7 +7293,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "✓ Create your love map"
+            "value": "✓ Crea la tua mappa dell'amore"
           }
         }
       }
@@ -7328,7 +7328,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Unlock our 2000+ questions that are fun, deep, reassuring, and have a wonderful time together."
+            "value": "Sblocca oltre 2000 domande divertenti, profonde e rassicuranti per trascorrere meravigliosi momenti insieme."
           }
         }
       }
@@ -7364,7 +7364,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "✓ Love each other even stronger"
+            "value": "✓ Amatevi ancora più intensamente"
           }
         }
       }
@@ -7399,7 +7399,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "64 questions max (free category)"
+            "value": "64 domande max (categoria gratuita)"
           }
         }
       }
@@ -7434,7 +7434,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "All your special moments will appear here on the map."
+            "value": "Tutti i tuoi momenti speciali appariranno qui sulla mappa."
           }
         }
       }
@@ -7469,7 +7469,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Because every memory deserves its place. Gather your most beautiful moments in an intimate, unique and shared diary, just for you two."
+            "value": "Perché ogni ricordo merita il suo posto. Raccogli i tuoi momenti più belli in un diario intimo, unico e condiviso, solo per voi due."
           }
         }
       }
@@ -7504,7 +7504,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "✓ Build your memory box"
+            "value": "✓ Costruisci la tua scatola dei ricordi"
           }
         }
       }
@@ -7539,7 +7539,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "minutes"
+            "value": "minuti"
           }
         }
       }
@@ -7574,7 +7574,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "I miss you so much"
+            "value": "Mi manchi tanto"
           }
         }
       }
@@ -7609,7 +7609,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Missing authentication token"
+            "value": "Token di autenticazione mancante"
           }
         }
       }
@@ -7644,7 +7644,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "More than 1800 questions to ask your soulmate"
+            "value": "Più di 1800 domande da fare alla tua anima gemella"
           }
         }
       }
@@ -7679,7 +7679,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "More than"
+            "value": "Più di"
           }
         }
       }
@@ -7714,7 +7714,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "My Favorites"
+            "value": "I miei preferiti"
           }
         }
       }
@@ -7749,7 +7749,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Name"
+            "value": "Nome"
           }
         }
       }
@@ -7784,7 +7784,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Name:"
+            "value": "Nome:"
           }
         }
       }
@@ -7819,7 +7819,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Enter your first name"
+            "value": "Inserisci il tuo nome"
           }
         }
       }
@@ -7854,7 +7854,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "This information will help us personalize your experience."
+            "value": "Questa informazione ci aiuterà a personalizzare la tua esperienza."
           }
         }
       }
@@ -7889,7 +7889,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "What's your name?"
+            "value": "Come ti chiami?"
           }
         }
       }
@@ -7924,7 +7924,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Choose your nickname"
+            "value": "Scegli il tuo soprannome"
           }
         }
       }
@@ -7959,7 +7959,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "How your partner will see you"
+            "value": "Come ti vedrà il tuo partner"
           }
         }
       }
@@ -7994,7 +7994,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Network error"
+            "value": "Errore di rete"
           }
         }
       }
@@ -8029,7 +8029,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "new cards"
+            "value": "nuove carte"
           }
         }
       }
@@ -8064,7 +8064,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "New cards added!"
+            "value": "Nuove carte aggiunte!"
           }
         }
       }
@@ -8099,7 +8099,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "New features unlocked"
+            "value": "Nuove funzionalità sbloccate"
           }
         }
       }
@@ -8169,7 +8169,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "No accessible photos"
+            "value": "Nessuna foto accessibile"
           }
         }
       }
@@ -8204,7 +8204,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "No commitment, cancel anytime"
+            "value": "Nessun impegno, annulla in qualsiasi momento"
           }
         }
       }
@@ -8239,7 +8239,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "No events today"
+            "value": "Nessun evento oggi"
           }
         }
       }
@@ -8274,7 +8274,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "No favorites yet"
+            "value": "Ancora nessun preferito"
           }
         }
       }
@@ -8309,7 +8309,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "No image"
+            "value": "Nessuna immagine"
           }
         }
       }
@@ -8344,7 +8344,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "No partner connected"
+            "value": "Nessun partner connesso"
           }
         }
       }
@@ -8379,7 +8379,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Start your trial — no charge today"
+            "value": "Inizia la prova — nessun addebito oggi"
           }
         }
       }
@@ -8414,7 +8414,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "No photos accessible"
+            "value": "Nessuna foto accessibile"
           }
         }
       }
@@ -8449,7 +8449,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "No premium access"
+            "value": "Nessun accesso premium"
           }
         }
       }
@@ -8484,7 +8484,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "No products available. Check your connection."
+            "value": "Nessun prodotto disponibile. Controlla la connessione."
           }
         }
       }
@@ -8519,7 +8519,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "No purchase to restore"
+            "value": "Nessun acquisto da ripristinare"
           }
         }
       }
@@ -8554,7 +8554,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "No relationship date set"
+            "value": "Nessuna data di relazione impostata"
           }
         }
       }
@@ -8589,7 +8589,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "You are not authorized to perform this action"
+            "value": "Non sei autorizzato a eseguire questa azione"
           }
         }
       }
@@ -8730,7 +8730,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "ONE MORE STEP!"
+            "value": "ANCORA UN PASSO!"
           }
         }
       }
@@ -8765,7 +8765,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Open Settings"
+            "value": "Apri Impostazioni"
           }
         }
       }
@@ -8800,7 +8800,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Open settings"
+            "value": "Apri impostazioni"
           }
         }
       }
@@ -8835,7 +8835,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "others..."
+            "value": "altri..."
           }
         }
       }
@@ -8870,7 +8870,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Our distance: "
+            "value": "La nostra distanza: "
           }
         }
       }
@@ -8905,7 +8905,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Our journal"
+            "value": "Il nostro diario"
           }
         }
       }
@@ -8940,7 +8940,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "You have completed the pack."
+            "value": "Hai completato il pacchetto."
           }
         }
       }
@@ -8975,7 +8975,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "the pack..."
+            "value": "il pacchetto..."
           }
         }
       }
