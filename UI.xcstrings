@@ -28,6 +28,12 @@
             "state": "translated",
             "value": "Sobre mí"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "About me"
+          }
         }
       }
     },
@@ -56,6 +62,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Añadir 1 favorito"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add 1 favorite"
           }
         }
       }
@@ -86,6 +98,12 @@
             "state": "translated",
             "value": "Añadir 5 favoritos"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add 5 favorites"
+          }
         }
       }
     },
@@ -114,6 +132,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Agregar a favoritos"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add to favorites"
           }
         }
       }
@@ -144,6 +168,12 @@
             "state": "translated",
             "value": "Guarda tus preguntas favoritas"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save your favorite questions"
+          }
         }
       }
     },
@@ -172,6 +202,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Toca el corazón debajo de una carta para guardarla aquí; tu pareja también las verá."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap the heart below a card to save it here, your partner will see them too."
           }
         }
       }
@@ -202,6 +238,12 @@
             "state": "translated",
             "value": "Añade recuerdos a tu diario"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add memories to your journal"
+          }
         }
       }
     },
@@ -230,6 +272,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Añadir foto"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add photo"
           }
         }
       }
@@ -260,6 +308,12 @@
             "state": "translated",
             "value": "Añadir foto de perfil"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add profile photo"
+          }
         }
       }
     },
@@ -289,6 +343,12 @@
             "state": "translated",
             "value": "Añade la fecha de inicio de tu relación en los ajustes"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add your relationship start date in settings"
+          }
         }
       }
     },
@@ -317,6 +377,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Añade tus widgets"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add your widgets"
           }
         }
       }
@@ -348,6 +414,12 @@
             "state": "translated",
             "value": "Todo completado"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All completed"
+          }
         }
       }
     },
@@ -376,6 +448,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ya tengo una cuenta"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I already have an account"
           }
         }
       }
@@ -406,6 +484,12 @@
             "state": "translated",
             "value": "Siempre autorizado"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Always authorized"
+          }
         }
       }
     },
@@ -434,6 +518,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "y"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "and"
           }
         }
       }
@@ -464,6 +554,12 @@
             "state": "translated",
             "value": "Profundiza vuestro vínculo a través de preguntas divertidas e íntimas."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deepen your bond through fun and intimate questions."
+          }
         }
       }
     },
@@ -490,6 +586,12 @@
           }
         },
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Love2Love"
+          }
+        },
+        "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Love2Love"
@@ -523,6 +625,12 @@
             "state": "translated",
             "value": "La app que os acerca"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The app that brings you closer"
+          }
         }
       }
     },
@@ -551,6 +659,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aplicación"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Application"
           }
         }
       }
@@ -581,6 +695,12 @@
             "state": "translated",
             "value": "Error de autenticación"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Authentication error"
+          }
         }
       }
     },
@@ -610,6 +730,12 @@
             "state": "translated",
             "value": "Autenticación de Apple requerida"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple authentication required"
+          }
         }
       }
     },
@@ -638,6 +764,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Autenticando..."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Authentication in progress"
           }
         }
       }
@@ -669,6 +801,12 @@
             "state": "translated",
             "value": "Autorización requerida"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Authorization required"
+          }
         }
       }
     },
@@ -697,6 +835,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Atrás"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Back"
           }
         }
       }
@@ -727,6 +871,12 @@
             "state": "translated",
             "value": "Ambos tienen acceso"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Both have access"
+          }
         }
       }
     },
@@ -755,6 +905,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Esta acción eliminará todas las preguntas en caché. Se volverán a cargar automáticamente en el próximo uso."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This action will delete all cached questions. They will be automatically reloaded on next use."
           }
         }
       }
@@ -785,6 +941,12 @@
             "state": "translated",
             "value": "Tamaño de la caché"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cache size"
+          }
         }
       }
     },
@@ -813,6 +975,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "VIE"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "FRI"
           }
         }
       }
@@ -843,6 +1011,12 @@
             "state": "translated",
             "value": "LUN"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MON"
+          }
         }
       }
     },
@@ -871,6 +1045,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "SÁB"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SAT"
           }
         }
       }
@@ -901,6 +1081,12 @@
             "state": "translated",
             "value": "DOM"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SUN"
+          }
         }
       }
     },
@@ -929,6 +1115,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "JUE"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "THU"
           }
         }
       }
@@ -959,6 +1151,12 @@
             "state": "translated",
             "value": "MAR"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TUE"
+          }
         }
       }
     },
@@ -987,6 +1185,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "MIÉ"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WED"
           }
         }
       }
@@ -1017,6 +1221,12 @@
             "state": "translated",
             "value": "Puede solicitar reseña:"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Can request review:"
+          }
         }
       }
     },
@@ -1045,6 +1255,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cancelar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel"
           }
         }
       }
@@ -1075,6 +1291,12 @@
             "state": "translated",
             "value": "Cancelar"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel"
+          }
         }
       }
     },
@@ -1103,6 +1325,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "No se puede leer el recibo de compra"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cannot read purchase receipt"
           }
         }
       }
@@ -1133,6 +1361,12 @@
             "state": "translated",
             "value": "No puedo esperar para verte"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I can't wait to see you"
+          }
         }
       }
     },
@@ -1161,6 +1395,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Categorías"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Categories"
           }
         }
       }
@@ -1191,6 +1431,12 @@
             "state": "translated",
             "value": "Elige ubicación"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose location"
+          }
         }
       }
     },
@@ -1219,6 +1465,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Elegir foto"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose photo"
           }
         }
       }
@@ -1249,6 +1501,12 @@
             "state": "translated",
             "value": "Elige tu plan"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose your plan"
+          }
         }
       }
     },
@@ -1277,6 +1535,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Elige hora"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose time"
           }
         }
       }
@@ -1307,6 +1571,12 @@
             "state": "translated",
             "value": "🧹 Limpiar códigos huérfanos"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "🧹 Clean orphan codes"
+          }
         }
       }
     },
@@ -1335,6 +1605,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Borrar caché"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clear cache"
           }
         }
       }
@@ -1366,6 +1642,12 @@
             "state": "translated",
             "value": "Cerrar"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Close"
+          }
         }
       }
     },
@@ -1394,6 +1676,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Generando código..."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Code generation..."
           }
         }
       }
@@ -1424,6 +1712,12 @@
             "state": "translated",
             "value": "Guía completa"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Complete guide"
+          }
         }
       }
     },
@@ -1452,6 +1746,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Felicidades"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Congratulations"
           }
         }
       }
@@ -1483,6 +1783,12 @@
             "state": "translated",
             "value": "¡Felicidades!"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Congratulations!"
+          }
         }
       }
     },
@@ -1511,6 +1817,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Conectar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connect"
           }
         }
       }
@@ -1541,6 +1853,12 @@
             "state": "translated",
             "value": "Conéctate con tu pareja para compartir tu diario y disfrutar de todas las funciones de la app."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connect with your partner to share your journal with them, and enjoy all the app's features."
+          }
         }
       }
     },
@@ -1569,6 +1887,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Conéctate con tu pareja"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connect with your partner"
           }
         }
       }
@@ -1599,6 +1923,12 @@
             "state": "translated",
             "value": "Conectado el"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connected on"
+          }
         }
       }
     },
@@ -1627,6 +1957,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Conectado con %@"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connected with %@"
           }
         }
       }
@@ -1657,6 +1993,12 @@
             "state": "translated",
             "value": "Estáis conectados 💞"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You are connected 💞"
+          }
         }
       }
     },
@@ -1685,6 +2027,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Conectando..."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connecting..."
           }
         }
       }
@@ -1715,6 +2063,12 @@
             "state": "translated",
             "value": "Conectando..."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connecting..."
+          }
         }
       }
     },
@@ -1743,6 +2097,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Error de conexión"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connection error"
           }
         }
       }
@@ -1773,6 +2133,12 @@
             "state": "translated",
             "value": "¡Conexión exitosa!"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connection successful!"
+          }
         }
       }
     },
@@ -1802,6 +2168,12 @@
             "state": "translated",
             "value": "Conexión exitosa..."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connection successful..."
+          }
         }
       }
     },
@@ -1830,6 +2202,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Contáctanos"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contact us"
           }
         }
       }
@@ -1861,6 +2239,12 @@
             "state": "translated",
             "value": "Continuar"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue"
+          }
         }
       }
     },
@@ -1891,6 +2275,12 @@
             "state": "translated",
             "value": "Preparando..."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparing..."
+          }
         }
       }
     },
@@ -1919,6 +2309,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Continuar con la versión gratuita"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue with free version"
           }
         }
       }
@@ -1949,6 +2345,12 @@
             "state": "translated",
             "value": "✨ Continuar"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "✨ Continue"
+          }
         }
       }
     },
@@ -1977,6 +2379,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ajusta tu foto de perfil"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adjust your profile photo"
           }
         }
       }
@@ -2007,6 +2415,12 @@
             "state": "translated",
             "value": "Validar"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Validate"
+          }
         }
       }
     },
@@ -2035,6 +2449,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Continuar con Apple"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue with Apple"
           }
         }
       }
@@ -2065,6 +2485,12 @@
             "state": "translated",
             "value": "Temporizador de cuenta atrás"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Countdown timer"
+          }
         }
       }
     },
@@ -2093,6 +2519,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tus estadísticas de pareja"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your couple statistics"
           }
         }
       }
@@ -2123,6 +2555,12 @@
             "state": "translated",
             "value": "Crear"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create"
+          }
         }
       }
     },
@@ -2151,6 +2589,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Crear cuenta"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create account"
           }
         }
       }
@@ -2181,6 +2625,12 @@
             "state": "translated",
             "value": "Crea una cuenta para guardar tu historial de actividad y encontrar fácilmente tus conversaciones favoritas en cualquier momento."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create an account to keep your activity history and easily find your favorite conversations anytime!"
+          }
         }
       }
     },
@@ -2210,6 +2660,12 @@
             "state": "translated",
             "value": "Crea tu mapa de recuerdos"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create your memory map"
+          }
         }
       }
     },
@@ -2238,6 +2694,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Responde a la pregunta del día"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Answer the question of the day"
           }
         }
       }
@@ -2269,6 +2731,12 @@
             "state": "translated",
             "value": "Crea tu cuenta y asegura tus datos"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create your account and secure your data"
+          }
         }
       }
     },
@@ -2297,6 +2765,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Creado por"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Created by"
           }
         }
       }
@@ -2327,6 +2801,12 @@
             "state": "translated",
             "value": "Estado actual:"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Current status:"
+          }
         }
       }
     },
@@ -2355,6 +2835,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "👤 Usuario actual"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "👤 Current User"
           }
         }
       }
@@ -2385,6 +2871,12 @@
             "state": "translated",
             "value": "Toca 'Personalizar' para configurar tus widgets."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap ‘Customize' to set up your widgets."
+          }
         }
       }
     },
@@ -2410,6 +2902,12 @@
           }
         },
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "----"
+          }
+        },
+        "it": {
           "stringUnit": {
             "state": "translated",
             "value": "----"
@@ -2443,6 +2941,12 @@
             "state": "translated",
             "value": "--"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "--"
+          }
         }
       }
     },
@@ -2471,6 +2975,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "días"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "days"
           }
         }
       }
@@ -2501,6 +3011,12 @@
             "state": "translated",
             "value": "días antes de tu próximo aniversario"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "days before your next anniversary"
+          }
         }
       }
     },
@@ -2529,6 +3045,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Días\nejuntos"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Days\ntogether"
           }
         }
       }
@@ -2560,6 +3082,12 @@
             "state": "translated",
             "value": "Depurar sistema de reseñas"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Debug Review System"
+          }
         }
       }
     },
@@ -2588,6 +3116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "🔄 Depurar - Sincronizar suscripciones"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "🔄 Debug - Sync Subscriptions"
           }
         }
       }
@@ -2618,6 +3152,12 @@
             "state": "translated",
             "value": "Eliminar cuenta"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete account"
+          }
         }
       }
     },
@@ -2646,6 +3186,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Esta acción es irreversible. Todos tus datos se eliminarán permanentemente.\n\nApple puede pedirte que te vuelvas a autenticar para confirmar esta acción."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This action is irreversible. All your data will be permanently deleted.\n\nApple may ask you to re-authenticate to confirm this action."
           }
         }
       }
@@ -2676,6 +3222,12 @@
             "state": "translated",
             "value": "Eliminando cuenta..."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deleting account..."
+          }
         }
       }
     },
@@ -2704,6 +3256,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Desconectar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Disconnect"
           }
         }
       }
@@ -2734,6 +3292,12 @@
             "state": "translated",
             "value": "¿Seguro que quieres desconectarte de tu pareja? Esta acción eliminará el intercambio de datos."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Are you sure you want to disconnect from your partner? This action will remove data sharing."
+          }
         }
       }
     },
@@ -2762,6 +3326,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Descubre Premium"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Discover Premium"
           }
         }
       }
@@ -2792,6 +3362,12 @@
             "state": "translated",
             "value": "distancia"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "distance"
+          }
         }
       }
     },
@@ -2821,6 +3397,12 @@
             "state": "translated",
             "value": "Hecho"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
+          }
         }
       }
     },
@@ -2846,6 +3428,12 @@
           }
         },
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "..."
+          }
+        },
+        "it": {
           "stringUnit": {
             "state": "translated",
             "value": "..."
@@ -2879,6 +3467,12 @@
             "state": "translated",
             "value": "Tu diario de recuerdos está vacío"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your memory journal is empty"
+          }
         }
       }
     },
@@ -2907,6 +3501,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¡Disfruta!"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enjoy!"
           }
         }
       }
@@ -2937,6 +3537,12 @@
             "state": "translated",
             "value": "Introduce el código"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enter code"
+          }
         }
       }
     },
@@ -2965,6 +3571,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Introduce el código de tu pareja"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enter your partner's code"
           }
         }
       }
@@ -2995,6 +3607,12 @@
             "state": "translated",
             "value": "Introduce el código"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enter the code"
+          }
         }
       }
     },
@@ -3024,6 +3642,12 @@
             "state": "translated",
             "value": "Error al crear la entrada"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entry creation error"
+          }
         }
       }
     },
@@ -3049,6 +3673,12 @@
           }
         },
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Error"
+          }
+        },
+        "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Error"
@@ -3082,6 +3712,12 @@
             "state": "translated",
             "value": "Error: imagen no encontrada"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Error: Image not found"
+          }
         }
       }
     },
@@ -3112,6 +3748,12 @@
             "state": "translated",
             "value": "Fecha del evento"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Event date"
+          }
         }
       }
     },
@@ -3141,6 +3783,12 @@
             "state": "translated",
             "value": "Hora"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Time"
+          }
         }
       }
     },
@@ -3169,6 +3817,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "eventos"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "events"
           }
         }
       }
@@ -3200,6 +3854,12 @@
             "state": "translated",
             "value": "Eventos del"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Events of"
+          }
         }
       }
     },
@@ -3225,6 +3885,12 @@
           }
         },
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "!"
+          }
+        },
+        "it": {
           "stringUnit": {
             "state": "translated",
             "value": "!"
@@ -3258,6 +3924,12 @@
             "state": "translated",
             "value": "Contenido premium exclusivo"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Exclusive premium content"
+          }
         }
       }
     },
@@ -3286,6 +3958,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Favoritos"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favorites"
           }
         }
       }
@@ -3316,6 +3994,12 @@
             "state": "translated",
             "value": "Favoritos:"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favorites:"
+          }
         }
       }
     },
@@ -3344,6 +4028,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "de"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "of"
           }
         }
       }
@@ -3374,6 +4064,12 @@
             "state": "translated",
             "value": "Para sentirte aún más cerca de tu pareja."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To feel even closer to your partner."
+          }
         }
       }
     },
@@ -3402,6 +4098,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "✓ Profundiza vuestra conexión"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "✓ Deepen your connection"
           }
         }
       }
@@ -3432,6 +4134,12 @@
             "state": "translated",
             "value": "Accede a más de 1800 preguntas para reír, abrirte y acercaros más."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Get access to 1800+ questions to laugh, open up, and grow closer together."
+          }
         }
       }
     },
@@ -3460,6 +4168,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "✓ Guarda tus mejores recuerdos en un solo lugar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "✓ Keep your best memories in one place"
           }
         }
       }
@@ -3490,6 +4204,12 @@
             "state": "translated",
             "value": "Porque cada momento merece un lugar especial. Guarda tus recuerdos más bonitos en un diario compartido hecho solo para vosotros dos."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Because every moment deserves a special place. Keep your most beautiful memories in a shared journal made just for the two of you."
+          }
         }
       }
     },
@@ -3518,6 +4238,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "✓ Un nuevo desafío cada día"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "✓ A new challenge every day"
           }
         }
       }
@@ -3548,6 +4274,12 @@
             "state": "translated",
             "value": "Recibe un desafío romántico cada día para acercaros, incluso a distancia."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Receive a romantic challenge every day to grow closer, even from afar."
+          }
         }
       }
     },
@@ -3576,6 +4308,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "💌 Construir una conexión más profunda"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "💌 Build a deeper connection"
           }
         }
       }
@@ -3606,6 +4344,12 @@
             "state": "translated",
             "value": "🔥 Hablar de lo que solemos evitar"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "🔥 Talk about what we usually avoid"
+          }
         }
       }
     },
@@ -3634,6 +4378,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "🌶️ Aumentar la pasión entre nosotros"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "🌶️ Increase the passion between us"
           }
         }
       }
@@ -3664,6 +4414,12 @@
             "state": "translated",
             "value": "🎉 Compartir más risas juntos"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "🎉 Share more laughs together"
+          }
         }
       }
     },
@@ -3692,6 +4448,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "💕 Sentirnos nuevamente cómplices, como antes"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "💕 Feel close again, like before"
           }
         }
       }
@@ -3722,6 +4484,12 @@
             "state": "translated",
             "value": "✨ Compartir algo significativo juntos"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "✨ Share something meaningful together"
+          }
         }
       }
     },
@@ -3750,6 +4518,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "💕 Reavivar nuestra conexión"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "💕 Revive our connection"
           }
         }
       }
@@ -3780,6 +4554,12 @@
             "state": "translated",
             "value": "🔄 Salir de la rutina"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "🔄 Break out of the routine"
+          }
         }
       }
     },
@@ -3808,6 +4588,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "🤍 Decir lo que nunca hemos dicho"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "🤍 Open up like never before"
           }
         }
       }
@@ -3838,6 +4624,12 @@
             "state": "translated",
             "value": "Semanal"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weekly"
+          }
         }
       }
     },
@@ -3867,6 +4659,12 @@
             "state": "translated",
             "value": "Mensual - 3 días gratis"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Monthly - 3 days free"
+          }
         }
       }
     },
@@ -3892,6 +4690,12 @@
           }
         },
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "4,99€"
+          }
+        },
+        "it": {
           "stringUnit": {
             "state": "translated",
             "value": "4,99€"
@@ -3925,6 +4729,12 @@
             "state": "translated",
             "value": "14,99€"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "14,99€"
+          }
         }
       }
     },
@@ -3953,6 +4763,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "semana"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "week"
           }
         }
       }
@@ -3983,6 +4799,12 @@
             "state": "translated",
             "value": "mes"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "month"
+          }
         }
       }
     },
@@ -4008,6 +4830,12 @@
           }
         },
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "2,50€"
+          }
+        },
+        "it": {
           "stringUnit": {
             "state": "translated",
             "value": "2,50€"
@@ -4041,6 +4869,12 @@
             "state": "translated",
             "value": "7,50€"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "7,50€"
+          }
         }
       }
     },
@@ -4069,6 +4903,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Enero"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "January"
           }
         }
       }
@@ -4099,6 +4939,12 @@
             "state": "translated",
             "value": "Febrero"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "February"
+          }
         }
       }
     },
@@ -4127,6 +4973,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Marzo"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "March"
           }
         }
       }
@@ -4157,6 +5009,12 @@
             "state": "translated",
             "value": "Abril"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "April"
+          }
         }
       }
     },
@@ -4185,6 +5043,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mayo"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "May"
           }
         }
       }
@@ -4215,6 +5079,12 @@
             "state": "translated",
             "value": "Junio"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "June"
+          }
         }
       }
     },
@@ -4243,6 +5113,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Julio"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "July"
           }
         }
       }
@@ -4273,6 +5149,12 @@
             "state": "translated",
             "value": "Agosto"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "August"
+          }
         }
       }
     },
@@ -4301,6 +5183,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Septiembre"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "September"
           }
         }
       }
@@ -4331,6 +5219,12 @@
             "state": "translated",
             "value": "Octubre"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "October"
+          }
         }
       }
     },
@@ -4359,6 +5253,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Noviembre"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "November"
           }
         }
       }
@@ -4389,6 +5289,12 @@
             "state": "translated",
             "value": "Diciembre"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "December"
+          }
         }
       }
     },
@@ -4417,6 +5323,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Déjanos una reseña"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leave us a review"
           }
         }
       }
@@ -4447,6 +5359,12 @@
             "state": "translated",
             "value": "Gestionar suscripción"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Manage subscription"
+          }
         }
       }
     },
@@ -4475,6 +5393,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cómo activar la ubicación"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How to enable location"
           }
         }
       }
@@ -4505,6 +5429,12 @@
             "state": "translated",
             "value": "Toca Autorizar"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap on Authorize"
+          }
         }
       }
     },
@@ -4533,6 +5463,12 @@
           "stringUnit": {
             "state": "translated",
             "value": " para 2 usuarios"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " for 2 users"
           }
         }
       }
@@ -4563,6 +5499,12 @@
             "state": "translated",
             "value": "para una"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "for a"
+          }
         }
       }
     },
@@ -4591,6 +5533,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "entrada"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "entry"
           }
         }
       }
@@ -4621,6 +5569,12 @@
             "state": "translated",
             "value": "entradas"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "entries"
+          }
         }
       }
     },
@@ -4649,6 +5603,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "gratis"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "free"
           }
         }
       }
@@ -4679,6 +5639,12 @@
             "state": "translated",
             "value": "gratis"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "free"
+          }
         }
       }
     },
@@ -4707,6 +5673,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Error de verificación de límite"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Limit check error"
           }
         }
       }
@@ -4737,6 +5709,12 @@
             "state": "translated",
             "value": "Se alcanzó el límite de entradas gratuitas"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Free entries limit reached"
+          }
         }
       }
     },
@@ -4765,6 +5743,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Generando..."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Generating..."
           }
         }
       }
@@ -4795,6 +5779,12 @@
             "state": "translated",
             "value": "Error de generación"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Generation error"
+          }
         }
       }
     },
@@ -4823,6 +5813,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "tu pareja"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "your partner"
           }
         }
       }
@@ -4854,6 +5850,12 @@
             "state": "translated",
             "value": "Obtener Premium"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Get Premium"
+          }
         }
       }
     },
@@ -4882,6 +5884,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¡Feliz aniversario! 🎉"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Happy anniversary! 🎉"
           }
         }
       }
@@ -4912,6 +5920,12 @@
             "state": "translated",
             "value": "Mantén presionada un área vacía para entrar en modo edición."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Touch and hold an empty area to enter edit mode."
+          }
         }
       }
     },
@@ -4940,6 +5954,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mantén presionado en cualquier lugar de tu pantalla de inicio"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Touch and hold anywhere on your home screen"
           }
         }
       }
@@ -4970,6 +5990,12 @@
             "state": "translated",
             "value": "Inicio"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Home"
+          }
         }
       }
     },
@@ -4998,6 +6024,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pantalla de inicio"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Home screen"
           }
         }
       }
@@ -5028,6 +6060,12 @@
             "state": "translated",
             "value": "Widget de pantalla de inicio"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Home Screen Widget"
+          }
         }
       }
     },
@@ -5056,6 +6094,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "horas"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "hours"
           }
         }
       }
@@ -5086,6 +6130,12 @@
             "state": "translated",
             "value": "¿Cómo añadirlos?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How to add them?"
+          }
         }
       }
     },
@@ -5111,6 +6161,12 @@
           }
         },
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ID:"
+          }
+        },
+        "it": {
           "stringUnit": {
             "state": "translated",
             "value": "ID:"
@@ -5144,6 +6200,12 @@
             "state": "translated",
             "value": "Imagen no disponible"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Image not available"
+          }
         }
       }
     },
@@ -5173,6 +6235,12 @@
             "state": "translated",
             "value": "El procesamiento de la imagen falló"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Image processing failed"
+          }
         }
       }
     },
@@ -5201,6 +6269,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Juntos desde"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Together since"
           }
         }
       }
@@ -5232,6 +6306,12 @@
             "state": "translated",
             "value": "Invita a tu pareja"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invite your partner"
+          }
         }
       }
     },
@@ -5260,6 +6340,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¡Disfrutad la experiencia completa de la app juntos!"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enjoy the complete app experience together!"
           }
         }
       }
@@ -5290,6 +6376,12 @@
             "state": "translated",
             "value": "Esta acción es irreversible. La memoria se eliminará permanentemente."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This action is irreversible. The memory will be permanently deleted."
+          }
         }
       }
     },
@@ -5318,6 +6410,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Diario"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Journal"
           }
         }
       }
@@ -5349,6 +6447,12 @@
             "state": "translated",
             "value": "Empieza a guardar aquí tus momentos favoritos y sentíos aún más cerca.\n\nTu pareja podrá ver todo lo que añadas."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start saving your favorite moments here and feel even closer together. \n\nYour partner will be able to see everything you add."
+          }
         }
       }
     },
@@ -5374,6 +6478,12 @@
           }
         },
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "km"
+          }
+        },
+        "it": {
           "stringUnit": {
             "state": "translated",
             "value": "km"
@@ -5407,6 +6517,12 @@
             "state": "translated",
             "value": "¡Vamos!"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let's go!"
+          }
         }
       }
     },
@@ -5435,6 +6551,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Límite alcanzado"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Limit reached"
           }
         }
       }
@@ -5465,6 +6587,12 @@
             "state": "translated",
             "value": "Cargando..."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading..."
+          }
         }
       }
     },
@@ -5493,6 +6621,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "CARGANDO..."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "LOADING..."
           }
         }
       }
@@ -5523,6 +6657,12 @@
             "state": "translated",
             "value": "Error de carga"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading error"
+          }
         }
       }
     },
@@ -5552,6 +6692,12 @@
             "state": "translated",
             "value": "Personalizando tu experiencia..."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Personalizing your experience..."
+          }
         }
       }
     },
@@ -5580,6 +6726,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Analizando tus preferencias..."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Analyzing your preferences..."
           }
         }
       }
@@ -5611,6 +6763,12 @@
             "state": "translated",
             "value": "Preparando tu perfil..."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparing your profile..."
+          }
         }
       }
     },
@@ -5639,6 +6797,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cargando..."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading..."
           }
         }
       }
@@ -5669,6 +6833,12 @@
             "state": "translated",
             "value": "Ubicación"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Location"
+          }
         }
       }
     },
@@ -5697,6 +6867,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Permiso de acceso a la ubicación"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Location access permission"
           }
         }
       }
@@ -5727,6 +6903,12 @@
             "state": "translated",
             "value": "Ubicación"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Location"
+          }
         }
       }
     },
@@ -5755,6 +6937,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Se necesitan los servicios de ubicación para que la app calcule la distancia entre tú y tu pareja."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Location services are needed for the app to calculate the distance between you and your partner."
           }
         }
       }
@@ -5785,6 +6973,12 @@
             "state": "translated",
             "value": "Ubicación"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Location"
+          }
         }
       }
     },
@@ -5813,6 +7007,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tutorial de ubicación"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Location tutorial"
           }
         }
       }
@@ -5844,6 +7044,12 @@
             "state": "translated",
             "value": "Pantalla de bloqueo"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lock screen"
+          }
         }
       }
     },
@@ -5872,6 +7078,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Toca tu pantalla de bloqueo para empezar a editar."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap your lock screen to start editing."
           }
         }
       }
@@ -5902,6 +7114,12 @@
             "state": "translated",
             "value": "Widget de pantalla de bloqueo"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lock Screen Widget"
+          }
         }
       }
     },
@@ -5931,6 +7149,12 @@
             "state": "translated",
             "value": "Contenido Premium"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premium Content"
+          }
         }
       }
     },
@@ -5956,6 +7180,12 @@
           }
         },
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "🔒"
+          }
+        },
+        "it": {
           "stringUnit": {
             "state": "translated",
             "value": "🔒"
@@ -5989,6 +7219,12 @@
             "state": "translated",
             "value": "🔒"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "🔒"
+          }
         }
       }
     },
@@ -6017,6 +7253,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Encuentra tus recuerdos en un mapa único y revive los momentos que marcaron vuestro amor."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Find your memories on a unique map, and relive the moments that marked your love."
           }
         }
       }
@@ -6047,6 +7289,12 @@
             "state": "translated",
             "value": "✓ Crea vuestro mapa del amor"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "✓ Create your love map"
+          }
         }
       }
     },
@@ -6075,6 +7323,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Desbloquea nuestras más de 2000 preguntas divertidas, profundas y tranquilizadoras para pasar un momento maravilloso juntos."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlock our 2000+ questions that are fun, deep, reassuring, and have a wonderful time together."
           }
         }
       }
@@ -6106,6 +7360,12 @@
             "state": "translated",
             "value": "✓ Amaos aún más"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "✓ Love each other even stronger"
+          }
         }
       }
     },
@@ -6134,6 +7394,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Máx. 64 preguntas (categoría gratuita)"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "64 questions max (free category)"
           }
         }
       }
@@ -6164,6 +7430,12 @@
             "state": "translated",
             "value": "Todos tus momentos especiales aparecerán aquí en el mapa."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All your special moments will appear here on the map."
+          }
         }
       }
     },
@@ -6192,6 +7464,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Porque cada recuerdo merece su lugar. Reúne tus momentos más bonitos en un diario íntimo, único y compartido solo para vosotros dos."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Because every memory deserves its place. Gather your most beautiful moments in an intimate, unique and shared diary, just for you two."
           }
         }
       }
@@ -6222,6 +7500,12 @@
             "state": "translated",
             "value": "✓ Construye tu caja de recuerdos"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "✓ Build your memory box"
+          }
         }
       }
     },
@@ -6250,6 +7534,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "minutos"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "minutes"
           }
         }
       }
@@ -6280,6 +7570,12 @@
             "state": "translated",
             "value": "Te echo mucho de menos"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I miss you so much"
+          }
         }
       }
     },
@@ -6308,6 +7604,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Falta el token de autenticación"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Missing authentication token"
           }
         }
       }
@@ -6338,6 +7640,12 @@
             "state": "translated",
             "value": "Más de 1800 preguntas para hacer a tu alma gemela"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "More than 1800 questions to ask your soulmate"
+          }
         }
       }
     },
@@ -6366,6 +7674,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Más de"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "More than"
           }
         }
       }
@@ -6396,6 +7710,12 @@
             "state": "translated",
             "value": "Mis favoritos"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "My Favorites"
+          }
         }
       }
     },
@@ -6424,6 +7744,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nombre"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name"
           }
         }
       }
@@ -6454,6 +7780,12 @@
             "state": "translated",
             "value": "Nombre:"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name:"
+          }
         }
       }
     },
@@ -6482,6 +7814,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Introduce tu nombre"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enter your first name"
           }
         }
       }
@@ -6512,6 +7850,12 @@
             "state": "translated",
             "value": "Esta información nos ayudará a personalizar tu experiencia."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This information will help us personalize your experience."
+          }
         }
       }
     },
@@ -6540,6 +7884,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cómo te llamas?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What's your name?"
           }
         }
       }
@@ -6570,6 +7920,12 @@
             "state": "translated",
             "value": "Elige tu apodo"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose your nickname"
+          }
         }
       }
     },
@@ -6598,6 +7954,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cómo te verá tu pareja"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How your partner will see you"
           }
         }
       }
@@ -6628,6 +7990,12 @@
             "state": "translated",
             "value": "Error de red"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Network error"
+          }
         }
       }
     },
@@ -6656,6 +8024,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "nuevas cartas"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "new cards"
           }
         }
       }
@@ -6686,6 +8060,12 @@
             "state": "translated",
             "value": "¡Nuevas cartas añadidas!"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New cards added!"
+          }
         }
       }
     },
@@ -6715,6 +8095,12 @@
             "state": "translated",
             "value": "Nuevas funciones desbloqueadas"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New features unlocked"
+          }
         }
       }
     },
@@ -6740,6 +8126,12 @@
           }
         },
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No"
+          }
+        },
+        "it": {
           "stringUnit": {
             "state": "translated",
             "value": "No"
@@ -6773,6 +8165,12 @@
             "state": "translated",
             "value": "No hay fotos accesibles"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No accessible photos"
+          }
         }
       }
     },
@@ -6801,6 +8199,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sin compromiso, cancela en cualquier momento"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No commitment, cancel anytime"
           }
         }
       }
@@ -6831,6 +8235,12 @@
             "state": "translated",
             "value": "Hoy no hay eventos"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No events today"
+          }
         }
       }
     },
@@ -6859,6 +8269,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aún no hay favoritos"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No favorites yet"
           }
         }
       }
@@ -6889,6 +8305,12 @@
             "state": "translated",
             "value": "Sin imagen"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No image"
+          }
         }
       }
     },
@@ -6917,6 +8339,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ninguna pareja conectada"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No partner connected"
           }
         }
       }
@@ -6947,6 +8375,12 @@
             "state": "translated",
             "value": "Empieza tu prueba: sin cargo hoy"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start your trial — no charge today"
+          }
         }
       }
     },
@@ -6975,6 +8409,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "No hay fotos accesibles"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No photos accessible"
           }
         }
       }
@@ -7005,6 +8445,12 @@
             "state": "translated",
             "value": "Sin acceso premium"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No premium access"
+          }
         }
       }
     },
@@ -7033,6 +8479,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "No hay productos disponibles. Comprueba tu conexión."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No products available. Check your connection."
           }
         }
       }
@@ -7063,6 +8515,12 @@
             "state": "translated",
             "value": "No hay compras para restaurar"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No purchase to restore"
+          }
         }
       }
     },
@@ -7091,6 +8549,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "No se ha establecido la fecha de relación"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No relationship date set"
           }
         }
       }
@@ -7121,6 +8585,12 @@
             "state": "translated",
             "value": "No estás autorizado para realizar esta acción"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You are not authorized to perform this action"
+          }
         }
       }
     },
@@ -7146,6 +8616,12 @@
           }
         },
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        },
+        "it": {
           "stringUnit": {
             "state": "translated",
             "value": "OK"
@@ -7180,6 +8656,12 @@
             "state": "translated",
             "value": "de"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "of"
+          }
         }
       }
     },
@@ -7205,6 +8687,12 @@
           }
         },
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "me"
+          }
+        },
+        "it": {
           "stringUnit": {
             "state": "translated",
             "value": "me"
@@ -7238,6 +8726,12 @@
             "state": "translated",
             "value": "¡UN PASO MÁS!"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ONE MORE STEP!"
+          }
         }
       }
     },
@@ -7266,6 +8760,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Abrir ajustes"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Settings"
           }
         }
       }
@@ -7296,6 +8796,12 @@
             "state": "translated",
             "value": "Abrir ajustes"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open settings"
+          }
         }
       }
     },
@@ -7324,6 +8830,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "otros..."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "others..."
           }
         }
       }
@@ -7354,6 +8866,12 @@
             "state": "translated",
             "value": "Nuestra distancia: "
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Our distance: "
+          }
         }
       }
     },
@@ -7382,6 +8900,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nuestro diario"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Our journal"
           }
         }
       }
@@ -7412,6 +8936,12 @@
             "state": "translated",
             "value": "Has completado el pack."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You have completed the pack."
+          }
         }
       }
     },
@@ -7440,6 +8970,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "el pack..."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "the pack..."
           }
         }
       }
@@ -7470,6 +9006,12 @@
             "state": "translated",
             "value": "Pareja"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Partner"
+          }
         }
       }
     },
@@ -7498,6 +9040,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Código de pareja"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Partner code"
           }
         }
       }
@@ -7528,6 +9076,12 @@
             "state": "translated",
             "value": "Pareja conectada:"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Partner connected:"
+          }
         }
       }
     },
@@ -7556,6 +9110,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "👥 Pareja conectada"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "👥 Partner Connected"
           }
         }
       }
@@ -7586,6 +9146,12 @@
             "state": "translated",
             "value": "Pide a tu pareja que haga lo mismo para activar su ubicación, de lo contrario no se podrá calcular la distancia."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ask your partner to do the same to activate their location, otherwise the distance between you cannot be calculated."
+          }
         }
       }
     },
@@ -7614,6 +9180,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pareja:"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Partner:"
           }
         }
       }
@@ -7644,6 +9216,12 @@
             "state": "translated",
             "value": "Tu pareja no tendrá que pagar nada"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your partner won't have to pay anything"
+          }
         }
       }
     },
@@ -7673,6 +9251,12 @@
             "state": "translated",
             "value": "Pareja no conectada"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Partner not connected"
+          }
         }
       }
     },
@@ -7701,6 +9285,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Compartido por: %@"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shared by: %@"
           }
         }
       }
@@ -7732,6 +9322,12 @@
             "state": "translated",
             "value": "👥 Estado de la pareja"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "👥 Partner Status"
+          }
         }
       }
     },
@@ -7762,6 +9358,12 @@
             "state": "translated",
             "value": "👥 Estado de la pareja"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "👥 Partner Status"
+          }
         }
       }
     },
@@ -7790,6 +9392,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "/ usuario /"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "/ user /"
           }
         }
       }
@@ -7820,6 +9428,12 @@
             "state": "translated",
             "value": "Permiso"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permission"
+          }
         }
       }
     },
@@ -7848,6 +9462,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Permiso de ubicación"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Location permission"
           }
         }
       }
@@ -7878,6 +9498,12 @@
             "state": "translated",
             "value": "Permiso de acceso a fotos"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Photo access permission"
+          }
         }
       }
     },
@@ -7906,6 +9532,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Love2Love solo accederá a las fotos que autorices"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Love2Love will only access photos you authorize"
           }
         }
       }
@@ -7937,6 +9569,12 @@
             "state": "translated",
             "value": "Permiso de acceso a fotos"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Photo access permission"
+          }
         }
       }
     },
@@ -7965,6 +9603,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Para usar esta función, autoriza el acceso a fotos en Ajustes."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To use this feature, please authorize photo access in Settings."
           }
         }
       }
@@ -7995,6 +9639,12 @@
             "state": "translated",
             "value": "Toca el botón + en la esquina superior izquierda para añadir un nuevo widget."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap the + button in the top left to add a new widget."
+          }
         }
       }
     },
@@ -8020,6 +9670,12 @@
           }
         },
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premium"
+          }
+        },
+        "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Premium"
@@ -8053,6 +9709,12 @@
             "state": "translated",
             "value": "🎯 Acceso Premium:"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "🎯 Premium Access:"
+          }
         }
       }
     },
@@ -8081,6 +9743,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "🎯 Acceso Premium:"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "🎯 Premium Access:"
           }
         }
       }
@@ -8112,6 +9780,12 @@
             "state": "translated",
             "value": "Acceso Premium perdido"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premium Access Lost"
+          }
         }
       }
     },
@@ -8140,6 +9814,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Categorías Premium bloqueadas"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premium categories locked"
           }
         }
       }
@@ -8170,6 +9850,12 @@
             "state": "translated",
             "value": "Contenido Premium no disponible"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premium content unavailable"
+          }
         }
       }
     },
@@ -8198,6 +9884,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Todas las categorías desbloqueadas"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All categories unlocked"
           }
         }
       }
@@ -8228,6 +9920,12 @@
             "state": "translated",
             "value": "%@ ha compartido su suscripción Premium contigo.\n\nAhora tienes acceso a todas las funciones Premium."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ shared their Premium subscription with you!\n\nYou now have access to all premium features."
+          }
         }
       }
     },
@@ -8256,6 +9954,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hazte Premium para crear recuerdos ilimitados con tu pareja"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Go Premium to create unlimited memories with your partner"
           }
         }
       }
@@ -8286,6 +9990,12 @@
             "state": "translated",
             "value": "🎉 ¡Premium desbloqueado!"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "🎉 Premium unlocked!"
+          }
         }
       }
     },
@@ -8314,6 +10024,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Anterior"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Previous"
           }
         }
       }
@@ -8344,6 +10060,12 @@
             "state": "translated",
             "value": "Prometemos mantener siempre tu información personal privada y segura."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We promise to always keep your personal information private and secure."
+          }
         }
       }
     },
@@ -8372,6 +10094,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Política de privacidad"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Privacy policy"
           }
         }
       }
@@ -8402,6 +10130,12 @@
             "state": "translated",
             "value": "Prometemos mantener siempre tu información personal privada y segura."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We promise to always keep your personal information private and secure."
+          }
         }
       }
     },
@@ -8430,6 +10164,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Error al cargar el producto"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Error loading product"
           }
         }
       }
@@ -8460,6 +10200,12 @@
             "state": "translated",
             "value": "Error al cargar el producto"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Product loading failed"
+          }
         }
       }
     },
@@ -8488,6 +10234,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Producto no disponible"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Product not available"
           }
         }
       }
@@ -8518,6 +10270,12 @@
             "state": "translated",
             "value": "Perfil"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Profile"
+          }
         }
       }
     },
@@ -8546,6 +10304,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Compra cancelada por el usuario"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Purchase cancelled by user"
           }
         }
       }
@@ -8576,6 +10340,12 @@
             "state": "translated",
             "value": "Error de compra"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Purchase error"
+          }
         }
       }
     },
@@ -8604,6 +10374,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "No se permiten compras en este dispositivo"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Purchases are not allowed on this device"
           }
         }
       }
@@ -8634,6 +10410,12 @@
             "state": "translated",
             "value": "Las compras no están autorizadas en este dispositivo"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Purchases are not authorized on this device"
+          }
         }
       }
     },
@@ -8662,6 +10444,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preguntas en caché"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Questions cached"
           }
         }
       }
@@ -8692,6 +10480,12 @@
             "state": "translated",
             "value": "⚡️ Acciones rápidas"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⚡️ Quick Actions"
+          }
         }
       }
     },
@@ -8720,6 +10514,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Distancia en tiempo real"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Real-time distance"
           }
         }
       }
@@ -8750,6 +10550,12 @@
             "state": "translated",
             "value": "La validación del recibo ha fallado"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Receipt validation failed"
+          }
         }
       }
     },
@@ -8778,6 +10584,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Recupera tu acceso a todas las demás preguntas y categorías"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recover your access to all other questions and categories"
           }
         }
       }
@@ -8808,6 +10620,12 @@
             "state": "translated",
             "value": "🔄 Actualizar"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "🔄 Refresh"
+          }
         }
       }
     },
@@ -8836,6 +10654,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Desde cuándo estáis juntos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How long have you been together?"
           }
         }
       }
@@ -8866,6 +10690,12 @@
             "state": "translated",
             "value": "¿Cuáles son vuestros objetivos de pareja?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What are your relationship goals?"
+          }
         }
       }
     },
@@ -8894,6 +10724,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué te gustaría mejorar en tu relación?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What would you like to improve in your relationship?"
           }
         }
       }
@@ -8924,6 +10760,12 @@
             "state": "translated",
             "value": "Recargar caché"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reload cache"
+          }
         }
       }
     },
@@ -8952,6 +10794,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Solo"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only"
           }
         }
       }
@@ -8982,6 +10830,12 @@
             "state": "translated",
             "value": "¡Solo queda %d %@ entr%@!"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only %d %@ entr%@ remaining!"
+          }
         }
       }
     },
@@ -9010,6 +10864,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Eliminar 1 favorito"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove 1 favorite"
           }
         }
       }
@@ -9040,6 +10900,12 @@
             "state": "translated",
             "value": "¿Quieres eliminar esta pregunta de tus favoritos?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do you want to remove this question from your favorites?"
+          }
         }
       }
     },
@@ -9068,6 +10934,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Eliminar de favoritos"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove from favorites"
           }
         }
       }
@@ -9098,6 +10970,12 @@
             "state": "translated",
             "value": "Eliminar"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove"
+          }
         }
       }
     },
@@ -9126,6 +11004,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Requiere suscripción"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Requires subscription"
           }
         }
       }
@@ -9156,6 +11040,12 @@
             "state": "translated",
             "value": "Restablecer"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reset"
+          }
         }
       }
     },
@@ -9184,6 +11074,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Restaurar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore"
           }
         }
       }
@@ -9214,6 +11110,12 @@
             "state": "translated",
             "value": "Error al restaurar"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore error"
+          }
         }
       }
     },
@@ -9242,6 +11144,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Restringido"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restricted"
           }
         }
       }
@@ -9272,6 +11180,12 @@
             "state": "translated",
             "value": "Reintentar"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retry"
+          }
         }
       }
     },
@@ -9300,6 +11214,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Guardar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save"
           }
         }
       }
@@ -9330,6 +11250,12 @@
             "state": "translated",
             "value": "Guarda vuestros momentos favoritos"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save your favorite moments together"
+          }
         }
       }
     },
@@ -9358,6 +11284,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Guardando..."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saving..."
           }
         }
       }
@@ -9388,6 +11320,12 @@
             "state": "translated",
             "value": "Buscar..."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search..."
+          }
         }
       }
     },
@@ -9416,6 +11354,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ubicación seleccionada"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selected location"
           }
         }
       }
@@ -9446,6 +11390,12 @@
             "state": "translated",
             "value": "Ubicación personalizada"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Custom location"
+          }
         }
       }
     },
@@ -9474,6 +11424,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lugar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Place"
           }
         }
       }
@@ -9504,6 +11460,12 @@
             "state": "translated",
             "value": "Desconocido"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unknown"
+          }
         }
       }
     },
@@ -9532,6 +11494,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ciudad desconocida"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unknown city"
           }
         }
       }
@@ -9562,6 +11530,12 @@
             "state": "translated",
             "value": "Países"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "countries"
+          }
         }
       }
     },
@@ -9590,6 +11564,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "País"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "country"
           }
         }
       }
@@ -9620,6 +11600,12 @@
             "state": "translated",
             "value": "ciudades"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "cities"
+          }
         }
       }
     },
@@ -9648,6 +11634,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "ciudad"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "city"
           }
         }
       }
@@ -9678,6 +11670,12 @@
             "state": "translated",
             "value": "Título de tu recuerdo"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Title of your memory"
+          }
         }
       }
     },
@@ -9706,6 +11704,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Describe qué hizo especial este momento"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Describe what made this moment special"
           }
         }
       }
@@ -9736,6 +11740,12 @@
             "state": "translated",
             "value": "Fecha del evento"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Event date"
+          }
         }
       }
     },
@@ -9764,6 +11774,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Elige fecha"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose date"
           }
         }
       }
@@ -9794,6 +11810,12 @@
             "state": "translated",
             "value": "Se necesita acceso a la galería para añadir una foto. Actívalo en los ajustes de tu dispositivo."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gallery access is required to add a photo. Please enable it in your device settings."
+          }
         }
       }
     },
@@ -9822,6 +11844,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Error de acceso a la galería"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gallery access error"
           }
         }
       }
@@ -9852,6 +11880,12 @@
             "state": "translated",
             "value": "Busca 'Love2Love' y elige el widget que quieras."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search for 'Love2Love', then pick the widget you want."
+          }
         }
       }
     },
@@ -9880,6 +11914,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Busca 'Love2Love' y elige el widget que quieras."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search for 'Love2Love', then pick the widget you want."
           }
         }
       }
@@ -9910,6 +11950,12 @@
             "state": "translated",
             "value": "Buscar love2love"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search love2love"
+          }
         }
       }
     },
@@ -9938,6 +11984,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Buscar Love2Love"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search Love2Love"
           }
         }
       }
@@ -9968,6 +12020,12 @@
             "state": "translated",
             "value": "Acceder a fotos"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Access Photos"
+          }
         }
       }
     },
@@ -9996,6 +12054,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cargando..."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading..."
           }
         }
       }
@@ -10026,6 +12090,12 @@
             "state": "translated",
             "value": "Se requiere acceso a fotos"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Photo access required"
+          }
         }
       }
     },
@@ -10054,6 +12124,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Turno de tu pareja"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your partner's turn"
           }
         }
       }
@@ -10084,6 +12160,12 @@
             "state": "translated",
             "value": "Continuar"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue"
+          }
         }
       }
     },
@@ -10112,6 +12194,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Autorizar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Authorize"
           }
         }
       }
@@ -10142,6 +12230,12 @@
             "state": "translated",
             "value": "Se requiere acceso a la galería para añadir una foto de perfil. Actívalo en los ajustes de tu dispositivo."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Photo gallery access is required to add a profile photo. Please enable it in your device settings."
+          }
         }
       }
     },
@@ -10170,6 +12264,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Se requiere acceso a la galería para cambiar tu foto de perfil. Actívalo en los ajustes de tu dispositivo."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Photo gallery access is required to change your profile photo. Please enable it in your device settings."
           }
         }
       }
@@ -10200,6 +12300,12 @@
             "state": "translated",
             "value": "Error de acceso a la galería"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Photo gallery access error"
+          }
         }
       }
     },
@@ -10228,6 +12334,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Para añadir fotos, autoriza el acceso en Ajustes"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To add photos, please authorize access in Settings"
           }
         }
       }
@@ -10258,6 +12370,12 @@
             "state": "translated",
             "value": "No hay fotos accesibles"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No accessible photos"
+          }
         }
       }
     },
@@ -10286,6 +12404,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Puedes seleccionar más fotos en Ajustes"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You can select more photos in Settings"
           }
         }
       }
@@ -10316,6 +12440,12 @@
             "state": "translated",
             "value": "segundos"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "seconds"
+          }
         }
       }
     },
@@ -10344,6 +12474,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preguntas respondidas"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Questions\nanswered"
           }
         }
       }
@@ -10374,6 +12510,12 @@
             "state": "translated",
             "value": "Ciudades visitadas"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cities\nvisited"
+          }
         }
       }
     },
@@ -10402,6 +12544,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Países visitados"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Countries\nvisited"
           }
         }
       }
@@ -10432,6 +12580,12 @@
             "state": "translated",
             "value": "año"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "year"
+          }
         }
       }
     },
@@ -10460,6 +12614,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "años"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "years"
           }
         }
       }
@@ -10490,6 +12650,12 @@
             "state": "translated",
             "value": "mes"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "month"
+          }
         }
       }
     },
@@ -10518,6 +12684,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "meses"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "months"
           }
         }
       }
@@ -10548,6 +12720,12 @@
             "state": "translated",
             "value": "día"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "day"
+          }
         }
       }
     },
@@ -10576,6 +12754,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "días"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "days"
           }
         }
       }
@@ -10606,6 +12790,12 @@
             "state": "translated",
             "value": "y"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "and"
+          }
         }
       }
     },
@@ -10634,6 +12824,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "💕 Pensando en ti"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "💕 Thinking of you"
           }
         }
       }
@@ -10664,6 +12860,12 @@
             "state": "translated",
             "value": "ASEGURA TU CUENTA"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SECURE YOUR ACCOUNT"
+          }
         }
       }
     },
@@ -10692,6 +12894,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Seleccionar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select"
           }
         }
       }
@@ -10722,6 +12930,12 @@
             "state": "translated",
             "value": "Selecciona Permitir cuando la app esté activa"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Allow When App is Active"
+          }
         }
       }
     },
@@ -10750,6 +12964,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Selecciona tu pantalla de bloqueo"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select your lock screen"
           }
         }
       }
@@ -10780,6 +13000,12 @@
             "state": "translated",
             "value": "Puedes seleccionar más fotos en Ajustes"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You can select more photos in Settings"
+          }
         }
       }
     },
@@ -10808,6 +13034,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Seleccionar foto"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select photo"
           }
         }
       }
@@ -10838,6 +13070,12 @@
             "state": "translated",
             "value": "Ubicación seleccionada"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selected location"
+          }
         }
       }
     },
@@ -10866,6 +13104,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Enviar código"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send code"
           }
         }
       }
@@ -10897,6 +13141,12 @@
             "state": "translated",
             "value": "Envía este código a tu pareja"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send this code to your partner"
+          }
         }
       }
     },
@@ -10925,6 +13175,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aquí está mi código de pareja Love2Love: {code}"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Here is my Love2Love partner code: {code}"
           }
         }
       }
@@ -10955,6 +13211,12 @@
             "state": "translated",
             "value": "Enviar código de pareja"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send partner code"
+          }
         }
       }
     },
@@ -10983,6 +13245,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ajustes"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings"
           }
         }
       }
@@ -11013,6 +13281,12 @@
             "state": "translated",
             "value": "Preguntas favoritas compartidas"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shared favorite questions"
+          }
         }
       }
     },
@@ -11041,6 +13315,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preguntas diarias disponibles"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daily questions available"
           }
         }
       }
@@ -11071,6 +13351,12 @@
             "state": "translated",
             "value": "Diario compartido"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shared journal"
+          }
         }
       }
     },
@@ -11099,6 +13385,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Suscripción Premium compartida"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shared Premium subscription"
           }
         }
       }
@@ -11129,6 +13421,12 @@
             "state": "translated",
             "value": "Continuar con Apple"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue with Apple"
+          }
         }
       }
     },
@@ -11157,6 +13455,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Simular conexión con pareja"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simulate partner connection"
           }
         }
       }
@@ -11187,6 +13491,12 @@
             "state": "translated",
             "value": "❌ Simular revocación"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "❌ Simulate Revocation"
+          }
         }
       }
     },
@@ -11215,6 +13525,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "🔥 Simular suscripción"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "🔥 Simulate Subscription"
           }
         }
       }
@@ -11245,6 +13561,12 @@
             "state": "translated",
             "value": "Desde"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Since"
+          }
         }
       }
     },
@@ -11273,6 +13595,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Saltar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skip"
           }
         }
       }
@@ -11303,6 +13631,12 @@
             "state": "translated",
             "value": "Saltar este paso"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skip this step"
+          }
         }
       }
     },
@@ -11331,6 +13665,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Probar gratis"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try For Free"
           }
         }
       }
@@ -11361,6 +13701,12 @@
             "state": "translated",
             "value": "EMPEZAR PRUEBA"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "START TRIAL"
+          }
         }
       }
     },
@@ -11389,6 +13735,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Paso %d de %d"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Step %d of %d"
           }
         }
       }
@@ -11419,6 +13771,12 @@
             "state": "translated",
             "value": "Suscribirse"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subscribe"
+          }
         }
       }
     },
@@ -11447,6 +13805,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Suscríbete para acceder a todas las preguntas"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subscribe to access all questions"
           }
         }
       }
@@ -11477,6 +13841,12 @@
             "state": "translated",
             "value": "Suscribirse"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subscribe"
+          }
         }
       }
     },
@@ -11505,6 +13875,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ canceló su suscripción Premium."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ cancelled their Premium subscription.\n\nYou now only have access to free features."
           }
         }
       }
@@ -11535,6 +13911,12 @@
             "state": "translated",
             "value": "Tu pareja no tendrá que pagar nada"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your partner won't have to pay anything"
+          }
         }
       }
     },
@@ -11563,6 +13945,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Elige tu plan"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose your plan"
           }
         }
       }
@@ -11593,6 +13981,12 @@
             "state": "translated",
             "value": "sorpresa"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "surprise"
+          }
         }
       }
     },
@@ -11621,6 +14015,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Desliza hacia abajo para mostrar tu pantalla de bloqueo y mantén presionado."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Swipe down to show your lock screen, then press and hold."
           }
         }
       }
@@ -11652,6 +14052,12 @@
             "state": "translated",
             "value": "Desliza hacia abajo"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Swipe down"
+          }
         }
       }
     },
@@ -11680,6 +14086,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sincronizando..."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Syncing..."
           }
         }
       }
@@ -11710,6 +14122,12 @@
             "state": "translated",
             "value": "Toca el botón Personalizar"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap the Customize button"
+          }
         }
       }
     },
@@ -11738,6 +14156,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Toca en"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap on"
           }
         }
       }
@@ -11768,6 +14192,12 @@
             "state": "translated",
             "value": "Toca el botón +"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap the + button"
+          }
         }
       }
     },
@@ -11796,6 +14226,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Toca para desbloquear"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap to unlock"
           }
         }
       }
@@ -11826,6 +14262,12 @@
             "state": "translated",
             "value": "Tócame para desbloquear una sorpresa"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap on me to unlock a surprise"
+          }
         }
       }
     },
@@ -11854,6 +14296,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Términos"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terms"
           }
         }
       }
@@ -11884,6 +14332,12 @@
             "state": "translated",
             "value": "Términos y condiciones"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terms and conditions"
+          }
         }
       }
     },
@@ -11912,6 +14366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "⚡️ Acciones de prueba"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⚡️ Test Actions"
           }
         }
       }
@@ -11942,6 +14402,12 @@
             "state": "translated",
             "value": "Gracias por"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thank you for"
+          }
         }
       }
     },
@@ -11970,6 +14436,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Gracias por"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thank you for"
           }
         }
       }
@@ -12000,6 +14472,12 @@
             "state": "translated",
             "value": "Estoy pensando en ti"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I'm thinking of you"
+          }
         }
       }
     },
@@ -12028,6 +14506,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tiempo juntos"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Time together"
           }
         }
       }
@@ -12058,6 +14542,12 @@
             "state": "translated",
             "value": "juntos"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "together"
+          }
         }
       }
     },
@@ -12086,6 +14576,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Error de serialización del token"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Token serialization error"
           }
         }
       }
@@ -12116,6 +14612,12 @@
             "state": "translated",
             "value": "confiar en nosotros."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "trusting us."
+          }
         }
       }
     },
@@ -12144,6 +14646,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "confiando en nosotros."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "trusting us."
           }
         }
       }
@@ -12174,6 +14682,12 @@
             "state": "translated",
             "value": "Tipo:"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Type:"
+          }
         }
       }
     },
@@ -12202,6 +14716,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¡Entendido!"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Got it!"
           }
         }
       }
@@ -12232,6 +14752,12 @@
             "state": "translated",
             "value": "Autenticación no gestionada"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unhandled authentication"
+          }
         }
       }
     },
@@ -12260,6 +14786,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Desconocido"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unknown"
           }
         }
       }
@@ -12290,6 +14822,12 @@
             "state": "translated",
             "value": "Error de autenticación desconocido"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unknown authentication error"
+          }
         }
       }
     },
@@ -12318,6 +14856,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preguntas ilimitadas"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlimited questions"
           }
         }
       }
@@ -12348,6 +14892,12 @@
             "state": "translated",
             "value": "Desbloquear Premium"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlock Premium"
+          }
         }
       }
     },
@@ -12376,6 +14926,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Desbloquear Premium"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlock Premium"
           }
         }
       }
@@ -12406,6 +14962,12 @@
             "state": "translated",
             "value": "Usuario no autenticado"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "User not authenticated"
+          }
         }
       }
     },
@@ -12434,6 +14996,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Usuario no conectado"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "User not connected"
           }
         }
       }
@@ -12464,6 +15032,12 @@
             "state": "translated",
             "value": "Compartido por: %@"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shared by: %@"
+          }
         }
       }
     },
@@ -12492,6 +15066,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ver todo"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "View all"
           }
         }
       }
@@ -12522,6 +15102,12 @@
             "state": "translated",
             "value": "Bienvenido"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welcome"
+          }
         }
       }
     },
@@ -12550,6 +15136,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cuando la app esté en uso"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "When app is in use"
           }
         }
       }
@@ -12580,6 +15172,12 @@
             "state": "translated",
             "value": "Completo"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Complete"
+          }
         }
       }
     },
@@ -12608,6 +15206,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cuenta atrás"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Countdown"
           }
         }
       }
@@ -12638,6 +15242,12 @@
             "state": "translated",
             "value": "-- días"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "-- days"
+          }
         }
       }
     },
@@ -12663,6 +15273,12 @@
           }
         },
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "-- km"
+          }
+        },
+        "it": {
           "stringUnit": {
             "state": "translated",
             "value": "-- km"
@@ -12696,6 +15312,12 @@
             "state": "translated",
             "value": "-- m"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "-- m"
+          }
         }
       }
     },
@@ -12724,6 +15346,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "1 día"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 day"
           }
         }
       }
@@ -12755,6 +15383,12 @@
             "state": "translated",
             "value": "días"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "days"
+          }
         }
       }
     },
@@ -12783,6 +15417,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Días juntos"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Days together"
           }
         }
       }
@@ -12813,6 +15453,12 @@
             "state": "translated",
             "value": "Nuestra distancia"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Our distance"
+          }
         }
       }
     },
@@ -12841,6 +15487,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "distancia"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "distance"
           }
         }
       }
@@ -12871,6 +15523,12 @@
             "state": "translated",
             "value": "Distancia"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Distance"
+          }
         }
       }
     },
@@ -12899,6 +15557,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Widget grande"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Large widget"
           }
         }
       }
@@ -12929,6 +15593,12 @@
             "state": "translated",
             "value": "Widget pequeño"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Small widget"
+          }
         }
       }
     },
@@ -12958,6 +15628,12 @@
             "state": "translated",
             "value": "juntos"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "together"
+          }
         }
       }
     },
@@ -12983,6 +15659,12 @@
           }
         },
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Widgets"
+          }
+        },
+        "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Widgets"
@@ -13016,6 +15698,12 @@
             "state": "translated",
             "value": "Widgets disponibles"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Widgets available"
+          }
         }
       }
     },
@@ -13044,6 +15732,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sí"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yes"
           }
         }
       }
@@ -13074,6 +15768,12 @@
             "state": "translated",
             "value": "Tú"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You"
+          }
         }
       }
     },
@@ -13102,6 +15802,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Me echas de menos"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You miss me"
           }
         }
       }
@@ -13132,6 +15838,12 @@
             "state": "translated",
             "value": "Sigue tu relación con tu pareja. El widget grande requiere suscripción."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Track your relationship with your partner. The large widget requires a subscription."
+          }
         }
       }
     },
@@ -13160,6 +15872,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Muestra la distancia entre tú y tu pareja."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Display the distance between you and your partner."
           }
         }
       }
@@ -13190,6 +15908,12 @@
             "state": "translated",
             "value": "Este widget requiere que ambos tengáis la ubicación activada."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This widget requires location enabled for both partners."
+          }
         }
       }
     },
@@ -13215,6 +15939,12 @@
           }
         },
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Love2Love"
+          }
+        },
+        "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Love2Love"
@@ -13248,6 +15978,12 @@
             "state": "translated",
             "value": "Distancia Love2Love"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Love2Love Distance"
+          }
         }
       }
     },
@@ -13276,6 +16012,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mapa Love2Love"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Distance Love2Love"
           }
         }
       }
@@ -13306,6 +16048,12 @@
             "state": "translated",
             "value": "días"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "days"
+          }
         }
       }
     },
@@ -13334,6 +16082,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nuestra distancia:"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Our distance:"
           }
         }
       }
@@ -13364,6 +16118,12 @@
             "state": "translated",
             "value": "de distancia"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "away"
+          }
         }
       }
     },
@@ -13392,6 +16152,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Activa tu ubicación"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enable your location"
           }
         }
       }
@@ -13422,6 +16188,12 @@
             "state": "translated",
             "value": "Tu pareja debe activar la ubicación"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Partner must enable location"
+          }
         }
       }
     },
@@ -13451,6 +16223,12 @@
             "state": "translated",
             "value": "Activa tus ubicaciones"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enable your locations"
+          }
         }
       }
     },
@@ -13479,6 +16257,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sigue y desbloquea todas las demás preguntas y categorías."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep going and unlock all other questions and categories."
           }
         }
       }
