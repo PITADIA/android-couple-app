@@ -28,6 +28,12 @@
             "state": "translated",
             "value": "¿Sientes que puedes ser completamente honesto conmigo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hai la sensazione di poter essere completamente sincero con me?"
+          }
         }
       }
     },
@@ -56,6 +62,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Hay algo que te gustaría hacer como pareja que aún no hayamos hecho?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "C'è qualcosa che vorresti fare come coppia che non abbiamo ancora fatto?"
           }
         }
       }
@@ -86,6 +98,12 @@
             "state": "translated",
             "value": "¿Hay un tema del que sientas que no hablamos lo suficiente?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "C'è un argomento di cui pensi che non parliamo abbastanza?"
+          }
         }
       }
     },
@@ -114,6 +132,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Sientes que estamos creciendo juntos o separándonos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Senti che stiamo crescendo insieme o allontanandoci?"
           }
         }
       }
@@ -144,6 +168,12 @@
             "state": "translated",
             "value": "¿Qué miedos tienes cuando piensas en nuestro futuro?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quali paure hai quando pensi al nostro futuro?"
+          }
         }
       }
     },
@@ -172,6 +202,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Te sientes verdaderamente escuchado y comprendido en nuestra relación?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ti senti davvero ascoltato e compreso nella nostra relazione?"
           }
         }
       }
@@ -202,6 +238,12 @@
             "state": "translated",
             "value": "¿Qué palabras o gestos de mi parte realmente te consolarían?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Che tipo di parole o gesti da parte mia ti consolerebbero davvero?"
+          }
         }
       }
     },
@@ -230,6 +272,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Sientes que falta algo en nuestra relación?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Senti che manca qualcosa nella nostra relazione?"
           }
         }
       }
@@ -260,6 +308,12 @@
             "state": "translated",
             "value": "¿Qué fortaleza o rasgo de carácter mío te inspira más?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quale mia forza o tratto di carattere ti ispira di più?"
+          }
         }
       }
     },
@@ -288,6 +342,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué pequeñas cosas te hacen sentir profundamente amado por mí?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quali piccole cose ti fanno sentire profondamente amato da me?"
           }
         }
       }
@@ -318,6 +378,12 @@
             "state": "translated",
             "value": "¿Hay algo de mí que necesites más a nivel emocional?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there something you'd need more of from me emotionally?"
+          }
         }
       }
     },
@@ -346,6 +412,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuál es tu mayor miedo respecto a nuestra relación?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is your biggest fear for our relationship?"
           }
         }
       }
@@ -376,6 +448,12 @@
             "state": "translated",
             "value": "¿Qué aprecias de la manera en que nos comunicamos?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What do you appreciate about the way we communicate?"
+          }
         }
       }
     },
@@ -404,6 +482,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Si pudieras revivir un momento conmigo, ¿cuál elegirías?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If you could relive one moment with me, which would you choose?"
           }
         }
       }
@@ -434,6 +518,12 @@
             "state": "translated",
             "value": "¿Qué te hace sentir orgulloso de nosotros?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What makes you proud of us?"
+          }
         }
       }
     },
@@ -462,6 +552,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Hay algo que dudes en contarme sobre tu familia?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there something you hesitate to tell me about your family?"
           }
         }
       }
@@ -492,6 +588,12 @@
             "state": "translated",
             "value": "¿Qué te gustaría mejorar en nuestra relación?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What would you like to improve in our relationship?"
+          }
         }
       }
     },
@@ -520,6 +622,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué sientes cuando nos abrazamos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What do you feel when we hold each other?"
           }
         }
       }
@@ -550,6 +658,12 @@
             "state": "translated",
             "value": "¿Hay un hábito mío que te parezca adorable?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there a habit of mine that you find adorable?"
+          }
         }
       }
     },
@@ -578,6 +692,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuándo supiste que estabas enamorado?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "When did you know you were in love?"
           }
         }
       }
@@ -608,6 +728,12 @@
             "state": "translated",
             "value": "Si escribiéramos un libro sobre nuestra historia, ¿cómo se titularía?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If we wrote a book about our story, what would the title be?"
+          }
         }
       }
     },
@@ -636,6 +762,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué canción te hace pensar en nosotros?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What song makes you think of us?"
           }
         }
       }
@@ -666,6 +798,12 @@
             "state": "translated",
             "value": "¿Crees que apoyamos mutuamente los sueños del otro?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do you think we mutually support each other's dreams?"
+          }
         }
       }
     },
@@ -694,6 +832,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué pequeño gesto mío te toca más?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What small gesture from me touches you the most?"
           }
         }
       }
@@ -724,6 +868,12 @@
             "state": "translated",
             "value": "¿Cuál es tu definición de una pareja feliz?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is your definition of a happy couple?"
+          }
         }
       }
     },
@@ -752,6 +902,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Sientes que nos divertimos lo suficiente juntos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do you feel like we have enough fun together?"
           }
         }
       }
@@ -782,6 +938,12 @@
             "state": "translated",
             "value": "¿Qué te ha enseñado nuestra relación sobre ti mismo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What has our relationship taught you about yourself?"
+          }
         }
       }
     },
@@ -810,6 +972,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Tienes una fantasía romántica que te gustaría compartir conmigo?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do you have a romantic fantasy you'd like to share with me?"
           }
         }
       }
@@ -840,6 +1008,12 @@
             "state": "translated",
             "value": "¿Hay una parte de tu pasado que te da miedo compartirme?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there a part of your past you're afraid to share with me?"
+          }
         }
       }
     },
@@ -868,6 +1042,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué piensas de cómo manejamos nuestra vida social como pareja?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What do you think about how we manage our social life as a couple?"
           }
         }
       }
@@ -898,6 +1078,12 @@
             "state": "translated",
             "value": "¿Cuál es la prueba de amor más hermosa que has recibido de mí?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is the most beautiful proof of love you've received from me?"
+          }
         }
       }
     },
@@ -926,6 +1112,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuál es tu momento favorito de nuestra rutina diaria juntos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is your favorite moment of our daily routine together?"
           }
         }
       }
@@ -956,6 +1148,12 @@
             "state": "translated",
             "value": "¿Qué te gustaría que comprendiera mejor sobre ti?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What would you like me to understand better about you?"
+          }
         }
       }
     },
@@ -984,6 +1182,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Si hoy hiciéramos una promesa, ¿cuál sería la más importante para ti?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If we made a promise today, which would be the most important to you?"
           }
         }
       }
@@ -1014,6 +1218,12 @@
             "state": "translated",
             "value": "¿A veces sientes que no te escucho?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do you sometimes feel like I'm not listening to you?"
+          }
         }
       }
     },
@@ -1042,6 +1252,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Hay algo que te gustaría hacer como pareja que aún no hayamos hecho?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there something you'd like to do as a couple that we haven't done yet?"
           }
         }
       }
@@ -1072,6 +1288,12 @@
             "state": "translated",
             "value": "¿Cuál es el cumplido más hermoso que has recibido de mí?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is the most beautiful compliment you've received from me?"
+          }
         }
       }
     },
@@ -1100,6 +1322,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Si tuvieras que describirme a un desconocido, ¿qué dirías?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If you had to describe me to a stranger, what would you say?"
           }
         }
       }
@@ -1130,6 +1358,12 @@
             "state": "translated",
             "value": "¿Qué te gustaría que intentáramos juntos para salir de la rutina?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What would you like us to try together to break out of routine?"
+          }
         }
       }
     },
@@ -1158,6 +1392,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Hay un momento difícil que pasamos juntos del cual te sientas orgulloso?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there a difficult moment we went through together that you're proud of?"
           }
         }
       }
@@ -1188,6 +1428,12 @@
             "state": "translated",
             "value": "¿Qué te parece lo más hermoso de nuestra historia?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What do you find most beautiful about our story?"
+          }
         }
       }
     },
@@ -1216,6 +1462,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Hay algo que piensas que no hablamos lo suficiente?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is something you think we don't talk about enough?"
           }
         }
       }
@@ -1246,6 +1498,12 @@
             "state": "translated",
             "value": "¿Sientes que tenemos suficientes conversaciones profundas?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do you feel like we have enough deep conversations?"
+          }
         }
       }
     },
@@ -1274,6 +1532,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Hay algo que te dé miedo perder al estar en esta relación?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there something you're afraid of losing by being in this relationship?"
           }
         }
       }
@@ -1304,6 +1568,12 @@
             "state": "translated",
             "value": "¿Qué crees que necesitamos trabajar como pareja?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is something you think we need to work on as a couple?"
+          }
         }
       }
     },
@@ -1332,6 +1602,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué nuevo hábito de pareja te gustaría que estableciéramos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What new couple habit would you like us to establish?"
           }
         }
       }
@@ -1362,6 +1638,12 @@
             "state": "translated",
             "value": "¿Hay algo que te gustaría atreverte a decirme pero nunca lo has hecho?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there something you'd like to dare to tell me but never have?"
+          }
         }
       }
     },
@@ -1390,6 +1672,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Sientes que nuestra relación está equilibrada entre lo que damos y recibimos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do you feel like our relationship is balanced between what we give and receive?"
           }
         }
       }
@@ -1420,6 +1708,12 @@
             "state": "translated",
             "value": "¿Qué te gustaría que cambiara de mí?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is something you'd like me to change about myself?"
+          }
         }
       }
     },
@@ -1448,6 +1742,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué gesto o palabra te devuelve la confianza en nuestro amor?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What gesture or word gives you confidence in our love again?"
           }
         }
       }
@@ -1478,6 +1778,12 @@
             "state": "translated",
             "value": "¿Hay una película o serie que te haga pensar en nuestra relación?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there a movie or series that makes you think of our relationship?"
+          }
         }
       }
     },
@@ -1506,6 +1812,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué te gustaría que construyéramos juntos el próximo año?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What would you like us to build together in the coming year?"
           }
         }
       }
@@ -1536,6 +1848,12 @@
             "state": "translated",
             "value": "¿Hay algo que haga que te haga sentir poco amado?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there something I do that makes you feel unloved?"
+          }
         }
       }
     },
@@ -1564,6 +1882,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuáles son las pequeñas cosas diarias que alimentan nuestro amor?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What are the little daily things that nourish our love?"
           }
         }
       }
@@ -1594,6 +1918,12 @@
             "state": "translated",
             "value": "¿Cómo te sientes acerca de nuestro futuro juntos?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How do you feel about our future together?"
+          }
         }
       }
     },
@@ -1622,6 +1952,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué te gustaría que entendiera sin que tengas que decir una palabra?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What would you like me to understand without you having to say a word?"
           }
         }
       }
@@ -1652,6 +1988,12 @@
             "state": "translated",
             "value": "¿Cuál es tu visión de una pareja realizada a largo plazo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is your vision of a fulfilled long-term couple?"
+          }
         }
       }
     },
@@ -1680,6 +2022,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué pregunta te gustaría que te hiciera más a menudo?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What question would you like me to ask you more often?"
           }
         }
       }
@@ -1710,6 +2058,12 @@
             "state": "translated",
             "value": "¿Cuál es el regalo más hermoso que te gustaría recibir de mí (no material)?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is the most beautiful gift you'd like to receive from me (non-material)?"
+          }
         }
       }
     },
@@ -1738,6 +2092,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Si tuviéramos un día entero sin ninguna restricción, ¿qué te gustaría que hiciéramos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If we had a whole day without any constraints, what would you want us to do?"
           }
         }
       }
@@ -1768,6 +2128,12 @@
             "state": "translated",
             "value": "¿Cómo sabes que te amo, incluso cuando no lo digo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How do you know I love you, even when I don't say it?"
+          }
         }
       }
     },
@@ -1796,6 +2162,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuál es un mal hábito que tengo y que afecta nuestra relación?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is a bad habit I have that affects our relationship?"
           }
         }
       }
@@ -1826,6 +2198,12 @@
             "state": "translated",
             "value": "¿A veces sientes que no puedes ser tú mismo conmigo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do you sometimes feel like you can't be yourself with me?"
+          }
         }
       }
     },
@@ -1854,6 +2232,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Hay alguna manera en la que podría apoyarte mejor en tus metas personales?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there a way I could support you better in your personal goals?"
           }
         }
       }
@@ -1884,6 +2268,12 @@
             "state": "translated",
             "value": "¿Qué te encanta de la forma en que cuidamos el uno del otro?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What do you love about how we take care of each other?"
+          }
         }
       }
     },
@@ -1912,6 +2302,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuál es el momento romántico más hermoso que hemos compartido juntos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is the most beautiful romantic moment we've shared together?"
           }
         }
       }
@@ -1942,6 +2338,12 @@
             "state": "translated",
             "value": "¿Cómo podría hacer que te sintieras aún más amado?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How could I make you feel even more loved?"
+          }
         }
       }
     },
@@ -1970,6 +2372,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cómo te sientes con respecto al estado actual de nuestra relación?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How do you feel about the current state of our relationship?"
           }
         }
       }
@@ -2000,6 +2408,12 @@
             "state": "translated",
             "value": "¿Qué tan amado y apreciado te sientes por mí, de verdad?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How loved and appreciated do you feel by me, truly?"
+          }
         }
       }
     },
@@ -2028,6 +2442,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuáles son tus expectativas hacia mí?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What are your expectations of me?"
           }
         }
       }
@@ -2058,6 +2478,12 @@
             "state": "translated",
             "value": "¿Qué es lo que más te gusta de nuestra relación?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What do you love most about our relationship?"
+          }
         }
       }
     },
@@ -2086,6 +2512,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué actividades prefieres hacer conmigo?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What activities do you prefer to do with me?"
           }
         }
       }
@@ -2116,6 +2548,12 @@
             "state": "translated",
             "value": "Realísticamente, ¿cómo ves nuestro futuro juntos?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Realistically, how do you see our future together?"
+          }
         }
       }
     },
@@ -2144,6 +2582,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuáles son tus sueños y metas para nosotros como pareja?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What are your dreams and goals for us as a couple?"
           }
         }
       }
@@ -2174,6 +2618,12 @@
             "state": "translated",
             "value": "¿Qué te gustaría que hiciéramos más a menudo juntos?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What would you like us to do more often together?"
+          }
         }
       }
     },
@@ -2202,6 +2652,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuál crees que es nuestra mayor fortaleza como pareja?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What do you think is our greatest strength as a couple?"
           }
         }
       }
@@ -2232,6 +2688,12 @@
             "state": "translated",
             "value": "¿Cuál es tu recuerdo más bonito de nuestra primera cita?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is your most beautiful memory of our first date?"
+          }
         }
       }
     },
@@ -2260,6 +2722,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Si tuvieras que definir nuestra relación en tres palabras, ¿cuáles elegirías?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If you had to define our relationship in three words, which would you choose?"
           }
         }
       }
@@ -2290,6 +2758,12 @@
             "state": "translated",
             "value": "¿Qué hace que nuestra relación sea única a tus ojos?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What makes our relationship unique in your eyes?"
+          }
         }
       }
     },
@@ -2318,6 +2792,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Hay un viaje que aún no hemos hecho pero sueñas con hacer conmigo?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there a trip we haven't taken yet but you dream of taking with me?"
           }
         }
       }
@@ -2348,6 +2828,12 @@
             "state": "translated",
             "value": "¿Cómo pasarías un fin de semana ideal conmigo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How would you spend an ideal weekend with me?"
+          }
         }
       }
     },
@@ -2376,6 +2862,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Crees que la infidelidad siempre es un punto sin retorno, sin importar las circunstancias?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do you think infidelity is always a point of no return, regardless of circumstances?"
           }
         }
       }
@@ -2406,6 +2898,12 @@
             "state": "translated",
             "value": "¿Qué parte de mí te parece más hermosa (física o internamente)?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What part of me do you find most beautiful (physically or internally)?"
+          }
         }
       }
     },
@@ -2434,6 +2932,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Hay un gesto mío que te gustaría que se convirtiera en un pequeño ritual entre nosotros?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there a gesture from me you'd like to become a little ritual between us?"
           }
         }
       }
@@ -2464,6 +2968,12 @@
             "state": "translated",
             "value": "¿Qué quieres proteger a toda costa en nuestra relación?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What do you want to protect at all costs in our relationship?"
+          }
         }
       }
     },
@@ -2492,6 +3002,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué lugar ocupa el humor en nuestra relación según tú?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What place does humor take in our relationship according to you?"
           }
         }
       }
@@ -2522,6 +3038,12 @@
             "state": "translated",
             "value": "¿Quién tiende más a confiar, tú o yo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Who is more inclined to trust, you or me?"
+          }
         }
       }
     },
@@ -2550,6 +3072,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué es lo que más feliz te hace cuando estamos juntos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What makes you happiest when we're together?"
           }
         }
       }
@@ -2580,6 +3108,12 @@
             "state": "translated",
             "value": "¿Qué parte de nuestra rutina diaria te parece mágica, aunque sea simple?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What part of our daily routine seems magical to you, even if it's simple?"
+          }
         }
       }
     },
@@ -2608,6 +3142,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Si nuestro amor fuera un color, ¿cuál sería y por qué?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If our love were a color, what would it be and why?"
           }
         }
       }
@@ -2638,6 +3178,12 @@
             "state": "translated",
             "value": "¿Quién es más propenso a sentir celos, tú o yo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Who is more likely to be jealous, you or me?"
+          }
         }
       }
     },
@@ -2666,6 +3212,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué consejo le darías a una pareja que comienza, basándote en nuestra experiencia?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What advice would you give to a couple just starting out, based on our experience?"
           }
         }
       }
@@ -2696,6 +3248,12 @@
             "state": "translated",
             "value": "¿Hay un momento conmigo que te gustaría grabar para siempre?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there a moment with me you'd like to engrave forever?"
+          }
         }
       }
     },
@@ -2724,6 +3282,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué fue lo primero que encontraste atractivo en mí?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is the first thing you found attractive about me?"
           }
         }
       }
@@ -2754,6 +3318,12 @@
             "state": "translated",
             "value": "¿Qué ha superado nuestra relación que te enorgullece?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What has our relationship overcome that you're proud of?"
+          }
         }
       }
     },
@@ -2782,6 +3352,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cómo ocultas tu enojo cuando no quieres mostrarlo?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How do you hide your anger when you don't want to show it?"
           }
         }
       }
@@ -2812,6 +3388,12 @@
             "state": "translated",
             "value": "¿Qué sientes cuando piensas en mí?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What do you feel when you think about me?"
+          }
         }
       }
     },
@@ -2840,6 +3422,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué te gustaría aprender de mí o conmigo?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What would you like to learn from me or with me?"
           }
         }
       }
@@ -2870,6 +3458,12 @@
             "state": "translated",
             "value": "¿Cuál es una pequeña cosa que haces por mí sin que me dé cuenta?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is a little thing you do for me without me realizing it?"
+          }
         }
       }
     },
@@ -2898,6 +3492,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Me encuentras lo suficientemente agradecido?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do you find me grateful enough?"
           }
         }
       }
@@ -2928,6 +3528,12 @@
             "state": "translated",
             "value": "¿Quién toma más riesgos, tú o yo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Who takes more risks between you and me?"
+          }
         }
       }
     },
@@ -2956,6 +3562,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuáles son los valores más importantes para ti en una relación?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What are the most important values for you in a relationship?"
           }
         }
       }
@@ -2986,6 +3598,12 @@
             "state": "translated",
             "value": "Si hicieran una película sobre tu vida, ¿qué actor elegirías para interpretar tu papel?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If a movie were made about your life, which actor would you choose to play your role?"
+          }
         }
       }
     },
@@ -3014,6 +3632,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Te gustaría que te escuchara un poco más?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Would you like me to listen to you a bit more?"
           }
         }
       }
@@ -3044,6 +3668,12 @@
             "state": "translated",
             "value": "¿Cómo te sientes cuando no estamos de acuerdo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How do you feel when we disagree?"
+          }
         }
       }
     },
@@ -3072,6 +3702,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Hay algo de tu pasado amoroso que todavía influya en nuestra relación?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there something from your romantic past that still influences our relationship?"
           }
         }
       }
@@ -3102,6 +3738,12 @@
             "state": "translated",
             "value": "¿Qué es algo que no te gusta hacer pero lo haces por mí?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is something you don't like doing but do for me?"
+          }
         }
       }
     },
@@ -3130,6 +3772,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Te consideras optimista o pesimista?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do you consider yourself optimistic or pessimistic?"
           }
         }
       }
@@ -3160,6 +3808,12 @@
             "state": "translated",
             "value": "¿Crees que todo sucede por una razón?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do you believe everything happens for a reason?"
+          }
         }
       }
     },
@@ -3188,6 +3842,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Hay algo que temes decirme?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is something you're afraid to tell me?"
           }
         }
       }
@@ -3218,6 +3878,12 @@
             "state": "translated",
             "value": "¿Tienes complejos físicos que afecten tu confianza en nuestra relación?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do you have physical complexes that affect your confidence in our relationship?"
+          }
         }
       }
     },
@@ -3246,6 +3912,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Hay momentos en nuestra relación en los que te sientes inseguro o dudoso de lo que siento por ti?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Are there moments in our relationship when you feel uncertain or unsure about what I feel for you?"
           }
         }
       }
@@ -3276,6 +3948,12 @@
             "state": "translated",
             "value": "¿Alguna vez has sentido que no eres lo suficientemente bueno para mí o has pensado que merezco algo mejor?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Have you ever felt not good enough for me or thought I deserved better?"
+          }
         }
       }
     },
@@ -3304,6 +3982,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué es lo que más te ha sorprendido de nuestra relación?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What surprised you most about our relationship?"
           }
         }
       }
@@ -3334,6 +4018,12 @@
             "state": "translated",
             "value": "¿Temes que nuestras diferencias se conviertan en un problema en el futuro?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Are you afraid our differences might become a problem in the future?"
+          }
         }
       }
     },
@@ -3361,11 +4051,13 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-<<<<<<< HEAD
             "value": "¿Qué te gustaría que entendiera sobre tu forma de amar, en lo más profundo?"
-=======
-            "value": "¿Qué te hace sentir seguro de mi amor?"
->>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What would you like me to understand about your way of loving, deep down?"
           }
         }
       }
@@ -3394,11 +4086,13 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-<<<<<<< HEAD
             "value": "¿Qué papel te gustaría tener en nuestra relación dentro de 10 años?"
-=======
-            "value": "¿Qué haces para animarte cuando estás triste?"
->>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What role would you like to have in our relationship in 10 years?"
           }
         }
       }
@@ -3427,11 +4121,13 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-<<<<<<< HEAD
             "value": "¿Te gusta mi lenguaje del amor?"
-=======
-            "value": "¿Cuál fue la última vez que te sentiste realmente en paz?"
->>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do you like my love language?"
           }
         }
       }
@@ -3460,11 +4156,13 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-<<<<<<< HEAD
             "value": "¿Hay un secreto o algo no dicho que te gustaría revelarme algún día?"
-=======
-            "value": "¿Qué sueño te gustaría cumplir con mi apoyo?"
->>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there a secret or something unsaid you'd like to reveal to me someday?"
           }
         }
       }
@@ -3493,11 +4191,13 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-<<<<<<< HEAD
             "value": "Si supieras todo lo que sabes hoy, ¿me elegirías de nuevo?"
-=======
-            "value": "¿Qué te gustaría que hiciera para ayudarte a relajarte más?"
->>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If you knew everything you know today, would you still choose me?"
           }
         }
       }
@@ -3526,11 +4226,13 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-<<<<<<< HEAD
             "value": "¿Qué sientes cuando no me va bien?"
-=======
-            "value": "¿Cuál fue la última sorpresa agradable que experimentaste?"
->>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What do you feel when I'm not doing well?"
           }
         }
       }
@@ -3559,11 +4261,13 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-<<<<<<< HEAD
             "value": "¿Hubo un momento en que no te sentiste escuchado por mí?"
-=======
-            "value": "¿Qué te hace sentir especial?"
->>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Was there a moment when you didn't feel heard by me?"
           }
         }
       }
@@ -3592,11 +4296,13 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-<<<<<<< HEAD
             "value": "¿Cuál crees que ha sido el mayor malentendido entre nosotros?"
-=======
-            "value": "¿Qué te gustaría mejorar en tu vida emocional?"
->>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is the biggest misunderstanding we've had according to you?"
           }
         }
       }
@@ -3625,11 +4331,13 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-<<<<<<< HEAD
             "value": "¿Qué has aprendido sobre el amor gracias a mí?"
-=======
-            "value": "¿Qué te inspira a levantarte cada mañana?"
->>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What have you learned about love thanks to me?"
           }
         }
       }
@@ -3658,11 +4366,13 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-<<<<<<< HEAD
             "value": "¿Qué herida del pasado te gustaría que conociera mejor para comprenderte?"
-=======
-            "value": "¿Qué te gustaría que notara más en ti?"
->>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What past wound would you like me to know better to understand you?"
           }
         }
       }
@@ -3691,11 +4401,13 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-<<<<<<< HEAD
             "value": "¿Qué sientes cuando tengo éxito o logro algo?"
-=======
-            "value": "¿Qué te gustaría compartir conmigo hoy?"
->>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What do you feel when I succeed or have success?"
           }
         }
       }
@@ -3724,11 +4436,13 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-<<<<<<< HEAD
             "value": "¿Cuál es una de las experiencias más difíciles que has vivido?"
-=======
-            "value": "¿Cómo te sientes cuando estamos separados?"
->>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is one of the most difficult experiences you've been through?"
           }
         }
       }
@@ -3757,11 +4471,13 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-<<<<<<< HEAD
             "value": "¿Hay temas que evitas voluntariamente conmigo?"
-=======
-            "value": "¿Qué te hace sentir en casa conmigo?"
->>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Are there topics you voluntarily avoid with me?"
           }
         }
       }
@@ -3790,11 +4506,13 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-<<<<<<< HEAD
             "value": "¿Cómo ha influido tu pasado en tu manera de comunicarte conmigo?"
-=======
-            "value": "¿Qué pequeña atención te haría feliz ahora mismo?"
->>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How has your past influenced your way of communicating with me?"
           }
         }
       }
@@ -3823,11 +4541,13 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-<<<<<<< HEAD
             "value": "¿Cuál ha sido el mayor cambio en tu vida desde que estamos juntos?"
-=======
-            "value": "¿Qué te gustaría que planificáramos juntos pronto?"
->>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What has been the biggest change in your life since we've been together?"
           }
         }
       }
@@ -3856,11 +4576,13 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-<<<<<<< HEAD
             "value": "¿Hay cosas específicas a las que te gustaría que prestara atención por lo que has vivido?"
-=======
-            "value": "¿Qué canción describe mejor tu estado de ánimo del momento?"
->>>>>>> 725abc3b231382c803d35e73b402409d0429b2f2
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Are there specific things you'd like me to be attentive to because of what you've experienced?"
           }
         }
       }
@@ -3891,6 +4613,12 @@
             "state": "translated",
             "value": "¿Qué te gustaría que cambiara para sentirte más comprendido?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How would you define the balance between giving and receiving in our relationship?"
+          }
         }
       }
     },
@@ -3919,6 +4647,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué te ayuda a confiar en el futuro?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Have you ever found yourself unable to fully trust me because of your past? Do you think we could talk about it?"
           }
         }
       }
@@ -3949,6 +4683,12 @@
             "state": "translated",
             "value": "¿Qué quieres preservar a toda costa entre nosotros?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What do you want to preserve at all costs between us?"
+          }
         }
       }
     },
@@ -3977,6 +4717,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuál es tu mayor esperanza para nuestro futuro?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is your greatest hope for our future?"
           }
         }
       }
@@ -4007,6 +4753,12 @@
             "state": "translated",
             "value": "¿Qué te hace dudar de nosotros a veces?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What makes you sometimes doubt us?"
+          }
         }
       }
     },
@@ -4035,6 +4787,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué es algo que solo haces conmigo?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is something you only do with me?"
           }
         }
       }
@@ -4065,6 +4823,12 @@
             "state": "translated",
             "value": "¿Cuál es el sacrificio más hermoso que has hecho por amor a mí?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is the most beautiful sacrifice you've made out of love for me?"
+          }
         }
       }
     },
@@ -4093,6 +4857,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Hay una parte de tu personalidad que ocultas por miedo a que deje de quererte?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there a part of your personality you hide for fear I won't love you anymore?"
           }
         }
       }
@@ -4123,6 +4893,12 @@
             "state": "translated",
             "value": "¿Cuál es la emoción que más te cuesta compartir conmigo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is the emotion you have the most trouble sharing with me?"
+          }
         }
       }
     },
@@ -4151,6 +4927,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cómo ha influido tu educación en tu visión del amor y las relaciones?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How has your upbringing influenced your vision of love and relationships?"
           }
         }
       }
@@ -4181,6 +4963,12 @@
             "state": "translated",
             "value": "¿Qué importancia le das a la honestidad y la comunicación en una relación?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What importance do you place on honesty and communication in a relationship?"
+          }
         }
       }
     },
@@ -4209,6 +4997,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Crees en el perdón en una relación?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do you believe in forgiveness in a relationship?"
           }
         }
       }
@@ -4239,6 +5033,12 @@
             "state": "translated",
             "value": "¿Qué a veces frena nuestra comunicación?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What sometimes holds you back in our communication?"
+          }
         }
       }
     },
@@ -4267,6 +5067,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Crees que es saludable tener intereses separados en una relación?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do you think it's healthy to have separate interests in a relationship?"
           }
         }
       }
@@ -4297,6 +5103,12 @@
             "state": "translated",
             "value": "¿Crees que deberíamos pasar un poco más de tiempo separados para extrañarnos mejor?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do you think we should spend a bit more time apart to miss each other better?"
+          }
         }
       }
     },
@@ -4325,6 +5137,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Dónde ves nuestra relación en cinco años?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Where do you see our relationship in five years?"
           }
         }
       }
@@ -4355,6 +5173,12 @@
             "state": "translated",
             "value": "¿Hay una verdad difícil que te gustaría escuchar de mí, incluso si duele?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there a difficult truth you'd like to hear from me, even if it hurts?"
+          }
         }
       }
     },
@@ -4383,6 +5207,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué nunca me has dicho porque no sabías cómo expresarlo?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What have you never told me because you didn't know how to phrase it?"
           }
         }
       }
@@ -4413,6 +5243,12 @@
             "state": "translated",
             "value": "¿Qué te gustaría que hiciéramos más a menudo como pareja?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is something you'd like us to do more often as a couple?"
+          }
         }
       }
     },
@@ -4441,6 +5277,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué aprecias de nuestra relación pero nunca me lo has dicho antes?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What do you appreciate about our relationship but have never told me before?"
           }
         }
       }
@@ -4471,6 +5313,12 @@
             "state": "translated",
             "value": "¿Hay cualidades en ti que te gustaría que validara más?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Are there qualities in you that you'd like me to validate more?"
+          }
         }
       }
     },
@@ -4499,6 +5347,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué cosa nueva te gustaría intentar en nuestra relación?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What new thing would you like to try in our relationship?"
           }
         }
       }
@@ -4529,6 +5383,12 @@
             "state": "translated",
             "value": "¿Cómo podríamos apoyarnos mejor en nuestras metas personales?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How could we better support each other in our personal goals?"
+          }
         }
       }
     },
@@ -4557,6 +5417,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuál sería una forma significativa de celebrar los grandes hitos de nuestra relación?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What would be a meaningful way to celebrate the major milestones of our relationship?"
           }
         }
       }
@@ -4587,6 +5453,12 @@
             "state": "translated",
             "value": "¿Hay palabras que digo que te afectan más de lo que me doy cuenta?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Are there words I say that affect you more than I realize?"
+          }
         }
       }
     },
@@ -4615,6 +5487,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuál es la cosa más importante que deberíamos decirnos más a menudo?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is the most important thing to say but we don't say often enough?"
           }
         }
       }
@@ -4645,6 +5523,12 @@
             "state": "translated",
             "value": "¿Cuál es una nueva forma en la que podríamos expresar nuestro amor y aprecio?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is a new way we could express our love and appreciation for each other?"
+          }
         }
       }
     },
@@ -4673,6 +5557,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué te gustaría que notara más a menudo sobre ti?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is something you'd like me to notice more often about you?"
           }
         }
       }
@@ -4703,6 +5593,12 @@
             "state": "translated",
             "value": "¿Hay un gesto o frase que te hirió y del que nunca hablamos de nuevo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there a gesture or phrase that hurt you that we never talked about again?"
+          }
         }
       }
     },
@@ -4731,6 +5627,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué canción te recuerda instantáneamente un momento especial que compartimos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is a song that instantly reminds you of a special moment we shared?"
           }
         }
       }
@@ -4761,6 +5663,12 @@
             "state": "translated",
             "value": "¿Qué significa la vulnerabilidad para ti en una relación?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What does vulnerability mean to you in a relationship?"
+          }
         }
       }
     },
@@ -4789,6 +5697,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Si tuviéramos que quedarnos encerrados en una tienda por una noche, ¿cuál elegiríamos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If we had to be locked in a store for one night, which would we choose?"
           }
         }
       }
@@ -4819,6 +5733,12 @@
             "state": "translated",
             "value": "¿Hay algo que lamentes no haberme dicho antes?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there something you regret not telling me earlier?"
+          }
         }
       }
     },
@@ -4847,6 +5767,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cómo te sientes cuando no tienes noticias mías por un tiempo?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How do you feel when you don't hear from me for a while?"
           }
         }
       }
@@ -4877,6 +5803,12 @@
             "state": "translated",
             "value": "¿Qué es algo en lo que piensas a menudo pero te guardas para ti?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is something you think about often, but keep to yourself?"
+          }
         }
       }
     },
@@ -4905,6 +5837,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cómo quieres que nos apoyemos en nuestros momentos de debilidad?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How do you want us to support each other in our moments of weakness?"
           }
         }
       }
@@ -4935,6 +5873,12 @@
             "state": "translated",
             "value": "Si pudiera hacer desaparecer un miedo o duda en ti, ¿cuál sería?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If I could make one fear or doubt in you disappear, what would it be?"
+          }
         }
       }
     },
@@ -4963,6 +5907,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Si tuviéramos que poner una etiqueta a nuestra relación, ¿qué diría?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If we had to put a label on our relationship, what would it say?"
           }
         }
       }
@@ -4993,6 +5943,12 @@
             "state": "translated",
             "value": "¿Qué aspecto de tu personalidad te gustaría que aceptara más?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What aspect of your personality would you like me to accept more?"
+          }
         }
       }
     },
@@ -5021,6 +5977,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿En qué se diferencia nuestra relación de la de tus padres?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How is our relationship different from your parents'?"
           }
         }
       }
@@ -5051,6 +6013,12 @@
             "state": "translated",
             "value": "¿Hay algo que sientes pero no quieres imponerme?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there something you feel but don't want to impose on me?"
+          }
         }
       }
     },
@@ -5079,6 +6047,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cómo crees que nos equilibramos mutuamente?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How do you think we balance each other out?"
           }
         }
       }
@@ -5109,6 +6083,12 @@
             "state": "translated",
             "value": "¿Cuál es tu forma favorita de relajarte después de un día largo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is your favorite way to relax after a long day?"
+          }
         }
       }
     },
@@ -5137,6 +6117,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué te ayuda a perdonar cuando te lastimo?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What helps you forgive when I hurt you?"
           }
         }
       }
@@ -5167,6 +6153,12 @@
             "state": "translated",
             "value": "Si pudiéramos crear una nueva tradición romántica, ¿cuál sería?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If we could create a new romantic tradition, what would it be?"
+          }
         }
       }
     },
@@ -5195,6 +6187,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué amas en secreto de nuestra rutina?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What do you secretly love about our routine?"
           }
         }
       }
@@ -5225,6 +6223,12 @@
             "state": "translated",
             "value": "¿Hay algo que te dé miedo decirme por temor a mi reacción?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there something you're afraid to tell me for fear of my reaction?"
+          }
         }
       }
     },
@@ -5253,6 +6257,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué es algo que nunca querrías que banalizara en tu vida?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is something you'd never want me to trivialize in your life?"
           }
         }
       }
@@ -5283,6 +6293,12 @@
             "state": "translated",
             "value": "¿Qué cosa tonta deberíamos hacer al menos una vez solo por la historia?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is something silly we should do at least once just for the story?"
+          }
         }
       }
     },
@@ -5311,6 +6327,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Si tuviéramos que resumir nuestra historia de amor en tres emojis, ¿cuáles elegirías?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If we had to summarize our love story in three emojis, which would you choose?"
           }
         }
       }
@@ -5341,6 +6363,12 @@
             "state": "translated",
             "value": "Si tuviéramos que inventar un reto el uno para el otro, ¿qué sugerirías?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If we had to invent a challenge for each other, what would you suggest?"
+          }
         }
       }
     },
@@ -5369,6 +6397,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Si tuviéramos que hacernos tatuajes a juego, ¿qué diseño elegiríamos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If we had to get matching tattoos, what design would we choose?"
           }
         }
       }
@@ -5399,6 +6433,12 @@
             "state": "translated",
             "value": "Si tuviéramos que resumir nuestra historia de amor en una frase, ¿qué diría?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If we had to summarize our love story in one sentence, what would it say?"
+          }
         }
       }
     },
@@ -5427,6 +6467,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuál es el cumplido de mi parte que nunca olvidarás?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is the compliment from me you'll never forget?"
           }
         }
       }
@@ -5457,6 +6503,12 @@
             "state": "translated",
             "value": "Si creáramos un tarro de recuerdos, ¿qué sería lo primero que escribiríamos en un papelito?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If we created a memory jar, what would be the first thing we'd write on a little paper?"
+          }
         }
       }
     },
@@ -5485,6 +6537,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Si hiciéramos una playlist para un viaje por carretera, ¿cuál sería la primera canción que pondríamos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If we made a playlist for a road trip, what would be the first song we'd put on it?"
           }
         }
       }
@@ -5515,6 +6573,12 @@
             "state": "translated",
             "value": "¿Cuándo sentiste que formamos un verdadero equipo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "When did you feel like we formed a real team?"
+          }
         }
       }
     },
@@ -5543,6 +6607,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Si tuviéramos que escribir el perfil de citas del otro, ¿qué pondrías en él?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If we had to write each other's dating profile, what would you put in it?"
           }
         }
       }
@@ -5573,6 +6643,12 @@
             "state": "translated",
             "value": "Si pudiéramos revivir un día perfecto de nuestra relación, ¿cuál elegirías?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If we could relive one perfect day of our relationship, which would you choose?"
+          }
         }
       }
     },
@@ -5601,6 +6677,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Sientes que pasamos suficiente tiempo juntos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do you feel like we spend enough time together?"
           }
         }
       }
@@ -5631,6 +6713,12 @@
             "state": "translated",
             "value": "¿Hay algo que te moleste ahora mismo y de lo que no hayamos hablado aún?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there something bothering you right now that we haven't talked about yet?"
+          }
         }
       }
     },
@@ -5659,6 +6747,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué cosas he hecho este mes (o esta semana) que apreciaste o que te hicieron sentir amado?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What are the things I've done this month (or this week) that you appreciated or that made you feel loved?"
           }
         }
       }
@@ -5689,6 +6783,12 @@
             "state": "translated",
             "value": "¿En qué te gustaría que trabajáramos juntos?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What would you like us to work on together?"
+          }
         }
       }
     },
@@ -5717,6 +6817,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuál es tu forma favorita de recibir amor en mis gestos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is your favorite way to receive love in my gestures?"
           }
         }
       }
@@ -5747,6 +6853,12 @@
             "state": "translated",
             "value": "¿Hay nuevas experiencias que te gustaría tener conmigo pronto?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Are there new experiences you'd like to have with me soon?"
+          }
         }
       }
     },
@@ -5775,6 +6887,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuáles son tus objetivos personales para este mes y cómo puedo ayudarte a lograrlos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What are your personal goals for this month, and how can I help you achieve them?"
           }
         }
       }
@@ -5805,6 +6923,12 @@
             "state": "translated",
             "value": "¿Qué te gustaría que protegiera en ti, incluso cuando dudas?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What would you like me to protect in you, even when you doubt?"
+          }
         }
       }
     },
@@ -5833,6 +6957,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué recuerdo nuestro te gustaría revivir una vez más?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What memory of us would you like to relive once more?"
           }
         }
       }
@@ -5863,6 +6993,12 @@
             "state": "translated",
             "value": "¿Hay algo que necesites y que no te estoy dando en este momento?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there something you need that I'm not giving you right now?"
+          }
         }
       }
     },
@@ -5891,6 +7027,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuándo sentiste que realmente te entendí sin que dijeras una palabra?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "When did you feel like I really understood you without you saying a word?"
           }
         }
       }
@@ -5921,6 +7063,12 @@
             "state": "translated",
             "value": "¿Qué puedo hacer para hacer tus días más agradables o fáciles?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What can I do to make your days more pleasant or easier?"
+          }
         }
       }
     },
@@ -5949,6 +7097,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Hay un momento de nuestra relación que a veces revives en tus pensamientos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there a moment in our relationship that you sometimes relive in your thoughts?"
           }
         }
       }
@@ -5979,6 +7133,12 @@
             "state": "translated",
             "value": "¿Cómo podría responder mejor a tus necesidades emocionales?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How could I better respond to your emotional needs?"
+          }
         }
       }
     },
@@ -6007,6 +7167,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Si pudiéramos hablarnos sin filtro, ¿de qué te gustaría que habláramos hoy?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If we could talk to each other without filter, what would you want us to talk about today?"
           }
         }
       }
@@ -6037,6 +7203,12 @@
             "state": "translated",
             "value": "¿Qué estoy haciendo ahora que te encanta o aprecias especialmente?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What am I doing right now that you particularly love or appreciate?"
+          }
         }
       }
     },
@@ -6065,6 +7237,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Según tú, ¿cuáles son mis mayores áreas de mejora?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What are, according to you, my biggest areas for improvement?"
           }
         }
       }
@@ -6095,6 +7273,12 @@
             "state": "translated",
             "value": "¿Hay algo que solía hacer al inicio de nuestra relación y que ahora hago menos, que te gustaría ver de vuelta?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there something I used to do at the beginning of our relationship that I don't do as much anymore, that you'd like to see return?"
+          }
         }
       }
     },
@@ -6123,6 +7307,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Crees que te doy por sentado?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do you think I take you for granted?"
           }
         }
       }
@@ -6153,6 +7343,12 @@
             "state": "translated",
             "value": "¿Hay algo estresante en tu vida ahora mismo que debería saber?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there something stressful in your life right now that I should know about?"
+          }
         }
       }
     },
@@ -6181,6 +7377,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Te has sentido generalmente feliz últimamente?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Have you felt generally happy lately?"
           }
         }
       }
@@ -6211,6 +7413,12 @@
             "state": "translated",
             "value": "¿Cómo puedo apoyar mejor tu crecimiento personal?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How can I better support your personal growth?"
+          }
         }
       }
     },
@@ -6239,6 +7447,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Hay algo que te gustaría que hiciéramos diferente o probar en nuestra intimidad?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there something you'd like us to do differently or try in our intimacy?"
           }
         }
       }
@@ -6269,6 +7483,12 @@
             "state": "translated",
             "value": "¿Qué te gustaría que nos dijéramos más a menudo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What would you like us to say to each other more often?"
+          }
         }
       }
     },
@@ -6297,6 +7517,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué esperas con ganas esta semana / este mes?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What are you looking forward to this week / this month?"
           }
         }
       }
@@ -6327,6 +7553,12 @@
             "state": "translated",
             "value": "Si tuviéramos que reinventarnos como pareja, ¿qué conservarías absolutamente?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If we had to reinvent ourselves as a couple, what would you absolutely keep?"
+          }
         }
       }
     },
@@ -6355,6 +7587,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Hay una promesa que te gustaría que nos hiciéramos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there a promise you'd like us to make to each other?"
           }
         }
       }
@@ -6385,6 +7623,12 @@
             "state": "translated",
             "value": "¿Te gustaría que habláramos de nuestros objetivos futuros? ¿Hay cosas que actualizar, ajustar o discutir?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Would you like us to talk about our future goals? Are there things to update, adjust or discuss?"
+          }
         }
       }
     },
@@ -6413,6 +7657,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿De qué maneras podríamos divertirnos más juntos en nuestra relación?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What are ways we could have more fun together in our relationship?"
           }
         }
       }
@@ -6443,6 +7693,12 @@
             "state": "translated",
             "value": "¿Hay algo que hago que te aleje sin que me dé cuenta?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there something I do that pushes you away without me realizing it?"
+          }
         }
       }
     },
@@ -6471,6 +7727,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Si nuestra relación fuera una cita célebre, ¿cuál sería?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If our relationship were a quote, what would it be?"
           }
         }
       }
@@ -6501,6 +7763,12 @@
             "state": "translated",
             "value": "¿Cuándo sientes que nuestra relación está creciendo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "When do you feel like our relationship is growing?"
+          }
         }
       }
     },
@@ -6529,6 +7797,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Hay fechas importantes que se acercan y que debería conocer?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Are there important dates coming up that I should know about?"
           }
         }
       }
@@ -6559,6 +7833,12 @@
             "state": "translated",
             "value": "¿Crees que compartimos la misma visión de nuestro futuro?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do you think we share the same vision of our future?"
+          }
         }
       }
     },
@@ -6587,6 +7867,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué es lo que más te atrae de mí?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What attracts you most about me?"
           }
         }
       }
@@ -6617,6 +7903,12 @@
             "state": "translated",
             "value": "Si pudieras elegir una palabra para simbolizar nuestra relación, ¿cuál sería?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If you could choose one word to symbolize our relationship, what would it be?"
+          }
         }
       }
     },
@@ -6645,6 +7937,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Hay un conflicto que, según tú, nunca resolvimos realmente?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there a conflict we never really resolved according to you?"
           }
         }
       }
@@ -6675,6 +7973,12 @@
             "state": "translated",
             "value": "¿Cuál crees que es una de mis mejores cualidades?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What do you think is one of my best qualities?"
+          }
         }
       }
     },
@@ -6703,6 +8007,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué fue lo primero que notaste en mí?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is the first thing you noticed about me?"
           }
         }
       }
@@ -6733,6 +8043,12 @@
             "state": "translated",
             "value": "Si nuestra relación fuera una obra de arte, ¿cómo sería?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If our relationship were a work of art, what would it look like?"
+          }
         }
       }
     },
@@ -6761,6 +8077,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuál sería el lugar ideal para ti para retirarnos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What would be the ideal place for you to retire?"
           }
         }
       }
@@ -6791,6 +8113,12 @@
             "state": "translated",
             "value": "¿Qué dificultad superada en nuestra relación fortaleció tu amor por mí?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What overcome difficulty in our relationship strengthened your love for me?"
+          }
         }
       }
     },
@@ -6819,6 +8147,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cómo sería una cita ideal según tú?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What would an ideal date look like according to you?"
           }
         }
       }
@@ -6849,6 +8183,12 @@
             "state": "translated",
             "value": "¿Qué parte de tu historia te gustaría que conociera mejor?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What part of your story would you like me to know better?"
+          }
         }
       }
     },
@@ -6877,6 +8217,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué te ayuda a mantenerte comprometido con nuestra relación?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What helps you stay committed to our relationship?"
           }
         }
       }
@@ -6907,6 +8253,12 @@
             "state": "translated",
             "value": "¿Cuál es la cosa número uno en tu lista de regalos soñados?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is the number one thing on your dream gift list?"
+          }
         }
       }
     },
@@ -6935,6 +8287,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Hay algo de mí que te gustaría poder cambiar?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there something about me you'd like to be able to change?"
           }
         }
       }
@@ -6965,6 +8323,12 @@
             "state": "translated",
             "value": "¿Eres feliz en esta relación?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Are you happy in this relationship?"
+          }
         }
       }
     },
@@ -6993,6 +8357,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué es lo más hermoso que nuestra relación te ha revelado sobre ti mismo?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is the most beautiful thing our relationship has revealed to you about yourself?"
           }
         }
       }
@@ -7023,6 +8393,12 @@
             "state": "translated",
             "value": "¿Cómo te gustaría que nos amáramos dentro de 10 años?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How do you want us to love each other in 10 years?"
+          }
         }
       }
     },
@@ -7051,6 +8427,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Crees que nuestra relación avanza en la dirección correcta?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do you think our relationship is moving in the right direction?"
           }
         }
       }
@@ -7081,6 +8463,12 @@
             "state": "translated",
             "value": "¿Qué pequeño ritual diario fortalecería nuestro vínculo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What small daily ritual would strengthen our bond?"
+          }
         }
       }
     },
@@ -7109,6 +8497,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Hay límites que te gustaría establecer?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Are there boundaries you'd like to set?"
           }
         }
       }
@@ -7139,6 +8533,12 @@
             "state": "translated",
             "value": "Si pudieras confiarme una cosa sin miedo a ser juzgado, ¿qué sería?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If you could confide one thing to me without fear of being judged, what would it be?"
+          }
         }
       }
     },
@@ -7167,6 +8567,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué importancia le das al perdón en nuestra relación?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What importance do you place on forgiveness in our relationship?"
           }
         }
       }
@@ -7197,6 +8603,12 @@
             "state": "translated",
             "value": "¿Cómo se complementan nuestras personalidades?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How do our personalities complement each other?"
+          }
         }
       }
     },
@@ -7225,6 +8637,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué legado te gustaría que construyéramos juntos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What legacy would you like us to build together?"
           }
         }
       }
@@ -7255,6 +8673,12 @@
             "state": "translated",
             "value": "¿Crees que estábamos destinados a estar juntos?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do you believe we were meant to be together?"
+          }
         }
       }
     },
@@ -7283,6 +8707,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuáles crees que serán los mayores desafíos que tendremos que afrontar en nuestro futuro compartido?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What do you think will be the biggest challenges we'll have to face in our shared future?"
           }
         }
       }
@@ -7313,6 +8743,12 @@
             "state": "translated",
             "value": "¿Qué significa para ti ser un buen compañero?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What does being a good partner mean to you?"
+          }
         }
       }
     },
@@ -7341,6 +8777,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cómo te gusta hacer las paces después de una discusión?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How do you like to make peace after an argument?"
           }
         }
       }
@@ -7371,6 +8813,12 @@
             "state": "translated",
             "value": "¿Qué crees que es lo más importante para que una relación a largo plazo funcione?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What do you think is the most important thing for a long-term relationship to work?"
+          }
         }
       }
     },
@@ -7399,6 +8847,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cómo podríamos fortalecer la confianza entre nosotros?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How could we strengthen trust between us?"
           }
         }
       }
@@ -7429,6 +8883,12 @@
             "state": "translated",
             "value": "Nombra 3 cosas por las que estés agradecido conmigo"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name 3 things you're grateful for regarding me"
+          }
         }
       }
     },
@@ -7458,6 +8918,12 @@
             "state": "translated",
             "value": "¿Puedes decirme que me amas ahora mismo?"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Can you tell me you love me right now?"
+          }
         }
       }
     },
@@ -7486,6 +8952,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Hay algo más de lo que te gustaría que habláramos?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there anything else you'd like us to talk about?"
           }
         }
       }
