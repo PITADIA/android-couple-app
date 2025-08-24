@@ -1,2526 +1,3822 @@
 {
-  "sourceLanguage" : "fr",
-  "strings" : {
-    "daily_challenge_1" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Send them a message telling them why you're grateful to have them in your life."
+  "sourceLanguage": "fr",
+  "strings": {
+    "daily_challenge_1": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send them a message telling them why you're grateful to have them in your life."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Envoyez-lui un message pour lui dire pourquoi vous êtes reconnaissant de l'avoir dans votre vie."
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envoyez-lui un message pour lui dire pourquoi vous êtes reconnaissant de l'avoir dans votre vie."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schick deinem Partner/deiner Partnerin eine Nachricht und sag, warum du dankbar bist, dass er/sie in deinem Leben ist."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schick deinem Partner/deiner Partnerin eine Nachricht und sag, warum du dankbar bist, dass er/sie in deinem Leben ist."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Envíale un mensaje diciéndole por qué agradeces tenerle en tu vida."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envíale un mensaje diciéndole por qué agradeces tenerle en tu vida."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Invia al tuo partner un messaggio spiegando perché sei grato di averlo nella tua vita."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invia al tuo partner un messaggio spiegando perché sei grato di averlo nella tua vita."
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envia-lhe uma mensagem a dizer porque estás grato(a) por tê-lo(a) na tua vida."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envie uma mensagem dizendo por que você é grato(a) por tê-lo(a) na sua vida."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stuur hen een bericht waarin je vertelt waarom je dankbaar bent dat ze in je leven zijn."
+          }
         }
       }
     },
-    "daily_challenge_2" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Call them on FaceTime or phone just to say \"I love you\" and hang up right after their response."
+    "daily_challenge_2": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Call them on FaceTime or phone just to say \"I love you\" and hang up right after their response."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Appelez-vous par FaceTime ou téléphone juste pour dire \"je t'aime\" et raccrochez juste après sa réponse."
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Appelez-vous par FaceTime ou téléphone juste pour dire \"je t'aime\" et raccrochez juste après sa réponse."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ruf per FaceTime oder Telefon nur an, sag \"Ich liebe dich\" und leg direkt nach der Antwort wieder auf."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ruf per FaceTime oder Telefon nur an, sag \"Ich liebe dich\" und leg direkt nach der Antwort wieder auf."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Llámale por FaceTime o teléfono solo para decir «te amo» y cuelga justo después de su respuesta."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Llámale por FaceTime o teléfono solo para decir «te amo» y cuelga justo después de su respuesta."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chiamalo su FaceTime o al telefono solo per dirgli \"Ti amo\" e riaggancia subito dopo la sua risposta."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chiamalo su FaceTime o al telefono solo per dirgli \"Ti amo\" e riaggancia subito dopo la sua risposta."
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Liga-lhe por FaceTime ou telefone só para dizer \"amo-te\" e desliga logo após a resposta."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ligue por FaceTime ou telefone só para dizer \"eu te amo\" e desligue logo após a resposta."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bel ze via FaceTime of telefoon alleen om te zeggen \"Ik hou van je\" en hang op zodra ze antwoorden."
+          }
         }
       }
     },
-    "daily_challenge_3" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ask them this question: \"What do you need from me right now?\""
+    "daily_challenge_3": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ask them this question: \"What do you need from me right now?\""
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Posez-lui cette question : \"De quoi as-tu besoin de moi en ce moment ?\""
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stell diese Frage: \"Was brauchst du gerade von mir?\""
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Posez-lui cette question : \"De quoi as-tu besoin de moi en ce moment ?\""
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hazle esta pregunta: «¿Qué necesitas de mí en este momento?»"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stell diese Frage: \"Was brauchst du gerade von mir?\""
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fagli questa domanda: \"Di cosa hai bisogno da me in questo momento?\""
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hazle esta pregunta: «¿Qué necesitas de mí en este momento?»"
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faz-lhe esta pergunta: \"Do que precisas de mim neste momento?\""
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fagli questa domanda: \"Di cosa hai bisogno da me in questo momento?\""
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faça esta pergunta: \"Do que você precisa de mim agora?\""
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stel deze vraag: “Wat heb je nu van mij nodig?”"
+          }
         }
       }
     },
-    "daily_challenge_4" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Choose a song that reminds you of your relationship and send it to them."
+    "daily_challenge_4": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose a song that reminds you of your relationship and send it to them."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choisissez une chanson qui vous fait penser à votre relation et envoyez-la-lui."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Choisissez une chanson qui vous fait penser à votre relation et envoyez-la-lui."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Such dir ein Lied aus, das dich an eure Beziehung erinnert, und schick es ihm/ihr."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Such dir ein Lied aus, das dich an eure Beziehung erinnert, und schick es ihm/ihr."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige una canción que te recuerde a vuestra relación y envíasela."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Elige una canción que te recuerde a vuestra relación y envíasela."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scegli una canzone che ti ricorda la vostra relazione e inviagliela."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Scegli una canzone che ti ricorda la vostra relazione e inviagliela."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escolhe uma música que te faça lembrar da vossa relação e envia-lha."
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escolha uma música que lembre seu relacionamento e envie para ele(a)."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kies een liedje dat je aan jullie relatie doet denken en stuur het naar hen."
+          }
         }
       }
     },
-    "daily_challenge_5" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Create together a list of 5 things you want to do as a couple."
+    "daily_challenge_5": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create together a list of 5 things you want to do as a couple."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Réalisez ensemble une liste de 5 choses que vous voulez faire en couple."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erstellt zusammen eine Liste mit 5 Dingen, die ihr als Paar machen wollt."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Haced juntos una lista de 5 cosas que queréis hacer en pareja."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Réalisez ensemble une liste de 5 choses que vous voulez faire en couple."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create insieme una lista di 5 cose che volete fare come coppia."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Erstellt zusammen eine Liste mit 5 Dingen, die ihr als Paar machen wollt."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Criem juntos uma lista de 5 coisas que querem fazer como casal."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Haced juntos una lista de 5 cosas que queréis hacer en pareja."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Criem juntos uma lista de 5 coisas que querem fazer como casal."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Create insieme una lista di 5 cose che volete fare come coppia."
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maak samen een lijst van 5 dingen die jullie als koppel willen doen."
           }
         }
       }
     },
-    "daily_challenge_6" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Set an alarm to remind yourself to send them \"I love you\" during the day."
+    "daily_challenge_6": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set an alarm to remind yourself to send them \"I love you\" during the day."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mettez une alarme pour vous rappeler de lui envoyer \"je t'aime\" dans la journée."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stell dir einen Alarm, um ihm/ihr heute \"Ich liebe dich\" zu schicken."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Programa una alarma para recordarte enviarle un «te amo» durante el día."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mettez une alarme pour vous rappeler de lui envoyer \"je t'aime\" dans la journée."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Imposta una sveglia per ricordarti di scrivergli \"Ti amo\" durante la giornata."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stell dir einen Alarm, um ihm/ihr heute \"Ich liebe dich\" zu schicken."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Define um alarme para te lembrares de lhe enviar \"amo-te\" durante o dia."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Programa una alarma para recordarte enviarle un «te amo» durante el día."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Defina um alarme para lembrar de enviar \"eu te amo\" durante o dia."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Imposta una sveglia per ricordarti di scrivergli \"Ti amo\" durante la giornata."
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zet een alarm om jezelf eraan te herinneren ze overdag \"Ik hou van je\" te sturen."
           }
         }
       }
     },
-    "daily_challenge_7" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Take a photo of something that reminds you of your partner and send it to them."
+    "daily_challenge_7": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Take a photo of something that reminds you of your partner and send it to them."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faites une photo de quelque chose qui vous rappelle votre partenaire et envoyez-lui."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mach ein Foto von etwas, das dich an deinen Partner/deine Partnerin erinnert, und sende es."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Faites une photo de quelque chose qui vous rappelle votre partenaire et envoyez-lui."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toma una foto de algo que te recuerde a tu pareja y envíasela."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mach ein Foto von etwas, das dich an deinen Partner/deine Partnerin erinnert, und sende es."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scatta una foto di qualcosa che ti fa pensare al tuo partner e inviagliela."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Toma una foto de algo que te recuerde a tu pareja y envíasela."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tira uma foto de algo que te lembre do teu parceiro e envia-lha."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Scatta una foto di qualcosa che ti fa pensare al tuo partner e inviagliela."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tire uma foto de algo que lembre seu parceiro e envie para ele(a)."
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maak een foto van iets dat je aan je partner doet denken en stuur het naar hen."
+          }
         }
       }
     },
-    "daily_challenge_8" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Give them an affectionate nickname just for today."
+    "daily_challenge_8": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Give them an affectionate nickname just for today."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Donnez-lui un surnom affectueux juste pour aujourd'hui."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gib ihm/ihr nur für heute einen süßen Spitznamen."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dale un apodo cariñoso solo por hoy."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Donnez-lui un surnom affectueux juste pour aujourd'hui."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dagli un soprannome affettuoso solo per oggi."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gib ihm/ihr nur für heute einen süßen Spitznamen."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dá-lhe um apelido carinhoso só por hoje."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dale un apodo cariñoso solo por hoy."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dê a ele(a) um apelido carinhoso só por hoje."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dagli un soprannome affettuoso solo per oggi."
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geef ze voor vandaag een lieve bijnaam."
           }
         }
       }
     },
-    "daily_challenge_9" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ask them a question you've never asked them before."
+    "daily_challenge_9": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ask them a question you've never asked them before."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Posez-lui une question que vous ne lui avez jamais posée."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stell ihm/ihr eine Frage, die du noch nie gestellt hast."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hazle una pregunta que nunca le hayas hecho."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Posez-lui une question que vous ne lui avez jamais posée."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fagli una domanda che non gli hai mai fatto prima."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stell ihm/ihr eine Frage, die du noch nie gestellt hast."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faz-lhe uma pergunta que nunca lhe tenhas feito."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hazle una pregunta que nunca le hayas hecho."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faça uma pergunta que você nunca fez para ele(a)."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fagli una domanda che non gli hai mai fatto prima."
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stel hen een vraag die je nog nooit eerder hebt gesteld."
           }
         }
       }
     },
-    "daily_challenge_10" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Create together a list of 10 things you love doing together."
+    "daily_challenge_10": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create together a list of 10 things you love doing together."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Faites ensemble une liste de 10 choses que vous aimez faire ensemble."
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faites ensemble une liste de 10 choses que vous aimez faire ensemble."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Erstellt zusammen eine Liste mit 10 Sachen, die ihr gern zusammen macht."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erstellt zusammen eine Liste mit 10 Sachen, die ihr gern zusammen macht."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Haced juntos una lista de 10 cosas que os encanta hacer juntos."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Haced juntos una lista de 10 cosas que os encanta hacer juntos."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Create insieme una lista di 10 cose che amate fare insieme."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create insieme una lista di 10 cose che amate fare insieme."
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Criem juntos uma lista de 10 coisas que adoram fazer juntos."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Criem juntos uma lista de 10 coisas que adoram fazer juntos."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maak samen een lijst van 10 dingen die jullie graag samen doen."
+          }
         }
       }
     },
-    "daily_challenge_11" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Compliment them on something they don't notice about themselves."
+    "daily_challenge_11": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compliment them on something they don't notice about themselves."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Faites-lui un compliment sur quelque chose qu'il/elle ne remarque pas chez lui/elle."
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faites-lui un compliment sur quelque chose qu'il/elle ne remarque pas chez lui/elle."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mach ihm/ihr ein Kompliment für etwas, das er/sie an sich selbst nicht sieht."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mach ihm/ihr ein Kompliment für etwas, das er/sie an sich selbst nicht sieht."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hazle un cumplido sobre algo que no nota de sí."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hazle un cumplido sobre algo que no nota de sí."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fai al tuo partner un complimento su qualcosa che non nota di sé."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fai al tuo partner un complimento su qualcosa che non nota di sé."
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elogia-o(a) por algo que ele(a) não nota em si."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elogie-o(a) por algo que ele(a) não percebe sobre si."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geef hen een compliment over iets dat ze zelf niet opmerken."
+          }
         }
       }
     },
-    "daily_challenge_12" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Teach them something you know how to do."
+    "daily_challenge_12": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teach them something you know how to do."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apprenez-lui quelque chose que vous savez faire."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bring ihm/ihr etwas bei, das du kannst."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Apprenez-lui quelque chose que vous savez faire."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enséñale algo que sabes hacer."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bring ihm/ihr etwas bei, das du kannst."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Insegnagli qualcosa che sai fare."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Enséñale algo que sabes hacer."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ensina-lhe algo que sabes fazer."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Insegnagli qualcosa che sai fare."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ensine algo que você sabe fazer."
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leer hen iets wat jij kunt."
+          }
         }
       }
     },
-    "daily_challenge_13" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Before going to bed, end the day with 3 \"I love you\"s, each in a different tone or form."
+    "daily_challenge_13": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Before going to bed, end the day with 3 \"I love you\"s, each in a different tone or form."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avant d'aller vous coucher, terminez la journée par 3 \"je t'aime\", chacun dans un ton ou une forme différente."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Avant d'aller vous coucher, terminez la journée par 3 \"je t'aime\", chacun dans un ton ou une forme différente."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bevor ihr schlafen geht: Sagt dreimal \"Ich liebe dich\" – jedes Mal in einem anderen Ton/Stil."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bevor ihr schlafen geht: Sagt dreimal \"Ich liebe dich\" – jedes Mal in einem anderen Ton/Stil."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Antes de ir a dormir, termina el día con 3 «te amo», cada uno en un tono o forma diferente."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Antes de ir a dormir, termina el día con 3 «te amo», cada uno en un tono o forma diferente."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prima di andare a letto, concludete la giornata con 3 \"Ti amo\", ognuno in un tono o forma diversa."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Prima di andare a letto, concludete la giornata con 3 \"Ti amo\", ognuno in un tono o forma diversa."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Antes de ires dormir, termina o dia com 3 \"amo-te\", cada um com um tom ou forma diferente."
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Antes de dormir, termine o dia com 3 \"eu te amo\", cada um em um tom ou forma diferente."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sluit de dag voor het slapen af met drie keer \"Ik hou van je\", telkens in een andere toon of vorm."
+          }
         }
       }
     },
-    "daily_challenge_14" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Write a digital love letter and send it by email."
+    "daily_challenge_14": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Write a digital love letter and send it by email."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Écrivez une lettre d'amour numérique et envoyez-la par mail."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schreib einen digitalen Liebesbrief und schick ihn per Mail."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escribe una carta de amor digital y envíala por correo electrónico."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Écrivez une lettre d'amour numérique et envoyez-la par mail."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scrivi una lettera d'amore digitale e inviala via e-mail."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schreib einen digitalen Liebesbrief und schick ihn per Mail."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escreve uma carta de amor digital e envia-a por e-mail."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Escribe una carta de amor digital y envíala por correo electrónico."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escreva uma carta de amor digital e envie por e-mail."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Scrivi una lettera d'amore digitale e inviala via e-mail."
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schrijf een digitale liefdesbrief en verstuur die per e-mail."
           }
         }
       }
     },
-    "daily_challenge_15" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Have a video call and eat the same meal at the same time."
+    "daily_challenge_15": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Have a video call and eat the same meal at the same time."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faites une visio et mangez le même repas en même temps."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Macht einen Video-Call und esst zur gleichen Zeit dasselbe Gericht."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Haced una videollamada y comed la misma comida al mismo tiempo."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Faites une visio et mangez le même repas en même temps."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fate una videochiamata e mangiate lo stesso pasto alla stessa ora."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Macht einen Video-Call und esst zur gleichen Zeit dasselbe Gericht."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Façam uma videochamada e comam a mesma refeição ao mesmo tempo."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Haced una videollamada y comed la misma comida al mismo tiempo."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Façam uma chamada de vídeo e comam a mesma refeição ao mesmo tempo."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fate una videochiamata e mangiate lo stesso pasto alla stessa ora."
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voer een videogesprek en eet tegelijkertijd dezelfde maaltijd."
           }
         }
       }
     },
-    "daily_challenge_16" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Exchange a voice message that starts with: \"I wanted to tell you…\""
+    "daily_challenge_16": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Exchange a voice message that starts with: \"I wanted to tell you…\""
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Échangez un message vocal qui commence par : \"Je voulais te dire…\""
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tauscht eine Sprachnachricht aus, die mit: \"Ich wollte dir sagen…\" beginnt."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Échangez un message vocal qui commence par : \"Je voulais te dire…\""
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Intercambiad un mensaje de voz que empiece con: «Quería decirte…»"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tauscht eine Sprachnachricht aus, die mit: \"Ich wollte dir sagen…\" beginnt."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scambiatevi un messaggio vocale che inizi con: \"Volevo dirti…\""
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Intercambiad un mensaje de voz que empiece con: «Quería decirte…»"
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Troquem uma mensagem de voz que comece com: \"Queria dizer-te...\""
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Scambiatevi un messaggio vocale che inizi con: \"Volevo dirti…\""
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Troquem uma mensagem de voz que comece com: \"Queria te dizer...\""
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wissel een spraakbericht uit dat begint met: 'Ik wilde je zeggen…'"
+          }
         }
       }
     },
-    "daily_challenge_17" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Make a call where you only speak in another language (even clumsily) to laugh together."
+    "daily_challenge_17": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Make a call where you only speak in another language (even clumsily) to laugh together."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faites un appel où vous ne parlez que dans une autre langue (même maladroitement) pour rigoler ensemble."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Macht einen Call, in dem ihr nur in einer anderen Sprache sprecht (auch wenn’s holprig ist) – zum Lachen."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Haced una llamada en la que solo habléis en otro idioma (aunque sea torpemente) para reír juntos."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Faites un appel où vous ne parlez que dans une autre langue (même maladroitement) pour rigoler ensemble."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fate una chiamata in cui parlate solo in un'altra lingua (anche goffamente) per ridere insieme."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Macht einen Call, in dem ihr nur in einer anderen Sprache sprecht (auch wenn’s holprig ist) – zum Lachen."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faz uma chamada em que só falas noutra língua (mesmo atrapalhado) para rirem juntos."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Haced una llamada en la que solo habléis en otro idioma (aunque sea torpemente) para reír juntos."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faça uma ligação falando apenas em outra língua (mesmo atrapalhado) para rirem juntos."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fate una chiamata in cui parlate solo in un'altra lingua (anche goffamente) per ridere insieme."
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bel elkaar en praat alleen in een andere taal (hoe onbeholpen ook) om samen te lachen."
           }
         }
       }
     },
-    "daily_challenge_18" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Send a video where you tell them how you feel today."
+    "daily_challenge_18": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send a video where you tell them how you feel today."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envoyez une vidéo où vous lui dites ce que vous ressentez aujourd'hui."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schick ein Video, in dem du sagst, wie du dich heute fühlst."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envía un video en el que le cuentes cómo te sientes hoy."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Envoyez une vidéo où vous lui dites ce que vous ressentez aujourd'hui."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invia un video in cui gli dici come ti senti oggi."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schick ein Video, in dem du sagst, wie du dich heute fühlst."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envia um vídeo a dizer-lhe como te sentes hoje."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Envía un video en el que le cuentes cómo te sientes hoy."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envie um vídeo dizendo como você se sente hoje."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Invia un video in cui gli dici come ti senti oggi."
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stuur een video waarin je vertelt hoe je je vandaag voelt."
           }
         }
       }
     },
-    "daily_challenge_19" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Send a photo of your hand with a heart drawn on it and their name inside."
+    "daily_challenge_19": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send a photo of your hand with a heart drawn on it and their name inside."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Envoyez une photo de votre main avec un cœur dessiné dessus et son nom dedans."
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envoyez une photo de votre main avec un cœur dessiné dessus et son nom dedans."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schick ein Foto von deiner Hand mit einem gemalten Herz und seinem/ihrem Namen darin."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schick ein Foto von deiner Hand mit einem gemalten Herz und seinem/ihrem Namen darin."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Envía una foto de tu mano con un corazón dibujado y su nombre dentro."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envía una foto de tu mano con un corazón dibujado y su nombre dentro."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Invia una foto della tua mano con un cuore disegnato sopra e il suo nome all'interno."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invia una foto della tua mano con un cuore disegnato sopra e il suo nome all'interno."
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envia uma foto da tua mão com um coração desenhado e o nome dele(a) dentro."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envie uma foto da sua mão com um coração desenhado e o nome dele(a) dentro."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stuur een foto van je hand met een getekend hart en hun naam erin."
+          }
         }
       }
     },
-    "daily_challenge_20" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tell them a quality they underestimate about themselves."
+    "daily_challenge_20": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tell them a quality they underestimate about themselves."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dites-lui une qualité qu'il/elle sous-estime chez lui/elle."
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dites-lui une qualité qu'il/elle sous-estime chez lui/elle."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sag ihm/ihr eine Eigenschaft, die er/sie an sich unterschätzt."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sag ihm/ihr eine Eigenschaft, die er/sie an sich unterschätzt."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dile una cualidad que subestime de sí mismo/a."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dile una cualidad que subestime de sí mismo/a."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Digli una qualità che sottovaluta di sé."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Digli una qualità che sottovaluta di sé."
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diz-lhe uma qualidade que ele(a) subestima em si."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diga uma qualidade que ele(a) subestima em si."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vertel hen een eigenschap van zichzelf die ze onderschatten."
+          }
         }
       }
     },
-    "daily_challenge_21" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Offer them a surprise remote order (UberEats, Amazon…). (but be careful not to exceed €12, be creative)"
+    "daily_challenge_21": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Offer them a surprise remote order (UberEats, Amazon…). (but be careful not to exceed €12, be creative)"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Offrez-lui une commande surprise à distance (UberEats, Amazon…). (mais attention cela ne doit pas dépasser les 12€, soyez créatif)"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bestell eine Überraschung aus der Ferne (UberEats, Amazon…) bleib unter 12 € und sei kreativ."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Offrez-lui une commande surprise à distance (UberEats, Amazon…). (mais attention cela ne doit pas dépasser les 12€, soyez créatif)"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hazle un pedido sorpresa a distancia (UberEats, Amazon…). (pero cuidado de no superar los 12 €, sé creativo/a)"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bestell eine Überraschung aus der Ferne (UberEats, Amazon…) bleib unter 12 € und sei kreativ."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fagli un ordine a sorpresa a distanza (UberEats, Amazon…). (ma attenzione a non superare 12 €, sii creativo)"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hazle un pedido sorpresa a distancia (UberEats, Amazon…). (pero cuidado de no superar los 12 €, sé creativo/a)"
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oferece-lhe uma encomenda surpresa à distância (UberEats, Amazon...). (mas atenção para não exceder 12€, sê criativo)"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fagli un ordine a sorpresa a distanza (UberEats, Amazon…). (ma attenzione a non superare 12 €, sii creativo)"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ofereça a ele(a) um pedido surpresa à distância (UberEats, Amazon...). (mas cuidado para não passar de 12€, seja criativo)"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verras hen met een bestelling op afstand (UberEats, Amazon…). (let op: niet meer dan €12, wees creatief)"
+          }
         }
       }
     },
-    "daily_challenge_22" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Send a photo of a place where you'd like to be together."
+    "daily_challenge_22": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send a photo of a place where you'd like to be together."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envoyez une photo d'un endroit où vous aimeriez être ensemble."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Envoyez une photo d'un endroit où vous aimeriez être ensemble."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schick ein Foto von einem Ort, an dem ihr gern zusammen wärt."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schick ein Foto von einem Ort, an dem ihr gern zusammen wärt."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envía una foto de un lugar donde te gustaría estar juntos."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Envía una foto de un lugar donde te gustaría estar juntos."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invia una foto di un posto in cui ti piacerebbe essere insieme."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Invia una foto di un posto in cui ti piacerebbe essere insieme."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envia uma foto de um lugar onde gostarias de estar com ele(a)."
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envie uma foto de um lugar onde gostaria de estar com ele(a)."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stuur een foto van een plek waar je graag samen zou zijn."
+          }
         }
       }
     },
-    "daily_challenge_23" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Send a 100% physical compliment, then a 100% inner one."
+    "daily_challenge_23": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send a 100% physical compliment, then a 100% inner one."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envoyez un compliment 100 % physique, puis un 100 % intérieur."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schick zuerst ein 100 % äußerliches Kompliment und danach ein 100 % inneres."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envía primero un cumplido 100 % físico y luego uno 100 % interior."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Envoyez un compliment 100 % physique, puis un 100 % intérieur."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invia un complimento 100% fisico, poi uno 100% interiore."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schick zuerst ein 100 % äußerliches Kompliment und danach ein 100 % inneres."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envia um elogio 100% físico e depois um 100% interior."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Envía primero un cumplido 100 % físico y luego uno 100 % interior."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envie um elogio 100% físico e depois um 100% interior."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Invia un complimento 100% fisico, poi uno 100% interiore."
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stuur eerst een 100% fysiek compliment, daarna een 100% innerlijk compliment."
           }
         }
       }
     },
-    "daily_challenge_24" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Each answer this question: \"How do you know that I love you?\""
+    "daily_challenge_24": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Each answer this question: \"How do you know that I love you?\""
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Répondez chacun à la question : \"Comment sais-tu que je t'aime ?\""
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beantwortet beide die Frage: \"Woran merkst du, dass ich dich liebe?\""
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Respondan cada uno a esta pregunta: «¿Cómo sabes que te amo?»"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Répondez chacun à la question : \"Comment sais-tu que je t'aime ?\""
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rispondete entrambi a questa domanda: \"Come fai a sapere che ti amo?\""
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Beantwortet beide die Frage: \"Woran merkst du, dass ich dich liebe?\""
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Respondam cada um a esta pergunta: \"Como sabes que eu te amo?\""
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Respondan cada uno a esta pregunta: «¿Cómo sabes que te amo?»"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada um responda a esta pergunta: \"Como você sabe que eu te amo?\""
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rispondete entrambi a questa domanda: \"Come fai a sapere che ti amo?\""
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beantwoord allebei deze vraag: 'Hoe weet je dat ik van je hou?'"
           }
         }
       }
     },
-    "daily_challenges_title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Daily Challenge"
+    "daily_challenges_title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daily Challenge"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Défi du jour"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tages‑Challenge"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Défi du jour"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desafío diario"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tages‑Challenge"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sfida quotidiana"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Desafío diario"
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desafio diário"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sfida quotidiana"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desafio diário"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dagelijkse uitdaging"
+          }
         }
       }
     },
-    "saved_challenges_title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Saved Challenges"
+    "saved_challenges_title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saved Challenges"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Défis sauvegardés"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gespeicherte Challenges"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desafíos guardados"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Défis sauvegardés"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sfide salvate"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gespeicherte Challenges"
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desafios guardados"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Desafíos guardados"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desafios salvos"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sfide salvate"
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opgeslagen uitdagingen"
           }
         }
       }
     },
-    "challenge_completed_button" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Complete challenge"
+    "challenge_completed_button": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Complete challenge"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compléter le défi"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Challenge erledigen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desafío completado"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Compléter le défi"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Completa la sfida"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Challenge erledigen"
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Concluir desafio"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Desafío completado"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Concluir desafio"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Completa la sfida"
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voltooi uitdaging"
           }
         }
       }
     },
-    "save_challenge_button" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Save challenge"
+    "save_challenge_button": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save challenge"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sauvegarder le défi"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sauvegarder le défi"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Challenge speichern"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Challenge speichern"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Guardar desafío"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardar desafío"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Salva la sfida"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salva la sfida"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardar desafio"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salvar desafio"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bewaar uitdaging"
+          }
         }
       }
     },
-    "challenge_saved_confirmation" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Challenge saved!"
+    "challenge_saved_confirmation": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Challenge saved!"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Défi sauvegardé !"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Défi sauvegardé !"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Challenge gespeichert!"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Challenge gespeichert!"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "¡Desafío guardado!"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¡Desafío guardado!"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sfida salvata!"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sfida salvata!"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desafio guardado!"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desafio salvo!"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uitdaging opgeslagen!"
+          }
         }
       }
     },
-    "delete_challenge_button" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Delete challenge"
+    "delete_challenge_button": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete challenge"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Supprimer le défi"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Challenge löschen"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Supprimer le défi"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eliminar desafío"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Challenge löschen"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elimina la sfida"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Eliminar desafío"
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eliminar desafio"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Elimina la sfida"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Excluir desafio"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verwijder uitdaging"
+          }
         }
       }
     },
-    "loading_challenge" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Loading your challenge..."
+    "loading_challenge": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading your challenge..."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chargement de votre défi..."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chargement de votre défi..."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deine Challenge wird geladen..."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Deine Challenge wird geladen..."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cargando tu desafío..."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cargando tu desafío..."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Caricamento della tua sfida..."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Caricamento della tua sfida..."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A carregar o teu desafio..."
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Carregando seu desafio..."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Je uitdaging wordt geladen..."
+          }
         }
       }
     },
-    "no_challenge_available" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No challenge available"
+    "no_challenge_available": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No challenge available"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun défi disponible"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Challenge verfügbar"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay desafío disponible"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aucun défi disponible"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessuna sfida disponibile"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keine Challenge verfügbar"
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nenhum desafio disponível"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No hay desafío disponible"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nenhum desafio disponível"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nessuna sfida disponibile"
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen uitdaging beschikbaar"
           }
         }
       }
     },
-    "come_back_tomorrow_challenge" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Come back tomorrow to discover a new challenge!"
+    "come_back_tomorrow_challenge": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Come back tomorrow to discover a new challenge!"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revenez demain pour découvrir un nouveau défi !"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Komm morgen wieder und entdecke eine neue Challenge!"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¡Vuelve mañana para descubrir un nuevo desafío!"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Revenez demain pour découvrir un nouveau défi !"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Torna domani per scoprire una nuova sfida!"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Komm morgen wieder und entdecke eine neue Challenge!"
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Volta amanhã para descobrir um novo desafio!"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "¡Vuelve mañana para descubrir un nuevo desafío!"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Volte amanhã para descobrir um novo desafio!"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Torna domani per scoprire una nuova sfida!"
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kom morgen terug om een nieuwe uitdaging te ontdekken!"
           }
         }
       }
     },
-    "paywall_challenges_title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "You've reached the free challenges limit 🎯"
+    "paywall_challenges_title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You've reached the free challenges limit 🎯"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu as atteint la limite des défis gratuits 🎯"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Du hast das Limit der Gratis‑Challenges erreicht 🎯"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tu as atteint la limite des défis gratuits 🎯"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Has alcanzado el límite de desafíos gratuitos 🎯"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Du hast das Limit der Gratis‑Challenges erreicht 🎯"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hai raggiunto il limite delle sfide gratuite 🎯"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Has alcanzado el límite de desafíos gratuitos 🎯"
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Atingiste o limite de desafios gratuitos 🎯"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hai raggiunto il limite delle sfide gratuite 🎯"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você atingiu o limite de desafios gratuitos 🎯"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Je hebt de limiet van gratis uitdagingen bereikt 🎯"
+          }
         }
       }
     },
-    "paywall_challenges_subtitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Every day, a new challenge to take on together. Simple but powerful gestures to nurture your complicity and break out of the routine. Your new challenges are waiting for you.."
+    "paywall_challenges_subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Every day, a new challenge to take on together. Simple but powerful gestures to nurture your complicity and break out of the routine. Your new challenges are waiting for you.."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chaque jour, un nouveau défi à relever ensemble. Des gestes simples, mais puissants pour nourrir votre complicité et sortir du quotidien. Vos nouveaux défis vous attendent.."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jeden Tag eine neue Challenge für euch. Einfache, aber starke Gesten, um eure Verbundenheit zu pflegen und der Routine zu entkommen. Eure neuen Challenges warten auf euch.."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada día, un nuevo desafío para realizar juntos. Gestos simples pero poderosos para nutrir su complicidad y salir de la rutina. Tus nuevos desafíos te esperan."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chaque jour, un nouveau défi à relever ensemble. Des gestes simples, mais puissants pour nourrir votre complicité et sortir du quotidien. Vos nouveaux défis vous attendent.."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ogni giorno, una nuova sfida da affrontare insieme. Gesti semplici ma potenti per coltivare la vostra complicità e rompere la routine. Le vostre nuove sfide vi aspettano.."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jeden Tag eine neue Challenge für euch. Einfache, aber starke Gesten, um eure Verbundenheit zu pflegen und der Routine zu entkommen. Eure neuen Challenges warten auf euch.."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todos os dias, um novo desafio para enfrentarem juntos. Gestos simples mas poderosos para alimentar a vossa cumplicidade e sair da rotina. Os vossos novos desafios estão à vossa espera."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cada día, un nuevo desafío para realizar juntos. Gestos simples pero poderosos para nutrir su complicidad y salir de la rutina. Tus nuevos desafíos te esperan."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todos os dias, um novo desafio para encararem juntos. Gestos simples mas poderosos para nutrir a cumplicidade e sair da rotina. Seus novos desafios estão esperando por você."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ogni giorno, una nuova sfida da affrontare insieme. Gesti semplici ma potenti per coltivare la vostra complicità e rompere la routine. Le vostre nuove sfide vi aspettano.."
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elke dag een nieuwe uitdaging om jullie verbondenheid te voeden en de sleur te doorbreken. Jullie nieuwe uitdagingen wachten op jullie."
           }
         }
       }
     },
-    "paywall_page_title_challenges" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Daily Challenges"
+    "paywall_page_title_challenges": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daily Challenges"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Défis du Jour"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tägliche Challenges"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desafíos diarios"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Défis du Jour"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sfide quotidiane"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tägliche Challenges"
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desafios diários"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Desafíos diarios"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desafios diários"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sfide quotidiane"
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dagelijkse uitdagingen"
           }
         }
       }
     },
-    "continue_button" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Continue"
+    "continue_button": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Continuer"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuer"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Weiter"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weiter"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Continuar"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuar"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Continua"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continua"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuar"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuar"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Doorgaan"
+          }
         }
       }
     },
-    "paywall_continue_button" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unlock Premium Access"
+    "paywall_continue_button": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlock Premium Access"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Débloque l'accès premium"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Débloque l'accès premium"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Premium freischalten"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premium freischalten"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Desbloquear acceso Premium"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desbloquear acceso Premium"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sblocca l'accesso Premium"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sblocca l'accesso Premium"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desbloquear Acesso Premium"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desbloquear Acesso Premium"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premium toegang ontgrendelen"
+          }
         }
       }
     },
-    "daily_challenge_intro_title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Take on every challenge together 🎯"
+    "daily_challenge_intro_title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Take on every challenge together 🎯"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Relevez chaque défi à deux 🎯"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nehmt jede Challenge gemeinsam an 🎯"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Relevez chaque défi à deux 🎯"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enfrenten cada desafío juntos 🎯"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nehmt jede Challenge gemeinsam an 🎯"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Affrontate ogni sfida insieme 🎯"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Enfrenten cada desafío juntos 🎯"
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enfrentem cada desafio juntos 🎯"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Affrontate ogni sfida insieme 🎯"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Encarem cada desafio juntos 🎯"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ga elke uitdaging samen aan 🎯"
+          }
         }
       }
     },
-    "daily_challenge_intro_subtitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Every day, a new challenge to strengthen your bond and grow your relationship through meaningful shared actions.\nConnect to start the journey together."
+    "daily_challenge_intro_subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Every day, a new challenge to strengthen your bond and grow your relationship through meaningful shared actions.\nConnect to start the journey together."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chaque jour, un nouveau défi conçu pour renforcer votre complicité et faire grandir votre relation à travers des petites actions sincères.\nConnectez-vous pour commencer l'aventure ensemble."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chaque jour, un nouveau défi conçu pour renforcer votre complicité et faire grandir votre relation à travers des petites actions sincères.\nConnectez-vous pour commencer l'aventure ensemble."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jeden Tag eine neue Challenge, die eure Bindung stärkt und eure Beziehung mit echten, kleinen Taten wachsen lässt.\nVerbindet euch, um gemeinsam zu starten."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jeden Tag eine neue Challenge, die eure Bindung stärkt und eure Beziehung mit echten, kleinen Taten wachsen lässt.\nVerbindet euch, um gemeinsam zu starten."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada día, un nuevo desafío para fortalecer su vínculo y hacer crecer su relación mediante acciones compartidas con sentido.\nConéctense para comenzar el viaje juntos."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cada día, un nuevo desafío para fortalecer su vínculo y hacer crecer su relación mediante acciones compartidas con sentido.\nConéctense para comenzar el viaje juntos."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ogni giorno, una nuova sfida per rafforzare il vostro legame e far crescere la vostra relazione attraverso azioni condivise significative.\nConnettetevi per iniziare il viaggio insieme."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ogni giorno, una nuova sfida per rafforzare il vostro legame e far crescere la vostra relazione attraverso azioni condivise significative.\nConnettetevi per iniziare il viaggio insieme."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todos os dias, um novo desafio para fortalecer a vossa ligação e fazer crescer a relação através de ações partilhadas com significado.\nLiga-te para começar a aventura juntos."
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todos os dias, um novo desafio para fortalecer o vínculo e fazer seu relacionamento crescer através de ações compartilhadas com significado.\nConecte-se para começar a jornada juntos."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elke dag een nieuwe uitdaging om jullie band te versterken en jullie relatie te laten groeien met betekenisvolle gedeelde acties.\nVerbind om samen aan de reis te beginnen."
+          }
         }
       }
     },
-    "connect_partner_button" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Connect my partner"
+    "connect_partner_button": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connect my partner"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connecter mon partenaire"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meinen Partner verbinden"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conectar a mi pareja"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Connecter mon partenaire"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connetti il mio partner"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Meinen Partner verbinden"
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ligar o meu parceiro"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Conectar a mi pareja"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conectar meu parceiro"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Connetti il mio partner"
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verbind mijn partner"
           }
         }
       }
     },
-    "daily_challenge_25" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Draw an animal that represents your partner and send it to them."
+    "daily_challenge_25": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Draw an animal that represents your partner and send it to them."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dessinez un animal qui représente votre partenaire selon vous… et envoyez-le."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeichne ein Tier, das deinen Partner/deine Partnerin symbolisiert, und schick es rüber."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dibuja un animal que represente a tu pareja y envíaselo."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dessinez un animal qui représente votre partenaire selon vous… et envoyez-le."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Disegna un animale che rappresenti il tuo partner e inviaglielo."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zeichne ein Tier, das deinen Partner/deine Partnerin symbolisiert, und schick es rüber."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desenha um animal que represente o teu parceiro e envia-lho."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dibuja un animal que represente a tu pareja y envíaselo."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desenhe um animal que represente seu parceiro e envie para ele(a)."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Disegna un animale che rappresenti il tuo partner e inviaglielo."
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teken een dier dat je partner vertegenwoordigt en stuur het naar hen."
           }
         }
       }
     },
-    "daily_challenge_26" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Describe your partner in 3 hashtags and share them."
+    "daily_challenge_26": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Describe your partner in 3 hashtags and share them."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Décrivez votre partenaire en 3 hashtags… et partagez-les."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beschreibe deinen Partner/deine Partnerin in 3 Hashtags und teile sie."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Décrivez votre partenaire en 3 hashtags… et partagez-les."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Describe a tu pareja con 3 hashtags y compártelos."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Beschreibe deinen Partner/deine Partnerin in 3 Hashtags und teile sie."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descrivi il tuo partner con 3 hashtag e condividili."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Describe a tu pareja con 3 hashtags y compártelos."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descreve o teu parceiro em 3 hashtags e partilha-as."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Descrivi il tuo partner con 3 hashtag e condividili."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descreva seu parceiro em 3 hashtags e compartilhe."
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beschrijf je partner in 3 hashtags en deel ze."
+          }
         }
       }
     },
-    "daily_challenge_27" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Create together a golden rule for your relationship, something you'll never want to break."
+    "daily_challenge_27": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create together a golden rule for your relationship, something you'll never want to break."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Créez ensemble une règle d'or de votre couple, que vous ne voudrez jamais transgresser."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erstellt zusammen eine goldene Regel für eure Beziehung, die ihr nie brechen wollt."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Creen juntos una regla de oro para vuestra relación, algo que nunca querréis romper."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Créez ensemble une règle d'or de votre couple, que vous ne voudrez jamais transgresser."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create insieme una regola d'oro per la vostra relazione, qualcosa che non vorrete mai infrangere."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Erstellt zusammen eine goldene Regel für eure Beziehung, die ihr nie brechen wollt."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Criem juntos uma regra de ouro para a vossa relação, algo que nunca quererão quebrar."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Creen juntos una regla de oro para vuestra relación, algo que nunca querréis romper."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Criem juntos uma regra de ouro para o relacionamento, algo que vocês nunca queiram quebrar."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Create insieme una regola d'oro per la vostra relazione, qualcosa che non vorrete mai infrangere."
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bedenk samen een gouden regel voor jullie relatie, iets dat jullie nooit willen breken."
           }
         }
       }
     },
-    "daily_challenge_28" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mix your name with theirs to create a duo name (like a band name or cocktail)."
+    "daily_challenge_28": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mix your name with theirs to create a duo name (like a band name or cocktail)."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Transformez votre prénom + le sien en un nom de duo (comme un nom de groupe ou un cocktail.)"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Misch deinen Namen mit seinem/ihrem und erfindet einen Duo‑Namen (Bandname oder Cocktail‑Style)."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mezcla tu nombre con el suyo para crear un nombre de dúo (como el de un grupo o un cóctel)."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Transformez votre prénom + le sien en un nom de duo (comme un nom de groupe ou un cocktail.)"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mescola il tuo nome con il suo per creare un nome di duo (come quello di una band o di un cocktail)."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Misch deinen Namen mit seinem/ihrem und erfindet einen Duo‑Namen (Bandname oder Cocktail‑Style)."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mistura o teu nome com o dele(a) para criar um nome de duo (como o de uma banda ou cocktail)."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mezcla tu nombre con el suyo para crear un nombre de dúo (como el de un grupo o un cóctel)."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Misture seu nome com o dele(a) para criar um nome de dupla (como o de uma banda ou coquetel)."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mescola il tuo nome con il suo per creare un nome di duo (come quello di una band o di un cocktail)."
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mix je naam met die van je partner om een duo-naam te maken (zoals een bandnaam of cocktail)."
           }
         }
       }
     },
-    "daily_challenge_29" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Each create a \"magic love potion\" with ingredients like \"3 tears of laughter\", \"5 pinches of kisses\", etc."
+    "daily_challenge_29": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Each create a \"magic love potion\" with ingredients like \"3 tears of laughter\", \"5 pinches of kisses\", etc."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Inventez chacun une \"potion magique\" de votre amour (avec des ingrédients comme \"3 larmes de fou rire\", \"5 pincées de baisers\", etc.)"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inventez chacun une \"potion magique\" de votre amour (avec des ingrédients comme \"3 larmes de fou rire\", \"5 pincées de baisers\", etc.)"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Erfindet jeweils eine \"magische Liebes‑Potion\" mit Zutaten wie \"3 Tränen vor Lachen\", \"5 Prisen geklauter Küsse\" …"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erfindet jeweils eine \"magische Liebes‑Potion\" mit Zutaten wie \"3 Tränen vor Lachen\", \"5 Prisen geklauter Küsse\" …"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cread cada uno una «poción mágica de amor» con ingredientes como «3 lágrimas de risa», «5 pizcas de besos», etc."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cread cada uno una «poción mágica de amor» con ingredientes como «3 lágrimas de risa», «5 pizcas de besos», etc."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Create ognuno una \"pozione magica d'amore\" con ingredienti come \"3 lacrime di risate\", \"5 pizzichi di baci\", ecc."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create ognuno una \"pozione magica d'amore\" con ingredienti come \"3 lacrime di risate\", \"5 pizzichi di baci\", ecc."
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada um cria uma \"poção de amor mágica\" com ingredientes como \"3 lágrimas de riso\", \"5 pitadas de beijos\", etc."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada um cria uma \"poção mágica do amor\" com ingredientes como \"3 lágrimas de riso\", \"5 pitadas de beijos\", etc."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bedenk elk een 'magische liefdesdrank' met ingrediënten zoals '3 tranen van lachen', '5 snufjes kussen', enz."
+          }
         }
       }
     },
-    "daily_challenge_30" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Record a voice message speaking like a wildlife documentary narrator describing your partner."
+    "daily_challenge_30": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Record a voice message speaking like a wildlife documentary narrator describing your partner."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Faites un vocal en parlant comme un narrateur de documentaire animalier décrivant l'autre."
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faites un vocal en parlant comme un narrateur de documentaire animalier décrivant l'autre."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nimm eine Sprachnachricht auf, als wärst du Doku‑Sprecher über deinen Partner/deine Partnerin."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nimm eine Sprachnachricht auf, als wärst du Doku‑Sprecher über deinen Partner/deine Partnerin."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Graba un mensaje de voz hablando como un narrador de documental de fauna describiendo a tu pareja."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Graba un mensaje de voz hablando como un narrador de documental de fauna describiendo a tu pareja."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Registra un messaggio vocale parlando come il narratore di un documentario sulla natura che descrive il tuo partner."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Registra un messaggio vocale parlando come il narratore di un documentario sulla natura che descrive il tuo partner."
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grava uma mensagem de voz falando como um narrador de documentário de vida selvagem a descrever o teu parceiro."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grave uma mensagem de voz falando como um narrador de documentário de natureza descrevendo seu parceiro."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neem een spraakbericht op waarin je als een natuurdocumentaireverteller je partner beschrijft."
+          }
         }
       }
     },
-    "daily_challenge_31" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Imagine what a perfect day would look like if you were both 6-year-old kids together."
+    "daily_challenge_31": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Imagine what a perfect day would look like if you were both 6-year-old kids together."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Imaginez à quoi ressemblerait une journée parfaite si vous étiez deux enfants de 6 ans."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stellt euch vor, wie ein perfekter Tag wäre, wenn ihr zusammen 6 Jahre alt wärt."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Imaginez à quoi ressemblerait une journée parfaite si vous étiez deux enfants de 6 ans."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Imaginen cómo sería un día perfecto si ambos fueran niños de 6 años juntos."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stellt euch vor, wie ein perfekter Tag wäre, wenn ihr zusammen 6 Jahre alt wärt."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Immagina come sarebbe una giornata perfetta se foste entrambi bambini di 6 anni insieme."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Imaginen cómo sería un día perfecto si ambos fueran niños de 6 años juntos."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Imagina como seria um dia perfeito se fossem ambos crianças de 6 anos juntos."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Immagina come sarebbe una giornata perfetta se foste entrambi bambini di 6 anni insieme."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Imagine como seria um dia perfeito se vocês fossem duas crianças de 6 anos juntos."
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stel je voor hoe een perfecte dag eruitziet als jullie allebei 6-jarige kinderen waren."
+          }
         }
       }
     },
-    "daily_challenge_32" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tell the story of your first kiss (or first special moment) as if you were old and nostalgic."
+    "daily_challenge_32": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tell the story of your first kiss (or first special moment) as if you were old and nostalgic."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Racontez votre premier baiser ensemble (ou premier moment fort) comme si vous étiez vieux et nostalgiques."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Racontez votre premier baiser ensemble (ou premier moment fort) comme si vous étiez vieux et nostalgiques."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erzählt eure erste Kuss‑Story (oder den ersten besonderen Moment), als wärt ihr alt und nostalgisch."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Erzählt eure erste Kuss‑Story (oder den ersten besonderen Moment), als wärt ihr alt und nostalgisch."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuenta la historia de vuestro primer beso (o primer momento especial) como si fueras mayor y nostálgico/a."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cuenta la historia de vuestro primer beso (o primer momento especial) como si fueras mayor y nostálgico/a."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Racconta la storia del vostro primo bacio (o primo momento speciale) come se fossi anziano e nostalgico."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Racconta la storia del vostro primo bacio (o primo momento speciale) come se fossi anziano e nostalgico."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conta a história do vosso primeiro beijo (ou primeiro momento especial) como se fosses velho(a) e nostálgico(a)."
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conte a história do primeiro beijo de vocês (ou primeiro momento especial) como se fossem velhos e nostálgicos."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vertel het verhaal van jullie eerste kus (of eerste speciale moment) alsof je oud en nostalgisch bent."
+          }
         }
       }
     },
-    "daily_challenge_33" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Each choose a fruit to symbolize your partner and explain why you picked it."
+    "daily_challenge_33": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Each choose a fruit to symbolize your partner and explain why you picked it."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choisissez chacun un fruit pour symboliser votre partenaire et expliquez pourquoi."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wählt jeweils eine Frucht, die euren Partner/eure Partnerin symbolisiert, und erklärt warum."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elijan cada uno una fruta para simbolizar a su pareja y expliquen por qué la escogieron."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Choisissez chacun un fruit pour symboliser votre partenaire et expliquez pourquoi."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scegli ognuno un frutto per simboleggiare il tuo partner e spiega perché l'hai scelto."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wählt jeweils eine Frucht, die euren Partner/eure Partnerin symbolisiert, und erklärt warum."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada um escolhe uma fruta para simbolizar o parceiro e explica porque a escolheu."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Elijan cada uno una fruta para simbolizar a su pareja y expliquen por qué la escogieron."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada um escolhe uma fruta para simbolizar o parceiro e explica por que a escolheu."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Scegli ognuno un frutto per simboleggiare il tuo partner e spiega perché l'hai scelto."
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kies ieder een vrucht om je partner te symboliseren en leg uit waarom je die koos."
           }
         }
       }
     },
-    "daily_challenge_34" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Create a rule for the \"world order of lovers\" that all couples should follow to be happy."
+    "daily_challenge_34": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create a rule for the \"world order of lovers\" that all couples should follow to be happy."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Créez une règle pour \"l'ordre mondial des amoureux\", que tous les couples devraient suivre pour être heureux."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erfindet eine Regel für die \"Weltordnung der Verliebten\", damit Paare glücklich sind."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crea una regla para el «orden mundial de los enamorados» que todas las parejas deban seguir para ser felices."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Créez une règle pour \"l'ordre mondial des amoureux\", que tous les couples devraient suivre pour être heureux."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crea una regola per l'\"ordine mondiale degli innamorati\" che tutte le coppie dovrebbero seguire per essere felici."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Erfindet eine Regel für die \"Weltordnung der Verliebten\", damit Paare glücklich sind."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cria uma regra para a \"ordem mundial dos amantes\" que todos os casais devem seguir para serem felizes."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Crea una regla para el «orden mundial de los enamorados» que todas las parejas deban seguir para ser felices."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crie uma regra para a \"ordem mundial dos apaixonados\" que todos os casais devem seguir para serem felizes."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Crea una regola per l'\"ordine mondiale degli innamorati\" che tutte le coppie dovrebbero seguire per essere felici."
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bedenk een regel voor de 'wereldorde van geliefden' die alle koppels moeten volgen om gelukkig te zijn."
           }
         }
       }
     },
-    "daily_challenge_35" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Call each other by a cartoon character name of your choice for the whole day."
+    "daily_challenge_35": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Call each other by a cartoon character name of your choice for the whole day."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Appelez-vous par le nom d'un personnage de dessin animé de votre choix toute la journée"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nennt euch den ganzen Tag über mit einem Cartoon‑Figur‑Namen eurer Wahl."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Appelez-vous par le nom d'un personnage de dessin animé de votre choix toute la journée"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Llámense por el nombre de un personaje de dibujos animados de vuestra elección durante todo el día."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nennt euch den ganzen Tag über mit einem Cartoon‑Figur‑Namen eurer Wahl."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chiamatevi per tutto il giorno con il nome di un personaggio dei cartoni a vostra scelta."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Llámense por el nombre de un personaje de dibujos animados de vuestra elección durante todo el día."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chamem-se pelo nome de um personagem de desenho animado à vossa escolha durante todo o dia."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chiamatevi per tutto il giorno con il nome di un personaggio dei cartoni a vostra scelta."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chamem-se pelo nome de um personagem de desenho animado à escolha durante todo o dia."
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noem elkaar de hele dag bij de naam van een tekenfilmfiguur naar keuze."
+          }
         }
       }
     },
-    "daily_challenge_36" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Each choose a color that represents your partner and explain why."
+    "daily_challenge_36": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Each choose a color that represents your partner and explain why."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choisissez chacun une couleur qui représente l'autre et expliquez pourquoi."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wählt jeweils eine Farbe, die den anderen repräsentiert, und erklärt warum."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elijan cada uno un color que represente a su pareja y expliquen por qué."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Choisissez chacun une couleur qui représente l'autre et expliquez pourquoi."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scegli ognuno un colore che rappresenti il tuo partner e spiega perché."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wählt jeweils eine Farbe, die den anderen repräsentiert, und erklärt warum."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada um escolhe uma cor que represente o parceiro e explica porquê."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Elijan cada uno un color que represente a su pareja y expliquen por qué."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada um escolhe uma cor que represente o parceiro e explica por quê."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Scegli ognuno un colore che rappresenti il tuo partner e spiega perché."
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kies ieder een kleur die je partner vertegenwoordigt en leg uit waarom."
           }
         }
       }
     },
-    "daily_challenge_37" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Create an \"imaginary perfect day\" with an hour-by-hour schedule of what you'd do together."
+    "daily_challenge_37": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create an \"imaginary perfect day\" with an hour-by-hour schedule of what you'd do together."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Créez une \"journée imaginaire\" idéale avec heure par heure ce que vous feriez ensemble."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plant einen \"perfekten Fantasie‑Tag\" mit Stundenplan, was ihr zusammen macht."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Creen un «día perfecto imaginario» con un horario hora por hora de lo que harían juntos."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Créez une \"journée imaginaire\" idéale avec heure par heure ce que vous feriez ensemble."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create una \"giornata perfetta immaginaria\" con un programma ora per ora di ciò che fareste insieme."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Plant einen \"perfekten Fantasie‑Tag\" mit Stundenplan, was ihr zusammen macht."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Criem um \"dia imaginário perfeito\" com um horário de hora a hora do que fariam juntos."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Creen un «día perfecto imaginario» con un horario hora por hora de lo que harían juntos."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Criem um \"dia perfeito imaginário\" com um cronograma hora a hora do que fariam juntos."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Create una \"giornata perfetta immaginaria\" con un programma ora per ora di ciò che fareste insieme."
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maak een 'denkbeeldige perfecte dag' met een uur-tot-uur schema van wat jullie samen zouden doen."
           }
         }
       }
     },
-    "daily_challenge_38" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Create a phrase to recite whenever you have doubts or during disagreements."
+    "daily_challenge_38": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create a phrase to recite whenever you have doubts or during disagreements."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Créez une phrase à réciter en cas de doute ou de dispute."
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Créez une phrase à réciter en cas de doute ou de dispute."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Erfindet einen Satz, den ihr bei Zweifeln oder Diskussionen aufsagt."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erfindet einen Satz, den ihr bei Zweifeln oder Diskussionen aufsagt."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Creen una frase para recitar cada vez que tengan dudas o durante desacuerdos."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Creen una frase para recitar cada vez que tengan dudas o durante desacuerdos."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Create una frase da recitare ogni volta che avete dubbi o durante i disaccordi."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create una frase da recitare ogni volta che avete dubbi o durante i disaccordi."
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cria uma frase para recitar sempre que tiveres dúvidas ou durante desentendimentos."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crie uma frase para recitar sempre que tiverem dúvidas ou durante desentendimentos."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bedenk een zin om op te zeggen wanneer je twijfels hebt of tijdens meningsverschillen."
+          }
         }
       }
     },
-    "daily_challenge_39" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Send a \"mirror voice note\": tell your love what you'd like to hear today."
+    "daily_challenge_39": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send a \"mirror voice note\": tell your love what you'd like to hear today."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Faites une \"note vocale miroir\" : dites à l'autre ce que vous aimeriez entendre aujourd'hui."
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faites une \"note vocale miroir\" : dites à l'autre ce que vous aimeriez entendre aujourd'hui."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schickt eine \"Spiegel‑Sprachnachricht\": Sag deinem Schatz, was du heute selbst gern hören würdest."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schickt eine \"Spiegel‑Sprachnachricht\": Sag deinem Schatz, was du heute selbst gern hören würdest."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Envía una «nota de voz espejo»: dile a tu amor lo que te gustaría oír hoy."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envía una «nota de voz espejo»: dile a tu amor lo que te gustaría oír hoy."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Invia una \"nota vocale specchio\": dì al tuo amore ciò che vorresti sentirti dire oggi."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invia una \"nota vocale specchio\": dì al tuo amore ciò che vorresti sentirti dire oggi."
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envia uma \"nota de voz espelho\": diz ao teu amor o que gostarias de ouvir hoje."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envie uma \"nota de voz espelho\": diga ao seu amor o que você gostaria de ouvir hoje."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stuur een 'spiegelspraakbericht': vertel je geliefde wat jij vandaag graag zou horen."
+          }
         }
       }
     },
-    "daily_challenge_40" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Draw a heart with your partner's name inside and send them the photo."
+    "daily_challenge_40": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Draw a heart with your partner's name inside and send them the photo."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dessinez un cœur avec le prénom de votre partenaire puis envoyez-lui la photo."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeichne ein Herz mit dem Namen deines Partners/deiner Partnerin hinein und schick das Foto."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dessinez un cœur avec le prénom de votre partenaire puis envoyez-lui la photo."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dibuja un corazón con el nombre de tu pareja dentro y envíale la foto."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zeichne ein Herz mit dem Namen deines Partners/deiner Partnerin hinein und schick das Foto."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Disegna un cuore con il nome del tuo partner dentro e inviagli la foto."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dibuja un corazón con el nombre de tu pareja dentro y envíale la foto."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desenha um coração com o nome do teu parceiro dentro e envia-lhe a foto."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Disegna un cuore con il nome del tuo partner dentro e inviagli la foto."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desenhe um coração com o nome do seu parceiro dentro e envie a foto."
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teken een hart met de naam van je partner erin en stuur hen de foto."
+          }
         }
       }
     },
-    "daily_challenge_41" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Give each other a unique nickname to use just for today."
+    "daily_challenge_41": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Give each other a unique nickname to use just for today."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Donnez-vous à chacun un surnom unique à utiliser aujourd'hui seulement."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Donnez-vous à chacun un surnom unique à utiliser aujourd'hui seulement."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gebt euch gegenseitig einen einzigartigen Spitznamen nur für heute."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gebt euch gegenseitig einen einzigartigen Spitznamen nur für heute."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dense un apodo único para usar solo hoy."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dense un apodo único para usar solo hoy."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Datevi un soprannome unico da usare solo per oggi."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Datevi un soprannome unico da usare solo per oggi."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dêem-se um apelido único para usar só hoje."
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deem um apelido único um ao outro para usar só hoje."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geef elkaar een unieke bijnaam om alleen vandaag te gebruiken."
+          }
         }
       }
     },
-    "daily_challenge_42" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Have a 2-minute video call without talking - just stare at each other. First one to look away or laugh loses!"
+    "daily_challenge_42": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Have a 2-minute video call without talking - just stare at each other. First one to look away or laugh loses!"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faites un visio de 2 minutes sans parler, ou vous devez-vous fixer et le premier qui tourne le regard ou rigole a perdu"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Macht einen 2‑Minuten‑Video‑Call ohne zu reden – nur anstarren. Wer zuerst wegschaut oder lacht, verliert!"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Haced una videollamada de 2 minutos sin hablar; solo mírense. ¡Quien mire hacia otro lado o se ría primero pierde!"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Faites un visio de 2 minutes sans parler, ou vous devez-vous fixer et le premier qui tourne le regard ou rigole a perdu"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fate una videochiamata di 2 minuti senza parlare - guardatevi e basta. Chi distoglie lo sguardo o ride per primo perde!"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Macht einen 2‑Minuten‑Video‑Call ohne zu reden – nur anstarren. Wer zuerst wegschaut oder lacht, verliert!"
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Façam uma videochamada de 2 minutos sem falar – apenas olhem um para o outro. Quem desviar o olhar ou se rir primeiro perde!"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Haced una videollamada de 2 minutos sin hablar; solo mírense. ¡Quien mire hacia otro lado o se ría primero pierde!"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Façam uma chamada de vídeo de 2 minutos sem falar – apenas se encarem. Quem desviar o olhar ou rir primeiro perde!"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fate una videochiamata di 2 minuti senza parlare - guardatevi e basta. Chi distoglie lo sguardo o ride per primo perde!"
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Doe een videogesprek van 2 minuten zonder te praten - kijk alleen naar elkaar. Degene die als eerste wegkijkt of lacht, verliest!"
           }
         }
       }
     },
-    "daily_challenge_43" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ask your partner: If I could surprise you right now, what would you want?"
+    "daily_challenge_43": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ask your partner: If I could surprise you right now, what would you want?"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demandez à votre partenaire Si je pouvais te faire une surprise maintenant, tu voudrais quoi ?"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Frag deinen Partner/deine Partnerin: Wenn ich dich jetzt überraschen könnte – was würdest du dir wünschen?"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pregunta a tu pareja: Si pudiera sorprenderte ahora mismo, ¿qué querrías?"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Demandez à votre partenaire Si je pouvais te faire une surprise maintenant, tu voudrais quoi ?"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chiedi al tuo partner: Se potessi sorprenderti adesso, cosa vorresti?"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Frag deinen Partner/deine Partnerin: Wenn ich dich jetzt überraschen könnte – was würdest du dir wünschen?"
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pergunta ao teu parceiro: Se eu pudesse surpreender-te agora, o que gostarias?"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pregunta a tu pareja: Si pudiera sorprenderte ahora mismo, ¿qué querrías?"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pergunte ao seu parceiro: Se eu pudesse te surpreender agora, o que você gostaria?"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chiedi al tuo partner: Se potessi sorprenderti adesso, cosa vorresti?"
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vraag je partner: Als ik je nu kon verrassen, wat zou je willen?"
           }
         }
       }
     },
-    "daily_challenge_44" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Write a sentence to your partner that you wish someone had told you when you were a child."
+    "daily_challenge_44": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Write a sentence to your partner that you wish someone had told you when you were a child."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Écrivez une phrase à votre partenaire que vous auriez aimé qu’on vous dise quand vous étiez enfant."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schreib deinem Schatz einen Satz, den du dir als Kind gewünscht hättest."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Écrivez une phrase à votre partenaire que vous auriez aimé qu’on vous dise quand vous étiez enfant."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escribe una frase a tu pareja que te hubiera gustado que alguien te dijera cuando eras niño/a."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schreib deinem Schatz einen Satz, den du dir als Kind gewünscht hättest."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scrivi al tuo partner una frase che avresti voluto sentirti dire da bambino."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Escribe una frase a tu pareja que te hubiera gustado que alguien te dijera cuando eras niño/a."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escreve uma frase ao teu parceiro que gostarias que alguém te tivesse dito quando eras criança."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Scrivi al tuo partner una frase che avresti voluto sentirti dire da bambino."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escreva uma frase para seu parceiro que você gostaria que tivessem te dito quando criança."
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schrijf een zin voor je partner die jij graag had gehoord toen je kind was."
+          }
         }
       }
     },
-    "daily_challenge_45" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Send each other \"I love you\" in a foreign language you don't speak."
+    "daily_challenge_45": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send each other \"I love you\" in a foreign language you don't speak."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envoyez-vous un \"je t'aime\" dans une langue étrangère que vous ne parlez pas."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schickt euch \"Ich liebe dich\" in einer Fremdsprache, die ihr nicht sprecht."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envíense «te amo» en un idioma extranjero que no habléis."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Envoyez-vous un \"je t'aime\" dans une langue étrangère que vous ne parlez pas."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mandatevi \"Ti amo\" in una lingua straniera che non parlate."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schickt euch \"Ich liebe dich\" in einer Fremdsprache, die ihr nicht sprecht."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enviem um ao outro \"amo-te\" numa língua estrangeira que não dominem."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Envíense «te amo» en un idioma extranjero que no habléis."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enviem \"eu te amo\" um ao outro em um idioma estrangeiro que vocês não falem."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mandatevi \"Ti amo\" in una lingua straniera che non parlate."
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stuur elkaar 'Ik hou van je' in een vreemde taal die jullie niet spreken."
           }
         }
       }
     },
-    "daily_challenge_46" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Find 2 topics you've never discussed together and talk about them tonight."
+    "daily_challenge_46": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Find 2 topics you've never discussed together and talk about them tonight."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trouvez 2 sujets de discussion que vous n’avez jamais abordés ensemble et parlez-en ce soir"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Findet 2 Themen, über die ihr noch nie geredet habt, und sprecht heute Abend darüber."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Encuentren 2 temas de los que nunca hayan hablado y conversen sobre ellos esta noche."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Trouvez 2 sujets de discussion que vous n’avez jamais abordés ensemble et parlez-en ce soir"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trovate 2 argomenti di cui non avete mai parlato insieme e discutetene stasera."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Findet 2 Themen, über die ihr noch nie geredet habt, und sprecht heute Abend darüber."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Encontrem 2 temas de que nunca falaram juntos e conversem sobre eles esta noite."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Encuentren 2 temas de los que nunca hayan hablado y conversen sobre ellos esta noche."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Encontrem 2 assuntos que nunca conversaram e falem sobre eles esta noite."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Trovate 2 argomenti di cui non avete mai parlato insieme e discutetene stasera."
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zoek 2 onderwerpen waarover jullie het nog nooit hebben gehad en praat er vanavond over."
           }
         }
       }
     },
-    "daily_challenge_47" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Write down three things you admire about each other and read them out loud."
+    "daily_challenge_47": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Write down three things you admire about each other and read them out loud."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Notez trois choses que vous admirez chez l'autre et lisez-les à voix haute."
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notez trois choses que vous admirez chez l'autre et lisez-les à voix haute."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schreibt drei Dinge auf, die ihr am anderen bewundert, und lest sie laut vor."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schreibt drei Dinge auf, die ihr am anderen bewundert, und lest sie laut vor."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Anoten tres cosas que admiran el uno del otro y léanlas en voz alta."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anoten tres cosas que admiran el uno del otro y léanlas en voz alta."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Scrivete tre cose che ammirate l'uno dell'altro e leggetele ad alta voce."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scrivete tre cose che ammirate l'uno dell'altro e leggetele ad alta voce."
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escrevam três coisas que admiram um no outro e leiam em voz alta."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escrevam três coisas que admiram um no outro e leiam em voz alta."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schrijf drie dingen op die je in elkaar bewondert en lees ze hardop voor."
+          }
         }
       }
     },
-    "daily_challenge_48" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Create a fictional memory together as if you actually lived it."
+    "daily_challenge_48": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create a fictional memory together as if you actually lived it."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Inventez ensemble un souvenir fictif comme si vous l'aviez vraiment vécu."
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inventez ensemble un souvenir fictif comme si vous l'aviez vraiment vécu."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Erfindet gemeinsam eine fiktive Erinnerung, als hättet ihr sie wirklich erlebt."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erfindet gemeinsam eine fiktive Erinnerung, als hättet ihr sie wirklich erlebt."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Creen juntos un recuerdo ficticio como si realmente lo hubieran vivido."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Creen juntos un recuerdo ficticio como si realmente lo hubieran vivido."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Create insieme un ricordo immaginario come se lo aveste davvero vissuto."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create insieme un ricordo immaginario come se lo aveste davvero vissuto."
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Criem juntos uma memória fictícia como se a tivessem vivido realmente."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Criem juntos uma lembrança fictícia como se realmente a tivessem vivido."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bedenk samen een fictieve herinnering alsof jullie die echt hebben beleefd."
+          }
         }
       }
     },
-    "daily_challenge_49" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Create a rule for the day (like: no saying \"no\", or starting every sentence with \"my love\"...)."
+    "daily_challenge_49": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create a rule for the day (like: no saying \"no\", or starting every sentence with \"my love\"...)."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Créez une règle pour la journée (ex : interdiction de dire \"non\", obligation de dire \"mon amour\" à chaque début de phrase…)."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erstellt eine Tagesregel (z. B.: kein \"Nein\" sagen oder jeden Satz mit \"mein Schatz\" beginnen)."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Créez une règle pour la journée (ex : interdiction de dire \"non\", obligation de dire \"mon amour\" à chaque début de phrase…)."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Establezcan una regla para el día (como: no decir «no» o comenzar cada frase con «mi amor»...)."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Erstellt eine Tagesregel (z. B.: kein \"Nein\" sagen oder jeden Satz mit \"mein Schatz\" beginnen)."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create una regola per la giornata (ad esempio: non dire 'no', o iniziare ogni frase con 'amore mio'...)."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Establezcan una regla para el día (como: no decir «no» o comenzar cada frase con «mi amor»...)."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Criem uma regra para o dia (por exemplo: não dizer \"não\" ou começar cada frase com \"meu amor\"...)."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Create una regola per la giornata (ad esempio: non dire 'no', o iniziare ogni frase con 'amore mio'...)."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Criem uma regra para o dia (por exemplo: não dizer \"não\" ou começar cada frase com \"meu amor\"...)."
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bedenk een regel voor de dag (zoals: geen 'nee' zeggen, of elke zin beginnen met 'mijn lief'...)."
+          }
         }
       }
     },
-    "daily_challenge_50" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Send them a photo of a place where you'd love to go together."
+    "daily_challenge_50": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send them a photo of a place where you'd love to go together."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envoyez-lui une photo d'un endroit où vous aimeriez aller avec lui/elle."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Envoyez-lui une photo d'un endroit où vous aimeriez aller avec lui/elle."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schick ein Foto von einem Ort, an den du sehr gern zusammen fahren würdest. "
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schick ein Foto von einem Ort, an den du sehr gern zusammen fahren würdest. "
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envíale una foto de un lugar al que te encantaría ir juntos."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Envíale una foto de un lugar al que te encantaría ir juntos."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inviagli una foto di un posto dove ti piacerebbe andare insieme."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Inviagli una foto di un posto dove ti piacerebbe andare insieme."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envia-lhe uma foto de um lugar para onde adorarias ir juntos."
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envie uma foto de um lugar para onde adoraria ir junto."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stuur hen een foto van een plek waar je graag samen naartoe zou gaan."
+          }
         }
       }
     },
-    "daily_challenge_51" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Imitate your partner's voice in an audio message (lovingly) and send it using their vocabulary."
+    "daily_challenge_51": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Imitate your partner's voice in an audio message (lovingly) and send it using their vocabulary."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Imitez la voix de l'autre en audio (gentiment) et envoyez-la lui (en utilisant son vocabulaire)"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Imitiere liebevoll die Stimme deines Partners/deiner Partnerin in einer Sprachnachricht mit seinem/ihrem typischen Vokabular."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Imita la voz de tu pareja en un mensaje de audio (con cariño) y envíalo usando su vocabulario."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Imitez la voix de l'autre en audio (gentiment) et envoyez-la lui (en utilisant son vocabulaire)"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Imita la voce del tuo partner in un messaggio audio (con affetto) e invialo usando il suo vocabolario."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Imitiere liebevoll die Stimme deines Partners/deiner Partnerin in einer Sprachnachricht mit seinem/ihrem typischen Vokabular."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Imita a voz do teu parceiro numa mensagem de áudio (com carinho) e envia-a usando o vocabulário dele(a)."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Imita la voz de tu pareja en un mensaje de audio (con cariño) y envíalo usando su vocabulario."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Imite a voz do seu parceiro em uma mensagem de áudio (com carinho) e envie usando o vocabulário dele(a)."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Imita la voce del tuo partner in un messaggio audio (con affetto) e invialo usando il suo vocabolario."
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Imiteer de stem van je partner in een audiobericht (liefdevol) en gebruik hun woordenschat."
           }
         }
       }
     },
-    "daily_challenge_52" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Write a Tinder bio for each other and share them."
+    "daily_challenge_52": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Write a Tinder bio for each other and share them."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Écrivez une bio Tinder de l'autre et envoyez-les-vous."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schreibt jeweils ein Tinder-Profil füreinander und teilt es."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escriban una bio de Tinder el uno para el otro y compártanlas."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Écrivez une bio Tinder de l'autre et envoyez-les-vous."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scrivete una bio Tinder l'uno per l'altro e condividetele."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schreibt jeweils ein Tinder-Profil füreinander und teilt es."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escrevam uma bio do Tinder um para o outro e partilhem-na."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Escriban una bio de Tinder el uno para el otro y compártanlas."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escrevam uma bio do Tinder um para o outro e compartilhem."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Scrivete una bio Tinder l'uno per l'altro e condividetele."
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schrijf een Tinder-bio voor elkaar en deel die."
           }
         }
       }
     },
-    "daily_challenge_53" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Exchange a message written with your \"non-dominant hand\" (left hand if you're right-handed)."
+    "daily_challenge_53": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Exchange a message written with your \"non-dominant hand\" (left hand if you're right-handed)."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Échangez un message écrit avec votre \"main non dominante\" (main gauche si vous êtes droitier)."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tauscht eine Nachricht aus, die ihr mit eurer \"nicht‑dominanten Hand\" geschrieben habt (links, wenn du Rechtshänder bist)."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Échangez un message écrit avec votre \"main non dominante\" (main gauche si vous êtes droitier)."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Intercambien un mensaje escrito con su «mano no dominante» (izquierda si eres diestro)."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tauscht eine Nachricht aus, die ihr mit eurer \"nicht‑dominanten Hand\" geschrieben habt (links, wenn du Rechtshänder bist)."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scambiatevi un messaggio scritto con la vostra \"mano non dominante\" (sinistra se siete destri)."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Intercambien un mensaje escrito con su «mano no dominante» (izquierda si eres diestro)."
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Troquem uma mensagem escrita com a tua \"mão não dominante\" (mão esquerda se fores destro)."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Scambiatevi un messaggio scritto con la vostra \"mano non dominante\" (sinistra se siete destri)."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Troquem uma mensagem escrita com a \"mão não dominante\" (mão esquerda se você for destro)."
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wissel een boodschap uit die je met je 'niet-dominante hand' hebt geschreven (linkerhand als je rechtshandig bent)."
+          }
         }
       }
     },
-    "daily_challenge_preparing" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Preparing…"
+    "daily_challenge_preparing": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparing…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Préparation en cours…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wird vorbereitet…"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparando…"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Préparation en cours…"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparazione…"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wird vorbereitet…"
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A preparar…"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Preparando…"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparando…"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Preparazione…"
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bezig met voorbereiden…"
           }
         }
       }
     },
-    "daily_challenge_preparing_subtitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "We are preparing your challenge"
+    "daily_challenge_preparing_subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We are preparing your challenge"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nous préparons votre défi"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wir bereiten deine Challenge vor"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estamos preparando tu desafío"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nous préparons votre défi"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stiamo preparando la tua sfida"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wir bereiten deine Challenge vor"
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estamos a preparar o teu desafio"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Estamos preparando tu desafío"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estamos preparando seu desafio"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stiamo preparando la tua sfida"
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We bereiden je uitdaging voor"
           }
         }
       }
     }
   },
-  "version" : "1.0"
+  "version": "1.0"
 }

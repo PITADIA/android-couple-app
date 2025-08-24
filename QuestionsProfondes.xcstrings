@@ -34,6 +34,24 @@
             "state" : "translated", 
             "value" : "Se oggi potessi liberarti di un peso interiore, quale sceglieresti?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se hoje pudesses libertar-te de um peso interior, qual escolherias?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se hoje você pudesse se libertar de um peso interior, qual escolheria?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als je jezelf vandaag van een innerlijke last zou kunnen bevrijden, welke zou je kiezen?"
+          }
         }
       }
     }, 
@@ -68,6 +86,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Secondo te, Internet, gli smartphone e le nuove tecnologie hanno reso il mondo migliore o peggiore?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na tua opinião, a Internet, os smartphones e as novas tecnologias tornaram o mundo melhor ou pior?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na sua opinião, a Internet, os smartphones e as novas tecnologias tornaram o mundo melhor ou pior?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vind jij dat internet, smartphones en nieuwe technologieën de wereld beter of slechter hebben gemaakt?"
           }
         }
       }
@@ -104,6 +140,24 @@
             "state" : "translated", 
             "value" : "Quale verità su te stesso/a ti fa ancora un po' paura affrontare?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que verdade sobre ti ainda te assusta um pouco enfrentar?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que verdade sobre você ainda te assusta um pouco encarar?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke waarheid over jezelf vind je nog steeds een beetje eng om onder ogen te zien?"
+          }
         }
       }
     }, 
@@ -138,6 +192,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Come sarebbe diversa la tua vita se fossi nato/a dell'altro sesso?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como seria diferente a tua vida se tivesses nascido do outro género?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como seria diferente sua vida se você tivesse nascido do outro gênero?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoe zou je leven anders zijn geweest als je als het andere geslacht was geboren?"
           }
         }
       }
@@ -174,6 +246,24 @@
             "state" : "translated", 
             "value" : "Quale parte del tuo passato hai imparato ad amare, nonostante il dolore?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que parte do teu passado aprendeste a amar, apesar da dor?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que parte do seu passado você aprendeu a amar, apesar da dor?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Van welk deel van je verleden heb je geleerd te houden, ondanks de pijn?"
+          }
         }
       }
     }, 
@@ -208,6 +298,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Cosa nascondi dietro la maschera che indossi in pubblico?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que escondes por trás da máscara que usas em público?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que você esconde por trás da máscara que usa em público?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat verberg je achter het masker dat je in het openbaar draagt?"
           }
         }
       }
@@ -244,6 +352,24 @@
             "state" : "translated", 
             "value" : "Quale emozione sepolta cerca ancora di riemergere a volte?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que emoção enterrada ainda tenta vir à tona às vezes?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que emoção enterrada ainda tenta vir à tona às vezes?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke begraven emotie probeert af en toe nog naar boven te komen?"
+          }
         }
       }
     }, 
@@ -278,6 +404,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se dovessi ricominciare la tua vita domani, cosa faresti diversamente fin dall'inizio?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se tivesses de recomeçar a tua vida amanhã, o que farias de diferente desde o início?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se você tivesse que recomeçar sua vida amanhã, o que faria diferente desde o começo?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als je morgen je leven opnieuw zou moeten beginnen, wat zou je vanaf het begin anders doen?"
           }
         }
       }
@@ -314,6 +458,24 @@
             "state" : "translated", 
             "value" : "Pensi di poter essere amico/a di qualcuno che ti attrae?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acham que se pode ser amigo de alguém por quem se sente atração?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acha que é possível ser amigo de alguém por quem você sente atração?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denk je dat je bevriend kunt zijn met iemand tot wie je je aangetrokken voelt?"
+          }
         }
       }
     }, 
@@ -348,6 +510,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Quale ferita emotiva stai ancora cercando di guarire oggi?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que ferida emocional ainda tentas curar hoje?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que ferida emocional você ainda tenta curar hoje?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke emotionele wond probeer je vandaag nog te helen?"
           }
         }
       }
@@ -384,6 +564,24 @@
             "state" : "translated", 
             "value" : "C'è stato un momento della tua vita in cui ti sei sentito/a completamente perso/a?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Há algum momento da tua vida em que te sentiste completamente perdido?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Há algum momento da sua vida em que você se sentiu completamente perdido?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is er een moment in je leven waarop je je totaal verloren voelde?"
+          }
         }
       }
     }, 
@@ -418,6 +616,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Quale persona ha avuto il maggiore impatto sulla tua vita?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que pessoa teve o maior impacto na tua vida?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que pessoa teve o maior impacto na sua vida?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke persoon heeft de grootste invloed op je leven gehad?"
           }
         }
       }
@@ -454,6 +670,24 @@
             "state" : "translated", 
             "value" : "Se ci fosse una materia da togliere a scuola, quale sceglieresti e con cosa la sostituiresti? Perché?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se pudesses retirar uma disciplina da escola, qual escolherias e com o que a substituirias? Porquê?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se pudesse retirar uma matéria da escola, qual escolheria e com o que a substituiria? Por quê?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als je een vak van school kon verwijderen, welk zou je kiezen en waarmee zou je het vervangen? Waarom?"
+          }
         }
       }
     }, 
@@ -488,6 +722,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Cosa non hai mai osato dire ai tuoi genitori, ma avresti voluto?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que nunca ousaste dizer aos teus pais, mas gostarias de ter dito?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que você nunca teve coragem de dizer aos seus pais, mas gostaria de ter dito?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat heb je nooit tegen je ouders durven zeggen, maar had je wel willen doen?"
           }
         }
       }
@@ -524,6 +776,24 @@
             "state" : "translated", 
             "value" : "Secondo te, nei prossimi 50 anni sarà più importante per la nostra società preservare le tradizioni o cambiarle?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na tua opinião, o que será mais importante para a nossa sociedade nos próximos 50 anos: preservar as tradições ou mudá-las?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na sua opinião, o que será mais importante para a nossa sociedade nos próximos 50 anos: preservar as tradições ou mudá-las?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat is volgens jou de komende 50 jaar het belangrijkst voor onze samenleving: onze tradities behouden of ze veranderen?"
+          }
         }
       }
     }, 
@@ -558,6 +828,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Cosa hai imparato su te stesso/a attraverso l'amore?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que aprendeste sobre ti através do amor?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que você aprendeu sobre si mesmo através do amor?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat heb je over jezelf geleerd door de liefde?"
           }
         }
       }
@@ -594,6 +882,24 @@
             "state" : "translated", 
             "value" : "Per cosa vorresti essere ricordato/a dopo la tua morte?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De que gostarias de ser lembrado após a tua morte?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De que você gostaria de ser lembrado depois da sua morte?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waarvoor zou je herinnerd willen worden na je dood?"
+          }
         }
       }
     }, 
@@ -628,6 +934,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Qual è il più grande errore che hai fatto e da cui hai imparato qualcosa?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual foi o maior erro que cometeste e do qual aprendeste algo?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual foi o maior erro que você cometeu e do qual aprendeu algo?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat is de grootste fout die je hebt gemaakt en waar je iets van hebt geleerd?"
           }
         }
       }
@@ -664,6 +988,24 @@
             "state" : "translated", 
             "value" : "Chi è stata la persona del tuo passato che si è trasformata in una lezione?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quem foi a pessoa do teu passado que se transformou numa lição?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quem foi a pessoa do seu passado que se transformou em uma lição?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie uit je verleden is voor jou een les geworden?"
+          }
         }
       }
     }, 
@@ -698,6 +1040,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Quando è stata l'ultima volta che ti sei sentito/a in imbarazzo?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quando foi a última vez que te sentiste envergonhado?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quando foi a última vez que você se sentiu envergonhado?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wanneer schaamde je je voor het laatst?"
           }
         }
       }
@@ -734,6 +1094,24 @@
             "state" : "translated", 
             "value" : "Se potessi rivivere più volte un solo anno della tua vita, quale sarebbe?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se pudesses reviver um ano da tua vida vezes sem conta, qual seria?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se você pudesse reviver um ano da sua vida várias vezes, qual seria?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als je één jaar van je leven steeds opnieuw zou kunnen beleven, welk jaar zou dat dan zijn?"
+          }
         }
       }
     }, 
@@ -768,6 +1146,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Quale tratto della tua infanzia hai mantenuto fino a oggi?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que traço de personalidade da tua infância mantiveste até hoje?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que traço de personalidade da sua infância você manteve até hoje?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke karaktereigenschap uit je kindertijd heb je tot op heden behouden?"
           }
         }
       }
@@ -804,6 +1200,24 @@
             "state" : "translated", 
             "value" : "Cosa pensi dell'astrologia e degli oroscopi?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que pensas sobre astrologia e horóscopos?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que você acha sobre astrologia e horóscopos?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat vind je van astrologie en horoscopen?"
+          }
         }
       }
     }, 
@@ -838,6 +1252,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Di cosa sei più orgoglioso/a di te stesso/a?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De que é que tens mais orgulho em ti?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do que você mais se orgulha em si mesmo?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waar ben je het meest trots op bij jezelf?"
           }
         }
       }
@@ -874,6 +1306,24 @@
             "state" : "translated", 
             "value" : "Quale aspetto di te ti fa soffrire di più in silenzio?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que aspecto de ti te faz sofrer mais em silêncio?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que aspecto seu faz você sofrer mais em silêncio?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welk aspect van jezelf doet je het meest in stilte lijden?"
+          }
         }
       }
     }, 
@@ -908,6 +1358,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Quale battaglia interiore stai combattendo senza dirlo a nessuno?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que batalha interior travas sem contar a ninguém?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que batalha interior você trava sem contar a ninguém?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke innerlijke strijd voer je zonder het iemand te vertellen?"
           }
         }
       }
@@ -944,6 +1412,24 @@
             "state" : "translated", 
             "value" : "Cosa rappresenta per te l'amicizia?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que representa a amizade para ti?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que a amizade representa para você?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat betekent vriendschap voor jou?"
+          }
         }
       }
     }, 
@@ -978,6 +1464,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Cosa pensi dell'amicizia tra uomo e donna? È sinceramente possibile?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que pensas sobre a amizade entre homem e mulher? Achas sinceramente que é possível?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que você pensa sobre amizade entre homem e mulher? Acha sinceramente que é possível?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat vind je van vriendschap tussen mannen en vrouwen? Is het oprecht mogelijk?"
           }
         }
       }
@@ -1014,6 +1518,24 @@
             "state" : "translated", 
             "value" : "Guardando indietro agli ultimi dieci anni, come sei cambiato/a? E sei felice di questa evoluzione?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Olhando para os últimos dez anos, como é que mudaste? E estás feliz com essa evolução?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Olhando para os últimos dez anos, como você mudou? E está feliz com essa evolução?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als je terugkijkt op de afgelopen tien jaar, hoe ben je veranderd? En ben je blij met die evolutie?"
+          }
         }
       }
     }, 
@@ -1048,6 +1570,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Come vorresti sentirti tra dieci anni, emotivamente o interiormente?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como gostarias de te sentir daqui a dez anos, emocionalmente ou interiormente?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como você gostaria de se sentir em dez anos, emocionalmente ou internamente?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoe zou je je over tien jaar willen voelen, emotioneel of innerlijk?"
           }
         }
       }
@@ -1084,6 +1624,24 @@
             "state" : "translated", 
             "value" : "Qual è il tuo più grande successo e il tuo più grande fallimento?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual é o teu maior sucesso e o teu maior fracasso?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual é o seu maior sucesso e o seu maior fracasso?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat is je grootste succes en je grootste mislukking?"
+          }
         }
       }
     }, 
@@ -1118,6 +1676,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Chi ha avuto il maggiore impatto sul tuo modo di vedere la vita?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quem teve o maior impacto na forma como vês a vida?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quem teve o maior impacto na forma como você vê a vida?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie heeft de grootste invloed gehad op hoe jij naar het leven kijkt?"
           }
         }
       }
@@ -1154,6 +1730,24 @@
             "state" : "translated", 
             "value" : "Quale errore ti ha insegnato di più nella vita?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que erro te ensinou mais na vida?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual erro mais te ensinou na vida?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke fout heeft je in het leven het meest geleerd?"
+          }
         }
       }
     }, 
@@ -1188,6 +1782,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Cosa ti aspetti davvero da una relazione sentimentale?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que esperas realmente de uma relação amorosa?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que você realmente espera de um relacionamento amoroso?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat verwacht je echt van een romantische relatie?"
           }
         }
       }
@@ -1224,6 +1836,24 @@
             "state" : "translated", 
             "value" : "Come vorresti essere visto/a o percepito/a dagli altri?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como gostarias que os outros te vissem ou percebessem?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como você gostaria que os outros te vissem ou percebessem?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoe wil je door anderen gezien of waargenomen worden?"
+          }
         }
       }
     }, 
@@ -1258,6 +1888,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Quali sono le sfide più grandi che stai affrontando in questo momento?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quais são os maiores desafios que estás a atravessar neste momento?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quais são os maiores desafios que você está enfrentando agora?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat zijn de grootste uitdagingen waar je momenteel doorheen gaat?"
           }
         }
       }
@@ -1294,6 +1942,24 @@
             "state" : "translated", 
             "value" : "Ti è mai capitato di essere il tuo peggior nemico? In quale contesto?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Já alguma vez foste o teu próprio inimigo? Em que contexto?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você já foi seu próprio inimigo? Em que contexto?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ben je ooit je eigen vijand geweest? In welke context?"
+          }
         }
       }
     }, 
@@ -1328,6 +1994,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "C'è qualcosa che sogni di fare ma non osi iniziare?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Há algo que sonhas fazer, mas não ousas começar?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Existe algo que você sonha em fazer, mas não tem coragem de começar?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is er iets waarvan je droomt om te doen, maar niet durft te beginnen?"
           }
         }
       }
@@ -1364,6 +2048,24 @@
             "state" : "translated", 
             "value" : "Per cosa sei più grato/a nella tua vita oggi?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De que é que estás mais grato na tua vida hoje?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pelo que você é mais grato na sua vida hoje?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waar ben je vandaag in je leven het meest dankbaar voor?"
+          }
         }
       }
     }, 
@@ -1398,6 +2100,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "C'è un argomento o un concetto che hai difficoltà a capire o anche solo a immaginare?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Há algum assunto ou conceito que tenhas dificuldade em compreender ou até imaginar?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Existe algum assunto ou conceito que você tenha dificuldade em entender ou até imaginar?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is er een onderwerp of concept dat je moeilijk kunt begrijpen of zelfs maar voorstellen?"
           }
         }
       }
@@ -1434,6 +2154,24 @@
             "state" : "translated", 
             "value" : "Quale verità rifiuti di ammettere su te stesso/a?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que verdade sobre ti recusas admitir?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual verdade sobre você que você se recusa a admitir?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke waarheid over jezelf weiger je toe te geven?"
+          }
         }
       }
     }, 
@@ -1468,6 +2206,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Come gestisci i tuoi momenti di tristezza?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como geres os teus momentos de tristeza?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como você lida com seus momentos de tristeza?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoe ga je om met je momenten van verdriet?"
           }
         }
       }
@@ -1504,6 +2260,24 @@
             "state" : "translated", 
             "value" : "Qual è il ricordo che ti ha segnato di più con tuo padre o tua madre?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual é a memória que mais te marcou com o teu pai ou a tua mãe?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual é a lembrança que mais marcou você com seu pai ou sua mãe?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke herinnering aan je vader of moeder heeft je het meest geraakt?"
+          }
         }
       }
     }, 
@@ -1538,6 +2312,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se potessi cancellare un ricordo, quale sarebbe?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se pudesses apagar uma memória, qual seria?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se você pudesse apagar uma lembrança, qual seria?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als je één herinnering kon wissen, welke zou dat zijn?"
           }
         }
       }
@@ -1574,6 +2366,24 @@
             "state" : "translated", 
             "value" : "Come definisci il successo? E quando ti sei sentito/a davvero riuscito/a?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como defines o sucesso? E quando sentiste que tinhas realmente conseguido?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como você define sucesso? E quando sentiu que realmente tinha conseguido?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoe definieer je succes? En wanneer had je het gevoel dat je echt geslaagd was?"
+          }
         }
       }
     }, 
@@ -1608,6 +2418,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Quale scelta difficile hai dovuto fare nella tua vita?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que escolha difícil tiveste de fazer na tua vida?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que escolha difícil você teve que fazer na sua vida?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke moeilijke keuze heb je in je leven moeten maken?"
           }
         }
       }
@@ -1644,6 +2472,24 @@
             "state" : "translated", 
             "value" : "Cosa ti irrita o ti fa arrabbiare facilmente?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que te irrita ou te enfurece facilmente?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que te irrita ou te deixa com raiva facilmente?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat irriteert je of maakt je snel boos?"
+          }
         }
       }
     }, 
@@ -1678,6 +2524,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Quale ricerca o obiettivo ti ha ossessionato a lungo ma alla fine hai abbandonato?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que busca ou objetivo te obcecava durante muito tempo, mas acabaste por abandonar?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual busca ou objetivo te obcecou por muito tempo, mas você acabou desistindo?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke zoektocht of welk doel heeft je lange tijd geobsedeerd, maar heb je uiteindelijk opgegeven?"
           }
         }
       }
@@ -1714,6 +2578,24 @@
             "state" : "translated", 
             "value" : "Cosa occupa la tua mente e a volte ti impedisce di dormire?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que ocupa a tua mente e às vezes te impede de dormir?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que ocupa sua mente e às vezes impede você de dormir?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat houdt je bezig en houdt je soms uit je slaap?"
+          }
         }
       }
     }, 
@@ -1748,6 +2630,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Pensi di conoscerti davvero?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achas que te conheces realmente?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acha que realmente se conhece?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denk je dat je jezelf echt kent?"
           }
         }
       }
@@ -1784,6 +2684,24 @@
             "state" : "translated", 
             "value" : "Cosa significa per te il vero amore?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que significa o verdadeiro amor para ti?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que o verdadeiro amor significa para você?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat betekent ware liefde voor jou?"
+          }
         }
       }
     }, 
@@ -1818,6 +2736,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "C'è un tratto del mio carattere che non capisci ancora ma vorresti comprendere?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Há algum traço de carácter em mim que ainda não compreendes mas gostarias de entender?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Existe algum traço de personalidade em mim que você ainda não entende, mas gostaria?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is er een karaktertrek in mij die je nog niet begrijpt, maar wel zou willen begrijpen?"
           }
         }
       }
@@ -1854,6 +2790,24 @@
             "state" : "translated", 
             "value" : "Come è cambiata la tua prima impressione su di me da quando ci siamo incontrati/e?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como mudou a tua primeira impressão de mim desde que nos conhecemos?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como mudou sua primeira impressão de mim desde que nos conhecemos?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoe is je eerste indruk van mij veranderd sinds we elkaar ontmoetten?"
+          }
         }
       }
     }, 
@@ -1888,6 +2842,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Qual è una cosa che i tuoi genitori hanno fatto e che rifiuti di ripetere nella tua vita?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que é algo que os teus pais fizeram e que recusas repetir na tua própria vida?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual atitude dos seus pais você se recusa a repetir na sua própria vida?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat hebben je ouders gedaan wat jij in je eigen leven weigert te herhalen?"
           }
         }
       }
@@ -1924,6 +2896,24 @@
             "state" : "translated", 
             "value" : "Secondo te, cosa significa riuscire nella vita?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na tua opinião, o que significa ter sucesso na vida?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na sua opinião, o que significa ter sucesso na vida?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat betekent het volgens jou om in het leven succes te hebben?"
+          }
         }
       }
     }, 
@@ -1958,6 +2948,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Cosa ti è mancato di più durante la tua infanzia?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do que sentiste mais falta na tua infância?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do que você mais sentiu falta na sua infância?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat miste je het meest in je jeugd?"
           }
         }
       }
@@ -1994,6 +3002,24 @@
             "state" : "translated", 
             "value" : "Cosa ti ha spinto a desiderare una relazione?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que te levou a querer procurar uma relação?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que fez você querer buscar um relacionamento?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat maakte dat je een relatie wilde zoeken?"
+          }
         }
       }
     }, 
@@ -2028,6 +3054,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Pensi che la durata di una relazione renda più facile perdonare un tradimento?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achas que a duração de uma relação torna mais fácil perdoar uma infidelidade?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acha que o tempo de um relacionamento torna mais fácil perdoar uma infidelidade?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denk je dat de duur van een relatie het makkelijker maakt om ontrouw te vergeven?"
           }
         }
       }
@@ -2064,6 +3108,24 @@
             "state" : "translated", 
             "value" : "Pensi di essere cambiato/a da quando siamo diventati una coppia? E pensi che questi cambiamenti siano positivi?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achas que mudaste desde que nos tornámos um casal? E achas que essas mudanças são positivas?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acha que mudou desde que nos tornamos um casal? E acha que essas mudanças são positivas?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denk je dat je veranderd bent sinds wij een koppel zijn? En vind je deze veranderingen positief?"
+          }
         }
       }
     }, 
@@ -2098,6 +3160,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Secondo te, quali sono le tre cose più grandi che abbiamo in comune?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na tua opinião, quais são as três maiores coisas que temos em comum?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na sua opinião, quais são as três principais coisas que temos em comum?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat zijn volgens jou de drie grootste dingen die we gemeen hebben?"
           }
         }
       }
@@ -2134,6 +3214,24 @@
             "state" : "translated", 
             "value" : "Secondo te, qual è la nostra più grande differenza?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na tua opinião, qual é a nossa maior diferença?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na sua opinião, qual é a nossa maior diferença?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat is volgens jou ons grootste verschil?"
+          }
         }
       }
     }, 
@@ -2168,6 +3266,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Credi che alcune cose siano scritte in anticipo, come il destino?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acreditas que algumas coisas estão escritas de antemão, como o destino?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acredita que algumas coisas estão escritas de antemão, como o destino?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geloof je dat sommige dingen van tevoren vaststaan, zoals het lot?"
           }
         }
       }
@@ -2204,6 +3320,24 @@
             "state" : "translated", 
             "value" : "Cosa provi quando pensi al futuro? Ti senti stressato/a?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que sentes quando pensas no futuro? Sentes-te stressado?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que você sente quando pensa no futuro? Você se sente estressado?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat voel je als je aan de toekomst denkt? Voel je je gestrest?"
+          }
         }
       }
     }, 
@@ -2238,6 +3372,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Sei una persona che ha paura del giudizio degli altri?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "És uma pessoa que tem medo do julgamento dos outros?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você é alguém que tem medo do julgamento dos outros?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ben je iemand die bang is voor het oordeel van anderen?"
           }
         }
       }
@@ -2274,6 +3426,24 @@
             "state" : "translated", 
             "value" : "Quale momento vissuto insieme ti fa ancora sorridere? Cosa lo ha reso così speciale?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que momento que vivemos juntos ainda te faz sorrir? O que o tornou tão especial?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual momento que vivemos juntos ainda faz você sorrir? O que o tornou tão especial?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aan welk moment dat we samen beleefden moet je nog steeds glimlachen? Wat maakte het zo bijzonder?"
+          }
         }
       }
     }, 
@@ -2308,6 +3478,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "In una relazione, quale spazio di libertà è essenziale per te?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Numa relação, que espaço de liberdade é essencial para ti?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Em um relacionamento, que espaço de liberdade é essencial para você?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke ruimte van vrijheid is voor jou essentieel in een relatie?"
           }
         }
       }
@@ -2344,6 +3532,24 @@
             "state" : "translated", 
             "value" : "Qual è la tua definizione di pace interiore?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual é a tua definição de paz interior?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual é a sua definição de paz interior?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat is jouw definitie van innerlijke rust?"
+          }
         }
       }
     }, 
@@ -2378,6 +3584,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Ci consideri una famiglia? Se no, cosa rappresenta per te la famiglia?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consideras-nos uma família? Se não, o que representa a família para ti?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você nos considera uma família? Se não, o que a família representa para você?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beschouw je ons als een familie? Zo niet, wat betekent familie voor jou?"
           }
         }
       }
@@ -2414,6 +3638,24 @@
             "state" : "translated", 
             "value" : "Qual è il momento in cui ti sei sentito/a rinascere?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual foi o momento em que sentiste que renasceste?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual foi o momento em que você sentiu que renasceu?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Op welk moment voelde je je herboren?"
+          }
         }
       }
     }, 
@@ -2448,6 +3690,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Hai mai avuto paura di amare troppo?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alguma vez tiveste medo de amar demais?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você já teve medo de amar demais?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ben je ooit bang geweest om te veel van iemand te houden?"
           }
         }
       }
@@ -2484,6 +3744,24 @@
             "state" : "translated", 
             "value" : "Sorprendimi: dimmi qualcosa di te che ancora non so."
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Surpreende-me: diz-me algo sobre ti que eu ainda não saiba."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Surpreenda-me: conte-me algo sobre você que eu ainda não saiba."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verras me eens: vertel iets over jezelf dat ik nog niet weet."
+          }
         }
       }
     }, 
@@ -2518,6 +3796,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Qual è il messaggio che vorresti dare a tutta l'umanità se avessi un microfono gigante?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual mensagem darias a toda a humanidade se tivesses um microfone gigante?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual mensagem você daria a toda a humanidade se tivesse um microfone gigante?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke boodschap zou je de hele mensheid geven als je een reusachtige microfoon had?"
           }
         }
       }
@@ -2554,6 +3850,24 @@
             "state" : "translated", 
             "value" : "Cita tre cose accadute la settimana scorsa per cui provi gratitudine."
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cita três coisas que te aconteceram na semana passada pelas quais sentes gratidão."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cite três coisas que aconteceram com você na semana passada pelas quais você sente gratidão."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noem drie dingen die je vorige week zijn overkomen en waarvoor je dankbaar bent."
+          }
         }
       }
     }, 
@@ -2588,6 +3902,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Sei più una persona che dà, che riceve o un equilibrio tra entrambi? Cosa influenza il tuo comportamento?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "És mais de dar, receber ou um equilíbrio entre ambos? O que influencia o teu comportamento?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você é mais de dar, receber ou um equilíbrio entre os dois? O que influencia seu comportamento?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ben je meer een gever, een ontvanger, of een balans tussen beide? Wat beïnvloedt je gedrag?"
           }
         }
       }
@@ -2624,6 +3956,24 @@
             "state" : "translated", 
             "value" : "Quali sono cinque cose importanti che vorresti realizzare prima di morire?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quais são cinco coisas importantes que gostarias de realizar antes de morrer?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quais são cinco coisas importantes que você gostaria de realizar antes de morrer?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat zijn vijf belangrijke dingen die je wilt bereiken voordat je sterft?"
+          }
         }
       }
     }, 
@@ -2658,6 +4008,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Cosa ti fa piangere ma lo nascondi agli altri?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que te faz chorar mas escondes dos outros?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que faz você chorar mas você esconde dos outros?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat laat je huilen maar verberg je voor anderen?"
           }
         }
       }
@@ -2694,6 +4062,24 @@
             "state" : "translated", 
             "value" : "Di chi ti fidi veramente oggi intorno a te?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Em quem confias realmente à tua volta hoje?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Em quem você realmente confia ao seu redor hoje?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie vertrouw je vandaag echt in je omgeving?"
+          }
         }
       }
     }, 
@@ -2728,6 +4114,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Quale emozione ti attraversa più spesso in questi giorni?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que emoção te atravessa com mais frequência nestes dias?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que emoção passa mais frequentemente por você nesses dias?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke emotie ervaar je de laatste tijd het meest?"
           }
         }
       }
@@ -2764,6 +4168,24 @@
             "state" : "translated", 
             "value" : "Che ruolo gioca la comunicazione in una coppia secondo te?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que papel desempenha a comunicação num casal, segundo a tua opinião?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que papel a comunicação desempenha em um casal, na sua opinião?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke rol speelt communicatie volgens jou in een relatie?"
+          }
         }
       }
     }, 
@@ -2798,6 +4220,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se potessi premere un pulsante 'reset della vita', lo faresti?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se pudesses carregar num botão de 'reset da vida', farias isso?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se você pudesse apertar um botão de 'reset da vida', você faria isso?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als je op een 'resetknop' voor je leven kon drukken, zou je dat doen?"
           }
         }
       }
@@ -2834,6 +4274,24 @@
             "state" : "translated", 
             "value" : "Qual è qualcosa che sai essere vero anche se non puoi provarlo?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que é algo que sabes ser verdade, mesmo sem o conseguires provar?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que é algo que você sabe que é verdade, mesmo sem conseguir provar?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat weet jij dat waar is, ook al kun je het niet bewijzen?"
+          }
         }
       }
     }, 
@@ -2868,6 +4326,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se potessi viaggiare nel tempo, in quale epoca andresti?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se pudesses viajar no tempo, para que era irias?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se você pudesse viajar no tempo, para qual era iria?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als je door de tijd kon reizen, naar welk tijdperk zou je gaan?"
           }
         }
       }
@@ -2904,6 +4380,24 @@
             "state" : "translated", 
             "value" : "Puoi raccontarmi la storia della tua vita in 4 minuti, con più dettagli possibili?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consegues contar-me a história da tua vida em 4 minutos, com o máximo de detalhes possível?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consegue me contar a história da sua vida em 4 minutos, com o máximo de detalhes possível?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kun je me het verhaal van je leven vertellen in 4 minuten, met zoveel mogelijk details?"
+          }
         }
       }
     }, 
@@ -2938,6 +4432,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Qual è il pensiero che torna più spesso quando sei solo/a?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual é o pensamento que te volta mais vezes quando estás sozinho?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual é o pensamento que mais volta quando você está sozinho?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke gedachte komt het vaakst terug wanneer je alleen bent?"
           }
         }
       }
@@ -2974,6 +4486,24 @@
             "state" : "translated", 
             "value" : "Ti sei mai sentito/a come se non meritassi di essere amato/a?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alguma vez sentiste que não merecias ser amado?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você já sentiu que não merecia ser amado?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heb je je ooit gevoeld alsof je het niet verdiende om geliefd te worden?"
+          }
         }
       }
     }, 
@@ -3008,6 +4538,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Che ne dici se condividiamo ciascuno tre qualità che vediamo l'uno nell'altro?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que tal partilharmos três qualidades que vemos um no outro?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que tal compartilharmos três qualidades que vemos um no outro?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zullen we elk drie kwaliteiten delen die we in elkaar zien?"
           }
         }
       }
@@ -3044,6 +4592,24 @@
             "state" : "translated", 
             "value" : "Qual era il tuo posto preferito da bambino/a e cosa lo rendeva speciale?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual era o teu lugar favorito em criança e o que o tornava especial?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual era o seu lugar favorito na infância e o que o tornava especial?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat was als kind je favoriete plek, en wat maakte die speciaal?"
+          }
         }
       }
     }, 
@@ -3078,6 +4644,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se il tuo cuore potesse parlare, cosa direbbe?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se o teu coração pudesse falar, o que diria?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se o seu coração pudesse falar, o que diria?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als je hart kon spreken, wat zou het zeggen?"
           }
         }
       }
@@ -3114,6 +4698,24 @@
             "state" : "translated", 
             "value" : "Chi è la persona che ammiri di più?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quem é a pessoa que mais admiras?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quem é a pessoa que você mais admira?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie is de persoon die je het meest bewondert?"
+          }
         }
       }
     }, 
@@ -3148,6 +4750,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "C'è un periodo della tua vita che vorresti rivivere per ripararlo?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Há um período da tua vida que gostarias de reviver para o reparar?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Existe um período da sua vida que você gostaria de reviver para consertá-lo?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is er een periode in je leven die je zou willen herbeleven om het te herstellen?"
           }
         }
       }
@@ -3184,6 +4804,24 @@
             "state" : "translated", 
             "value" : "Come sarebbe per te una giornata veramente perfetta?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como seria um dia verdadeiramente perfeito para ti?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como seria um dia realmente perfeito para você?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoe zou een echt perfecte dag er voor jou uitzien?"
+          }
         }
       }
     }, 
@@ -3218,6 +4856,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se avessi 100.000 € da donare a una causa, quale sceglieresti e perché?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se tivesses 100 000 € para doar a uma causa, qual escolherias e porquê?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se você tivesse 100.000 € para doar a uma causa, qual escolheria e por quê?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als je €100.000 aan een goed doel kon geven, welk zou je kiezen en waarom?"
           }
         }
       }
@@ -3254,6 +4910,24 @@
             "state" : "translated", 
             "value" : "Raccontami una giornata che non dimenticherai mai, che sia stata bella o brutta."
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fala-me de um dia que nunca irás esquecer — tenha sido bom ou mau."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conte-me sobre um dia que você nunca vai esquecer — tenha sido bom ou ruim."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vertel me over een dag die je nooit zult vergeten, of die nu goed of slecht was."
+          }
         }
       }
     }, 
@@ -3288,6 +4962,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Pensi che le persone intorno a te ti capiscano davvero?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achas que as pessoas à tua volta te compreendem realmente?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acha que as pessoas ao seu redor realmente entendem você?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denk je dat je omgeving je echt begrijpt?"
           }
         }
       }
@@ -3324,6 +5016,24 @@
             "state" : "translated", 
             "value" : "Qual è la cosa che ti dà più piacere quando qualcuno te la dice?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que é que te dá mais prazer ouvir de alguém?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que mais te dá prazer ouvir de alguém?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat hoor je het liefst over jezelf?"
+          }
         }
       }
     }, 
@@ -3358,6 +5068,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Come descriveresti l'intelligenza emotiva?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como descreverias a inteligência emocional?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como você descreveria a inteligência emocional?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoe zou je emotionele intelligentie beschrijven?"
           }
         }
       }
@@ -3394,6 +5122,24 @@
             "state" : "translated", 
             "value" : "Chi è la persona su cui conti di più?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quem é a pessoa em quem mais confias?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quem é a pessoa em quem você mais confia?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Op wie reken je het meest?"
+          }
         }
       }
     }, 
@@ -3428,6 +5174,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se avessi un diario, cosa scriveresti alla prima pagina?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se tivesses um diário, o que escreverias na primeira página?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se você tivesse um diário, o que escreveria na primeira página?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als je een dagboek had, wat zou je op de eerste pagina schrijven?"
           }
         }
       }
@@ -3464,6 +5228,24 @@
             "state" : "translated", 
             "value" : "Se potessi mostrare il tuo mondo interiore in immagini, come sarebbe?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se pudesses mostrar o teu mundo interior em imagens, como seria?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se você pudesse mostrar seu mundo interior em imagens, como seria?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als je je innerlijke wereld in beelden kon laten zien, hoe zou die eruitzien?"
+          }
         }
       }
     }, 
@@ -3498,6 +5280,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Pensi di avere fiducia in te stesso/a?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achas que tens autoconfiança?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acha que tem autoconfiança?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denk je dat je zelfvertrouwen hebt?"
           }
         }
       }
@@ -3534,6 +5334,24 @@
             "state" : "translated", 
             "value" : "Quale ingiustizia hai vissuto che non hai mai dimenticato?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que injustiça viveste e nunca esqueceste?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que injustiça você viveu e nunca esqueceu?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke onrechtvaardigheid heb je meegemaakt die je nooit bent vergeten?"
+          }
         }
       }
     }, 
@@ -3568,6 +5386,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Pensi che l'universo ci dia ciò che meritiamo?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achas que o universo nos dá o que merecemos?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acha que o universo nos dá o que merecemos?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denk je dat het universum ons geeft wat we verdienen?"
           }
         }
       }
@@ -3604,6 +5440,24 @@
             "state" : "translated", 
             "value" : "Pensi che la vita sia giusta o ingiusta?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achas que a vida é justa ou injusta?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acha que a vida é justa ou injusta?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denk je dat het leven eerlijk of oneerlijk is?"
+          }
         }
       }
     }, 
@@ -3638,6 +5492,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Pensi che le esperienze che viviamo siano lì per insegnarci ciò che dobbiamo imparare?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achas que as experiências que vivemos estão lá para nos ensinar o que precisamos aprender?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acha que as experiências que vivemos estão aí para nos ensinar o que precisamos aprender?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denk je dat de ervaringen die we meemaken er zijn om ons te leren wat we moeten leren?"
           }
         }
       }
@@ -3674,6 +5546,24 @@
             "state" : "translated", 
             "value" : "Ti sei mai sentito/a come se nessuno ti capisse davvero?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alguma vez sentiste que ninguém te compreendia verdadeiramente?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você já sentiu que ninguém realmente te entendia?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heb je ooit het gevoel gehad dat niemand je echt begreep?"
+          }
         }
       }
     }, 
@@ -3708,6 +5598,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se potessi riparare una sola cosa del tuo passato, cosa cambieresti per prima?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se pudesses reparar apenas uma coisa do teu passado, o que mudarias em primeiro lugar?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se você pudesse consertar apenas uma coisa do seu passado, o que mudaria em primeiro lugar?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als je één ding uit je verleden kon herstellen, wat zou je dan als eerste veranderen?"
           }
         }
       }
@@ -3744,6 +5652,24 @@
             "state" : "translated", 
             "value" : "Pensi che la musica che ascoltiamo possa influenzare il nostro umore?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achas que a música que ouvimos pode influenciar o nosso humor?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acha que a música que ouvimos pode influenciar nosso humor?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denk je dat de muziek die we luisteren onze stemming kan beïnvloeden?"
+          }
         }
       }
     }, 
@@ -3778,6 +5704,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Quando è stata l'ultima volta che eri arrabbiato/a con te stesso/a? E perché?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quando foi a última vez que ficaste zangado contigo mesmo? E porquê?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quando foi a última vez que ficou com raiva de si mesmo? E por quê?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wanneer was je voor het laatst boos op jezelf? En waarom?"
           }
         }
       }
@@ -3814,6 +5758,24 @@
             "state" : "translated", 
             "value" : "C'è qualcosa che vorresti migliorare di te?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que gostarias de melhorar em ti?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que você gostaria de melhorar em si?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat zou je graag aan jezelf verbeteren?"
+          }
         }
       }
     }, 
@@ -3848,6 +5810,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Cosa provi quando guardi il tuo riflesso allo specchio?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que sentes quando enfrentas o teu reflexo no espelho?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que você sente quando encara seu reflexo no espelho?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat voel je als je naar je spiegelbeeld kijkt?"
           }
         }
       }
@@ -3884,6 +5864,24 @@
             "state" : "translated", 
             "value" : "Cosa pensi del mondo del lavoro? Ti senti che sia fatto per te?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que pensas do mundo do trabalho — sentes que foi feito para ti?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que você pensa do mundo do trabalho — sente que ele foi feito para você?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat vind je van de werkwereld—heb je het gevoel dat die voor jou is?"
+          }
         }
       }
     }, 
@@ -3918,6 +5916,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Cosa avresti voluto sentirti dire più spesso durante la tua infanzia?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que terias gostado de ouvir mais vezes na tua infância?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que você gostaria de ter ouvido com mais frequência na infância?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat had je in je jeugd graag vaker willen horen?"
           }
         }
       }
@@ -3954,6 +5970,24 @@
             "state" : "translated", 
             "value" : "Che impatto ha la relazione genitori/figli sulla vita di un adulto secondo te?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que impacto tem, segundo ti, a relação pai/filho na vida de um adulto?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual o impacto que, na sua opinião, a relação pai/filho tem na vida de um adulto?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke invloed heeft de ouder-kindrelatie volgens jou op het leven van een volwassene?"
+          }
         }
       }
     }, 
@@ -3988,6 +6022,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se avessi dei figli, qual è la prima cosa che insegneresti loro?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se tivesses filhos, qual seria a primeira coisa que lhes ensinarias?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se você tivesse filhos, qual seria a primeira coisa que lhes ensinaria?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als je kinderen had, wat zou je ze als eerste willen leren?"
           }
         }
       }
@@ -4024,6 +6076,24 @@
             "state" : "translated", 
             "value" : "Pensi di sfruttare pienamente il tuo potenziale?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achas que estás a aproveitar plenamente o teu potencial?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acha que está aproveitando todo o seu potencial?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denk je dat je je volledige potentieel benut?"
+          }
         }
       }
     }, 
@@ -4058,6 +6128,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Cosa pensi delle nuove generazioni? Si stava meglio prima?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que achas das novas gerações? Era melhor antes?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que você acha das novas gerações? Era melhor antes?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat vind je van de nieuwe generaties? Was het vroeger beter?"
           }
         }
       }
@@ -4094,6 +6182,24 @@
             "state" : "translated", 
             "value" : "Cos'è più importante in una coppia secondo te, l'amore o l'onestà?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que é mais importante num casal, segundo ti: o amor ou a honestidade?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que é mais importante em um casal, na sua opinião: o amor ou a honestidade?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat is belangrijker in een relatie volgens jou, liefde of eerlijkheid?"
+          }
         }
       }
     }, 
@@ -4128,6 +6234,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Ti descriveresti come una persona sensibile?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descrever-te-ias como alguém sensível?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você se descreveria como uma pessoa sensível?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zou je jezelf omschrijven als een gevoelig persoon?"
           }
         }
       }
@@ -4164,6 +6288,24 @@
             "state" : "translated", 
             "value" : "Se dovessi scegliere una parola per riassumere il tuo passato, quale sceglieresti?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se tivesses de escolher uma palavra para resumir o teu passado, qual escolherias?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se você tivesse que escolher uma palavra para resumir seu passado, qual escolheria?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als je één woord moest kiezen om je verleden samen te vatten, welk woord zou je kiezen?"
+          }
         }
       }
     }, 
@@ -4198,6 +6340,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Qual è la più grande lezione di vita che hai imparato l'anno scorso?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual foi a maior lição de vida que aprendeste no último ano?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual foi a maior lição de vida que você aprendeu no último ano?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat is de grootste levensles die je vorig jaar hebt geleerd?"
           }
         }
       }
@@ -4234,6 +6394,24 @@
             "state" : "translated", 
             "value" : "Cosa vorresti lasciarti alle spalle una volta per tutte?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que gostarias de deixar para trás de uma vez por todas?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que você gostaria de deixar para trás de uma vez por todas?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat zou je voor eens en altijd achter je willen laten?"
+          }
         }
       }
     }, 
@@ -4268,6 +6446,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Vorresti cambiare la tua vita attuale? Se sì, cosa ti infastidisce di più oggi?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gostarias de mudar a vida que tens agora? Se sim, o que mais te incomoda hoje?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você gostaria de mudar a vida que tem hoje? Se sim, o que mais te incomoda atualmente?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zou je je huidige leven willen veranderen? Zo ja, wat stoort je vandaag het meest?"
           }
         }
       }
@@ -4304,6 +6500,24 @@
             "state" : "translated", 
             "value" : "Ti capita mai di sentirti depresso/a?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alguma vez te sentes deprimido?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você às vezes se sente deprimido?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voel je je weleens somber?"
+          }
         }
       }
     }, 
@@ -4338,6 +6552,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Quale dolore hai normalizzato col tempo?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que dor normalizaste ao longo do tempo?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que dor você acabou normalizando com o tempo?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke pijn heb je in de loop der tijd genormaliseerd?"
           }
         }
       }
@@ -4374,6 +6606,24 @@
             "state" : "translated", 
             "value" : "Chi è la persona che ti rende più felice in questo momento?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quem é a pessoa que te faz mais feliz neste momento?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quem é a pessoa que mais te faz feliz agora?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie maakt je op dit moment het gelukkigst?"
+          }
         }
       }
     }, 
@@ -4408,6 +6658,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Pensi che delle sedute con uno psicologo ti farebbero bene?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achas que sessões com um psicólogo te fariam bem?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acha que sessões com um psicólogo lhe fariam bem?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denk je dat sessies met een psycholoog je goed zouden doen?"
           }
         }
       }
@@ -4444,6 +6712,24 @@
             "state" : "translated", 
             "value" : "Qual è il tuo modo di superare le tue tempeste interiori?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual é a tua forma de atravessar as tuas tempestades internas?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual é o seu jeito de atravessar suas tempestades internas?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat is jouw manier om door je innerlijke stormen te komen?"
+          }
         }
       }
     }, 
@@ -4478,6 +6764,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "I tuoi pensieri sono più spesso dalla tua parte o contro di te?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Os teus pensamentos estão mais vezes a teu favor ou contra ti?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seus pensamentos estão mais a seu favor ou contra você?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zijn je gedachten vaker aan je kant of tegen je?"
           }
         }
       }
@@ -4514,6 +6818,24 @@
             "state" : "translated", 
             "value" : "Ti consideri una persona che ha avuto successo?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consideras-te alguém que teve sucesso?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você se considera uma pessoa que teve sucesso?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zie je jezelf als iemand die geslaagd is?"
+          }
         }
       }
     }, 
@@ -4548,6 +6870,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "In che modo i tuoi genitori hanno influenzato la tua visione dell'amore e delle relazioni?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como é que os teus pais influenciaram a tua visão do amor e das relações?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como seus pais influenciaram sua visão do amor e dos relacionamentos?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoe hebben je ouders je kijk op liefde en relaties beïnvloed?"
           }
         }
       }
@@ -4584,6 +6924,24 @@
             "state" : "translated", 
             "value" : "Cosa pensi che succeda dopo la morte?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que achas que acontece depois da morte?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que você acha que acontece depois da morte?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat denk je dat er gebeurt na de dood?"
+          }
         }
       }
     }, 
@@ -4618,6 +6976,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Pensi che mentire possa essere accettabile? In quali casi?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achas que mentir pode ser aceitável? Em que casos?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acha que mentir pode ser aceitável? Em quais casos?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vind je dat liegen acceptabel kan zijn? In welke gevallen?"
           }
         }
       }
@@ -4654,6 +7030,24 @@
             "state" : "translated", 
             "value" : "Cosa non avevi mai notato di te finché qualcuno non te l'ha fatto notare?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que é algo sobre ti que nunca tinhas reparado antes de alguém o mencionar?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que havia em você que nunca tinha percebido antes de alguém apontar?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat had je nooit aan jezelf opgemerkt voordat iemand er je op wees?"
+          }
         }
       }
     }, 
@@ -4688,6 +7082,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Ti spaventa l'idea di invecchiare?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O facto de envelhecer assusta-te?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O fato de envelhecer te assusta?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maakt het ouder worden je bang?"
           }
         }
       }
@@ -4724,6 +7136,24 @@
             "state" : "translated", 
             "value" : "Se dovessimo litigare per messaggio, preferiresti risolverlo subito o aspettare di vederci di persona?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se alguma vez discutirmos por mensagem, preferes resolver logo ou esperar para nos vermos cara a cara?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se algum dia discutirmos por mensagem, você prefere resolver na hora ou esperar para nos vermos cara a cara?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als we ooit via berichten ruzie hebben, los je dat liever meteen op of wacht je tot we elkaar persoonlijk zien?"
+          }
         }
       }
     }, 
@@ -4758,6 +7188,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Come ti trattavano gli altri al liceo?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como é que os outros te tratavam no secundário?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como os outros te tratavam no ensino médio?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoe behandelden anderen je op de middelbare school?"
           }
         }
       }
@@ -4794,6 +7242,24 @@
             "state" : "translated", 
             "value" : "Saresti disposto/a a rinunciare ad alcuni dei tuoi sogni o obiettivi professionali per amore?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estarias pronto a abdicar de alguns dos teus sonhos ou objetivos profissionais por amor?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você estaria disposto a abrir mão de alguns dos seus sonhos ou objetivos profissionais por amor?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zou je bereid zijn om sommige dromen of professionele doelen op te geven voor de liefde?"
+          }
         }
       }
     }, 
@@ -4828,6 +7294,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Me lo diresti se dicessi o facessi qualcosa che ti ferisce?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dizer-me-ias se eu dissesse ou fizesse algo que te magoasse?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você me contaria se eu dissesse ou fizesse algo que te machucasse?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zou je het me zeggen als ik iets zei of deed dat je pijn deed?"
           }
         }
       }
@@ -4864,6 +7348,24 @@
             "state" : "translated", 
             "value" : "Come affronti i momenti difficili?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como lidas com os momentos difíceis?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como você lida com os momentos difíceis?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoe ga je om met moeilijke momenten?"
+          }
         }
       }
     }, 
@@ -4898,6 +7400,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Credi nel colpo di fulmine?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acreditas no amor à primeira vista?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acredita em amor à primeira vista?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geloof je in liefde op het eerste gezicht?"
           }
         }
       }
@@ -4934,6 +7454,24 @@
             "state" : "translated", 
             "value" : "Dove dovremmo andare in vacanza la prossima volta?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para onde devemos ir de férias da próxima vez?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para onde devemos ir nas próximas férias?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waar moeten we volgende keer op vakantie gaan?"
+          }
         }
       }
     }, 
@@ -4968,6 +7506,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Cosa ti piace dell'essere in una relazione con me?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que gostas em estar numa relação comigo?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que você gosta em estar em um relacionamento comigo?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat vind je leuk aan een relatie met mij?"
           }
         }
       }
@@ -5004,6 +7560,24 @@
             "state" : "translated", 
             "value" : "Ti senti diventato/a una versione migliore di te stesso/a col tempo?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sentes que te tornaste uma versão melhor de ti mesmo ao longo do tempo?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você sente que se tornou uma versão melhor de si mesmo com o tempo?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heb je het gevoel dat je in de loop der tijd een betere versie van jezelf bent geworden?"
+          }
         }
       }
     }, 
@@ -5038,6 +7612,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Pensi che trascorriamo abbastanza tempo insieme?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na tua opinião, passamos tempo suficiente juntos?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na sua opinião, passamos tempo suficiente juntos?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vind jij dat we genoeg tijd samen doorbrengen?"
           }
         }
       }
@@ -5074,6 +7666,24 @@
             "state" : "translated", 
             "value" : "Ti sei mai sentito/a in ritardo rispetto alla tua stessa vita?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alguma vez sentiste que estavas atrasado na tua própria vida?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você já sentiu que estava atrasado na sua própria vida?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heb je ooit het gevoel gehad dat je achterliep op je eigen leven?"
+          }
         }
       }
     }, 
@@ -5108,6 +7718,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Pensi che trascorrere tempo insieme sia importante quanto trascorrere tempo da soli?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achas que passar tempo juntos é tão importante como passar tempo separados?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acha que passar tempo juntos é tão importante quanto passar tempo separados?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vind je dat samen tijd doorbrengen even belangrijk is als tijd apart doorbrengen?"
           }
         }
       }
@@ -5144,6 +7772,24 @@
             "state" : "translated", 
             "value" : "Qual è la frase che potrebbe riassumere ciò che senti in questo momento?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual é a frase que poderia resumir o que sentes neste momento?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual frase poderia resumir o que você está sentindo agora?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke zin zou kunnen samenvatten wat je nu voelt?"
+          }
         }
       }
     }, 
@@ -5178,6 +7824,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Hai una convinzione che ti sostiene nonostante tutto?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tens alguma crença que te mantém de pé apesar de tudo?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você tem alguma crença que te mantém de pé apesar de tudo?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heb je een overtuiging die je ondanks alles overeind houdt?"
           }
         }
       }
@@ -5214,6 +7878,24 @@
             "state" : "translated", 
             "value" : "Se qualcuno entrasse nel tuo mondo interiore, cosa scoprirebbe per prima?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se alguém entrasse no teu mundo interior, o que descobriria primeiro?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se alguém entrasse no seu mundo interior, o que descobriria primeiro?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als iemand je innerlijke wereld binnenkwam, wat zou hij dan als eerste ontdekken?"
+          }
         }
       }
     }, 
@@ -5248,6 +7930,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Ti senti ascoltato/a quando siamo insieme?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sentes-te ouvido(a) quando estamos juntos?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você se sente ouvido(a) quando estamos juntos?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voel je je gehoord wanneer we samen zijn?"
           }
         }
       }
@@ -5284,6 +7984,24 @@
             "state" : "translated", 
             "value" : "Quale parte di te vorresti vedere evolvere nei prossimi anni?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que parte de ti gostarias de ver evoluir nos próximos anos?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que parte de você gostaria de ver evoluir nos próximos anos?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welk deel van jezelf zou je in de komende jaren willen zien ontwikkelen?"
+          }
         }
       }
     }, 
@@ -5318,6 +8036,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Pensi che la gelosia sia una prova d'amore in una coppia?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achas que o ciúme é prova de amor num casal?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acha que o ciúme é prova de amor em um casal?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vind je dat jaloezie een bewijs van liefde is in een relatie?"
           }
         }
       }
@@ -5354,6 +8090,24 @@
             "state" : "translated", 
             "value" : "Sei la stessa persona di 5 anni fa? Se no, cosa è cambiato in te da allora?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "És a mesma pessoa de há 5 anos? Se não, o que mudou em ti desde então?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você é a mesma pessoa de 5 anos atrás? Se não, o que mudou em você desde então?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ben je dezelfde persoon als vijf jaar geleden? Zo niet, wat is er sindsdien aan jou veranderd?"
+          }
         }
       }
     }, 
@@ -5388,6 +8142,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Quale abitudine ti protegge ma potrebbe impedirti di andare avanti?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que hábito te protege mas pode impedir-te de avançar?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que hábito te protege mas pode impedir você de seguir em frente?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke gewoonte beschermt je maar kan je ervan weerhouden vooruit te komen?"
           }
         }
       }
@@ -5424,6 +8196,24 @@
             "state" : "translated", 
             "value" : "Se potessi fare una domanda al tuo futuro io, cosa chiederesti?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se pudesses fazer uma pergunta ao teu eu do futuro, qual seria?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se você pudesse fazer uma pergunta ao seu eu do futuro, qual seria?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als je je toekomstige zelf een vraag kon stellen, wat zou je dan vragen?"
+          }
         }
       }
     }, 
@@ -5458,6 +8248,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Preferisci serate romantiche pianificate o improvvisate?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preferes noites românticas planeadas ou improvisadas?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você prefere noites românticas planejadas ou improvisadas?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geef je de voorkeur aan geplande of spontane romantische avonden?"
           }
         }
       }
@@ -5494,6 +8302,24 @@
             "state" : "translated", 
             "value" : "Secondo te, come possiamo mantenere viva la fiamma nella nostra relazione?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na tua opinião, como podemos manter viva a chama da nossa relação?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na sua opinião, como podemos manter viva a chama do nosso relacionamento?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoe kunnen we volgens jou de vlam in onze relatie levend houden?"
+          }
         }
       }
     }, 
@@ -5528,6 +8354,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Credi nel destino?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acreditas no destino?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acredita no destino?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geloof je in het lot?"
           }
         }
       }
@@ -5564,6 +8408,24 @@
             "state" : "translated", 
             "value" : "Hai fiducia quando pensi al tuo futuro?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tens confiança quando pensas no teu futuro?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você tem confiança quando pensa no seu futuro?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heb je vertrouwen als je aan je toekomst denkt?"
+          }
         }
       }
     }, 
@@ -5598,6 +8460,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Come descriveresti il tuo linguaggio d'amore a uno sconosciuto?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como descreves a tua linguagem do amor a um desconhecido?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como você descreveria sua linguagem do amor para um desconhecido?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoe zou je je liefdestaal aan een onbekende beschrijven?"
           }
         }
       }
@@ -5634,6 +8514,24 @@
             "state" : "translated", 
             "value" : "Pensi che alcune persone siano fatte l'una per l'altra?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achas que algumas pessoas nasceram uma para a outra?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acha que algumas pessoas nasceram uma para a outra?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denk je dat sommige mensen voor elkaar gemaakt zijn?"
+          }
         }
       }
     }, 
@@ -5668,6 +8566,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se io e te fossimo la prova di qualcosa, di cosa saremmo la prova?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se tu e eu fôssemos a prova de algo, de que seríamos prova?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se você e eu fôssemos a prova de algo, do que seríamos prova?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als jij en ik bewijs van iets zouden zijn, waarvan zouden we dan bewijs zijn?"
           }
         }
       }
@@ -5704,6 +8620,24 @@
             "state" : "translated", 
             "value" : "Qual è il tuo film preferito per una serata romantica?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual é o teu filme preferido para uma noite romântica?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual é o seu filme favorito para uma noite romântica?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat is je favoriete film voor een romantische avond?"
+          }
         }
       }
     }, 
@@ -5738,6 +8672,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Riesci davvero a mantenere un segreto?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consegues mesmo guardar um segredo?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você realmente consegue guardar um segredo?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kun je echt een geheim bewaren?"
           }
         }
       }
@@ -5774,6 +8726,24 @@
             "state" : "translated", 
             "value" : "Cosa pensi delle manifestazioni d'affetto in pubblico?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que pensas das demonstrações de afeto em público?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que você acha das demonstrações de afeto em público?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat vind je van openbare uitingen van genegenheid?"
+          }
         }
       }
     }, 
@@ -5808,6 +8778,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Desideri sposarti un giorno?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gostarias de casar um dia?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você gostaria de se casar um dia?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wil je ooit trouwen?"
           }
         }
       }
@@ -5844,6 +8832,24 @@
             "state" : "translated", 
             "value" : "Cosa pensi della solitudine? Secondo te è la stessa cosa dell'isolamento?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que pensas da solidão? Para ti é o mesmo que isolamento?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que você pensa sobre a solidão? Para você é o mesmo que isolamento?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat vind je van eenzaamheid? Is het volgens jou hetzelfde als isolatie?"
+          }
         }
       }
     }, 
@@ -5878,6 +8884,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Ti è mai capitato di dover prendere le distanze per non perderti in una relazione?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Já precisaste de dar um passo atrás para não te perderes numa relação?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você já precisou dar um passo para trás para não se perder em um relacionamento?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heb je ooit afstand moeten nemen om jezelf niet te verliezen in een relatie?"
           }
         }
       }
@@ -5914,6 +8938,24 @@
             "state" : "translated", 
             "value" : "Come mi descrivi ai tuoi amici?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como me descreves aos teus amigos?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como você me descreve para seus amigos?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoe beschrijf je mij aan je vrienden?"
+          }
         }
       }
     }, 
@@ -5948,6 +8990,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "C'è qualcosa che facevo e che ora ti manca?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Há algo que eu fazia antes e de que tens saudades agora?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Há algo que eu fazia antes e de que você sente falta agora?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is er iets wat ik vroeger deed dat je nu mist?"
           }
         }
       }
@@ -5984,6 +9044,24 @@
             "state" : "translated", 
             "value" : "Cosa significa per te innamorarsi?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que significa para ti apaixonar-te?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que significa para você se apaixonar?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat betekent verliefd worden voor jou?"
+          }
         }
       }
     }, 
@@ -6018,6 +9096,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Come racconteresti la nostra storia d'amore?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como contarias a nossa história de amor?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como você contaria a nossa história de amor?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoe zou je ons liefdesverhaal vertellen?"
           }
         }
       }
@@ -6054,6 +9150,24 @@
             "state" : "translated", 
             "value" : "Cosa apprezzi di più in una relazione?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que valorizas mais numa relação?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que você mais valoriza em um relacionamento?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat waardeer je het meest in een relatie?"
+          }
         }
       }
     }, 
@@ -6088,6 +9202,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Hai mai cambiato te stesso/a per qualcun altro fino a non riconoscerti più?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Já mudaste por outra pessoa ao ponto de deixares de te reconhecer?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você já mudou por alguém a ponto de não se reconhecer mais?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ben je ooit voor iemand anders veranderd, tot het punt dat je jezelf niet meer herkende?"
           }
         }
       }
@@ -6124,6 +9256,24 @@
             "state" : "translated", 
             "value" : "Quando passi una brutta giornata, cosa posso fare per aiutarti a sentirti meglio?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quando tens um dia mau, o que posso fazer para te ajudar a sentir melhor?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quando você está tendo um dia ruim, o que posso fazer para te ajudar a se sentir melhor?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als je een slechte dag hebt, wat kan ik dan doen om je beter te laten voelen?"
+          }
         }
       }
     }, 
@@ -6158,6 +9308,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Credi nell'anima gemella?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acreditas em almas gémeas?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acredita em almas gêmeas?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geloof je in zielsverwanten?"
           }
         }
       }
@@ -6194,6 +9362,24 @@
             "state" : "translated", 
             "value" : "Pensi che le esperienze negative possano trasformarci in persone migliori?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achas que experiências negativas podem transformar-nos em pessoas melhores?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acha que experiências negativas podem nos transformar em pessoas melhores?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denk je dat negatieve ervaringen ons tot betere mensen kunnen maken?"
+          }
         }
       }
     }, 
@@ -6228,6 +9414,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Quali sono le cose che avresti voluto imparare prima nella vita?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que coisas gostarias de ter aprendido mais cedo na vida?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quais coisas você gostaria de ter aprendido mais cedo na vida?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke dingen had je graag eerder in het leven willen leren?"
           }
         }
       }
@@ -6264,6 +9468,24 @@
             "state" : "translated", 
             "value" : "Quando hai sentito che stavi iniziando a innamorarti di me?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quando sentiste que começavas a apaixonar-te por mim?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quando você sentiu que estava começando a se apaixonar por mim?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wanneer voelde je dat je verliefd op me begon te worden?"
+          }
         }
       }
     }, 
@@ -6298,6 +9520,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Qual è il gesto più memorabile che ho fatto per te?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual foi o gesto mais memorável que fiz por ti?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual foi o gesto mais memorável que eu fiz por você?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat is het meest gedenkwaardige gebaar dat ik voor je heb gemaakt?"
           }
         }
       }
@@ -6334,6 +9574,24 @@
             "state" : "translated", 
             "value" : "Qual è la parte della tua storia che racconti raramente?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual é a parte da tua história que raramente contas?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual é a parte da sua história que você raramente conta?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welk deel van jouw verhaal vertel je zelden?"
+          }
         }
       }
     }, 
@@ -6368,6 +9626,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Quale momento della tua vita meriterebbe di essere raccontato in un libro?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que momento da tua vida merecia ser contado num livro?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que momento da sua vida mereceria ser contado em um livro?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welk moment uit je leven verdient het om in een boek verteld te worden?"
           }
         }
       }
@@ -6404,6 +9680,24 @@
             "state" : "translated", 
             "value" : "Cosa sono per te delle vacanze veramente romantiche?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que são férias verdadeiramente românticas para ti?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que são férias verdadeiramente românticas para você?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat zijn voor jou echt romantische vakanties?"
+          }
         }
       }
     }, 
@@ -6438,6 +9732,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Quale promessa hai fatto e non hai mantenuto? E perché?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que promessa fizeste um dia mas não cumpriste? E porquê?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que promessa você fez um dia mas não cumpriu? E por quê?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke belofte heb je ooit gedaan maar niet gehouden? En waarom?"
           }
         }
       }
@@ -6474,6 +9786,24 @@
             "state" : "translated", 
             "value" : "Come immagini il nostro futuro insieme?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como imaginas o nosso futuro juntos?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como você imagina o nosso futuro juntos?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoe stel je je onze toekomst samen voor?"
+          }
         }
       }
     }, 
@@ -6508,6 +9838,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Qual è la tua parte preferita della nostra relazione? E quella che ti piace di meno?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual é a tua parte preferida da nossa relação? E a que gostas menos?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual é a sua parte favorita do nosso relacionamento? E a que você menos gosta?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat is je favoriete deel van onze relatie? En welk deel vind je het minst leuk?"
           }
         }
       }
@@ -6544,6 +9892,24 @@
             "state" : "translated", 
             "value" : "Hai mai mentito a me rispondendo a queste domande?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Já me mentiste ao responder a estas perguntas?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você já mentiu para mim ao responder essas perguntas?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heb je ooit tegen me gelogen bij het beantwoorden van deze vragen?"
+          }
         }
       }
     }, 
@@ -6578,6 +9944,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Sei mai fuggito/a da una situazione? Com'è andata?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Já fugiste de uma situação? Como correu?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você já fugiu de alguma situação? Como foi?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ben je ooit weggelopen van een situatie? Hoe is dat verlopen?"
           }
         }
       }
@@ -6614,6 +9998,24 @@
             "state" : "translated", 
             "value" : "Ci sono segni che mostrano che non stai bene e che dovrei imparare a riconoscere?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Há sinais de que não estás bem que eu deva aprender a reconhecer?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Existem sinais de que você não está bem que eu deva aprender a reconhecer?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zijn er tekenen waaruit blijkt dat het niet goed met je gaat, die ik zou moeten leren herkennen?"
+          }
         }
       }
     }, 
@@ -6648,6 +10050,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Cosa preferisci di te stesso/a?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que preferes em ti?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do que você mais gosta em você?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat waardeer je het meest aan jezelf?"
           }
         }
       }
@@ -6684,6 +10104,24 @@
             "state" : "translated", 
             "value" : "Come ti sfoghi o liberi la pressione?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como te descomprimes ou libertas a pressão?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como você descarrega ou alivia a pressão?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoe laat je stoom af of ontlaad je spanning?"
+          }
         }
       }
     }, 
@@ -6718,6 +10156,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Ci sono qualità specifiche che cerchi nei tuoi amici?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Há qualidades específicas que procuras nos teus amigos?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Há qualidades específicas que você procura nos seus amigos?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zijn er specifieke eigenschappen die je zoekt in je vrienden?"
           }
         }
       }
@@ -6754,6 +10210,24 @@
             "state" : "translated", 
             "value" : "Come definisci una relazione solida?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como defines uma relação sólida?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como você define um relacionamento sólido?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoe definieer jij een solide relatie?"
+          }
         }
       }
     }, 
@@ -6788,6 +10262,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Quale emozione hai imparato a nascondere nel tempo?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que emoção aprendeste a esconder com o tempo?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual emoção você aprendeu a esconder com o tempo?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke emotie heb je in de loop der tijd geleerd te verbergen?"
           }
         }
       }
@@ -6824,6 +10316,24 @@
             "state" : "translated", 
             "value" : "Se potessi rivivere un momento senza cambiarlo, quale sceglieresti?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se pudesses reviver um momento sem o mudar, qual escolherias?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se você pudesse reviver um momento sem mudá-lo, qual escolheria?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als je een moment opnieuw zou kunnen beleven zonder iets te veranderen, welk moment zou je kiezen?"
+          }
         }
       }
     }, 
@@ -6858,6 +10368,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Pensi sia importante indossare una maschera in pubblico o dovremmo essere completamente noi stessi?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achas importante usar uma máscara em público ou devemos ser totalmente nós mesmos?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acha importante usar uma máscara em público ou devemos ser totalmente nós mesmos?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vind je het belangrijk om in het openbaar een masker te dragen of moeten we volledig onszelf zijn?"
           }
         }
       }
@@ -6894,6 +10422,24 @@
             "state" : "translated", 
             "value" : "Qual è il complimento più bello che potrei farti?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual seria o elogio mais bonito que eu te poderia fazer?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual seria o elogio mais bonito que eu poderia te fazer?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat is het mooiste compliment dat ik je zou kunnen geven?"
+          }
         }
       }
     }, 
@@ -6928,6 +10474,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Pensi che ti mostri abbastanza gratitudine? E lo dimostro?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achas que sou suficientemente grato contigo? E mostro-o?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acha que sou grato o suficiente com você? E eu demonstro isso?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vind je dat ik genoeg dankbaarheid naar jou toon? En laat ik dat merken?"
           }
         }
       }
@@ -6964,6 +10528,24 @@
             "state" : "translated", 
             "value" : "Che importanza dai alla famiglia?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que importância dás à família?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que importância você dá à família?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoe belangrijk is familie voor jou?"
+          }
         }
       }
     }, 
@@ -6998,6 +10580,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Che importanza dai alla religione?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que importância dás à religião?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que importância você dá à religião?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoe belangrijk is religie voor jou?"
           }
         }
       }
@@ -7034,6 +10634,24 @@
             "state" : "translated", 
             "value" : "Preferisci una bugia che fa piacere o una verità che fa male?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preferes uma mentira que consola ou uma verdade que dói?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você prefere uma mentira que conforta ou uma verdade que dói?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verkies je een leugen die goed voelt of een waarheid die pijn doet?"
+          }
         }
       }
     }, 
@@ -7068,6 +10686,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Quale ferita ha plasmato parte della tua personalità?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que ferida moldou parte da tua personalidade?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que ferida moldou parte da sua personalidade?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke wond heeft een deel van jouw persoonlijkheid gevormd?"
           }
         }
       }
@@ -7104,6 +10740,24 @@
             "state" : "translated", 
             "value" : "Cosa ti piacerebbe trasmettere a un bambino che cresceresti?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que gostarias de transmitir a um filho que criasses?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que você gostaria de transmitir a um filho que você criasse?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat zou je willen doorgeven aan een kind dat je opvoedt?"
+          }
         }
       }
     }, 
@@ -7138,6 +10792,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Hai mai rinunciato a una relazione per amore di te stesso/a?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Já desististe de uma relação por amor a ti próprio?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você já desistiu de um relacionamento por amor a si mesmo?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heb je ooit een relatie opgegeven uit liefde voor jezelf?"
           }
         }
       }
@@ -7174,6 +10846,24 @@
             "state" : "translated", 
             "value" : "Senti che ti impedisco di fare certe cose? Se sì, pensi che sia una buona cosa?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sentes que te impeço de fazer certas coisas? Se sim, achas que é algo positivo?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você sente que eu te impeço de fazer certas coisas? Se sim, acha que isso é bom?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heb je het gevoel dat ik je ervan weerhoud bepaalde dingen te doen? Zo ja, denk je dat dat goed is?"
+          }
         }
       }
     }, 
@@ -7208,6 +10898,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Credi nella fortuna?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acreditas na sorte?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acredita na sorte?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geloof je in geluk?"
           }
         }
       }
@@ -7244,6 +10952,24 @@
             "state" : "translated", 
             "value" : "Come ti descriverebbero i tuoi ex?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como te descreveriam os teus ex?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como seus ex te descreveriam?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoe zouden je exen jou beschrijven?"
+          }
         }
       }
     }, 
@@ -7278,6 +11004,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Quali forme di intimità non sessuale apprezzi particolarmente?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que formas de intimidade não sexual aprecias especialmente?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que formas de intimidade não sexual você aprecia especialmente?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke vormen van niet-seksuele intimiteit waardeer je in het bijzonder?"
           }
         }
       }
@@ -7314,6 +11058,24 @@
             "state" : "translated", 
             "value" : "Vorresti vivere un giorno in un'altra città?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Queres viver noutra cidade um dia?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você quer morar em outra cidade algum dia?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wil je ooit in een andere stad wonen?"
+          }
         }
       }
     }, 
@@ -7348,6 +11110,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Per te, quando si capisce che è il momento di lasciare qualcuno?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para ti, quando é que sabemos que é hora de terminar com alguém?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para você, quando sabemos que é hora de terminar com alguém?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wanneer weet jij dat het tijd is om het met iemand uit te maken?"
           }
         }
       }
@@ -7384,6 +11164,24 @@
             "state" : "translated", 
             "value" : "Quali sono i tuoi riflessi quando sei stressato/a?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quais são os teus reflexos quando estás stressado?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quais são seus reflexos quando você está estressado?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat zijn je reflexen wanneer je gestrest bent?"
+          }
         }
       }
     }, 
@@ -7418,6 +11216,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se potessi scrivere una lettera al tuo futuro io, cosa conterrebbe?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se pudesses escrever uma carta ao teu eu futuro, o que conteria?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se você pudesse escrever uma carta para seu eu futuro, o que ela conteria?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als je een brief aan je toekomstige zelf zou kunnen schrijven, wat zou erin staan?"
           }
         }
       }
@@ -7454,6 +11270,24 @@
             "state" : "translated", 
             "value" : "Qual è stata la conversazione più significativa che hai avuto?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual foi a conversa mais significativa que já tiveste?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual foi a conversa mais significativa que você já teve?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat is het meest betekenisvolle gesprek dat je hebt gehad?"
+          }
         }
       }
     }, 
@@ -7488,6 +11322,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Ti consideri una brava persona?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consideras-te uma boa pessoa?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você se considera uma boa pessoa?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vind je jezelf een goed mens?"
           }
         }
       }
@@ -7524,6 +11376,24 @@
             "state" : "translated", 
             "value" : "Qual è il tuo meccanismo di difesa che pochi notano?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual é o teu mecanismo de defesa que poucas pessoas notam?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual é o seu mecanismo de defesa que poucas pessoas percebem?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat is jouw verdedigingsmechanisme dat weinig mensen opmerken?"
+          }
         }
       }
     }, 
@@ -7558,6 +11428,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Cosa provi quando guardi il cielo di notte?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que sentes quando olhas para o céu à noite?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que você sente quando olha para o céu à noite?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat voel je als je 's nachts naar de hemel kijkt?"
           }
         }
       }
@@ -7594,6 +11482,24 @@
             "state" : "translated", 
             "value" : "Hai mai desiderato scomparire per vedere chi ti cercherebbe per primo?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Já quiseste desaparecer para ver quem te procuraria primeiro?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você já quis desaparecer para ver quem te procuraria primeiro?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heb je ooit willen verdwijnen om te zien wie je als eerste zou zoeken?"
+          }
         }
       }
     }, 
@@ -7628,6 +11534,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Quale cosa ordinaria ti commuove profondamente senza che tu sappia perché?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que coisa banal te toca profundamente sem saberes porquê?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que coisa banal te toca profundamente sem você saber por quê?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke alledaagse zaak raakt je diep zonder dat je weet waarom?"
           }
         }
       }
@@ -7664,6 +11588,24 @@
             "state" : "translated", 
             "value" : "Pensi che gli errori siano importanti per il proprio sviluppo?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achas que os erros são importantes para o próprio desenvolvimento?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acha que os erros são importantes para o próprio desenvolvimento?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denk je dat fouten belangrijk zijn voor je eigen ontwikkeling?"
+          }
         }
       }
     }, 
@@ -7698,6 +11640,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Cosa speri da te stesso/a per i prossimi anni?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que esperas de ti nos próximos anos?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que você espera de si nos próximos anos?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat hoop je van jezelf voor de komende jaren?"
           }
         }
       }
@@ -7734,6 +11694,24 @@
             "state" : "translated", 
             "value" : "Chi è stata la persona più benevola con te durante la tua infanzia?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quem foi a pessoa mais benevolente contigo durante a tua infância?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quem foi a pessoa mais benevolente com você durante sua infância?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie was de meest welwillende persoon voor jou tijdens je jeugd?"
+          }
         }
       }
     }, 
@@ -7768,6 +11746,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Come descriveresti il tuo rapporto con i tuoi nonni?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como descreves a tua relação com os teus avós?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como você descreve sua relação com seus avós?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoe zou je je relatie met je grootouders beschrijven?"
           }
         }
       }
@@ -7804,6 +11800,24 @@
             "state" : "translated", 
             "value" : "Cosa è più importante in una coppia secondo te?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para ti, o que é mais importante num casal?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para você, o que é mais importante em um casal?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat is volgens jou het belangrijkste in een koppel?"
+          }
         }
       }
     }, 
@@ -7838,6 +11852,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Quale qualità dovrebbe avere un uomo secondo te?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que qualidade deve ter um homem, segundo tu?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que qualidade um homem deve ter, na sua opinião?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke eigenschap moet een man volgens jou hebben?"
           }
         }
       }
@@ -7874,6 +11906,24 @@
             "state" : "translated", 
             "value" : "Quale qualità dovrebbe avere una donna secondo te?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que qualidade deve ter uma mulher, segundo tu?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que qualidade uma mulher deve ter, na sua opinião?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke eigenschap moet een vrouw volgens jou hebben?"
+          }
         }
       }
     }, 
@@ -7908,6 +11958,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Hai spesso bisogno di passare del tempo da solo/a, solo con te stesso/a?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Precisas muitas vezes de passar tempo sozinho, só contigo?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você precisa muitas vezes passar tempo sozinho, apenas com você mesmo?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heb je vaak de behoefte om tijd alleen door te brengen, gewoon met jezelf?"
           }
         }
       }
@@ -7944,6 +12012,24 @@
             "state" : "translated", 
             "value" : "Cosa pensi della volgarità in una coppia?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que pensas da vulgaridade num casal?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que você acha da vulgaridade em um casal?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat vind je van grof doen in een relatie?"
+          }
         }
       }
     }, 
@@ -7978,6 +12064,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Pensi che i nostri antenati veglino su di noi?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achas que os nossos antepassados velam por nós?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acha que nossos antepassados velam por nós?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denk je dat onze voorouders over ons waken?"
           }
         }
       }
@@ -8014,6 +12118,24 @@
             "state" : "translated", 
             "value" : "Qual è l'evento storico che ti piace di più?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual é o acontecimento histórico de que mais gostas?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual é o evento histórico que você mais gosta?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welk historisch evenement vind je het interessantst?"
+          }
         }
       }
     }, 
@@ -8048,6 +12170,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Hai mai amato qualcuno con un amore che nemmeno tu capivi?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Já amaste alguém com um amor que nem tu entendias?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você já amou alguém com um amor que nem você entendia?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heb je ooit iemand liefgehad met een liefde die je zelf niet begreep?"
           }
         }
       }
@@ -8084,6 +12224,24 @@
             "state" : "translated", 
             "value" : "Ti senti in pace con il tuo passato?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sentes-te em paz com o teu passado?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você se sente em paz com o seu passado?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ben je in het reine met je verleden?"
+          }
         }
       }
     }, 
@@ -8118,6 +12276,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se avessi dei demoni del passato da affrontare, potresti descrivermeli?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se tivesses demónios do passado para enfrentar, poderias descrevê-los?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se você tivesse demônios do passado para enfrentar, poderia descrevê-los para mim?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als je demonen uit je verleden had om te bestrijden, kun je ze dan beschrijven?"
           }
         }
       }
@@ -8154,6 +12330,24 @@
             "state" : "translated", 
             "value" : "Se dovessi descriverti a uno sconosciuto senza alcun filtro, cosa diresti?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se tivesses de te descrever a um desconhecido sem filtros, o que dirias?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se você tivesse que se descrever a um desconhecido sem filtros, o que diria?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als je jezelf zonder filter aan een onbekende moest beschrijven, wat zou je dan zeggen?"
+          }
         }
       }
     }, 
@@ -8188,6 +12382,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Quale verità vorresti urlare ma tieni ancora dentro di te?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que verdade queres gritar mas ainda guardas dentro de ti?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que verdade você quer gritar mas ainda guarda dentro de você?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke waarheid wil je uitschreeuwen maar houd je toch binnenin?"
           }
         }
       }
@@ -8224,6 +12436,24 @@
             "state" : "translated", 
             "value" : "Cosa in te merita di essere riconosciuto di più?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que em ti merece ser mais reconhecido?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que em você merece ser mais reconhecido?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat aan jou verdient meer erkenning?"
+          }
         }
       }
     }, 
@@ -8258,6 +12488,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Ti senti compreso/a dai tuoi genitori?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sentes-te compreendido pelos teus pais?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você se sente compreendido pelos seus pais?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voel je je begrepen door je ouders?"
           }
         }
       }
@@ -8294,6 +12542,24 @@
             "state" : "translated", 
             "value" : "Chi è l'ultima persona che avevi paura di perdere?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quem foi a última pessoa que tiveste medo de perder?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quem foi a última pessoa que você teve medo de perder?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie was de laatste persoon waarvan je bang was hem of haar te verliezen?"
+          }
         }
       }
     }, 
@@ -8328,6 +12594,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Descrivi cosa potrei fare per renderti ancora più felice"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descreve o que eu poderia fazer para te deixar ainda mais feliz"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descreva o que eu poderia fazer para te deixar ainda mais feliz"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beschrijf wat ik zou kunnen doen om je nog gelukkiger te maken."
           }
         }
       }
@@ -8364,6 +12648,24 @@
             "state" : "translated", 
             "value" : "Cosa vorresti che le persone capissero finalmente di te?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que gostarias que as pessoas finalmente entendessem sobre ti?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que você gostaria que as pessoas finalmente entendessem sobre você?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat zouden mensen eindelijk over jou moeten begrijpen?"
+          }
         }
       }
     }, 
@@ -8398,6 +12700,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Qual è la domanda che fai spesso agli altri ma eviti tu stesso/a?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual é a pergunta que costumas fazer aos outros mas evitas a ti mesmo?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual é a pergunta que você costuma fazer aos outros, mas evita a si mesmo?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke vraag stel je vaak aan anderen maar vermijd je zelf?"
           }
         }
       }
@@ -8434,6 +12754,24 @@
             "state" : "translated", 
             "value" : "Qual è il rischio più bello che hai preso nella tua vita?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual foi o risco mais bonito que já correste na vida?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual foi o risco mais bonito que você já correu na vida?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat is het mooiste risico dat je in je leven hebt genomen?"
+          }
         }
       }
     }, 
@@ -8468,6 +12806,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Hai mai provato un amore più forte della ragione?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Já sentiste um amor mais forte do que a razão?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você já sentiu um amor mais forte do que a razão?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heb je ooit een liefde gevoeld die sterker was dan de rede?"
           }
         }
       }
@@ -8504,6 +12860,24 @@
             "state" : "translated", 
             "value" : "Pensi che l'amore sia essenziale per avere una vita appagante?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achas que o amor é essencial para uma vida plena?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acha que o amor é essencial para uma vida plena?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denk je dat liefde essentieel is om een vervuld leven te leiden?"
+          }
         }
       }
     }, 
@@ -8538,6 +12912,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Cosa vorresti imparare ad amare di te stesso/a?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que gostarias de aprender a amar em ti mesmo?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que você gostaria de aprender a amar em si mesmo?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat zou je willen leren liefhebben aan jezelf?"
           }
         }
       }
@@ -8574,6 +12966,24 @@
             "state" : "translated", 
             "value" : "Sei orgoglioso/a della persona che stai diventando?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estás orgulhoso da pessoa em que te estás a tornar?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você está orgulhoso da pessoa que está se tornando?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ben je trots op de persoon die je aan het worden bent?"
+          }
         }
       }
     }, 
@@ -8608,6 +13018,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Cosa potremmo fare insieme per aiutarci a capire ancora meglio?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que poderíamos fazer juntos para nos compreendermos ainda melhor?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que poderíamos fazer juntos para nos compreendermos ainda melhor?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat zouden we samen kunnen doen om elkaar nog beter te begrijpen?"
           }
         }
       }
@@ -8644,6 +13072,24 @@
             "state" : "translated", 
             "value" : "Se potessi dare un consiglio a tutti gli adolescenti del mondo, cosa diresti?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se pudesses dar um conselho a todos os adolescentes do mundo, o que dirias?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se você pudesse dar um conselho a todos os adolescentes do mundo, o que diria?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als je alle tieners in de wereld advies kon geven, wat zou je zeggen?"
+          }
         }
       }
     }, 
@@ -8678,6 +13124,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Cosa rispetti di più di me?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que mais respeitas em mim?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que você mais respeita em mim?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat respecteer je het meest aan mij?"
           }
         }
       }
@@ -8714,6 +13178,24 @@
             "state" : "translated", 
             "value" : "Se avessi il potere di cambiare una cosa in questo mondo, cosa cambieresti?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se tivesses o poder de mudar uma coisa neste mundo, o que mudarias?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se você tivesse o poder de mudar uma coisa neste mundo, o que mudaria?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als je de macht had om één ding in deze wereld te veranderen, wat zou je veranderen?"
+          }
         }
       }
     }, 
@@ -8748,6 +13230,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Pensi che i momenti di silenzio condivisi in una coppia siano importanti?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achas importantes os momentos de silêncio partilhados num casal?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acha importantes os momentos de silêncio compartilhados em um casal?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vind je gedeelde momenten van stilte in een relatie belangrijk?"
           }
         }
       }
@@ -8784,6 +13284,24 @@
             "state" : "translated", 
             "value" : "Qual è la parte di te che è evoluta di più negli ultimi anni?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual é a parte de ti que mais evoluiu nos últimos anos?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual é a parte de você que mais evoluiu nos últimos anos?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welk deel van jou is de afgelopen jaren het meest ontwikkeld?"
+          }
         }
       }
     }, 
@@ -8818,6 +13336,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Pensi che la noia sia una cosa buona per lo sviluppo di un bambino?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achas que o tédio é uma coisa boa para o desenvolvimento de uma criança?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acha que o tédio é uma coisa boa para o desenvolvimento de uma criança?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denk je dat verveling goed is voor de ontwikkeling van een kind?"
           }
         }
       }
@@ -8854,6 +13390,24 @@
             "state" : "translated", 
             "value" : "Cosa potrebbe liberarti emotivamente se finalmente lo esprimessi?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que te poderia libertar emocionalmente se o expressasses finalmente?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que poderia te libertar emocionalmente se você finalmente expressasse?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat zou je emotioneel kunnen bevrijden als je het eindelijk uitte?"
+          }
         }
       }
     }, 
@@ -8889,6 +13443,24 @@
             "state" : "translated", 
             "value" : "Ti sei mai sentito come se il tuo cuore parlasse una lingua che nessuno capiva?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alguma vez sentiste que o teu coração falava uma língua que ninguém compreendia?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você já sentiu que seu coração falava uma língua que ninguém entendia?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heb je ooit het gevoel gehad dat je hart een taal sprak die niemand begreep?"
+          }
         }
       }
     }, 
@@ -8923,6 +13495,24 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Qual è la domanda che non vorresti mai che ti facessero? Perché?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual é a pergunta que nunca gostarias que te fizessem? Porquê?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual é a pergunta que você nunca gostaria que lhe fizessem? Por quê?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welke vraag zou je nooit willen dat je gesteld wordt? Waarom?"
           }
         }
       }

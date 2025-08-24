@@ -34,6 +34,18 @@
             "state": "translated",
             "value": "Preferiresti condividere tutti i tuoi ricordi d'infanzia o tutti i tuoi sogni futuri?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias partilhar todas as tuas memórias de infância ou todos os teus sonhos para o futuro?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria compartilhar todas as suas memórias de infância ou todos os seus sonhos para o futuro?"
+          }
         }
       }
     },
@@ -68,6 +80,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti costruire una vita semplice insieme o vivere una vita lussuosa da solo?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias construir uma vida simples a dois ou viver uma vida luxuosa sozinho?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria construir uma vida simples a dois ou viver uma vida luxuosa sozinho?"
           }
         }
       }
@@ -104,6 +128,18 @@
             "state": "translated",
             "value": "Preferiresti lasciarli vederti vulnerabile, o far sì che pensino sempre che tu sia forte?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que te vissem vulnerável ou que pensassem sempre que és forte?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que vissem você vulnerável ou que sempre achassem que você é forte?"
+          }
         }
       }
     },
@@ -138,6 +174,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti sentire ogni emozione più intensamente o vivere senza emozioni?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias sentir cada emoção mais intensamente ou viver sem emoções?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria sentir cada emoção mais intensamente ou viver sem emoções?"
           }
         }
       }
@@ -174,6 +222,18 @@
             "state": "translated",
             "value": "Preferiresti passare un mese rivivendo i tuoi ricordi più belli o un mese creando nuovi momenti insieme?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias passar um mês a reviver as tuas memórias mais bonitas ou um mês a criar novos momentos juntos?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria passar um mês revivendo suas lembranças mais bonitas ou um mês criando novos momentos juntos?"
+          }
         }
       }
     },
@@ -208,6 +268,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti conoscere la fine di una storia d'amore dall'inizio o non sapere mai quando finisce?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias saber o final de uma história de amor desde o início ou nunca saber quando acaba?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria saber o final de uma história de amor desde o começo ou nunca saber quando termina?"
           }
         }
       }
@@ -244,6 +316,18 @@
             "state": "translated",
             "value": "Preferiresti poter vedere 10 minuti nel futuro o 150 anni nel futuro?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias poder ver 10 minutos no futuro ou 150 anos no futuro?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria poder ver 10 minutos no futuro ou 150 anos no futuro?"
+          }
         }
       }
     },
@@ -278,6 +362,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti capire tutto ciò che prova il tuo partner o che lui/lei capisca tutto ciò che provi tu?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias compreender tudo o que o teu parceiro sente ou que ele compreendesse tudo o que tu sentes?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria compreender tudo o que seu parceiro sente ou que ele compreendesse tudo o que você sente?"
           }
         }
       }
@@ -314,6 +410,18 @@
             "state": "translated",
             "value": "Preferiresti rivivere la vostra prima conversazione o il vostro primo sguardo?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias reviver a vossa primeira conversa ou o vosso primeiro olhar?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria reviver a nossa primeira conversa ou o nosso primeiro olhar?"
+          }
         }
       }
     },
@@ -348,6 +456,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti passare 5 anni in prigione o 10 anni in coma?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias passar 5 anos na prisão ou 10 anos em coma?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria passar 5 anos na prisão ou 10 anos em coma?"
           }
         }
       }
@@ -384,6 +504,18 @@
             "state": "translated",
             "value": "Preferiresti dire sempre quello che pensi o non poter parlare mai più?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias sempre dizer o que pensas ou nunca mais poder falar?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria sempre dizer o que pensa ou nunca mais poder falar?"
+          }
         }
       }
     },
@@ -418,6 +550,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti essere amato ma incompreso o compreso ma non amato?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ser amado mas incompreendido ou compreendido mas não amado?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser amado mas incompreendido ou compreendido mas não amado?"
           }
         }
       }
@@ -454,6 +598,18 @@
             "state": "translated",
             "value": "Preferiresti vivere senza musica o senza film?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias viver sem música ou sem filmes?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria viver sem música ou sem filmes?"
+          }
         }
       }
     },
@@ -488,6 +644,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti perdere la vista o perdere i tuoi ricordi?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias perder a visão ou perder as tuas memórias?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria perder a visão ou perder as suas memórias?"
           }
         }
       }
@@ -524,6 +692,18 @@
             "state": "translated",
             "value": "Preferiresti vomitare sulla tua celebrità preferita o che la tua celebrità preferita vomiti su di te?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias vomitar na tua celebridade favorita ou que ela vomitasse em ti?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria vomitar na sua celebridade favorita ou que ela vomitasse em você?"
+          }
         }
       }
     },
@@ -558,6 +738,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti non avere mai più Internet o non poter più prendere l’aereo?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias nunca mais ter internet ou nunca mais poder voar?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria nunca mais ter internet ou nunca mais poder voar?"
           }
         }
       }
@@ -594,6 +786,18 @@
             "state": "translated",
             "value": "Preferiresti essere re/regina 1000 anni fa o una persona qualunque oggi?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ser rei/rainha há 1000 anos ou uma pessoa comum hoje?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser rei/rainha há 1000 anos ou uma pessoa comum hoje?"
+          }
         }
       }
     },
@@ -628,6 +832,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti rilassarti in piscina o in spiaggia?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias relaxar à beira da piscina ou na praia?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria relaxar à beira da piscina ou na praia?"
           }
         }
       }
@@ -664,6 +880,18 @@
             "state": "translated",
             "value": "Preferiresti vivere senza amore o senza amicizia?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias viver sem amor ou viver sem amizade?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria viver sem amor ou viver sem amizade?"
+          }
         }
       }
     },
@@ -698,6 +926,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti trovare un topo in cucina o uno scarafaggio nel letto?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias encontrar um rato na tua cozinha ou uma barata na tua cama?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria encontrar um rato na sua cozinha ou uma barata na sua cama?"
           }
         }
       }
@@ -734,6 +974,18 @@
             "state": "translated",
             "value": "Preferiresti avere nella vita un tasto pausa o un tasto riavvolgi?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ter um botão de pausa ou um botão de retroceder na tua vida?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ter um botão de pausa ou um botão de retroceder na sua vida?"
+          }
         }
       }
     },
@@ -768,6 +1020,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti perdere tutti i denti o perdere un giorno di vita ogni volta che baci qualcuno?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias perder todos os teus dentes ou perder um dia de vida sempre que beijas alguém?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria perder todos os seus dentes ou perder um dia de vida sempre que beija alguém?"
           }
         }
       }
@@ -804,6 +1068,18 @@
             "state": "translated",
             "value": "Preferiresti morire tra 5 anni senza rimpianti o vivere fino a 100 anni con molti rimpianti?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias morrer em 5 anos sem arrependimentos ou viver até aos 100 com muitos arrependimentos?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria morrer em 5 anos sem arrependimentos ou viver até os 100 com muitos arrependimentos?"
+          }
         }
       }
     },
@@ -838,6 +1114,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti sapere tutto sull’universo o tutto su ciò che accade dopo la morte?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias saber tudo sobre o universo ou tudo sobre o que acontece depois da morte?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria saber tudo sobre o universo ou tudo sobre o que acontece depois da morte?"
           }
         }
       }
@@ -874,6 +1162,18 @@
             "state": "translated",
             "value": "Preferiresti morire prima di me o dopo di me?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias morrer antes de mim ou depois de mim?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria morrer antes de mim ou depois de mim?"
+          }
         }
       }
     },
@@ -908,6 +1208,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti avere un tasto pausa nella tua vita o un tasto riavvia?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ter um botão de pausa ou um botão de reinício na tua vida?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ter um botão de pausa ou um botão de reinício na sua vida?"
           }
         }
       }
@@ -944,6 +1256,18 @@
             "state": "translated",
             "value": "Preferiresti poter mangiare senza ingrassare mai o dormire un’ora ed essere completamente riposato?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias poder comer sem nunca engordar ou dormir 1 hora e estar totalmente descansado?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria poder comer sem nunca engordar ou dormir 1 hora e estar totalmente descansado?"
+          }
         }
       }
     },
@@ -978,6 +1302,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere la vita di un film romantico o quella di un film d’avventura?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias viver um filme romântico ou um filme de aventura?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria viver um filme romântico ou um filme de aventura?"
           }
         }
       }
@@ -1014,6 +1350,18 @@
             "state": "translated",
             "value": "Preferiresti essere il migliore in un campo che nessuno prende sul serio o nella media in un campo molto rispettato?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ser o melhor numa área que ninguém leva a sério ou ser mediano numa área muito respeitada?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser o melhor numa área que ninguém leva a sério ou ser mediano numa área muito respeitada?"
+          }
         }
       }
     },
@@ -1048,6 +1396,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti cacciare e preparare tu la tua carne o non mangiare mai più carne?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias caçar e preparar a tua própria carne ou nunca mais comer carne?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria caçar e preparar a sua própria carne ou nunca mais comer carne?"
           }
         }
       }
@@ -1084,6 +1444,18 @@
             "state": "translated",
             "value": "Preferiresti non essere mai geloso oppure non arrabbiarti mai?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias nunca ter ciúmes ou nunca ficar com raiva?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria nunca sentir ciúmes ou nunca ficar com raiva?"
+          }
         }
       }
     },
@@ -1118,6 +1490,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti batteria illimitata su tutti i dispositivi o Wi-Fi gratis ovunque?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ter bateria ilimitada em todos os teus dispositivos ou Wi-Fi grátis em todo o lado?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ter bateria ilimitada em todos os seus dispositivos ou Wi-Fi grátis em qualquer lugar?"
           }
         }
       }
@@ -1154,6 +1538,18 @@
             "state": "translated",
             "value": "Preferiresti ricevere fiori ogni settimana o una lettera d’amore ogni mese?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias receber flores todas as semanas ou uma carta de amor todos os meses?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria receber flores todas as semanas ou uma carta de amor todos os meses?"
+          }
         }
       }
     },
@@ -1188,6 +1584,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti poter creare il tuo futuro o cancellare un errore del passato?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias poder criar o teu futuro ou apagar um erro do passado?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria poder criar o seu futuro ou apagar um erro do passado?"
           }
         }
       }
@@ -1224,6 +1632,18 @@
             "state": "translated",
             "value": "Preferiresti essere sempre la persona che ama di più o quella più amata?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ser sempre quem ama mais ou quem é mais amado?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser sempre quem ama mais ou quem é mais amado?"
+          }
         }
       }
     },
@@ -1258,6 +1678,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti porre fine alla fame nel mondo o al cambiamento climatico?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias acabar com a fome no mundo ou com as mudanças climáticas?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria acabar com a fome no mundo ou com as mudanças climáticas?"
           }
         }
       }
@@ -1294,6 +1726,18 @@
             "state": "translated",
             "value": "Preferiresti non innamorarti mai più o innamorarti sempre troppo in fretta?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias nunca mais te apaixonar ou apaixonar-te sempre demasiado rápido?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria nunca mais se apaixonar ou se apaixonar sempre rápido demais?"
+          }
         }
       }
     },
@@ -1328,6 +1772,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vincere 25.000 € o che il tuo miglior amico ne vincesse 100.000 senza poterti dare nulla?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ganhar 25.000 € ou que o teu melhor amigo ganhasse 100.000 € sem poder partilhar contigo?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ganhar 25.000 € ou que seu melhor amigo ganhasse 100.000 € sem poder compartilhar com você?"
           }
         }
       }
@@ -1364,6 +1820,18 @@
             "state": "translated",
             "value": "Preferiresti rivivere l’adolescenza o scoprire chi sarai tra 30 anni?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias reviver a tua adolescência ou descobrir quem serás daqui a 30 anos?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria reviver a sua adolescência ou descobrir quem será daqui a 30 anos?"
+          }
         }
       }
     },
@@ -1398,6 +1866,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere un amore passionale ma breve o un amore tranquillo ma eterno?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias viver um amor apaixonado mas curto ou um amor calmo mas eterno?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria viver um amor apaixonado mas curto ou um amor calmo mas eterno?"
           }
         }
       }
@@ -1434,6 +1914,18 @@
             "state": "translated",
             "value": "Preferiresti innamorarti ogni giorno di uno sconosciuto o amare per sempre la stessa persona?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias apaixonar-te por um desconhecido todos os dias ou amar a mesma pessoa para sempre?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria se apaixonar por um desconhecido todos os dias ou amar a mesma pessoa para sempre?"
+          }
         }
       }
     },
@@ -1468,6 +1960,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti che l’amore fosse sempre semplice o che a volte avesse dei conflitti?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que o amor fosse sempre simples ou que tivesse às vezes conflitos?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que o amor fosse sempre simples ou que tivesse às vezes conflitos?"
           }
         }
       }
@@ -1504,6 +2008,18 @@
             "state": "translated",
             "value": "Preferiresti che qualcuno ti scrivesse una poesia o una canzone?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que alguém te escrevesse um poema ou uma canção?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que alguém lhe escrevesse um poema ou uma canção?"
+          }
         }
       }
     },
@@ -1538,6 +2054,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti un bacio sotto la pioggia o un abbraccio davanti al camino?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias um beijo na chuva ou um abraço à lareira?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria um beijo na chuva ou um abraço na lareira?"
           }
         }
       }
@@ -1574,6 +2102,18 @@
             "state": "translated",
             "value": "Preferiresti essere ricordato nei libri di storia per qualcosa di terribile o essere completamente dimenticato dopo la morte?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ser lembrado nos livros de história por algo terrível ou ser totalmente esquecido depois da morte?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser lembrado nos livros de história por algo terrível ou ser totalmente esquecido depois da morte?"
+          }
         }
       }
     },
@@ -1608,6 +2148,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti tornare nel passato per rivedere chi non c’è più o andare nel futuro per incontrare figli o nipoti?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias voltar ao passado para rever entes queridos falecidos ou ir ao futuro para conhecer filhos ou netos?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria voltar ao passado para rever entes queridos falecidos ou ir ao futuro para conhecer filhos ou netos?"
           }
         }
       }
@@ -1644,6 +2196,18 @@
             "state": "translated",
             "value": "Preferiresti viaggiare gratis per il mondo per un anno o ricevere 50.000 € da spendere come vuoi?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias viajar pelo mundo de graça durante um ano ou receber 50.000 € para gastar como quiseres?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria viajar pelo mundo de graça durante um ano ou receber 50.000 € para gastar como quiser?"
+          }
         }
       }
     },
@@ -1678,6 +2242,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti dire “ti amo” una sola volta nella vita ma sinceramente, o poterlo dire ogni giorno senza la stessa forza?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias dizer \"amo-te\" apenas uma vez na vida mas com sinceridade, ou dizê-lo todos os dias sem a mesma força?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria dizer \"eu te amo\" apenas uma vez na vida mas com sinceridade, ou dizê-lo todos os dias sem a mesma força?"
           }
         }
       }
@@ -1714,6 +2290,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un’apocalisse zombie o un’apocalisse di robot?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias viver um apocalipse zumbi ou um apocalipse de robôs?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria viver um apocalipse zumbi ou um apocalipse de robôs?"
+          }
         }
       }
     },
@@ -1748,6 +2336,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti avere sempre ragione ma essere antipatico o avere sempre torto ma essere simpatico?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias um amor à distância mas forte ou um amor próximo mas muito instável?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria um amor à distância mas forte ou um amor próximo mas muito instável?"
           }
         }
       }
@@ -1784,6 +2384,18 @@
             "state": "translated",
             "value": "Preferiresti avere un superpotere per volare o per leggere nella mente?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias reviver um momento com alguém que perdeste ou passar um dia com o teu futuro filho?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria reviver um momento com alguém que perdeu ou passar um dia com seu futuro filho?"
+          }
         }
       }
     },
@@ -1818,6 +2430,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere in città per tutta la vita o in campagna per tutta la vita?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias receber uma declaração de amor em público ou em privado?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria receber uma declaração de amor em público ou em privado?"
           }
         }
       }
@@ -1854,6 +2478,18 @@
             "state": "translated",
             "value": "Preferiresti poter cambiare il passato o vedere il futuro?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias partilhar tudo (mesmo tudo, incluindo eu) ou guardar tudo para ti e deixar os outros sem nada?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria compartilhar tudo (mesmo tudo, inclusive eu) ou guardar tudo para você e deixar os outros sem nada?"
+          }
         }
       }
     },
@@ -1888,6 +2524,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti avere più tempo o più soldi?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias um amor que te faça sonhar ou um amor que te faça crescer?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria um amor que te faça sonhar ou um amor que te faça crescer?"
           }
         }
       }
@@ -1924,6 +2572,18 @@
             "state": "translated",
             "value": "Preferiresti non dover mai più lavorare o non dover mai più dormire?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ficar sozinho toda a vida ou estar rodeado de pessoas muito irritantes?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ficar sozinho a vida toda ou estar cercado de pessoas muito irritantes?"
+          }
         }
       }
     },
@@ -1958,6 +2618,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti viaggiare nel passato per incontrare i tuoi antenati o nel futuro per conoscere i tuoi discendenti?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ficar um mês sem telemóvel ou um mês sem tomar banho?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ficar um mês sem celular ou um mês sem tomar banho?"
           }
         }
       }
@@ -1994,6 +2666,18 @@
             "state": "translated",
             "value": "Preferiresti essere il più divertente della stanza o il più intelligente?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias apaixonar-te à primeira vista (mesmo que te enganes) ou só depois de três anos?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria se apaixonar à primeira vista (mesmo que esteja errado) ou só depois de três anos?"
+          }
         }
       }
     },
@@ -2028,6 +2712,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti poter parlare tutte le lingue o saper suonare tutti gli strumenti musicali?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias comprar apenas roupa interior usada ou apenas escovas de dentes usadas?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria comprar apenas roupa íntima usada ou apenas escovas de dentes usadas?"
           }
         }
       }
@@ -2064,6 +2760,18 @@
             "state": "translated",
             "value": "Preferiresti vivere senza telefono o senza computer?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias perder a capacidade de ler ou a capacidade de falar?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria perder a capacidade de ler ou a capacidade de falar?"
+          }
         }
       }
     },
@@ -2098,6 +2806,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere in un mondo senza musica o in un mondo senza libri?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ser bonito mas burro ou feio mas super inteligente?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser bonito mas burro ou feio mas super inteligente?"
           }
         }
       }
@@ -2134,6 +2854,18 @@
             "state": "translated",
             "value": "Preferiresti che al lavoro ti amassero o che ti temessero? E perché?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No trabalho, preferias ser amado ou temido? Porquê?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No trabalho, você preferiria ser amado ou temido? Por quê?"
+          }
         }
       }
     },
@@ -2168,6 +2900,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti essere ricco ma solo o povero ma circondato da amore e amicizia?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias conhecer o amor perfeito num sonho ou um amor imperfeito mas real?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria conhecer o amor perfeito num sonho ou um amor imperfeito mas real?"
           }
         }
       }
@@ -2204,6 +2948,18 @@
             "state": "translated",
             "value": "Preferiresti vivere in un mondo senza social media o senza cinema e serie?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias pedir um favor ao teu ex ou a um completo desconhecido?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria pedir um favor ao seu ex ou a um completo desconhecido?"
+          }
         }
       }
     },
@@ -2238,6 +2994,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti non innamorarti mai più o innamorarti di tutti quelli che incontri?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ser incrivelmente rico mas completamente sozinho ou ter apenas o suficiente para viver mas rodeado de amor e amigos?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser incrivelmente rico mas completamente sozinho ou ter apenas o suficiente para viver mas cercado de amor e amigos?"
           }
         }
       }
@@ -2274,6 +3042,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un giorno perfetto che si ripete sempre o una vita normale con alti e bassi?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias sacrificar a tua felicidade pelo bem de muitos ou colocar a tua felicidade pessoal acima de tudo?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria sacrificar a sua felicidade pelo bem de muitos ou colocar a sua felicidade pessoal acima de tudo?"
+          }
         }
       }
     },
@@ -2308,6 +3088,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti avere un talento che nessuno conosce o non avere talenti ma essere famoso?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ter o poder de salvar uma pessoa que amas ou cinco desconhecidos?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ter o poder de salvar uma pessoa que ama ou cinco desconhecidos?"
           }
         }
       }
@@ -2344,6 +3136,18 @@
             "state": "translated",
             "value": "Preferiresti vivere in una città enorme dove nessuno ti conosce o in un villaggio dove tutti ti conoscono?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ver a justiça aplicada mesmo que a punição fosse severa, ou favorecer a clemência e dar uma segunda oportunidade?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ver a justiça aplicada mesmo que a punição fosse severa, ou favorecer a clemência e dar uma segunda chance?"
+          }
         }
       }
     },
@@ -2378,6 +3182,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti essere invisibile quando vuoi o poter leggere i pensieri?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ser respeitado por todos mas pouco amado, ou adorado por alguns mas criticado por muitos?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser respeitado por todos mas pouco amado, ou adorado por alguns mas criticado por muitos?"
           }
         }
       }
@@ -2414,6 +3230,18 @@
             "state": "translated",
             "value": "Preferiresti viaggiare sempre gratis o avere sempre pasti gratis al ristorante?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias amar alguém sem nunca poder dizer ou ser amado sem o saber?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria amar alguém sem nunca poder dizer ou ser amado sem saber?"
+          }
         }
       }
     },
@@ -2448,6 +3276,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti non poterti mai più arrabbiare o non poterti mai più emozionare?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias amar intensamente uma vez ou moderadamente toda a vida?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria amar intensamente uma vez ou moderadamente por toda a vida?"
           }
         }
       }
@@ -2484,6 +3324,18 @@
             "state": "translated",
             "value": "Preferiresti che tutti leggessero i tuoi pensieri o che vedessero la cronologia del tuo telefono?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias um amor à moda antiga ou uma relação moderna e livre?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria um amor à moda antiga ou um relacionamento moderno e livre?"
+          }
         }
       }
     },
@@ -2518,6 +3370,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza amore o senza amicizia?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias receber provas de amor todos os dias ou um grande gesto uma vez por ano?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria receber provas de amor todos os dias ou um grande gesto uma vez por ano?"
           }
         }
       }
@@ -2554,6 +3418,18 @@
             "state": "translated",
             "value": "Preferiresti essere il più ricco del mondo ma solo, o povero ma innamoratissimo?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias encontrar uma carteira cheia de dinheiro e devolvê-la ao dono ou ficar com ela sem ninguém saber?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria encontrar uma carteira cheia de dinheiro e devolvê-la ao dono ou ficar com ela sem ninguém saber?"
+          }
         }
       }
     },
@@ -2588,6 +3464,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti avere sempre caldo o sempre freddo?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ser o primeiro amor de alguém ou o último?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser o primeiro amor de alguém ou o último?"
           }
         }
       }
@@ -2624,6 +3512,18 @@
             "state": "translated",
             "value": "Preferiresti vivere in mare come un delfino o volare nel cielo come un’aquila?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias uma relação de fusão total ou uma relação em que cada um mantém a sua independência emocional?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria uma relação de fusão total ou uma relação em que cada um mantém a sua independência emocional?"
+          }
         }
       }
     },
@@ -2658,6 +3558,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere in un film horror o in un videogioco difficile?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias viver num mundo totalmente seguro mas sem liberdade, ou num mundo totalmente livre mas muito perigoso?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria viver num mundo totalmente seguro mas sem liberdade, ou num mundo totalmente livre mas muito perigoso?"
           }
         }
       }
@@ -2694,6 +3606,18 @@
             "state": "translated",
             "value": "Preferiresti vivere in un mondo senza problemi di soldi o in un mondo senza problemi di salute?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias fazer amor sem amor ou amar sem nunca fazer amor?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria fazer amor sem amor ou amar sem nunca fazer amor?"
+          }
         }
       }
     },
@@ -2728,6 +3652,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti lavorare nel lavoro dei tuoi sogni ma con poco stipendio o in un lavoro noioso ma molto ben pagato?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ser lembrado pela tua bondade ou pela tua inteligência?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser lembrado pela sua bondade ou pela sua inteligência?"
           }
         }
       }
@@ -2764,6 +3700,18 @@
             "state": "translated",
             "value": "Preferiresti vivere tutta la vita nello stesso posto o cambiare città ogni 2 anni?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ser admirado pela tua aparência física ou pela profundidade da tua personalidade?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser admirado pela sua aparência física ou pela profundidade da sua personalidade?"
+          }
         }
       }
     },
@@ -2798,6 +3746,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti avere sempre la connessione lenta o la batteria del telefono scarica?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que o amor fosse fácil e rápido de conquistar ou que tivesse de ser merecido?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que o amor fosse fácil e rápido de conquistar ou que tivesse de ser merecido?"
           }
         }
       }
@@ -2834,6 +3794,18 @@
             "state": "translated",
             "value": "Preferiresti non poter più viaggiare o non poter più usare Internet?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que o teu parceiro fosse super romântico ou super divertido? Tens de escolher um."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que seu parceiro fosse super romântico ou super divertido? Tem que escolher um."
+          }
         }
       }
     },
@@ -2868,6 +3840,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti avere sempre mal di testa o sempre mal di stomaco?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ter uma autoconfiança inabalável mas parecer arrogante, ou duvidar de ti mas ser apreciado por todos?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ter uma autoconfiança inabalável mas parecer arrogante, ou duvidar de si mas ser apreciado por todos?"
           }
         }
       }
@@ -2904,6 +3888,18 @@
             "state": "translated",
             "value": "Preferiresti che nessuno ti ricordi dopo la morte o che tutti ti ricordino per qualcosa di banale?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias viver uma vida cheia de paixões intensas mas também de grandes dores, ou uma vida calma e estável sem extremos?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria viver uma vida cheia de paixões intensas mas também de grandes dores, ou uma vida calma e estável sem extremos?"
+          }
         }
       }
     },
@@ -2938,6 +3934,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza dolci o senza pizza?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias uma relação cheia de surpresas ou cheia de estabilidade?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria um relacionamento cheio de surpresas ou cheio de estabilidade?"
           }
         }
       }
@@ -2974,6 +3982,18 @@
             "state": "translated",
             "value": "Preferiresti non poterti mai innamorare o innamorarti di tutti anche senza motivo?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ser conhecido como alguém muito divertido ou muito confiável?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser conhecido como alguém muito divertido ou muito confiável?"
+          }
         }
       }
     },
@@ -3008,6 +4028,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti avere sempre ragione ma nessuno ti crede o avere sempre torto ma tutti ti credono?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que o teu parceiro fosse muito físico ou muito verbal?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que seu parceiro fosse muito físico ou muito verbal?"
           }
         }
       }
@@ -3044,6 +4076,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un anno senza musica o un anno senza film e serie?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias estar plenamente satisfeito com o que tens agora ou querer sempre mais?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria estar plenamente satisfeito com o que tem agora ou querer sempre mais?"
+          }
         }
       }
     },
@@ -3078,6 +4122,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere un amore a distanza ma forte o un amore vicino ma fragile?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ter uma intuição muito forte que te guiasse ou uma mente analítica super desenvolvida?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ter uma intuição muito forte que o guiasse ou uma mente analítica super desenvolvida?"
           }
         }
       }
@@ -3114,6 +4170,18 @@
             "state": "translated",
             "value": "Preferiresti vivere in un mondo in cui tutti ti dicono sempre la verità o in cui tutti ti dicono sempre bugie?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias saber a data exata da tua morte ou nunca saber nada sobre isso?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria saber a data exata da sua morte ou nunca saber nada sobre isso?"
+          }
         }
       }
     },
@@ -3148,6 +4216,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza poter ridere o senza poter piangere?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias receber 1.000 € agora ou 10.000 € daqui a cinco anos?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria receber 1.000 € agora ou 10.000 € daqui a cinco anos?"
           }
         }
       }
@@ -3184,6 +4264,18 @@
             "state": "translated",
             "value": "Preferiresti essere famoso e odiato o sconosciuto e amato?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias corrigir um grande erro do teu passado ou receber um conselho crucial do teu eu do futuro?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria corrigir um grande erro do seu passado ou receber um conselho crucial do seu eu do futuro?"
+          }
         }
       }
     },
@@ -3218,6 +4310,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti avere un clone di te che fa tutto il lavoro o un robot che ti fa da amico?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias uma surpresa planeada durante meses ou improvisada no último minuto?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria uma surpresa planejada durante meses ou improvisada no último minuto?"
           }
         }
       }
@@ -3254,6 +4358,18 @@
             "state": "translated",
             "value": "Preferiresti vivere in un mondo senza amore o in un mondo senza amicizia?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que te chamassem sempre por uma alcunha carinhosa ou sempre pelo teu nome próprio?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser chamado sempre por um apelido carinhoso ou sempre pelo seu nome?"
+          }
         }
       }
     },
@@ -3288,6 +4404,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti dimenticare il passato o non poter mai immaginare il futuro?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que eu te desse a mão ou que te olhasse profundamente nos olhos?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que eu segurasse sua mão ou olhasse profundamente nos seus olhos?"
           }
         }
       }
@@ -3324,6 +4452,18 @@
             "state": "translated",
             "value": "Preferiresti vivere una vita lunga ma noiosa o breve ma intensa?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias lembrar-te de todos os teus sonhos em detalhe ou nunca mais ter pesadelos?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria lembrar-se de todos os seus sonhos em detalhe ou nunca mais ter pesadelos?"
+          }
         }
       }
     },
@@ -3358,6 +4498,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti avere sempre fame o sempre sonno?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias saber de antemão todos os bons momentos que vêm ou todos os maus?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria saber de antemão todos os bons momentos que virão ou todos os maus?"
           }
         }
       }
@@ -3394,6 +4546,18 @@
             "state": "translated",
             "value": "Preferiresti vivere in un mondo dove tutti ti giudicano o dove nessuno si interessa a te?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias acordar todas as manhãs com um elogio ou com um abraço?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria acordar todas as manhãs com um elogio ou com um abraço?"
+          }
         }
       }
     },
@@ -3428,6 +4592,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere un amore impossibile ma forte o un amore facile ma debole?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias deixar um legado material (dinheiro, bens) ou um legado imaterial (valores, memórias)?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria deixar um legado material (dinheiro, bens) ou um legado imaterial (valores, memórias)?"
           }
         }
       }
@@ -3464,6 +4640,18 @@
             "state": "translated",
             "value": "Preferiresti non poter mai più baciarmi o non poter mai più abbracciarmi?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias uma relação a 100 à hora ou uma que leva todo o tempo do mundo (às vezes demasiado)?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria um relacionamento a 100 por hora ou um que leva todo o tempo do mundo (às vezes demais)?"
+          }
         }
       }
     },
@@ -3498,6 +4686,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza mai viaggiare o senza mai innamorarti?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias descobrir uma verdade dolorosa sobre alguém que amas ou viver numa ilusão confortável?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria descobrir uma verdade dolorosa sobre alguém que ama ou viver numa ilusão confortável?"
           }
         }
       }
@@ -3534,6 +4734,18 @@
             "state": "translated",
             "value": "Preferiresti avere sempre la batteria piena o sempre il Wi-Fi gratis ovunque?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias um amor silencioso mas profundo ou falador mas caótico?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria um amor silencioso mas profundo ou falador mas caótico?"
+          }
         }
       }
     },
@@ -3568,6 +4780,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere un giorno nei panni di qualcun altro o che qualcun altro vivesse un giorno nei tuoi panni?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias um parceiro sempre previsível ou sempre (demasiado) surpreendente?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria um parceiro sempre previsível ou sempre (demasiado) surpreendente?"
           }
         }
       }
@@ -3604,6 +4828,18 @@
             "state": "translated",
             "value": "Preferiresti essere famoso per un errore divertente o non essere conosciuto da nessuno?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ser popular com muitas relações superficiais ou ter poucos amigos mas ligações profundas?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser popular com muitas relações superficiais ou ter poucos amigos mas conexões profundas?"
+          }
         }
       }
     },
@@ -3638,6 +4874,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza mai ridere o senza mai sognare?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias rir todos os dias com o outro ou chorar uma vez de felicidade intensa?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria rir todos os dias com o outro ou chorar uma vez de felicidade intensa?"
           }
         }
       }
@@ -3674,6 +4922,18 @@
             "state": "translated",
             "value": "Preferiresti non poter mai più viaggiare o non poter mai più tornare a casa?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ter uma conversa profunda com um desconhecido ou uma conversa leve com o teu melhor amigo?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ter uma conversa profunda com um desconhecido ou uma conversa leve com o seu melhor amigo?"
+          }
         }
       }
     },
@@ -3708,6 +4968,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere in un mondo dove tutto è previsto o dove tutto è una sorpresa?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ser sempre quem ouve os problemas dos outros ou quem precisa sempre de se desabafar?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser sempre quem ouve os problemas dos outros ou quem precisa sempre se desabafar?"
           }
         }
       }
@@ -3744,6 +5016,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un amore segreto o un amore pubblico ma fragile?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias confrontar diretamente alguém que fala nas tuas costas ou ignorar e seguir em frente?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria confrontar diretamente alguém que fala pelas suas costas ou ignorar e seguir em frente?"
+          }
         }
       }
     },
@@ -3778,6 +5062,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza mai poter ballare o senza mai poter cantare?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias compreender o sentido do universo ou conhecer o segredo da felicidade pessoal?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria compreender o sentido do universo ou conhecer o segredo da felicidade pessoal?"
           }
         }
       }
@@ -3814,6 +5110,18 @@
             "state": "translated",
             "value": "Preferiresti poter cambiare il tuo passato o vedere il futuro degli altri?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias poder provar todos os sabores do mundo ou ouvir toda a música já composta?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria poder provar todos os sabores do mundo ou ouvir toda a música já composta?"
+          }
         }
       }
     },
@@ -3848,6 +5156,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza amore romantico o senza amore familiare?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias compreender perfeitamente o funcionamento do cérebro humano ou compreender perfeitamente a inteligência artificial?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria compreender perfeitamente o funcionamento do cérebro humano ou compreender perfeitamente a inteligência artificial?"
           }
         }
       }
@@ -3884,6 +5204,18 @@
             "state": "translated",
             "value": "Preferiresti avere la capacità di volare o quella di diventare invisibile?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que eu te entendesse sem uma palavra ou que te ouvisse durante horas?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que eu entendesse você sem uma palavra ou que ouvisse você durante horas?"
+          }
         }
       }
     },
@@ -3918,6 +5250,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere un giorno perfetto che si ripete sempre o giorni normali con emozioni diverse?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias descobrir um grande segredo histórico ou inventar uma tecnologia revolucionária?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria descobrir um grande segredo histórico ou inventar uma tecnologia revolucionária?"
           }
         }
       }
@@ -3954,6 +5298,18 @@
             "state": "translated",
             "value": "Preferiresti avere un amore a distanza che dura o uno vicino che finisce presto?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias viver num mundo sem doenças mas sem emoções, ou no nosso mundo atual com alegrias e tristezas?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria viver num mundo sem doenças mas sem emoções, ou no nosso mundo atual com alegrias e tristezas?"
+          }
         }
       }
     },
@@ -3988,6 +5344,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza poterti mai arrabbiare o senza poterti mai emozionare?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ter o poder de realizar um desejo para ti ou três desejos para outras pessoas?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ter o poder de realizar um desejo para si ou três desejos para outras pessoas?"
           }
         }
       }
@@ -4024,6 +5392,18 @@
             "state": "translated",
             "value": "Preferiresti vivere senza musica o senza cinema?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias descobrir tudo sobre mim logo no início ou aprender a conhecer-me ao longo da vida?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria descobrir tudo sobre mim logo no começo ou aprender a me conhecer ao longo da vida?"
+          }
         }
       }
     },
@@ -4058,6 +5438,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti non dover mai più studiare o non dover mai più lavorare?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias renascer numa nova vida esquecendo tudo desta ou viver eternamente na tua vida atual?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria renascer numa nova vida esquecendo tudo desta ou viver eternamente na sua vida atual?"
           }
         }
       }
@@ -4094,6 +5486,18 @@
             "state": "translated",
             "value": "Preferiresti che tutti leggessero i tuoi pensieri o che vedessero la cronologia del tuo telefono?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que o amor chegasse de forma inesperada ou que fosse o resultado de um longo caminho?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que o amor chegasse de forma inesperada ou que fosse o resultado de uma longa caminhada?"
+          }
         }
       }
     },
@@ -4128,6 +5532,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere un amore che fa soffrire ma intenso o un amore tranquillo ma poco emozionante?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias amar com paixão mas arriscar sofrer ou amar com cautela e nunca te magoar?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria amar com paixão mas arriscar sofrer ou amar com cautela e nunca se magoar?"
           }
         }
       }
@@ -4164,6 +5580,18 @@
             "state": "translated",
             "value": "Preferiresti vivere senza amici o senza partner?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias uma relação que te acalme ou uma relação que te estimule?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria um relacionamento que acalme você ou um relacionamento que estimule você?"
+          }
         }
       }
     },
@@ -4198,6 +5626,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti avere sempre caldo anche d’inverno o sempre freddo anche d’estate?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias reviver o nosso primeiro beijo ou ouvir novamente pela primeira vez um \"amo-te\" meu?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria reviver nosso primeiro beijo ou ouvir novamente pela primeira vez um \"eu te amo\" meu?"
           }
         }
       }
@@ -4234,6 +5674,18 @@
             "state": "translated",
             "value": "Preferiresti poter cancellare un brutto ricordo o rivivere per sempre un bel ricordo?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias saber antecipadamente como vão acabar todas as tuas relações (amizade, amor) ou viver na incerteza?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria saber antecipadamente como vão acabar todos os seus relacionamentos (amizade, amor) ou viver na incerteza?"
+          }
         }
       }
     },
@@ -4268,6 +5720,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere un amore segreto che nessuno conosce o un amore pubblico che tutti commentano?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias viver num mundo onde todos pensam como tu ou num mundo onde ninguém nunca está de acordo?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria viver num mundo onde todos pensam como você ou num mundo onde ninguém nunca está de acordo?"
           }
         }
       }
@@ -4304,6 +5768,18 @@
             "state": "translated",
             "value": "Preferiresti vivere senza mai poter ridere o senza mai poter piangere?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que eu te surpreendesse todos os dias ou que te tranquilizasse todos os dias?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que eu surpreendesse você todos os dias ou que tranquilizasse você todos os dias?"
+          }
         }
       }
     },
@@ -4338,6 +5814,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti avere successo ma essere infelice o essere felice ma senza successo?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias amar com o coração ou com a cabeça?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria amar com o coração ou com a razão?"
           }
         }
       }
@@ -4374,6 +5862,18 @@
             "state": "translated",
             "value": "Preferiresti vivere in una città bellissima ma senza amici o in una città brutta ma con tanti amici?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias construir um futuro sólido ou viver um presente mágico com um futuro incerto?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria construir um futuro sólido ou viver um presente mágico com um futuro incerto?"
+          }
         }
       }
     },
@@ -4408,6 +5908,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti avere mille conoscenze o pochi amici veri?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ter a resposta para \"estamos sozinhos no universo?\" ou para \"o que acontece depois da morte?\""
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ter a resposta para \"estamos sozinhos no universo?\" ou para \"o que acontece depois da morte?\""
           }
         }
       }
@@ -4444,6 +5956,18 @@
             "state": "translated",
             "value": "Preferiresti vivere senza mai poter amare o senza mai essere amato?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ter amor mas sem paz ou paz mas sem amor?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ter amor mas sem paz ou paz mas sem amor?"
+          }
         }
       }
     },
@@ -4478,6 +6002,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere un amore eterno ma noioso o un amore breve ma emozionante?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias apagar um arrependimento da tua vida ou acrescentar uma memória feliz perfeita?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria apagar um arrependimento da sua vida ou acrescentar uma memória feliz perfeita?"
           }
         }
       }
@@ -4514,6 +6050,18 @@
             "state": "translated",
             "value": "Preferiresti non dover mai più pagare per viaggiare o non dover mai più pagare al ristorante?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias viver um amor à distância que dure ou um amor próximo que acabe depressa?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria viver um amor à distância que dure ou um amor próximo que acabe rápido?"
+          }
         }
       }
     },
@@ -4548,6 +6096,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza mai più avere paura o senza mai più provare dolore?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias um amor que te tornasse melhor ou um amor que te aceitasse tal como és?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria um amor que fizesse você melhorar ou um amor que aceitasse você como é?"
           }
         }
       }
@@ -4584,6 +6144,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un amore che tutti invidiano o un amore che nessuno conosce?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias perder todas as tuas memórias da família ou todas as dos amigos?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria perder todas as suas memórias da família ou todas as dos amigos?"
+          }
         }
       }
     },
@@ -4618,6 +6190,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti essere ricco ma solo o povero ma circondato da amore?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias saber o que o teu animal de estimação realmente pensa de ti ou nunca saber?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria saber o que seu animal de estimação realmente pensa de você ou nunca saber?"
           }
         }
       }
@@ -4654,6 +6238,18 @@
             "state": "translated",
             "value": "Preferiresti vivere in un mondo senza bugie o in un mondo senza segreti?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias viver num mundo sem música ou num mundo sem livros?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria viver num mundo sem música ou num mundo sem livros?"
+          }
         }
       }
     },
@@ -4688,6 +6284,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere un amore perfetto che dura poco o un amore imperfetto che dura tutta la vita?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ter um botão \"Anular Envio\" para conversas na vida real ou um botão \"Replay\" para os melhores momentos da tua vida?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ter um botão \"Cancelar Envio\" para conversas na vida real ou um botão \"Replay\" para os melhores momentos da sua vida?"
           }
         }
       }
@@ -4724,6 +6332,18 @@
             "state": "translated",
             "value": "Preferiresti avere sempre ragione o non litigare mai più?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias apaixonar-te por uma voz ou por um olhar?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria se apaixonar por uma voz ou por um olhar?"
+          }
         }
       }
     },
@@ -4758,6 +6378,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza poter mai più dormire o senza poter mai più sognare?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias descobrir que a tua vida é um sonho ou que és uma personagem de um romance?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria descobrir que sua vida é um sonho ou que você é um personagem de um romance?"
           }
         }
       }
@@ -4794,6 +6426,18 @@
             "state": "translated",
             "value": "Preferiresti vivere in un mondo dove tutti ti conoscono ma non ti capiscono o dove nessuno ti conosce ma chi ti conosce ti capisce davvero?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias receber presentes surpresa ou passar tempo de qualidade juntos?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria receber presentes surpresa ou passar tempo de qualidade juntos?"
+          }
         }
       }
     },
@@ -4828,6 +6472,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti che ti manchi sempre o che io sia sempre lì (anche troppo)?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que eu te fizesse falta muitas vezes ou que estivesse sempre (às vezes demasiado) ao teu lado?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria sentir minha falta muitas vezes ou que eu estivesse sempre (às vezes demais) ao seu lado?"
           }
         }
       }
@@ -4864,6 +6520,18 @@
             "state": "translated",
             "value": "Preferiresti vivere senza amore romantico o senza amicizia?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias resolver um conflito imediatamente ou esperar estarmos calmos para falar sobre ele?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria resolver um conflito imediatamente ou esperar ficarmos calmos para falar sobre ele?"
+          }
         }
       }
     },
@@ -4898,6 +6566,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti poter cancellare tutti i ricordi tristi o rivivere tutti quelli felici?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias construir uma casa juntos ou viajar pelo mundo juntos?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria construir uma casa juntos ou viajar pelo mundo juntos?"
           }
         }
       }
@@ -4934,6 +6614,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un amore a distanza che dura o un amore vicino che finisce?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias cozinhar juntos e divertir-vos ou pedir comida e relaxar juntos?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria cozinhar juntos e se divertir ou pedir comida e relaxar juntos?"
+          }
         }
       }
     },
@@ -4968,6 +6660,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti avere il potere di guarire le persone o di dare felicità?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias viver uma relação simples e sincera ou intensa e complexa?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria viver um relacionamento simples e sincero ou intenso e complexo?"
           }
         }
       }
@@ -5004,6 +6708,18 @@
             "state": "translated",
             "value": "Preferiresti vivere senza mai arrabbiarti o senza mai ridere?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ter objetivos claros a dois para o futuro ou viver mais ao dia-a-dia?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ter objetivos claros a dois para o futuro ou viver mais no dia a dia?"
+          }
         }
       }
     },
@@ -5038,6 +6754,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza mai avere paura o senza mai avere dubbi?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias uma relação cheia de rituais ou cheia de surpresas?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria um relacionamento cheio de rituais ou cheio de surpresas?"
           }
         }
       }
@@ -5074,6 +6802,18 @@
             "state": "translated",
             "value": "Preferiresti vivere in un mondo dove tutto è facile o in un mondo dove tutto è una sfida?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias dizer \"amo-te\" muitas vezes ou mostrar apenas através de ações?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria dizer \"eu te amo\" muitas vezes ou mostrar apenas através de ações?"
+          }
         }
       }
     },
@@ -5108,6 +6848,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza amore o senza speranza?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que cada um saísse com os seus amigos em separado ou que saíssemos mais vezes juntos?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que cada um saísse com seus amigos em separado ou que saíssemos mais vezes juntos?"
           }
         }
       }
@@ -5144,6 +6896,18 @@
             "state": "translated",
             "value": "Preferiresti non dover mai più dormire o non dover mai più mangiare?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que te elogiassem pela tua inteligência ou pela tua aparência?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser elogiado pela sua inteligência ou pela sua aparência?"
+          }
         }
       }
     },
@@ -5178,6 +6942,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere in un mondo senza soldi o in un mondo senza regole?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias fazer desporto juntos ou partilhar atividades criativas?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria praticar esportes juntos ou compartilhar atividades criativas?"
           }
         }
       }
@@ -5214,6 +6990,18 @@
             "state": "translated",
             "value": "Preferiresti vivere senza poterti mai innamorare o innamorarti di tutti troppo in fretta?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que o amor fosse uma escolha ou algo que parecesse óbvio?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que o amor fosse uma escolha ou algo que parecesse óbvio?"
+          }
         }
       }
     },
@@ -5248,6 +7036,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza mai ricevere un abbraccio o senza mai ricevere un bacio?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias um amor que te ensinasse a conhecer-te ou um amor que te ajudasse a esquecer o teu passado?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria um amor que ensinasse você a se conhecer ou um amor que ajudasse você a esquecer seu passado?"
           }
         }
       }
@@ -5284,6 +7084,18 @@
             "state": "translated",
             "value": "Preferiresti avere un amore che ti fa piangere ma che è vero, o un amore che non ti fa soffrire ma che non è sincero?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias guardar alguns pequenos segredos ou partilhar tudo sem exceção?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria guardar alguns pequenos segredos ou compartilhar tudo sem exceção?"
+          }
         }
       }
     },
@@ -5318,6 +7130,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere un amore eterno ma a distanza o un amore vicino ma che finisce presto?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias reconciliar-te depois de uma discussão com um grande abraço ou com uma conversa calma?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria se reconciliar depois de uma briga com um grande abraço ou com uma conversa calma?"
           }
         }
       }
@@ -5354,6 +7178,18 @@
             "state": "translated",
             "value": "Preferiresti poter viaggiare nel futuro o nel passato?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias fazer uma viagem de carro sem dinheiro com os teus amigos ou umas férias de luxo com a tua família?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria fazer uma viagem de carro sem dinheiro com seus amigos ou férias de luxo com sua família?"
+          }
         }
       }
     },
@@ -5388,6 +7224,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti essere sempre felice ma solo o avere una vita normale con amici e famiglia?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que o teu melhor amigo namorasse com o teu ex ou que te escondesse um enorme erro?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que seu melhor amigo namorasse seu ex ou que escondesse de você um enorme erro?"
           }
         }
       }
@@ -5424,6 +7272,18 @@
             "state": "translated",
             "value": "Preferiresti vivere senza mai poter amare o senza mai poter essere amato?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias organizar uma festa surpresa para um amigo ou que organizassem uma para ti?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria organizar uma festa surpresa para um amigo ou que organizassem uma para você?"
+          }
         }
       }
     },
@@ -5458,6 +7318,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza ricordi o senza sogni?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que os teus amigos te dissessem sempre a verdade, mesmo que doesse, ou que adoçassem um pouco as coisas?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que seus amigos sempre dissessem a verdade, mesmo que doesse, ou que suavizassem um pouco as coisas?"
           }
         }
       }
@@ -5494,6 +7366,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un amore che dura poco ma intenso o uno che dura tutta la vita ma è tranquillo?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que o amor chegasse demasiado cedo ou demasiado tarde na tua vida?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que o amor chegasse cedo demais ou tarde demais na sua vida?"
+          }
         }
       }
     },
@@ -5528,6 +7412,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza poter mai più ridere o senza poter mai più piangere?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que o amor te mudasse ou que te revelasse?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que o amor mudasse você ou que revelasse você?"
           }
         }
       }
@@ -5564,6 +7460,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un giorno come il tuo eroe preferito o un giorno come la persona che ami?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias uma noite de jogos de tabuleiro ou uma noite a conversar profundamente sobre tudo e nada?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria uma noite de jogos de tabuleiro ou uma noite conversando profundamente sobre tudo e nada?"
+          }
         }
       }
     },
@@ -5598,6 +7506,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza mai viaggiare o senza mai restare fermo?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que o vosso amor crescesse através de provações ou através de ternura?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que o seu amor crescesse através de provações ou através de ternura?"
           }
         }
       }
@@ -5634,6 +7554,18 @@
             "state": "translated",
             "value": "Preferiresti avere sempre caldo o sempre freddo?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ser amigo de alguém muito diferente de ti ou muito parecido contigo?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser amigo de alguém muito diferente de você ou muito parecido com você?"
+          }
         }
       }
     },
@@ -5668,6 +7600,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza poter mai dormire o senza poter mai sognare?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ser muito rico mas sozinho, ou ter pouco dinheiro mas estar rodeado de amor?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser muito rico mas sozinho, ou ter pouco dinheiro mas estar cercado de amor?"
           }
         }
       }
@@ -5704,6 +7648,18 @@
             "state": "translated",
             "value": "Preferiresti essere famoso ma solo o sconosciuto ma circondato da amore?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias voltar ao passado para corrigir um erro ou ver o teu futuro daqui a 10 anos?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria voltar ao passado para corrigir um erro ou ver o seu futuro daqui a 10 anos?"
+          }
         }
       }
     },
@@ -5738,6 +7694,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere un amore impossibile ma forte o un amore possibile ma fragile?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ser famoso por algo que não fizeste ou desconhecido apesar de uma grande conquista?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser famoso por algo que não fez ou desconhecido apesar de uma grande conquista?"
           }
         }
       }
@@ -5774,6 +7742,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un amore segreto o uno pubblico che tutti giudicano?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias sacrificar a tua felicidade pessoal pelo bem comum ou dar prioridade a ti próprio?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria sacrificar sua felicidade pessoal pelo bem comum ou priorizar a si mesmo?"
+          }
         }
       }
     },
@@ -5808,6 +7788,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti avere la possibilità di cancellare un errore o di rivivere un momento perfetto?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que o outro te achasse irresistível fisicamente ou mentalmente?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que o outro achasse você irresistível fisicamente ou mentalmente?"
           }
         }
       }
@@ -5844,6 +7836,18 @@
             "state": "translated",
             "value": "Preferiresti vivere in un mondo senza tecnologia o senza natura?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias viver uma vida curta e intensa ou uma vida longa mas um pouco monótona?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria viver uma vida curta e intensa ou uma vida longa mas um pouco monótona?"
+          }
         }
       }
     },
@@ -5878,6 +7882,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere un amore che fa male ma che ricorderai sempre o uno che non ti lascia ricordi?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias perdoar facilmente quem te magoou ou guardar rancor durante muito tempo?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria perdoar facilmente quem magoou você ou guardar rancor durante muito tempo?"
           }
         }
       }
@@ -5914,6 +7930,18 @@
             "state": "translated",
             "value": "Preferiresti non dover mai più lavorare o non dover mai più dormire?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ler os pensamentos dos outros (ouvir tudo) ou que os outros pudessem ler os teus?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ler os pensamentos dos outros (ouvir tudo) ou que os outros pudessem ler os seus?"
+          }
         }
       }
     },
@@ -5948,6 +7976,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere un amore che dura poco ma intenso o uno lungo ma senza emozioni forti?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias viver várias histórias de amor diferentes ou uma única história que transcende o tempo?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria viver várias histórias de amor diferentes ou uma única história que transcende o tempo?"
           }
         }
       }
@@ -5984,6 +8024,18 @@
             "state": "translated",
             "value": "Preferiresti poter cambiare una sola decisione del passato o sapere una cosa del tuo futuro?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias um trabalho apaixonante mas mal pago ou um trabalho aborrecido mas muito bem pago?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria um trabalho apaixonante mas mal pago ou um trabalho chato mas muito bem pago?"
+          }
         }
       }
     },
@@ -6018,6 +8070,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza più musica o senza più film?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que eu pudesse ler o teu coração ou os teus pensamentos?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que eu pudesse ler seu coração ou seus pensamentos?"
           }
         }
       }
@@ -6054,6 +8118,18 @@
             "state": "translated",
             "value": "Preferiresti vivere senza amore o senza amicizia?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ter a resposta a todas as perguntas científicas ou a todas as perguntas filosóficas?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ter a resposta a todas as perguntas científicas ou a todas as perguntas filosóficas?"
+          }
         }
       }
     },
@@ -6088,6 +8164,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere in un mondo dove tutti dicono la verità o dove tutti mentono?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ser respeitado ou ser amado?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser respeitado ou ser amado?"
           }
         }
       }
@@ -6124,6 +8212,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un amore che ti fa ridere o uno che ti fa riflettere?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias viver no fundo do mar ou no espaço?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria viver no fundo do mar ou no espaço?"
+          }
         }
       }
     },
@@ -6158,6 +8258,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza mai potermi vedere o senza mai potermi sentire?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias viver sem telemóvel ou sem computador?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria viver sem celular ou sem computador?"
           }
         }
       }
@@ -6194,6 +8306,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un amore che nessuno approva o uno che tutti vogliono ma che non ti rende felice?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias um amor que te surpreenda ou um amor que te dê segurança?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria um amor que surpreendesse você ou um amor que desse segurança a você?"
+          }
         }
       }
     },
@@ -6228,6 +8352,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti poter controllare i tuoi sogni o riviverli nella realtà?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias passar um ano na prisão ou um ano na rua?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria passar um ano na prisão ou um ano na rua?"
           }
         }
       }
@@ -6264,6 +8400,18 @@
             "state": "translated",
             "value": "Preferiresti vivere senza mai baciarmi o senza mai abbracciarmi?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias estar numa equipa perdedora com os teus amigos ou na equipa rival e ganhar?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria estar numa equipe perdedora com seus amigos ou na equipe rival e ganhar?"
+          }
         }
       }
     },
@@ -6298,6 +8446,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti che io sia sempre il tuo primo messaggio al mattino o l’ultimo la sera?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que eu fosse a tua primeira mensagem da manhã ou a última da noite?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que eu fosse sua primeira mensagem da manhã ou a última da noite?"
           }
         }
       }
@@ -6334,6 +8494,18 @@
             "state": "translated",
             "value": "Preferiresti vivere senza amore o senza speranza?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias resolver as alterações climáticas ou acabar com todos os conflitos do mundo?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria resolver as mudanças climáticas ou acabar com todos os conflitos do mundo?"
+          }
         }
       }
     },
@@ -6368,6 +8540,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere un amore che dura tutta la vita ma con difficoltà o uno perfetto ma che finisce?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ter um parceiro que te desafiasse ou que te tranquilizasse?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ter um parceiro que desafiasse você ou que tranquilizasse você?"
           }
         }
       }
@@ -6404,6 +8588,18 @@
             "state": "translated",
             "value": "Preferiresti avere sempre paura o non provare mai emozioni?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que a nossa relação fosse como fogo de artifício ou como uma lareira acolhedora?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que nosso relacionamento fosse como fogos de artifício ou como uma lareira acolhedora?"
+          }
         }
       }
     },
@@ -6438,6 +8634,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza mai potermi vedere o senza mai potermi scrivere?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias trapacear num jogo e ganhar ou perder sabendo que deste tudo?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria trapacear num jogo e ganhar ou perder sabendo que deu tudo?"
           }
         }
       }
@@ -6474,6 +8682,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un amore che fa soffrire ma vero o uno facile ma falso?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias jantar sempre no teu restaurante favorito ou experimentar sempre um novo que acabou de abrir?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria jantar sempre no seu restaurante favorito ou experimentar sempre um novo que acabou de abrir?"
+          }
         }
       }
     },
@@ -6508,6 +8728,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza più social media o senza più amici?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias emprestar 500 € a alguém sem que ele devolvesse ou pedir 500 € emprestados e nunca devolver?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria emprestar 500 € a alguém sem que ele devolvesse ou pedir 500 € emprestados e nunca devolver?"
           }
         }
       }
@@ -6544,6 +8776,18 @@
             "state": "translated",
             "value": "Preferiresti avere la possibilità di cancellare un brutto giorno o di rivivere un giorno perfetto?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que eu te conhecesse de cor ou que te redescobrisse todos os dias?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que eu conhecesse você de cor ou que redescobrisse você todos os dias?"
+          }
         }
       }
     },
@@ -6578,6 +8822,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza mai dire ti amo o senza mai sentirlo dire?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias escrevermos juntos um livro ou vivermos juntos uma canção?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria escrevermos juntos um livro ou vivermos juntos uma canção?"
           }
         }
       }
@@ -6614,6 +8870,18 @@
             "state": "translated",
             "value": "Preferiresti vivere senza amore o senza libertà?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias amar ou ser amado?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria amar ou ser amado?"
+          }
         }
       }
     },
@@ -6648,6 +8916,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere un amore che ti cambia ma fa male o uno che non cambia niente ma è tranquillo?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias perder a visão ou perder a memória?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria perder a visão ou perder a memória?"
           }
         }
       }
@@ -6684,6 +8964,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un giorno con me perfetto o cento giorni normali?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias perder todos os dentes ou todo o cabelo?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria perder todos os dentes ou todo o cabelo?"
+          }
         }
       }
     },
@@ -6718,6 +9010,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza più ricordi o senza più sogni?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias nunca mais usar redes sociais ou nunca mais ver filmes?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria nunca mais usar redes sociais ou nunca mais ver filmes?"
           }
         }
       }
@@ -6754,6 +9058,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un amore che tutti giudicano o uno che nessuno conosce?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias passar os fins de semana dentro de casa ou ao ar livre?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria passar os fins de semana dentro de casa ou ao ar livre?"
+          }
         }
       }
     },
@@ -6788,6 +9104,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti poter cambiare un solo momento del passato o avere una sola certezza sul futuro?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ser a pessoa mais inteligente ou a mais divertida da sala?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser a pessoa mais inteligente ou a mais divertida da sala?"
           }
         }
       }
@@ -6824,6 +9152,18 @@
             "state": "translated",
             "value": "Preferiresti vivere senza amore o senza felicità?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias amar como no primeiro dia ou amar cada vez melhor todos os dias?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria amar como no primeiro dia ou amar cada vez melhor todos os dias?"
+          }
         }
       }
     },
@@ -6858,6 +9198,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere un amore che dura poco ma che ricorderai sempre o uno lungo che dimenticherai?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias nunca mais duvidar ou nunca mais ter medo?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria nunca mais duvidar ou nunca mais ter medo?"
           }
         }
       }
@@ -6894,6 +9246,18 @@
             "state": "translated",
             "value": "Preferiresti vivere in un mondo senza verità o in un mondo senza amore?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que a nossa relação fosse um refúgio de paz ou uma grande aventura?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que nosso relacionamento fosse um refúgio de paz ou uma grande aventura?"
+          }
         }
       }
     },
@@ -6928,6 +9292,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza mai vedermi o senza mai parlarmi?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias conhecer pessoas famosas hoje ou aquelas que serão famosas daqui a um ano?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria conhecer pessoas famosas hoje ou aquelas que serão famosas daqui a um ano?"
           }
         }
       }
@@ -6964,6 +9340,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un amore che ti rende pazzo ma vero o uno tranquillo ma vuoto?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que o nosso amor fosse cantado numa canção ou pintado num quadro?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que nosso amor fosse cantado numa canção ou pintado num quadro?"
+          }
         }
       }
     },
@@ -6998,6 +9386,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza mai potermi toccare o senza mai potermi guardare?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que o nosso amor fosse um refúgio constante ou uma fonte eterna de desafios?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que nosso amor fosse um refúgio constante ou uma fonte eterna de desafios?"
           }
         }
       }
@@ -7034,6 +9434,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un amore che fa male ma intenso o uno facile ma vuoto?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que cada beijo dissesse \"amo-te\" ou \"entendo-te\"?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que cada beijo dissesse \"eu te amo\" ou \"eu te entendo\"?"
+          }
         }
       }
     },
@@ -7068,6 +9480,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza più sognare o senza più ridere?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ser sempre o centro das atenções ou ficar discreto nos encontros?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser sempre o centro das atenções ou ficar discreto nos encontros?"
           }
         }
       }
@@ -7104,6 +9528,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un amore eterno ma difficile o uno breve ma perfetto?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ter um pequeno círculo de amigos próximos ou um grande grupo de conhecidos?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ter um pequeno círculo de amigos próximos ou um grande grupo de conhecidos?"
+          }
         }
       }
     },
@@ -7138,6 +9574,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza potermi mai dire ti amo o senza mai potermi abbracciare?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ir a uma festa onde conheces todos mas é aborrecida, ou a uma festa animada com desconhecidos?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ir a uma festa onde conhece todos mas é chata, ou a uma festa animada com desconhecidos?"
           }
         }
       }
@@ -7174,6 +9622,18 @@
             "state": "translated",
             "value": "Preferiresti avere un amore che nessuno approva o uno che tutti vogliono ma che non è sincero?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que nos separássemos com um sorriso ou ficássemos juntos na dúvida?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que nos separássemos com um sorriso ou ficássemos juntos na dúvida?"
+          }
         }
       }
     },
@@ -7208,6 +9668,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza amore o senza gioia?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que eu conhecesse todo o teu passado ou apenas o teu presente?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que eu conhecesse todo o seu passado ou apenas o seu presente?"
           }
         }
       }
@@ -7244,6 +9716,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un amore che ti fa crescere ma soffrire o uno che non ti cambia ma è tranquillo?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias uma relação à distância cheia de mensagens ou uma relação próxima com pouca comunicação?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria um relacionamento à distância cheio de mensagens ou um relacionamento próximo com pouca comunicação?"
+          }
         }
       }
     },
@@ -7278,6 +9762,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza mai potermi sentire o senza mai potermi vedere?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ter de anunciar sempre publicamente os teus sucessos pessoais ou mantê-los totalmente em segredo?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ter que anunciar sempre publicamente seus sucessos pessoais ou mantê-los totalmente em segredo?"
           }
         }
       }
@@ -7314,6 +9810,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un amore che ti consuma ma vero o uno facile ma superficiale?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias saber sempre quando te mentem ou nunca saber?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria saber sempre quando estão mentindo para você ou nunca saber?"
+          }
         }
       }
     },
@@ -7348,6 +9856,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza speranza o senza amore?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ficar preso numa ilha com alguém de quem não gostas ou estar completamente sozinho?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ficar preso em uma ilha com alguém de quem não gosta ou estar completamente sozinho?"
           }
         }
       }
@@ -7384,6 +9904,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un amore che dura poco ma intenso o uno lungo ma senza emozioni?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias nunca poder dizer o que pensas ou ter de dizer sempre a verdade?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria nunca poder dizer o que pensa ou ter que sempre dizer a verdade?"
+          }
         }
       }
     },
@@ -7418,6 +9950,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza mai più ridere o senza mai più piangere?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ser sem-abrigo mas rodeado de família e amigos ou viver confortavelmente mas sozinho?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser sem-teto mas cercado de família e amigos ou viver confortavelmente mas sozinho?"
           }
         }
       }
@@ -7454,6 +9998,18 @@
             "state": "translated",
             "value": "Preferiresti avere un amore impossibile ma vero o uno possibile ma falso?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias viajar ao passado para conhecer os teus antepassados ou ao futuro para conhecer os teus descendentes?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria viajar ao passado para conhecer seus antepassados ou ao futuro para conhecer seus descendentes?"
+          }
         }
       }
     },
@@ -7488,6 +10044,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza ricordi o senza sogni?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias chegar sempre 10 minutos atrasado ou 2 horas adiantado a todos os compromissos?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria chegar sempre 10 minutos atrasado ou 2 horas adiantado a todos os compromissos?"
           }
         }
       }
@@ -7524,6 +10092,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un amore eterno ma difficile o uno breve ma intenso?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que a nossa história fosse contada ou guardada em segredo?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que nossa história fosse contada ou guardada em segredo?"
+          }
         }
       }
     },
@@ -7558,6 +10138,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza amore romantico o senza amicizia?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ter razão numa discussão ou fazer logo as pazes?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ter razão numa discussão ou fazer logo as pazes?"
           }
         }
       }
@@ -7594,6 +10186,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un amore che ti rende felice ma dura poco o uno lungo ma che non ti emoziona?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias participar num reality show que filma a tua vida 24/7 ou viver sozinho em total isolamento?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria participar de um reality show que filma sua vida 24/7 ou viver sozinho em total isolamento?"
+          }
         }
       }
     },
@@ -7628,6 +10232,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza mai baciarmi o senza mai abbracciarmi?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que o amor chegasse cedo demais ou tarde demais?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que o amor chegasse cedo demais ou tarde demais?"
           }
         }
       }
@@ -7664,6 +10280,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un amore che fa male ma vero o uno tranquillo ma falso?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias viver num lugar quente ou frio durante todo o ano?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria viver em um lugar quente ou frio durante todo o ano?"
+          }
         }
       }
     },
@@ -7698,6 +10326,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza amore o senza fiducia?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ter um parceiro sempre honesto, mesmo que doesse, ou um mentiroso que não te magoasse?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ter um parceiro sempre honesto, mesmo que doesse, ou um mentiroso que não magoasse você?"
           }
         }
       }
@@ -7734,6 +10374,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un amore segreto ma sincero o uno pubblico ma falso?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias uma relação cheia de projetos ou cheia de aventuras?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria um relacionamento cheio de projetos ou cheio de aventuras?"
+          }
         }
       }
     },
@@ -7768,6 +10420,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza potermi mai vedere o senza potermi mai sentire?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias viver uma vida maravilhosa até aos 100 anos ou passar 100 anos na idade que escolhesses?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria viver uma vida maravilhosa até os 100 anos ou passar 100 anos na idade que escolhesse?"
           }
         }
       }
@@ -7804,6 +10468,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un amore che ti fa piangere ma che ricordi o uno che non lascia segni?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias renascer no mesmo país ou noutro à tua escolha?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria renascer no mesmo país ou em outro à sua escolha?"
+          }
         }
       }
     },
@@ -7838,6 +10514,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza più ridere o senza più sognare?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias viver num país com quatro estações distintas ou num país sempre quente e ensolarado?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria viver em um país com quatro estações distintas ou em um país sempre quente e ensolarado?"
           }
         }
       }
@@ -7874,6 +10562,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un amore eterno ma difficile o uno breve ma perfetto?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias viver junto ao mar ou na montanha?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria viver à beira-mar ou na montanha?"
+          }
         }
       }
     },
@@ -7908,6 +10608,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza amore o senza speranza?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias viver num castelo com passagens secretas ou numa mansão moderna com toda a tecnologia de ponta?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria viver em um castelo com passagens secretas ou em uma mansão moderna com toda a tecnologia de ponta?"
           }
         }
       }
@@ -7944,6 +10656,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un amore che ti rende felice ma dura poco o uno lungo ma che non ti emoziona?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias seguir uma rotina rígida todos os dias ou ter total espontaneidade na tua agenda?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria seguir uma rotina rígida todos os dias ou ter total espontaneidade na sua agenda?"
+          }
         }
       }
     },
@@ -7978,6 +10702,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza mai potermi toccare o senza mai potermi parlare?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ter de te vestir sempre de forma formal ou sempre de forma casual?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ter que se vestir sempre de forma formal ou sempre de forma casual?"
           }
         }
       }
@@ -8014,6 +10750,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un amore che ti fa soffrire ma vero o uno facile ma falso?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias sentir que nunca fazes o suficiente ou que eu nunca faço o suficiente?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria sentir que nunca faz o suficiente ou que eu nunca faço o suficiente?"
+          }
         }
       }
     },
@@ -8048,6 +10796,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza amore o senza felicità?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias poder comer tudo o que quisesses sem nunca engordar ou sentir-te totalmente descansado dormindo apenas três horas?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria poder comer tudo o que quisesse sem nunca engordar ou sentir-se totalmente descansado dormindo apenas três horas?"
           }
         }
       }
@@ -8084,6 +10844,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un amore che nessuno conosce o uno che tutti giudicano?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ser a pessoa mais sortuda do mundo ou saber que conquistaste tudo com o teu trabalho?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser a pessoa mais sortuda do mundo ou saber que conquistou tudo com o seu trabalho?"
+          }
         }
       }
     },
@@ -8118,6 +10890,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti poter cambiare un momento del passato o sapere qualcosa del futuro?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ter um vizinho barulhento ou um vizinho demasiado curioso?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ter um vizinho barulhento ou um vizinho curioso demais?"
           }
         }
       }
@@ -8154,6 +10938,18 @@
             "state": "translated",
             "value": "Preferiresti vivere senza amore o senza libertà?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ser surpreendido todos os dias ou compreender-me sem esforço?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser surpreendido todos os dias ou compreender-me sem esforço?"
+          }
         }
       }
     },
@@ -8188,6 +10984,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere un amore che ti fa crescere ma che fa male o uno che non ti cambia ma ti lascia tranquillo?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ter muita energia ou muito dinheiro?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ter muita energia ou muito dinheiro?"
           }
         }
       }
@@ -8224,6 +11032,18 @@
             "state": "translated",
             "value": "Preferiresti vivere senza mai potermi scrivere o senza mai potermi vedere?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ser um génio que todos acham idiota ou um idiota que todos acham um génio?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser um gênio que todos acham idiota ou um idiota que todos acham um gênio?"
+          }
         }
       }
     },
@@ -8258,6 +11078,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere un amore impossibile ma vero o uno possibile ma falso?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ouvir \"amo-te\" muitas vezes ou senti-lo sem palavras?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ouvir \"eu te amo\" muitas vezes ou sentir isso sem palavras?"
           }
         }
       }
@@ -8294,6 +11126,18 @@
             "state": "translated",
             "value": "Preferiresti vivere senza ricordi o senza sogni?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias reviver o nosso primeiro encontro ou a nossa primeira gargalhada incontrolável?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria reviver nosso primeiro encontro ou nossa primeira gargalhada incontrolável?"
+          }
         }
       }
     },
@@ -8328,6 +11172,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere un amore eterno ma difficile o uno breve ma intenso?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que eu mostrasse o meu amor através de ações ou de olhares?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que eu mostrasse meu amor através de ações ou de olhares?"
           }
         }
       }
@@ -8364,6 +11220,18 @@
             "state": "translated",
             "value": "Preferiresti vivere senza amore romantico o senza amicizia?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ter sempre as perguntas certas ou sempre as respostas certas?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ter sempre as perguntas certas ou sempre as respostas certas?"
+          }
         }
       }
     },
@@ -8398,6 +11266,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere un amore che dura poco ma intenso o uno lungo ma meno emozionante?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ter a oportunidade de viajar pelo mundo durante um ano ou falar 10 línguas fluentemente?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ter a oportunidade de viajar pelo mundo durante um ano ou falar 10 línguas fluentemente?"
           }
         }
       }
@@ -8434,6 +11314,18 @@
             "state": "translated",
             "value": "Preferiresti vivere senza mai ridere o senza mai piangere?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que eu te contasse os meus sonhos ou os meus medos?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que eu contasse a você meus sonhos ou meus medos?"
+          }
         }
       }
     },
@@ -8468,6 +11360,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti avere un amore che tutti conoscono o uno segreto solo per voi due?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ser a escolha óbvia de alguém ou a escolha corajosa?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser a escolha óbvia de alguém ou a escolha corajosa?"
           }
         }
       }
@@ -8504,6 +11408,18 @@
             "state": "translated",
             "value": "Preferiresti vivere senza potermi mai baciare o senza potermi mai abbracciare?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias uma relação onde partilhássemos tudo ou onde cada um tivesse o seu jardim secreto?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria um relacionamento onde compartilhássemos tudo ou onde cada um tivesse seu jardim secreto?"
+          }
         }
       }
     },
@@ -8538,6 +11454,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere un amore che ti fa male ma che ricordi o uno facile che dimentichi?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ter a oportunidade de corrigir o teu maior erro ou nunca mais cometer erros?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ter a oportunidade de corrigir seu maior erro ou nunca mais cometer erros?"
           }
         }
       }
@@ -8574,6 +11502,18 @@
             "state": "translated",
             "value": "Preferiresti vivere senza speranza o senza amore?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ser muito inteligente ou muito atraente?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser muito inteligente ou muito atraente?"
+          }
         }
       }
     },
@@ -8608,6 +11548,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere un amore che ti consuma ma sincero o uno tranquillo ma falso?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ser amado pelo que és ou pelo que poderias vir a ser?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser amado pelo que é ou pelo que poderia se tornar?"
           }
         }
       }
@@ -8644,6 +11596,18 @@
             "state": "translated",
             "value": "Preferiresti vivere senza più sognare o senza più ridere?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias não ter fotos mas lembrar-te perfeitamente de todos os lugares que visitaste, ou ter muitas fotos mas nenhuma memória?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria não ter fotos mas lembrar-se perfeitamente de todos os lugares que visitou, ou ter muitas fotos mas nenhuma memória?"
+          }
         }
       }
     },
@@ -8678,6 +11642,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere un amore eterno ma difficile o uno breve ma perfetto?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que eu te escrevesse todos os dias ou que falasse contigo uma vez com intensidade?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que eu escrevesse para você todos os dias ou que falasse com você uma vez com intensidade?"
           }
         }
       }
@@ -8714,6 +11690,18 @@
             "state": "translated",
             "value": "Preferiresti vivere senza amore o senza amicizia?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias que te dissessem antecipadamente todas as coisas bonitas que te esperam ou descobri-las de surpresa?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria que dissessem antecipadamente todas as coisas bonitas que esperam por você ou descobri-las de surpresa?"
+          }
         }
       }
     },
@@ -8748,6 +11736,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere un amore che ti fa piangere ma che resta o uno facile che dimentichi subito?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias estar sempre nos meus braços ou sempre nos meus pensamentos?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria estar sempre nos meus braços ou sempre nos meus pensamentos?"
           }
         }
       }
@@ -8784,6 +11784,18 @@
             "state": "translated",
             "value": "Preferiresti vivere senza mai sentire ti amo o senza mai poterlo dire?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias uma relação que começasse de forma inesperada ou uma que parecesse destinada?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria um relacionamento que começasse de forma inesperada ou um que parecesse destinado?"
+          }
         }
       }
     },
@@ -8818,6 +11830,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere un amore che ti rende felice ma breve o uno lungo ma che non ti emoziona?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias amar como se fosse a primeira vez ou como se fosse a última?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria amar como se fosse a primeira vez ou como se fosse a última?"
           }
         }
       }
@@ -8854,6 +11878,18 @@
             "state": "translated",
             "value": "Preferiresti vivere senza amore o senza verità?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ganhar o Prémio Nobel da Paz ou 5 milhões de dólares?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ganhar o Prêmio Nobel da Paz ou 5 milhões de dólares?"
+          }
         }
       }
     },
@@ -8889,6 +11925,18 @@
             "state": "translated",
             "value": "Preferiresti vivere un amore che tutti giudicano o uno che nessuno conosce?"
           }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias ser o meu refúgio nas tempestades ou o meu raio de sol diário?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria ser meu refúgio nas tempestades ou meu raio de sol diário?"
+          }
         }
       }
     },
@@ -8923,6 +11971,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preferiresti vivere senza mai potermi vedere o senza mai potermi sentire?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferias nunca envelhecer ou nunca te preocupares com dinheiro?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você preferiria nunca envelhecer ou nunca se preocupar com dinheiro?"
           }
         }
       }

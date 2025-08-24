@@ -1,28 +1,46 @@
 {
-  "sourceLanguage" : "en",
+  "sourceLanguage" : "en", 
   "strings" : {
     "CFBundleDisplayName" : {
-      "comment" : "Bundle display name",
+      "comment" : "Bundle display name", 
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Love2Love"
           }
-        },
+        }, 
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Love2Love"
           }
-        },
+        }, 
         "es" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Love2Love"
+          }
+        }, 
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Love2Love"
+          }
+        }, 
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Love2Love"
+          }
+        }, 
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Love2Love"
           }
         },
-        "it" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Love2Love"
@@ -31,27 +49,45 @@
       }
     },
     "CFBundleName" : {
-      "comment" : "Bundle name",
+      "comment" : "Bundle name", 
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "CoupleApp"
           }
-        },
+        }, 
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "CoupleApp"
           }
-        },
+        }, 
         "es" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "CoupleApp"
+          }
+        }, 
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "CoupleApp"
+          }
+        }, 
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "CoupleApp"
+          }
+        }, 
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "CoupleApp"
           }
         },
-        "it" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "CoupleApp"
@@ -60,21 +96,39 @@
       }
     },
     "NSHumanReadableCopyright" : {
-      "comment" : "Copyright (human-readable)",
+      "comment" : "Copyright (human-readable)", 
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : ""
           }
-        },
+        }, 
         "es" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : ""
+          }
+        }, 
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : ""
+          }
+        }, 
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : ""
+          }
+        }, 
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : ""
           }
         },
-        "it" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : ""
@@ -83,107 +137,161 @@
       }
     },
     "NSLocationWhenInUseUsageDescription" : {
-      "comment" : "Location usage description",
+      "comment" : "Location usage description", 
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Love2Love uses your location to calculate the distance between you and your partner, and to allow you to add places to your shared memories."
           }
-        },
+        }, 
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Love2Love utilise votre localisation pour calculer la distance entre vous et votre partenaire, et pour vous permettre d'ajouter des lieux à vos souvenirs partagés."
           }
-        },
+        }, 
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Love2Love nutzt deinen Standort, um die Entfernung zwischen dir und deinem Partner bzw. deiner Partnerin zu berechnen und damit du Orte zu euren gemeinsamen Erinnerungen hinzufügen kannst."
           }
-        },
+        }, 
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Love2Love utiliza tu ubicación para calcular la distancia entre tú y tu pareja, y para permitirte añadir lugares a vuestros recuerdos compartidos."
           }
-        },
+        }, 
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Love2Love utilizza la tua posizione per calcolare la distanza tra te e il tuo partner e per permetterti di aggiungere luoghi ai vostri ricordi condivisi."
+          }
+        }, 
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Love2Love utiliza a tua localização para calcular a distância entre ti e o teu parceiro, e para te permitir adicionar locais às vossas memórias partilhadas."
+          }
+        }, 
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Love2Love usa sua localização para calcular a distância entre você e seu parceiro, e para permitir que você adicione lugares às suas memórias compartilhadas."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Love2Love gebruikt je locatie om de afstand tussen jou en je partner te berekenen en om plaatsen aan jullie gedeelde herinneringen toe te voegen."
           }
         }
       }
     },
     "NSPhotoLibraryUsageDescription" : {
-      "comment" : "Photo library usage description",
+      "comment" : "Photo library usage description", 
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Love2Love needs access to your photos to allow you to personalize your profile and add images to your shared memories in the couple's journal."
           }
-        },
+        }, 
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Love2Love a besoin d'accéder à vos photos pour vous permettre de personnaliser votre profil et d'ajouter des images à vos souvenirs partagés dans le journal de couple."
           }
-        },
+        }, 
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Love2Love benötigt Zugriff auf deine Fotos, damit du dein Profil personalisieren und Bilder zu euren gemeinsamen Erinnerungen im Paar-Tagebuch hinzufügen kannst."
           }
-        },
+        }, 
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Love2Love necesita acceder a tus fotos para permitirte personalizar tu perfil y añadir imágenes a tus recuerdos compartidos en el diario de pareja."
           }
-        },
+        }, 
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Love2Love ha bisogno di accedere alle tue foto per permetterti di personalizzare il tuo profilo e aggiungere immagini ai vostri ricordi condivisi nel diario di coppia."
+          }
+        }, 
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Love2Love precisa de acesso às tuas fotos para te permitir personalizar o teu perfil e adicionar imagens às vossas memórias partilhadas no diário de casal."
+          }
+        }, 
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Love2Love precisa de acesso às suas fotos para permitir que você personalize seu perfil e adicione imagens às suas memórias compartilhadas no diário do casal."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Love2Love heeft toegang tot je foto's nodig zodat je je profiel kunt personaliseren en afbeeldingen aan jullie gedeelde herinneringen in het dagboek van het koppel kunt toevoegen."
           }
         }
       }
     },
     "NSUserNotificationsUsageDescription" : {
-      "comment" : "Notification usage description",
-      "extractionState" : "stale",
+      "comment" : "Notification usage description", 
+      "extractionState" : "stale", 
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Love2Love sends you notifications when your partner sends you a message. You can disable these notifications at any time in Settings."
           }
-        },
+        }, 
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Love2Love vous envoie des notifications lorsque votre partenaire vous écrit un message. Vous pouvez désactiver ces notifications à tout moment dans les Réglages."
           }
-        },
+        }, 
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Love2Love sendet dir Benachrichtigungen, wenn dein Partner bzw. deine Partnerin dir schreibt. Du kannst diese Benachrichtigungen jederzeit in den Einstellungen deaktivieren."
           }
-        },
+        }, 
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Love2Love te envía notificaciones cuando tu pareja te envía un mensaje. Puedes desactivar estas notificaciones en cualquier momento en Ajustes."
           }
-        },
+        }, 
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Love2Love ti invia notifiche quando il tuo partner ti invia un messaggio. Puoi disattivare queste notifiche in qualsiasi momento nelle Impostazioni."
+          }
+        }, 
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Love2Love envia-te notificações quando o teu parceiro te envia uma mensagem. Podes desativar estas notificações a qualquer momento nas Definições."
+          }
+        }, 
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Love2Love envia notificações quando seu parceiro lhe envia uma mensagem. Você pode desativar essas notificações a qualquer momento nas Configurações."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Love2Love stuurt je meldingen wanneer je partner je een bericht stuurt. Je kunt deze meldingen op elk moment in Instellingen uitschakelen."
           }
         }
       }
