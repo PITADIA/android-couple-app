@@ -45,12 +45,6 @@
             "state": "translated",
             "value": "Activar notificações"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Activeer meldingen"
-          }
         }
       }
     },
@@ -97,12 +91,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Activar notificações"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Activeer meldingen"
           }
         }
       }
@@ -151,12 +139,6 @@
             "state": "translated",
             "value": "Cancelar"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Annuleren"
-          }
         }
       }
     },
@@ -203,12 +185,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Conectar meu parceiro"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mijn partner koppelen"
           }
         }
       }
@@ -257,12 +233,6 @@
             "state": "translated",
             "value": "Continuar mesmo assim"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Toch doorgaan"
-          }
         }
       }
     },
@@ -309,12 +279,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Continuar sem notificações"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Doorgaan zonder meldingen"
           }
         }
       }
@@ -363,12 +327,6 @@
             "state": "translated",
             "value": "Continuar"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Doorgaan"
-          }
         }
       }
     },
@@ -415,12 +373,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "O que tu não recebeu o suficiente em teus relacionamentos passados que adoraria experimentar comigo?"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wat kreeg je in je vorige relaties niet genoeg, maar zou je graag met mij ervaren?"
           }
         }
       }
@@ -469,12 +421,6 @@
             "state": "translated",
             "value": "Que tipo de comportamento faria ti desistir de um relacionamento? E como podemos garantir que isso nunca aconteça entre nós?"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Welk soort gedrag zou jou een relatie doen beëindigen? En hoe zorgen we ervoor dat dat nooit tussen ons gebeurt?"
-          }
         }
       }
     },
@@ -521,12 +467,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "O que tu gostasria que eu perguntasse com mais frequência?"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wat zou je willen dat ik je vaker vraag?"
           }
         }
       }
@@ -575,12 +515,6 @@
             "state": "translated",
             "value": "Há algo que tu espera de mim, mas ainda não teve coragem de pedir?"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Is er iets waar je op hoopt van mij, maar nog niet durfde te vragen?"
-          }
         }
       }
     },
@@ -627,12 +561,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual ferida emocional do teu passado tu ainda está tentando curar? E como posso ajudar nesse processo?"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Welke emotionele wond uit je verleden probeer je nog te helen? En hoe kan ik je daarbij helpen?"
           }
         }
       }
@@ -681,12 +609,6 @@
             "state": "translated",
             "value": "Qual é a qualidade que tu mais ama em mim e que nunca quer ver mudar?"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wat is de eigenschap die je het meest aan mij waardeert en nooit zou willen zien veranderen?"
-          }
         }
       }
     },
@@ -733,12 +655,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Que pequeno gesto diário poderíamos fazer um pelo outro para trazer mais alegria ao nosso dia a dia?"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Welk klein dagelijks gebaar zouden we voor elkaar kunnen doen om meer vreugde in ons dagelijks leven te brengen?"
           }
         }
       }
@@ -787,12 +703,6 @@
             "state": "translated",
             "value": "Se tu tivesse que sugerir três ideias para nos ajudar a lidar melhor com conflitos, quais seriam?"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Als je drie ideeën moest voorstellen om ons te helpen conflicten beter te hanteren, welke zouden dat zijn?"
-          }
         }
       }
     },
@@ -839,12 +749,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tu sentes que o nosso relacionamento é equilibrado quando se trata de dar e receber? Se não, como podemos melhorar isso?"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vind je dat onze relatie in balans is wat geven en ontvangen betreft? Zo niet, hoe kunnen we dat verbeteren?"
           }
         }
       }
@@ -893,12 +797,6 @@
             "state": "translated",
             "value": "Onde ti nos vê em cinco anos e que passos podemos tomar hoje para tornar essa visão realidade?"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Waar zie je ons over vijf jaar, en welke stappen kunnen we vandaag nemen om die visie werkelijkheid te maken?"
-          }
         }
       }
     },
@@ -945,12 +843,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "O que tu gostasria de receber mais de mim e que não está recebendo o suficiente agora? Prometo que farei o meu melhor para lhe dar."
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wat zou je graag meer van mij ontvangen, wat je nu niet genoeg krijgt? Ik beloof dat ik mijn best zal doen het je te geven."
           }
         }
       }
@@ -999,12 +891,6 @@
             "state": "translated",
             "value": "Conte-me a coisa mais bonita que já fiz por ti e por que isso significou tanto para ti."
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vertel me het mooiste dat ik ooit voor je heb gedaan en waarom het zoveel voor je betekende."
-          }
         }
       }
     },
@@ -1051,12 +937,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é a tia coisa favorita absoluta de fazer comigo?"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wat doe je het allerliefst met mij?"
           }
         }
       }
@@ -1105,12 +985,6 @@
             "state": "translated",
             "value": "Se tivéssemos que agradecer um ao outro por uma coisa, qual seria?"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Als we elkaar voor één ding dankbaar moesten zijn, wat zou dat dan zijn?"
-          }
         }
       }
     },
@@ -1157,12 +1031,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Que tipo de presente tu mais gosta de receber de mim?"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Welk soort cadeau ontvang je het liefst van mij?"
           }
         }
       }
@@ -1211,12 +1079,6 @@
             "state": "translated",
             "value": "Há alguma parte da tia personalidade que tu tens escondido de mim porque tem medo de ser julgado?"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Is er een deel van je persoonlijkheid dat je voor mij verborgen houdt omdat je bang bent om beoordeeld te worden?"
-          }
         }
       }
     },
@@ -1263,12 +1125,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Há algo que eu faço que te incomoda — e que tu gostasria que eu parasse de fazer? Ajude-me a entender por que tu achas que isso é uma barreira para o nosso amor ou por que poderia se tornar uma."
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Doe ik iets dat je stoort en waarvan je zou willen dat ik ermee stop? Help me begrijpen waarom je denkt dat het een hindernis is voor onze liefde of dat het er een kan worden."
           }
         }
       }
@@ -1317,12 +1173,6 @@
             "state": "translated",
             "value": "Há algo sobre o teu passado ou tua infância que tu ainda não compartilhou comigo, mas gostaria de conversar?"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Is er iets over je verleden of je jeugd dat je nog niet met mij hebt gedeeld, maar waar je graag over zou praten?"
-          }
         }
       }
     },
@@ -1369,12 +1219,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Se tu tivesse que descrever a minha linguagem do amor, qual diria que é?"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Als je mijn liefdestaal moest beschrijven, wat zou je dan zeggen dat die is?"
           }
         }
       }
@@ -1423,12 +1267,6 @@
             "state": "translated",
             "value": "Qual é a nossa maior força como casal?"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wat is onze grootste kracht als koppel?"
-          }
         }
       }
     },
@@ -1475,12 +1313,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Todos os dias, tu e teu parceiro receberão uma pergunta especialmente criada para melhorar a qualidade do relacionamento e fortalecer o vínculo."
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Elke dag ontvangen jij en je partner een vraag die speciaal ontworpen is om de kwaliteit van jullie relatie te verbeteren en jullie band te versterken."
           }
         }
       }
@@ -1529,12 +1361,6 @@
             "state": "translated",
             "value": "Conexão diária, vínculo mais forte"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dagelijkse verbinding, sterkere band"
-          }
         }
       }
     },
@@ -1581,12 +1407,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Disponível apenas para casais conectados"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Alleen beschikbaar voor verbonden koppels"
           }
         }
       }
@@ -1635,12 +1455,6 @@
             "state": "translated",
             "value": "Pergunta do Dia"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dagelijkse vraag"
-          }
         }
       }
     },
@@ -1687,12 +1501,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "O que tu achas que devemos priorizar para melhorar o nosso relacionamento?"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wat denk je dat we moeten prioriteren om onze relatie te verbeteren?"
           }
         }
       }
@@ -1741,12 +1549,6 @@
             "state": "translated",
             "value": "Todos os dias, descubra uma pergunta única especialmente criada para fortalecer o vínculo, aprofundar o amor e nutrir a conexão entre vocês."
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ontdek elke dag een unieke vraag die speciaal is ontworpen om jullie band te versterken, jullie liefde te verdiepen en de connectie tussen jullie te voeden."
-          }
         }
       }
     },
@@ -1793,12 +1595,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Todos os dias às 21h"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Elke dag om 21.00 uur"
           }
         }
       }
@@ -1847,12 +1643,6 @@
             "state": "translated",
             "value": "Um ritual diário de amor"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Een dagelijks liefdesritueel"
-          }
         }
       }
     },
@@ -1899,12 +1689,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Carregando pergunta..."
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vraag wordt geladen..."
           }
         }
       }
@@ -1953,12 +1737,6 @@
             "state": "translated",
             "value": "Tu precisas se conectar com teu parceiro para acessar as perguntas diárias."
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Je moet verbinden met je partner om toegang te krijgen tot dagelijkse vragen."
-          }
         }
       }
     },
@@ -2005,12 +1783,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Parceiro necessário"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Partner vereist"
           }
         }
       }
@@ -2059,12 +1831,6 @@
             "state": "translated",
             "value": "💕 Pergunta do Dia"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "💕 Dagelijkse vraag"
-          }
         }
       }
     },
@@ -2111,12 +1877,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "A mágica acontece quando vocês dois estão prontos para se conectar 💕"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "De magie ontstaat wanneer jullie allebei klaar zijn om te verbinden 💕"
           }
         }
       }
@@ -2165,12 +1925,6 @@
             "state": "translated",
             "value": "Peça a %@ para activar as notificações para desbloquear as perguntas diárias juntos."
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vraag %@ om meldingen te activeren om samen dagelijkse vragen te ontgrendelen."
-          }
         }
       }
     },
@@ -2217,12 +1971,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Quase pronto!"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bijna klaar!"
           }
         }
       }
@@ -2271,12 +2019,6 @@
             "state": "translated",
             "value": "Meu parceiro está pronto"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mijn partner is klaar"
-          }
         }
       }
     },
@@ -2323,12 +2065,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Esta página será atualizada automaticamente assim que teu parceiro activar as notificações"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Deze pagina wordt automatisch vernieuwd zodra je partner meldingen activeert"
           }
         }
       }
@@ -2377,12 +2113,6 @@
             "state": "translated",
             "value": "Compartilhe este recurso com teu parceiro"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Deel deze functie met je partner"
-          }
         }
       }
     },
@@ -2429,12 +2159,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Peça que ativem as notificações"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vraag ze om meldingen aan te zetten"
           }
         }
       }
@@ -2483,12 +2207,6 @@
             "state": "translated",
             "value": "Comecem juntos o ritual diário de amor"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Begin samen aan jullie dagelijkse liefdesritueel"
-          }
         }
       }
     },
@@ -2535,12 +2253,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Todos os dias, tu e teu parceiro receberão uma pergunta especialmente criada para melhorar a qualidade do relacionamento e fortalecer o vínculo que os une."
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Elke dag ontvangen jij en je partner een vraag die speciaal is ontworpen om de kwaliteit van jullie relatie te verbeteren en de band die jullie verbindt te versterken."
           }
         }
       }
@@ -2589,12 +2301,6 @@
             "state": "translated",
             "value": "As notificações são necessárias para desbloquear as perguntas diárias"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Meldingen zijn vereist om dagelijkse vragen te ontgrendelen"
-          }
         }
       }
     },
@@ -2641,12 +2347,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Prévia"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Voorbeeld"
           }
         }
       }
@@ -2695,12 +2395,6 @@
             "state": "translated",
             "value": "O que tu achas que devemos priorizar para melhorar o nosso relacionamento?"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wat denk je dat we moeten prioriteren om onze relatie te verbeteren?"
-          }
         }
       }
     },
@@ -2747,12 +2441,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Compartilhe teus pensamentos..."
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Deel je gedachten..."
           }
         }
       }
@@ -2801,12 +2489,6 @@
             "state": "translated",
             "value": "Comece a conversa compartilhando tua resposta."
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Start het gesprek door je antwoord te delen."
-          }
         }
       }
     },
@@ -2853,12 +2535,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Enviar"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Verzenden"
           }
         }
       }
@@ -2907,12 +2583,6 @@
             "state": "translated",
             "value": "Pergunta do Dia"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vraag van de dag"
-          }
         }
       }
     },
@@ -2959,12 +2629,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Digite tua resposta..."
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Typ je antwoord..."
           }
         }
       }
@@ -3013,12 +2677,6 @@
             "state": "translated",
             "value": "Parabéns! Tu respondeu todas as perguntas diárias."
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Gefeliciteerd! Je hebt alle dagelijkse vragen beantwoord."
-          }
         }
       }
     },
@@ -3065,12 +2723,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Perguntas respondidas"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Antwoorden gegeven"
           }
         }
       }
@@ -3119,12 +2771,6 @@
             "state": "translated",
             "value": "Taxa de conclusão"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Voltooiingspercentage"
-          }
         }
       }
     },
@@ -3171,12 +2817,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Parabéns por fortalecer teu relacionamento por meio de conversas significativas!"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Gefeliciteerd met het versterken van jullie relatie door betekenisvolle gesprekken!"
           }
         }
       }
@@ -3225,12 +2865,6 @@
             "state": "translated",
             "value": "Tu completou todas as perguntas diárias! Teu histórico de conversas continua acessível abaixo."
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Je hebt alle dagelijkse vragen voltooid! Je gespreksgeschiedenis blijft hieronder toegankelijk."
-          }
         }
       }
     },
@@ -3277,12 +2911,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Perguntas concluídas: %d/%d"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Voltooide vragen: %d/%d"
           }
         }
       }
@@ -3331,12 +2959,6 @@
             "state": "translated",
             "value": "Todas as perguntas concluídas!"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Alle vragen voltooid!"
-          }
         }
       }
     },
@@ -3383,12 +3005,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Jornada concluída!"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Reis voltooid!"
           }
         }
       }
@@ -3437,12 +3053,6 @@
             "state": "translated",
             "value": "Novas perguntas começarão desde o início."
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nieuwe vragen beginnen weer vanaf het begin."
-          }
         }
       }
     },
@@ -3489,12 +3099,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sequência atual"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Huidige streak"
           }
         }
       }
@@ -3543,12 +3147,6 @@
             "state": "translated",
             "value": "Total de perguntas"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Totaal aantal vragen"
-          }
         }
       }
     },
@@ -3595,12 +3193,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ver histórico completo"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bekijk volledige geschiedenis"
           }
         }
       }
@@ -3649,12 +3241,6 @@
             "state": "translated",
             "value": "Carregando a pergunta de hoje..."
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "De vraag van vandaag wordt geladen..."
-          }
         }
       }
     },
@@ -3701,12 +3287,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Notificação diária às 21h"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dagelijkse melding om 21.00 uur"
           }
         }
       }
@@ -3755,12 +3335,6 @@
             "state": "translated",
             "value": "Tua pergunta diária está pronta! Conecte-se com teu parceiro."
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Je dagelijkse vraag is klaar! Verbind met je partner."
-          }
         }
       }
     },
@@ -3807,12 +3381,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "💕 Pergunta do Dia"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "💕 Dagelijkse vraag"
           }
         }
       }
@@ -3861,12 +3429,6 @@
             "state": "translated",
             "value": "💬 Nova mensagem"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "💬 Nieuw bericht"
-          }
         }
       }
     },
@@ -3913,12 +3475,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Para receber perguntas diárias, tu precisas activar as notificações nas configurações do teu telemóvel."
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Om dagelijkse vragen te ontvangen, moet je meldingen inschakelen in de instellingen van je telefoon."
           }
         }
       }
@@ -3967,12 +3523,6 @@
             "state": "translated",
             "value": "Tu podes activar as notificações depois em Ajustes para receber perguntas diárias."
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Je kunt later in de instellingen meldingen inschakelen om dagelijkse vragen te ontvangen."
-          }
         }
       }
     },
@@ -4019,12 +3569,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Notificações desativadas"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Meldingen uitgeschakeld"
           }
         }
       }
@@ -4073,12 +3617,6 @@
             "state": "translated",
             "value": "Enviaremos uma notificação todos os dias às 21h contigoa pergunta diária."
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "We sturen je elke dag om 21.00 uur een melding met je dagelijkse vraag."
-          }
         }
       }
     },
@@ -4125,12 +3663,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Notificações ativadas!"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Meldingen geactiveerd!"
           }
         }
       }
@@ -4179,12 +3711,6 @@
             "state": "translated",
             "value": "Conecte o parceiro primeiro"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Eerst partner verbinden"
-          }
         }
       }
     },
@@ -4231,12 +3757,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Parceiro precisa de notificações"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Partner heeft meldingen nodig"
           }
         }
       }
@@ -4285,12 +3805,6 @@
             "state": "translated",
             "value": "Pronto!"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Klaar!"
-          }
         }
       }
     },
@@ -4337,12 +3851,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Status desconhecido"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Onbekende status"
           }
         }
       }
@@ -4391,12 +3899,6 @@
             "state": "translated",
             "value": "Activar notificações"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Meldingen inschakelen"
-          }
         }
       }
     },
@@ -4443,12 +3945,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Construa conversas mais profundas, descubra coisas novas um sobre o outro e criem momentos diários de conexão."
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bouw diepere gesprekken op, ontdek nieuwe dingen over elkaar en creëer dagelijkse momenten van verbinding."
           }
         }
       }
@@ -4497,12 +3993,6 @@
             "state": "translated",
             "value": "Receba perguntas diárias para fortalecer teu relacionamento"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ontvang dagelijkse vragen om jullie relatie te versterken"
-          }
         }
       }
     },
@@ -4549,12 +4039,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mantenha-se conectado todos os dias"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Blijf elke dag verbonden"
           }
         }
       }
@@ -4603,12 +4087,6 @@
             "state": "translated",
             "value": "Tu podes alterar essa configuração mais tarde nas configurações do teu telemóvel."
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Je kunt deze instelling later altijd wijzigen in de instellingen van je telefoon."
-          }
         }
       }
     },
@@ -4655,12 +4133,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Respondido"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Beantwoord"
           }
         }
       }
@@ -4709,12 +4181,6 @@
             "state": "translated",
             "value": "Ignorado"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Overgeslagen"
-          }
         }
       }
     },
@@ -4761,12 +4227,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aguardando"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "In afwachting"
           }
         }
       }
@@ -4815,12 +4275,6 @@
             "state": "translated",
             "value": "Configurações"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Instellingen"
-          }
         }
       }
     },
@@ -4867,12 +4321,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pular esta etapa"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sla deze stap over"
           }
         }
       }
@@ -4921,12 +4369,6 @@
             "state": "translated",
             "value": "Ativo"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Actief"
-          }
         }
       }
     },
@@ -4973,12 +4415,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ambos responderam"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Beiden hebben geantwoord"
           }
         }
       }
@@ -5027,12 +4463,6 @@
             "state": "translated",
             "value": "Expirado"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Verlopen"
-          }
         }
       }
     },
@@ -5079,12 +4509,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Uma resposta recebida"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Eén antwoord ontvangen"
           }
         }
       }
@@ -5133,12 +4557,6 @@
             "state": "translated",
             "value": "Aguardando respostas"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wacht op antwoorden"
-          }
         }
       }
     },
@@ -5185,12 +4603,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ignorado"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Overgeslagen"
           }
         }
       }
@@ -5239,12 +4651,6 @@
             "state": "translated",
             "value": "Há %d horas"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%d uur geleden"
-          }
         }
       }
     },
@@ -5291,12 +4697,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Há %d min"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%d min geleden"
           }
         }
       }
@@ -5345,12 +4745,6 @@
             "state": "translated",
             "value": "Agora"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nu"
-          }
         }
       }
     },
@@ -5397,12 +4791,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aguardando a resposta do teu parceiro..."
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wachten op het antwoord van je partner..."
           }
         }
       }
@@ -5451,12 +4839,6 @@
             "state": "translated",
             "value": "Nenhuma pergunta disponível"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Geen vraag beschikbaar"
-          }
         }
       }
     },
@@ -5503,12 +4885,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Gerar uma pergunta"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Genereer een vraag"
           }
         }
       }
@@ -5557,12 +4933,6 @@
             "state": "translated",
             "value": "Teu chat está sendo criado..."
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Je chat wordt aangemaakt..."
-          }
         }
       }
     },
@@ -5609,12 +4979,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tu chegou ao fim das tuas 3 perguntas gratuitas 💌"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Je hebt het einde van je 3 gratis vragen bereikt 💌"
           }
         }
       }
@@ -5663,12 +5027,6 @@
             "state": "translated",
             "value": "Todos os dias, uma nova pergunta para fortalecer teu relacionamento, explorar tuas emoções e criar memórias profundas com teu parceiro. Tuas novas perguntas estão esperando por ti."
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Elke dag een nieuwe vraag om je relatie te versterken, je emoties te verkennen en diepe herinneringen te creëren met je partner. Je nieuwe vragen wachten op je."
-          }
         }
       }
     },
@@ -5715,12 +5073,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Perguntas Diárias"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dagelijkse vragen"
           }
         }
       }
@@ -5769,12 +5121,6 @@
             "state": "translated",
             "value": "Desbloquear acesso premium"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Premiumtoegang ontgrendelen"
-          }
         }
       }
     },
@@ -5821,12 +5167,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Há algo que eu levo na brincadeira e que tu leva muito a sério?"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Is er iets wat ik licht opvat terwijl jij het erg serieus neemt?"
           }
         }
       }
@@ -5875,12 +5215,6 @@
             "state": "translated",
             "value": "Tu sentes que eu dedico tempo suficiente para realmente conhecê-lo?"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vind je dat ik genoeg tijd neem om je echt te leren kennen?"
-          }
         }
       }
     },
@@ -5927,12 +5261,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Quando discutimos, o que eu poderia mudar na forma como reajo?"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Als we ruzie hebben, wat zou ik kunnen veranderen in de manier waarop ik reageer?"
           }
         }
       }
@@ -5981,12 +5309,6 @@
             "state": "translated",
             "value": "Se nosso amor passasse por um momento difícil, o que tu gostasria que eu nunca esquecesse de fazer por ti?"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Als onze liefde een moeilijke periode doormaakte, wat zou je dan willen dat ik nooit zou vergeten voor je te doen?"
-          }
         }
       }
     },
@@ -6033,12 +5355,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Que versão de si mesmo tu gostasria de se tornar ao meu lado e como posso apoiá-lo nesse caminho?"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Welke versie van jezelf zou je naast mij willen worden, en hoe kan ik je op die weg steunen?"
           }
         }
       }
@@ -6087,12 +5403,6 @@
             "state": "translated",
             "value": "Existe uma necessidade emocional tua que eu não percebo suficientemente, mas que tu gostasria que eu entendesse melhor?"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Is er een emotionele behoefte die ik niet genoeg in jou zie, maar die je graag beter begrepen zou willen hebben?"
-          }
         }
       }
     },
@@ -6139,12 +5449,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "O que tu gostasria que eu percebesse mais em ti?"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wat zou je willen dat ik vaker aan jou opmerk?"
           }
         }
       }
@@ -6193,12 +5497,6 @@
             "state": "translated",
             "value": "O que faço bem e que tu gostasria que eu continuasse fazendo, mesmo daqui a anos?"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wat doe ik goed en zou je willen dat ik blijf doen, zelfs over jaren?"
-          }
         }
       }
     },
@@ -6245,12 +5543,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Quando tu duvida de si mesmo, o que posso fazer ou dizer para ajudá-lo a recuperar a confiança?"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Als je aan jezelf twijfelt, wat kan ik dan doen of zeggen om je weer vertrouwen te geven?"
           }
         }
       }
@@ -6299,12 +5591,6 @@
             "state": "translated",
             "value": "Há um gesto simples que eu poderia fazer com mais frequência e que teria um grande impacto no teu bem-estar?"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Is er een eenvoudig gebaar dat ik vaker zou kunnen doen en een grote impact zou hebben op jouw welzijn?"
-          }
         }
       }
     },
@@ -6351,12 +5637,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Existe um lado teu que tu gostasria de me mostrar mais, mas ainda não tem coragem suficiente?"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Is er een kant van jezelf die je me meer zou willen laten zien, maar waarvoor je nog niet helemaal durft?"
           }
         }
       }
@@ -6405,12 +5685,6 @@
             "state": "translated",
             "value": "Se eu tivesse que melhorar em uma área do o nosso relacionamento, qual tu escolheria primeiro?"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Als ik op één gebied van onze relatie moest verbeteren, welke zou je dan als eerste kiezen?"
-          }
         }
       }
     },
@@ -6457,12 +5731,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "O que tu gostasria que eu visse em ti, mesmo quando não tem forças para mostrar?"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wat zou je willen dat ik in jou zie, zelfs wanneer je niet de kracht hebt om het te tonen?"
           }
         }
       }
@@ -6511,12 +5779,6 @@
             "state": "translated",
             "value": "Existe uma maneira que tu gostasria que eu falasse contigo com mais frequência?"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Is er een manier waarop je zou willen dat ik vaker tegen je praat?"
-          }
         }
       }
     },
@@ -6563,12 +5825,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Quando tomo uma decisão, tu sentes que eu o considero o suficiente nela?"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Als ik een beslissing neem, heb je dan het gevoel dat ik jou daar genoeg in meeneem?"
           }
         }
       }
@@ -6617,12 +5873,6 @@
             "state": "translated",
             "value": "O que tu gostasria que eu fizesse de forma mais espontânea, sem que tu precise pedir?"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wat zou je willen dat ik vaker spontaan doe, zonder dat je het hoeft te vragen?"
-          }
         }
       }
     },
@@ -6669,12 +5919,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tu sentes que eu me esforço o suficiente para construir algo sólido contigo?"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vind je dat ik genoeg moeite doe om iets stevigs met jou op te bouwen?"
           }
         }
       }
@@ -6723,12 +5967,6 @@
             "state": "translated",
             "value": "Quando discordamos, tu ainda se sente respeitado em tias opiniões?"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Als we het oneens zijn, voel je je dan nog steeds gerespecteerd in je mening?"
-          }
         }
       }
     },
@@ -6775,12 +6013,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Do que tu sentes mais falta quando não nos vemos por alguns dias?"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wat mis je het meest wanneer we elkaar een paar dagen niet zien?"
           }
         }
       }
@@ -6829,12 +6061,6 @@
             "state": "translated",
             "value": "Tu achas que rimos o suficiente juntos?"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Denk je dat we genoeg samen lachen?"
-          }
         }
       }
     },
@@ -6881,12 +6107,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tu sentes que estamos seguindo na mesma direção juntos?"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Heb je het gevoel dat we samen in dezelfde richting gaan?"
           }
         }
       }
@@ -6935,12 +6155,6 @@
             "state": "translated",
             "value": "Quando tu estás tendo um dia ruim, sente que eu respondo da maneira que tu precisas?"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Als je een slechte dag hebt, heb je dan het gevoel dat ik reageer zoals jij nodig hebt?"
-          }
         }
       }
     },
@@ -6987,12 +6201,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Existe um assunto que evitamos com muita frequência e sobre o qual deveríamos realmente conversar?"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Is er een onderwerp dat we te vaak vermijden maar waar we eigenlijk over zouden moeten praten?"
           }
         }
       }
@@ -7041,12 +6249,6 @@
             "state": "translated",
             "value": "Tu sentes que eu considero tua opinião quando tomo decisões importantes?"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Heb je het gevoel dat ik rekening houd met jouw mening als ik belangrijke beslissingen neem?"
-          }
         }
       }
     },
@@ -7093,12 +6295,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Quando discordamos, tu sentes que eu realmente tento entendê-lo?"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Als we het oneens zijn, heb je dan het gevoel dat ik echt probeer je te begrijpen?"
           }
         }
       }
@@ -7147,12 +6343,6 @@
             "state": "translated",
             "value": "Tu sentes que estamos construindo um relacionamento que pode realmente durar? Se sim, por quê? Se não, o que devemos mudar?"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Heb je het gevoel dat we een relatie opbouwen die echt kan standhouden? Zo ja, waarom? Zo niet, wat zouden we moeten veranderen?"
-          }
         }
       }
     },
@@ -7199,12 +6389,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aproveitamos suficientemente as coisas simples juntos?"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Genieten we genoeg van de simpele dingen samen?"
           }
         }
       }
@@ -7253,12 +6437,6 @@
             "state": "translated",
             "value": "Há algo que eu faça bem, mas não com frequência suficiente?"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Is er iets dat ik goed doe, maar niet vaak genoeg?"
-          }
         }
       }
     },
@@ -7305,12 +6483,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tu achas que eu me adapto bem o suficiente à maneira como tu funciona?"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Denk je dat ik me goed genoeg aanpas aan hoe jij functioneert?"
           }
         }
       }
@@ -7359,12 +6531,6 @@
             "state": "translated",
             "value": "Tu sentes que eu realmente escuto quando tu falas sobre coisas que são importantes para ti?"
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Heb je het gevoel dat ik echt luister wanneer je praat over dingen die voor jou belangrijk zijn?"
-          }
         }
       }
     },
@@ -7411,12 +6577,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "O que tu gostasria que eu valorizasse mais em ti?"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wat zou je willen dat ik meer in jou waardeer?"
           }
         }
       }
@@ -7465,12 +6625,6 @@
             "state": "translated",
             "value": "Preparando..."
           }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Voorbereiden…"
-          }
         }
       }
     },
@@ -7517,12 +6671,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Estamos preparando teu espaço de chat"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "We bereiden je chatsessie voor"
           }
         }
       }
