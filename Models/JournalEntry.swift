@@ -179,11 +179,18 @@ extension JournalEntry {
             var city: String?
             var country: String?
             
-            // Essayer de récupérer depuis l'ancien format d'abord
-            if let legacyLocation = data["location"] as? [String: Any] {
-                address = legacyLocation["address"] as? String
-                city = legacyLocation["city"] as? String
-                country = legacyLocation["country"] as? String
+            // 🔧 NOUVEAU: Essayer de récupérer depuis le nouveau format d'abord
+            address = data["locationAddress"] as? String
+            city = data["locationCity"] as? String
+            country = data["locationCountry"] as? String
+            
+            // Si pas trouvé, essayer l'ancien format comme fallback
+            if city == nil && country == nil {
+                if let legacyLocation = data["location"] as? [String: Any] {
+                    address = address ?? (legacyLocation["address"] as? String)
+                    city = legacyLocation["city"] as? String
+                    country = legacyLocation["country"] as? String
+                }
             }
             
             self.location = JournalLocation(

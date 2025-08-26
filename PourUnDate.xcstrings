@@ -46,6 +46,12 @@
             "state": "translated",
             "value": "Que qualidade rara em alguém te atrai imediatamente?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WWelke zeldzame eigenschap bij iemand trekt je meteen aan?"
+          }
         }
       }
     },
@@ -92,6 +98,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Existe alguma lembrança de infância que você gostaria de reviver hoje?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is er een jeugdherinnering die je vandaag opnieuw zou willen beleven?"
           }
         }
       }
@@ -140,6 +152,12 @@
             "state": "translated",
             "value": "Quem é a pessoa mais próxima de você na sua vida e por quê?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wie is de persoon die het dichtst bij je staat in je leven, en waarom?"
+          }
         }
       }
     },
@@ -186,6 +204,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Do que você mais se orgulha, mesmo que raramente fale sobre isso?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waar ben je het meest trots op, ook al praat je er zelden over?"
           }
         }
       }
@@ -234,6 +258,12 @@
             "state": "translated",
             "value": "Você acha que as pessoas entram na sua vida por algum motivo?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Denk je dat mensen om een reden in je leven komen?"
+          }
         }
       }
     },
@@ -280,6 +310,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Existe alguma pergunta que você está tentando responder agora na sua vida?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is er een vraag waarop je in je leven op dit moment een antwoord probeert te vinden?"
           }
         }
       }
@@ -328,6 +364,12 @@
             "state": "translated",
             "value": "Existe algum momento ao qual você gostaria de voltar para mudar algo?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is er een moment waarop je graag zou teruggaan om iets te veranderen?"
+          }
         }
       }
     },
@@ -374,6 +416,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Se você tivesse que descrever um relacionamento equilibrado em três palavras, quais seriam?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als je een evenwichtige relatie in drie woorden moest beschrijven, welke zouden dat zijn?"
           }
         }
       }
@@ -422,6 +470,12 @@
             "state": "translated",
             "value": "O que em você jamais gostaria de mudar?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is één ding aan jezelf dat je nooit zou willen veranderen?"
+          }
         }
       }
     },
@@ -468,6 +522,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Quando foi a última vez que você teve um relacionamento sério?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wanneer had je voor het laatst een serieuze relatie?"
           }
         }
       }
@@ -516,6 +576,12 @@
             "state": "translated",
             "value": "Descreva para mim a sua linguagem do amor."
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beschrijf jouw liefdestaal voor me."
+          }
         }
       }
     },
@@ -562,6 +628,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "O que mudou a sua visão sobre os relacionamentos?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat heeft je kijk op relaties veranderd?"
           }
         }
       }
@@ -610,6 +682,12 @@
             "state": "translated",
             "value": "Se tivesse que partir amanhã para uma viagem romântica, para onde iria?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als je morgen op romantische reis moest vertrekken, waar zou je heen gaan?"
+          }
         }
       }
     },
@@ -656,6 +734,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é o seu maior sonho na vida?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is je grootste droom in het leven?"
           }
         }
       }
@@ -704,6 +788,12 @@
             "state": "translated",
             "value": "O que você faria de diferente no seu último relacionamento, se pudesse?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat zou je anders doen in je laatste relatie, als je kon?"
+          }
         }
       }
     },
@@ -750,6 +840,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Que música toca o seu coração?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welk lied raakt je hart?"
           }
         }
       }
@@ -798,6 +894,12 @@
             "state": "translated",
             "value": "Se você pudesse convidar qualquer pessoa do mundo para jantar, quem escolheria?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als je iedereen ter wereld voor het diner mocht uitnodigen, wie zou je kiezen?"
+          }
         }
       }
     },
@@ -844,6 +946,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Antes de fazer uma ligação, você ensaia o que vai dizer? Por quê?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oefen je wel eens wat je gaat zeggen voordat je iemand belt? Waarom?"
           }
         }
       }
@@ -892,6 +1000,12 @@
             "state": "translated",
             "value": "Você realmente acredita em amor à primeira vista?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geloof je echt in liefde op het eerste gezicht?"
+          }
         }
       }
     },
@@ -938,6 +1052,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Como seria um dia 'perfeito' para você?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoe zou een 'perfecte' dag er voor jou uitzien?"
           }
         }
       }
@@ -986,6 +1106,12 @@
             "state": "translated",
             "value": "Quando foi a última vez que você cantou? Para si mesmo? Para outra pessoa?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wanneer heb je voor het laatst gezongen? Voor jezelf? Voor iemand anders?"
+          }
         }
       }
     },
@@ -1032,6 +1158,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Você tem um pressentimento secreto sobre como vai morrer?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heb je een geheim gevoel over hoe je zult sterven?"
           }
         }
       }
@@ -1080,6 +1212,12 @@
             "state": "translated",
             "value": "Pelo que na sua vida você sente mais gratidão?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waarvoor ben je in je leven het meest dankbaar?"
+          }
         }
       }
     },
@@ -1126,6 +1264,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Se você pudesse mudar algo na forma como foi criado, o que mudaria?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als je iets kon veranderen aan de manier waarop je bent opgevoed, wat zou je dan veranderen?"
           }
         }
       }
@@ -1174,6 +1318,12 @@
             "state": "translated",
             "value": "Se você pudesse acordar amanhã com uma qualidade ou habilidade a mais, qual seria?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als je morgen wakker zou worden met één nieuwe eigenschap of vaardigheid, welke zou dat zijn?"
+          }
         }
       }
     },
@@ -1220,6 +1370,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Existe algo que você sonha fazer há muito tempo? Por que ainda não fez?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is er iets waar je al heel lang van droomt om te doen? Waarom heb je het nog niet gedaan?"
           }
         }
       }
@@ -1268,6 +1424,12 @@
             "state": "translated",
             "value": "Qual é a maior conquista da sua vida?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is je grootste prestatie in het leven?"
+          }
         }
       }
     },
@@ -1314,6 +1476,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é a sua memória mais dolorosa?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is je pijnlijkste herinnering?"
           }
         }
       }
@@ -1362,6 +1530,12 @@
             "state": "translated",
             "value": "Se você soubesse que iria morrer subitamente dentro de um ano, mudaria algo na sua vida atual? Por quê?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als je wist dat je over een jaar plotseling zou sterven, zou je dan iets veranderen aan hoe je nu leeft? Waarom?"
+          }
         }
       }
     },
@@ -1408,6 +1582,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Você é mais apaixonado ou lógico no amor?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ben je in de liefde meer gepassioneerd of logisch?"
           }
         }
       }
@@ -1456,6 +1636,12 @@
             "state": "translated",
             "value": "Qual é a primeira coisa que você repara em alguém?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat valt je als eerste op aan iemand?"
+          }
         }
       }
     },
@@ -1502,6 +1688,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é a sua ideia de uma noite perfeita a dois?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is jouw idee van een perfecte avond met z'n tweeën?"
           }
         }
       }
@@ -1550,6 +1742,12 @@
             "state": "translated",
             "value": "Você já teve o coração partido?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is je hart ooit gebroken?"
+          }
         }
       }
     },
@@ -1596,6 +1794,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Que traço de personalidade faz você se derreter por alguém?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welke karaktereigenschap doet je voor iemand smelten?"
           }
         }
       }
@@ -1644,6 +1848,12 @@
             "state": "translated",
             "value": "Que papel o amor e o carinho desempenham na sua vida?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welke rol spelen liefde en genegenheid in jouw leven?"
+          }
         }
       }
     },
@@ -1690,6 +1900,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é a coisa mais importante em uma primeira impressão?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is het belangrijkste bij het maken van een eerste indruk?"
           }
         }
       }
@@ -1738,6 +1954,12 @@
             "state": "translated",
             "value": "Quão próxima e calorosa é a sua família? Você acha que sua infância foi mais feliz do que a da maioria das pessoas?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoe hecht en warm is jouw familie? Denk je dat je kindertijd gelukkiger was dan die van de meeste mensen?"
+          }
         }
       }
     },
@@ -1784,6 +2006,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Como você se sente em relação ao seu relacionamento com sua mãe?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoe voel je je over je relatie met je moeder?"
           }
         }
       }
@@ -1832,6 +2060,12 @@
             "state": "translated",
             "value": "Como você se sente em relação ao seu relacionamento com seu pai?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoe voel je je over je relatie met je vader?"
+          }
         }
       }
     },
@@ -1878,6 +2112,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Você acredita em almas gêmeas?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geloof je in zielsverwanten?"
           }
         }
       }
@@ -1926,6 +2166,12 @@
             "state": "translated",
             "value": "O que torna alguém inesquecível na sua opinião?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat maakt iemand onvergetelijk volgens jou?"
+          }
         }
       }
     },
@@ -1972,6 +2218,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Complete esta frase: Gostaria de ter alguém com quem eu pudesse compartilhar..."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maak deze zin af: ik zou willen dat ik iemand had met wie ik ... kon delen."
           }
         }
       }
@@ -2020,6 +2272,12 @@
             "state": "translated",
             "value": "Qual é a sua maior expectativa em um relacionamento?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is je grootste verwachting in een relatie?"
+          }
         }
       }
     },
@@ -2066,6 +2324,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Que filme ou série faz você querer estar apaixonado?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welke film of serie doet je verlangen naar verliefd zijn?"
           }
         }
       }
@@ -2114,6 +2378,12 @@
             "state": "translated",
             "value": "Você prefere declarações discretas ou grandiosas?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heb je liever discrete of grootse verklaringen?"
+          }
         }
       }
     },
@@ -2160,6 +2430,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Quando foi a última vez que você chorou na frente de alguém? E sozinho?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wanneer heb je voor het laatst voor iemand gehuild? En alleen?"
           }
         }
       }
@@ -2208,6 +2484,12 @@
             "state": "translated",
             "value": "Existe algo sobre o qual você acha que nunca se deve brincar?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is er iets waar volgens jou nooit grappen over gemaakt mogen worden?"
+          }
         }
       }
     },
@@ -2254,6 +2536,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Se você morresse esta noite sem poder falar com ninguém, do que mais se arrependeria de não ter dito? Por que ainda não disse?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als je vanavond zou sterven zonder nog met iemand te kunnen spreken, wat zou je dan het meest betreuren dat je iemand niet hebt verteld? Waarom heb je het nog niet verteld?"
           }
         }
       }
@@ -2302,6 +2590,12 @@
             "state": "translated",
             "value": "Você já sentiu uma conexão imediata com alguém?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heb je ooit meteen een klik met iemand gevoeld?"
+          }
         }
       }
     },
@@ -2348,6 +2642,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "O que você sente quando se apaixona?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat voel je wanneer je verliefd wordt?"
           }
         }
       }
@@ -2396,6 +2696,12 @@
             "state": "translated",
             "value": "Se você pudesse reviver um ano da sua vida, que idade escolheria?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als je één jaar van je leven opnieuw kon beleven, welke leeftijd zou je kiezen?"
+          }
         }
       }
     },
@@ -2442,6 +2748,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Você é do tipo de pessoa que acredita em sinais do destino?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ben jij het type persoon dat gelooft in tekenen van het lot?"
           }
         }
       }
@@ -2490,6 +2802,12 @@
             "state": "translated",
             "value": "Que tipo de elogio realmente toca você?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welk soort compliment raakt je echt?"
+          }
         }
       }
     },
@@ -2536,6 +2854,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Se você tivesse que resumir o amor em uma palavra, qual seria?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als je liefde in één woord moest samenvatten, welk woord zou dat zijn?"
           }
         }
       }
@@ -2584,6 +2908,12 @@
             "state": "translated",
             "value": "Que outro trabalho você acha que adoraria fazer?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welk ander beroep zou je graag willen uitoefenen?"
+          }
         }
       }
     },
@@ -2630,6 +2960,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "A que você atribui seus maiores sucessos na vida? E seus maiores fracassos?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waaraan schrijf je je grootste successen in het leven toe? En je grootste mislukkingen?"
           }
         }
       }
@@ -2678,6 +3014,12 @@
             "state": "translated",
             "value": "Se você só pudesse comer uma refeição pelo resto da sua vida, qual seria?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als je de rest van je leven maar één maaltijd kon eten, welke zou dat zijn?"
+          }
         }
       }
     },
@@ -2724,6 +3066,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Se a segurança não fosse um problema, que fenômeno natural ou desastre você gostaria de viver?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als veiligheid geen zorg was, welk natuurverschijnsel of welke ramp zou je willen meemaken?"
           }
         }
       }
@@ -2772,6 +3120,12 @@
             "state": "translated",
             "value": "Que pergunta você gostaria de fazer a alguém antes de se apaixonar?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welke vraag zou je iemand willen stellen voordat je verliefd wordt?"
+          }
         }
       }
     },
@@ -2818,6 +3172,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é a sua maneira preferida de demonstrar afeto?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is jouw favoriete manier om genegenheid te tonen?"
           }
         }
       }
@@ -2866,6 +3226,12 @@
             "state": "translated",
             "value": "Quem é uma pessoa na sua vida que você respeita profundamente? Por quê?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wie is een persoon in je leven die je diep respecteert? Waarom?"
+          }
         }
       }
     },
@@ -2912,6 +3278,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Se você tivesse que escolher uma frase como mantra de vida, qual seria?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als je één zin als levensmantra moest kiezen, welke zou dat zijn?"
           }
         }
       }
@@ -2960,6 +3332,12 @@
             "state": "translated",
             "value": "Qual é uma coisa que você fica feliz por nunca mais ter que fazer?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat ben je blij dat je nooit meer hoeft te doen?"
+          }
         }
       }
     },
@@ -3006,6 +3384,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Que tipo de momentos fortalecem o vínculo entre duas pessoas, na sua opinião?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welke momenten versterken volgens jou de band tussen twee mensen?"
           }
         }
       }
@@ -3054,6 +3438,12 @@
             "state": "translated",
             "value": "Sua casa está pegando fogo. Depois de salvar seus entes queridos e animais de estimação, você tem tempo para pegar um objeto. Qual? Por quê?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Je huis staat in brand. Nadat je je dierbaren en huisdieren hebt gered, heb je tijd om één voorwerp mee te nemen. Welk? Waarom?"
+          }
         }
       }
     },
@@ -3100,6 +3490,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Em que você acha que é melhor?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waar vind je dat je het beste in bent?"
           }
         }
       }
@@ -3148,6 +3544,12 @@
             "state": "translated",
             "value": "O que você espera de um primeiro encontro ideal?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat verwacht je van een ideale eerste date?"
+          }
         }
       }
     },
@@ -3194,6 +3596,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Se você pudesse mudar uma coisa na sua aparência, qual seria?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als je één ding aan je uiterlijk kon veranderen, wat zou dat zijn?"
           }
         }
       }
@@ -3242,6 +3650,12 @@
             "state": "translated",
             "value": "O que faz você dizer: 'Essa é a pessoa certa'?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat doet je zeggen: 'Dit is de juiste persoon'?"
+          }
         }
       }
     },
@@ -3288,6 +3702,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Você prefere olhares significativos ou longas conversas?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heb je liever veelbetekenende blikken of lange gesprekken?"
           }
         }
       }
@@ -3336,6 +3756,12 @@
             "state": "translated",
             "value": "Como você se comporta quando se apaixona?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoe gedraag je je wanneer je verliefd wordt?"
+          }
         }
       }
     },
@@ -3382,6 +3808,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Que novo hobby você gostaria de experimentar?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welke nieuwe hobby zou je willen uitproberen?"
           }
         }
       }
@@ -3430,6 +3862,12 @@
             "state": "translated",
             "value": "Você joga videogame? Se sim, qual?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speel je videogames? Zo ja, welke?"
+          }
         }
       }
     },
@@ -3476,6 +3914,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Você é mais do tipo de mensagens longas ou ligações espontâneas?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ben je meer van de lange berichten of van de spontane telefoontjes?"
           }
         }
       }
@@ -3524,6 +3968,12 @@
             "state": "translated",
             "value": "O que você acha que faz um relacionamento durar?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat denk je dat een relatie doet standhouden?"
+          }
         }
       }
     },
@@ -3570,6 +4020,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é a parte do seu corpo que você mais gosta fisicamente?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welk deel van je lichaam vind je fysiek het mooist?"
           }
         }
       }
@@ -3618,6 +4074,12 @@
             "state": "translated",
             "value": "Qual é uma das suas lembranças favoritas de infância?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is een van je favoriete jeugdherinneringen?"
+          }
         }
       }
     },
@@ -3664,6 +4126,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Se você pudesse viver em qualquer lugar do mundo por um ano, para onde iria?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als je een jaar overal ter wereld mocht wonen, waar zou je heen gaan?"
           }
         }
       }
@@ -3712,6 +4180,12 @@
             "state": "translated",
             "value": "Você já viveu um momento que parecia saído de um filme?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heb je ooit een moment meegemaakt dat recht uit een film leek te komen?"
+          }
         }
       }
     },
@@ -3758,6 +4232,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Se você pudesse ter um superpoder, qual escolheria?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als je een superkracht kon hebben, welke zou je kiezen?"
           }
         }
       }
@@ -3806,6 +4286,12 @@
             "state": "translated",
             "value": "Se o amor fosse uma estação, qual representaria melhor você?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als liefde een seizoen was, welk seizoen zou jou dan het best vertegenwoordigen?"
+          }
         }
       }
     },
@@ -3852,6 +4338,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Que tipo de linguagem do amor mais seduz você em alguém?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welke liefdestaal verleidt je het meest bij iemand?"
           }
         }
       }
@@ -3900,6 +4392,12 @@
             "state": "translated",
             "value": "Você acha que seria um bom crítico gastronômico?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Denk je dat je een goede foodcriticus zou zijn?"
+          }
         }
       }
     },
@@ -3946,6 +4444,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Se você pudesse conhecer uma celebridade, viva ou morta, quem escolheria?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als je een beroemdheid, levend of dood, kon ontmoeten, wie zou je kiezen?"
           }
         }
       }
@@ -3994,6 +4498,12 @@
             "state": "translated",
             "value": "Qual é o menor detalhe que pode mudar tudo em um encontro?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is het kleinste detail dat een date helemaal kan veranderen?"
+          }
         }
       }
     },
@@ -4040,6 +4550,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "A qual dos seus pais você mais se parece?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Op welke van je ouders lijk je het meest?"
           }
         }
       }
@@ -4088,6 +4604,12 @@
             "state": "translated",
             "value": "Você tem uma visão do amor que mudou com o tempo?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heb je een visie op liefde die in de loop der tijd is veranderd?"
+          }
         }
       }
     },
@@ -4134,6 +4656,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Como você gostaria de ser lembrado depois da sua morte?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoe zou je herinnerd willen worden na je dood?"
           }
         }
       }
@@ -4182,6 +4710,12 @@
             "state": "translated",
             "value": "O que você acredita que é capaz de realizar na sua vida?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waarvan geloof je dat je ertoe in staat bent in je leven?"
+          }
         }
       }
     },
@@ -4228,6 +4762,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Quais valores são essenciais para você em um relacionamento?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welke waarden zijn essentieel voor jou in een relatie?"
           }
         }
       }
@@ -4276,6 +4816,12 @@
             "state": "translated",
             "value": "Quem é a sua pessoa favorita para seguir no Instagram?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wie volg je het liefst op Instagram?"
+          }
         }
       }
     },
@@ -4322,6 +4868,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é uma coisa que uma pessoa pode fazer para impressionar você instantaneamente?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat kan iemand doen om je meteen te imponeren?"
           }
         }
       }
@@ -4370,6 +4922,12 @@
             "state": "translated",
             "value": "Você tem um segredo que sonha um dia compartilhar com a pessoa certa?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heb je een geheim dat je op een dag met de juiste persoon hoopt te delen?"
+          }
         }
       }
     },
@@ -4416,6 +4974,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Que tipo de conexão você procura com alguém?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat voor soort verbinding zoek je met iemand?"
           }
         }
       }
@@ -4464,6 +5028,12 @@
             "state": "translated",
             "value": "Qual você acha que é o começo mais bonito?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat vind jij het mooiste begin?"
+          }
         }
       }
     },
@@ -4510,6 +5080,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é o seu elogio preferido de receber?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is je favoriete compliment om te krijgen?"
           }
         }
       }
@@ -4558,6 +5134,12 @@
             "state": "translated",
             "value": "O que faz você sorrir, mesmo em um dia muito ruim?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat laat je glimlachen, zelfs op een heel slechte dag?"
+          }
         }
       }
     },
@@ -4604,6 +5186,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Você tem uma frase ou ideia que gostaria que as pessoas lembrassem de você?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heb je een zin of idee dat je wilt dat mensen over je onthouden?"
           }
         }
       }
@@ -4652,6 +5240,12 @@
             "state": "translated",
             "value": "Você tem animais de estimação? Se sim, quais?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heb je huisdieren? Zo ja, welke?"
+          }
         }
       }
     },
@@ -4698,6 +5292,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Você preferiria ter cães ou gatos pelo resto da sua vida?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zou je de rest van je leven liever honden of katten hebben?"
           }
         }
       }
@@ -4746,6 +5346,12 @@
             "state": "translated",
             "value": "Você acredita em sonhos premonitórios?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geloof je in profetische dromen?"
+          }
         }
       }
     },
@@ -4792,6 +5398,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "O que você prefere em mim?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat vind je het leukst aan mij?"
           }
         }
       }
@@ -4840,6 +5452,12 @@
             "state": "translated",
             "value": "Que gesto simples você acha que pode transmitir muito amor?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welk eenvoudig gebaar kan volgens jou veel liefde overbrengen?"
+          }
         }
       }
     },
@@ -4886,6 +5504,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual foi a viagem mais incrível que você fez?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat was de gaafste reis die je hebt gemaakt?"
           }
         }
       }
@@ -4934,6 +5558,12 @@
             "state": "translated",
             "value": "Você é do tipo que dá o primeiro passo?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ben jij degene die graag de eerste stap zet?"
+          }
         }
       }
     },
@@ -4980,6 +5610,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é a sua definição de confiança em um casal?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is jouw definitie van vertrouwen in een relatie?"
           }
         }
       }
@@ -5028,6 +5664,12 @@
             "state": "translated",
             "value": "Diga um país que você realmente sonha em visitar."
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noem een land dat je echt droomt te bezoeken."
+          }
         }
       }
     },
@@ -5074,6 +5716,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Você é mais do tipo que se abre facilmente ou que leva seu tempo?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ben je iemand die zich gemakkelijk opent of neem je liever je tijd?"
           }
         }
       }
@@ -5122,6 +5770,12 @@
             "state": "translated",
             "value": "Você prefere acampar ou sair para dançar?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ga je liever kamperen of uit in de club?"
+          }
         }
       }
     },
@@ -5168,6 +5822,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é uma coisa que sempre deixa você irritado?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat maakt je altijd boos?"
           }
         }
       }
@@ -5216,6 +5876,12 @@
             "state": "translated",
             "value": "Você tem uma história que costuma contar com frequência?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heb je een anekdote die je vaak vertelt?"
+          }
         }
       }
     },
@@ -5262,6 +5928,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é uma coisa que você adora no lugar onde vive?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat vind je leuk aan waar je woont?"
           }
         }
       }
@@ -5310,6 +5982,12 @@
             "state": "translated",
             "value": "Qual é uma coisa que você detesta no lugar onde vive?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat vind je vervelend aan waar je woont?"
+          }
         }
       }
     },
@@ -5356,6 +6034,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Que tipo de momentos simples deixam você profundamente feliz?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Van welke simpele momenten word je diep gelukkig?"
           }
         }
       }
@@ -5404,6 +6088,12 @@
             "state": "translated",
             "value": "Você tem um medo relacionado ao amor que gostaria de superar?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heb je een angst met betrekking tot liefde die je graag zou overwinnen?"
+          }
         }
       }
     },
@@ -5450,6 +6140,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é a sua maneira de seduzir alguém?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is jouw manier om iemand te verleiden?"
           }
         }
       }
@@ -5498,6 +6194,12 @@
             "state": "translated",
             "value": "Se você pudesse receber apenas um presente, qual seria?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als je maar één cadeau kon krijgen, wat zou het zijn?"
+          }
         }
       }
     },
@@ -5544,6 +6246,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Você prefere receber um presente físico, um vale-presente ou dinheiro?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ontvang je liever een fysiek cadeau, een cadeaubon of geld?"
           }
         }
       }
@@ -5592,6 +6300,12 @@
             "state": "translated",
             "value": "Você se descreveria como introvertido ou extrovertido?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zou je jezelf omschrijven als introvert of extravert?"
+          }
         }
       }
     },
@@ -5638,6 +6352,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Se você pudesse reviver um momento da sua vida, qual escolheria?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als je één moment uit je leven opnieuw kon beleven, welk zou je kiezen?"
           }
         }
       }
@@ -5686,6 +6406,12 @@
             "state": "translated",
             "value": "Como você sabe que está se apaixonando?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoe weet je dat je verliefd wordt?"
+          }
         }
       }
     },
@@ -5732,6 +6458,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "O que pode transformar um belo encontro em um relacionamento profundo?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat kan een mooie ontmoeting veranderen in een diepe relatie?"
           }
         }
       }
@@ -5780,6 +6512,12 @@
             "state": "translated",
             "value": "Você já sentiu que alguém lia você como um livro aberto?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heb je ooit het gevoel gehad dat iemand je als een open boek kon lezen?"
+          }
         }
       }
     },
@@ -5826,6 +6564,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é algo que você sente mas raramente expressa?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat voel je wel maar uit je zelden?"
           }
         }
       }
@@ -5874,6 +6618,12 @@
             "state": "translated",
             "value": "Que frase já emocionou ou tocou você profundamente?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welke zin heeft je ooit geraakt of diep ontroerd?"
+          }
         }
       }
     },
@@ -5920,6 +6670,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é o seu lugar preferido para relaxar?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is je favoriete plek om te ontspannen?"
           }
         }
       }
@@ -5968,6 +6724,12 @@
             "state": "translated",
             "value": "Você prefere ir à academia ou treinar em casa?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ga je liever naar de sportschool of sport je liever thuis?"
+          }
         }
       }
     },
@@ -6014,6 +6776,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é uma coisa que alguém poderia fazer com você que nunca perdoaria?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is iets dat iemand je zou kunnen aandoen dat je nooit zou kunnen vergeven?"
           }
         }
       }
@@ -6062,6 +6830,12 @@
             "state": "translated",
             "value": "Você já foi traído por um amigo?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ben je ooit verraden door een vriend?"
+          }
         }
       }
     },
@@ -6108,6 +6882,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "O que você prefere nos seus amigos?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat waardeer je het meest aan je vrienden?"
           }
         }
       }
@@ -6156,6 +6936,12 @@
             "state": "translated",
             "value": "Como você conheceu seu melhor amigo?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoe heb je je beste vriend ontmoet?"
+          }
         }
       }
     },
@@ -6202,6 +6988,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Você quer ter filhos?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wil je kinderen?"
           }
         }
       }
@@ -6250,6 +7042,12 @@
             "state": "translated",
             "value": "O que faz você querer ter filhos?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat maakt dat je kinderen wilt?"
+          }
         }
       }
     },
@@ -6296,6 +7094,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Se você tivesse que escrever uma mensagem anônima para alguém que ama, o que diria e para quem enviaria?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als je een anonieme boodschap moest schrijven aan iemand van wie je houdt, wat zou je zeggen en naar wie zou je het sturen?"
           }
         }
       }
@@ -6344,6 +7148,12 @@
             "state": "translated",
             "value": "Você quer se casar?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wil je trouwen?"
+          }
         }
       }
     },
@@ -6390,6 +7200,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual foi o maior erro ou situação difícil em que você já se encontrou?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is de grootste fout of moeilijke situatie waarin je terecht bent gekomen?"
           }
         }
       }
@@ -6438,6 +7254,12 @@
             "state": "translated",
             "value": "Você prefere passar férias na praia ou em uma cidade agitada?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ga je liever op vakantie naar het strand of naar een dynamische stad?"
+          }
         }
       }
     },
@@ -6484,6 +7306,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é o seu carro dos sonhos?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is jouw droomauto?"
           }
         }
       }
@@ -6532,6 +7360,12 @@
             "state": "translated",
             "value": "Que emoção você sente com mais frequência quando está atraído por alguém?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welke emotie voel je het vaakst wanneer je je tot iemand aangetrokken voelt?"
+          }
         }
       }
     },
@@ -6578,6 +7412,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Que momento você gostaria de reviver em câmera lenta?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welk moment zou je graag in slow motion opnieuw beleven?"
           }
         }
       }
@@ -6626,6 +7466,12 @@
             "state": "translated",
             "value": "Qual é o seu livro preferido?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is je favoriete boek?"
+          }
         }
       }
     },
@@ -6672,6 +7518,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é o pior filme que você já viu?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is de slechtste film die je ooit hebt gezien?"
           }
         }
       }
@@ -6720,6 +7572,12 @@
             "state": "translated",
             "value": "O que você aprendeu de mais valioso em seus relacionamentos passados?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is het meest waardevolle dat je hebt geleerd van je vorige relaties?"
+          }
         }
       }
     },
@@ -6766,6 +7624,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Que pequeno detalhe pode fazer você se apaixonar por alguém?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welk klein detail kan je verliefd op iemand maken?"
           }
         }
       }
@@ -6814,6 +7678,12 @@
             "state": "translated",
             "value": "Que superpoder você gostaria de ter?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welke superkracht zou je willen hebben?"
+          }
         }
       }
     },
@@ -6860,6 +7730,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é a coisa mais divertida que você já fez com seus amigos?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is het leukste dat je met je vrienden hebt gedaan?"
           }
         }
       }
@@ -6908,6 +7784,12 @@
             "state": "translated",
             "value": "Você é mais próximo da sua mãe ou do seu pai?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ben je hechter met je moeder of je vader?"
+          }
         }
       }
     },
@@ -6954,6 +7836,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Quem é o seu familiar preferido?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wie is je favoriete familielid?"
           }
         }
       }
@@ -7002,6 +7890,12 @@
             "state": "translated",
             "value": "Que parte de você gostaria que alguém realmente descobrisse?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welk deel van jezelf zou je willen dat iemand echt ontdekt?"
+          }
         }
       }
     },
@@ -7048,6 +7942,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é a coisa mais impressionante que você já fez?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is het meest indrukwekkende dat je ooit hebt gedaan?"
           }
         }
       }
@@ -7096,6 +7996,12 @@
             "state": "translated",
             "value": "Qual é o seu hábito mais estranho?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is je vreemdste gewoonte?"
+          }
         }
       }
     },
@@ -7142,6 +8048,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Que emoção você gostaria de sentir mais em um relacionamento?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welke emotie zou je graag meer willen voelen in een relatie?"
           }
         }
       }
@@ -7190,6 +8102,12 @@
             "state": "translated",
             "value": "Qual é a sua maior fobia?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is je grootste fobie?"
+          }
         }
       }
     },
@@ -7236,6 +8154,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é a sua forma mais bonita de mostrar 'eu me importo com você' sem palavras?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is jouw mooiste manier om zonder woorden te laten zien 'ik geef om je'?"
           }
         }
       }
@@ -7284,6 +8208,12 @@
             "state": "translated",
             "value": "O que você mais espera a cada ano?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waar kijk je elk jaar naar uit?"
+          }
         }
       }
     },
@@ -7330,6 +8260,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Você prefere o inverno ou o verão?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heb je liever winter of zomer?"
           }
         }
       }
@@ -7378,6 +8314,12 @@
             "state": "translated",
             "value": "Você se sente mais atraído por ações, olhares ou palavras?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voel je je meer aangetrokken tot daden, uiterlijk of woorden?"
+          }
         }
       }
     },
@@ -7424,6 +8366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Que promessa você gostaria de fazer ao seu futuro amor?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welke belofte zou je aan je toekomstige liefde willen doen?"
           }
         }
       }
@@ -7472,6 +8420,12 @@
             "state": "translated",
             "value": "Qual é uma coisa que causou muito estresse em você mas acabou não sendo importante?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat heeft je veel stress bezorgd maar bleek uiteindelijk onbelangrijk?"
+          }
         }
       }
     },
@@ -7518,6 +8472,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "O que você acha que revela muito sobre uma pessoa com quem está saindo?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat vind je dat veel onthult over iemand met wie je uitgaat?"
           }
         }
       }
@@ -7566,6 +8526,12 @@
             "state": "translated",
             "value": "Você já teve um crush em alguém que não gostava de você?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ben je ooit verliefd geweest op iemand die niet van jou hield?"
+          }
         }
       }
     },
@@ -7612,6 +8578,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Em que momento você sabe que é hora de apresentar alguém à sua família?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wanneer weet je dat het tijd is om iemand aan je familie voor te stellen?"
           }
         }
       }
@@ -7660,6 +8632,12 @@
             "state": "translated",
             "value": "Você se sente confortável com os silêncios quando está com alguém de quem gosta?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voel je je op je gemak met stiltes als je bij iemand bent die je leuk vindt?"
+          }
         }
       }
     },
@@ -7706,6 +8684,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Se você tivesse um dia livre sem nada para fazer, como passaria?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als je een vrije dag had zonder plannen, hoe zou je die besteden?"
           }
         }
       }
@@ -7754,6 +8738,12 @@
             "state": "translated",
             "value": "Se o seu coração pudesse falar, o que diria?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als je hart kon spreken, wat zou het zeggen?"
+          }
         }
       }
     },
@@ -7800,6 +8790,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Você já perdeu alguém próximo de você?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heb je ooit iemand die dicht bij je stond verloren?"
           }
         }
       }
@@ -7848,6 +8844,12 @@
             "state": "translated",
             "value": "Se você tivesse três desejos, quais seriam?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als je drie wensen had, wat zouden die zijn?"
+          }
         }
       }
     },
@@ -7894,6 +8896,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual era o seu desenho animado preferido quando era criança?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat was je favoriete tekenfilm toen je kind was?"
           }
         }
       }
@@ -7942,6 +8950,12 @@
             "state": "translated",
             "value": "Qual é a coisa mais nojenta que você já comeu?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is het meest walgelijke dat je ooit hebt gegeten?"
+          }
         }
       }
     },
@@ -7988,6 +9002,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Você prefere jogar Verdade ou Desafio?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speel je liever waarheid of durf?"
           }
         }
       }
@@ -8036,6 +9056,12 @@
             "state": "translated",
             "value": "Qual é o seu ritual romântico preferido?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is je favoriete romantische ritueel?"
+          }
         }
       }
     },
@@ -8082,6 +9108,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Descreva o seu hambúrguer perfeito."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beschrijf jouw perfecte burger."
           }
         }
       }
@@ -8130,6 +9162,12 @@
             "state": "translated",
             "value": "Você já conheceu uma pessoa famosa?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heb je ooit een beroemd persoon ontmoet?"
+          }
         }
       }
     },
@@ -8176,6 +9214,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Que música dá vontade de você se apaixonar?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welk liedje maakt dat je verliefd wilt worden?"
           }
         }
       }
@@ -8224,6 +9268,12 @@
             "state": "translated",
             "value": "Que parte de você costuma guardar para mais tarde em um relacionamento?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welk deel van jezelf bewaar je vaak voor later in een relatie?"
+          }
         }
       }
     },
@@ -8270,6 +9320,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "O que deixa você orgulhoso na sua forma de amar?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waar ben je trots op in jouw manier van liefhebben?"
           }
         }
       }
@@ -8318,6 +9374,12 @@
             "state": "translated",
             "value": "Você já amou alguém em segredo?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heb je ooit stiekem van iemand gehouden?"
+          }
         }
       }
     },
@@ -8364,6 +9426,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Você acha que é uma pessoa competitiva?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vind je jezelf een competitief persoon?"
           }
         }
       }
@@ -8412,6 +9480,12 @@
             "state": "translated",
             "value": "Que cena de filme romântico faz você sonhar?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welke romantische filmscène doet je dromen?"
+          }
         }
       }
     },
@@ -8458,6 +9532,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é o seu restaurante preferido?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is je favoriete restaurant?"
           }
         }
       }
@@ -8506,6 +9586,12 @@
             "state": "translated",
             "value": "O que faz você querer beijar alguém?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat maakt dat je iemand wilt kussen?"
+          }
         }
       }
     },
@@ -8552,6 +9638,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Que momento do seu passado você faria de forma diferente?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welk moment uit je verleden zou je anders doen?"
           }
         }
       }
@@ -8600,6 +9692,12 @@
             "state": "translated",
             "value": "Existe uma música que sempre traz lembranças para você?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is er een lied dat je altijd aan herinneringen doet denken?"
+          }
         }
       }
     },
@@ -8646,6 +9744,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Se você tivesse que ouvir uma música em loop, qual escolheria?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als je één liedje op repeat moest luisteren, welk zou je kiezen?"
           }
         }
       }
@@ -8694,6 +9798,12 @@
             "state": "translated",
             "value": "Qual é uma coisa que todos deveriam viver pelo menos uma vez na vida?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is iets dat iedereen minstens één keer in zijn leven zou moeten ervaren?"
+          }
         }
       }
     },
@@ -8740,6 +9850,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Você procura mais intensidade ou segurança no amor?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zoek je intensiteit of zekerheid in de liefde?"
           }
         }
       }
@@ -8788,6 +9904,12 @@
             "state": "translated",
             "value": "Qual seria, para você, a viagem mais romântica?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat zou volgens jou de meest romantische reis zijn?"
+          }
         }
       }
     },
@@ -8834,6 +9956,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Você preferiria esquiar ou surfar?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ga je liever skiën of surfen?"
           }
         }
       }
@@ -8882,6 +10010,12 @@
             "state": "translated",
             "value": "Qual é o apelido carinhoso que você mais gosta?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welke romantische bijnaam heeft jouw voorkeur?"
+          }
         }
       }
     },
@@ -8928,6 +10062,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "O que você nunca quer esquecer em uma história de amor?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat wil je nooit vergeten in een liefdesverhaal?"
           }
         }
       }
@@ -8976,6 +10116,12 @@
             "state": "translated",
             "value": "Como você imagina um começo saudável de amor?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoe ziet een gezond begin van liefde er voor jou uit?"
+          }
         }
       }
     },
@@ -9022,6 +10168,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Que imagem você tem de si mesmo em um relacionamento?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welk beeld heb je van jezelf in een relatie?"
           }
         }
       }
@@ -9070,6 +10222,12 @@
             "state": "translated",
             "value": "Qual celebridade seria, na sua opinião, a pior pessoa para um jantar?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welke beroemdheid zou volgens jou de slechtste persoon zijn om mee te dineren?"
+          }
         }
       }
     },
@@ -9116,6 +10274,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "No amor, você é mais de declarações ou de gestos discretos?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hou je meer van liefdesverklaringen of van discrete gebaren?"
           }
         }
       }
@@ -9164,6 +10328,12 @@
             "state": "translated",
             "value": "Que combinação de sabores é um pouco estranha mas você adora?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welke smaakcombinatie is een beetje vreemd maar vind je heerlijk?"
+          }
         }
       }
     },
@@ -9210,6 +10380,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é o seu bem mais precioso?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is je kostbaarste bezit?"
           }
         }
       }
@@ -9258,6 +10434,12 @@
             "state": "translated",
             "value": "Qual é uma coisa da qual você nunca se cansa?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waarvan raak je nooit moe?"
+          }
         }
       }
     },
@@ -9304,6 +10486,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Quem é o seu comediante preferido?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wie is jouw favoriete komiek?"
           }
         }
       }
@@ -9352,6 +10540,12 @@
             "state": "translated",
             "value": "Que série você ama e surpreenderia as pessoas se soubessem?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Van welke serie hou je waar mensen verbaasd over zouden zijn als ze het wisten?"
+          }
         }
       }
     },
@@ -9398,6 +10592,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é a sua série preferida de todos os tempos?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is je favoriete serie aller tijden?"
           }
         }
       }
@@ -9446,6 +10646,12 @@
             "state": "translated",
             "value": "Se você tivesse que escolher, preferiria o Instagram ou o TikTok?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als je moest kiezen, geef je dan de voorkeur aan Instagram of TikTok?"
+          }
         }
       }
     },
@@ -9492,6 +10698,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Existe uma música que faça você lembrar de uma pessoa em particular?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is er een lied dat je aan een bepaalde persoon doet denken?"
           }
         }
       }
@@ -9540,6 +10752,12 @@
             "state": "translated",
             "value": "Que verdade sobre você gostaria que a outra pessoa descobrisse naturalmente?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welke waarheid over jezelf zou je willen dat de ander vanzelf ontdekt?"
+          }
         }
       }
     },
@@ -9586,6 +10804,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sobre o que você sabe que é um pouco (ou muito) crítico?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waarvan weet je dat je er een beetje (of heel) veroordelend over bent?"
           }
         }
       }
@@ -9634,6 +10858,12 @@
             "state": "translated",
             "value": "Que sabor de sorvete você comeria todos os dias se pudesse?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welke ijssmaak zou je elke dag eten als je kon?"
+          }
         }
       }
     },
@@ -9680,6 +10910,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Você já amou alguém que não tinha nada a ver com você?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heb je ooit van iemand gehouden die totaal niet op jou leek?"
           }
         }
       }
@@ -9728,6 +10964,12 @@
             "state": "translated",
             "value": "Qual é uma coisa ilegal que você acha que deveria ser legalizada?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is iets illegaals waarvan je vindt dat het gelegaliseerd zou moeten worden?"
+          }
         }
       }
     },
@@ -9774,6 +11016,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é a sua parte preferida de cada dia?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is je favoriete moment van elke dag?"
           }
         }
       }
@@ -9822,6 +11070,12 @@
             "state": "translated",
             "value": "Você preferiria deixar o café ou o álcool?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zou je liever koffie of alcohol opgeven?"
+          }
         }
       }
     },
@@ -9868,6 +11122,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "O que ajuda você a saber se uma pessoa é a certa para você?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat helpt je te weten of iemand bij je past?"
           }
         }
       }
@@ -9916,6 +11176,12 @@
             "state": "translated",
             "value": "Qual você acha que é o filme mais romântico?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat vind je de meest romantische film?"
+          }
         }
       }
     },
@@ -9962,6 +11228,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual foi a idade de que você mais gostou até agora na sua vida?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welke leeftijd vond je tot nu toe het leukst in je leven?"
           }
         }
       }
@@ -10010,6 +11282,12 @@
             "state": "translated",
             "value": "O que faz você se sentir realmente ouvido?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waardoor voel je je echt gehoord?"
+          }
         }
       }
     },
@@ -10056,6 +11334,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Você já ficou surpreso com seus próprios sentimentos?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ben je ooit verrast geweest door je eigen gevoelens?"
           }
         }
       }
@@ -10104,6 +11388,12 @@
             "state": "translated",
             "value": "O que representa para você hoje um relacionamento saudável?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat betekent een gezonde relatie voor jou vandaag?"
+          }
         }
       }
     },
@@ -10150,6 +11440,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Quantos anos você tinha no seu melhor aniversário?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoe oud was je tijdens je beste verjaardag?"
           }
         }
       }
@@ -10198,6 +11494,12 @@
             "state": "translated",
             "value": "Que parte de você gostaria de oferecer sem reservas a alguém?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welk deel van jezelf zou je onvoorwaardelijk aan iemand willen geven?"
+          }
         }
       }
     },
@@ -10244,6 +11546,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual celebridade foi a sua primeira paixão?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welke beroemdheid was je allereerste crush?"
           }
         }
       }
@@ -10292,6 +11600,12 @@
             "state": "translated",
             "value": "Qual é o pequeno detalhe em um encontro que muda tudo para você?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welk klein detail op een date verandert alles voor jou?"
+          }
         }
       }
     },
@@ -10338,6 +11652,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é a sua definição de 'conexão' entre duas pessoas?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is jouw definitie van 'connectie' tussen twee mensen?"
           }
         }
       }
@@ -10386,6 +11706,12 @@
             "state": "translated",
             "value": "Quantos anos você tinha no seu primeiro beijo?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoe oud was je bij je eerste kus?"
+          }
         }
       }
     },
@@ -10432,6 +11758,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Como você sabe que realmente ama alguém?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoe weet je dat je echt, echt van iemand houdt?"
           }
         }
       }
@@ -10480,6 +11812,12 @@
             "state": "translated",
             "value": "Você é do tipo que se projeta rapidamente ou que saboreia o momento presente?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ben je iemand die snel vooruit plant of die het moment juist wil beleven?"
+          }
         }
       }
     },
@@ -10526,6 +11864,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é a habilidade mais útil que você já aprendeu?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is de meest nuttige vaardigheid die je ooit hebt geleerd?"
           }
         }
       }
@@ -10574,6 +11918,12 @@
             "state": "translated",
             "value": "O que acalma você na presença de outra pessoa?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat stelt je gerust in iemands aanwezigheid?"
+          }
         }
       }
     },
@@ -10620,6 +11970,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Existe uma frase que você gostaria de ouvir depois de um primeiro encontro?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is er een zin die je graag zou horen na een eerste date?"
           }
         }
       }
@@ -10668,6 +12024,12 @@
             "state": "translated",
             "value": "Qual é o seu maior desejo para o seu futuro eu?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is je grootste wens voor je toekomstige zelf?"
+          }
         }
       }
     },
@@ -10714,6 +12076,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Se você pudesse oferecer uma memória inesquecível a alguém, o que faria?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als je iemand een onvergetelijke herinnering moest schenken, wat zou je doen?"
           }
         }
       }
@@ -10762,6 +12130,12 @@
             "state": "translated",
             "value": "Qual é a sua forma preferida de dizer 'você é importante para mim'?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is jouw favoriete manier om te zeggen 'je bent belangrijk voor me'?"
+          }
         }
       }
     },
@@ -10808,6 +12182,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é uma tentação à qual você nunca consegue resistir?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aan welke verleiding kun je nooit weerstaan?"
           }
         }
       }
@@ -10856,6 +12236,12 @@
             "state": "translated",
             "value": "Qual é a sua tendência de moda atual menos favorita?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is de huidige modetrend waar je het minst van houdt?"
+          }
         }
       }
     },
@@ -10902,6 +12288,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é a sua loja preferida para fazer compras?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is je favoriete winkel om te shoppen?"
           }
         }
       }
@@ -10950,6 +12342,12 @@
             "state": "translated",
             "value": "Qual é a história que você sempre conta e que faz todos rirem?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welk verhaal vertel je altijd dat iedereen aan het lachen maakt?"
+          }
         }
       }
     },
@@ -10996,6 +12394,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Que pergunta você gostaria de fazer a alguém sem filtros?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welke vraag zou je iemand willen stellen zonder filter?"
           }
         }
       }
@@ -11044,6 +12448,12 @@
             "state": "translated",
             "value": "O que você faz todas as noites antes de dormir?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat doe je elke avond voordat je naar bed gaat?"
+          }
         }
       }
     },
@@ -11090,6 +12500,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Você é mais notívago ou madrugador?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zou je zeggen dat je meer een nachtuil of een vroege vogel bent?"
           }
         }
       }
@@ -11138,6 +12554,12 @@
             "state": "translated",
             "value": "Se você pudesse viajar no tempo, em que década gostaria de viver?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als je kon tijdreizen, in welk decennium zou je willen leven?"
+          }
         }
       }
     },
@@ -11184,6 +12606,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Do que você sente mais falta da sua infância?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat mis je het meest aan je kindertijd?"
           }
         }
       }
@@ -11232,6 +12660,12 @@
             "state": "translated",
             "value": "Qual é a lembrança mais bonita que você tem com seu pai?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is de mooiste herinnering die je hebt met je vader?"
+          }
         }
       }
     },
@@ -11278,6 +12712,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é a lembrança mais bonita que você tem com sua mãe?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is de mooiste herinnering die je hebt met je moeder?"
           }
         }
       }
@@ -11326,6 +12766,12 @@
             "state": "translated",
             "value": "Quem é o seu vilão fictício preferido?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wie is je favoriete fictieve schurk?"
+          }
         }
       }
     },
@@ -11372,6 +12818,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Você prefere assistir a um filme de ação/aventura ou uma comédia?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kijk je liever naar een actie-/avonturenfilm of een komedie?"
           }
         }
       }
@@ -11420,6 +12872,12 @@
             "state": "translated",
             "value": "Qual é a sua celebração preferida?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is je favoriete feestdag?"
+          }
         }
       }
     },
@@ -11466,6 +12924,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual é o prato que você sabe cozinhar muito bem?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welk gerecht kun je echt goed bereiden?"
           }
         }
       }
@@ -11514,6 +12978,12 @@
             "state": "translated",
             "value": "Qual é o prato que você gostaria muito de saber cozinhar?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welk gerecht zou je heel graag willen leren koken?"
+          }
         }
       }
     },
@@ -11560,6 +13030,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qual refeição mais conforta você quando tem um dia ruim?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welk gerecht troost je het meest op een slechte dag?"
           }
         }
       }
@@ -11608,6 +13084,12 @@
             "state": "translated",
             "value": "Qual é a sua definição de um relacionamento saudável?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is jouw definitie van een gezonde relatie?"
+          }
         }
       }
     },
@@ -11654,6 +13136,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "O que sempre faz você se sentir como uma criança?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat laat je je altijd weer een kind voelen?"
           }
         }
       }
@@ -11702,6 +13190,12 @@
             "state": "translated",
             "value": "Se você fosse um fantasma, quem assombraria?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als je een spook was, wie zou je dan achtervolgen?"
+          }
         }
       }
     },
@@ -11748,6 +13242,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Se você tivesse que reviver uma emoção várias vezes, qual seria?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als je één emotie steeds opnieuw moest beleven, welke zou dat zijn?"
           }
         }
       }
@@ -11796,6 +13296,12 @@
             "state": "translated",
             "value": "Are you more attracted to intensity or consistency in love?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voel je je in de liefde meer aangetrokken tot intensiteit of consistentie?"
+          }
         }
       }
     },
@@ -11842,6 +13348,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Do you think ghosts exist?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Denk je dat geesten bestaan?"
           }
         }
       }
@@ -11890,6 +13402,12 @@
             "state": "translated",
             "value": "What's your favorite thing to do on vacation?"
           }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat doe je het liefst op vakantie?"
+          }
         }
       }
     },
@@ -11936,6 +13454,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Do you prefer to relax on vacation or go exploring and having adventures?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ontspan je liever op vakantie of ga je liever op ontdekking en avontuur?"
           }
         }
       }
@@ -11984,90 +13508,11 @@
             "state": "translated",
             "value": "What's something you'd like to be able to do every morning but never have time for?"
           }
-        }
-      }
-    },
-    "pud_252": {
-      "extractionState": "manual",
-      "localizations": {
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "És mais atraído pela intensidade ou pela constância no amor?"
-          }
         },
-        "pt-BR": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Você se sente mais atraído pela intensidade ou pela constância no amor?"
-          }
-        }
-      }
-    },
-    "pud_253": {
-      "extractionState": "manual",
-      "localizations": {
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Qual é a tua memória mais romântica?"
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Qual é a sua memória mais romântica?"
-          }
-        }
-      }
-    },
-    "pud_254": {
-      "extractionState": "manual",
-      "localizations": {
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Preferes uma grande surpresa ou pequenos gestos regulares?"
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Você prefere uma grande surpresa ou pequenos gestos frequentes?"
-          }
-        }
-      }
-    },
-    "pud_255": {
-      "extractionState": "manual",
-      "localizations": {
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Que hábito pequeno num casal achas adorável?"
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Que pequeno hábito em um casal você acha adorável?"
-          }
-        }
-      }
-    },
-    "pud_256": {
-      "extractionState": "manual",
-      "localizations": {
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Como sabes que confias verdadeiramente em alguém?"
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Como você sabe que realmente confia em alguém?"
+            "value": "Wat zou je elke ochtend graag doen maar heb je nooit tijd voor?"
           }
         }
       }

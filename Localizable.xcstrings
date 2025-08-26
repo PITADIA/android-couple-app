@@ -27,7 +27,7 @@
             "value" : "%1$@ / %2$@"
           }
         },
-        "nl-NL" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%1$@ / %2$@"
@@ -67,7 +67,7 @@
             "value" : "%1$@ %2$@"
           }
         },
-        "nl-NL" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%1$@ %2$@"
@@ -107,7 +107,7 @@
             "value" : "%1$@, %2$@"
           }
         },
-        "nl-NL" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%1$@, %2$@"
@@ -259,7 +259,7 @@
             "value" : "Lontano dagli occhi, vicino al cuore."
           }
         },
-        "nl-NL" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ver van de ogen, dicht bij het hart."
@@ -312,7 +312,7 @@
             "value" : "Relazione a distanza"
           }
         },
-        "nl-NL" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Relatie op afstand"
@@ -365,7 +365,7 @@
             "value" : "Condividete i vostri desideri e scopritevi più profondamente."
           }
         },
-        "nl-NL" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Deel je verlangens en leer elkaar dieper kennen."
@@ -418,7 +418,7 @@
             "value" : "Desideri nascosti"
           }
         },
-        "nl-NL" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Verborgen verlangens"
@@ -471,7 +471,7 @@
             "value" : "Domande per ricordare ciò che ci unisce."
           }
         },
-        "nl-NL" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vragen die ons helpen herinneren wat ons verbindt."
@@ -524,7 +524,7 @@
             "value" : "Tu e io"
           }
         },
-        "nl-NL" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jij en ik"
@@ -577,7 +577,7 @@
             "value" : "Amare significa anche imparare a guarire."
           }
         },
-        "nl-NL" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Liefde betekent ook leren genezen."
@@ -630,7 +630,7 @@
             "value" : "Guarire il nostro amore"
           }
         },
-        "nl-NL" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Onze liefde herstellen"
@@ -683,7 +683,7 @@
             "value" : "Perché amare significa anche ridere insieme."
           }
         },
-        "nl-NL" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Want liefde betekent ook samen lachen."
@@ -736,7 +736,7 @@
             "value" : "Ridere insieme"
           }
         },
-        "nl-NL" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Samen lachen"
@@ -789,7 +789,7 @@
             "value" : "Domande per vedere l'altro oltre le apparenze."
           }
         },
-        "nl-NL" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vragen om elkaar verder te zien dan het uiterlijk."
@@ -842,7 +842,7 @@
             "value" : "A un appuntamento"
           }
         },
-        "nl-NL" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Op een date"
@@ -895,7 +895,7 @@
             "value" : "Scopri i pensieri che non sempre dici ad alta voce."
           }
         },
-        "nl-NL" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ontdek de gedachten die je meestal voor jezelf houdt."
@@ -948,7 +948,7 @@
             "value" : "Domande profonde"
           }
         },
-        "nl-NL" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Diepe vragen"
@@ -1001,7 +1001,7 @@
             "value" : "Domande che rivelano ciò che conta davvero per te."
           }
         },
-        "nl-NL" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vragen die laten zien wat voor jou echt belangrijk is."
@@ -1054,7 +1054,7 @@
             "value" : "Cosa preferiresti?"
           }
         },
-        "nl-NL" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zou je liever?"
@@ -1143,7 +1143,7 @@
             "value" : "✨ %d giorni gratuiti restanti • Poi è necessario l'abbonamento"
           }
         },
-        "nl-NL" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "✨ %d gratis dagen resterend • Daarna is een abonnement vereist"
@@ -1196,7 +1196,7 @@
             "value" : "✨ 1 giorno gratuito restante • Poi è necessario l'abbonamento"
           }
         },
-        "nl-NL" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "✨ 1 gratis dag resterend • Daarna is een abonnement vereist"
@@ -1249,7 +1249,7 @@
             "value" : "💎 Incluso nel tuo abbonamento Premium"
           }
         },
-        "nl-NL" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "💎 Inbegrepen bij je Premium-abonnement"
@@ -1302,7 +1302,7 @@
             "value" : "🔒 È necessario un abbonamento per continuare"
           }
         },
-        "nl-NL" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "🔒 Abonnement vereist om door te gaan"
@@ -1355,7 +1355,7 @@
             "value" : "✨ %d giorni gratuiti restanti • Poi è necessario l'abbonamento"
           }
         },
-        "nl-NL" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "✨ %d gratis dagen resterend • Daarna is een abonnement vereist"
@@ -1408,7 +1408,7 @@
             "value" : "✨ 1 giorno gratuito restante • Poi è necessario l'abbonamento"
           }
         },
-        "nl-NL" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "✨ 1 gratis dag resterend • Daarna is een abonnement vereist"
@@ -1461,7 +1461,7 @@
             "value" : "💎 Incluso nel tuo abbonamento Premium"
           }
         },
-        "nl-NL" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "💎 Inbegrepen bij je Premium-abonnement"
@@ -1514,7 +1514,7 @@
             "value" : "🔒 È necessario un abbonamento per continuare"
           }
         },
-        "nl-NL" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "🔒 Abonnement vereist om door te gaan"
@@ -1702,7 +1702,7 @@
             "value" : "Abbonati per sbloccare l'accesso alle collezioni qui sotto ✨"
           }
         },
-        "nl-NL" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Abonneer je om toegang te krijgen tot de onderstaande collecties ✨"
@@ -1755,7 +1755,7 @@
             "value" : "Tutte le collezioni qui sotto sono disponibili con il tuo abbonamento 💎"
           }
         },
-        "nl-NL" : {
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Alle onderstaande collecties zijn beschikbaar met je abonnement 💎"

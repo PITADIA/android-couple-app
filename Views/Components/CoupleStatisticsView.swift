@@ -1,5 +1,6 @@
 import SwiftUI
 import Combine
+import CoreLocation
 
 struct CoupleStatisticsView: View {
     @EnvironmentObject var appState: AppState
@@ -71,6 +72,11 @@ struct CoupleStatisticsView: View {
             print("📊 CoupleStatisticsView: Vue apparue, calcul des statistiques")
             // Forcer le recalcul en accédant à la variable
             let _ = questionsProgressPercentage
+            
+            // Déclencher le géocodage rétroactif si nécessaire
+            Task {
+                await repairJournalEntriesGeocoding()
+            }
         }
         .onReceive(categoryProgressService.$categoryProgress) { newProgress in
             print("📊 CoupleStatisticsView: Progression des catégories mise à jour: \(newProgress)")
@@ -147,6 +153,59 @@ struct CoupleStatisticsView: View {
     /// Charge les questions pour une catégorie via le nouveau QuestionDataManager
     private func getQuestionsSampleForCategory(_ categoryId: String) -> [Question] {
         return QuestionDataManager.shared.loadQuestions(for: categoryId)
+    }
+    
+    /// Répare les entrées de journal existantes qui n'ont pas d'informations de ville/pays
+    private func repairJournalEntriesGeocoding() async {
+        let entriesToRepair = journalService.entries.filter { entry in
+            // Entrées qui ont une localisation (coordonnées) mais pas de ville/pays
+            guard let location = entry.location else { return false }
+            let needsRepair = location.city == nil || location.country == nil || 
+                             location.city?.isEmpty == true || location.country?.isEmpty == true ||
+                             location.city == "unknown_city".localized || location.country == "unknown_location".localized ||
+                             location.city == "Città sconosciuta" || location.country == "Sconosciuto"
+            return needsRepair
+        }
+        
+        guard !entriesToRepair.isEmpty else { return }
+        
+        // Limiter à 3 réparations par session pour éviter de surcharger l'API
+        let limitedEntries = Array(entriesToRepair.prefix(3))
+        
+        for entry in limitedEntries {
+            await repairSingleEntryGeocoding(entry)
+        }
+    }
+    
+    /// Répare une seule entrée de journal avec géocodage inversé
+    private func repairSingleEntryGeocoding(_ entry: JournalEntry) async {
+        guard let location = entry.location else { return }
+        
+        do {
+            let clLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
+            let geocoder = CLGeocoder()
+            
+            let placemarks = try await geocoder.reverseGeocodeLocation(clLocation)
+            
+            if let placemark = placemarks.first {
+                let repairedLocation = JournalLocation(
+                    coordinate: location.coordinate,
+                    address: location.address ?? placemark.name,
+                    city: placemark.locality,
+                    country: placemark.country
+                )
+                
+                // Créer une entrée mise à jour
+                var updatedEntry = entry
+                updatedEntry.location = repairedLocation
+                updatedEntry.updatedAt = Date()
+                
+                // Sauvegarder via JournalService
+                try await journalService.updateEntry(updatedEntry)
+            }
+        } catch {
+            // Géocodage échoué, continuer silencieusement
+        }
     }
 
 }

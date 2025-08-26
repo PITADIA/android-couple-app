@@ -47,7 +47,7 @@
             "value": "Sobre mim"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Over mij"
@@ -100,7 +100,7 @@
             "value": "Adicionar 1 favorito"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Voeg 1 favoriet toe"
@@ -153,7 +153,7 @@
             "value": "Adicionar 5 favoritos"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Voeg 5 favorieten toe"
@@ -206,7 +206,7 @@
             "value": "Adicionar aos favoritos"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Toevoegen aan favorieten"
@@ -259,7 +259,7 @@
             "value": "Salve suas perguntas favoritas"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Bewaar je favoriete vragen"
@@ -312,7 +312,7 @@
             "value": "Toque no coração abaixo de uma carta para salvá-la aqui. Seu parceiro também vai ver.\n\nSuas favoritas serão compartilhadas automaticamente."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Tik op het hart onder een kaart om deze hier op te slaan. Je partner ziet ze ook.\n\nJe favorieten worden automatisch gedeeld."
@@ -365,7 +365,7 @@
             "value": "Adicione memórias ao seu diário"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Voeg herinneringen toe aan je dagboek"
@@ -418,7 +418,7 @@
             "value": "Adicionar foto"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Foto toevoegen"
@@ -471,7 +471,7 @@
             "value": "Adicionar foto de perfil"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Profielfoto toevoegen"
@@ -524,7 +524,7 @@
             "value": "Adicione a data de início do relacionamento nas configurações"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Voeg je relatiebegindatum toe in de instellingen"
@@ -577,7 +577,7 @@
             "value": "Adicione seus widgets"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Voeg je widgets toe"
@@ -631,7 +631,7 @@
             "value": "Tudo concluído"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Alles voltooid"
@@ -684,7 +684,7 @@
             "value": "Já tenho uma conta"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Ik heb al een account"
@@ -737,7 +737,7 @@
             "value": "Sempre autorizado"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Altijd toegestaan"
@@ -790,7 +790,7 @@
             "value": "e"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "en"
@@ -843,7 +843,7 @@
             "value": "Aprofunde sua conexão com perguntas divertidas e íntimas."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Verdiep je band met leuke en intieme vragen."
@@ -897,7 +897,7 @@
             "value": "Love2Love"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Love2Love"
@@ -950,7 +950,7 @@
             "value": "O app que aproxima vocês"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "De app die jullie dichter bij elkaar brengt"
@@ -1003,7 +1003,7 @@
             "value": "Aplicativo"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Applicatie"
@@ -1056,7 +1056,7 @@
             "value": "Erro de autenticação"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Authenticatiefout"
@@ -1109,7 +1109,7 @@
             "value": "Autenticação Apple necessária"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Apple-authenticatie vereist"
@@ -1162,7 +1162,7 @@
             "value": "Autenticação em andamento"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Authenticatie bezig"
@@ -1216,7 +1216,7 @@
             "value": "Autorização necessária"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Autorisatie vereist"
@@ -1269,7 +1269,7 @@
             "value": "Voltar"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Terug"
@@ -1322,7 +1322,7 @@
             "value": "Ambos têm acesso"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Beide hebben toegang"
@@ -1375,7 +1375,7 @@
             "value": "Essa ação vai apagar todas as perguntas em cache. Elas serão recarregadas automaticamente no próximo uso."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Deze actie verwijdert alle gecachte vragen. Ze worden automatisch opnieuw geladen bij het volgende gebruik."
@@ -1428,7 +1428,7 @@
             "value": "Tamanho do cache"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Cachegrootte"
@@ -1481,7 +1481,7 @@
             "value": "SEX"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "VR"
@@ -1534,7 +1534,7 @@
             "value": "SEG"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "MA"
@@ -1587,7 +1587,7 @@
             "value": "SÁB"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "ZA"
@@ -1640,7 +1640,7 @@
             "value": "DOM"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "ZO"
@@ -1693,7 +1693,7 @@
             "value": "QUI"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "DO"
@@ -1746,7 +1746,7 @@
             "value": "TER"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "DI"
@@ -1799,7 +1799,7 @@
             "value": "QUA"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "WO"
@@ -1852,7 +1852,7 @@
             "value": "Pode solicitar avaliação:"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Kan beoordeling aanvragen:"
@@ -1905,7 +1905,7 @@
             "value": "Cancelar"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Annuleren"
@@ -1958,7 +1958,7 @@
             "value": "Cancelar assinatura"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Abonnement annuleren"
@@ -2011,7 +2011,7 @@
             "value": "Não foi possível ler o recibo de compra"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Kan aankoopbewijs niet lezen"
@@ -2064,7 +2064,7 @@
             "value": "Mal posso esperar para te ver"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Ik kan niet wachten om je te zien"
@@ -2117,7 +2117,7 @@
             "value": "Categorias"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Categorieën"
@@ -2170,7 +2170,7 @@
             "value": "Escolher localização"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Kies locatie"
@@ -2223,7 +2223,7 @@
             "value": "Escolher foto"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Kies foto"
@@ -2276,7 +2276,7 @@
             "value": "Escolha seu plano"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Kies je plan"
@@ -2329,7 +2329,7 @@
             "value": "Escolher horário"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Kies tijd"
@@ -2382,7 +2382,7 @@
             "value": "🧹 Limpar códigos órfãos"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "🧹 Wees wees-codes schoon"
@@ -2435,7 +2435,7 @@
             "value": "Limpar cache"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Cache wissen"
@@ -2489,7 +2489,7 @@
             "value": "Fechar"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Sluiten"
@@ -2542,7 +2542,7 @@
             "value": "Gerando código..."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Code genereren..."
@@ -2595,7 +2595,7 @@
             "value": "Guia completo"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Volledige gids"
@@ -2648,7 +2648,7 @@
             "value": "Parabéns"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Gefeliciteerd"
@@ -2702,7 +2702,7 @@
             "value": "Parabéns!"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Gefeliciteerd!"
@@ -2755,7 +2755,7 @@
             "value": "Conectar"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Verbinden"
@@ -2808,7 +2808,7 @@
             "value": "Conecte-se com seu parceiro para compartilhar seu diário e aproveitar todos os recursos do aplicativo."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Verbind met je partner om je dagboek te delen en alle functies van de app te gebruiken."
@@ -2861,7 +2861,7 @@
             "value": "Conecte-se com seu parceiro"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Verbind met je partner"
@@ -2914,7 +2914,7 @@
             "value": "Conectado em"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Verbonden op"
@@ -2967,7 +2967,7 @@
             "value": "Conectado com %@"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Verbonden met %@"
@@ -3020,7 +3020,7 @@
             "value": "Vocês estão conectados 💞"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Jullie zijn verbonden 💞"
@@ -3073,7 +3073,7 @@
             "value": "Conectando..."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Verbinden..."
@@ -3126,7 +3126,7 @@
             "value": "Conectando..."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Verbinden..."
@@ -3179,7 +3179,7 @@
             "value": "Erro de conexão"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Verbindingsfout"
@@ -3232,7 +3232,7 @@
             "value": "Conexão bem-sucedida!"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Verbinding geslaagd!"
@@ -3285,7 +3285,7 @@
             "value": "Conexão bem-sucedida..."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Verbinding geslaagd..."
@@ -3338,7 +3338,7 @@
             "value": "Fale conosco"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Neem contact met ons op"
@@ -3392,7 +3392,7 @@
             "value": "Continuar"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Doorgaan"
@@ -3446,7 +3446,7 @@
             "value": "Preparando..."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Bezig met voorbereiden..."
@@ -3499,7 +3499,7 @@
             "value": "Continuar com a versão gratuita"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Doorgaan met gratis versie"
@@ -3552,7 +3552,7 @@
             "value": "✨ Continuar"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "✨ Doorgaan"
@@ -3605,7 +3605,7 @@
             "value": "Ajuste sua foto de perfil"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Pas je profielfoto aan"
@@ -3658,7 +3658,7 @@
             "value": "Validar"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Valideren"
@@ -3711,7 +3711,7 @@
             "value": "Continuar com a Apple"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Doorgaan met Apple"
@@ -3764,7 +3764,7 @@
             "value": "Contagem regressiva"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Afteltimer"
@@ -3817,7 +3817,7 @@
             "value": "Suas estatísticas de casal"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Jullie koppelstatistieken"
@@ -3870,7 +3870,7 @@
             "value": "Criar"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Aanmaken"
@@ -3923,7 +3923,7 @@
             "value": "Criar conta"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Account aanmaken"
@@ -3976,7 +3976,7 @@
             "value": "Crie uma conta para salvar seu histórico de atividades e encontrar facilmente suas conversas favoritas a qualquer momento!"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Maak een account aan om je activiteiten bij te houden en je favoriete gesprekken altijd terug te vinden!"
@@ -4029,7 +4029,7 @@
             "value": "Crie seu mapa de memórias"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Maak je herinneringskaart"
@@ -4082,7 +4082,7 @@
             "value": "Responda à pergunta do dia"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Beantwoord de vraag van de dag"
@@ -4136,7 +4136,7 @@
             "value": "Crie sua conta e proteja seus dados"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Maak je account aan en beveilig je gegevens"
@@ -4189,7 +4189,7 @@
             "value": "Criado por"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Gemaakt door"
@@ -4242,7 +4242,7 @@
             "value": "Status atual:"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Huidige status:"
@@ -4295,7 +4295,7 @@
             "value": "👤 Usuário atual"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "👤 Huidige gebruiker"
@@ -4348,7 +4348,7 @@
             "value": "Toque em 'Personalizar' para configurar seus widgets."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Tik op 'Aanpassen' om je widgets in te stellen."
@@ -4401,7 +4401,7 @@
             "value": "----"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "----"
@@ -4454,7 +4454,7 @@
             "value": "--"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "--"
@@ -4507,7 +4507,7 @@
             "value": "dias"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "dagen"
@@ -4560,7 +4560,7 @@
             "value": "dias antes do próximo aniversário"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "dagen voor jullie volgende jubileum"
@@ -4613,7 +4613,7 @@
             "value": "Dias\njuntos"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Dagen\nsamen"
@@ -4667,7 +4667,7 @@
             "value": "Sistema de revisão de debug"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Debug-beoordelingssysteem"
@@ -4720,7 +4720,7 @@
             "value": "🔄 Debug - Sincronizar assinaturas"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "🔄 Debug - Abonnementen synchroniseren"
@@ -4773,7 +4773,7 @@
             "value": "Excluir conta"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Account verwijderen"
@@ -4826,7 +4826,7 @@
             "value": "Essa ação é irreversível. Todos os seus dados serão excluídos permanentemente.\n\nA Apple pode pedir que você se autentique novamente para confirmar esta ação."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Deze actie is onomkeerbaar. Al je gegevens worden permanent verwijderd.\n\nApple kan je vragen opnieuw te verifiëren om deze actie te bevestigen."
@@ -4879,7 +4879,7 @@
             "value": "Excluindo conta..."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Account verwijderen..."
@@ -4932,7 +4932,7 @@
             "value": "Desconectar"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Verbinding verbreken"
@@ -4985,7 +4985,7 @@
             "value": "Tem certeza de que deseja se desconectar do seu parceiro? Essa ação vai remover o compartilhamento de dados."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Weet je zeker dat je de verbinding met je partner wilt verbreken? Hierdoor wordt het delen van gegevens verwijderd."
@@ -5038,7 +5038,7 @@
             "value": "Descubra o Premium"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Ontdek Premium"
@@ -5091,7 +5091,7 @@
             "value": "distância"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "afstand"
@@ -5144,7 +5144,7 @@
             "value": "Concluído"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Klaar"
@@ -5197,7 +5197,7 @@
             "value": "..."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "..."
@@ -5250,7 +5250,7 @@
             "value": "Seu diário de memórias está vazio"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Je herinneringsdagboek is leeg"
@@ -5303,7 +5303,7 @@
             "value": "Divirta-se!"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Veel plezier!"
@@ -5356,7 +5356,7 @@
             "value": "Insira o código"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Voer code in"
@@ -5409,7 +5409,7 @@
             "value": "Insira o código do seu parceiro"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Voer de code van je partner in"
@@ -5462,7 +5462,7 @@
             "value": "Digite o código"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Voer de code in"
@@ -5515,7 +5515,7 @@
             "value": "Erro ao criar entrada"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Fout bij het maken van invoer"
@@ -5568,7 +5568,7 @@
             "value": "Erro"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Fout"
@@ -5621,7 +5621,7 @@
             "value": "Erro: imagem não encontrada"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Fout: Afbeelding niet gevonden"
@@ -5675,7 +5675,7 @@
             "value": "Data do evento"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Datum van gebeurtenis"
@@ -5728,7 +5728,7 @@
             "value": "Hora"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Tijd"
@@ -5781,7 +5781,7 @@
             "value": "eventos"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "gebeurtenissen"
@@ -5835,7 +5835,7 @@
             "value": "Eventos de"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Gebeurtenissen van"
@@ -5888,7 +5888,7 @@
             "value": "!"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "!"
@@ -5941,7 +5941,7 @@
             "value": "Conteúdo premium exclusivo"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Exclusieve premium-inhoud"
@@ -5994,7 +5994,7 @@
             "value": "Favoritos"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Favorieten"
@@ -6047,7 +6047,7 @@
             "value": "Favoritos:"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Favorieten:"
@@ -6100,7 +6100,7 @@
             "value": "de"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "van"
@@ -6153,7 +6153,7 @@
             "value": "Para se sentir ainda mais próximo do seu parceiro."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Om je nog dichter bij je partner te voelen."
@@ -6206,7 +6206,7 @@
             "value": "✓ Aprofunde sua conexão"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "✓ Verdiep jullie connectie"
@@ -6259,7 +6259,7 @@
             "value": "Acesse mais de 1800 perguntas para rir, se abrir e ficarem ainda mais próximos."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Krijg toegang tot 1800+ vragen om te lachen, je open te stellen en dichter bij elkaar te komen."
@@ -6312,7 +6312,7 @@
             "value": "✓ Guarde suas melhores memórias em um só lugar"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "✓ Bewaar je mooiste herinneringen op één plek"
@@ -6365,7 +6365,7 @@
             "value": "Porque cada momento merece um lugar especial. Guarde suas melhores memórias em um diário compartilhado, só de vocês dois."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Omdat elk moment een speciale plek verdient. Bewaar jullie mooiste herinneringen in een gedeeld dagboek, alleen voor jullie twee."
@@ -6418,7 +6418,7 @@
             "value": "✓ Um novo desafio todos os dias"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "✓ Elke dag een nieuwe uitdaging"
@@ -6471,7 +6471,7 @@
             "value": "Receba um desafio romântico diário para se aproximarem, mesmo à distância."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Ontvang elke dag een romantische uitdaging om dichter bij elkaar te komen, zelfs op afstand."
@@ -6524,7 +6524,7 @@
             "value": "💌 Criar uma conexão mais profunda"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "💌 Bouw een diepere connectie op"
@@ -6577,7 +6577,7 @@
             "value": "🔥 Falar sobre o que normalmente evitamos"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "🔥 Praat over wat we meestal vermijden"
@@ -6630,7 +6630,7 @@
             "value": "🌶️ Aumentar a paixão entre nós"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "🌶️ Vergroot de passie tussen ons"
@@ -6683,7 +6683,7 @@
             "value": "🎉 Compartilhar mais risadas juntos"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "🎉 Deel meer lachmomenten samen"
@@ -6736,7 +6736,7 @@
             "value": "💕 Recuperar a verdadeira cumplicidade"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "💕 Vind opnieuw echte verbondenheid"
@@ -6789,7 +6789,7 @@
             "value": "✨ Criar um momento marcante a dois"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "✨ Deel samen iets betekenisvols"
@@ -6842,7 +6842,7 @@
             "value": "💕 Reavivar nossa conexão"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "💕 Herleef onze connectie"
@@ -6895,7 +6895,7 @@
             "value": "🔄 Quebrar a rotina"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "🔄 Doorbreek de routine"
@@ -6948,7 +6948,7 @@
             "value": "🤍 Dizer o que nunca foi dito"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "🤍 Open jezelf als nooit tevoren"
@@ -7001,7 +7001,7 @@
             "value": "Semanal"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Wekelijks"
@@ -7054,7 +7054,7 @@
             "value": "Mensal - 3 dias grátis"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Maandelijks - 3 dagen gratis"
@@ -7107,7 +7107,7 @@
             "value": "R$ 4,99"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "€4,99"
@@ -7160,7 +7160,7 @@
             "value": "R$ 14,99"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "€14,99"
@@ -7213,7 +7213,7 @@
             "value": "semana"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "week"
@@ -7266,7 +7266,7 @@
             "value": "mês"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "maand"
@@ -7319,7 +7319,7 @@
             "value": "R$ 2,50"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "€2,50"
@@ -7372,7 +7372,7 @@
             "value": "R$ 7,50"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "€7,50"
@@ -7425,7 +7425,7 @@
             "value": "Janeiro"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Januari"
@@ -7478,7 +7478,7 @@
             "value": "Fevereiro"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Februari"
@@ -7531,7 +7531,7 @@
             "value": "Março"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Maart"
@@ -7584,7 +7584,7 @@
             "value": "Abril"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "April"
@@ -7637,7 +7637,7 @@
             "value": "Maio"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Mei"
@@ -7690,7 +7690,7 @@
             "value": "Junho"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Juni"
@@ -7743,7 +7743,7 @@
             "value": "Julho"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Juli"
@@ -7796,7 +7796,7 @@
             "value": "Agosto"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Augustus"
@@ -7849,7 +7849,7 @@
             "value": "Setembro"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "September"
@@ -7902,7 +7902,7 @@
             "value": "Outubro"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Oktober"
@@ -7955,7 +7955,7 @@
             "value": "Novembro"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "November"
@@ -8008,7 +8008,7 @@
             "value": "Dezembro"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "December"
@@ -8061,7 +8061,7 @@
             "value": "Deixe-nos uma avaliação"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Laat een beoordeling achter"
@@ -8114,7 +8114,7 @@
             "value": "Gerenciar assinatura"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Abonnement beheren"
@@ -8167,7 +8167,7 @@
             "value": "Como ativar a localização"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Hoe locatie inschakelen"
@@ -8220,7 +8220,7 @@
             "value": "Toque em Autorizar"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Tik op Toestaan"
@@ -8273,7 +8273,7 @@
             "value": " para 2 usuários"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": " voor 2 gebruikers"
@@ -8326,7 +8326,7 @@
             "value": "para uma"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "voor een"
@@ -8379,7 +8379,7 @@
             "value": "entrada"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "invoer"
@@ -8432,7 +8432,7 @@
             "value": "entradas"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "invoeren"
@@ -8485,7 +8485,7 @@
             "value": "grátis"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "gratis"
@@ -8538,7 +8538,7 @@
             "value": "grátis"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "gratis"
@@ -8591,7 +8591,7 @@
             "value": "Erro na verificação de limite"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Fout bij limietcontrole"
@@ -8644,7 +8644,7 @@
             "value": "Limite de entradas grátis atingido"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Limiet gratis invoeren bereikt"
@@ -8697,7 +8697,7 @@
             "value": "Gerando..."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Genereren..."
@@ -8750,7 +8750,7 @@
             "value": "Erro de geração"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Generatiefout"
@@ -8803,7 +8803,7 @@
             "value": "seu parceiro"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "je partner"
@@ -8857,7 +8857,7 @@
             "value": "Obter Premium"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Premium krijgen"
@@ -8910,7 +8910,7 @@
             "value": "Feliz aniversário! 🎉"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Fijne verjaardag! 🎉"
@@ -8963,7 +8963,7 @@
             "value": "Mantenha o dedo em uma área vazia para entrar no modo de edição."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Houd je vinger op een lege plek om de bewerkingsmodus te openen."
@@ -9016,7 +9016,7 @@
             "value": "Mantenha pressionado em qualquer lugar da tela inicial"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Houd ergens op je startscherm ingedrukt"
@@ -9069,7 +9069,7 @@
             "value": "Início"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Start"
@@ -9122,7 +9122,7 @@
             "value": "Tela inicial"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Startscherm"
@@ -9175,7 +9175,7 @@
             "value": "Widget da tela inicial"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Startscherm-widget"
@@ -9228,7 +9228,7 @@
             "value": "horas"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "uren"
@@ -9281,7 +9281,7 @@
             "value": "Como adicioná-los?"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Hoe voeg je ze toe?"
@@ -9334,7 +9334,7 @@
             "value": "ID:"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "ID:"
@@ -9387,7 +9387,7 @@
             "value": "Imagem não disponível"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Afbeelding niet beschikbaar"
@@ -9440,7 +9440,7 @@
             "value": "Falha no processamento da imagem"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Afbeeldingsverwerking mislukt"
@@ -9493,7 +9493,7 @@
             "value": "Em relacionamento desde"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Samen sinds"
@@ -9547,7 +9547,7 @@
             "value": "Convide seu parceiro"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Nodig je partner uit"
@@ -9600,7 +9600,7 @@
             "value": "Aproveitem juntos a experiência completa do aplicativo!"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Geniet samen van de volledige app-ervaring!"
@@ -9653,7 +9653,7 @@
             "value": "Essa ação é irreversível. A memória será excluída permanentemente."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Deze actie is onomkeerbaar. De herinnering wordt permanent verwijderd."
@@ -9706,7 +9706,7 @@
             "value": "Diário"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Dagboek"
@@ -9760,7 +9760,7 @@
             "value": "Guarde aqui suas melhores memórias para se sentir ainda mais próximo. \n\nSeu parceiro poderá ver tudo o que você adicionar."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Bewaar hier jullie mooiste herinneringen om je nog dichter verbonden te voelen.\n\nJe partner kan alles zien wat je toevoegt."
@@ -9813,7 +9813,7 @@
             "value": "km"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "km"
@@ -9866,7 +9866,7 @@
             "value": "Vamos lá!"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Laten we gaan!"
@@ -9919,7 +9919,7 @@
             "value": "Limite atingido"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Limiet bereikt"
@@ -9972,7 +9972,7 @@
             "value": "Carregando..."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Laden..."
@@ -10025,7 +10025,7 @@
             "value": "CARREGANDO..."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "LADEN..."
@@ -10078,7 +10078,7 @@
             "value": "Erro de carregamento"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Laadfout"
@@ -10131,7 +10131,7 @@
             "value": "Personalizando sua experiência..."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Je ervaring personaliseren..."
@@ -10184,7 +10184,7 @@
             "value": "Analisando suas preferências..."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Je voorkeuren analyseren..."
@@ -10238,7 +10238,7 @@
             "value": "Preparando seu perfil..."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Je profiel voorbereiden..."
@@ -10291,7 +10291,7 @@
             "value": "Carregando..."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Laden..."
@@ -10344,7 +10344,7 @@
             "value": "Localização"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Locatie"
@@ -10397,7 +10397,7 @@
             "value": "Permissão de acesso à localização"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Toestemming voor locatie-toegang"
@@ -10450,7 +10450,7 @@
             "value": "Localização"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Locatie"
@@ -10503,7 +10503,7 @@
             "value": "Os serviços de localização são necessários para que o aplicativo calcule a distância entre você e seu parceiro."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Locatiediensten zijn nodig zodat de app de afstand tussen jou en je partner kan berekenen."
@@ -10556,7 +10556,7 @@
             "value": "Localização"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Locatie"
@@ -10609,7 +10609,7 @@
             "value": "Tutorial de localização"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Locatietutorial"
@@ -10663,7 +10663,7 @@
             "value": "Tela de bloqueio"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Vergrendelscherm"
@@ -10716,7 +10716,7 @@
             "value": "Toque na tela de bloqueio para começar a editar."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Tik op je vergrendelscherm om te beginnen met bewerken."
@@ -10769,7 +10769,7 @@
             "value": "Widget da tela de bloqueio"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Vergrendelscherm-widget"
@@ -10822,7 +10822,7 @@
             "value": "Conteúdo Premium"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Premium-inhoud"
@@ -10875,7 +10875,7 @@
             "value": "🔒"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "🔒"
@@ -10928,7 +10928,7 @@
             "value": "🔒"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "🔒"
@@ -10981,7 +10981,7 @@
             "value": "Encontre suas memórias em um mapa único e reviva os momentos que marcaram o seu amor."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Vind jullie herinneringen op een unieke kaart en herbeleef de momenten die jullie liefde hebben gemarkeerd."
@@ -11034,7 +11034,7 @@
             "value": "✓ Crie seu mapa do amor"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "✓ Maak jullie liefdeskaart"
@@ -11087,7 +11087,7 @@
             "value": "Desbloqueie mais de 2000 perguntas divertidas, profundas e reconfortantes para passar momentos incríveis juntos."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Ontgrendel onze 2000+ vragen die leuk, diep en geruststellend zijn, en beleef samen een geweldige tijd."
@@ -11141,7 +11141,7 @@
             "value": "✓ Amem-se ainda mais"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "✓ Houd nog meer van elkaar"
@@ -11194,7 +11194,7 @@
             "value": "Máx. 64 perguntas (categoria gratuita)"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Maximaal 64 vragen (gratis categorie)"
@@ -11247,7 +11247,7 @@
             "value": "Todos os seus momentos especiais aparecerão aqui no mapa."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Al jullie speciale momenten verschijnen hier op de kaart."
@@ -11300,7 +11300,7 @@
             "value": "Porque cada memória merece o seu lugar. Reúna seus momentos mais bonitos em um diário íntimo, único e compartilhado, só para vocês dois."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Omdat elke herinnering een plek verdient. Verzamel jullie mooiste momenten in een intiem, uniek en gedeeld dagboek, alleen voor jullie twee."
@@ -11353,7 +11353,7 @@
             "value": "✓ Crie sua caixa de memórias"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "✓ Bouw je herinneringsdoos"
@@ -11406,7 +11406,7 @@
             "value": "minutos"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "minuten"
@@ -11459,7 +11459,7 @@
             "value": "Sinto tanta saudade de você"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Ik mis je zo erg"
@@ -11512,7 +11512,7 @@
             "value": "Token de autenticação ausente"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Authenticatietoken ontbreekt"
@@ -11565,7 +11565,7 @@
             "value": "Mais de 1800 perguntas para fazer à sua alma gêmea"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Meer dan 1800 vragen om aan je zielsverwant te stellen"
@@ -11618,7 +11618,7 @@
             "value": "Mais de"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Meer dan"
@@ -11671,7 +11671,7 @@
             "value": "Meus favoritos"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Mijn favorieten"
@@ -11724,7 +11724,7 @@
             "value": "Nome"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Naam"
@@ -11777,7 +11777,7 @@
             "value": "Nome:"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Naam:"
@@ -11830,7 +11830,7 @@
             "value": "Digite seu primeiro nome"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Voer je voornaam in"
@@ -11883,7 +11883,7 @@
             "value": "Essa informação vai nos ajudar a personalizar sua experiência."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Deze informatie helpt ons je ervaring te personaliseren."
@@ -11936,7 +11936,7 @@
             "value": "Qual é o seu nome?"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Hoe heet je?"
@@ -11989,7 +11989,7 @@
             "value": "Escolha seu apelido"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Kies je bijnaam"
@@ -12042,7 +12042,7 @@
             "value": "Como seu parceiro vai ver você"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Zo ziet je partner jou"
@@ -12095,7 +12095,7 @@
             "value": "Erro de rede"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Netwerkfout"
@@ -12148,7 +12148,7 @@
             "value": "novas cartas"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "nieuwe kaarten"
@@ -12201,7 +12201,7 @@
             "value": "Novas cartas adicionadas!"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Nieuwe kaarten toegevoegd!"
@@ -12254,7 +12254,7 @@
             "value": "Novos recursos desbloqueados"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Nieuwe functies ontgrendeld"
@@ -12307,7 +12307,7 @@
             "value": "Não"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Nee"
@@ -12360,7 +12360,7 @@
             "value": "Sem fotos acessíveis"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Geen toegankelijke foto's"
@@ -12413,7 +12413,7 @@
             "value": "Sem compromisso, cancele quando quiser"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Geen verplichting, op elk moment opzegbaar"
@@ -12466,7 +12466,7 @@
             "value": "Sem eventos hoje"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Vandaag geen gebeurtenissen"
@@ -12519,7 +12519,7 @@
             "value": "Ainda sem favoritos"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Nog geen favorieten"
@@ -12572,7 +12572,7 @@
             "value": "Sem imagem"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Geen afbeelding"
@@ -12625,7 +12625,7 @@
             "value": "Nenhum parceiro conectado"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Geen partner verbonden"
@@ -12678,7 +12678,7 @@
             "value": "Inicie seu teste — sem cobrança hoje"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Start je proef — vandaag geen kosten"
@@ -12731,7 +12731,7 @@
             "value": "Sem fotos acessíveis"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Geen toegankelijke foto's"
@@ -12784,7 +12784,7 @@
             "value": "Sem acesso Premium"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Geen premium-toegang"
@@ -12837,7 +12837,7 @@
             "value": "Nenhum produto disponível. Verifique sua conexão."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Geen producten beschikbaar. Controleer je verbinding."
@@ -12890,7 +12890,7 @@
             "value": "Nenhuma compra para restaurar"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Geen aankoop om te herstellen"
@@ -12943,7 +12943,7 @@
             "value": "Data de relacionamento não definida"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Geen relatie-datum ingesteld"
@@ -12996,7 +12996,7 @@
             "value": "Você não está autorizado a realizar esta ação"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Je bent niet gemachtigd om deze actie uit te voeren"
@@ -13049,7 +13049,7 @@
             "value": "OK"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "OK"
@@ -13103,7 +13103,7 @@
             "value": "de"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "van"
@@ -13156,7 +13156,7 @@
             "value": "mim"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "mij"
@@ -13209,7 +13209,7 @@
             "value": "SÓ MAIS UM PASSO!"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "NOG ÉÉN STAP!"
@@ -13262,7 +13262,7 @@
             "value": "Abrir Configurações"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Instellingen openen"
@@ -13315,7 +13315,7 @@
             "value": "Abrir configurações"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Instellingen openen"
@@ -13368,7 +13368,7 @@
             "value": "outros..."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "anderen..."
@@ -13421,7 +13421,7 @@
             "value": "Nossa distância: "
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Onze afstand: "
@@ -13474,7 +13474,7 @@
             "value": "Nosso diário"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Ons dagboek"
@@ -13527,7 +13527,7 @@
             "value": "Você completou o pack."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Je hebt het pakket voltooid."
@@ -13580,7 +13580,7 @@
             "value": "o pack..."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "het pakket..."
@@ -13633,7 +13633,7 @@
             "value": "Parceiro"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Partner"
@@ -13686,7 +13686,7 @@
             "value": "Código do parceiro"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Partnercode"
@@ -13739,7 +13739,7 @@
             "value": "Parceiro conectado:"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Partner verbonden:"
@@ -13792,7 +13792,7 @@
             "value": "👥 Parceiro conectado"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "👥 Partner verbonden"
@@ -13845,7 +13845,7 @@
             "value": "Peça ao seu parceiro para fazer o mesmo e ativar a localização, caso contrário a distância entre vocês não poderá ser calculada."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Vraag je partner om ook zijn/haar locatie te activeren, anders kan de afstand niet worden berekend."
@@ -13898,7 +13898,7 @@
             "value": "Parceiro:"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Partner:"
@@ -13951,7 +13951,7 @@
             "value": "Seu parceiro não terá que pagar nada"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Je partner hoeft niets te betalen"
@@ -14004,7 +14004,7 @@
             "value": "Parceiro não conectado"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Partner niet verbonden"
@@ -14057,7 +14057,7 @@
             "value": "Compartilhado por: %@"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Gedeeld door: %@"
@@ -14111,7 +14111,7 @@
             "value": "👥 Status do Parceiro"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "👥 Partnerstatus"
@@ -14165,7 +14165,7 @@
             "value": "👥 Status do Parceiro"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "👥 Partnerstatus"
@@ -14218,7 +14218,7 @@
             "value": "/ usuário /"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "/ gebruiker /"
@@ -14271,7 +14271,7 @@
             "value": "Permissão"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Toestemming"
@@ -14324,7 +14324,7 @@
             "value": "Permissão de localização"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Locatietoestemming"
@@ -14377,7 +14377,7 @@
             "value": "Permissão de acesso às fotos"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Toestemming voor foto's"
@@ -14430,7 +14430,7 @@
             "value": "O Love2Love só acessará as fotos que você autorizar"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Love2Love krijgt alleen toegang tot foto's die jij toestaat"
@@ -14484,7 +14484,7 @@
             "value": "Permissão de acesso às fotos"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Toestemming voor foto's"
@@ -14537,7 +14537,7 @@
             "value": "Para usar este recurso, autorize o acesso às fotos em Configurações."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Om deze functie te gebruiken, sta toegang tot foto's toe in Instellingen."
@@ -14590,7 +14590,7 @@
             "value": "Toque no botão + no canto superior esquerdo para adicionar um novo widget."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Tik linksboven op de knop + om een nieuwe widget toe te voegen."
@@ -14643,7 +14643,7 @@
             "value": "Premium"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Premium"
@@ -14696,7 +14696,7 @@
             "value": "🎯 Acesso Premium:"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "🎯 Premium-toegang:"
@@ -14749,7 +14749,7 @@
             "value": "🎯 Acesso Premium:"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "🎯 Premium-toegang:"
@@ -14803,7 +14803,7 @@
             "value": "Acesso Premium perdido"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Premium-toegang verloren"
@@ -14856,7 +14856,7 @@
             "value": "Categorias Premium bloqueadas"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Premium-categorieën vergrendeld"
@@ -14909,7 +14909,7 @@
             "value": "Conteúdo Premium indisponível"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Premium-inhoud niet beschikbaar"
@@ -14962,7 +14962,7 @@
             "value": "Todas as categorias desbloqueadas"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Alle categorieën ontgrendeld"
@@ -15015,7 +15015,7 @@
             "value": "%@ compartilhou a assinatura Premium com você!\n\nAgora você tem acesso a todos os recursos premium."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "%@ heeft zijn/haar Premium-abonnement met je gedeeld!\n\nJe hebt nu toegang tot alle premiumfuncties."
@@ -15068,7 +15068,7 @@
             "value": "Seja Premium para criar memórias ilimitadas com seu parceiro"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Word Premium om onbeperkte herinneringen met je partner te maken"
@@ -15121,7 +15121,7 @@
             "value": "🎉 Premium desbloqueado!"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "🎉 Premium ontgrendeld!"
@@ -15174,7 +15174,7 @@
             "value": "Anterior"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Vorige"
@@ -15227,7 +15227,7 @@
             "value": "Prometemos manter sempre suas informações pessoais privadas e seguras."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Wij beloven je persoonlijke gegevens altijd privé en veilig te houden."
@@ -15280,7 +15280,7 @@
             "value": "Política de privacidade"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Privacybeleid"
@@ -15333,7 +15333,7 @@
             "value": "Prometemos manter sempre suas informações pessoais privadas e seguras."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Wij beloven je persoonlijke gegevens altijd privé en veilig te houden."
@@ -15386,7 +15386,7 @@
             "value": "Erro ao carregar o produto"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Fout bij laden van product"
@@ -15439,7 +15439,7 @@
             "value": "Falha ao carregar o produto"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Product laden mislukt"
@@ -15492,7 +15492,7 @@
             "value": "Produto não disponível"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Product niet beschikbaar"
@@ -15545,7 +15545,7 @@
             "value": "Perfil"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Profiel"
@@ -15598,7 +15598,7 @@
             "value": "Compra cancelada pelo usuário"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Aankoop geannuleerd door gebruiker"
@@ -15651,7 +15651,7 @@
             "value": "Erro de compra"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Aankoopfout"
@@ -15704,7 +15704,7 @@
             "value": "As compras não são permitidas neste dispositivo"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Aankopen zijn niet toegestaan op dit apparaat"
@@ -15757,7 +15757,7 @@
             "value": "As compras não estão autorizadas neste dispositivo"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Aankopen zijn niet gemachtigd op dit apparaat"
@@ -15810,7 +15810,7 @@
             "value": "Perguntas em cache"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Vragen in cache"
@@ -15863,7 +15863,7 @@
             "value": "⚡️ Ações rápidas"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "⚡️ Snelle acties"
@@ -15916,7 +15916,7 @@
             "value": "Distância em tempo real"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Realtime afstand"
@@ -15969,7 +15969,7 @@
             "value": "Falha na validação do recibo"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Bonvalidatie mislukt"
@@ -16022,7 +16022,7 @@
             "value": "Recupere seu acesso a todas as outras perguntas e categorias"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Herstel je toegang tot alle andere vragen en categorieën"
@@ -16075,7 +16075,7 @@
             "value": "🔄 Atualizar"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "🔄 Vernieuwen"
@@ -16128,7 +16128,7 @@
             "value": "Há quanto tempo vocês estão juntos?"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Hoelang zijn jullie samen?"
@@ -16181,7 +16181,7 @@
             "value": "Quais são os seus objetivos de relacionamento?"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Wat zijn jullie relatie-doelen?"
@@ -16234,7 +16234,7 @@
             "value": "O que você gostaria de melhorar no seu relacionamento?"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Wat zou je graag verbeteren in je relatie?"
@@ -16287,7 +16287,7 @@
             "value": "Recarregar cache"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Cache opnieuw laden"
@@ -16340,7 +16340,7 @@
             "value": "Apenas"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Slechts"
@@ -16393,7 +16393,7 @@
             "value": "Apenas %d %@ entr%@ restante@!"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Slechts %d %@ invoer%@ resterend!"
@@ -16446,7 +16446,7 @@
             "value": "Remover 1 favorito"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Verwijder 1 favoriet"
@@ -16499,7 +16499,7 @@
             "value": "Você quer remover esta pergunta dos seus favoritos?"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Wil je deze vraag uit je favorieten verwijderen?"
@@ -16552,7 +16552,7 @@
             "value": "Remover dos favoritos"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Uit favorieten verwijderen"
@@ -16605,7 +16605,7 @@
             "value": "Remover"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Verwijderen"
@@ -16658,7 +16658,7 @@
             "value": "Requer assinatura"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Abonnement vereist"
@@ -16711,7 +16711,7 @@
             "value": "Redefinir"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Resetten"
@@ -16764,7 +16764,7 @@
             "value": "Restaurar"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Herstellen"
@@ -16817,7 +16817,7 @@
             "value": "Erro ao restaurar"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Herstelfout"
@@ -16870,7 +16870,7 @@
             "value": "Restrito"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Beperkt"
@@ -16923,7 +16923,7 @@
             "value": "Tentar novamente"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Opnieuw proberen"
@@ -16976,7 +16976,7 @@
             "value": "Salvar"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Opslaan"
@@ -17029,7 +17029,7 @@
             "value": "Salve seus momentos favoritos juntos"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Bewaar jullie favoriete momenten samen"
@@ -17082,7 +17082,7 @@
             "value": "Salvando..."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Opslaan..."
@@ -17135,7 +17135,7 @@
             "value": "Pesquisar..."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Zoeken..."
@@ -17188,7 +17188,7 @@
             "value": "Localização selecionada"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Geselecteerde locatie"
@@ -17241,7 +17241,7 @@
             "value": "Localização personalizada"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Aangepaste locatie"
@@ -17294,7 +17294,7 @@
             "value": "Local"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Plaats"
@@ -17347,7 +17347,7 @@
             "value": "Desconhecido"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Onbekend"
@@ -17400,7 +17400,7 @@
             "value": "Cidade desconhecida"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Onbekende stad"
@@ -17453,7 +17453,7 @@
             "value": "países"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "landen"
@@ -17506,7 +17506,7 @@
             "value": "país"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "land"
@@ -17559,7 +17559,7 @@
             "value": "cidades"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "steden"
@@ -17612,7 +17612,7 @@
             "value": "cidade"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "stad"
@@ -17665,7 +17665,7 @@
             "value": "Título da sua memória"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Titel van je herinnering"
@@ -17718,7 +17718,7 @@
             "value": "Descreva o que tornou este momento especial"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Beschrijf wat dit moment speciaal maakte"
@@ -17771,7 +17771,7 @@
             "value": "Data do evento"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Evenementdatum"
@@ -17824,7 +17824,7 @@
             "value": "Escolher data"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Kies datum"
@@ -17877,7 +17877,7 @@
             "value": "O acesso à galeria é necessário para adicionar uma foto. Ative-o nas configurações do dispositivo."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Toegang tot je galerij is nodig om een foto toe te voegen. Schakel dit in via de instellingen van je apparaat."
@@ -17930,7 +17930,7 @@
             "value": "Erro de acesso à galeria"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Fout bij toegang tot galerij"
@@ -17983,7 +17983,7 @@
             "value": "Pesquise por 'Love2Love' e escolha o widget que quiser."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Zoek naar 'Love2Love' en kies de widget die je wilt."
@@ -18036,7 +18036,7 @@
             "value": "Pesquise por 'Love2Love' e escolha o widget que quiser."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Zoek naar 'Love2Love' en kies de widget die je wilt."
@@ -18089,7 +18089,7 @@
             "value": "Pesquisar love2love"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Zoek love2love"
@@ -18142,7 +18142,7 @@
             "value": "Pesquisar Love2Love"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Zoek Love2Love"
@@ -18195,7 +18195,7 @@
             "value": "Acessar fotos"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Toegang tot foto's"
@@ -18248,7 +18248,7 @@
             "value": "Carregando..."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Bezig met laden..."
@@ -18301,7 +18301,7 @@
             "value": "É necessário acesso às fotos"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Toegang tot foto's vereist"
@@ -18354,7 +18354,7 @@
             "value": "É a vez do seu parceiro"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Het is je partners beurt"
@@ -18407,7 +18407,7 @@
             "value": "Continuar"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Doorgaan"
@@ -18460,7 +18460,7 @@
             "value": "Autorizar"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Toestaan"
@@ -18513,7 +18513,7 @@
             "value": "O acesso à galeria é necessário para adicionar uma foto de perfil. Ative-o nas configurações do dispositivo."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Toegang tot de galerij is nodig om een profielfoto toe te voegen. Schakel dit in via de instellingen van je apparaat."
@@ -18566,7 +18566,7 @@
             "value": "O acesso à galeria é necessário para mudar sua foto de perfil. Ative-o nas configurações do dispositivo."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Toegang tot de galerij is nodig om je profielfoto te wijzigen. Schakel dit in via de instellingen van je apparaat."
@@ -18619,7 +18619,7 @@
             "value": "Erro de acesso à galeria"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Fout bij toegang tot galerij"
@@ -18672,7 +18672,7 @@
             "value": "Para adicionar fotos, autorize o acesso nas configurações"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Om foto's toe te voegen, sta toegang toe in Instellingen"
@@ -18725,7 +18725,7 @@
             "value": "Nenhuma foto acessível"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Geen toegankelijke foto's"
@@ -18778,7 +18778,7 @@
             "value": "Você pode selecionar mais fotos nas configurações"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Je kunt meer foto's selecteren in Instellingen"
@@ -18831,7 +18831,7 @@
             "value": "segundos"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "seconden"
@@ -18884,7 +18884,7 @@
             "value": "Perguntas\nrespondidas"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Vragen\nbeantwoord"
@@ -18937,7 +18937,7 @@
             "value": "Cidades\nvisitadas"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Bezochte\nsteden"
@@ -18990,7 +18990,7 @@
             "value": "Países\nvisitados"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Bezochte\nlanden"
@@ -19043,7 +19043,7 @@
             "value": "ano"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "jaar"
@@ -19096,7 +19096,7 @@
             "value": "anos"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "jaren"
@@ -19149,7 +19149,7 @@
             "value": "mês"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "maand"
@@ -19202,7 +19202,7 @@
             "value": "meses"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "maanden"
@@ -19255,7 +19255,7 @@
             "value": "dia"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "dag"
@@ -19308,7 +19308,7 @@
             "value": "dias"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "dagen"
@@ -19361,7 +19361,7 @@
             "value": "e"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "en"
@@ -19414,7 +19414,7 @@
             "value": "💕 Pensando em você"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "💕 Denk aan jou"
@@ -19467,7 +19467,7 @@
             "value": "PROTEJA SUA CONTA"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "BEVEILIG JE ACCOUNT"
@@ -19520,7 +19520,7 @@
             "value": "Selecionar"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Selecteer"
@@ -19573,7 +19573,7 @@
             "value": "Selecione Permitir Quando o App Estiver Ativo"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Selecteer Toestaan wanneer app actief is"
@@ -19626,7 +19626,7 @@
             "value": "Selecione sua tela de bloqueio"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Selecteer je vergrendelscherm"
@@ -19679,7 +19679,7 @@
             "value": "Você pode selecionar mais fotos nas configurações"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Je kunt meer foto's selecteren in Instellingen"
@@ -19732,7 +19732,7 @@
             "value": "Selecionar foto"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Selecteer foto"
@@ -19785,7 +19785,7 @@
             "value": "Localização selecionada"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Geselecteerde locatie"
@@ -19838,7 +19838,7 @@
             "value": "Enviar código"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Code verzenden"
@@ -19892,7 +19892,7 @@
             "value": "Envie este código ao seu parceiro"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Stuur deze code naar je partner"
@@ -19945,7 +19945,7 @@
             "value": "Aqui está meu código de parceiro Love2Love: {code}"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Hier is mijn Love2Love-partnercode: {code}"
@@ -19998,7 +19998,7 @@
             "value": "Enviar código de parceiro"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Partnercode verzenden"
@@ -20051,7 +20051,7 @@
             "value": "Configurações"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Instellingen"
@@ -20104,7 +20104,7 @@
             "value": "Perguntas favoritas compartilhadas"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Gedeelde favoriete vragen"
@@ -20157,7 +20157,7 @@
             "value": "Perguntas diárias disponíveis"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Dagelijkse vragen beschikbaar"
@@ -20210,7 +20210,7 @@
             "value": "Diário compartilhado"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Gedeeld dagboek"
@@ -20263,7 +20263,7 @@
             "value": "Assinatura Premium compartilhada"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Gedeeld Premium-abonnement"
@@ -20316,7 +20316,7 @@
             "value": "Continuar com Apple"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Doorgaan met Apple"
@@ -20369,7 +20369,7 @@
             "value": "Simular conexão de parceiro"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Partnersverbinding simuleren"
@@ -20422,7 +20422,7 @@
             "value": "❌ Simular revogação"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "❌ Intrekking simuleren"
@@ -20475,7 +20475,7 @@
             "value": "🔥 Simular assinatura"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "🔥 Abonnement simuleren"
@@ -20528,7 +20528,7 @@
             "value": "Desde"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Sinds"
@@ -20581,7 +20581,7 @@
             "value": "Pular"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Overslaan"
@@ -20634,7 +20634,7 @@
             "value": "Pular esta etapa"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Deze stap overslaan"
@@ -20687,7 +20687,7 @@
             "value": "Experimentar grátis"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Gratis proberen"
@@ -20740,7 +20740,7 @@
             "value": "INICIAR TESTE"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "PROEF STARTEN"
@@ -20793,7 +20793,7 @@
             "value": "Etapa %d de %d"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Stap %d van %d"
@@ -20846,7 +20846,7 @@
             "value": "Assinar"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Abonneren"
@@ -20899,7 +20899,7 @@
             "value": "Assine para acessar todas as perguntas"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Abonneer je om toegang te krijgen tot alle vragen"
@@ -20952,7 +20952,7 @@
             "value": "Assinar"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Abonneren"
@@ -21005,7 +21005,7 @@
             "value": "%@ cancelou sua assinatura Premium.\n\nAgora você só tem acesso aos recursos gratuitos."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "%@ heeft zijn Premium-abonnement opgezegd.\n\nJe hebt nu alleen toegang tot gratis functies."
@@ -21058,7 +21058,7 @@
             "value": "Seu parceiro não terá que pagar nada"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Je partner hoeft niets te betalen"
@@ -21111,7 +21111,7 @@
             "value": "Escolha seu plano"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Kies je abonnement"
@@ -21164,7 +21164,7 @@
             "value": "surpresa"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "verrassing"
@@ -21217,7 +21217,7 @@
             "value": "Deslize para baixo para mostrar a tela de bloqueio e mantenha pressionado."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Veeg omlaag om je vergrendelscherm te tonen en houd vast."
@@ -21271,7 +21271,7 @@
             "value": "Deslizar para baixo"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Omlaag vegen"
@@ -21324,7 +21324,7 @@
             "value": "Sincronizando..."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Bezig met synchroniseren..."
@@ -21377,7 +21377,7 @@
             "value": "Toque no botão Personalizar"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Tik op de knop Aanpassen"
@@ -21430,7 +21430,7 @@
             "value": "Toque em"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Tik op"
@@ -21483,7 +21483,7 @@
             "value": "Toque no botão +"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Tik op de + knop"
@@ -21536,7 +21536,7 @@
             "value": "Toque para desbloquear"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Tik om te ontgrendelen"
@@ -21589,7 +21589,7 @@
             "value": "Toque em mim para desbloquear uma surpresa"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Tik op mij om een verrassing te ontgrendelen"
@@ -21642,7 +21642,7 @@
             "value": "Termos"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Voorwaarden"
@@ -21695,7 +21695,7 @@
             "value": "Termos e condições"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Algemene voorwaarden"
@@ -21748,7 +21748,7 @@
             "value": "⚡️ Ações de teste"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "⚡️ Testacties"
@@ -21801,7 +21801,7 @@
             "value": "Obrigado por"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Bedankt voor"
@@ -21854,7 +21854,7 @@
             "value": "Obrigado por"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Bedankt voor"
@@ -21907,7 +21907,7 @@
             "value": "Estou pensando em você"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Ik denk aan je"
@@ -21960,7 +21960,7 @@
             "value": "Tempo juntos"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Tijd samen"
@@ -22013,7 +22013,7 @@
             "value": "juntos"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "samen"
@@ -22066,7 +22066,7 @@
             "value": "Erro de serialização do token"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Token-serialisatiefout"
@@ -22119,7 +22119,7 @@
             "value": "confiar em nós."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "ons te vertrouwen."
@@ -22172,7 +22172,7 @@
             "value": "confiando em nós."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "ons vertrouwen."
@@ -22225,7 +22225,7 @@
             "value": "Tipo:"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Type:"
@@ -22278,7 +22278,7 @@
             "value": "Entendi!"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Begrepen!"
@@ -22331,7 +22331,7 @@
             "value": "Autenticação não tratada"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Niet-verwerkte authenticatie"
@@ -22384,7 +22384,7 @@
             "value": "Desconhecido"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Onbekend"
@@ -22437,7 +22437,7 @@
             "value": "Erro de autenticação desconhecido"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Onbekende authenticatiefout"
@@ -22490,7 +22490,7 @@
             "value": "Perguntas ilimitadas"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Onbeperkte vragen"
@@ -22543,7 +22543,7 @@
             "value": "Desbloquear Premium"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Premium ontgrendelen"
@@ -22596,7 +22596,7 @@
             "value": "Desbloquear Premium"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Premium ontgrendelen"
@@ -22649,7 +22649,7 @@
             "value": "Usuário não autenticado"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Gebruiker niet geauthenticeerd"
@@ -22702,7 +22702,7 @@
             "value": "Usuário não conectado"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Gebruiker niet verbonden"
@@ -22755,7 +22755,7 @@
             "value": "Compartilhado por: %@"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Gedeeld door: %@"
@@ -22808,7 +22808,7 @@
             "value": "Ver tudo"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Alles bekijken"
@@ -22861,7 +22861,7 @@
             "value": "Bem-vindo"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Welkom"
@@ -22914,7 +22914,7 @@
             "value": "Quando o app estiver em uso"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Wanneer app in gebruik is"
@@ -22967,7 +22967,7 @@
             "value": "Completo"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Voltooid"
@@ -23020,7 +23020,7 @@
             "value": "Contagem regressiva"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Aftellen"
@@ -23073,7 +23073,7 @@
             "value": "-- dias"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "-- dagen"
@@ -23126,7 +23126,7 @@
             "value": "-- km"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "-- km"
@@ -23179,7 +23179,7 @@
             "value": "-- m"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "-- m"
@@ -23232,7 +23232,7 @@
             "value": "1 dia"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "1 dag"
@@ -23286,7 +23286,7 @@
             "value": "dias"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "dagen"
@@ -23339,7 +23339,7 @@
             "value": "Dias juntos"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Dagen samen"
@@ -23392,7 +23392,7 @@
             "value": "Nossa distância"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Onze afstand"
@@ -23445,7 +23445,7 @@
             "value": "distância"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "afstand"
@@ -23498,7 +23498,7 @@
             "value": "Distância"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Afstand"
@@ -23551,7 +23551,7 @@
             "value": "Widget grande"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Grote widget"
@@ -23604,7 +23604,7 @@
             "value": "Widget pequeno"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Kleine widget"
@@ -23657,7 +23657,7 @@
             "value": "juntos"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "samen"
@@ -23710,7 +23710,7 @@
             "value": "Widgets"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Widgets"
@@ -23763,7 +23763,7 @@
             "value": "Widgets disponíveis"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Widgets beschikbaar"
@@ -23816,7 +23816,7 @@
             "value": "Sim"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Ja"
@@ -23869,7 +23869,7 @@
             "value": "Você"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Jij"
@@ -23922,7 +23922,7 @@
             "value": "Sente saudade de mim"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Mis je me"
@@ -23975,7 +23975,7 @@
             "value": "Acompanhe seu relacionamento com seu parceiro. O widget grande requer uma assinatura."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Volg je relatie met je partner. De grote widget vereist een abonnement."
@@ -24028,7 +24028,7 @@
             "value": "Mostra a distância entre você e seu parceiro."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Toont de afstand tussen jou en je partner."
@@ -24081,7 +24081,7 @@
             "value": "Este widget requer a localização ativada em ambos os parceiros."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Deze widget vereist dat locatie bij beide partners is ingeschakeld."
@@ -24134,7 +24134,7 @@
             "value": "Love2Love"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Love2Love"
@@ -24187,7 +24187,7 @@
             "value": "Love2Love Distância"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Love2Love Afstand"
@@ -24240,7 +24240,7 @@
             "value": "Love2Love Mapa"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Love2Love Kaart"
@@ -24293,7 +24293,7 @@
             "value": "dias"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "dagen"
@@ -24346,7 +24346,7 @@
             "value": "Nossa distância:"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Onze afstand:"
@@ -24399,7 +24399,7 @@
             "value": "de distância"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "verwijderd"
@@ -24452,7 +24452,7 @@
             "value": "Ative sua localização"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Schakel je locatie in"
@@ -24505,7 +24505,7 @@
             "value": "Seu parceiro deve ativar a localização"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Partner moet locatie inschakelen"
@@ -24558,7 +24558,7 @@
             "value": "Ative suas localizações"
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Schakel je locaties in"
@@ -24611,7 +24611,7 @@
             "value": "Continue e desbloqueie todas as outras perguntas e categorias."
           }
         },
-        "nl-NL": {
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Ga door en ontgrendel alle andere vragen en categorieën."

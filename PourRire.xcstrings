@@ -46,6 +46,12 @@
             "state" : "translated", 
             "value" : "Qual foi a coisa mais ridícula que você já fez para evitar uma conversa constrangedora?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest belachelijke dat je hebt gedaan om een ongemakkelijk gesprek te vermijden?"
+          }
         }
       }
     }, 
@@ -92,6 +98,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você tivesse que criar um perfume com o cheiro da sua personalidade, qual seria o cheiro?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een parfum moest maken dat naar jouw persoonlijkheid ruikt, hoe zou het ruiken?"
           }
         }
       }
@@ -140,6 +152,12 @@
             "state" : "translated", 
             "value" : "Qual foi a mentira mais absurda que você contou quando era criança e realmente acreditou?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is de meest absurde leugen die je als kind hebt verteld en echt geloofde?"
+          }
         }
       }
     }, 
@@ -186,6 +204,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você pudesse trocar todas as buzinas dos carros por outro som, qual escolheria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je alle autoclaxons kon vervangen door een ander geluid, welk geluid zou je kiezen?"
           }
         }
       }
@@ -234,6 +258,12 @@
             "state" : "translated", 
             "value" : "Qual foi a coisa mais estranha que você encontrou na sua geladeira sem lembrar de ter colocado lá?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het vreemdste dat je ooit in je koelkast hebt gevonden waarvan je je niet herinnert het erin te hebben gelegd?"
+          }
         }
       }
     }, 
@@ -280,6 +310,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você tivesse que sobreviver uma semana apenas com os objetos que tem agora no bolso/na bolsa, como se viraria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een week moest overleven met alleen de spullen die nu in je zak/tas zitten, hoe zou je dat aanpakken?"
           }
         }
       }
@@ -328,6 +364,12 @@
             "state" : "translated", 
             "value" : "Qual foi o sonho mais estranho que você já teve e ainda se lembra?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is de vreemdste droom die je ooit hebt gehad en die je je nog steeds herinnert?"
+          }
         }
       }
     }, 
@@ -374,6 +416,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você pudesse fazer com que uma comida gritasse quando fosse comida, qual escolheria para criar o maior caos?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je één soort eten kon laten gillen wanneer iemand het eet, welk zou je kiezen om het meeste chaos te veroorzaken?"
           }
         }
       }
@@ -422,6 +470,12 @@
             "state" : "translated", 
             "value" : "Qual foi a coisa mais idiota que você já fez por preguiça?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het domste dat je hebt gedaan uit luiheid?"
+          }
         }
       }
     }, 
@@ -468,6 +522,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você tivesse que criar uma nova dança baseada em uma atividade do dia a dia, qual escolheria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een nieuwe dans moest maken gebaseerd op een dagelijkse activiteit, welke zou je kiezen?"
           }
         }
       }
@@ -516,6 +576,12 @@
             "state" : "translated", 
             "value" : "Qual foi o momento mais constrangedor em que pegaram você falando sozinho?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest gênante moment waarop je betrapt werd terwijl je tegen jezelf praatte?"
+          }
         }
       }
     }, 
@@ -562,6 +628,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você pudesse ter qualquer animal como meio de transporte, qual escolheria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je elk dier als vervoermiddel kon gebruiken, welk zou je kiezen?"
           }
         }
       }
@@ -610,6 +682,12 @@
             "state" : "translated", 
             "value" : "Qual foi a coisa mais ridícula que você já comprou online às 3 da manhã?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest belachelijke dat je ooit om 3 uur ’s nachts online hebt gekocht?"
+          }
         }
       }
     }, 
@@ -656,6 +734,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você tivesse que inventar um novo esporte usando objetos do dia a dia, como seria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een nieuwe sport moest bedenken met alledaagse voorwerpen, hoe zou die eruitzien?"
           }
         }
       }
@@ -704,6 +788,12 @@
             "state" : "translated", 
             "value" : "Qual foi a desculpa mais criativa que você inventou para evitar um evento social?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is de meest creatieve smoes die je hebt verzonnen om een sociaal evenement te vermijden?"
+          }
         }
       }
     }, 
@@ -750,6 +840,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você pudesse trocar sua voz pela de outra pessoa por um dia, quem escolheria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je je stem één dag kon vervangen door die van iemand anders, wie zou je kiezen?"
           }
         }
       }
@@ -798,6 +894,12 @@
             "state" : "translated", 
             "value" : "Qual foi a coisa mais estranha que você já fez quando achava que estava sozinho?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het vreemdste dat je ooit hebt gedaan toen je dacht dat je alleen was?"
+          }
         }
       }
     }, 
@@ -844,6 +946,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você tivesse que criar um novo emoji, como seria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een nieuwe emoji kon maken, hoe zou die eruitzien?"
           }
         }
       }
@@ -892,6 +1000,12 @@
             "state" : "translated", 
             "value" : "Qual foi o momento mais absurdo em que você caiu na risada?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest absurde moment waarop je in lachen uitbarstte?"
+          }
         }
       }
     }, 
@@ -938,6 +1052,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você pudesse dar voz a um objeto inanimado, qual escolheria e por quê?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een voorwerp kon laten praten, welk zou je kiezen en waarom?"
           }
         }
       }
@@ -986,6 +1106,12 @@
             "state" : "translated", 
             "value" : "Qual foi a coisa mais ridícula que você já fez para impressionar alguém?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest belachelijke dat je hebt gedaan om indruk te maken op iemand?"
+          }
         }
       }
     }, 
@@ -1032,6 +1158,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você tivesse que criar um programa de TV totalmente absurdo, qual seria a regra principal?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een compleet absurd nieuw tv-spel moest bedenken, wat zou de hoofdregel zijn?"
           }
         }
       }
@@ -1080,6 +1212,12 @@
             "state" : "translated", 
             "value" : "Qual foi o momento mais constrangedor em que você confundiu alguém com outra pessoa?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest gênante moment waarop je iemand met iemand anders hebt verward?"
+          }
         }
       }
     }, 
@@ -1126,6 +1264,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você pudesse ter uma habilidade inútil mas impressionante, qual escolheria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een nutteloze maar indrukwekkende vaardigheid kon hebben, welke zou je kiezen?"
           }
         }
       }
@@ -1174,6 +1318,12 @@
             "state" : "translated", 
             "value" : "Qual foi a coisa mais estranha que você fez por hábito sem perceber?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het vreemdste dat je uit gewoonte hebt gedaan zonder het te beseffen?"
+          }
         }
       }
     }, 
@@ -1220,6 +1370,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você tivesse que inventar um trabalho totalmente inútil, qual seria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een compleet nutteloos nieuw beroep moest verzinnen, wat zou dat zijn?"
           }
         }
       }
@@ -1268,6 +1424,12 @@
             "state" : "translated", 
             "value" : "Qual foi o momento mais absurdo em que você fingiu saber algo que não sabia?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest absurde moment waarop je deed alsof je iets wist dat je eigenlijk niet wist?"
+          }
         }
       }
     }, 
@@ -1314,6 +1476,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você pudesse trocar todos os elevadores por outro meio de transporte, qual escolheria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je alle liften kon vervangen door een ander vervoermiddel, welk zou je kiezen?"
           }
         }
       }
@@ -1362,6 +1530,12 @@
             "state" : "translated", 
             "value" : "Qual foi a coisa mais ridícula que você fez quando estava doente?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest belachelijke dat je hebt gedaan toen je ziek was?"
+          }
         }
       }
     }, 
@@ -1408,6 +1582,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você tivesse que inventar uma nova tradição de família totalmente absurda, qual seria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een compleet absurde nieuwe familietraditie moest bedenken, wat zou dat zijn?"
           }
         }
       }
@@ -1456,6 +1636,12 @@
             "state" : "translated", 
             "value" : "Qual foi o momento mais constrangedor em que você pronunciou errado uma palavra em público?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest gênante moment waarop je een woord verkeerd uitsprak voor een publiek?"
+          }
         }
       }
     }, 
@@ -1502,6 +1688,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você pudesse fazer com que um som seguisse sempre alguém que você não gosta, qual escolheria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een geluid iemand die je niet mag overal kon laten volgen, welk geluid zou je kiezen?"
           }
         }
       }
@@ -1550,6 +1742,12 @@
             "state" : "translated", 
             "value" : "Qual foi a coisa mais idiota que você já fez tentando parecer inteligente?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het domste dat je hebt gedaan om slim te lijken?"
+          }
         }
       }
     }, 
@@ -1596,6 +1794,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você tivesse que criar um restaurante com um conceito totalmente maluco, como seria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een restaurant met een compleet gek concept moest bedenken, hoe zou dat eruitzien?"
           }
         }
       }
@@ -1644,6 +1848,12 @@
             "state" : "translated", 
             "value" : "Qual foi o momento mais absurdo em que você tentou mentir para seus pais?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest absurde moment waarop je probeerde tegen je ouders te liegen?"
+          }
         }
       }
     }, 
@@ -1690,6 +1900,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você pudesse substituir todas as maçanetas por outra coisa, o que escolheria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je alle deurklinken kon vervangen door iets anders, wat zou je kiezen?"
           }
         }
       }
@@ -1738,6 +1954,12 @@
             "state" : "translated", 
             "value" : "Qual foi a coisa mais ridícula que você já fez achando que ninguém estava vendo?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest belachelijke dat je hebt gedaan terwijl je dacht dat niemand keek?"
+          }
         }
       }
     }, 
@@ -1784,6 +2006,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você tivesse que inventar um novo transporte público, como seria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een nieuw soort openbaar vervoer moest uitvinden, hoe zou dat eruitzien?"
           }
         }
       }
@@ -1832,6 +2060,12 @@
             "state" : "translated", 
             "value" : "Qual foi o momento mais constrangedor em que pegaram você procrastinando?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest gênante moment waarop je betrapt werd op uitstellen?"
+          }
         }
       }
     }, 
@@ -1878,6 +2112,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você pudesse deixar enorme um objeto do dia a dia, qual escolheria para criar mais caos?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een alledaags object enorm groot kon maken, welk zou je kiezen om chaos te veroorzaken?"
           }
         }
       }
@@ -1926,6 +2166,12 @@
             "state" : "translated", 
             "value" : "Qual foi a coisa mais absurda que você já fez para não precisar limpar?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest absurde dat je hebt gedaan om schoonmaken te vermijden?"
+          }
         }
       }
     }, 
@@ -1972,6 +2218,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você tivesse que criar um novo exercício baseado em uma atividade ridícula, qual seria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een nieuwe oefening moest maken gebaseerd op een belachelijke activiteit, wat zou dat zijn?"
           }
         }
       }
@@ -2020,6 +2272,12 @@
             "state" : "translated", 
             "value" : "Qual foi o momento mais idiota em que você tentou fazer algo que viu em um filme?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het domste moment waarop je iets uit een film probeerde na te doen?"
+          }
         }
       }
     }, 
@@ -2066,6 +2324,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você pudesse substituir todos os semáforos por outra coisa, o que escolheria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je alle verkeerslichten kon vervangen door iets anders, wat zou je kiezen?"
           }
         }
       }
@@ -2114,6 +2378,12 @@
             "state" : "translated", 
             "value" : "Qual foi a coisa mais ridícula que você já fez meio dormindo?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest belachelijke dat je hebt gedaan terwijl je half sliep?"
+          }
         }
       }
     }, 
@@ -2160,6 +2430,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você tivesse que criar uma competição totalmente absurda, qual seria o desafio principal?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een compleet absurde nieuwe wedstrijd moest bedenken, wat zou de hoofdproef zijn?"
           }
         }
       }
@@ -2208,6 +2484,12 @@
             "state" : "translated", 
             "value" : "Qual foi o momento mais constrangedor em que você tentou ser descolado mas tudo deu errado?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest gênante moment waarop je probeerde cool te doen maar alles misliep?"
+          }
         }
       }
     }, 
@@ -2254,6 +2536,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você pudesse mudar a textura de um alimento, qual escolheria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je de textuur van een bepaald eten volledig kon veranderen, welk zou je kiezen?"
           }
         }
       }
@@ -2302,6 +2590,12 @@
             "state" : "translated", 
             "value" : "Qual foi a coisa mais idiota que você já fez tentando economizar dinheiro?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het domste dat je hebt gedaan om geld te besparen?"
+          }
         }
       }
     }, 
@@ -2348,6 +2642,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você tivesse que criar uma loja com um conceito totalmente maluco, como seria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een winkel met een compleet gek concept moest creëren, hoe zou die eruitzien?"
           }
         }
       }
@@ -2396,6 +2696,12 @@
             "state" : "translated", 
             "value" : "Qual foi o momento mais absurdo em que você tentou consertar algo e acabou quebrando tudo?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest absurde moment waarop je iets probeerde te repareren en alles kapotmaakte?"
+          }
         }
       }
     }, 
@@ -2442,6 +2748,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você pudesse substituir todos os telefones por outro objeto para se comunicar, qual escolheria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je alle telefoons kon vervangen door een ander object om te communiceren, welk zou je kiezen?"
           }
         }
       }
@@ -2490,6 +2802,12 @@
             "state" : "translated", 
             "value" : "Qual foi a coisa mais ridícula que você já fez para impressionar seus amigos?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest belachelijke dat je hebt gedaan om je vrienden te imponeren?"
+          }
         }
       }
     }, 
@@ -2536,6 +2854,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você tivesse que criar um novo tipo de entretenimento baseado em uma atividade chata, qual seria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een nieuw soort entertainment moest maken gebaseerd op iets saais, wat zou dat zijn?"
           }
         }
       }
@@ -2584,6 +2908,12 @@
             "state" : "translated", 
             "value" : "Qual foi o momento mais constrangedor em que você confundiu duas pessoas ao telefone?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest gênante moment waarop je twee mensen aan de telefoon door elkaar haalde?"
+          }
         }
       }
     }, 
@@ -2630,6 +2960,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você pudesse dar a uma peça de roupa uma função completamente inútil, qual seria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een kledingstuk een volledig nutteloze functie kon geven, welk zou je kiezen?"
           }
         }
       }
@@ -2678,6 +3014,12 @@
             "state" : "translated", 
             "value" : "Qual foi a coisa mais absurda que você já fez para chamar atenção?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest absurde dat je hebt gedaan om op te vallen?"
+          }
         }
       }
     }, 
@@ -2724,6 +3066,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você tivesse que criar um novo jogo de tabuleiro com regras totalmente malucas, como seria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een nieuw bordspel moest uitvinden met compleet gekke regels, hoe zou dat eruitzien?"
           }
         }
       }
@@ -2772,6 +3120,12 @@
             "state" : "translated", 
             "value" : "Qual foi o momento mais idiota em que você tentou fazer algo romântico mas deu errado?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het domste moment waarop je iets romantisch probeerde te doen en het helemaal mislukte?"
+          }
         }
       }
     }, 
@@ -2818,6 +3172,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você pudesse substituir todos os espelhos por outra coisa, o que escolheria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je alle spiegels kon vervangen door iets anders, wat zou je kiezen?"
           }
         }
       }
@@ -2866,6 +3226,12 @@
             "state" : "translated", 
             "value" : "Qual foi a coisa mais ridícula que você já fez para se vingar de alguém?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest belachelijke dat je hebt gedaan om wraak te nemen op iemand?"
+          }
         }
       }
     }, 
@@ -2912,6 +3278,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você tivesse que inventar uma matéria totalmente inútil, qual seria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een compleet nutteloze cursus moest verzinnen, welke zou dat zijn?"
           }
         }
       }
@@ -2960,6 +3332,12 @@
             "state" : "translated", 
             "value" : "Qual foi o momento mais constrangedor em que você fingiu gostar de algo que odiava?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest gênante moment waarop je deed alsof je iets leuk vond dat je eigenlijk haatte?"
+          }
         }
       }
     }, 
@@ -3006,6 +3384,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você pudesse dar a um móvel uma função completamente diferente, qual escolheria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een meubelstuk een volledig andere functie kon geven, welk zou je kiezen?"
           }
         }
       }
@@ -3054,6 +3438,12 @@
             "state" : "translated", 
             "value" : "Qual foi a coisa mais absurda que você já fez para ser perdoado?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest absurde dat je hebt gedaan om vergeving te krijgen?"
+          }
         }
       }
     }, 
@@ -3100,6 +3490,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você tivesse que criar um novo festival com um tema totalmente maluco, qual seria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een nieuw festival moest bedenken met een compleet gek thema, wat zou dat zijn?"
           }
         }
       }
@@ -3148,6 +3544,12 @@
             "state" : "translated", 
             "value" : "Qual foi o momento mais idiota em que você tentou fazer algo criativo mas foi um desastre?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het domste moment waarop je iets creatiefs probeerde te doen en het een ramp werd?"
+          }
         }
       }
     }, 
@@ -3194,6 +3596,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você pudesse substituir todas as cadeiras por outro tipo de assento, qual escolheria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je alle stoelen kon vervangen door een ander soort zitplaats, welk zou je kiezen?"
           }
         }
       }
@@ -3242,6 +3650,12 @@
             "state" : "translated", 
             "value" : "Qual foi a coisa mais ridícula que você já fez para evitar alguém?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest belachelijke dat je hebt gedaan om iemand te vermijden?"
+          }
         }
       }
     }, 
@@ -3288,6 +3702,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você tivesse que criar uma nova terapia baseada em uma atividade ridícula, qual seria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een nieuwe therapie moest bedenken gebaseerd op een belachelijke activiteit, wat zou dat zijn?"
           }
         }
       }
@@ -3336,6 +3756,12 @@
             "state" : "translated", 
             "value" : "Qual foi o momento mais constrangedor em que você contou uma piada que não teve graça?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest gênante moment waarop je een grap probeerde te maken die totaal mislukte?"
+          }
         }
       }
     }, 
@@ -3382,6 +3808,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você pudesse dar personalidade a um eletrodoméstico, qual escolheria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een huishoudapparaat een persoonlijkheid kon geven, welk zou je kiezen?"
           }
         }
       }
@@ -3430,6 +3862,12 @@
             "state" : "translated", 
             "value" : "Qual foi a coisa mais absurda que você já fez tentando relaxar?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest absurde dat je hebt gedaan om te proberen te ontspannen?"
+          }
         }
       }
     }, 
@@ -3476,6 +3914,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você tivesse que criar uma competição com regras totalmente malucas, como seria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een nieuwe wedstrijd moest maken met compleet gekke regels, hoe zou die zijn?"
           }
         }
       }
@@ -3524,6 +3968,12 @@
             "state" : "translated", 
             "value" : "Qual foi o momento mais idiota em que você tentou ser heróico mas fracassou?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het domste moment waarop je iets heldhaftigs probeerde maar faalde?"
+          }
         }
       }
     }, 
@@ -3570,6 +4020,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você pudesse substituir todas as escadas por outra forma de subir, qual escolheria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je alle trappen kon vervangen door een andere manier om omhoog te gaan, wat zou je kiezen?"
           }
         }
       }
@@ -3618,6 +4074,12 @@
             "state" : "translated", 
             "value" : "Qual foi a coisa mais ridícula que você já fez para fazer amigos?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest belachelijke dat je hebt gedaan om vrienden te maken?"
+          }
         }
       }
     }, 
@@ -3664,6 +4126,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você tivesse que criar um novo estilo de música a partir de sons do dia a dia, como seria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een nieuw soort muziek moest maken gebaseerd op alledaagse geluiden, hoe zou dat klinken?"
           }
         }
       }
@@ -3712,6 +4180,12 @@
             "state" : "translated", 
             "value" : "Qual foi o momento mais constrangedor em que você tentou dançar e todo mundo ficou olhando?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest gênante moment waarop je probeerde te dansen en iedereen naar je keek?"
+          }
         }
       }
     }, 
@@ -3758,6 +4232,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você pudesse dar a um objeto de escritório uma função totalmente diferente, qual seria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een bureaubladobject een compleet andere functie kon geven, welk zou je kiezen?"
           }
         }
       }
@@ -3806,6 +4286,12 @@
             "state" : "translated", 
             "value" : "Qual foi a coisa mais absurda que você já fez tentando aprender algo?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest absurde dat je hebt gedaan om jezelf iets bij te leren?"
+          }
         }
       }
     }, 
@@ -3852,6 +4338,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você tivesse que criar um novo tipo de férias com um conceito totalmente maluco, como seria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een nieuw soort vakantie moest creëren met een compleet gek concept, hoe zou die zijn?"
           }
         }
       }
@@ -3900,6 +4392,12 @@
             "state" : "translated", 
             "value" : "Qual foi o momento mais idiota em que você tentou fazer algo sofisticado mas deu errado?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het domste moment waarop je iets verfijnds probeerde te doen maar faalde?"
+          }
         }
       }
     }, 
@@ -3946,6 +4444,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você pudesse substituir todas as portas por outro tipo de entrada, qual escolheria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je alle deuren kon vervangen door een ander type ingang, wat zou je kiezen?"
           }
         }
       }
@@ -3994,6 +4498,12 @@
             "state" : "translated", 
             "value" : "Qual foi a coisa mais ridícula que você já fez para economizar tempo?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest belachelijke dat je hebt gedaan om tijd te besparen?"
+          }
         }
       }
     }, 
@@ -4040,6 +4550,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você tivesse que inventar um hobby totalmente inútil, qual seria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een compleet nutteloze hobby moest verzinnen, wat zou dat zijn?"
           }
         }
       }
@@ -4088,6 +4604,12 @@
             "state" : "translated", 
             "value" : "Qual foi o momento mais constrangedor em que você fingiu entender algo que não entendia?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest gênante moment waarop je deed alsof je iets begreep dat je helemaal niet begreep?"
+          }
         }
       }
     }, 
@@ -4134,6 +4656,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você pudesse dar a um animal de estimação uma habilidade humana, qual escolheria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een huisdier een menselijke vaardigheid kon geven, welke zou je kiezen?"
           }
         }
       }
@@ -4182,6 +4710,12 @@
             "state" : "translated", 
             "value" : "Qual foi a coisa mais absurda que você já fez para se motivar?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest absurde dat je hebt gedaan om jezelf te motiveren?"
+          }
         }
       }
     }, 
@@ -4228,6 +4762,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você tivesse que criar um restaurante onde tudo fosse de cabeça para baixo, como seria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een restaurant moest bedenken waar alles ondersteboven is, hoe zou dat eruitzien?"
           }
         }
       }
@@ -4276,6 +4816,12 @@
             "state" : "translated", 
             "value" : "Qual foi o momento mais idiota em que você tentou fazer algo romântico para si mesmo?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het domste moment waarop je iets romantisch voor jezelf probeerde te doen?"
+          }
         }
       }
     }, 
@@ -4322,6 +4868,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você pudesse substituir todas as camas por outra forma de dormir, qual escolheria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je alle bedden kon vervangen door een andere manier van slapen, wat zou je kiezen?"
           }
         }
       }
@@ -4370,6 +4922,12 @@
             "state" : "translated", 
             "value" : "Qual foi a coisa mais ridícula que você já fez para chamar a atenção do seu crush?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest belachelijke dat je hebt gedaan om de aandacht van je crush te krijgen?"
+          }
         }
       }
     }, 
@@ -4416,6 +4974,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você tivesse que criar um esporte em que o objetivo fosse ser o mais lento possível, como seria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een nieuwe sport moest creëren waarbij je zo langzaam mogelijk moet zijn, hoe zou die eruitzien?"
           }
         }
       }
@@ -4464,6 +5028,12 @@
             "state" : "translated", 
             "value" : "Qual foi o momento mais constrangedor em que você tentou ser descolado na frente dos seus pais mas deu errado?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest gênante moment waarop je iets cools probeerde te doen voor je ouders?"
+          }
         }
       }
     }, 
@@ -4510,6 +5080,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você pudesse fazer um legume ter gosto de sobremesa, qual escolheria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een groente de smaak van een dessert kon geven, welke zou je kiezen?"
           }
         }
       }
@@ -4558,6 +5134,12 @@
             "state" : "translated", 
             "value" : "Qual foi a coisa mais absurda que você já fez para evitar fazer algo importante?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest absurde dat je hebt gedaan om iets belangrijks te vermijden?"
+          }
         }
       }
     }, 
@@ -4604,6 +5186,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você tivesse que criar um novo transporte movido a emoções, como funcionaria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een nieuw vervoermiddel moest creëren dat draait op emoties, hoe zou dat werken?"
           }
         }
       }
@@ -4652,6 +5240,12 @@
             "state" : "translated", 
             "value" : "Qual foi o momento mais idiota em que você tentou ser maduro mas agiu como uma criança?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het domste moment waarop je iets volwassen probeerde te doen maar je als een kind gedroeg?"
+          }
         }
       }
     }, 
@@ -4698,6 +5292,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você pudesse substituir todas as janelas por outra coisa, o que escolheria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je alle ramen kon vervangen door iets anders, wat zou je kiezen?"
           }
         }
       }
@@ -4746,6 +5346,12 @@
             "state" : "translated", 
             "value" : "Qual foi a coisa mais ridícula que você já fez para que seu animal de estimação te perdoasse?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest belachelijke dat je hebt gedaan om je huisdier je te laten vergeven?"
+          }
         }
       }
     }, 
@@ -4792,6 +5398,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você tivesse que criar uma aula de culinária com ingredientes totalmente malucos, como seria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een kookles moest maken met compleet gekke ingrediënten, hoe zou die eruitzien?"
           }
         }
       }
@@ -4840,6 +5452,12 @@
             "state" : "translated", 
             "value" : "Qual foi o momento mais constrangedor em que você tentou fazer algo artístico mas deu muito errado?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest gênante moment waarop je iets artistieks probeerde maar het een ramp werd?"
+          }
         }
       }
     }, 
@@ -4886,6 +5504,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você pudesse dar a um objeto do banheiro uma função completamente diferente, qual escolheria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een badkamerobject een volledig andere functie kon geven, welk zou je kiezen?"
           }
         }
       }
@@ -4934,6 +5558,12 @@
             "state" : "translated", 
             "value" : "Qual foi a coisa mais absurda que você já fez para se destacar em uma multidão?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest absurde dat je hebt gedaan om op te vallen in een menigte?"
+          }
         }
       }
     }, 
@@ -4980,6 +5610,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você tivesse que criar um teatro onde os atores só pudessem sussurrar, como seria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een nieuw soort theater moest maken waar acteurs alleen mogen fluisteren, hoe zou dat eruitzien?"
           }
         }
       }
@@ -5028,6 +5664,12 @@
             "state" : "translated", 
             "value" : "Qual foi o momento mais idiota em que você tentou ser generoso mas deu errado?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het domste moment waarop je iets genereus probeerde te doen en het mislukte?"
+          }
         }
       }
     }, 
@@ -5074,6 +5716,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você pudesse substituir todas as torneiras por outra forma de obter água, qual escolheria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je alle kranen kon vervangen door een andere manier om water te krijgen, wat zou je kiezen?"
           }
         }
       }
@@ -5122,6 +5770,12 @@
             "state" : "translated", 
             "value" : "Qual foi a coisa mais ridícula que você já fez para criar memórias?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest belachelijke dat je hebt gedaan om herinneringen te maken?"
+          }
         }
       }
     }, 
@@ -5168,6 +5822,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você tivesse que criar uma biblioteca com um conceito totalmente maluco, como seria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een bibliotheek met een compleet gek concept moest uitvinden, hoe zou die zijn?"
           }
         }
       }
@@ -5216,6 +5876,12 @@
             "state" : "translated", 
             "value" : "Qual foi o momento mais constrangedor em que você tentou ser espontâneo mas planejou tudo?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het meest gênante moment waarop je iets spontaans probeerde maar alles plande?"
+          }
         }
       }
     }, 
@@ -5262,6 +5928,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se sua vida tivesse um vídeo de erros, qual seria o momento mais épico?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je leven een blooperreel had, wat zou het hoogtepunt zijn?"
           }
         }
       }
@@ -5310,6 +5982,12 @@
             "state" : "translated", 
             "value" : "Se você pudesse conversar com um objeto, qual escolheria e por quê?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een gesprek met een object kon hebben, welk zou je kiezen en waarom?"
+          }
         }
       }
     }, 
@@ -5356,6 +6034,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você pudesse criar um sabor de sorvete inspirado na sua personalidade, como se chamaria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een nieuw ijsjessmaak moest maken geïnspireerd door je persoonlijkheid, hoe zou die heten?"
           }
         }
       }
@@ -5404,6 +6088,12 @@
             "state" : "translated", 
             "value" : "Se você pudesse ter um personagem fictício como colega de quarto, quem escolheria e por quê?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je een fictief personage als kamergenoot kon hebben, wie zou je kiezen en waarom?"
+          }
         }
       }
     }, 
@@ -5450,6 +6140,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Qual som de animal você consegue imitar melhor? Quero ouvir!!"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Welk dierengeluid kun jij het beste nadoen? Ik wil het horen!!"
           }
         }
       }
@@ -5498,6 +6194,12 @@
             "state" : "translated", 
             "value" : "Qual foi a razão mais ridícula pela qual você caiu na risada em uma situação séria?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is de meest belachelijke reden dat je in een serieuze situatie in lachen uitbarstte?"
+          }
         }
       }
     }, 
@@ -5544,6 +6246,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se você pudesse falar com o seu 'eu' do passado, que conselho hilário ele te daria?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als je met je vroegere zelf kon praten, welk hilarisch advies zou die je geven?"
           }
         }
       }
@@ -5592,6 +6300,12 @@
             "state" : "translated", 
             "value" : "Qual letra de música você já entendeu errado e cantou cheio de confiança?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Welke songtekst heb je verkeerd verstaan en toch vol overtuiging meegezongen?"
+          }
         }
       }
     }, 
@@ -5638,6 +6352,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Qual foi a coisa mais engraçada que eu já fiz desde que estamos juntos?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Wat is het grappigste dat ik heb gedaan sinds we samen zijn?"
           }
         }
       }
@@ -5686,6 +6406,12 @@
             "state" : "translated", 
             "value" : "Se eu fosse uma pizza, qual seria a minha cobertura? E por quê?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als ik een pizza was, wat zou mijn topping zijn? En waarom?"
+          }
         }
       }
     }, 
@@ -5732,6 +6458,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Se eu fosse um objeto, qual seria e por quê?"
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Als ik een object was, welk zou ik zijn en waarom?"
           }
         }
       }
@@ -5780,6 +6512,12 @@
             "state" : "translated", 
             "value" : "Você já teve um sonho tão engraçado que acordou rindo?"
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Heb je ooit zo’n grappige droom gehad dat je lachend wakker werd?"
+          }
         }
       }
     }, 
@@ -5826,6 +6564,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Me conta qual foi o pior corte de cabelo que você já teve."
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Vertel me over het slechtste kapsel dat je ooit hebt gehad."
           }
         }
       }
@@ -5874,6 +6618,12 @@
             "state" : "translated", 
             "value" : "Me conta uma vez em que você tentou ser discreto e foi pego."
           }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Vertel me over een keer dat je probeerde discreet te zijn en betrapt werd."
+          }
         }
       }
     }, 
@@ -5920,6 +6670,12 @@
           "stringUnit" : {
             "state" : "translated", 
             "value" : "Me conta uma vez em que você riu quando não devia de jeito nenhum."
+          }
+        }, 
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Vertel me over een keer dat je moest lachen terwijl dat absoluut niet gepast was."
           }
         }
       }
