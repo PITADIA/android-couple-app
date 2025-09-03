@@ -6,16 +6,20 @@ import FirebaseAnalytics
 class OnboardingViewModel: ObservableObject {
     enum OnboardingStep: CaseIterable {
         case relationshipGoals
-        case relationshipDate
         case relationshipImprovement
+        case relationshipDate
+        case communicationEvaluation
+        case discoveryTime
+        case listening
+        case confidence
+        case complicity
         case authentication
         case displayName
         case profilePhoto
         case completion
         case loading
         case partnerCode
-        case fitnessIntro
-        case fitnessIntro2
+        case questionsIntro
         case categoriesPreview
         case subscription
     }
@@ -35,6 +39,13 @@ class OnboardingViewModel: ObservableObject {
     @Published var relationshipStartDate: Date?
     @Published var profileImage: UIImage?
     @Published var currentLocation: UserLocation?
+    
+    // Nouvelles propriétés pour l'évaluation du couple
+    @Published var communicationRating: String = ""
+    @Published var discoveryTimeAnswer: String = ""
+    @Published var listeningAnswer: String = ""
+    @Published var confidenceAnswer: String = ""
+    @Published var complicityAnswer: String = ""
     
     var appState: AppState?
     private var cancellables = Set<AnyCancellable>()
@@ -121,10 +132,20 @@ class OnboardingViewModel: ObservableObject {
         
         switch currentStep {
         case .relationshipGoals:
-            currentStep = .relationshipDate
-        case .relationshipDate:
             currentStep = .relationshipImprovement
         case .relationshipImprovement:
+            currentStep = .relationshipDate
+        case .relationshipDate:
+            currentStep = .communicationEvaluation
+        case .communicationEvaluation:
+            currentStep = .discoveryTime
+        case .discoveryTime:
+            currentStep = .listening
+        case .listening:
+            currentStep = .confidence
+        case .confidence:
+            currentStep = .complicity
+        case .complicity:
             currentStep = .authentication
         case .authentication:
             currentStep = .displayName
@@ -144,12 +165,10 @@ class OnboardingViewModel: ObservableObject {
                 currentStep = .partnerCode
             }
         case .partnerCode:
+            currentStep = .questionsIntro
+        case .questionsIntro:
             currentStep = .categoriesPreview
         case .categoriesPreview:
-            currentStep = .fitnessIntro
-        case .fitnessIntro:
-            currentStep = .fitnessIntro2
-        case .fitnessIntro2:
             currentStep = .subscription
         case .subscription:
             // L'onboarding doit être finalisé via skipSubscription() ou completeSubscription()
@@ -163,12 +182,22 @@ class OnboardingViewModel: ObservableObject {
         case .relationshipGoals:
             print("🔥 OnboardingViewModel: Déjà à la première étape")
             break
-        case .relationshipDate:
-            currentStep = .relationshipGoals
         case .relationshipImprovement:
-            currentStep = .relationshipDate
-        case .authentication:
+            currentStep = .relationshipGoals
+        case .relationshipDate:
             currentStep = .relationshipImprovement
+        case .communicationEvaluation:
+            currentStep = .relationshipDate
+        case .discoveryTime:
+            currentStep = .communicationEvaluation
+        case .listening:
+            currentStep = .discoveryTime
+        case .confidence:
+            currentStep = .listening
+        case .complicity:
+            currentStep = .confidence
+        case .authentication:
+            currentStep = .complicity
         case .displayName:
             currentStep = .authentication
         case .profilePhoto:
@@ -184,12 +213,10 @@ class OnboardingViewModel: ObservableObject {
             currentStep = .completion
         case .partnerCode:
             currentStep = .loading
-        case .categoriesPreview:
+        case .questionsIntro:
             currentStep = .partnerCode
-        case .fitnessIntro:
-            currentStep = .categoriesPreview
-        case .fitnessIntro2:
-            currentStep = .fitnessIntro
+        case .categoriesPreview:
+            currentStep = .questionsIntro
         case .subscription:
             print("🔥 OnboardingViewModel: Impossible de revenir en arrière depuis l'abonnement")
             break

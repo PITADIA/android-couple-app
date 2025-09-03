@@ -1,6 +1,7 @@
 import Foundation
 import AuthenticationServices
 import FirebaseAuth
+import FirebaseAppCheck
 import CryptoKit
 
 class AuthenticationService: NSObject, ObservableObject {
@@ -229,6 +230,8 @@ extension AuthenticationService: ASAuthorizationControllerDelegate {
                 return
             }
             
+            print("✅ Token Apple récupéré - taille: \(appleIDToken.count) bytes")
+            
             guard let idTokenString = String(data: appleIDToken, encoding: .utf8) else {
                 print("❌ Erreur sérialisation token")
                 DispatchQueue.main.async {
@@ -240,12 +243,29 @@ extension AuthenticationService: ASAuthorizationControllerDelegate {
                 return
             }
             
+            print("✅ Token sérialisé - longueur: \(idTokenString.count) caractères")
+            print("✅ Nonce utilisé - longueur: \(nonce.count) caractères")
+            
             // Créer les credentials Firebase
             let credential = OAuthProvider.credential(providerID: AuthProviderID.apple,
                                                       idToken: idTokenString,
                                                       rawNonce: nonce)
             
+            // Vérifier l'état d'App Check avant l'authentification
+            print("🛡️ AuthenticationService: Vérification App Check...")
+            AppCheck.appCheck().token(forcingRefresh: false) { token, error in
+                if let error = error {
+                    print("⚠️ App Check token error: \(error.localizedDescription)")
+                    print("⚠️ App Check: App en production - token debug non valide")
+                } else if let token = token {
+                    print("✅ App Check token disponible - longueur: \(token.token.count)")
+                } else {
+                    print("⚠️ App Check token nil")
+                }
+            }
+            
             // Se connecter à Firebase
+            print("🔥 AuthenticationService: Tentative de connexion Firebase...")
             Auth.auth().signIn(with: credential) { [weak self] result, error in
                 DispatchQueue.main.async {
                     self?.isLoading = false
@@ -253,7 +273,27 @@ extension AuthenticationService: ASAuthorizationControllerDelegate {
                     self?.isProcessingFirebaseAuth = false
                     
                     if let error = error {
-                        print("❌ Erreur Firebase: \(error.localizedDescription)")
+                        print("❌ ERREUR FIREBASE DÉTAILLÉE:")
+                        print("   - Description: \(error.localizedDescription)")
+                        print("   - Code: \((error as NSError).code)")
+                        print("   - Domain: \((error as NSError).domain)")
+                        print("   - UserInfo: \((error as NSError).userInfo)")
+                        
+                        // Vérifier si c'est un problème App Check
+                        if let nsError = error as NSError? {
+                            if nsError.domain == "FIRAuthErrorDomain" {
+                                print("   - Type: Erreur Firebase Auth")
+                                switch nsError.code {
+                                case 17999: // AuthErrorCodeInternalError
+                                    print("   - Cause probable: App Check ou configuration Firebase")
+                                case 17020: // AuthErrorCodeNetworkError
+                                    print("   - Cause probable: Problème réseau")
+                                default:
+                                    print("   - Code Auth spécifique: \(nsError.code)")
+                                }
+                            }
+                        }
+                        
                         self?.errorMessage = error.localizedDescription
                         return
                     }

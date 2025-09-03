@@ -244,6 +244,11 @@ extension String {
         return NSLocalizedString(self, tableName: tableName, comment: comment)
     }
     
+    /// Localise une chaîne depuis Onboarding.xcstrings
+    var localizedOnboarding: String {
+        return NSLocalizedString(self, tableName: "Onboarding", comment: "")
+    }
+    
     /// Convertit une distance en km vers miles pour la localisation anglaise
     func convertedForLocale() -> String {
         // Déterminer la langue courante

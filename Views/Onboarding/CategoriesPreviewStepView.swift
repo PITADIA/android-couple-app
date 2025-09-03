@@ -16,7 +16,7 @@ struct CategoriesPreviewStepView: View {
             // Titre centré à gauche
             HStack {
                 Text("more_than_2000_questions".localized)
-                    .font(.system(size: 36, weight: .bold))
+                    .font(.system(size: 28, weight: .bold))
                     .foregroundColor(.black)
                     .multilineTextAlignment(.leading)
                 Spacer()

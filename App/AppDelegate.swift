@@ -18,15 +18,20 @@ class CoupleAppCheckProviderFactory: NSObject, AppCheckProviderFactory {
     }
 }
 
+
+
 class AppDelegate: NSObject, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         print("🔥 AppDelegate: Démarrage de l'application")
         
+        // 🛡️ IMPORTANT: Configurer le debug token AVANT tout
+        #if DEBUG
+        configureDebugTokenBeforeFirebase()
+        #endif
+        
         // 🛡️ Configuration App Check AVANT Firebase (MODE SURVEILLANCE)
-        print("🛡️ AppDelegate: Configuration App Check...")
         configureAppCheck()
-        print("🛡️ AppDelegate: App Check configuré en mode surveillance")
         
         // Configuration Firebase
         print("🔥 AppDelegate: Configuration Firebase...")
@@ -101,16 +106,26 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         print("🔥 AppDelegate: UNUserNotificationCenter delegate défini")
     }
     
+    /// 🛡️ Configuration du Debug Token AVANT Firebase (CRITIQUE)
+    #if DEBUG
+    private func configureDebugTokenBeforeFirebase() {
+        if AppCheckConfig.isDebugTokenConfigured, let debugToken = AppCheckConfig.debugToken {
+            // Configuration silencieuse du debug token
+            setenv("FIRAppCheckDebugToken", debugToken, 1)
+            UserDefaults.standard.set(debugToken, forKey: "FIRAppCheckDebugToken")
+        }
+    }
+    #endif
+    
     /// 🛡️ Configuration App Check en mode SURVEILLANCE (aucun blocage)
     private func configureAppCheck() {
-        print("🛡️ AppCheck: Initialisation du provider...")
-        
         #if DEBUG
-        // En debug : DÉSACTIVER complètement App Check pour éviter les erreurs 403
-        print("🛡️ AppCheck: Mode DEBUG - DÉSACTIVÉ COMPLÈTEMENT")
-        print("🛡️ AppCheck: ⚠️ App Check désactivé en développement pour éviter les erreurs 403")
-        AppCheck.setAppCheckProviderFactory(nil)
-        // Pas besoin d'instancier AppCheck en debug
+        // En debug: utiliser Debug Provider si token configuré, sinon désactiver
+        if AppCheckConfig.isDebugTokenConfigured {
+            AppCheck.setAppCheckProviderFactory(AppCheckDebugProviderFactory())
+        } else {
+            AppCheck.setAppCheckProviderFactory(nil)
+        }
         #else
         // En production : utiliser App Attest (déjà configuré dans Firebase)
         let providerFactory = CoupleAppCheckProviderFactory()

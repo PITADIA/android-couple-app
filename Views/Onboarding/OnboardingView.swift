@@ -13,7 +13,7 @@ struct OnboardingView: View {
                 
                 VStack(spacing: 0) {
                     // Barre de progression (masquée pour certaines pages)
-                    if viewModel.currentStep != .authentication && viewModel.currentStep != .displayName && viewModel.currentStep != .profilePhoto && viewModel.currentStep != .completion && viewModel.currentStep != .loading && viewModel.currentStep != .subscription && viewModel.currentStep != .fitnessIntro && viewModel.currentStep != .fitnessIntro2 && viewModel.currentStep != .categoriesPreview {
+                    if viewModel.currentStep != .authentication && viewModel.currentStep != .displayName && viewModel.currentStep != .profilePhoto && viewModel.currentStep != .completion && viewModel.currentStep != .loading && viewModel.currentStep != .subscription && viewModel.currentStep != .questionsIntro && viewModel.currentStep != .categoriesPreview {
                         ProgressBar(progress: viewModel.progressValue) {
                             viewModel.previousStep()
                         }
@@ -28,6 +28,16 @@ struct OnboardingView: View {
                             RelationshipGoalsStepView(viewModel: viewModel)
                         case .relationshipDate:
                             RelationshipDateStepView(viewModel: viewModel)
+                        case .communicationEvaluation:
+                            CommunicationEvaluationStepView(viewModel: viewModel)
+                        case .discoveryTime:
+                            DiscoveryTimeStepView(viewModel: viewModel)
+                        case .listening:
+                            ListeningStepView(viewModel: viewModel)
+                        case .confidence:
+                            ConfidenceStepView(viewModel: viewModel)
+                        case .complicity:
+                            ComplicityStepView(viewModel: viewModel)
                         case .relationshipImprovement:
                             RelationshipImprovementStepView(viewModel: viewModel)
                         case .authentication:
@@ -42,10 +52,8 @@ struct OnboardingView: View {
                             LoadingStepView(viewModel: viewModel)
                         case .partnerCode:
                             PartnerCodeStepView(viewModel: viewModel)
-                        case .fitnessIntro:
-                            FitnessIntroStepView(viewModel: viewModel)
-                        case .fitnessIntro2:
-                            FitnessIntro2StepView(viewModel: viewModel)
+                        case .questionsIntro:
+                            QuestionsIntroStepView(viewModel: viewModel)
                         case .categoriesPreview:
                             CategoriesPreviewStepView(viewModel: viewModel)
                         case .subscription:
