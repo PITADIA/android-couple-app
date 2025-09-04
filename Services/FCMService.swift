@@ -129,7 +129,8 @@ class FCMService: NSObject, ObservableObject {
             return
         }
         
-        print("🔔 FCMService: Sauvegarde token pour utilisateur: \(userId)")
+        // Log sécurisé sans exposer l'UID utilisateur
+        print("🔔 FCMService: Sauvegarde token FCM pour utilisateur connecté")
         
         let tokenData: [String: Any] = [
             "fcmToken": token,

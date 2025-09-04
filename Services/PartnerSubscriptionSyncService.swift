@@ -64,14 +64,12 @@ class PartnerSubscriptionSyncService: ObservableObject {
                     return 
                 }
                 
-                // 🔧 DEBUG: Logs détaillés pour identifier le problème
                 let partnerIdRaw = data["partnerId"]
-                print("🔍 PartnerSubscriptionSyncService: partnerId brut: \(partnerIdRaw ?? "nil")")
-                print("🔍 PartnerSubscriptionSyncService: Type: \(type(of: partnerIdRaw))")
                 
                 // Si l'utilisateur a un partenaire connecté, écouter ses changements d'abonnement
                 if let partnerId = data["partnerId"] as? String, !partnerId.isEmpty {
-                    print("🔍 PartnerSubscriptionSyncService: partnerId valide trouvé: '\(partnerId)'")
+                    // Log sécurisé sans exposer le Firebase UID du partenaire
+                    print("🔍 PartnerSubscriptionSyncService: partnerId valide trouvé")
                     self?.startListeningForPartner(partnerId: partnerId)
                 } else {
                     print("🔍 PartnerSubscriptionSyncService: Aucun partenaire valide - arrêt écoute")
@@ -121,7 +119,8 @@ class PartnerSubscriptionSyncService: ObservableObject {
         
         // 🔧 CORRECTION: Ne plus écouter directement les données du partenaire
         // La synchronisation se fera via Cloud Functions lors des changements d'abonnement
-        print("🔄 PartnerSubscriptionSyncService: Synchronisation initiale avec partenaire: \(partnerId)")
+        // Log sécurisé sans exposer le Firebase UID du partenaire
+        print("🔄 PartnerSubscriptionSyncService: Synchronisation initiale avec partenaire")
         print("🔄 PartnerSubscriptionSyncService: partnerId validé - longueur: \(partnerId.count)")
         
         guard let currentUser = Auth.auth().currentUser else { return }
@@ -153,7 +152,8 @@ class PartnerSubscriptionSyncService: ObservableObject {
         
         do {
             print("🔄 PartnerSubscriptionSyncService: Synchronisation via Cloud Function")
-            print("🔄 PartnerSubscriptionSyncService: partnerId: '\(partnerId)' (longueur: \(partnerId.count))")
+            // Log sécurisé sans exposer le Firebase UID du partenaire
+            print("🔄 PartnerSubscriptionSyncService: Synchronisation avec partenaire (longueur: \(partnerId.count))")
             
             let functions = Functions.functions()
             let data = [

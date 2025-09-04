@@ -99,7 +99,8 @@ class FavoritesService: ObservableObject {
             return
         }
         
-        print("🔥 FavoritesService: Configuration du listener Firestore pour: \(currentUserId)")
+        // Log sécurisé sans exposer l'UID utilisateur
+        print("🔥 FavoritesService: Configuration du listener Firestore")
         
         // Arrêter l'ancien listener
         listener?.remove()

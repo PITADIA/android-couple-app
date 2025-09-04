@@ -313,11 +313,13 @@ class AppState: ObservableObject {
                 print("🔄 AppState: Changement utilisateur détecté")
                 if let user = user {
                     print("🔄 AppState: - Utilisateur: \(user.name)")
-                    print("🔄 AppState: - Partner ID: '\(user.partnerId ?? "nil")'")
+                    // Log sécurisé sans exposer le Partner ID
+                    print("🔄 AppState: - Partner ID: '\(user.partnerId != nil && !user.partnerId!.isEmpty ? "[ID_MASQUÉ]" : "nil")'")
                     print("🔄 AppState: - Partner ID isEmpty: \(user.partnerId?.isEmpty ?? true)")
                     
                     if let partnerId = user.partnerId, !partnerId.isEmpty {
-                        print("🔄 AppState: Utilisateur reconnecté - Redémarrage des services partenaires pour: \(partnerId)")
+                        // Log sécurisé sans exposer le Partner ID
+                        print("🔄 AppState: Utilisateur reconnecté - Redémarrage des services partenaires")
                         self?.partnerLocationService?.configureListener(for: partnerId)
                         
                         // NOUVEAU: Reconfigurer le DailyQuestionService avec le partenaire
@@ -327,7 +329,8 @@ class AppState: ObservableObject {
                         }
                     } else {
                         print("🔄 AppState: Pas de partenaire connecté - Arrêt des services")
-                        print("🔄 AppState: - Raison: partnerId = '\(user.partnerId ?? "nil")'")
+                        // Log sécurisé sans exposer le Partner ID
+                        print("🔄 AppState: - Raison: partnerId vide ou nil")
                         self?.partnerLocationService?.configureListener(for: nil)
                     }
                 } else {
@@ -433,7 +436,8 @@ class AppState: ObservableObject {
         
         // Configuration RevenueCat avec l'ID utilisateur Firebase
         if let firebaseUserId = Auth.auth().currentUser?.uid {
-            print("💰 AppState: Configuration RevenueCat avec userID: \(firebaseUserId)")
+            // Log sécurisé sans exposer l'Apple User ID Firebase
+            print("💰 AppState: Configuration RevenueCat avec userID utilisateur connecté")
             Purchases.shared.logIn(firebaseUserId) { (customerInfo, created, error) in
                 if let error = error {
                     print("❌ AppState: Erreur RevenueCat logIn: \(error)")

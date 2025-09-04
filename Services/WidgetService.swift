@@ -68,7 +68,8 @@ class WidgetService: ObservableObject {
                 if var currentUser = self?.currentUser {
                     currentUser.currentLocation = location
                     self?.currentUser = currentUser
-                    print("🔄 WidgetService: Localisation utilisateur mise à jour: \(location?.displayName ?? "nil")")
+                    // Log sécurisé sans exposer l'adresse précise
+                    print("🔄 WidgetService: Localisation utilisateur mise à jour")
                     // Recalculer la distance
                     self?.updateDistanceInfo()
                 }
@@ -160,7 +161,8 @@ class WidgetService: ObservableObject {
         }
         
         // CORRECTION: Utiliser la Cloud Function pour récupérer les infos du partenaire
-        print("🔄 WidgetService: Récupération infos partenaire via Cloud Function: \(partnerId)")
+        // Log sécurisé sans exposer le Partner ID Firebase
+        print("🔄 WidgetService: Récupération infos partenaire via Cloud Function")
         
         let functions = Functions.functions()
         functions.httpsCallable("getPartnerInfo").call(["partnerId": partnerId]) { [weak self] result, error in
@@ -221,7 +223,8 @@ class WidgetService: ObservableObject {
                 
                 print("✅ WidgetService: Données partenaire récupérées via Cloud Function: \(partnerUser.name)")
                 if let profileURL = partnerUser.profileImageURL {
-                    print("✅ WidgetService: Photo de profil partenaire trouvée: \(profileURL)")
+                    // Log sécurisé sans exposer l'URL Firebase Storage avec token
+                    print("✅ WidgetService: Photo de profil partenaire trouvée")
                 } else {
                     print("❌ WidgetService: Aucune photo de profil pour le partenaire")
                 }
@@ -236,7 +239,8 @@ class WidgetService: ObservableObject {
     
     // NOUVEAU: Récupérer la localisation du partenaire via Cloud Function
     private func fetchPartnerLocation(partnerId: String) {
-        print("🌍 WidgetService: Récupération localisation partenaire via Cloud Function: \(partnerId)")
+        // Log sécurisé sans exposer le Partner ID Firebase
+        print("🌍 WidgetService: Récupération localisation partenaire via Cloud Function")
         
         let functions = Functions.functions()
         functions.httpsCallable("getPartnerLocation").call(["partnerId": partnerId]) { [weak self] result, error in
@@ -273,7 +277,8 @@ class WidgetService: ObservableObject {
                 )
                 
                 print("✅ WidgetService: Localisation partenaire récupérée: \(city ?? "inconnue")")
-                print("✅ WidgetService: Coordonnées: \(latitude), \(longitude)")
+                // Log sécurisé sans exposer les coordonnées GPS précises
+                print("✅ WidgetService: Coordonnées partenaire configurées")
                 
                 // Mettre à jour le partnerUser avec la localisation
                 if var currentPartnerUser = self?.partnerUser {

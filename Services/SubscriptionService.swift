@@ -121,8 +121,9 @@ class SubscriptionService: NSObject, ObservableObject, SKPaymentTransactionObser
         NSLog("🔥 SubscriptionService: Mise à jour des transactions - \(transactions.count) transaction(s)")
         
         for transaction in transactions {
-            print("🔥 SubscriptionService: Transaction \(transaction.transactionIdentifier ?? "unknown") - État: \(transaction.transactionState.rawValue)")
-            NSLog("🔥 SubscriptionService: Transaction \(transaction.transactionIdentifier ?? "unknown") - État: \(transaction.transactionState.rawValue)")
+            // Log sécurisé sans exposer le Transaction ID Apple
+            print("🔥 SubscriptionService: Transaction \(transaction.transactionIdentifier != nil ? "[ID_MASQUÉ]" : "unknown") - État: \(transaction.transactionState.rawValue)")
+            NSLog("🔥 SubscriptionService: Transaction \(transaction.transactionIdentifier != nil ? "[ID_MASQUÉ]" : "unknown") - État: \(transaction.transactionState.rawValue)")
             
             switch transaction.transactionState {
             case .purchased:

@@ -61,7 +61,8 @@ class PartnerCodeService: ObservableObject {
             // Si un code récent existe (< 24h), le retourner
             if let existingDoc = recentCodeSnapshot.documents.first {
                 let existingCode = existingDoc.documentID
-                print("🔗 PartnerCodeService: Code récent trouvé: \(existingCode)")
+                // Log sécurisé sans exposer le code partenaire
+                print("🔗 PartnerCodeService: Code récent trouvé")
                 await MainActor.run {
                     self.generatedCode = existingCode
                     self.isLoading = false
@@ -121,14 +122,16 @@ class PartnerCodeService: ObservableObject {
             
             repeat {
                 code = String(format: "%08d", Int.random(in: 10000000...99999999))
-                print("🔗 PartnerCodeService: Tentative \(attempts + 1) - Code généré: \(code)")
+                // Log sécurisé sans exposer le code partenaire
+                print("🔗 PartnerCodeService: Tentative \(attempts + 1) - Code généré")
                 
                 // Vérifier si le code existe déjà
                 let existingDoc = try await db.collection("partnerCodes").document(code).getDocument()
                 isUnique = !existingDoc.exists
                 attempts += 1
                 
-                print("🔗 PartnerCodeService: Code \(code) unique: \(isUnique)")
+                // Log sécurisé sans exposer le code partenaire
+                print("🔗 PartnerCodeService: Code vérifié unique: \(isUnique)")
                 
                 if attempts > 10 {
                     print("❌ PartnerCodeService: Trop de tentatives, abandon")
@@ -140,7 +143,8 @@ class PartnerCodeService: ObservableObject {
                 }
             } while !isUnique
             
-            print("🔗 PartnerCodeService: Code unique trouvé: \(code), création en base...")
+            // Log sécurisé sans exposer le code partenaire
+            print("🔗 PartnerCodeService: Code unique trouvé, création en base...")
             
             // 🛡️ CONFORMITÉ APPLE : Créer le nouveau code TEMPORAIRE (24h)
             try await db.collection("partnerCodes").document(code).setData([
@@ -160,7 +164,8 @@ class PartnerCodeService: ObservableObject {
                 self.isLoading = false
             }
             
-            print("✅ PartnerCodeService: Nouveau code généré et UI mise à jour: \(code)")
+            // Log sécurisé sans exposer le code partenaire
+            print("✅ PartnerCodeService: Nouveau code généré et UI mise à jour")
             return code
             
         } catch {
@@ -180,7 +185,8 @@ class PartnerCodeService: ObservableObject {
         _ code: String, 
         context: ConnectionConfig.ConnectionContext = .onboarding
     ) async -> Bool {
-        print("🔗 PartnerCodeService: connectWithPartnerCode - Code: \(code) - Context: \(context.rawValue)")
+        // Log sécurisé sans exposer le code partenaire
+        print("🔗 PartnerCodeService: connectWithPartnerCode - Context: \(context.rawValue)")
         
         // Analytics: Track connection start
         AnalyticsService.shared.track(.connectStart(source: context.rawValue))
@@ -424,7 +430,8 @@ class PartnerCodeService: ObservableObject {
                let partnerId = data["partnerId"] as? String,
                !partnerId.isEmpty {
                 
-                print("🔍 PartnerCodeService: checkExistingConnection - Partenaire trouvé: \(partnerId)")
+                // Log sécurisé sans exposer le Partner ID Firebase
+                print("🔍 PartnerCodeService: checkExistingConnection - Partenaire trouvé")
                 
                 // 🔧 CORRECTION: Utiliser Cloud Function pour récupérer les infos du partenaire
                 do {
@@ -471,7 +478,8 @@ class PartnerCodeService: ObservableObject {
                 .getDocuments()
             
             if let codeDoc = codeSnapshot.documents.first {
-                print("✅ PartnerCodeService: checkExistingConnection - Code trouvé: \(codeDoc.documentID)")
+                // Log sécurisé sans exposer le code partenaire
+                print("✅ PartnerCodeService: checkExistingConnection - Code trouvé")
                 await MainActor.run {
                     self.generatedCode = codeDoc.documentID
                 }

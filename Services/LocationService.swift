@@ -119,7 +119,8 @@ class LocationService: NSObject, ObservableObject {
         }
         
         isUpdatingLocation = true
-        print("📍 LocationService: Sauvegarde nouvelle localisation en Firebase: \(location.displayName)")
+        // Log sécurisé sans exposer l'adresse précise
+        print("📍 LocationService: Sauvegarde nouvelle localisation en Firebase")
         
         firebaseService.updateUserLocation(location) { [weak self] success in
             DispatchQueue.main.async {
@@ -160,7 +161,8 @@ extension LocationService: CLLocationManagerDelegate {
         guard let location = locations.last else { return }
         
         let deviceModel = UIDevice.current.modelName
-        print("📍 LocationService: Nouvelle localisation reçue: \(location.coordinate.latitude), \(location.coordinate.longitude)")
+        // Log sécurisé sans exposer les coordonnées GPS précises
+        print("📍 LocationService: Nouvelle localisation reçue")
         print("📍 LocationService: Appareil: \(deviceModel), iOS: \(UIDevice.current.systemVersion)")
         print("📍 LocationService: Précision: \(location.horizontalAccuracy)m, Âge: \(abs(location.timestamp.timeIntervalSinceNow))s")
         
@@ -179,7 +181,8 @@ extension LocationService: CLLocationManagerDelegate {
                         city: placemark.locality,
                         country: placemark.country
                     )
-                    print("📍 LocationService: Adresse résolue: \(userLocation.displayName)")
+                    // Log sécurisé sans exposer l'adresse précise
+                    print("📍 LocationService: Adresse résolue avec succès")
                 } else {
                     userLocation = UserLocation(coordinate: location.coordinate)
                     print("📍 LocationService: Adresse non résolue - Coordonnées uniquement")

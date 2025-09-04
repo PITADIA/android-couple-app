@@ -41,7 +41,8 @@ class FirebaseService: NSObject, ObservableObject {
             let timestamp = Date().timeIntervalSince1970
             DispatchQueue.main.async {
                 if let firebaseUser = firebaseUser {
-                    print("🔥 FirebaseService: Auth listener triggered - UID: \(firebaseUser.uid) [\(timestamp)]")
+                    // Log sécurisé sans exposer l'UID Firebase
+                    print("🔥 FirebaseService: Auth listener triggered [\(timestamp)]")
                     print("🔥 FirebaseService: Providers: \(firebaseUser.providerData.map { $0.providerID })")
                     
                     // Vérifier que c'est bien une authentification Apple
@@ -440,7 +441,8 @@ class FirebaseService: NSObject, ObservableObject {
                     return
                 }
                 
-                print("🔥 FirebaseService: Données trouvées: \(data)")
+                // Log sécurisé sans exposer les données utilisateur complètes
+                print("🔥 FirebaseService: Données utilisateur chargées depuis Firestore")
                 
                 // SOLUTION TEMPORAIRE: Vérifier si c'est un utilisateur qui se reconnecte après suppression
                 // Si l'utilisateur a des données mais qu'il vient de faire l'onboarding, c'est suspect
@@ -858,7 +860,8 @@ class FirebaseService: NSObject, ObservableObject {
     
     private func getPartnerInfoViaCloudFunction(partnerId: String, completion: @escaping (AppUser?) -> Void) {
         print("🔥 Cloud Function: Récupération données partenaire via fonction sécurisée")
-        print("🔥 Cloud Function: partnerId: \(partnerId)")
+        // Log sécurisé sans exposer le Partner ID Firebase
+        print("🔥 Cloud Function: Récupération données partenaire")
         
         let functions = Functions.functions()
         
@@ -957,7 +960,7 @@ class FirebaseService: NSObject, ObservableObject {
     
     private func parseUserLocation(from data: [String: Any]?) -> UserLocation? {
         print("🌍 FirebaseService: parseUserLocation - Analyse données localisation")
-        print("🌍 FirebaseService: Données reçues: \(data ?? [:])")
+        print("🌍 FirebaseService: Données de localisation reçues")
         
         guard let data = data else {
             print("❌ FirebaseService: Aucune donnée de localisation fournie")
@@ -983,10 +986,8 @@ class FirebaseService: NSObject, ObservableObject {
             country: country
         )
         
+        // Log sécurisé sans exposer les coordonnées précises
         print("✅ FirebaseService: Localisation analysée avec succès")
-        print("✅ FirebaseService: - Position: \(latitude), \(longitude)")
-        print("✅ FirebaseService: - Ville: \(city ?? "non spécifiée")")
-        print("✅ FirebaseService: - Pays: \(country ?? "non spécifié")")
         
         return location
     }

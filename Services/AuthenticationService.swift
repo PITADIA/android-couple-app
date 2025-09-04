@@ -23,8 +23,9 @@ class AuthenticationService: NSObject, ObservableObject {
         
         // Vérifier si l'utilisateur est déjà connecté
         if let user = Auth.auth().currentUser {
-            print("🔥 AuthenticationService: Utilisateur déjà connecté: \(user.uid)")
-            NSLog("🔥 AuthenticationService: Utilisateur déjà connecté: \(user.uid)")
+            // Log sécurisé sans exposer le Firebase UID
+            print("🔥 AuthenticationService: Utilisateur déjà connecté")
+            NSLog("🔥 AuthenticationService: Utilisateur déjà connecté")
             self.currentUser = user
             self.isAuthenticated = true
             

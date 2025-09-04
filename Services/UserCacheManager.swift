@@ -139,7 +139,8 @@ class UserCacheManager {
         
         userDefaults.set(imageData, forKey: partnerImageCacheKey)
         userDefaults.set(url, forKey: partnerImageURLKey)
-        print("✅ UserCacheManager: Image partenaire mise en cache (\(imageData.count) bytes) avec URL: \(url)")
+        // Log sécurisé sans exposer l'URL avec token
+        print("✅ UserCacheManager: Image partenaire mise en cache (\(imageData.count) bytes)")
     }
     
     /// Récupère l'image du partenaire en cache
@@ -165,9 +166,11 @@ class UserCacheManager {
         let hasChanged = cachedURL != newURL
         
         if hasChanged {
-            print("🔄 UserCacheManager: URL partenaire changée: \(cachedURL ?? "nil") → \(newURL ?? "nil")")
+            // Log sécurisé sans exposer les URLs avec tokens
+            print("🔄 UserCacheManager: URL partenaire changée")
         } else {
-            print("✅ UserCacheManager: URL partenaire inchangée: \(cachedURL ?? "nil")")
+            // Log sécurisé sans exposer les URLs avec tokens
+            print("✅ UserCacheManager: URL partenaire inchangée")
         }
         
         return hasChanged

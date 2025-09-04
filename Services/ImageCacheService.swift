@@ -34,19 +34,22 @@ class ImageCacheService {
         
         // 1. Vérifier le cache mémoire d'abord (plus rapide)
         if let memoryImage = memoryCache.object(forKey: cacheKey as NSString) {
-            print("🖼️ ImageCacheService: Image trouvée en cache mémoire pour: \(urlString)")
+            // Log sécurisé sans exposer l'URL complète avec token
+            print("🖼️ ImageCacheService: Image trouvée en cache mémoire")
             return memoryImage
         }
         
         // 2. Vérifier le cache disque
         if let diskImage = loadImageFromDisk(cacheKey: cacheKey) {
-            print("🖼️ ImageCacheService: Image trouvée en cache disque pour: \(urlString)")
+            // Log sécurisé sans exposer l'URL complète avec token
+            print("🖼️ ImageCacheService: Image trouvée en cache disque")
             // Remettre en cache mémoire
             memoryCache.setObject(diskImage, forKey: cacheKey as NSString)
             return diskImage
         }
         
-        print("🖼️ ImageCacheService: Aucune image en cache pour: \(urlString)")
+        // Log sécurisé sans exposer l'URL complète avec token
+        print("🖼️ ImageCacheService: Aucune image en cache")
         return nil
     }
     
@@ -61,7 +64,8 @@ class ImageCacheService {
             self?.saveImageToDisk(image, cacheKey: cacheKey)
         }
         
-        print("🖼️ ImageCacheService: Image mise en cache pour: \(urlString)")
+        // Log sécurisé sans exposer l'URL complète avec token
+        print("🖼️ ImageCacheService: Image mise en cache")
     }
     
     func clearCachedImage(for urlString: String) {
@@ -77,7 +81,8 @@ class ImageCacheService {
             try? self.fileManager.removeItem(at: fileURL)
         }
         
-        print("🗑️ ImageCacheService: Image supprimée du cache pour: \(urlString)")
+        // Log sécurisé sans exposer l'URL complète avec token
+        print("🗑️ ImageCacheService: Image supprimée du cache")
     }
     
     func clearCache() {
@@ -148,7 +153,8 @@ class ImageCacheService {
         
         do {
             try imageData.write(to: fileURL)
-            print("🖼️ ImageCacheService: Image sauvée sur disque: \(cacheKey)")
+            // Log sécurisé sans exposer le nom de fichier avec UID
+            print("🖼️ ImageCacheService: Image sauvée sur disque")
         } catch {
             print("❌ ImageCacheService: Erreur sauvegarde disque: \(error)")
         }

@@ -1104,9 +1104,6 @@
     "create_account_description" : {
       "comment" : "Create account description"
     },
-    "created_by" : {
-      "comment" : "Created by label"
-    },
     "current_user" : {
       "comment" : "Current user title"
     },
@@ -1555,12 +1552,6 @@
     "Erreur" : {
 
     },
-    "event_date" : {
-      "comment" : "Event date label"
-    },
-    "event_time" : {
-      "comment" : "Event time label"
-    },
     "events_of_date" : {
       "comment" : "Events of date text"
     },
@@ -1585,9 +1576,6 @@
     "image_not_available" : {
       "comment" : "Image not available message"
     },
-    "irreversible_action" : {
-      "comment" : "Irreversible action message"
-    },
     "Jour" : {
 
     },
@@ -1599,9 +1587,6 @@
     },
     "loading_simple" : {
       "comment" : "Loading status"
-    },
-    "location" : {
-      "comment" : "Location label"
     },
     "Love2Love" : {
 

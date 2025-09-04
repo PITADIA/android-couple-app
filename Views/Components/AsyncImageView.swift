@@ -89,8 +89,9 @@ struct AsyncImageView: View {
               !imageURL.isEmpty,
               loadedImage == nil,
               !isLoading else {
+            // Log sécurisé sans exposer l'URL
             print("🖼️ AsyncImageView: loadImageIfNeeded - Conditions non remplies")
-            print("🖼️ AsyncImageView: - imageURL: \(imageURL ?? "nil")")
+            print("🖼️ AsyncImageView: - imageURL disponible: \(imageURL != nil)")
             print("🖼️ AsyncImageView: - isEmpty: \(imageURL?.isEmpty ?? true)")
             print("🖼️ AsyncImageView: - loadedImage: \(loadedImage != nil ? "présente" : "nil")")
             print("🖼️ AsyncImageView: - isLoading: \(isLoading)")
@@ -110,7 +111,8 @@ struct AsyncImageView: View {
             do {
                 let image = try await loadImageFromFirebase(urlString: urlString)
                 
-                print("✅ AsyncImageView: Image chargée avec succès pour: \(urlString)")
+                // Log sécurisé sans exposer l'URL
+                print("✅ AsyncImageView: Image chargée avec succès")
                 await MainActor.run {
                     self.loadedImage = image
                     self.isLoading = false
@@ -128,7 +130,8 @@ struct AsyncImageView: View {
     }
     
     private func loadImageFromFirebase(urlString: String) async throws -> UIImage {
-        print("🖼️ AsyncImageView: loadImageFromFirebase appelé avec: \(urlString)")
+        // Log sécurisé sans exposer l'URL complète avec token
+        print("🖼️ AsyncImageView: loadImageFromFirebase - Chargement image Firebase")
         
         // 1. NOUVEAU: Vérifier le cache d'abord
         if let cachedImage = ImageCacheService.shared.getCachedImage(for: urlString) {
@@ -149,9 +152,10 @@ struct AsyncImageView: View {
             downloadedImage = try await createPlaceholderImage()
         } else {
             // URL normale
-            print("🖼️ AsyncImageView: Tentative de chargement URL normale: \(urlString)")
+            // Log sécurisé sans exposer l'URL
+            print("🖼️ AsyncImageView: Tentative de chargement URL normale")
             guard let url = URL(string: urlString) else {
-                print("❌ AsyncImageView: URL invalide: \(urlString)")
+                print("❌ AsyncImageView: URL invalide fournie")
                 throw AsyncImageError.invalidData
             }
             
@@ -162,7 +166,8 @@ struct AsyncImageView: View {
                 throw AsyncImageError.invalidData
             }
             
-            print("✅ AsyncImageView: Image chargée depuis URL: \(urlString)")
+            // Log sécurisé sans exposer l'URL
+            print("✅ AsyncImageView: Image chargée depuis URL normale")
             downloadedImage = image
         }
         
@@ -175,7 +180,8 @@ struct AsyncImageView: View {
     
     // 🔧 NOUVELLE MÉTHODE: Utiliser Cloud Function pour contourner les règles Firebase Storage
     private func loadFromFirebaseStorageViaCloudFunction(urlString: String) async throws -> UIImage {
-        print("🔧 AsyncImageView: Tentative de chargement via Cloud Function pour: \(urlString)")
+        // Log sécurisé sans exposer l'URL complète
+        print("🔧 AsyncImageView: Tentative de chargement via Cloud Function")
         
         // Extraire le chemin du fichier depuis l'URL
         guard let urlMatch = urlString.range(of: "/o/(.+?)\\?", options: .regularExpression),
@@ -186,7 +192,8 @@ struct AsyncImageView: View {
         }
         
         let filePath = encodedPath.removingPercentEncoding ?? encodedPath
-        print("🔧 AsyncImageView: Chemin extrait: \(filePath)")
+        // Log sécurisé sans exposer le chemin complet
+        print("🔧 AsyncImageView: Chemin fichier extrait")
         
         // Déterminer le type d'image et l'ID utilisateur
         if filePath.hasPrefix("profile_images/") {
@@ -194,7 +201,8 @@ struct AsyncImageView: View {
             let pathComponents = filePath.components(separatedBy: "/")
             if pathComponents.count >= 2 {
                 let imageUserId = pathComponents[1]
-                print("🔧 AsyncImageView: Image de profil détectée pour utilisateur: \(imageUserId)")
+                // Log sécurisé sans exposer l'ID utilisateur
+                print("🔧 AsyncImageView: Image de profil d'utilisateur détectée")
                 
                 // 🔧 CORRECTION: Vérifier si c'est l'image de l'utilisateur actuel ou d'un partenaire
                 let currentUserId = Auth.auth().currentUser?.uid
@@ -240,7 +248,8 @@ struct AsyncImageView: View {
                     return
                 }
                 
-                print("✅ AsyncImageView: URL signée obtenue via Cloud Function: \(signedUrl)")
+                // Log sécurisé sans exposer l'URL signée complète
+                print("✅ AsyncImageView: URL signée obtenue via Cloud Function")
                 
                 // Charger l'image depuis l'URL signée
                 Task {
@@ -305,7 +314,8 @@ struct AsyncImageView: View {
                     return
                 }
                 
-                print("✅ AsyncImageView: URL signée obtenue pour image du journal: \(signedUrl)")
+                // Log sécurisé sans exposer l'URL signée complète avec token
+                print("✅ AsyncImageView: URL signée obtenue pour image du journal")
                 
                 // Charger l'image depuis l'URL signée
                 Task {

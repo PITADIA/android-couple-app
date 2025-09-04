@@ -47,11 +47,13 @@ class DailyQuestionService: ObservableObject {
         let newCoupleId = generateCoupleId(from: appState)
         
         if isConfigured && currentCoupleId == newCoupleId {
-            print("⚡ DailyQuestionService: Déjà configuré pour couple \(newCoupleId ?? "nil") - Pas de reconfiguration")
+            // Log sécurisé sans exposer le couple ID contenant les Firebase UIDs
+            print("⚡ DailyQuestionService: Déjà configuré pour couple \(newCoupleId != nil ? "[COUPLE_ID_MASQUÉ]" : "nil") - Pas de reconfiguration")
             return
         }
         
-        print("🔄 DailyQuestionService: Configuration pour couple \(newCoupleId ?? "nil")")
+        // Log sécurisé sans exposer le couple ID contenant les Firebase UIDs
+        print("🔄 DailyQuestionService: Configuration pour couple \(newCoupleId != nil ? "[COUPLE_ID_MASQUÉ]" : "nil")")
         self.appState = appState
         self.currentCoupleId = newCoupleId
         self.isConfigured = true
@@ -86,7 +88,8 @@ class DailyQuestionService: ObservableObject {
         
         // CORRECTION: Créer le coupleId comme dans le reste de l'app
         let coupleId = [currentUser.uid, partnerId].sorted().joined(separator: "_")
-        print("🔥 DailyQuestionService: Écoute des questions pour couple: \(coupleId)")
+        // Log sécurisé sans exposer le couple ID contenant les Firebase UIDs
+        print("🔥 DailyQuestionService: Écoute des questions pour couple configuré")
         
         // 🚀 OPTIMISATION CACHE: Charger depuis le cache d'abord pour un affichage immédiat
         Task {
@@ -202,7 +205,8 @@ class DailyQuestionService: ObservableObject {
     private func setupQuestionsListener(for coupleId: String) {
         questionListener?.remove()
         
-        print("🔥 DailyQuestionService: Écoute des questions pour couple: \(coupleId)")
+        // Log sécurisé sans exposer le couple ID (2 UIDs)
+        print("🔥 DailyQuestionService: Écoute des questions pour couple configuré")
         
         questionListener = db.collection("dailyQuestions")
             .whereField("coupleId", isEqualTo: coupleId)
@@ -418,7 +422,8 @@ class DailyQuestionService: ObservableObject {
             return
         }
         
-        print("🚀 DailyQuestionService: Début génération question pour couple: \(coupleId)")
+        // Log sécurisé sans exposer le couple ID
+        print("🚀 DailyQuestionService: Début génération question pour couple configuré")
 
         // 🔧 NOUVEAUX LOGS TIMEZONE DÉTAILLÉS
         print("🕐 DailyQuestionService: TIMEZONE DEBUG:")
@@ -810,7 +815,8 @@ class DailyQuestionService: ObservableObject {
     
     // NOUVEAU: Chargement depuis le cache Realm en cas de problème Firestore
     private func loadFromRealmCache(coupleId: String) async {
-        print("🔄 DailyQuestionService: Chargement depuis le cache Realm pour couple: \(coupleId)")
+        // Log sécurisé sans exposer le couple ID
+        print("🔄 DailyQuestionService: Chargement depuis le cache Realm pour couple configuré")
         print("🔄 - RAISON: Fallback car Firestore n'a pas de documents ou erreur")
         
         let cachedQuestions = QuestionCacheManager.shared.getCachedDailyQuestions(for: coupleId, limit: 10)

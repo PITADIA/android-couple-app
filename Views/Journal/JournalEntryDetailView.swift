@@ -90,26 +90,26 @@ struct JournalEntryDetailView: View {
                             VStack(spacing: 8) {
                                 InfoRow(
                                     icon: "calendar",
-                                    title: NSLocalizedString("event_date", comment: "Event date label"),
+                                    title: "event_date".localized,
                                     value: formattedEventDate
                                 )
                                 
                                 InfoRow(
                                     icon: "clock",
-                                    title: NSLocalizedString("event_time", comment: "Event time label"),
+                                    title: "event_time".localized,
                                     value: formattedEventTime
                                 )
                                 
                                 InfoRow(
                                     icon: "person.circle",
-                                    title: NSLocalizedString("created_by", comment: "Created by label"),
+                                    title: "created_by".localized,
                                     value: entry.authorName
                                 )
                                 
                                 if let location = entry.location {
                                     InfoRow(
                                         icon: "location",
-                                        title: NSLocalizedString("location", comment: "Location label"),
+                                        title: "location".localized,
                                         value: location.displayName
                                     )
                                 }
@@ -195,7 +195,7 @@ struct JournalEntryDetailView: View {
                 deleteEntry()
             }
         } message: {
-            Text(NSLocalizedString("irreversible_action", comment: "Irreversible action message"))
+            Text("irreversible_action".localized)
         }
         .onChange(of: showingDeleteAlert) { oldValue, newValue in
             print("🗑️ JournalEntryDetailView: showingDeleteAlert changé: \(newValue)")

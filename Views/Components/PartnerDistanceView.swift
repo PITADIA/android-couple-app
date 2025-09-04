@@ -115,9 +115,7 @@ struct PartnerDistanceView: View {
                 
                 // Debug détaillé
                 if let currentUser = appState.currentUser {
-                    print("🌍 Debug - User location: \(currentUser.currentLocation?.displayName ?? "nil")")
-                    print("🌍 Debug - Partner location: \(partnerLocationService.partnerLocation?.displayName ?? "nil")")
-                    print("🌍 Debug - Partner ID: \(currentUser.partnerId ?? "nil")")
+                    // Logs debug supprimés pour éviter l'exposition de données sensibles
                 }
             }
             cachedDistance = newDistance
@@ -298,7 +296,8 @@ struct PartnerDistanceView: View {
             forceUpdateDistance()
         }
         .onChange(of: appState.currentUser?.partnerId) { oldValue, newValue in
-            print("🌍 PartnerDistanceView: Partner ID changé: \(newValue ?? "nil")")
+            // Log sécurisé sans exposer le Partner ID Firebase
+            print("🌍 PartnerDistanceView: Partner ID changé: \(newValue != nil && !newValue!.isEmpty ? "[ID_MASQUÉ]" : "nil")")
             if let partnerId = newValue {
                 partnerLocationService.configureListener(for: partnerId)
             }

@@ -130,7 +130,8 @@ struct PartnerCodeStepView: View {
             }
         }
         .onChange(of: partnerCodeService.generatedCode) { _, newCode in
-            print("🔗 PartnerCodeStepView: Code généré changé: \(newCode ?? "nil")")
+            // Log sécurisé sans exposer le code partenaire
+            print("🔗 PartnerCodeStepView: Code généré changé: \(newCode != nil ? "[CODE_MASQUÉ]" : "nil")")
         }
         .sheet(isPresented: $showingShareSheet) {
             if let code = partnerCodeService.generatedCode {
@@ -302,7 +303,8 @@ struct PartnerCodeStepView: View {
     }
     
     private func shareCode(_ code: String) {
-        print("🔗 PartnerCodeStepView: Tentative de partage du code: \(code)")
+        // Log sécurisé sans exposer le code partenaire
+        print("🔗 PartnerCodeStepView: Tentative de partage du code")
         
         // 📊 Analytics: Code partenaire partagé
         Analytics.logEvent("code_partenaire_partage", parameters: [:])

@@ -372,10 +372,11 @@ exports.validateAppleReceipt = functions.https.onCall(async (data, context) => {
       const purchase = result.find((item) => item.productId === productId);
 
       if (purchase) {
-        console.log("🔥 validateAppleReceipt: Achat trouvé:", {
+        // Log sécurisé sans exposer les Transaction IDs sensibles
+        logger.info("🔥 validateAppleReceipt: Achat trouvé", {
           productId: purchase.productId,
-          transactionId: purchase.transactionId,
-          originalTransactionId: purchase.originalTransactionId,
+          hasTransactionId: !!purchase.transactionId,
+          hasOriginalTransactionId: !!purchase.originalTransactionId,
         });
 
         const subscriptionData = {
@@ -1087,7 +1088,8 @@ exports.createPartnerCode = functions.https.onCall(async (data, context) => {
     }
 
     const userId = context.auth.uid;
-    console.log("🔥 createPartnerCode: Création pour l'utilisateur:", userId);
+    // Log sécurisé sans exposer l'ID utilisateur
+    logger.info("🔥 createPartnerCode: Création pour l'utilisateur");
 
     // Vérifier si l'utilisateur a déjà un code
     const userDoc = await admin
@@ -1104,10 +1106,8 @@ exports.createPartnerCode = functions.https.onCall(async (data, context) => {
 
     const userData = userDoc.data();
     if (userData.partnerCode) {
-      console.log(
-        "🔥 createPartnerCode: L'utilisateur a déjà un code:",
-        userData.partnerCode
-      );
+      // Log sécurisé sans exposer le code partenaire
+      logger.info("🔥 createPartnerCode: L'utilisateur a déjà un code");
       return {
         success: true,
         code: userData.partnerCode,
@@ -1155,7 +1155,8 @@ exports.createPartnerCode = functions.https.onCall(async (data, context) => {
       partnerCode: newCode,
     });
 
-    console.log("✅ createPartnerCode: Code créé avec succès:", newCode);
+    // Log sécurisé sans exposer le code partenaire
+    logger.info("✅ createPartnerCode: Code créé avec succès");
 
     return {
       success: true,
@@ -1191,8 +1192,11 @@ exports.connectToPartner = functions.https.onCall(async (data, context) => {
     }
 
     const userId = context.auth.uid;
-    console.log("🔥 connectToPartner: Connexion pour l'utilisateur:", userId);
-    console.log("🔥 connectToPartner: Code partenaire:", partnerCode);
+    // Log sécurisé sans exposer l'ID utilisateur ni le code partenaire
+    logger.info("🔥 connectToPartner: Connexion pour l'utilisateur");
+    logger.info(
+      "🔥 connectToPartner: Tentative de connexion avec code partenaire"
+    );
 
     // Vérifier que le code existe et est valide
     const codeDoc = await admin
@@ -1387,10 +1391,9 @@ exports.disconnectPartners = functions.https.onCall(async (data, context) => {
     }
 
     const currentUserData = currentUserDoc.data();
-    console.log("🔗 disconnectPartners: Données utilisateur récupérées:", {
+    // Log sécurisé sans exposer les détails d'abonnement
+    logger.info("🔗 disconnectPartners: Données utilisateur récupérées", {
       hasPartnerId: !!currentUserData.partnerId,
-      subscriptionType: currentUserData.subscriptionType,
-      isSubscribed: currentUserData.isSubscribed,
     });
 
     const partnerId = currentUserData.partnerId;
@@ -1405,10 +1408,11 @@ exports.disconnectPartners = functions.https.onCall(async (data, context) => {
       );
     }
 
-    console.log("🔗 disconnectPartners: Partenaire à déconnecter:", partnerId);
-    console.log("🔗 disconnectPartners: Codes:", {
-      partnerCode: partnerCode || "aucun",
-      connectedPartnerCode: connectedPartnerCode || "aucun",
+    // Log sécurisé sans exposer les IDs et codes partenaires
+    logger.info("🔗 disconnectPartners: Déconnexion du partenaire");
+    logger.info("🔗 disconnectPartners: Codes partenaire disponibles", {
+      hasPartnerCode: !!partnerCode,
+      hasConnectedPartnerCode: !!connectedPartnerCode,
     });
 
     // Effectuer la déconnexion dans une transaction
@@ -1439,10 +1443,9 @@ exports.disconnectPartners = functions.https.onCall(async (data, context) => {
       }
 
       const partnerData = partnerDoc.data();
-      console.log("🔗 disconnectPartners: TRANSACTION - Données partenaire:", {
+      // Log sécurisé sans exposer les détails d'abonnement du partenaire
+      logger.info("🔗 disconnectPartners: TRANSACTION - Données partenaire", {
         hasPartnerId: !!partnerData.partnerId,
-        subscriptionType: partnerData.subscriptionType,
-        isSubscribed: partnerData.isSubscribed,
       });
       // 1. Mettre à jour l'utilisateur actuel
       console.log(
@@ -1732,8 +1735,9 @@ exports.validatePartnerCode = functions.https.onCall(async (data, context) => {
   const { partnerCode } = data;
   const currentUserId = context.auth.uid;
 
-  console.log(`🔗 validatePartnerCode: Code à valider: ${partnerCode}`);
-  console.log(`🔗 validatePartnerCode: Utilisateur: ${currentUserId}`);
+  // Log sécurisé sans exposer le code partenaire ni l'ID utilisateur
+  logger.info("🔗 validatePartnerCode: Validation du code partenaire");
+  logger.info("🔗 validatePartnerCode: Traitement demande utilisateur");
 
   if (!partnerCode || typeof partnerCode !== "string") {
     console.log("❌ validatePartnerCode: Code invalide");
@@ -1764,10 +1768,12 @@ exports.validatePartnerCode = functions.https.onCall(async (data, context) => {
     const ownerId = codeData.userId;
     const isActive = codeData.isActive;
 
-    console.log(
-      `🔗 validatePartnerCode: Code trouvé - Propriétaire: ${ownerId}`
-    );
-    console.log(`🔗 validatePartnerCode: Code actif: ${isActive}`);
+    // Log sécurisé sans exposer l'ID du propriétaire
+    logger.info("🔗 validatePartnerCode: Code trouvé avec propriétaire");
+    // Log sécurisé du statut du code
+    logger.info("🔗 validatePartnerCode: Vérification statut code", {
+      isActive: isActive,
+    });
 
     // Vérifier que le code est actif
     if (!isActive) {
@@ -1897,8 +1903,9 @@ exports.connectPartners = functions.https.onCall(async (data, context) => {
   const { partnerCode } = data;
   const currentUserId = context.auth.uid;
 
-  console.log(`🔗 connectPartners: Code: ${partnerCode}`);
-  console.log(`🔗 connectPartners: Utilisateur: ${currentUserId}`);
+  // Log sécurisé sans exposer le code partenaire ni l'ID utilisateur
+  logger.info("🔗 connectPartners: Demande de connexion partenaire");
+  logger.info("🔗 connectPartners: Traitement demande utilisateur");
 
   if (!partnerCode || typeof partnerCode !== "string") {
     console.log("❌ connectPartners: Code invalide");
@@ -2157,7 +2164,8 @@ exports.syncPartnerSubscriptions = functions.https.onCall(
     const { partnerId } = data;
 
     console.log(`🔄 syncPartnerSubscriptions: Utilisateur: ${currentUserId}`);
-    console.log(`🔄 syncPartnerSubscriptions: Partenaire: ${partnerId}`);
+    // Log sécurisé sans exposer l'ID partenaire
+    logger.info("🔄 syncPartnerSubscriptions: Synchronisation avec partenaire");
     console.log(
       `🔄 syncPartnerSubscriptions: Type currentUserId: ${typeof currentUserId}`
     );
@@ -2239,12 +2247,13 @@ exports.syncPartnerSubscriptions = functions.https.onCall(
       const partnerIsSubscribed = partnerUserData.isSubscribed || false;
       const partnerSubscriptionType = partnerUserData.subscriptionType;
 
-      console.log("🔄 syncPartnerSubscriptions: État actuel:");
-      console.log(
-        `🔄 User: isSubscribed=${currentIsSubscribed}, type=${currentSubscriptionType}`
-      );
-      console.log(
-        `🔄 Partner: isSubscribed=${partnerIsSubscribed}, type=${partnerSubscriptionType}`
+      // Log sécurisé sans exposer les détails d'abonnement sensibles
+      logger.info(
+        "🔄 syncPartnerSubscriptions: Vérification état abonnements",
+        {
+          userHasSubscription: !!currentIsSubscribed,
+          partnerHasSubscription: !!partnerIsSubscribed,
+        }
       );
 
       let subscriptionInherited = false;
@@ -2352,7 +2361,8 @@ exports.getPartnerInfo = functions.https.onCall(async (data, context) => {
   const { partnerId } = data;
 
   console.log(`👥 getPartnerInfo: Utilisateur: ${currentUserId}`);
-  console.log(`👥 getPartnerInfo: Partenaire demandé: ${partnerId}`);
+  // Log sécurisé sans exposer l'ID partenaire
+  logger.info("👥 getPartnerInfo: Demande info partenaire");
 
   if (!partnerId) {
     throw new functions.https.HttpsError(
@@ -2454,7 +2464,8 @@ exports.getPartnerProfileImage = functions.https.onCall(
     const { partnerId } = data;
 
     console.log(`🖼️ getPartnerProfileImage: Utilisateur: ${currentUserId}`);
-    console.log(`🖼️ getPartnerProfileImage: Partenaire: ${partnerId}`);
+    // Log sécurisé sans exposer l'ID partenaire
+    logger.info("🖼️ getPartnerProfileImage: Demande image partenaire");
 
     if (!partnerId) {
       throw new functions.https.HttpsError(
@@ -2540,7 +2551,8 @@ exports.getPartnerProfileImage = functions.https.onCall(
         expires: Date.now() + 60 * 60 * 1000, // 1 heure
       });
 
-      console.log("✅ getPartnerProfileImage: URL signée générée avec succès");
+      // Log sécurisé sans exposer l'URL signée
+      logger.info("✅ getPartnerProfileImage: URL signée générée avec succès");
 
       return {
         success: true,
@@ -2562,7 +2574,8 @@ exports.getPartnerProfileImage = functions.https.onCall(
 
 // 🔧 NOUVELLE FONCTION: Générer URL signée pour toutes les images Firebase Storage
 exports.getSignedImageURL = functions.https.onCall(async (data, context) => {
-  console.log("🔧 getSignedImageURL: Début génération URL signée");
+  // Log sécurisé pour génération URL
+  logger.info("🔧 getSignedImageURL: Début génération URL signée");
 
   // Vérifier l'authentification
   if (!context.auth) {
@@ -2576,8 +2589,9 @@ exports.getSignedImageURL = functions.https.onCall(async (data, context) => {
   const currentUserId = context.auth.uid;
   const { filePath } = data;
 
-  console.log(`🔧 getSignedImageURL: Utilisateur: ${currentUserId}`);
-  console.log(`🔧 getSignedImageURL: Chemin fichier: ${filePath}`);
+  // Log sécurisé sans exposer l'ID utilisateur et le chemin du fichier
+  logger.info("🔧 getSignedImageURL: Traitement demande utilisateur");
+  logger.info("🔧 getSignedImageURL: Chemin fichier reçu");
 
   if (!filePath) {
     throw new functions.https.HttpsError(
@@ -2703,7 +2717,8 @@ exports.getSignedImageURL = functions.https.onCall(async (data, context) => {
       expires: Date.now() + 60 * 60 * 1000, // 1 heure
     });
 
-    console.log("✅ getSignedImageURL: URL signée générée avec succès");
+    // Log sécurisé sans exposer l'URL signée
+    logger.info("✅ getSignedImageURL: URL signée générée avec succès");
 
     return {
       success: true,
@@ -2725,7 +2740,8 @@ exports.getSignedImageURL = functions.https.onCall(async (data, context) => {
 // Fonction interne pour synchroniser les entrées de journal (appelée en interne)
 async function syncPartnerJournalEntriesInternal(currentUserId, partnerId) {
   console.log("📚 syncPartnerJournalEntriesInternal: Début synchronisation");
-  console.log(`📚 Utilisateur: ${currentUserId}, Partenaire: ${partnerId}`);
+  // Log sécurisé sans exposer les IDs utilisateur et partenaire
+  logger.info("📚 Synchronisation journal utilisateur avec partenaire");
 
   // 1. Récupérer toutes les entrées créées par l'utilisateur actuel
   const currentUserEntriesSnapshot = await admin
@@ -2816,7 +2832,10 @@ exports.syncPartnerJournalEntries = functions.https.onCall(
     const { partnerId } = data;
 
     console.log(`📚 syncPartnerJournalEntries: Utilisateur: ${currentUserId}`);
-    console.log(`📚 syncPartnerJournalEntries: Partenaire: ${partnerId}`);
+    // Log sécurisé sans exposer l'ID partenaire
+    logger.info(
+      "📚 syncPartnerJournalEntries: Synchronisation avec partenaire"
+    );
 
     if (
       !partnerId ||
@@ -2933,7 +2952,8 @@ exports.cleanupOrphanedSubscriptions = functions.https.onCall(
         const userId = userDoc.id;
         checkedCount++;
 
-        console.log(`🧹 Vérification utilisateur: ${userId}`);
+        // Log sécurisé sans exposer l'ID utilisateur
+        logger.info("🧹 Vérification utilisateur");
 
         // Vérifier si l'utilisateur a encore un partenaire connecté
         const partnerId = userData.partnerId;
@@ -3173,8 +3193,9 @@ exports.getPartnerLocation = functions.https.onCall(async (data, context) => {
   const currentUserId = context.auth.uid;
   const { partnerId } = data;
 
-  console.log(`🌍 getPartnerLocation: Utilisateur: ${currentUserId}`);
-  console.log(`🌍 getPartnerLocation: Partenaire demandé: ${partnerId}`);
+  // Log sécurisé sans exposer les IDs utilisateur
+  logger.info("🌍 getPartnerLocation: Traitement demande utilisateur");
+  logger.info("🌍 getPartnerLocation: ID partenaire reçu");
 
   if (!partnerId) {
     throw new functions.https.HttpsError(
@@ -3269,7 +3290,8 @@ exports.getPartnerLocation = functions.https.onCall(async (data, context) => {
 // Fonction interne pour synchroniser les favoris entre partenaires (appelée en interne)
 async function syncPartnerFavoritesInternal(currentUserId, partnerId) {
   console.log("❤️ syncPartnerFavoritesInternal: Début synchronisation");
-  console.log(`❤️ Utilisateur: ${currentUserId}, Partenaire: ${partnerId}`);
+  // Log sécurisé sans exposer les IDs utilisateur et partenaire
+  logger.info("❤️ Synchronisation favoris utilisateur avec partenaire");
 
   // 1. Récupérer tous les favoris créés par l'utilisateur actuel
   const currentUserFavoritesSnapshot = await admin
@@ -3359,7 +3381,8 @@ exports.syncPartnerFavorites = functions.https.onCall(async (data, context) => {
   const { partnerId } = data;
 
   console.log(`❤️ syncPartnerFavorites: Utilisateur: ${currentUserId}`);
-  console.log(`❤️ syncPartnerFavorites: Partenaire: ${partnerId}`);
+  // Log sécurisé sans exposer l'ID partenaire
+  logger.info("❤️ syncPartnerFavorites: Synchronisation avec partenaire");
 
   if (!partnerId || typeof partnerId !== "string" || partnerId.trim() === "") {
     throw new functions.https.HttpsError(

@@ -36,7 +36,8 @@ class PartnerLocationService: ObservableObject {
     // MARK: - Setup Partner Listener
     
     func configureListener(for partnerId: String?) {
-        print("🌍 PartnerLocationService: Configuration du listener pour partenaire: \(partnerId ?? "nil")")
+        // Log sécurisé sans exposer le Partner ID Firebase
+        print("🌍 PartnerLocationService: Configuration du listener pour partenaire: \(partnerId != nil && !partnerId!.isEmpty ? "[ID_MASQUÉ]" : "nil")")
         
         guard let partnerId = partnerId, !partnerId.isEmpty else {
             print("🌍 PartnerLocationService: Pas de partenaire - Nettoyage des données")
@@ -121,7 +122,8 @@ class PartnerLocationService: ObservableObject {
                 
                 if success {
                     if let locationData = data["location"] as? [String: Any] {
-                        print("✅ PartnerLocationService: Localisation partenaire récupérée: \(locationData)")
+                        // Log sécurisé sans exposer les données de localisation
+                        print("✅ PartnerLocationService: Localisation partenaire récupérée")
                         self?.updatePartnerLocationFromCloudFunction(locationData)
                         print("🚀 PartnerLocationService: Localisation mise à jour - Notification des observers")
                     }
@@ -151,12 +153,14 @@ class PartnerLocationService: ObservableObject {
         )
         
         print("✅ PartnerLocationService: Localisation partenaire configurée: \(city ?? "ville inconnue")")
-        print("✅ PartnerLocationService: Coordonnées: \(latitude), \(longitude)")
+        // Log sécurisé sans exposer les coordonnées GPS
+        print("✅ PartnerLocationService: Coordonnées partenaire configurées")
     }
     
     private func updatePartnerDataFromCloudFunction(_ partnerInfo: [String: Any]) {
         print("🌍 PartnerLocationService: Mise à jour des données partenaire depuis Cloud Function")
-        print("🌍 PartnerLocationService: Données reçues: \(partnerInfo)")
+        // Log sécurisé sans exposer les données partenaire complètes
+        print("🌍 PartnerLocationService: Données partenaire reçues")
         
         // Récupérer le nom
         partnerName = partnerInfo["name"] as? String
@@ -166,7 +170,8 @@ class PartnerLocationService: ObservableObject {
         
         // Vérifier si l'URL a changé et mettre à jour le cache si nécessaire
         if let newURL = newProfileURL {
-            print("🌍 PartnerLocationService: Photo profil partenaire: \(newURL)")
+            // Log sécurisé sans exposer l'URL avec token
+            print("🌍 PartnerLocationService: Photo profil partenaire trouvée")
             
             // Vérifier si l'URL a changé pour déclencher une mise à jour du cache
             if UserCacheManager.shared.hasPartnerImageChanged(newURL: newURL) {
@@ -187,7 +192,8 @@ class PartnerLocationService: ObservableObject {
         
         // VÉRIFIER SI LOCALISATION PARTENAIRE PRÉSENTE
         if let locationData = partnerInfo["currentLocation"] as? [String: Any] {
-            print("🌍 PartnerLocationService: Localisation partenaire trouvée: \(locationData)")
+            // Log sécurisé sans exposer les données de localisation
+            print("🌍 PartnerLocationService: Localisation partenaire trouvée")
             let latitude = locationData["latitude"] as? Double ?? 0.0
             let longitude = locationData["longitude"] as? Double ?? 0.0
             let address = locationData["address"] as? String

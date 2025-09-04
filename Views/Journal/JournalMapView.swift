@@ -209,8 +209,7 @@ struct JournalMapView: View {
                     // iOS 17+ : Nouvelle API avec MapContentBuilder
                     Map(position: .constant(.region(mapRegion))) {
                         ForEach(clusters) { cluster in
-                            Annotation(cluster.isCluster ? "Cluster" : cluster.firstEntry.title, 
-                                     coordinate: cluster.coordinate) {
+                            Annotation("", coordinate: cluster.coordinate) {
                                 if cluster.isCluster {
                                     OptimizedClusterAnnotationView(cluster: cluster) {
                                         selectedCluster = cluster
@@ -459,28 +458,23 @@ struct JournalMapView: View {
     private func createStableClusters(from entries: [JournalEntry], zoomLevel: Double) -> [JournalCluster] {
         guard !entries.isEmpty else { return [] }
         
-        // Distance de clustering basée sur le niveau de zoom - LOGIQUE CORRIGÉE
+        // Distance de clustering basée sur le niveau de zoom en kilomètres
         // Plus on zoome (zoomLevel petit), plus la distance doit être petite
         let clusterDistance: Double = {
-            if zoomLevel > 15.0 { return 2.0 }      // Vue monde = clustering maximal (continents)
-            else if zoomLevel > 10.0 { return 1.2 } // Vue pays = clustering très large
-            else if zoomLevel > 5.0 { return 0.6 }  // Vue région = clustering large  
-            else if zoomLevel > 2.0 { return 0.2 }  // Vue ville = clustering moyen
-            else if zoomLevel > 1.0 { return 0.08 } // Vue quartier = clustering réduit
-            else if zoomLevel > 0.5 { return 0.03 } // Vue rue = clustering très réduit
-            else if zoomLevel > 0.2 { return 0.015 }// Vue détaillée = clustering minimal
-            else { return 0.008 }                   // Zoom maximum = presque pas de clustering
+            if zoomLevel > 15.0 { return 500.0 }     // Vue monde = 500km
+            else if zoomLevel > 10.0 { return 200.0 } // Vue continent = 200km
+            else if zoomLevel > 5.0 { return 100.0 }  // Vue pays = 100km
+            else if zoomLevel > 2.0 { return 50.0 }   // Vue région = 50km
+            else if zoomLevel > 1.0 { return 25.0 }   // Vue département = 25km
+            else if zoomLevel > 0.5 { return 15.0 }   // Vue ville = 15km (votre seuil souhaité)
+            else if zoomLevel > 0.2 { return 5.0 }    // Vue quartier = 5km
+            else { return 1.0 }                       // Vue détaillée = 1km
         }()
         
-        print("🗺️ Clustering: zoomLevel = \(zoomLevel), distance = \(clusterDistance)")
+        print("🗺️ Clustering: zoomLevel = \(zoomLevel), distance = \(clusterDistance)km")
         
         var clusters: [JournalCluster] = []
         var processedEntries: Set<String> = []
-        
-        // NOUVEAU: Pour les vues très dézoomées, utiliser un clustering par zone géographique
-        if zoomLevel > 8.0 {
-            return createGeographicalClusters(from: entries, zoomLevel: zoomLevel)
-        }
         
         for entry in entries {
             guard !processedEntries.contains(entry.id),
@@ -494,6 +488,7 @@ struct JournalMapView: View {
                 guard !processedEntries.contains(otherEntry.id),
                       let otherLocation = otherEntry.location else { continue }
                 
+                // Calculer la distance réelle en kilomètres
                 let distance = location.coordinate.distance(to: otherLocation.coordinate)
                 
                 if distance < clusterDistance {
@@ -513,43 +508,6 @@ struct JournalMapView: View {
             )
             
             clusters.append(cluster)
-        }
-        
-        return clusters
-    }
-    
-    // NOUVEAU: Clustering géographique intelligent pour les vues très dézoomées
-    private func createGeographicalClusters(from entries: [JournalEntry], zoomLevel: Double) -> [JournalCluster] {
-        guard !entries.isEmpty else { return [] }
-        
-        print("🌍 Clustering géographique activé pour zoomLevel = \(zoomLevel)")
-        
-        // Grouper par pays d'abord
-        let entriesByCountry = Dictionary(grouping: entries.filter { $0.location != nil }) { entry in
-                            entry.location?.country ?? "unknown_location".localized
-        }
-        
-        var clusters: [JournalCluster] = []
-        
-        for (country, countryEntries) in entriesByCountry {
-            // MODIFICATION: Toujours grouper par ville, même en vue monde
-            // Cela permet de voir la répartition géographique même quand on dézoome
-            let entriesByCity = Dictionary(grouping: countryEntries) { entry in
-                entry.location?.city ?? "unknown_city".localized
-            }
-            
-            for (city, cityEntries) in entriesByCity {
-                let centerCoordinate = calculateCenterCoordinate(for: cityEntries)
-                let stableId = JournalCluster.createId(from: cityEntries)
-                
-                let cluster = JournalCluster(
-                    id: stableId,
-                    coordinate: centerCoordinate,
-                    entries: cityEntries.sorted { $0.eventDate > $1.eventDate }
-                )
-                clusters.append(cluster)
-                print("🏙️ Cluster ville créé: \(city), \(country) avec \(cityEntries.count) événements")
-            }
         }
         
         return clusters
