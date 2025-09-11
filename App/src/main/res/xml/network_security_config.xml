@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    Configuration de sécurité réseau Android
+    Équivalent iOS: NSAppTransportSecurity avec NSAllowsArbitraryLoads = false
+-->
+<network-security-config>
+    <!-- Configuration par défaut: HTTPS uniquement -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">googleapis.com</domain>
+        <domain includeSubdomains="true">firebaseapp.com</domain>
+        <domain includeSubdomains="true">firebase.googleapis.com</domain>
+        <domain includeSubdomains="true">google.com</domain>
+        <domain includeSubdomains="true">gstatic.com</domain>
+    </domain-config>
+    
+    <!-- Domaines de confiance pour l'app -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">love2love.app</domain>
+        <domain includeSubdomains="true">revenuecat.com</domain>
+    </domain-config>
+    
+    <!-- Configuration de base: Pas de trafic HTTP non chiffré -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <!-- Utiliser uniquement les CA système -->
+            <certificates src="system"/>
+        </trust-anchors>
+    </base-config>
+</network-security-config>

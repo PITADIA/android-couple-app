@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arrière-plan des widgets avec effet noir flou -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    
+    <!-- Fond noir avec transparence -->
+    <solid android:color="#CC000000" />
+    
+    <!-- Coins arrondis pour un look moderne -->
+    <corners android:radius="16dp" />
+    
+</shape>

@@ -1,0 +1,166 @@
+package com.love2loveapp
+
+import android.app.Application
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
+import android.os.Build
+import android.util.Log
+import androidx.lifecycle.DefaultLifecycleObserver
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.ProcessLifecycleOwner
+import com.google.firebase.FirebaseApp
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.messaging.FirebaseMessaging
+import com.google.firebase.appcheck.FirebaseAppCheck
+import com.google.firebase.appcheck.debug.DebugAppCheckProviderFactory
+import com.google.firebase.appcheck.playintegrity.PlayIntegrityAppCheckProviderFactory
+import com.revenuecat.purchases.LogLevel
+import com.revenuecat.purchases.Purchases
+import com.revenuecat.purchases.PurchasesConfiguration
+import com.love2loveapp.config.AppCheckConfig
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asSharedFlow
+
+class AppDelegate : Application() {
+
+    companion object {
+        private const val TAG = "AppDelegate"
+        const val NOTIFICATION_CHANNEL_ID = "default_channel"
+    }
+
+    private lateinit var auth: FirebaseAuth
+    val currentUser = MutableStateFlow<FirebaseAuth?>(null)
+    private val _authEvents = MutableSharedFlow<Boolean>(replay = 0)
+    val authEvents = _authEvents.asSharedFlow()
+
+    override fun onCreate() {
+        super.onCreate()
+        Log.i(TAG, "🔥 AppDelegate: Application start")
+
+        // 🛡️ IMPORTANT: Initialiser AppCheckConfig avec le contexte
+        AppCheckConfig.appContext = applicationContext
+        
+        // 🛡️ Test du token debug - AppCheckConfig gère ses propres logs détaillés
+        val tokenStatus = if (AppCheckConfig.isDebugTokenConfigured) "✅ CONFIGURÉ" else "❌ NON CONFIGURÉ"
+        Log.i(TAG, "🔑 AppCheck Debug Token: $tokenStatus")
+
+        configureFirebase()
+        configureAppCheck()
+        configureRevenueCat()
+        configureNotifications()
+
+        // Observer le cycle de vie global (équivalent applicationDidBecomeActive iOS)
+        ProcessLifecycleOwner.get().lifecycle.addObserver(object : DefaultLifecycleObserver {
+            override fun onStart(owner: LifecycleOwner) {
+                Log.i(TAG, "🌱 AppDelegate: Application in foreground, clearing all notifications")
+                val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+                manager.cancelAll()
+            }
+        })
+    }
+
+    /**
+     * Initialiser Firebase (Auth + Messaging)
+     */
+    private fun configureFirebase() {
+        FirebaseApp.initializeApp(this)
+        auth = FirebaseAuth.getInstance()
+
+        // Listener Auth global
+        auth.addAuthStateListener { firebaseAuth ->
+            val user = firebaseAuth.currentUser
+            if (user != null) {
+                Log.i(TAG, "✅ Firebase session restored: ${user.uid}")
+                _authEvents.tryEmit(true)
+                
+                // 🔄 CENTRALIZATION: Flush any stashed FCM token when user logs in
+                MyFirebaseMessagingService.flushStashedTokenIfAny(this@AppDelegate)
+            } else {
+                Log.i(TAG, "ℹ️ No authenticated user")
+                _authEvents.tryEmit(false)
+            }
+        }
+
+        // Récupérer le token FCM
+        FirebaseMessaging.getInstance().token.addOnCompleteListener { task ->
+            if (!task.isSuccessful) {
+                Log.w(TAG, "❌ Failed to get FCM token", task.exception)
+                return@addOnCompleteListener
+            }
+            val token = task.result
+            Log.i(TAG, "📲 FCM Token: $token")
+            // TODO: envoyer au backend Firestore (users/{id}.fcmToken)
+        }
+    }
+
+    /**
+     * Configuration App Check (Play Integrity en prod, Debug en dev)
+     */
+    private fun configureAppCheck() {
+        val appCheck = FirebaseAppCheck.getInstance()
+        
+        if (BuildConfig.DEBUG) {
+            // En debug: utiliser Debug Provider si token configuré, sinon désactiver
+            if (AppCheckConfig.isDebugTokenConfigured) {
+                Log.i(TAG, "🛡️ AppCheck: Configuration DEBUG détectée")
+                
+                // 🛡️ IMPORTANT: Configurer le debug token AVANT d'installer le provider
+                AppCheckConfig.debugToken?.let { token ->
+                    System.setProperty("firebase.appcheck.debug_token", token)
+                    Log.i(TAG, "🔑 Debug token configuré dans System Properties")
+                }
+                
+                appCheck.installAppCheckProviderFactory(DebugAppCheckProviderFactory.getInstance())
+                Log.i(TAG, "🛡️ AppCheck DebugProvider installé ✅")
+                Log.i(TAG, "🔍 Mode DEBUG - toutes les requêtes seront autorisées avec token valide")
+            } else {
+                Log.w(TAG, "🛡️ AppCheck: Aucun debug token → DÉSACTIVÉ en mode debug")
+                Log.w(TAG, "⚠️ App Check complètement désactivé - aucune protection")
+                // Ne pas installer de provider = App Check désactivé
+            }
+        } else {
+            Log.i(TAG, "🛡️ AppCheck: Configuration PRODUCTION détectée")
+            appCheck.installAppCheckProviderFactory(PlayIntegrityAppCheckProviderFactory.getInstance())
+            Log.i(TAG, "🛡️ AppCheck PlayIntegrity installé ✅")
+            
+            // 🎯 IMPORTANT: Mode surveillance uniquement - aucun blocage
+            Log.i(TAG, "🛡️ AppCheck: ⚠️ Mode SURVEILLANCE activé - aucun service ne sera bloqué")
+            Log.i(TAG, "🛡️ AppCheck: Les métriques seront collectées pendant 2-3 semaines")
+            Log.i(TAG, "🛡️ AppCheck: Activation de l'enforcement sera faite manuellement plus tard")
+        }
+        
+        // 📊 Récapitulatif final
+        val providerType = if (BuildConfig.DEBUG && AppCheckConfig.isDebugTokenConfigured) "DebugProvider" else if (!BuildConfig.DEBUG) "PlayIntegrityProvider" else "AUCUN"
+        Log.i(TAG, "🎯 AppCheck configuré: $providerType")
+    }
+
+    /**
+     * Configuration RevenueCat
+     */
+    private fun configureRevenueCat() {
+        Log.i(TAG, "💰 Configuring RevenueCat")
+        Purchases.logLevel = LogLevel.INFO
+        Purchases.configure(
+            PurchasesConfiguration(this, BuildConfig.REVENUECAT_GOOGLE_API_KEY) // 🔑 clé Android RevenueCat depuis BuildConfig
+        )
+        Log.i(TAG, "💰 RevenueCat configuré avec clé depuis BuildConfig (sécurisé)")
+    }
+
+    /**
+     * Notifications Android
+     */
+    private fun configureNotifications() {
+        Log.i(TAG, "📣 Configuring notifications")
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channel = NotificationChannel(
+                NOTIFICATION_CHANNEL_ID,
+                "Couple Notifications",
+                NotificationManager.IMPORTANCE_DEFAULT
+            )
+            val manager = getSystemService(NotificationManager::class.java)
+            manager.createNotificationChannel(channel)
+        }
+    }
+}

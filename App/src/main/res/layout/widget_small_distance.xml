@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Widget Small Distance - Équivalent iOS SmallDistanceWidgetView -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="@drawable/widget_background">
+
+    <!-- Photos de profil côte à côte -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="16dp">
+
+        <!-- Photo utilisateur (initiale) -->
+        <TextView
+            android:id="@+id/widget_user_initial"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/widget_profile_circle"
+            android:text="A"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:layout_marginEnd="12dp" />
+
+        <!-- Photo partenaire (initiale) -->
+        <TextView
+            android:id="@+id/widget_partner_initial"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/widget_profile_circle"
+            android:text="M"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <!-- Distance ou message d'erreur -->
+    <TextView
+        android:id="@+id/widget_distance_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3.128 km"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/widget_location_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/widget_enable_your_location"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/widget_text_secondary"
+        android:gravity="center"
+        android:visibility="gone" />
+
+</LinearLayout>

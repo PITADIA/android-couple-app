@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "200633504634",
+    "project_id": "love2love-26164",
+    "storage_bucket": "love2love-26164.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:200633504634:android:4f3b5fbbd1e683dd08bcc3",
+        "android_client_info": {
+          "package_name": "com.love2loveapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLQVatTiceT1wy5_dBBHwvlJEeUBm4pC4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

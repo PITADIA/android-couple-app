@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Configuration du widget principal Love2Love -->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/widget_main_description"
+    android:initialKeyguardLayout="@layout/widget_small_love2love"
+    android:initialLayout="@layout/widget_small_love2love"
+    android:minWidth="110dp"
+    android:minHeight="110dp"
+    android:previewImage="@drawable/widget_preview_main"
+    android:resizeMode="horizontal|vertical"
+    android:targetCellWidth="2"
+    android:targetCellHeight="2"
+    android:updatePeriodMillis="1800000"
+    android:widgetCategory="home_screen" />

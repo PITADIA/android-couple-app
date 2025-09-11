@@ -2,8 +2,22 @@ const functions = require("firebase-functions");
 const admin = require("firebase-admin");
 const appleReceiptVerify = require("node-apple-receipt-verify");
 const jwt = require("jsonwebtoken");
+const { google } = require("googleapis");
 
 admin.initializeApp();
+
+// 🔧 Config Play minimaliste
+const PLAY_CONFIG = {
+  packageName: functions.config().play?.package_name || "com.love2loveapp",
+};
+
+// Auth Android Publisher (utilise le service account par défaut des Functions)
+async function getPlayClient() {
+  const auth = await google.auth.getClient({
+    scopes: ["https://www.googleapis.com/auth/androidpublisher"],
+  });
+  return google.androidpublisher({ version: "v3", auth });
+}
 
 // 🛡️ SÉCURITÉ GLOBALE - Configuration centralisée
 const SECURITY_CONFIG = {
@@ -100,6 +114,7 @@ const RATE_LIMITS = {
   submitDailyQuestionResponse: { calls: 20, window: 1 },
   validatePartnerCode: { calls: 10, window: 1 },
   disconnectPartners: { calls: 2, window: 10 },
+  validateGooglePurchase: { calls: 5, window: 1 },
 };
 
 /**
@@ -5952,6 +5967,244 @@ exports.scheduledDailyChallengeGeneration = functions.pubsub
       return null;
     } catch (error) {
       console.error("❌ scheduledDailyChallengeGeneration error:", error);
+      return null;
+    }
+  });
+
+// 🎯 === GOOGLE PLAY VALIDATION ===
+
+exports.validateGooglePurchase = functions.https.onCall(
+  async (data, context) => {
+    try {
+      if (!context.auth) {
+        throw new functions.https.HttpsError(
+          "unauthenticated",
+          "Utilisateur non authentifié"
+        );
+      }
+      await checkRateLimit(context.auth.uid, "validateGooglePurchase", context);
+
+      const { productId, purchaseToken } = data;
+      if (!productId || !purchaseToken) {
+        throw new functions.https.HttpsError(
+          "invalid-argument",
+          "productId et purchaseToken sont requis"
+        );
+      }
+
+      const packageName = PLAY_CONFIG.packageName;
+      const client = await getPlayClient();
+
+      // 🎯 Tente v2, sinon fallback legacy
+      let apiResp,
+        isActive = false,
+        autoRenewing = false,
+        expiryDate = null,
+        platform = "android";
+      try {
+        const v2 = await client.purchases.subscriptionsv2.get({
+          packageName,
+          token: purchaseToken,
+        });
+        const d = v2.data;
+        const state = d?.subscriptionState;
+        isActive =
+          state === "SUBSCRIPTION_STATE_ACTIVE" ||
+          state === "SUBSCRIPTION_STATE_IN_GRACE_PERIOD";
+        autoRenewing = !!d?.autoRenewing;
+        const line = (d?.lineItems && d.lineItems[0]) || null;
+        const expiryMillis = Number(
+          line?.expiryTime || line?.expiryTimeMillis || 0
+        );
+        expiryDate = expiryMillis ? new Date(expiryMillis) : null;
+        apiResp = d;
+      } catch (e) {
+        const legacy = await client.purchases.subscriptions.get({
+          packageName,
+          subscriptionId: productId,
+          token: purchaseToken,
+        });
+        const d = legacy.data;
+        const exp = Number(d?.expiryTimeMillis || 0);
+        isActive = exp > Date.now() || !!d?.autoRenewing;
+        autoRenewing = !!d?.autoRenewing;
+        expiryDate = exp ? new Date(exp) : null;
+        apiResp = d;
+      }
+
+      const userId = context.auth.uid;
+
+      // 🔐 Schéma aligné avec Apple: users/{uid}.subscriptionDetails
+      const subscriptionDetails = {
+        isSubscribed: isActive,
+        subscriptionType: isActive ? "direct" : undefined,
+        platform,
+        productId,
+        purchaseToken, // (option: à hasher si souhaité)
+        autoRenewing,
+        expiresDate: expiryDate
+          ? admin.firestore.Timestamp.fromDate(expiryDate)
+          : null,
+        lastValidated: admin.firestore.FieldValue.serverTimestamp(),
+      };
+
+      // users/{uid}
+      await admin
+        .firestore()
+        .collection("users")
+        .doc(userId)
+        .set(
+          {
+            isSubscribed: isActive,
+            subscriptionType: isActive
+              ? "direct"
+              : admin.firestore.FieldValue.delete(),
+            subscriptionDetails,
+          },
+          { merge: true }
+        );
+
+      // Table légère pour réconciliation ultérieure
+      await admin
+        .firestore()
+        .collection("playSubscriptions")
+        .doc(userId)
+        .set(
+          {
+            userId,
+            productId,
+            purchaseToken,
+            isActive,
+            autoRenewing,
+            expiresDate: expiryDate
+              ? admin.firestore.Timestamp.fromDate(expiryDate)
+              : null,
+            updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+          },
+          { merge: true }
+        );
+
+      logger.info(
+        "✅ validateGooglePurchase: Mise à jour abonnement Android OK",
+        { isActive, productId }
+      );
+
+      return {
+        success: true,
+        isSubscribed: isActive,
+        expiresDate: expiryDate ? expiryDate.toISOString() : null,
+      };
+    } catch (error) {
+      console.error("❌ validateGooglePurchase:", error);
+      throw new functions.https.HttpsError(
+        "internal",
+        error.message || "Erreur validation Google Play"
+      );
+    }
+  }
+);
+
+exports.reconcilePlaySubscriptions = functions.pubsub
+  .schedule("0 */6 * * *")
+  .timeZone("UTC")
+  .onRun(async () => {
+    try {
+      console.log("🔄 reconcilePlaySubscriptions: start");
+      const snap = await admin
+        .firestore()
+        .collection("playSubscriptions")
+        .get();
+      if (snap.empty) return null;
+
+      const client = await getPlayClient();
+      const packageName = PLAY_CONFIG.packageName;
+
+      for (const doc of snap.docs) {
+        const { userId, productId, purchaseToken } = doc.data();
+        try {
+          let isActive = false,
+            autoRenewing = false,
+            expiryDate = null;
+
+          try {
+            const v2 = await client.purchases.subscriptionsv2.get({
+              packageName,
+              token: purchaseToken,
+            });
+            const d = v2.data;
+            const state = d?.subscriptionState;
+            isActive =
+              state === "SUBSCRIPTION_STATE_ACTIVE" ||
+              state === "SUBSCRIPTION_STATE_IN_GRACE_PERIOD";
+            autoRenewing = !!d?.autoRenewing;
+            const line = (d?.lineItems && d.lineItems[0]) || null;
+            const expiryMillis = Number(
+              line?.expiryTime || line?.expiryTimeMillis || 0
+            );
+            expiryDate = expiryMillis ? new Date(expiryMillis) : null;
+          } catch (e) {
+            const legacy = await client.purchases.subscriptions.get({
+              packageName,
+              subscriptionId: productId,
+              token: purchaseToken,
+            });
+            const d = legacy.data;
+            const exp = Number(d?.expiryTimeMillis || 0);
+            isActive = exp > Date.now() || !!d?.autoRenewing;
+            autoRenewing = !!d?.autoRenewing;
+            expiryDate = exp ? new Date(exp) : null;
+          }
+
+          await admin
+            .firestore()
+            .collection("users")
+            .doc(userId)
+            .set(
+              {
+                isSubscribed: isActive,
+                subscriptionType: isActive
+                  ? "direct"
+                  : admin.firestore.FieldValue.delete(),
+                "subscriptionDetails.isSubscribed": isActive,
+                "subscriptionDetails.platform": "android",
+                "subscriptionDetails.productId": productId,
+                "subscriptionDetails.autoRenewing": autoRenewing,
+                "subscriptionDetails.expiresDate": expiryDate
+                  ? admin.firestore.Timestamp.fromDate(expiryDate)
+                  : null,
+                "subscriptionDetails.lastValidated":
+                  admin.firestore.FieldValue.serverTimestamp(),
+              },
+              { merge: true }
+            );
+
+          await admin
+            .firestore()
+            .collection("playSubscriptions")
+            .doc(userId)
+            .set(
+              {
+                isActive,
+                autoRenewing,
+                expiresDate: expiryDate
+                  ? admin.firestore.Timestamp.fromDate(expiryDate)
+                  : null,
+                updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+              },
+              { merge: true }
+            );
+        } catch (e) {
+          console.error(
+            "⚠️ reconcilePlaySubscriptions: erreur user:",
+            userId,
+            e.message
+          );
+        }
+      }
+      console.log("✅ reconcilePlaySubscriptions: done");
+      return null;
+    } catch (e) {
+      console.error("❌ reconcilePlaySubscriptions:", e);
       return null;
     }
   });

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Widget Medium Love2Love - Équivalent iOS MediumWidgetView -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:background="@drawable/widget_background">
+
+    <!-- Section gauche : Compteur de jours -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- Photos de profil miniatures -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="8dp">
+
+            <!-- Photo utilisateur miniature -->
+            <TextView
+                android:id="@+id/widget_user_initial"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/widget_profile_circle_small"
+                android:text="A"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:gravity="center"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Photo partenaire miniature -->
+            <TextView
+                android:id="@+id/widget_partner_initial"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/widget_profile_circle_small"
+                android:text="M"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <!-- Texte compteur -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <!-- Nombre de jours -->
+            <TextView
+                android:id="@+id/widget_days_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="365 jours"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+
+            <!-- Texte "ensemble" -->
+            <TextView
+                android:id="@+id/widget_together_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/widget_together_text"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/widget_text_secondary"
+                android:gravity="center"
+                android:layout_marginTop="2dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Séparateur vertical -->
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/widget_separator"
+        android:layout_marginVertical="8dp" />
+
+    <!-- Section droite : Distance -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- Icône cœur -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="❤️"
+            android:textSize="20sp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Distance ou message d'erreur -->
+        <TextView
+            android:id="@+id/widget_distance_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3.128 km"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/widget_location_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/widget_enable_your_location"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/widget_text_secondary"
+            android:gravity="center"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <!-- Hidden views pour la compatibilité avec le code -->
+    <TextView
+        android:id="@+id/widget_days_label"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone" />
+
+</LinearLayout>

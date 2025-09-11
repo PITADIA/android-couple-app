@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Cercle pour les photos de profil dans les widgets -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    
+    <!-- Fond blanc transparent -->
+    <solid android:color="#26FFFFFF" />
+    
+</shape>

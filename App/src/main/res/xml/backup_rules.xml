@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Exclure les données sensibles du backup -->
+    <exclude domain="sharedpref" path="fcm_prefs.xml"/>
+    <exclude domain="database" path="*.db"/>
+    <exclude domain="file" path="cache/"/>
+</full-backup-content>

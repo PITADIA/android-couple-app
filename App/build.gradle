@@ -1,0 +1,123 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
+    id 'org.jetbrains.kotlin.kapt'
+    alias(libs.plugins.kotlin.compose)
+}
+
+android {
+    namespace 'com.love2loveapp'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.love2loveapp"
+        minSdk 24
+        targetSdk 34
+        // 📱 VERSION: Synchronisée avec Info.plist iOS
+        versionCode 186
+        versionName "1.86"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+
+        // 🔑 SÉCURITÉ: Injection des clés depuis gradle.properties via BuildConfig
+        buildConfigField "String", "REVENUECAT_GOOGLE_API_KEY", "\"${project.findProperty('REVENUECAT_GOOGLE_API_KEY') ?: 'default_key'}\""
+        buildConfigField "boolean", "DEBUG_LOGGING_ENABLED", "${project.findProperty('DEBUG_LOGGING_ENABLED') ?: false}"
+
+        // 🛡️ Firebase App Check Debug Token (DEBUG uniquement)
+        buildConfigField "String", "FIREBASE_DEBUG_TOKEN", "\"${project.findProperty('FIREBASE_DEBUG_TOKEN') ?: ''}\""
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // En production, utilisez les secrets CI/CD
+            buildConfigField "String", "REVENUECAT_GOOGLE_API_KEY", "\"${System.getenv('REVENUECAT_GOOGLE_API_KEY') ?: project.findProperty('REVENUECAT_GOOGLE_API_KEY')}\""
+            // Pas de debug token en release
+            buildConfigField "String", "FIREBASE_DEBUG_TOKEN", "\"\""
+        }
+        debug {
+            // applicationIdSuffix ".debug"  // Commenté pour éviter l'erreur Firebase
+            debuggable true
+            // 🛡️ Debug token depuis environnement CI/CD ou gradle.properties
+            buildConfigField "String", "FIREBASE_DEBUG_TOKEN", "\"${System.getenv('FIREBASE_DEBUG_TOKEN') ?: project.findProperty('FIREBASE_DEBUG_TOKEN') ?: ''}\""
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+
+    buildFeatures {
+        compose true
+        buildConfig true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.5.8'
+    }
+
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+
+dependencies {
+    // Android Core
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
+    implementation 'androidx.activity:activity-compose:1.8.2'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-compose:2.7.0'
+    implementation 'androidx.lifecycle:lifecycle-process:2.7.0'
+
+    // Compose BOM
+    implementation platform('androidx.compose:compose-bom:2024.02.00')
+    implementation 'androidx.compose.ui:ui'
+    implementation 'androidx.compose.ui:ui-graphics'
+    implementation 'androidx.compose.ui:ui-tooling-preview'
+    implementation 'androidx.compose.material3:material3'
+    implementation 'androidx.compose.animation:animation'
+
+    // Firebase
+    implementation platform('com.google.firebase:firebase-bom:32.7.1')
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-firestore'
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-appcheck'
+    implementation 'com.google.firebase:firebase-appcheck-playintegrity'
+    implementation 'com.google.firebase:firebase-appcheck-debug'
+
+    // RevenueCat
+    implementation 'com.revenuecat.purchases:purchases:7.7.0'
+    
+    // Google Sign-In
+    implementation 'com.google.android.gms:play-services-auth:21.2.0'
+    
+    // Google Play Billing
+    implementation 'com.android.billingclient:billing-ktx:6.1.0'
+
+    // Badge support (facultatif)
+    implementation 'me.leolin:ShortcutBadger:1.1.22'
+
+    // Testing
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation platform('androidx.compose:compose-bom:2024.02.00')
+    androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
+    debugImplementation 'androidx.compose.ui:ui-tooling'
+    debugImplementation 'androidx.compose.ui:ui-test-manifest'
+}

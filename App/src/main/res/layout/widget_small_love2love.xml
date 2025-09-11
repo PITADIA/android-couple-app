@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Widget Small Love2Love - Équivalent iOS SmallWidgetView -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="@drawable/widget_background">
+
+    <!-- Photos de profil côte à côte -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="16dp">
+
+        <!-- Photo utilisateur (initiale) -->
+        <TextView
+            android:id="@+id/widget_user_initial"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/widget_profile_circle"
+            android:text="A"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:layout_marginEnd="12dp" />
+
+        <!-- Photo partenaire (initiale) -->
+        <TextView
+            android:id="@+id/widget_partner_initial"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/widget_profile_circle"
+            android:text="M"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <!-- Texte sur deux lignes -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- Nombre de jours + label -->
+        <TextView
+            android:id="@+id/widget_days_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="365 jours"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:gravity="center" />
+
+        <!-- Texte "ensemble" -->
+        <TextView
+            android:id="@+id/widget_together_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/widget_together_text"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/widget_text_secondary"
+            android:gravity="center"
+            android:layout_marginTop="2dp" />
+
+    </LinearLayout>
+
+    <!-- Hidden views pour la compatibilité avec le code -->
+    <TextView
+        android:id="@+id/widget_days_label"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone" />
+
+</LinearLayout>

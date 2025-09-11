@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Cercle petit pour les photos de profil miniatures -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    
+    <!-- Fond blanc transparent -->
+    <solid android:color="#26FFFFFF" />
+    
+</shape>
