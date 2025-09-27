@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 💎 Widget Premium Blocked Medium (4x2) - Widget premium bloqué étendu -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/blocked_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_background_blocked"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <!-- 💎 Section icône (gauche) -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- 💎 Icône premium grande -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="💎"
+            android:textSize="36sp"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <!-- 📝 Section texte (droite) -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginStart="12dp">
+
+        <!-- 💎 Titre premium requis -->
+        <TextView
+            android:id="@+id/blocked_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/widget_premium_required"
+            android:textSize="14sp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="start"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_marginBottom="6dp" />
+
+        <!-- 📝 Message débloquage détaillé -->
+        <TextView
+            android:id="@+id/blocked_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/widget_unlock_premium"
+            android:textSize="11sp"
+            android:textColor="#E0FFFFFF"
+            android:fontFamily="sans-serif"
+            android:gravity="start"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:lineSpacingExtra="1dp"
+            android:layout_marginBottom="4dp" />
+
+        <!-- 👆 Indication tapez -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tapez pour s'abonner"
+            android:textSize="9sp"
+            android:textColor="#C0FFFFFF"
+            android:fontFamily="sans-serif-light"
+            android:gravity="start"
+            android:maxLines="1" />
+
+    </LinearLayout>
+
+</LinearLayout>

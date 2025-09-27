@@ -27,6 +27,8 @@
     <string name="come_back_tomorrow_challenge">Volta amanhã para descobrir um novo desafio!</string>
     <string name="connect_partner_button">Ligar o meu parceiro</string>
     <string name="continue_button">Continuar</string>
+    <string name="continue_with_google">Continuar com Google</string>
+    <string name="continue_as_guest">Continuar como convidado</string>
     <string name="daily_challenge_1">Envia-lhe uma mensagem a dizer porque estás grato(a) por tê-lo(a) na tua vida.</string>
     <string name="daily_challenge_10">Criem juntos uma lista de 10 coisas que adoram fazer juntos.</string>
     <string name="daily_challenge_11">Elogia-o(a) por algo que ele(a) não nota em si.</string>
@@ -365,4 +367,15 @@
     <string name="tp_97">Preferias saber de antemão todos os bons momentos que vêm ou todos os maus?</string>
     <string name="tp_98">Preferias acordar todas as manhãs com um elogio ou com um abraço?</string>
     <string name="tp_99">Preferias deixar um legado material (dinheiro, bens) ou um legado imaterial (valores, memórias)?</string>
+    
+    <!-- Completion Step -->
+    <string name="completion_subtitle">Tudo está terminado</string>
+    <string name="completion_title_line1">Obrigado por</string>
+    <string name="completion_title_line2">confiar em nós.</string>
+    <string name="completion_description">O teu perfil está agora configurado.\nPoderás conectar o teu parceiro e começar a vossa jornada juntos!</string>
+    <string name="completion_button">Começar a aventura Love2Love</string>
+    
+    <!-- Simple strings -->
+    <string name="share">Partilhar</string>
+    <string name="or">OU</string>
 </resources>

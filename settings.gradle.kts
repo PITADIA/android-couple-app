@@ -23,6 +23,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        // JitPack pour UCrop
+        maven { url = uri("https://jitpack.io") }
         // RevenueCat repository
         maven { url = uri("https://maven.revenuecat.com") }
     }

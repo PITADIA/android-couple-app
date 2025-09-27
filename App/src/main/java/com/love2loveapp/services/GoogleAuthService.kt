@@ -48,8 +48,8 @@ class GoogleAuthService private constructor() {
     companion object {
         val instance: GoogleAuthService by lazy { GoogleAuthService() }
         
-        // Remplacez par votre Web Client ID depuis Firebase Console
-        private const val WEB_CLIENT_ID = "YOUR_WEB_CLIENT_ID_FROM_FIREBASE_CONSOLE"
+        // Web Client ID généré automatiquement par google-services.json
+        // private const val WEB_CLIENT_ID = "YOUR_WEB_CLIENT_ID_FROM_FIREBASE_CONSOLE" // Remplacé par getString
     }
     
     init {
@@ -67,14 +67,38 @@ class GoogleAuthService private constructor() {
      * À appeler depuis onCreate() de votre Activity
      */
     fun initialize(context: Context) {
+        // Récupération automatique du Web Client ID depuis google-services.json
+        val resId = context.resources.getIdentifier("default_web_client_id", "string", context.packageName)
+        if (resId == 0) {
+            Log.w("GoogleAuthService", "⚠️ default_web_client_id introuvable, utilisation du fallback")
+            val fallback = "200633504634-lac9rcnr96r84p100ndj16vlq7deubm9.apps.googleusercontent.com"
+            initializeClient(context, fallback)
+            return
+        }
+        val webClientId = context.getString(resId)
+        
+        Log.d("GoogleAuthService", "🔑 Web Client ID: $webClientId")
+        
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(WEB_CLIENT_ID)
+            .requestIdToken(webClientId)
             .requestEmail()
             .requestProfile()
             .build()
             
         googleSignInClient = GoogleSignIn.getClient(context, gso)
         Log.d("GoogleAuthService", "Google Sign-In client initialisé")
+    }
+
+    /** Helper utilisé pour le fallback */
+    private fun initializeClient(context: Context, clientId: String) {
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(clientId)
+            .requestEmail()
+            .requestProfile()
+            .build()
+
+        googleSignInClient = GoogleSignIn.getClient(context, gso)
+        Log.d("GoogleAuthService", "Google Sign-In client initialisé (fallback)")
     }
     
     /**
@@ -134,12 +158,17 @@ class GoogleAuthService private constructor() {
             
             if (result.user != null) {
                 Log.d("GoogleAuthService", "✅ Authentification réussie: ${result.user?.displayName}")
+                // 🛡️ Activer immédiatement la protection anti-déconnexion (avant tout accès Firestore)
+                com.love2loveapp.AppDelegate.userDataIntegrationService?.suppressAccountDeletionDetectionTemporarily()
                 _authError.value = null
                 
-                // Créer un document utilisateur partiel si c'est un nouvel utilisateur
+                // Gérer nouveaux utilisateurs ET utilisateurs sans document Firestore
                 if (result.additionalUserInfo?.isNewUser == true) {
                     Log.d("GoogleAuthService", "📝 Nouvel utilisateur détecté")
                     createPartialUserDocument(result.user!!)
+                } else {
+                    Log.d("GoogleAuthService", "🔄 Utilisateur existant - vérification document Firestore")
+                    verifyAndCreateDocumentIfNeeded(result.user!!)
                 }
                 
                 true
@@ -160,21 +189,71 @@ class GoogleAuthService private constructor() {
      * Crée un document utilisateur partiel pour les nouveaux utilisateurs
      */
     private fun createPartialUserDocument(firebaseUser: com.google.firebase.auth.FirebaseUser) {
-        Log.d("GoogleAuthService", "📝 Création document utilisateur partiel")
+        Log.d("GoogleAuthService", "🔥 Création profil utilisateur vide (équivalent iOS)")
         
-        // TODO: Intégrer avec votre FirebaseService pour créer le document utilisateur
-        // Exemple de données à sauvegarder:
+        // 🛡️ PROTECTION - Désactiver détection suppression temporairement (selon rapport iOS)
+        com.love2loveapp.AppDelegate.userDataIntegrationService?.suppressAccountDeletionDetectionTemporarily()
+        
+        // Données minimales pour nouvel utilisateur (selon document iOS)
         val userData = mapOf(
-            "uid" to firebaseUser.uid,
-            "name" to (firebaseUser.displayName ?: ""),
+            "id" to java.util.UUID.randomUUID().toString(),
+            "googleUserID" to firebaseUser.uid,
             "email" to (firebaseUser.email ?: ""),
-            "photoURL" to (firebaseUser.photoUrl?.toString() ?: ""),
-            "isNewUser" to true,
-            "onboardingCompleted" to false,
-            "createdAt" to System.currentTimeMillis()
+            "name" to (firebaseUser.displayName ?: ""),
+            "profileImageURL" to (firebaseUser.photoUrl?.toString() ?: ""),
+            "createdAt" to com.google.firebase.firestore.FieldValue.serverTimestamp(),
+            "lastLoginDate" to com.google.firebase.firestore.FieldValue.serverTimestamp(),
+            "onboardingInProgress" to true,
+            "isSubscribed" to false,
+            "partnerCode" to "",
+            "partnerId" to "",
+            "relationshipGoals" to emptyList<String>(),
+            "relationshipDuration" to "notInRelationship"
         )
         
-        Log.d("GoogleAuthService", "👤 Données utilisateur: $userData")
+        // Sauvegarde Firestore avec merge (équivalent iOS)
+        com.google.firebase.firestore.FirebaseFirestore.getInstance()
+            .collection("users")
+            .document(firebaseUser.uid)
+            .set(userData, com.google.firebase.firestore.SetOptions.merge())
+            .addOnSuccessListener {
+                Log.d("GoogleAuthService", "✅ Profil utilisateur vide créé avec succès")
+            }
+            .addOnFailureListener { error ->
+                Log.e("GoogleAuthService", "❌ Erreur création profil: ${error.message}")
+                _authError.value = "Erreur création profil: ${error.message}"
+            }
+    }
+    
+    /**
+     * Vérifie l'existence du document Firestore et le crée si nécessaire
+     * Équivalent iOS: loadUserData() avec fallback vers createEmptyUserProfile()
+     */
+    private fun verifyAndCreateDocumentIfNeeded(firebaseUser: com.google.firebase.auth.FirebaseUser) {
+        Log.d("GoogleAuthService", "🔍 Vérification existence document utilisateur: ${firebaseUser.uid}")
+        
+        com.google.firebase.firestore.FirebaseFirestore.getInstance()
+            .collection("users")
+            .document(firebaseUser.uid)
+            .get()
+            .addOnSuccessListener { document ->
+                if (document.exists()) {
+                    Log.d("GoogleAuthService", "✅ Document utilisateur existant trouvé")
+                } else {
+                    Log.w("GoogleAuthService", "⚠️ Document utilisateur inexistant - création nécessaire")
+                    Log.w("GoogleAuthService", "🚨 Scénario: Auth connecté mais Firestore vide = Compte possiblement supprimé")
+                    
+                    // 🛡️ PROTECTION - Désactiver détection suppression avant création (selon rapport iOS)
+                    com.love2loveapp.AppDelegate.userDataIntegrationService?.suppressAccountDeletionDetectionTemporarily()
+                    
+                    createPartialUserDocument(firebaseUser)
+                }
+            }
+            .addOnFailureListener { error ->
+                Log.e("GoogleAuthService", "❌ Erreur vérification document: ${error.message}")
+                Log.w("GoogleAuthService", "🔄 Création document par sécurité")
+                createPartialUserDocument(firebaseUser)
+            }
     }
     
     /**
@@ -223,10 +302,205 @@ class GoogleAuthService private constructor() {
     }
     
     /**
+     * 👤 Authentification anonyme (compte invité)
+     * Permet aux utilisateurs de créer un compte temporaire sans Google Sign-In
+     */
+    suspend fun signInAnonymously(): Boolean {
+        return try {
+            Log.d("GoogleAuthService", "👤 Début authentification anonyme")
+            _isProcessingAuth.value = true
+            _authError.value = null
+            
+            val result = auth.signInAnonymously().await()
+            _isProcessingAuth.value = false
+            
+            if (result.user != null) {
+                Log.d("GoogleAuthService", "✅ Authentification anonyme réussie: ${result.user?.uid}")
+                
+                // 🛡️ Activer immédiatement la protection anti-déconnexion
+                com.love2loveapp.AppDelegate.userDataIntegrationService?.suppressAccountDeletionDetectionTemporarily()
+                
+                // Créer un document utilisateur minimal pour les comptes anonymes
+                createAnonymousUserDocument(result.user!!)
+                
+                true
+            } else {
+                Log.e("GoogleAuthService", "❌ Authentification anonyme échouée")
+                _authError.value = "Échec de la création du compte invité"
+                false
+            }
+        } catch (e: Exception) {
+            _isProcessingAuth.value = false
+            Log.e("GoogleAuthService", "❌ Erreur authentification anonyme", e)
+            _authError.value = "Erreur création compte invité: ${e.localizedMessage}"
+            false
+        }
+    }
+    
+    /**
+     * Crée un document utilisateur minimal pour les comptes anonymes
+     */
+    private fun createAnonymousUserDocument(firebaseUser: com.google.firebase.auth.FirebaseUser) {
+        Log.d("GoogleAuthService", "👤 Création profil utilisateur invité")
+        
+        // 🛡️ PROTECTION - Désactiver détection suppression temporairement
+        com.love2loveapp.AppDelegate.userDataIntegrationService?.suppressAccountDeletionDetectionTemporarily()
+        
+        // Données minimales pour utilisateur invité
+        val userData = mapOf(
+            "id" to java.util.UUID.randomUUID().toString(),
+            "googleUserID" to firebaseUser.uid,
+            "email" to "",  // Pas d'email pour les comptes anonymes
+            "name" to "",  // 🔥 Nom vide pour utiliser le même mécanisme que Google Sign In
+            "profileImageURL" to "",
+            "createdAt" to com.google.firebase.firestore.FieldValue.serverTimestamp(),
+            "lastLoginDate" to com.google.firebase.firestore.FieldValue.serverTimestamp(),
+            "onboardingInProgress" to true,
+            "isSubscribed" to false,
+            "partnerCode" to "",
+            "partnerId" to "",
+            "relationshipGoals" to emptyList<String>(),
+            "relationshipDuration" to "notInRelationship",
+            "isAnonymous" to true  // 🔥 Marquer comme compte anonyme
+        )
+        
+        // Sauvegarde Firestore avec merge
+        com.google.firebase.firestore.FirebaseFirestore.getInstance()
+            .collection("users")
+            .document(firebaseUser.uid)
+            .set(userData, com.google.firebase.firestore.SetOptions.merge())
+            .addOnSuccessListener {
+                Log.d("GoogleAuthService", "✅ Profil utilisateur invité créé avec succès")
+            }
+            .addOnFailureListener { error ->
+                Log.e("GoogleAuthService", "❌ Erreur création profil invité: ${error.message}")
+                _authError.value = "Erreur création profil invité: ${error.message}"
+            }
+    }
+    
+    /**
+     * 🔗 Lie un compte anonyme existant avec Google Sign-In
+     * Permet à un utilisateur invité de sauvegarder son compte sans perdre ses données
+     */
+    suspend fun linkAnonymousWithGoogle(): Boolean {
+        return try {
+            val currentUser = auth.currentUser
+            if (currentUser?.isAnonymous != true) {
+                Log.w("GoogleAuthService", "⚠️ Tentative de liaison sur compte non-anonyme")
+                return false
+            }
+            
+            Log.d("GoogleAuthService", "🔗 Début liaison compte anonyme avec Google")
+            _isProcessingAuth.value = true
+            _authError.value = null
+            
+            // Obtenir le token Google via le flow standard
+            val googleSignInClient = this.googleSignInClient ?: return false
+            val signInTask = googleSignInClient.silentSignIn()
+            
+            val account = if (signInTask.isSuccessful) {
+                signInTask.result
+            } else {
+                // Si silent sign-in échoue, il faut un flow interactif
+                Log.w("GoogleAuthService", "⚠️ Liaison nécessite un flow interactif Google")
+                _isProcessingAuth.value = false
+                return false
+            }
+            
+            // Créer les credentials Google
+            val credential = GoogleAuthProvider.getCredential(account.idToken, null)
+            
+            // Lier le compte anonyme avec Google
+            val result = currentUser.linkWithCredential(credential).await()
+            _isProcessingAuth.value = false
+            
+            if (result.user != null) {
+                Log.d("GoogleAuthService", "✅ Liaison réussie - Compte anonyme → Google")
+                Log.d("GoogleAuthService", "🎯 UID conservé: ${result.user?.uid}")
+                Log.d("GoogleAuthService", "📧 Email ajouté: ${result.user?.email}")
+                
+                // Mettre à jour le document Firestore pour marquer comme non-anonyme
+                updateUserDocumentAfterLinking(result.user!!)
+                
+                true
+            } else {
+                Log.e("GoogleAuthService", "❌ Liaison échouée")
+                _authError.value = "Échec de la liaison avec Google"
+                false
+            }
+            
+        } catch (e: Exception) {
+            _isProcessingAuth.value = false
+            Log.e("GoogleAuthService", "❌ Erreur liaison compte anonyme", e)
+            _authError.value = "Erreur liaison Google: ${e.localizedMessage}"
+            false
+        }
+    }
+    
+    /**
+     * Met à jour le document Firestore après liaison pour marquer comme non-anonyme
+     */
+    private fun updateUserDocumentAfterLinking(firebaseUser: com.google.firebase.auth.FirebaseUser) {
+        val updates = mapOf(
+            "isAnonymous" to false,
+            "email" to (firebaseUser.email ?: ""),
+            "name" to (firebaseUser.displayName ?: "Utilisateur Invité"),
+            "profileImageURL" to (firebaseUser.photoUrl?.toString() ?: ""),
+            "lastLoginDate" to com.google.firebase.firestore.FieldValue.serverTimestamp()
+        )
+        
+        com.google.firebase.firestore.FirebaseFirestore.getInstance()
+            .collection("users")
+            .document(firebaseUser.uid)
+            .update(updates)
+            .addOnSuccessListener {
+                Log.d("GoogleAuthService", "✅ Document utilisateur mis à jour après liaison")
+            }
+            .addOnFailureListener { error ->
+                Log.e("GoogleAuthService", "❌ Erreur mise à jour après liaison: ${error.message}")
+            }
+    }
+    
+    /**
      * Efface les erreurs d'authentification
      */
     fun clearError() {
         _authError.value = null
+    }
+    
+    /**
+     * Réauthentifie l'utilisateur actuel pour les opérations sensibles
+     * Requis pour la suppression de compte selon Firebase
+     */
+    suspend fun reauthenticate(): Boolean {
+        return try {
+            val currentUser = auth.currentUser ?: return false
+            
+            Log.d("GoogleAuthService", "🔄 Réauthentification pour opération sensible")
+            
+            // Obtenir le dernier compte Google connecté
+            val lastSignedInAccount = GoogleSignIn.getLastSignedInAccount(
+                googleSignInClient?.applicationContext ?: return false
+            )
+            
+            if (lastSignedInAccount?.idToken != null) {
+                // Créer les credentials avec le token existant
+                val credential = GoogleAuthProvider.getCredential(lastSignedInAccount.idToken, null)
+                
+                // Réauthentifier avec Firebase
+                currentUser.reauthenticate(credential).await()
+                
+                Log.d("GoogleAuthService", "✅ Réauthentification réussie")
+                true
+            } else {
+                Log.w("GoogleAuthService", "⚠️ Token Google non disponible pour réauthentification")
+                false
+            }
+        } catch (e: Exception) {
+            Log.e("GoogleAuthService", "❌ Erreur réauthentification", e)
+            _authError.value = "Réauthentification requise: ${e.localizedMessage}"
+            false
+        }
     }
 }
 

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 📱 Widget Home Screen Small (2x2) - Layout principal widget Love2Love -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_background_small"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="12dp">
+
+    <!-- 💕 Compteur jours principal -->
+    <TextView
+        android:id="@+id/widget_days_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="28sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:layout_marginBottom="2dp" />
+
+    <!-- 📅 Label jours -->
+    <TextView
+        android:id="@+id/widget_days_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/widget_days_together"
+        android:textSize="10sp"
+        android:textColor="#E0FFFFFF"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:layout_marginBottom="8dp" />
+
+    <!-- 👫 Noms couple -->
+    <TextView
+        android:id="@+id/widget_couple_names"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Vous &amp; Partenaire"
+        android:textSize="11sp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:lineSpacingExtra="1dp" />
+
+</LinearLayout>

@@ -80,10 +80,29 @@ class Love2LoveWidgetProvider : AppWidgetProvider() {
         appWidgetManager: AppWidgetManager,
         appWidgetId: Int
     ) {
-        Log.d(TAG, "🔄 Mise à jour widget ID: $appWidgetId")
+        Log.d(TAG, "🔄 === MISE À JOUR WIDGET $appWidgetId ===")
         
         // Charger les données depuis SharedPreferences
         val widgetData = WidgetData.loadFromSharedPreferences(context)
+        
+        Log.d(TAG, "📊 Données chargées:")
+        if (widgetData != null) {
+            val timeComponents = widgetData.getTimeComponents()
+            Log.d(TAG, "  - widgetData: ✅ TROUVÉ")
+            Log.d(TAG, "  - daysTotal: ${widgetData.daysTotal}")
+            Log.d(TAG, "  - timeComponents.days: ${timeComponents.days}")
+            Log.d(TAG, "  - duration: ${widgetData.duration}")
+            Log.d(TAG, "  - userName: ${widgetData.userName}")
+            Log.d(TAG, "  - partnerName: ${widgetData.partnerName}")
+            Log.d(TAG, "  - lastUpdate: ${widgetData.lastUpdate}")
+            
+            if (timeComponents.days <= 0) {
+                Log.e(TAG, "❌ PROBLÈME: timeComponents.days = ${timeComponents.days}")
+                Log.e(TAG, "❌ Le widget va afficher 0 jours!")
+            }
+        } else {
+            Log.e(TAG, "  - widgetData: ❌ NULL - utilisation des données placeholder")
+        }
         
         // Déterminer la taille du widget
         val options = appWidgetManager.getAppWidgetOptions(appWidgetId)
@@ -106,7 +125,7 @@ class Love2LoveWidgetProvider : AppWidgetProvider() {
         
         // Mettre à jour le widget
         appWidgetManager.updateAppWidget(appWidgetId, views)
-        Log.d(TAG, "✅ Widget $appWidgetId mis à jour")
+        Log.d(TAG, "✅ === WIDGET $appWidgetId MIS À JOUR ===")
     }
 
     private fun createSmallWidgetView(
@@ -120,7 +139,7 @@ class Love2LoveWidgetProvider : AppWidgetProvider() {
             // Calculer les composants de temps
             val timeComponents = widgetData.getTimeComponents()
             
-            // Mettre à jour le texte principal
+            // Mettre à jour le texte principal - Seulement le nombre
             views.setTextViewText(
                 R.id.widget_days_count,
                 "${timeComponents.days}"
@@ -182,7 +201,7 @@ class Love2LoveWidgetProvider : AppWidgetProvider() {
             // Calculer les composants de temps
             val timeComponents = widgetData.getTimeComponents()
             
-            // Section gauche - Compteur
+            // Section gauche - Compteur (seulement le nombre)
             views.setTextViewText(R.id.widget_days_count, "${timeComponents.days}")
             views.setTextViewText(R.id.widget_days_label, context.getString(R.string.widget_days_label))
             views.setTextViewText(R.id.widget_together_text, context.getString(R.string.widget_together_text))

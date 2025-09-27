@@ -9,7 +9,6 @@
     <string name="NSLocationWhenInUseUsageDescription">Love2Love uses your location to calculate the distance between you and your partner, and to allow you to add places to your shared memories.</string>
     <string name="NSPhotoLibraryUsageDescription">Love2Love needs access to your photos to allow you to personalize your profile and add images to your shared memories in the couple\'s journal.</string>
     <string name="NSUserNotificationsUsageDescription">Love2Love sends you notifications when your partner sends you a message. You can disable these notifications at any time in Settings.</string>
-    <string name="about_me">About me</string>
     <string name="access_photos">Access Photos</string>
     <string name="activate_notifications_button">Activate notifications</string>
     <string name="activate_notifications_onboarding">Activate notifications</string>
@@ -270,8 +269,6 @@
     <string name="ad_99">What voice message from me has stayed with you the most?</string>
     <string name="add_1_favorite">Add 1 favorite</string>
     <string name="add_5_favorites">Add 5 favorites</string>
-    <string name="add_favorite_questions">Save your favorite questions</string>
-    <string name="add_favorites_description">Tap the heart below a card to save it here, your partner will see them too.</string>
     <string name="add_journal_events">Add memories to your journal</string>
     <string name="add_photo">Add photo</string>
     <string name="add_profile_photo">Add profile photo</string>
@@ -287,11 +284,9 @@
     <string name="app_name">Love2Love</string>
     <string name="app_tagline">The app that brings you closer</string>
     <string name="app_version">1.86</string>
-    <string name="application">Application</string>
     <string name="authentication_error">Authentication error</string>
     <string name="authentication_in_progress">Authentication in progress</string>
     <string name="authentication_required">Apple authentication required</string>
-    <string name="authorization_required">Authorization required</string>
     <string name="authorize_button">Authorize</string>
     <string name="back">Back</string>
     <string name="both_have_access">Both have access</string>
@@ -328,6 +323,10 @@
     <string name="category_tu_preferes_subtitle">Questions that reveal what really matters to you.</string>
     <string name="category_tu_preferes_title">Would you rather?</string>
     <string name="challenge_completed_button">Complete challenge</string>
+    <string name="challenge_completed">Challenge completed!</string>
+    <string name="challenge_mark_done">Mark as done</string>
+    <string name="challenge_save">Save</string>
+    <string name="challenge_saved">Challenge saved!</string>
     <string name="challenge_saved_confirmation">Challenge saved!</string>
     <string name="choose_date">Choose date</string>
     <string name="choose_location">Choose location</string>
@@ -339,7 +338,6 @@
     <string name="city">city</string>
     <string name="clean_orphan_codes">🧹 Clean orphan codes</string>
     <string name="clear_cache">Clear cache</string>
-    <string name="close">Close</string>
     <string name="code_generation">Code generation...</string>
     <string name="come_back_tomorrow_challenge">Come back tomorrow to discover a new challenge!</string>
     <string name="communication_evaluation_question">On a scale of 1 to 10, how would you rate the communication in your relationship?</string>
@@ -367,12 +365,13 @@
     <string name="connection_error">Connection error</string>
     <string name="connection_successful">Connection successful!</string>
     <string name="connection_successful_status">Connection successful...</string>
-    <string name="contact_us">Contact us</string>
     <string name="continue_button">Continue</string>
     <string name="continue_anyway">Continue anyway</string>
     <string name="continue_free_version">Continue with free version</string>
     <string name="continue_special">Continue</string>
     <string name="continue_with_apple">Continue with Apple</string>
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="continue_as_guest">Continue as Guest</string>
     <string name="continue_without_notifications_button">Continue without notifications</string>
     <string name="countdown_timer">Countdown timer</string>
     <string name="countries">countries</string>
@@ -445,6 +444,8 @@
     <string name="daily_challenge_9">Ask them a question you\'ve never asked them before.</string>
     <string name="daily_challenge_intro_subtitle">Every day, a new challenge to strengthen your bond and grow your relationship through meaningful shared actions.\nConnect to start the journey together.</string>
     <string name="daily_challenge_intro_title">Take on every challenge together 🎯</string>
+    <string name="daily_challenge_no_partner_title">Partner Required</string>
+    <string name="daily_challenge_no_partner_message">You need to connect with your partner to access daily challenges.</string>
     <string name="daily_challenge_preparing">Preparing…</string>
     <string name="daily_challenge_preparing_subtitle">We are preparing your challenge</string>
     <string name="daily_challenge_subtitle_multiple_days_remaining">✨ %d free days remaining • Then subscription required</string>
@@ -539,6 +540,7 @@
     <string name="daily_question_subtitle_subscription_required">🔒 Subscription required to continue</string>
     <string name="daily_question_title">Question of the Day</string>
     <string name="daily_question_type_response">Type your response...</string>
+    <string name="daily_question_send_button">Send</string>
     <string name="daily_questions_all_completed">Congratulations! You\'ve answered all daily questions.</string>
     <string name="daily_questions_answered">Questions answered</string>
     <string name="daily_questions_available">Daily questions available</string>
@@ -565,10 +567,7 @@
     <string name="default_notification_channel_description">General notifications from Love2Love</string>
     <string name="default_notification_channel_id">default_channel</string>
     <string name="default_notification_channel_name">Love2Love Notifications</string>
-    <string name="delete_account">Delete account</string>
-    <string name="delete_account_confirmation">This action is irreversible. All your data will be permanently deleted.\n\nApple may ask you to re-authenticate to confirm this action.</string>
-    <string name="delete_challenge_button">Delete challenge</string>
-    <string name="deleting_account">Deleting account...</string>
+    <string name="delete_challenge_button">Supprimer le défi</string>
     <string name="disconnect">Disconnect</string>
     <string name="disconnect_confirmation">Are you sure you want to disconnect from your partner? This action will remove data sharing.</string>
     <string name="discover_premium">Discover Premium</string>
@@ -844,7 +843,6 @@
     <string name="enter_partner_code">Enter your partner\'s code</string>
     <string name="entry_creation_error">Entry creation error</string>
     <string name="error">Error</string>
-    <string name="error_image_not_found">Error: Image not found</string>
     <string name="event_date">Event date</string>
     <string name="event_date_picker">Event date</string>
     <string name="event_time">Time</string>
@@ -883,8 +881,6 @@
     <string name="goal_share_more_laughs">Share more laughs together</string>
     <string name="goal_talk_avoided_subjects">Talk about what we usually avoid</string>
     <string name="happy_anniversary">Happy anniversary! 🎉</string>
-    <string name="hold_description">Touch and hold an empty area to enter edit mode.</string>
-    <string name="hold_home_screen">Touch and hold anywhere on your home screen</string>
     <string name="home">Home</string>
     <string name="home_screen">Home screen</string>
     <string name="home_screen_widget">Home Screen Widget</string>
@@ -898,7 +894,6 @@
     <string name="improvement_create_strong_moment">Share something meaningful together</string>
     <string name="improvement_revive_connection">Revive our connection</string>
     <string name="improvement_say_unsaid">Open up like never before</string>
-    <string name="in_relationship_since">Together since</string>
     <string name="invite_partner">Invite your partner</string>
     <string name="invite_partner_description">Enjoy the complete app experience together!</string>
     <string name="irreversible_action">This action is irreversible. The memory will be permanently deleted.</string>
@@ -930,7 +925,6 @@
     <string name="location_place">Place</string>
     <string name="location_services_needed">Location services are needed for the app to calculate the distance between you and your partner.</string>
     <string name="location_status">Location</string>
-    <string name="location_tutorial">Location tutorial</string>
     <string name="lock_screen">Lock screen</string>
     <string name="lock_screen_description">Tap your lock screen to start editing.</string>
     <string name="lock_screen_widget">Lock Screen Widget</string>
@@ -1197,7 +1191,6 @@
     <string name="lph_97">Do you prefer to describe what you\'d like to try in bed verbally in real life or by text?</string>
     <string name="lph_98">Do you prefer to plan when we do it or make it more spontaneous?</string>
     <string name="lph_99">What is the most subtle way I can show you my desire for you?</string>
-    <string name="manage_subscription">Manage subscription</string>
     <string name="max_64_questions">64 questions max (free category)</string>
     <string name="me_10">Is there a vulnerability you\'d like to be able to share fearlessly with me?</string>
     <string name="me_100">What\'s the thing you never want to lose in our relationship?</string>
@@ -1479,8 +1472,6 @@
     <string name="months_singular">month</string>
     <string name="more_than_2000_questions">More than 1800 questions to ask your soulmate</string>
     <string name="more_than_days">More than</string>
-    <string name="my_favorites">My Favorites</string>
-    <string name="name">Name</string>
     <string name="name_label">Name:</string>
     <string name="name_placeholder">Enter your first name</string>
     <string name="name_step_description">This information will help us personalize your experience.</string>
@@ -1495,7 +1486,6 @@
     <string name="no_challenge_available">No challenge available</string>
     <string name="no_commitment_cancel_anytime">No commitment, cancel anytime</string>
     <string name="no_events_today">No events today</string>
-    <string name="no_favorites_yet">No favorites yet</string>
     <string name="no_image">No image</string>
     <string name="no_partner_connected">No partner connected</string>
     <string name="no_payment_required_now">Start your trial — no charge today</string>
@@ -1532,14 +1522,12 @@
     <string name="onboarding_notification_explanation">You can always change this setting later in your phone\'s settings.</string>
     <string name="one_more_step">ONE MORE STEP!</string>
     <string name="open_settings">Open Settings</string>
-    <string name="open_settings_button">Open settings</string>
     <string name="others">others...</string>
     <string name="our_distance">Our distance: </string>
     <string name="our_journal">Our journal</string>
     <string name="pack_completed">You have completed the pack.</string>
     <string name="pack_name">the pack...</string>
     <string name="partner">Partner</string>
-    <string name="partner_code">Partner code</string>
     <string name="partner_connected">Partner connected:</string>
     <string name="partner_connected_status">👥 Partner Connected</string>
     <string name="partner_location_request">Ask your partner to do the same to activate their location, otherwise the distance between you cannot be calculated.</string>
@@ -1565,9 +1553,7 @@
     <string name="permission_photos">Photo access permission</string>
     <string name="photo_access_add_photos">To add photos, please authorize access in Settings</string>
     <string name="photo_access_denied_message">Photo gallery access is required to add a profile photo. Please enable it in your device settings.</string>
-    <string name="photo_access_denied_message_menu">Photo gallery access is required to change your profile photo. Please enable it in your device settings.</string>
     <string name="photo_access_description">Love2Love will only access photos you authorize</string>
-    <string name="photo_access_error_generic">Photo gallery access error</string>
     <string name="photo_access_permission">Photo access permission</string>
     <string name="photo_access_required">Photo access required</string>
     <string name="photo_permission_message">To use this feature, please authorize photo access in Settings.</string>
@@ -1720,7 +1706,6 @@
     <string name="preparation_in_progress">Preparing...</string>
     <string name="previous">Previous</string>
     <string name="privacy_message">We promise to always keep your personal information private and secure.</string>
-    <string name="privacy_policy">Privacy policy</string>
     <string name="privacy_promise">We promise to always keep your personal information private and secure.</string>
     <string name="private_answer_note">Your partner won\'t see your answer</string>
     <string name="product_loading_error">Error loading product</string>
@@ -2256,10 +2241,7 @@
     <string name="reload_cache">Reload cache</string>
     <string name="remaining_entries">Only</string>
     <string name="remaining_entries_message">Only %d %@ entr%@ remaining!</string>
-    <string name="remove">Remove</string>
     <string name="remove_1_favorite">Remove 1 favorite</string>
-    <string name="remove_favorite_confirmation">Do you want to remove this question from your favorites?</string>
-    <string name="remove_from_favorites">Remove from favorites</string>
     <string name="requires_subscription">Requires subscription</string>
     <string name="reset">Reset</string>
     <string name="response_answered">Answered</string>
@@ -2270,9 +2252,9 @@
     <string name="restricted">Restricted</string>
     <string name="retry">Retry</string>
     <string name="save">Save</string>
-    <string name="save_challenge_button">Save challenge</string>
+    <string name="save_challenge_button">Sauvegarder le défi</string>
     <string name="save_moments_together">Save your favorite moments together</string>
-    <string name="saved_challenges_title">Saved Challenges</string>
+    <string name="saved_challenges_title">Défis sauvegardés</string>
     <string name="saving">Saving...</string>
     <string name="search_description">Search for \'Love2Love\', then pick the widget you want.</string>
     <string name="search_home_description">Search for \'Love2Love\', then pick the widget you want.</string>
@@ -2308,6 +2290,14 @@
     <string name="skip_step">Skip this step</string>
     <string name="start_free">Try For Free</string>
     <string name="start_trial">START TRIAL</string>
+    
+    <!-- Plans paywall selon le rapport iOS -->
+    <string name="weekly_plan">Weekly</string>
+    <string name="monthly_plan">Monthly</string>
+    <string name="weekly_price_description">%1$s per week</string>
+    <string name="monthly_price_description">%1$s per month after free trial</string>
+    <string name="save_percentage">Save 20%</string>
+    
     <string name="status_active">Active</string>
     <string name="status_both_answered">Both responded</string>
     <string name="status_expired">Expired</string>
@@ -2332,7 +2322,6 @@
     <string name="tap_to_unlock">Tap to unlock</string>
     <string name="tap_unlock_surprise">Tap on me to unlock a surprise</string>
     <string name="terms">Terms</string>
-    <string name="terms_conditions">Terms and conditions</string>
     <string name="test_actions">⚡️ Test Actions</string>
     <string name="thank_you">Thank you for</string>
     <string name="thank_you_for">Thank you for</string>
@@ -2614,7 +2603,6 @@
     <string name="user_not_connected">User not connected</string>
     <string name="user_shared_by">Shared by: %@</string>
     <string name="validate">Validate</string>
-    <string name="view_all">View all</string>
     <string name="waiting_partner_response">Waiting for your partner\'s response...</string>
     <string name="welcome">Welcome</string>
     <string name="when_in_use_authorized">When app is in use</string>
@@ -2623,7 +2611,6 @@
     <string name="widget_dash_jours">-- days</string>
     <string name="widget_dash_km">-- km</string>
     <string name="widget_dash_m">-- m</string>
-    <string name="widget_days_label">days</string>
     <string name="widget_days_subtitle">1 day</string>
     <string name="widget_days_text">days</string>
     <string name="widget_days_total_title">Days together</string>
@@ -2644,11 +2631,148 @@
     <string name="widget_partner_enable_location">Partner must enable location</string>
     <string name="widget_small_subtitle">Small widget</string>
     <string name="widget_together_text">together</string>
-    <string name="widgets">Widgets</string>
     <string name="widgets_available">Widgets available</string>
     <string name="years_plural">years</string>
     <string name="years_singular">year</string>
     <string name="yes">Yes</string>
     <string name="you">You</string>
     <string name="you_miss_me">You miss me</string>
+    
+    <!-- Completion Step -->
+    <string name="completion_subtitle">Everything is done</string>
+    <string name="completion_title_line1">Thank you for</string>
+    <string name="completion_title_line2">trusting us.</string>
+    <string name="completion_description">Your profile is now configured.\nYou will be able to connect your partner and start your journey together!</string>
+    <string name="completion_button">Start the Love2Love adventure</string>
+    
+    <!-- Simple strings -->
+    <string name="share">Share</string>
+    <string name="or">OR</string>
+    
+    <!-- Profile & Settings Strings (nouvelles clés uniques) -->
+    <string name="profile_edit_name_title">Edit Name</string>
+    <string name="profile_edit_name_description">Enter your new display name</string>
+    <string name="profile_edit_name_error">Name cannot be empty</string>
+    <string name="profile_relationship_date_title">In couple since</string>
+    <string name="profile_relationship_date_description">Select the start date of your relationship</string>
+    <string name="profile_photo_editor_title">Change profile photo</string>
+    <string name="profile_photo_editor_description">Select a new photo and adjust it</string>
+    <string name="profile_delete_confirmation_title">Delete Account</string>
+    <string name="profile_delete_confirmation_message">Are you sure you want to permanently delete your account?</string>
+    <string name="profile_delete_confirmation_warning">This action is irreversible. All your data will be permanently deleted:</string>
+    <string name="profile_delete_confirmation_data_profile">• Profile and photo</string>
+    <string name="profile_delete_confirmation_data_messages">• Messages and conversations</string>
+    <string name="profile_delete_confirmation_data_favorites">• Favorite questions</string>
+    <string name="profile_delete_confirmation_data_partner">• Partner connection</string>
+    <string name="profile_delete_confirmation_data_journal">• Journal and memories</string>
+    <string name="profile_delete_permanently">Delete permanently</string>
+    <string name="profile_updated">Profile updated successfully</string>
+    <string name="profile_error">Error updating profile</string>
+    <string name="profile_connected_to_partner">Connected to %s</string>
+    <string name="profile_not_connected">Not connected</string>
+    <string name="profile_learn_to_use">Learn to use</string>
+    <string name="profile_configure_widgets">Configure widgets</string>
+    <string name="profile_write_to_us">Write to us</string>
+    <string name="profile_terms_of_use">Terms of use</string>
+    <string name="profile_privacy_policy_title">Privacy policy</string>
+    
+    <!-- 📱 Widget System - Strings manquants pour compilation -->
+    <string name="widget_days_together">days together</string>
+    <string name="widget_error_message">Widget error, please update</string>
+    
+    <string name="widget_distance_error">Distance error</string>
+    <string name="widget_distance_premium_title">Distance Premium</string>
+    <string name="widget_distance_premium_message">Subscribe to see distance</string>
+    <string name="widget_premium_required">Premium required</string>
+    <string name="widget_unlock_premium">Unlock premium widgets</string>
+    <string name="widget_no_location">Position unknown</string>
+    <string name="widget_enable_location">Enable location</string>
+    <string name="widget_connect_partner">Connect your partner</string>
+    <string name="widget_days_label">days</string>
+    <string name="main_widget">Main Widget</string>
+    <string name="distance_widget">Distance Widget</string>
+    
+    <!-- 🎓 Widget Tutorials - Strings essentiels manquants -->
+    <string name="home_screen_widget_tutorial">Home Screen Widget</string>
+    <string name="lock_screen_widget_tutorial">Lock Screen Widget</string>
+    <string name="tutorial_skip">Skip</string>
+    <string name="tutorial_previous">Previous</string>
+    <string name="tutorial_next">Next</string>
+    <string name="tutorial_finish">Finish</string>
+    <string name="customize">Customize</string>
+    <string name="premium_required">Premium required</string>
+    <string name="widget_customize_description">Customize widget settings</string>
+    <string name="hold_home_screen">Hold the home screen</string>
+    <string name="hold_description">Press and hold an empty area on your home screen</string>
+    <string name="search_love2love_lock">Search Love2Love</string>
+    <string name="search_lock_description">Find and add Love2Love widgets to your lock screen</string>
+    
+    <!-- 📊 Statistics Section - Individual Statistics Cards (keys already exist) -->
+    
+    <!-- 📊 Statistics Actions and Details -->
+    <string name="refresh_statistics">Actualiser les statistiques</string>
+    <string name="statistics_last_updated">Dernière mise à jour: %s</string>
+    <string name="no_statistics_data">Aucune donnée statistique disponible</string>
+    <string name="statistics_loading">Calcul des statistiques en cours...</string>
+    <string name="statistics_error">Erreur calcul statistiques</string>
+    <string name="statistics_retry">Réessayer</string>
+    
+    <!-- Journal Map Screen -->
+    <string name="journal_map_title">Map Journal</string>
+    <string name="journal_no_events_with_location">No events with location</string>
+    <string name="journal_add_location_message">Add a location to your events to see them on the map</string>
+    
+    <!-- Journal Delete Dialog -->
+    <string name="delete_memory_title">Delete this memory?</string>
+    
+    <!-- 📊 Time Formatting for Statistics (all keys already exist) -->
+    
+    <!-- 📊 Motivational Messages -->
+    <string name="stats_new_couple">Nouveau couple, grandes émotions ! 🌟</string>
+    <string name="stats_growing_love">Votre amour grandit chaque jour ! 💖</string>
+    <string name="stats_beautiful_story">Une belle histoire qui se construit ! 👑</string>
+    <string name="stats_lasting_love">Un amour qui dure dans le temps ! ✨</string>
+    
+    <!-- Favoris -->
+    <string name="my_favorites">Mes favoris</string>
+    <string name="add_favorite_questions">Ajoutez des questions favorites</string>
+    <string name="add_favorites_description">Ajoutez en favoris les questions qui vous plaisent le plus pour les retrouver facilement et les partager avec votre partenaire.</string>
+    <string name="no_favorites_yet">Pas encore de favoris</string>
+    <string name="view_all">Voir tout</string>
+    <string name="remove_from_favorites">Retirer des favoris</string>
+    <string name="remove">Retirer</string>
+    <string name="remove_favorite_confirmation">Cette question sera retirée de vos favoris. Vous pourrez la remettre en favoris depuis sa catégorie.</string>
+    
+    <!-- Menu/Profil -->
+    <string name="about_me">À propos de moi</string>
+    <string name="application">Application</string>
+    <string name="name">Nom</string>
+    <string name="in_relationship_since">En couple depuis</string>
+    <string name="edit_relationship_start">Modifier la date de début de relation</string>
+    <string name="partner_code">Code partenaire</string>
+    <string name="location_tutorial">Tutoriel de localisation</string>
+    <string name="widgets">Widgets</string>
+    <string name="manage_subscription">Gérer son abonnement</string>
+    <string name="contact_us">Contactez-nous</string>
+    <string name="terms_conditions">Conditions générales</string>
+    <string name="privacy_policy">Politique de confidentialité</string>
+    <string name="delete_account">Supprimer le compte</string>
+    <string name="delete_account_confirmation">Cette action est irréversible. Toutes vos données seront définitivement supprimées.</string>
+    <string name="deleting_account">Suppression du compte...</string>
+    <string name="authorization_required">Autorisation requise</string>
+    <string name="photo_access_denied_message_menu">L\'accès aux photos est requis pour modifier votre photo de profil. Veuillez autoriser l\'accès dans les réglages.</string>
+    <string name="photo_access_error_generic">Erreur d\'accès aux photos. Veuillez réessayer.</string>
+    <string name="open_settings_button">Ouvrir les paramètres</string>
+    <string name="error_image_not_found">Image non trouvée</string>
+    <string name="close">Fermer</string>
+    
+    <!-- 🔖 Clés Défis Sauvegardés -->
+    <string name="no_saved_challenges">Aucun défi sauvegardé</string>
+    <string name="save_challenges_description">Sauvegardez vos défis préférés pour les retrouver facilement ici !</string>
+    <string name="delete_challenge_title">Supprimer ce défi ?</string>
+    <string name="delete_challenge_message">Ce défi sera retiré de vos bookmarks.</string>
+    <string name="delete_action">Supprimer</string>
+    <string name="cancel_action">Annuler</string>
+    <string name="loading_saved_challenges">Chargement des défis sauvegardés…</string>
+    
 </resources>

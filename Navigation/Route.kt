@@ -8,17 +8,17 @@ sealed interface Route {
     /**
      * Écran de chargement initial
      */
-    data object Splash : Route
+    object Splash : Route
     
     /**
      * Processus d'onboarding
      */
-    data object Onboarding : Route
+    object Onboarding : Route
     
     /**
      * Écran principal de l'application
      */
-    data object Main : Route
+    object Main : Route
     
     /**
      * Contenu quotidien avec paramètre jour
@@ -28,22 +28,22 @@ sealed interface Route {
     /**
      * Écran de connexion partenaire
      */
-    data object PartnerConnection : Route
+    object PartnerConnection : Route
     
     /**
      * Paywall d'abonnement
      */
-    data object Paywall : Route
+    object Paywall : Route
     
     /**
      * Paramètres de l'application
      */
-    data object Settings : Route
+    object Settings : Route
     
     /**
      * Journal du couple
      */
-    data object Journal : Route
+    object Journal : Route
 }
 
 /**

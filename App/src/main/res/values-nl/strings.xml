@@ -373,6 +373,8 @@
     <string name="continue_free_version">Doorgaan met gratis versie</string>
     <string name="continue_special">Doorgaan</string>
     <string name="continue_with_apple">Doorgaan met Apple</string>
+    <string name="continue_with_google">Doorgaan met Google</string>
+    <string name="continue_as_guest">Doorgaan als gast</string>
     <string name="continue_without_notifications_button">Doorgaan zonder meldingen</string>
     <string name="countdown_timer">Afteltimer</string>
     <string name="countries">landen</string>
@@ -899,6 +901,7 @@
     <string name="improvement_revive_connection">Herleef onze connectie</string>
     <string name="improvement_say_unsaid">Open jezelf als nooit tevoren</string>
     <string name="in_relationship_since">Samen sinds</string>
+    <string name="edit_relationship_start">Relatie startdatum bewerken</string>
     <string name="invite_partner">Nodig je partner uit</string>
     <string name="invite_partner_description">Geniet samen van de volledige app-ervaring!</string>
     <string name="irreversible_action">Deze actie is onomkeerbaar. De herinnering wordt permanent verwijderd.</string>
@@ -2649,4 +2652,15 @@
     <string name="yes">Ja</string>
     <string name="you">Jij</string>
     <string name="you_miss_me">Mis je me</string>
+    
+    <!-- Completion Step -->
+    <string name="completion_subtitle">Alles is klaar</string>
+    <string name="completion_title_line1">Dank je voor</string>
+    <string name="completion_title_line2">je vertrouwen.</string>
+    <string name="completion_description">Je profiel is nu geconfigureerd.\nJe kunt je partner verbinden en samen jullie reis beginnen!</string>
+    <string name="completion_button">Begin het Love2Love avontuur</string>
+    
+    <!-- Simple strings -->
+    <string name="share">Delen</string>
+    <string name="or">OF</string>
 </resources>

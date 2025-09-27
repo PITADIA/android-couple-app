@@ -1,23 +1,17 @@
 package com.love2loveapp.views.onboarding
 
 import android.widget.NumberPicker
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.viewinterop.AndroidView
+import com.love2loveapp.R
 import java.time.LocalDate
 import java.time.YearMonth
 
@@ -28,12 +22,16 @@ fun RelationshipDateStepScreen(
     onContinue: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val background = Color(0xFFF7F7FA)
-    val ctaColor = Color(0xFFFD267A)
-
-    // Default = one year ago (matching Swift onAppear behavior)
+    val context = LocalContext.current
+    
+    // Default = année actuelle avec mois/jour de l'année dernière pour une date valide dans le passé
     var currentDate by rememberSaveable(stateSaver = LocalDateSaver) {
-        mutableStateOf(selectedDate ?: LocalDate.now().minusYears(1))
+        mutableStateOf(selectedDate ?: run {
+            val now = LocalDate.now()
+            val oneYearAgo = now.minusYears(1)
+            // Année actuelle, mais mois/jour de l'année dernière
+            LocalDate.of(now.year, oneYearAgo.month, oneYearAgo.dayOfMonth)
+        })
     }
 
     // Update parent when date changes
@@ -41,78 +39,44 @@ fun RelationshipDateStepScreen(
         onDateChange(currentDate)
     }
 
-    Scaffold(
-        containerColor = background,
-        bottomBar = {
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(Color.White)
-            ) {
-                Button(
-                    onClick = onContinue,
-                    modifier = Modifier
-                        .padding(horizontal = 30.dp, vertical = 30.dp)
-                        .fillMaxWidth()
-                        .height(56.dp)
-                        .clip(MaterialTheme.shapes.extraLarge),
-                    colors = ButtonDefaults.buttonColors(containerColor = ctaColor)
-                ) {
-                    Text(
-                        text = "Continue",
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.SemiBold,
-                        color = Color.White
-                    )
-                }
-            }
-        }
-    ) { inner ->
+    Surface(
+        modifier = modifier.fillMaxSize(),
+        color = OnboardingColors.Background
+    ) {
         Column(
-            modifier = modifier
-                .fillMaxSize()
-                .padding(inner)
+            modifier = Modifier.fillMaxSize()
         ) {
-            Spacer(modifier = Modifier.height(40.dp))
+            Spacer(Modifier.height(OnboardingDimensions.TitleContentSpacing))
 
-            // Title row (left aligned)
-            Row(
-                modifier = Modifier.padding(horizontal = 30.dp),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    text = "How long have you been together?",
-                    fontSize = 36.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = Color.Black,
-                    lineHeight = 40.sp,
-                    modifier = Modifier.weight(1f)
-                )
-            }
+            // Titre selon les spécifications du rapport
+            Text(
+                text = stringResource(R.string.relationship_duration_question),
+                style = OnboardingTypography.TitleLarge,
+                modifier = Modifier.padding(horizontal = OnboardingDimensions.HorizontalPadding)
+            )
 
-            // First spacer to center content
             Spacer(modifier = Modifier.weight(1f))
 
-            // Main content (date wheels)
+            // DatePickerCarousel selon le rapport
             Column(
                 modifier = Modifier
-                    .padding(horizontal = 30.dp)
+                    .padding(horizontal = OnboardingDimensions.HorizontalPadding)
                     .fillMaxWidth(),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 DatePickerCarousel(
                     selectedDate = currentDate,
-                    onDateChange = { currentDate = it },
-                    months = listOf(
-                        "January", "February", "March", "April", "May", "June",
-                        "July", "August", "September", "October", "November", "December"
-                    ),
-                    yearsDesc = (LocalDate.now().year downTo 1990).toList()
+                    onDateChange = { currentDate = it }
                 )
             }
 
-            // Second spacer to push bottom bar down
             Spacer(modifier = Modifier.weight(1f))
+
+            // Zone bouton selon les spécifications du rapport
+            OnboardingButtonZone(
+                onContinueClick = onContinue,
+                isContinueEnabled = true
+            )
         }
     }
 }
@@ -120,10 +84,30 @@ fun RelationshipDateStepScreen(
 @Composable
 private fun DatePickerCarousel(
     selectedDate: LocalDate,
-    onDateChange: (LocalDate) -> Unit,
-    months: List<String>,
-    yearsDesc: List<Int>, // descending, e.g., 2025..1990
+    onDateChange: (LocalDate) -> Unit
 ) {
+    val context = LocalContext.current
+    
+    // Mois localisés depuis strings.xml
+    val localizedMonths = listOf(
+        stringResource(R.string.month_january),
+        stringResource(R.string.month_february),
+        stringResource(R.string.month_march),
+        stringResource(R.string.month_april),
+        stringResource(R.string.month_may),
+        stringResource(R.string.month_june),
+        stringResource(R.string.month_july),
+        stringResource(R.string.month_august),
+        stringResource(R.string.month_september),
+        stringResource(R.string.month_october),
+        stringResource(R.string.month_november),
+        stringResource(R.string.month_december)
+    )
+    
+    // Plage d'années raisonnable : de l'année actuelle jusqu'à 50 ans en arrière
+    val currentYear = LocalDate.now().year
+    val yearsDesc = (currentYear downTo (currentYear - 50)).toList()
+    
     var day by rememberSaveable { mutableStateOf(selectedDate.dayOfMonth) }
     var month by rememberSaveable { mutableStateOf(selectedDate.monthValue) } // 1..12
     var year by rememberSaveable { mutableStateOf(selectedDate.year) }
@@ -140,35 +124,37 @@ private fun DatePickerCarousel(
         onDateChange(LocalDate.of(year, month, day))
     }
 
+    // HStack avec 3 Pickers selon le rapport
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .height(200.dp),
+            .height(OnboardingDimensions.DatePickerHeight),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        // MONTH picker (1..12) with localized labels
+        // MONTH picker avec mois localisés
         AndroidView(
             factory = { ctx ->
                 NumberPicker(ctx).apply {
                     wrapSelectorWheel = true
                     minValue = 1
                     maxValue = 12
-                    displayedValues = months.toTypedArray()
+                    displayedValues = localizedMonths.toTypedArray()
                     value = month
                     setOnValueChangedListener { _, _, newVal -> month = newVal }
+                    textSize = 18 * ctx.resources.displayMetrics.density
                 }
             },
             update = { picker ->
                 picker.displayedValues = null
                 picker.minValue = 1
                 picker.maxValue = 12
-                picker.displayedValues = months.toTypedArray()
+                picker.displayedValues = localizedMonths.toTypedArray()
                 if (picker.value != month) picker.value = month
             },
             modifier = Modifier.weight(1f)
         )
 
-        // DAY picker (1..daysInMonth)
+        // DAY picker (1...daysInSelectedMonth selon le rapport)
         AndroidView(
             factory = { ctx ->
                 NumberPicker(ctx).apply {
@@ -177,6 +163,7 @@ private fun DatePickerCarousel(
                     maxValue = daysInMonth
                     value = day
                     setOnValueChangedListener { _, _, newVal -> day = newVal }
+                    textSize = 18 * ctx.resources.displayMetrics.density
                 }
             },
             update = { picker ->
@@ -190,20 +177,24 @@ private fun DatePickerCarousel(
             modifier = Modifier.weight(1f)
         )
 
-        // YEAR picker (descending order with displayedValues)
+        // YEAR picker - années de l'année actuelle vers le passé
         val yearIndex = remember(year, yearsDesc) { yearsDesc.indexOf(year).coerceAtLeast(0) }
         AndroidView(
             factory = { ctx ->
                 NumberPicker(ctx).apply {
-                    wrapSelectorWheel = true
+                    wrapSelectorWheel = false // Désactiver le défilement circulaire pour éviter de dépasser les limites
                     minValue = 0
                     maxValue = yearsDesc.lastIndex
                     displayedValues = yearsDesc.map { it.toString() }.toTypedArray()
                     value = yearIndex
                     setOnValueChangedListener { _, _, newIndex ->
                         val newYear = yearsDesc.getOrNull(newIndex) ?: year
-                        year = newYear
+                        // S'assurer qu'on ne dépasse pas l'année actuelle
+                        if (newYear <= currentYear) {
+                            year = newYear
+                        }
                     }
+                    textSize = 18 * ctx.resources.displayMetrics.density
                 }
             },
             update = { picker ->

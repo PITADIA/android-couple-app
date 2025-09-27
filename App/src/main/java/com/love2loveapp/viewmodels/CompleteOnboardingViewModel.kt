@@ -13,6 +13,16 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import java.time.LocalDate
+import com.love2loveapp.services.profile.ProfileRepository
+import com.love2loveapp.services.cache.UserCacheManager
+import com.love2loveapp.AppDelegate
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import android.net.Uri
+import android.provider.MediaStore
+import java.io.ByteArrayOutputStream
+import java.io.File
+import java.io.FileOutputStream
 
 /**
  * ViewModel complet pour l'onboarding Love2Love avec toutes les 17 étapes
@@ -97,6 +107,9 @@ class CompleteOnboardingViewModel : ViewModel() {
         OnboardingStep.ProfilePhoto,
         OnboardingStep.Completion,
         OnboardingStep.Loading,
+        OnboardingStep.PartnerCode,        // Pas de retour à partir du code partenaire
+        OnboardingStep.QuestionsIntro,     // Pas de retour pour intro questions
+        OnboardingStep.CategoriesPreview,  // Pas de retour pour aperçu catégories
         OnboardingStep.Subscription
     )
 
@@ -134,14 +147,16 @@ class CompleteOnboardingViewModel : ViewModel() {
             OnboardingStep.Confidence -> _currentStep.value = OnboardingStep.Complicity
             OnboardingStep.Complicity -> _currentStep.value = OnboardingStep.Authentication
             OnboardingStep.Authentication -> {
-                // Vérifier si Google a fourni un nom d'affichage
+                // Toujours aller vers DisplayName (comme iOS)
+                // Si Google a fourni un nom, il sera pré-rempli
                 val googleName = FirebaseAuth.getInstance().currentUser?.displayName
                 if (!googleName.isNullOrBlank()) {
                     _userName.value = googleName
-                    _currentStep.value = OnboardingStep.ProfilePhoto
+                    Log.d("CompleteOnboardingVM", "✅ Nom Google fourni ($googleName) - Pré-remplissage DisplayName")
                 } else {
-                    _currentStep.value = OnboardingStep.DisplayName
+                    Log.d("CompleteOnboardingVM", "⚠️ Pas de nom Google - DisplayName requis")
                 }
+                _currentStep.value = OnboardingStep.DisplayName
             }
             OnboardingStep.DisplayName -> _currentStep.value = OnboardingStep.ProfilePhoto
             OnboardingStep.ProfilePhoto -> _currentStep.value = OnboardingStep.Completion
@@ -253,7 +268,12 @@ class CompleteOnboardingViewModel : ViewModel() {
 
     fun updateProfileImage(bitmap: Bitmap) {
         _profileImage.value = bitmap
-        Log.d("CompleteOnboardingVM", "📷 Image de profil mise à jour")
+        Log.d("CompleteOnboardingVM", "📷 Image de profil mise à jour dans ViewModel")
+        
+        // 🎯 Stockage temporaire via ProfileImageManager (comme iOS)
+        val profileImageManager = AppDelegate.profileImageManager
+        profileImageManager?.setTemporaryUserImage(bitmap)
+        Log.d("CompleteOnboardingVM", "📸 Image stockée temporairement dans ProfileImageManager")
     }
 
     // Authentification Google
@@ -268,14 +288,17 @@ class CompleteOnboardingViewModel : ViewModel() {
         val googleDisplayName = FirebaseAuth.getInstance().currentUser?.displayName
         Log.d("CompleteOnboardingVM", "🔐 googleUserDisplayName='${googleDisplayName ?: "null"}'")
 
+        // Toujours aller vers DisplayName (comme iOS) - ne plus sauter cette étape
         if (!googleDisplayName.isNullOrBlank()) {
-            Log.d("CompleteOnboardingVM", "✅ Nom Google fourni ($googleDisplayName) - Skip DisplayName step")
+            Log.d("CompleteOnboardingVM", "✅ Nom Google fourni ($googleDisplayName) - Pré-remplir DisplayName")
             _userName.value = googleDisplayName
-            _currentStep.value = OnboardingStep.ProfilePhoto
         } else {
-            Log.d("CompleteOnboardingVM", "❌ Aucun nom Google - Aller vers DisplayName")
-            _currentStep.value = OnboardingStep.DisplayName
+            Log.d("CompleteOnboardingVM", "⚠️ Pas de nom Google - DisplayName vide")
         }
+        
+        // Toujours aller vers DisplayName (cohérent avec nextStep())
+        _currentStep.value = OnboardingStep.DisplayName
+        Log.d("CompleteOnboardingVM", "🔥 Changement d'étape vers: DisplayName")
     }
 
     // Gestion des données et finalisation
@@ -295,6 +318,16 @@ class CompleteOnboardingViewModel : ViewModel() {
         finalizeOnboarding(withSubscription = false)
     }
 
+    fun skipSubscriptionDueToInheritance() {
+        Log.d("CompleteOnboardingVM", "🔥 Abonnement hérité du partenaire -> finalisation premium")
+        finalizeOnboarding(withSubscription = true)
+    }
+
+    fun showPartnerConnectionSuccess(partnerName: String) {
+        Log.d("CompleteOnboardingVM", "💕 Partenaire connecté: $partnerName")
+        // Optionnel: afficher une notification de succès
+    }
+
     fun completeSubscription() {
         if (isCompletingSubscriptionGuard) {
             Log.d("CompleteOnboardingVM", "🔥 Appel ignoré, finalisation déjà en cours")
@@ -305,16 +338,7 @@ class CompleteOnboardingViewModel : ViewModel() {
         finalizeOnboarding(withSubscription = true)
     }
 
-    fun skipSubscriptionDueToInheritance() {
-        Log.d("CompleteOnboardingVM", "🔥 Abonnement hérité du partenaire -> skip subscription")
-        _shouldSkipSubscription.value = true
-    }
-
-    fun showPartnerConnectionSuccess(partnerName: String) {
-        Log.d("CompleteOnboardingVM", "🎉 Connexion partenaire: $partnerName")
-        _connectedPartnerName.value = partnerName
-        _shouldShowPartnerConnectionSuccess.value = true
-    }
+    // Fonctions dupliquées supprimées - déjà définies plus haut
 
     fun dismissPartnerConnectionSuccess() {
         Log.d("CompleteOnboardingVM", "🎉 Fermeture message connexion")
@@ -325,6 +349,15 @@ class CompleteOnboardingViewModel : ViewModel() {
     // Vérification si la barre de progression doit être affichée
     fun shouldShowProgressBar(): Boolean {
         return _currentStep.value !in hiddenProgressSteps
+    }
+
+    // Vérification si la flèche retour doit être affichée
+    fun shouldShowBackButton(): Boolean {
+        // Pas de flèche retour sur la première page (RelationshipGoals)
+        // et pas de flèche retour à partir du code partenaire et après
+        return _currentStep.value != OnboardingStep.RelationshipGoals &&
+               _currentStep.value !in hiddenProgressSteps &&
+               _currentStep.value.ordinal < OnboardingStep.PartnerCode.ordinal
     }
 
     private fun finalizeOnboarding(withSubscription: Boolean) {
@@ -342,14 +375,90 @@ class CompleteOnboardingViewModel : ViewModel() {
         Log.d("CompleteOnboardingVM", "📊 Firebase event: onboarding_complete")
 
         viewModelScope.launch {
-            // TODO: Intégrer avec votre FirebaseService pour sauvegarder les données
-            // val improvementString = _selectedImprovements.value.joinToString(", ").ifBlank { null }
-            // firebaseService.finalizeOnboardingWithPartnerData(...)
+            // 🎯 GÉNÉRATION UUID IDENTIQUE iOS - Utiliser UUID Firebase ou générer
+            val currentUser = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser
+            val userId = currentUser?.uid ?: com.love2loveapp.utils.UserNameGenerator.generateUserId()
+            
+            // 🔥 CRÉATION UTILISATEUR AVEC AUTO-GÉNÉRATION (équivalent iOS)
+            // Si _userName.value est vide, le modèle User va automatiquement générer
+            // "Utilisateur" + 4 premiers caractères de l'UUID (français) ou "User" + 4 premiers (anglais)
+            Log.d("CompleteOnboardingVM", "🎯 CRÉATION USER - DONNÉES D'ENTRÉE:")
+            Log.d("CompleteOnboardingVM", "  - userId: '$userId'")
+            Log.d("CompleteOnboardingVM", "  - _userName.value: '${_userName.value}'")
+            Log.d("CompleteOnboardingVM", "  - _userName.value.isBlank(): ${_userName.value.isBlank()}")
+            
+            val user = com.love2loveapp.models.User(
+                id = userId,
+                _rawName = _userName.value, // ← Peut être vide, auto-génération dans le modèle
+                isSubscribed = withSubscription,
+                relationshipGoals = _selectedGoals.value,
+                relationshipDuration = _relationshipStartDate.value?.toString(),
+                relationshipImprovement = _selectedImprovements.value.joinToString(", ").ifBlank { null },
+                questionMode = null,
+                onboardingInProgress = false
+            )
+            
+            Log.d("CompleteOnboardingVM", "🔥 USER CRÉÉ - VÉRIFICATION:")
+            Log.d("CompleteOnboardingVM", "  - user.name (propriété calculée): '${user.name}'")
+            Log.d("CompleteOnboardingVM", "  - user.id: '${user.id}'")
             
             Log.d("CompleteOnboardingVM", "✅ Onboarding finalisé avec succès")
-            isCompletingSubscriptionGuard = false
+            Log.d("CompleteOnboardingVM", "👤 Utilisateur créé: ${user.name}")
+            Log.d("CompleteOnboardingVM", "🎯 Abonnement: $withSubscription")
             
-            // TODO: Notifier AppState que l'onboarding est terminé
+            // 🔥 FINALISATION IMAGE PROFIL via ProfileImageManager (comme iOS)
+            Log.d("CompleteOnboardingVM", "📸 Finalisation image profil via ProfileImageManager...")
+            try {
+                val profileImageManager = AppDelegate.profileImageManager
+                if (profileImageManager != null) {
+                    // 🔄 APPEL SUSPEND DANS COROUTINE (FIX CRITIQUE)
+                    val result = profileImageManager.finalizeOnboardingImage()
+                    result.onSuccess { downloadUrl ->
+                        if (downloadUrl != null) {
+                            Log.d("CompleteOnboardingVM", "✅ Image profil finalisée: $downloadUrl")
+                        } else {
+                            Log.d("CompleteOnboardingVM", "ℹ️ Pas d'image profil à finaliser")
+                        }
+                    }.onFailure { error ->
+                        Log.w("CompleteOnboardingVM", "⚠️ Finalisation image échouée: ${error.message}")
+                    }
+                } else {
+                    Log.w("CompleteOnboardingVM", "⚠️ ProfileImageManager non disponible")
+                }
+            } catch (e: Exception) {
+                Log.e("CompleteOnboardingVM", "❌ Erreur finalisation image profil: ${e.message}")
+            }
+            
+            // Notifier AppState que l'onboarding est terminé
+            try {
+                val appState = com.love2loveapp.AppDelegate.appState
+                appState.setAuthenticated(true, user)
+                appState.completeOnboarding()
+                Log.d("CompleteOnboardingVM", "🚀 Navigation vers écran principal")
+
+                // 🔄 Persister l'état d'onboarding terminé dans Firestore
+                try {
+                    val uid = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser?.uid
+                    if (uid != null) {
+                        com.google.firebase.firestore.FirebaseFirestore.getInstance()
+                            .collection("users")
+                            .document(uid)
+                            .update("onboardingInProgress", false)
+                            .addOnSuccessListener {
+                                Log.d("CompleteOnboardingVM", "✅ Champ onboardingInProgress mis à false dans Firestore")
+                            }
+                            .addOnFailureListener { e ->
+                                Log.e("CompleteOnboardingVM", "❌ Erreur mise à jour onboardingInProgress: ${e.message}")
+                            }
+                    }
+                } catch (e: Exception) {
+                    Log.e("CompleteOnboardingVM", "❌ Exception mise à jour onboardingInProgress: ${e.message}")
+                }
+            } catch (e: Exception) {
+                Log.e("CompleteOnboardingVM", "❌ Erreur lors de la finalisation", e)
+            }
+            
+            isCompletingSubscriptionGuard = false
         }
     }
 
@@ -371,6 +480,26 @@ class CompleteOnboardingViewModel : ViewModel() {
             context.getString(com.love2loveapp.R.string.improvement_break_routine),
             context.getString(com.love2loveapp.R.string.improvement_say_unsaid)
         )
+    }
+
+    /**
+     * Helper pour sauvegarder bitmap temporairement pour upload Firebase
+     */
+    private suspend fun saveBitmapToTempFile(bitmap: Bitmap): Uri? = withContext(Dispatchers.IO) {
+        try {
+            val context = AppDelegate.getInstance()
+            val tempFile = File(context.cacheDir, "temp_profile_${System.currentTimeMillis()}.jpg")
+            
+            FileOutputStream(tempFile).use { out ->
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 80, out)
+            }
+            
+            Log.d("CompleteOnboardingVM", "📁 Fichier temporaire créé: ${tempFile.absolutePath}")
+            Uri.fromFile(tempFile)
+        } catch (e: Exception) {
+            Log.e("CompleteOnboardingVM", "❌ Erreur création fichier temporaire: ${e.message}")
+            null
+        }
     }
 }
 

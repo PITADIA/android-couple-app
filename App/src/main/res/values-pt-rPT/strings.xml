@@ -347,6 +347,8 @@
     <string name="connection_successful_status">Conexão bem-sucedida...</string>
     <string name="contact_us">Contacta-nos</string>
     <string name="continue_button">Continuar</string>
+    <string name="continue_with_google">Continuar com Google</string>
+    <string name="continue_as_guest">Continuar como convidado</string>
     <string name="continue_anyway">Continuar mesmo assim</string>
     <string name="continue_free_version">Continuar com a versão gratuita</string>
     <string name="continue_special">Continuar</string>
@@ -811,6 +813,7 @@
     <string name="improvement_say_unsaid">Dizer o que nunca foi dito</string>
     <string name="in_relationship_since">Em casal desde</string>
     <string name="invite_partner">Convida o teu parceiro</string>
+    <string name="edit_relationship_start">Editar data de início da relação</string>
     <string name="invite_partner_description">Aproveitem juntos a experiência completa da aplicação!</string>
     <string name="irreversible_action">Esta ação é irreversível. A memória será eliminada permanentemente.</string>
     <string name="journal">Diário</string>
@@ -2296,4 +2299,15 @@
     <string name="yes">Sim</string>
     <string name="you">Tu</string>
     <string name="you_miss_me">Tens saudades minhas</string>
+    
+    <!-- Completion Step -->
+    <string name="completion_subtitle">Tudo está terminado</string>
+    <string name="completion_title_line1">Obrigado por</string>
+    <string name="completion_title_line2">confiares em nós.</string>
+    <string name="completion_description">O teu perfil está agora configurado.\nPoderás ligar o teu parceiro e começar a vossa jornada juntos!</string>
+    <string name="completion_button">Começar a aventura Love2Love</string>
+    
+    <!-- Simple strings -->
+    <string name="share">Partilhar</string>
+    <string name="or">OU</string>
 </resources>

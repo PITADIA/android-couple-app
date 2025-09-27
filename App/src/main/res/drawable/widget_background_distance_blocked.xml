@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 💎🌍 Widget Background Distance Blocked - Arrière-plan widget distance premium bloqué -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    
+    <!-- Gradient sombre avec nuance bleue -->
+    <gradient
+        android:startColor="#37474f"
+        android:endColor="#546e7a"
+        android:angle="135" />
+    
+    <!-- Coins arrondis -->
+    <corners android:radius="16dp" />
+    
+    <!-- Stroke premium doré -->
+    <stroke
+        android:width="2dp"
+        android:color="#FFD700" />
+        
+</shape>

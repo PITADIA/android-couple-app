@@ -14,6 +14,9 @@
     <color name="love_orange">#FF655B</color>
     <color name="notification_color">@color/love_pink</color>
     
+    <!-- 🚀 Couleur pour éliminer le flash au lancement -->
+    <color name="splash_background">@color/love_pink</color>
+    
     <!-- Statut bars -->
     <color name="status_bar">@color/love_pink</color>
     

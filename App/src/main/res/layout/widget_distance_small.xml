@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 🌍 Widget Distance Small (2x2) - Widget distance partenaires -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_distance_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_background_distance"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="12dp">
+
+    <!-- 🌍 Distance principale avec emoji -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="4dp">
+
+        <!-- 📍 Emoji distance -->
+        <TextView
+            android:id="@+id/widget_distance_emoji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📍"
+            android:textSize="16sp"
+            android:layout_marginEnd="6dp" />
+
+        <!-- 🌍 Valeur distance -->
+        <TextView
+            android:id="@+id/widget_distance_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2.5 km"
+            android:textSize="22sp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <!-- 👫 Noms partenaires -->
+    <TextView
+        android:id="@+id/widget_partner_names"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Vous &amp; Partenaire"
+        android:textSize="11sp"
+        android:textColor="#E0FFFFFF"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:layout_marginBottom="6dp" />
+
+    <!-- 💬 Message émotionnel distance -->
+    <TextView
+        android:id="@+id/widget_distance_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Vous êtes tout proches ! 💕"
+        android:textSize="10sp"
+        android:textColor="#C0FFFFFF"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:lineSpacingExtra="1dp" />
+
+</LinearLayout>

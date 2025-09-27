@@ -74,7 +74,7 @@ class DailyContentViewModel @Inject constructor(
         data class ShowToast(val message: String) : UiEvent
         data class ShowError(val error: String) : UiEvent
         data class NavigateToDetail(val questionId: String) : UiEvent
-        data object QuestionAnswered : UiEvent
+        object QuestionAnswered : UiEvent
     }
     
     // === Actions Publiques ===

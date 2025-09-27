@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Thème principal de l'application -->
     <style name="Theme.Love2love" parent="android:Theme.Material.Light.NoActionBar" />
     <style name="Theme.CoupleApp" parent="android:Theme.Material.Light.NoActionBar" />
+    
+    <!-- 🚀 Thème neutre pour le lancement - Plus de splash coloré -->
+    <style name="Theme.Love2love.Launch" parent="Theme.Love2love">
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:statusBarColor">@android:color/white</item>
+        <item name="android:navigationBarColor">@android:color/white</item>
+    </style>
 </resources>

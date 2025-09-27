@@ -19,3 +19,25 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# === RÈGLES JETPACK COMPOSE POUR ÉVITER LES CRASHS ===
+
+# Garder les classes Compose UI
+-keep class androidx.compose.ui.** { *; }
+-keep class androidx.compose.foundation.** { *; }
+-keep class androidx.compose.material3.** { *; }
+-keep class androidx.compose.runtime.** { *; }
+
+# Éviter l'obfuscation des événements hover qui causent le crash
+-keep class androidx.compose.ui.platform.AndroidComposeView { *; }
+-keep class androidx.compose.ui.platform.AndroidComposeView$sendHoverExitEvent* { *; }
+
+# Garder les callbacks et listeners
+-keepclassmembers class * {
+    public *** on*Event(...);
+    public *** on*(...);
+}
+
+# Protection Google Play Billing
+-keep class com.android.billingclient.api.** { *; }
+-keep class com.love2loveapp.services.billing.** { *; }

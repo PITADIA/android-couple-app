@@ -43,7 +43,7 @@ class NavigationManager {
      * Naviguer vers une catégorie de questions
      */
     fun navigateToCategory(category: QuestionCategory) {
-        Log.d("NavigationManager", "📝 Navigation vers catégorie: ${category.title}")
+        Log.d("NavigationManager", "📝 Navigation vers catégorie: ${category.id}")
         
         selectedCategory = category
         navigateTo(NavigationDestination.QuestionList)
@@ -92,13 +92,13 @@ class NavigationManager {
 /**
  * Destinations de navigation possibles
  */
-sealed class NavigationDestination {
-    data object Main : NavigationDestination()
-    data object QuestionList : NavigationDestination()
-    data class QuestionDetail(val questionId: String) : NavigationDestination()
-    data object Profile : NavigationDestination()
-    data object Settings : NavigationDestination()
-    data object Favorites : NavigationDestination()
-    data object Journal : NavigationDestination()
-    data object PartnerManagement : NavigationDestination()
+interface NavigationDestination {
+    object Main : NavigationDestination
+    object QuestionList : NavigationDestination
+    data class QuestionDetail(val questionId: String) : NavigationDestination
+    object Profile : NavigationDestination
+    object Settings : NavigationDestination
+    object Favorites : NavigationDestination
+    object Journal : NavigationDestination
+    object PartnerManagement : NavigationDestination
 }

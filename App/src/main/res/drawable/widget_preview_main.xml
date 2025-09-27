@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Preview du widget principal -->
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle">
+<!-- 📱 Widget Preview Main - Preview du widget principal -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     
-    <!-- Dégradé Love2Love comme arrière-plan -->
-    <gradient
-        android:startColor="@color/love_pink"
-        android:endColor="@color/love_orange"
-        android:angle="45" />
+    <!-- Background principal -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#FD267A"
+                android:endColor="#FF655B"
+                android:angle="135" />
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
     
-    <!-- Coins arrondis -->
-    <corners android:radius="16dp" />
+    <!-- Texte preview overlay -->
+    <item android:gravity="center">
+        <shape android:shape="rectangle">
+            <solid android:color="#20FFFFFF" />
+            <corners android:radius="12dp" />
+        </shape>
+    </item>
     
-</shape>
+</layer-list>

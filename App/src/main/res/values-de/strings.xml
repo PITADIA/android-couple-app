@@ -382,6 +382,8 @@
     <string name="continue_free_version">Mit der kostenlosen Version fortfahren</string>
     <string name="continue_special">Weiter</string>
     <string name="continue_with_apple">Mit Apple fortfahren</string>
+    <string name="continue_with_google">Mit Google fortfahren</string>
+    <string name="continue_as_guest">Als Gast fortfahren</string>
     <string name="continue_without_notifications_button">Ohne Benachrichtigungen fortfahren</string>
     <string name="countdown_timer">Countdown</string>
     <string name="countries">Länder</string>
@@ -905,6 +907,7 @@
     <string name="improvement_revive_connection">Unsere Verbindung wiederbeleben</string>
     <string name="improvement_say_unsaid">So offen sein wie noch nie</string>
     <string name="in_relationship_since">Zusammen seit</string>
+    <string name="edit_relationship_start">Beziehungsstart bearbeiten</string>
     <string name="invite_partner">Lade deine:n Partner:in ein</string>
     <string name="invite_partner_description">Erlebt die komplette App gemeinsam!</string>
     <string name="irreversible_action">Diese Aktion kann nicht rückgängig gemacht werden. Die Erinnerung wird dauerhaft gelöscht.</string>
@@ -2652,4 +2655,15 @@
     <string name="yes">Ja</string>
     <string name="you">Du</string>
     <string name="you_miss_me">Du vermisst mich</string>
+    
+    <!-- Completion Step -->
+    <string name="completion_subtitle">Alles ist fertig</string>
+    <string name="completion_title_line1">Danke für</string>
+    <string name="completion_title_line2">euer Vertrauen.</string>
+    <string name="completion_description">Dein Profil ist jetzt konfiguriert.\nDu kannst deinen Partner verbinden und eure gemeinsame Reise beginnen!</string>
+    <string name="completion_button">Das Love2Love-Abenteuer beginnen</string>
+    
+    <!-- Simple strings -->
+    <string name="share">Teilen</string>
+    <string name="or">ODER</string>
 </resources>

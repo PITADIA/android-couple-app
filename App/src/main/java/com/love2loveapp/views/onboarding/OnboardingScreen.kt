@@ -8,7 +8,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -305,14 +305,10 @@ fun OnboardingScreen(
                     OnboardingStep.DisplayName -> StepPlaceholder("DisplayName", onboardingState::nextStep)
                     OnboardingStep.ProfilePhoto -> StepPlaceholder("ProfilePhoto", onboardingState::nextStep)
                     OnboardingStep.Completion -> {
-                        CompletionStepScreen(
-                            selectedGoals = onboardingState.selectedGoals,
-                            selectedImprovements = onboardingState.selectedImprovements,
-                            onContinue = {
-                                Log.d("OnboardingScreen", "✅ Onboarding terminé!")
-                                onComplete(onboardingState.selectedGoals, onboardingState.selectedImprovements)
-                            }
-                        )
+                        StepPlaceholder("Completion") {
+                            Log.d("OnboardingScreen", "✅ Onboarding terminé!")
+                            onComplete(onboardingState.selectedGoals, onboardingState.selectedImprovements)
+                        }
                     }
                     OnboardingStep.Loading -> StepPlaceholder("Loading", onboardingState::nextStep)
                     OnboardingStep.PartnerCode -> StepPlaceholder("PartnerCode", onboardingState::nextStep)
@@ -347,7 +343,7 @@ fun OnboardingScreen(
     }
 }
 
-// Barre de progression avec texte "Étape X sur Y"
+// Barre de progression selon le rapport
 @Composable
 fun OnboardingProgressBar(
     progress: Float,
@@ -356,36 +352,50 @@ fun OnboardingProgressBar(
     onBack: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    Column(modifier = modifier) {
-        Row(verticalAlignment = Alignment.CenterVertically) {
+    // Bouton Retour visible si progress > 0.10 && progress < 0.80 selon le rapport
+    val showBackButton = progress > 0.10f && progress < 0.80f
+    
+    Row(
+        modifier = modifier,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        // Bouton retour selon le rapport
+        if (showBackButton) {
             IconButton(onClick = onBack) {
                 Icon(
-                    imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                    contentDescription = "Retour"
+                    imageVector = Icons.Default.ArrowBack,
+                    contentDescription = "Back",
+                    tint = OnboardingColors.OnSurface
                 )
             }
-            Spacer(modifier = Modifier.width(8.dp))
-            Text(
-                text = "Étape ${stepIndex + 1} sur $stepCount",
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.8f)
-            )
+        } else {
+            // Spacer pour équilibrage selon le rapport
+            Spacer(modifier = Modifier.width(48.dp))
         }
-        Spacer(modifier = Modifier.height(8.dp))
+        
+        Spacer(modifier = Modifier.weight(1f))
+        
+        // Barre Progression selon le rapport (frame(width: 200), scaleEffect(y: 2))
         Box(
             modifier = Modifier
-                .fillMaxWidth()
-                .height(8.dp)
-                .clip(RoundedCornerShape(4.dp))
-                .background(MaterialTheme.colorScheme.onSurface.copy(alpha = 0.08f))
+                .width(OnboardingDimensions.ProgressBarWidth)
+                .height(4.dp)
+                .clip(RoundedCornerShape(2.dp))
+                .background(OnboardingColors.Outline)
         ) {
             Box(
                 modifier = Modifier
                     .fillMaxHeight()
                     .fillMaxWidth(fraction = progress.coerceIn(0f, 1f))
-                    .background(MaterialTheme.colorScheme.primary)
+                    .clip(RoundedCornerShape(2.dp))
+                    .background(OnboardingColors.Primary)
             )
         }
+        
+        Spacer(modifier = Modifier.weight(1f))
+        
+        // Spacer().frame(width: 30) pour équilibrage selon le rapport
+        Spacer(modifier = Modifier.width(48.dp))
     }
 }
 

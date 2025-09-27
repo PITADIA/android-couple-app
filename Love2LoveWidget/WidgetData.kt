@@ -233,35 +233,25 @@ data class WidgetData(
     
     /**
      * Calcule les composants de temps (jours, heures, minutes, secondes)
-     * Équivalent de la fonction Swift getTimeComponents()
+     * 
+     * CORRECTION: Logique simplifiée comme iOS - utilise directement daysTotal
+     * sans calcul inverse compliqué
      */
     fun getTimeComponents(): TimeComponents {
-        val calendar = Calendar.getInstance()
         val now = Date()
-        
-        // Calculer la date de début à minuit, il y a X jours
+        val calendar = Calendar.getInstance()
         calendar.time = now
-        calendar.add(Calendar.DAY_OF_YEAR, -daysTotal)
         
-        // Obtenir minuit de ce jour-là (début exact de la relation)
-        calendar.set(Calendar.HOUR_OF_DAY, 0)
-        calendar.set(Calendar.MINUTE, 0)
-        calendar.set(Calendar.SECOND, 0)
-        calendar.set(Calendar.MILLISECOND, 0)
-        val startOfRelationship = calendar.time
+        // Utiliser daysTotal directement (déjà calculé correctement par RelationshipStats)
+        val days = maxOf(daysTotal, 0)
         
-        // Calculer le temps total écoulé depuis ce minuit
-        val totalMillis = now.time - startOfRelationship.time
-        
-        val totalDays = (totalMillis / (24 * 60 * 60 * 1000)).toInt()
-        val remainingMillis = totalMillis % (24 * 60 * 60 * 1000)
-        val hours = (remainingMillis / (60 * 60 * 1000)).toInt()
-        val remainingAfterHours = remainingMillis % (60 * 60 * 1000)
-        val minutes = (remainingAfterHours / (60 * 1000)).toInt()
-        val seconds = ((remainingAfterHours % (60 * 1000)) / 1000).toInt()
+        // Heures/minutes/secondes actuelles (comme iOS timeline)
+        val hours = calendar.get(Calendar.HOUR_OF_DAY)
+        val minutes = calendar.get(Calendar.MINUTE)
+        val seconds = calendar.get(Calendar.SECOND)
         
         return TimeComponents(
-            days = totalDays,
+            days = days,
             hours = hours,
             minutes = minutes,
             seconds = seconds

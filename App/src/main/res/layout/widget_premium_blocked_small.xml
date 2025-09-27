@@ -1,42 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Widget Premium Bloqué - Small -->
+<!-- 💎 Widget Premium Blocked Small (2x2) - Widget premium bloqué -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/widget_container"
+    android:id="@+id/blocked_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/widget_background_blocked"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="16dp"
-    android:background="@drawable/widget_background">
+    android:padding="12dp">
 
-    <!-- Icône de cadenas -->
+    <!-- 💎 Icône premium -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="🔒"
+        android:text="💎"
         android:textSize="24sp"
-        android:layout_marginBottom="8dp" />
-
-    <!-- Texte principal -->
-    <TextView
-        android:id="@+id/widget_premium_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/requires_subscription"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"
         android:gravity="center"
+        android:layout_marginBottom="6dp" />
+
+    <!-- 💎 Titre premium requis -->
+    <TextView
+        android:id="@+id/blocked_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/widget_premium_required"
+        android:textSize="12sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:maxLines="1"
+        android:ellipsize="end"
         android:layout_marginBottom="4dp" />
 
-    <!-- Texte secondaire -->
+    <!-- 📝 Message débloquage -->
     <TextView
-        android:id="@+id/widget_premium_subtitle"
-        android:layout_width="wrap_content"
+        android:id="@+id/blocked_message"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/tap_to_unlock"
-        android:textSize="10sp"
-        android:textColor="@color/widget_text_secondary"
-        android:gravity="center" />
+        android:text="@string/widget_unlock_premium"
+        android:textSize="9sp"
+        android:textColor="#E0FFFFFF"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:lineSpacingExtra="1dp" />
 
 </LinearLayout>

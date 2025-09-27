@@ -18,7 +18,7 @@ sealed interface NavCommand {
     /**
      * Retour en arrière dans le backstack
      */
-    data object Back : NavCommand
+    object Back : NavCommand
     
     /**
      * Navigation avec remplacement de la route actuelle

@@ -48,10 +48,16 @@ object AppConstants {
         const val ONBOARDING_PROGRESS = "onboarding_progress"
     }
     
-    // === IDs de produits RevenueCat ===
+    // === IDs de produits RevenueCat (iOS) ===
     object Products {
         const val WEEKLY_SUBSCRIPTION = "com.love2loveapp.subscription.weekly"
         const val MONTHLY_SUBSCRIPTION = "com.love2loveapp.subscription.monthly"
+    }
+    
+    // === IDs de produits Google Play (Android) ===
+    object AndroidProducts {
+        const val WEEKLY_SUBSCRIPTION = "love2love_weekly"
+        const val MONTHLY_SUBSCRIPTION = "love2love_monthly"
     }
     
     // === Deep Links ===

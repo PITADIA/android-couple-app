@@ -11,13 +11,13 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-
-private val BgGray = Color(0xFFF7F7FA)      // ≈ Color(red: 0.97, green: 0.97, blue: 0.98)
-private val BrandPink = Color(0xFFFD267A)   // #FD267A
+import com.love2loveapp.R
 
 @Composable
 fun RelationshipGoalsStepScreen(
@@ -26,121 +26,154 @@ fun RelationshipGoalsStepScreen(
     onContinue: () -> Unit,
     modifier: Modifier = Modifier
 ) {
+    val context = LocalContext.current
+    
     // Options d'objectifs relationnels depuis le fichier strings.xml
     val relationshipGoals = listOf(
-        "Build a deeper connection", // goal_create_connection
-        "Feel close again, like before", // goal_find_complicity  
-        "Increase the passion between us", // goal_increase_passion
-        "Share more laughs together", // goal_share_more_laughs
-        "Talk about what we usually avoid" // goal_talk_avoided_subjects
+        stringResource(R.string.goal_create_connection),
+        stringResource(R.string.goal_find_complicity),
+        stringResource(R.string.goal_increase_passion), 
+        stringResource(R.string.goal_share_more_laughs),
+        stringResource(R.string.goal_talk_avoided_subjects)
     )
 
     Surface(
         modifier = modifier.fillMaxSize(),
-        color = BgGray
+        color = OnboardingColors.Background
     ) {
         Column(
             modifier = Modifier.fillMaxSize()
         ) {
-            Spacer(Modifier.height(40.dp))
+            Spacer(Modifier.height(OnboardingDimensions.TitleContentSpacing))
 
-            // Titre aligné à gauche
-            Row(
-                modifier = Modifier.padding(horizontal = 30.dp),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    text = "What are your relationship goals?",
-                    fontSize = 36.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = Color.Black,
-                    lineHeight = 40.sp,
-                    modifier = Modifier.weight(1f)
-                )
-            }
+            // Titre selon les spécifications du rapport
+            Text(
+                text = stringResource(R.string.relationship_goals_question),
+                style = OnboardingTypography.TitleLarge,
+                modifier = Modifier.padding(horizontal = OnboardingDimensions.HorizontalPadding)
+            )
 
-            // Espace pour rapprocher du centre
-            Spacer(Modifier.height(12.dp))
+            Spacer(Modifier.height(OnboardingDimensions.TitleContentSpacing))
 
-            // Liste des options (cartes blanches sélectionnables)
+            // Liste des options avec design du rapport
             LazyColumn(
                 modifier = Modifier
                     .fillMaxWidth()
                     .weight(1f),
-                contentPadding = PaddingValues(horizontal = 30.dp, vertical = 0.dp),
+                contentPadding = PaddingValues(horizontal = OnboardingDimensions.HorizontalPadding),
+                verticalArrangement = Arrangement.spacedBy(OnboardingDimensions.OptionSpacing)
             ) {
                 items(relationshipGoals) { goal ->
-                    GoalCard(
-                        label = goal,
-                        selected = selectedGoals.contains(goal),
+                    SelectableCard(
+                        text = goal,
+                        isSelected = selectedGoals.contains(goal),
                         onClick = { onGoalToggle(goal) }
                     )
-                    Spacer(Modifier.height(12.dp))
                 }
             }
 
-            // Zone blanche collée en bas avec le bouton Continuer
-            Column(
-                modifier = Modifier
-                    .background(Color.White)
-                    .padding(vertical = 30.dp, horizontal = 30.dp)
-            ) {
-                val enabled = selectedGoals.isNotEmpty()
-
-                Button(
-                    onClick = onContinue,
-                    enabled = enabled,
-                    shape = RoundedCornerShape(28.dp),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(56.dp)
-                        // Pour mimer l'opacité 0.5 quand désactivé
-                        .alpha(if (enabled) 1f else 0.5f),
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = BrandPink,
-                        contentColor = Color.White,
-                        disabledContainerColor = BrandPink, // on contrôle l'alpha nous-mêmes
-                        disabledContentColor = Color.White
-                    )
-                ) {
-                    Text(
-                        text = "Continuer",
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.SemiBold
-                    )
-                }
-            }
+            // Zone bouton selon les spécifications du rapport
+            OnboardingButtonZone(
+                onContinueClick = onContinue,
+                isContinueEnabled = selectedGoals.isNotEmpty()
+            )
         }
     }
 }
 
 @Composable
-private fun GoalCard(
-    label: String,
-    selected: Boolean,
-    onClick: () -> Unit
+fun SelectableCard(
+    text: String,
+    isSelected: Boolean,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
 ) {
-    val bg = if (selected) BrandPink else Color.White
-    val borderColor = if (selected) BrandPink else Color.Black.copy(alpha = 0.1f)
-    val textColor = if (selected) Color.White else Color.Black
-    val borderWidth = if (selected) 2.dp else 1.dp
-
     Card(
+        modifier = modifier
+            .fillMaxWidth(),
         onClick = onClick,
-        shape = RoundedCornerShape(12.dp),
-        colors = CardDefaults.cardColors(containerColor = bg),
-        elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),
-        border = BorderStroke(borderWidth, borderColor),
-        modifier = Modifier.fillMaxWidth()
+        colors = CardDefaults.cardColors(
+            containerColor = if (isSelected)
+                OnboardingColors.Primary else OnboardingColors.Surface
+        ),
+        border = BorderStroke(
+            width = if (isSelected) 2.dp else 1.dp,
+            color = if (isSelected)
+                OnboardingColors.Primary else OnboardingColors.Outline
+        ),
+        shape = RoundedCornerShape(OnboardingDimensions.CornerRadiusCard),
+        elevation = CardDefaults.cardElevation(
+            defaultElevation = OnboardingDimensions.ShadowElevation
+        )
     ) {
         Text(
-            text = label,
-            fontSize = 16.sp,
-            color = textColor,
-            lineHeight = 20.sp,
+            text = text,
+            style = OnboardingTypography.BodyMedium.copy(
+                color = if (isSelected) OnboardingColors.Surface else OnboardingColors.OnSurface
+            ),
+            modifier = Modifier
+                .padding(vertical = 16.dp, horizontal = 20.dp)
+                .fillMaxWidth()
+        )
+    }
+}
+
+@Composable
+fun OnboardingButtonZone(
+    onContinueClick: () -> Unit,
+    isContinueEnabled: Boolean = true,
+    showSkip: Boolean = false,
+    onSkipClick: (() -> Unit)? = null,
+    continueButtonText: String? = null, // Texte personnalisé pour le bouton
+    modifier: Modifier = Modifier
+) {
+    // Zone bouton selon les spécifications du rapport avec shadow
+    Column(
+        modifier = modifier
+            .background(OnboardingColors.Surface)
+            .shadow(
+                elevation = 10.dp, // shadow selon le rapport
+                ambientColor = Color.Black.copy(alpha = 0.1f),
+                spotColor = Color.Black.copy(alpha = 0.1f)
+            )
+            .padding(OnboardingDimensions.ButtonZoneVerticalPadding)
+            .padding(horizontal = OnboardingDimensions.HorizontalPadding)
+    ) {
+        Button(
+            onClick = onContinueClick,
+            enabled = isContinueEnabled,
+            shape = RoundedCornerShape(OnboardingDimensions.CornerRadiusButton),
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(vertical = 16.dp, horizontal = 20.dp)
-        )
+                .height(OnboardingDimensions.ButtonHeight),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = OnboardingColors.Primary,
+                contentColor = OnboardingColors.Surface,
+                disabledContainerColor = OnboardingColors.Primary.copy(alpha = 0.5f)
+            )
+        ) {
+            Text(
+                text = continueButtonText ?: stringResource(R.string.continue_button),
+                style = OnboardingTypography.ButtonTextAdaptive,
+                maxLines = 1
+            )
+        }
+        
+        // Bouton Skip optionnel
+        if (showSkip && onSkipClick != null) {
+            Spacer(modifier = Modifier.height(16.dp))
+            TextButton(
+                onClick = onSkipClick,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text(
+                    text = stringResource(R.string.skip_step),
+                    style = OnboardingTypography.BodyMedium.copy(
+                        color = OnboardingColors.OnSurfaceVariant,
+                        textDecoration = TextDecoration.Underline
+                    )
+                )
+            }
+        }
     }
 }

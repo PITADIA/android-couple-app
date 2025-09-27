@@ -115,6 +115,7 @@ const RATE_LIMITS = {
   validatePartnerCode: { calls: 10, window: 1 },
   disconnectPartners: { calls: 2, window: 10 },
   validateGooglePurchase: { calls: 5, window: 1 },
+  validateGooglePlaySubscription: { calls: 10, window: 5 },
 };
 
 /**
@@ -275,12 +276,18 @@ const APP_STORE_CONNECT_CONFIG = {
   environment: "production", // Configuration pour production
 };
 
-// Produits d'abonnement supportés
+// Produits d'abonnement supportés (iOS - Apple Store)
 const SUBSCRIPTION_PRODUCTS = {
   WEEKLY: "com.lyes.love2love.subscription.weekly",
   MONTHLY: "com.lyes.love2love.subscription.monthly",
   WEEKLY_MI: "com.lyes.love2love.subscription.weekly.mi",
   MONTHLY_MI: "com.lyes.love2love.subscription.monthly.mi",
+};
+
+// Produits d'abonnement Android (Google Play Store)
+const ANDROID_SUBSCRIPTION_PRODUCTS = {
+  WEEKLY: "love2love_weekly",
+  MONTHLY: "love2love_monthly",
 };
 
 /**
@@ -5982,6 +5989,17 @@ exports.validateGooglePurchase = functions.https.onCall(
           "Utilisateur non authentifié"
         );
       }
+
+      // 👤 Identifier le type de compte pour les logs
+      const isAnonymous = context.auth.firebase?.identities
+        ? Object.keys(context.auth.firebase.identities).length === 0
+        : false;
+      const accountType = isAnonymous ? "Compte invité" : "Compte Google";
+
+      console.log(
+        `🎯 validateGooglePurchase pour ${accountType} - UID: ${context.auth.uid}`
+      );
+
       await checkRateLimit(context.auth.uid, "validateGooglePurchase", context);
 
       const { productId, purchaseToken } = data;
@@ -5991,6 +6009,26 @@ exports.validateGooglePurchase = functions.https.onCall(
           "productId et purchaseToken sont requis"
         );
       }
+
+      // Vérifier que le produit Android est supporté
+      const supportedAndroidProducts = Object.values(
+        ANDROID_SUBSCRIPTION_PRODUCTS
+      );
+      if (!supportedAndroidProducts.includes(productId)) {
+        console.log(
+          "🔥 validateGooglePurchase: Produit Android non supporté:",
+          productId
+        );
+        throw new functions.https.HttpsError(
+          "invalid-argument",
+          "Produit d'abonnement Android non supporté"
+        );
+      }
+
+      console.log(
+        "🔥 validateGooglePurchase: Validation pour produit Android:",
+        productId
+      );
 
       const packageName = PLAY_CONFIG.packageName;
       const client = await getPlayClient();
@@ -6216,3 +6254,717 @@ exports.reconcilePlaySubscriptions = functions.pubsub
 // 🗑️ FONCTION SUPPRIMÉE : sendReminderNotification
 // Cette fonction envoyait des notifications de rappel avec templates localisés
 // SUPPRIMÉE car seules les notifications de messages entre partenaires sont souhaitées
+
+// ================================================================================================
+// 🤖 GOOGLE PLAY ANDROID - FONCTIONS DÉDIÉES
+// ================================================================================================
+// Fonctions spécialement créées pour Android Google Play Billing, parallèles aux fonctions iOS
+// Préservent les fonctions Apple existantes tout en ajoutant le support Android complet
+
+/**
+ * 🛒 Validation d'abonnement Google Play
+ * Équivalent Android de validateAppleReceipt()
+ *
+ * Valide un achat Google Play Billing et met à jour les données utilisateur
+ */
+exports.validateGooglePlaySubscription = functions.https.onCall(
+  async (data, context) => {
+    try {
+      secureLog(
+        "info",
+        "🤖 validateGooglePlaySubscription: Début validation Android"
+      );
+
+      // 🛡️ RATE LIMITING
+      if (context.auth) {
+        await checkRateLimit(
+          context.auth.uid,
+          "validateGooglePlaySubscription",
+          context
+        );
+      }
+
+      // Vérification authentification
+      if (!context.auth) {
+        throw new functions.https.HttpsError(
+          "unauthenticated",
+          "Utilisateur non authentifié"
+        );
+      }
+
+      const currentUserId = context.auth.uid;
+      const {
+        purchaseToken,
+        productId,
+        packageName = PLAY_CONFIG.packageName,
+      } = data;
+
+      // Validation des paramètres
+      if (!purchaseToken || !productId) {
+        throw new functions.https.HttpsError(
+          "invalid-argument",
+          "Token d'achat et ID produit requis"
+        );
+      }
+
+      secureLog("info", "🤖 Validation Google Play", {
+        userId: currentUserId,
+        productId,
+        packageName,
+      });
+
+      // 🔍 Validation avec Google Play Developer API
+      const playClient = await getPlayClient();
+
+      let subscriptionResult;
+      try {
+        subscriptionResult = await playClient.purchases.subscriptions.get({
+          packageName: packageName,
+          subscriptionId: productId,
+          token: purchaseToken,
+        });
+      } catch (apiError) {
+        secureLog("error", "❌ Erreur API Google Play", {
+          error: apiError.message,
+          userId: currentUserId,
+        });
+
+        throw new functions.https.HttpsError(
+          "invalid-argument",
+          `Erreur validation Google Play: ${apiError.message}`
+        );
+      }
+
+      const subscription = subscriptionResult.data;
+      const now = Date.now();
+      const expiryTime = parseInt(subscription.expiryTimeMillis);
+      const startTime = parseInt(subscription.startTimeMillis);
+
+      // ✅ Vérifier si l'abonnement est valide et actif
+      const isValid =
+        expiryTime > now &&
+        (subscription.paymentState === 1 || subscription.paymentState === 0); // Paid or Free trial
+      const autoRenewing = subscription.autoRenewing;
+
+      secureLog("info", "🤖 Résultat validation", {
+        isValid,
+        expiryTime: new Date(expiryTime).toISOString(),
+        autoRenewing,
+        paymentState: subscription.paymentState,
+      });
+
+      if (isValid) {
+        // 📊 Mettre à jour les données utilisateur dans Firestore
+        const subscriptionData = {
+          isSubscribed: true,
+          subscriptionType: "direct", // 🔑 Marquage direct pour partage automatique
+          subscriptionPlatform: "google_play", // Distinguer d'Apple
+          purchaseDate: new Date(startTime),
+          expiresDate: new Date(expiryTime),
+          productId: productId,
+          purchaseToken: purchaseToken,
+          autoRenewing: autoRenewing,
+          lastValidated: admin.firestore.FieldValue.serverTimestamp(),
+        };
+
+        // Mise à jour document utilisateur
+        await admin.firestore().collection("users").doc(currentUserId).update({
+          isSubscribed: true,
+          subscriptionType: "direct",
+          subscriptionPlatform: "google_play",
+          subscriptionDetails: subscriptionData,
+        });
+
+        secureLog("info", "✅ Abonnement Google Play validé et mis à jour");
+
+        // 🚀 DÉCLENCHEMENT AUTOMATIQUE DU PARTAGE AVEC PARTENAIRE
+        const userDoc = await admin
+          .firestore()
+          .collection("users")
+          .doc(currentUserId)
+          .get();
+
+        const userData = userDoc.data();
+        const partnerId = userData?.partnerId;
+
+        if (partnerId && partnerId.trim() !== "") {
+          secureLog(
+            "info",
+            "🤝 Déclenchement partage automatique Google Play",
+            {
+              fromUser: currentUserId,
+              toPartner: partnerId,
+            }
+          );
+
+          try {
+            // Partage automatique vers le partenaire
+            await admin.firestore().collection("users").doc(partnerId).update({
+              isSubscribed: true,
+              subscriptionType: "shared_from_partner",
+              subscriptionSharedFrom: currentUserId,
+              subscriptionSharedAt:
+                admin.firestore.FieldValue.serverTimestamp(),
+              subscriptionPlatform: "google_play_shared", // Indique origine du partage
+            });
+
+            // 📝 Logger pour audit et conformité Google Play
+            await admin
+              .firestore()
+              .collection("subscription_sharing_logs")
+              .add({
+                fromUserId: currentUserId,
+                toUserId: partnerId,
+                sharedAt: admin.firestore.FieldValue.serverTimestamp(),
+                subscriptionType: "inherited",
+                triggerSource: "google_play_validation",
+                platform: "android",
+                deviceInfo: "Android App",
+                productId: productId,
+              });
+
+            secureLog("info", "✅ Partage automatique Google Play réussi");
+          } catch (shareError) {
+            secureLog("error", "❌ Erreur partage automatique", {
+              error: shareError.message,
+            });
+            // Ne pas faire échouer la validation si le partage échoue
+          }
+        }
+
+        return {
+          success: true,
+          subscriptionActive: true,
+          platform: "google_play",
+          expiresAt: expiryTime,
+          autoRenewing: autoRenewing,
+        };
+      } else {
+        secureLog("warn", "⚠️ Abonnement Google Play expiré ou invalide");
+
+        // Désactiver l'abonnement local
+        await admin.firestore().collection("users").doc(currentUserId).update({
+          isSubscribed: false,
+          subscriptionType: admin.firestore.FieldValue.delete(),
+          "subscriptionDetails.lastValidated":
+            admin.firestore.FieldValue.serverTimestamp(),
+        });
+
+        return {
+          success: false,
+          reason: "subscription_expired_or_invalid",
+          platform: "google_play",
+        };
+      }
+    } catch (error) {
+      secureLog("error", "❌ validateGooglePlaySubscription erreur", {
+        error: error.message,
+        stack: error.stack,
+      });
+
+      throw new functions.https.HttpsError(
+        "internal",
+        `Erreur validation Google Play: ${error.message}`
+      );
+    }
+  }
+);
+
+/**
+ * 🔔 Webhook Google Play Developer Notifications
+ * Équivalent Android de appleWebhook()
+ *
+ * Reçoit les notifications temps réel de Google Play (achats, renouvellements, annulations)
+ */
+exports.googlePlayWebhook = functions.https.onRequest(async (req, res) => {
+  try {
+    secureLog(
+      "info",
+      "🤖 googlePlayWebhook: Notification reçue de Google Play"
+    );
+
+    if (req.method !== "POST") {
+      return res.status(405).send("Method Not Allowed");
+    }
+
+    // Google Play envoie les notifications en base64
+    const message = req.body.message;
+    if (!message || !message.data) {
+      secureLog(
+        "warn",
+        "⚠️ Notification Google Play invalide - pas de message"
+      );
+      return res.status(400).send("Invalid notification");
+    }
+
+    // Décoder le message base64
+    let notificationData;
+    try {
+      const decodedData = Buffer.from(message.data, "base64").toString("utf-8");
+      notificationData = JSON.parse(decodedData);
+    } catch (decodeError) {
+      secureLog("error", "❌ Erreur décodage notification Google Play", {
+        error: decodeError.message,
+      });
+      return res.status(400).send("Invalid message format");
+    }
+
+    const { subscriptionNotification, testNotification } = notificationData;
+
+    // Ignorer les notifications de test
+    if (testNotification) {
+      secureLog("info", "🧪 Notification test Google Play ignorée");
+      return res.status(200).send("Test notification acknowledged");
+    }
+
+    if (!subscriptionNotification) {
+      secureLog("warn", "⚠️ Type de notification non supporté");
+      return res.status(200).send("Notification type not supported");
+    }
+
+    const { version, notificationType, purchaseToken, subscriptionId } =
+      subscriptionNotification;
+
+    secureLog("info", "🔔 Notification abonnement Google Play", {
+      notificationType,
+      subscriptionId,
+      version,
+    });
+
+    // 📋 Traitement selon le type de notification
+    switch (notificationType) {
+      case 1: // SUBSCRIPTION_RECOVERED
+      case 2: // SUBSCRIPTION_RENEWED
+      case 4: // SUBSCRIPTION_PURCHASED
+        secureLog("info", "✅ Abonnement activé/renouvelé");
+        await handleGooglePlaySubscriptionActivation(
+          purchaseToken,
+          subscriptionId
+        );
+        break;
+
+      case 3: // SUBSCRIPTION_CANCELED
+      case 12: // SUBSCRIPTION_REVOKED
+      case 13: // SUBSCRIPTION_EXPIRED
+        secureLog("info", "❌ Abonnement annulé/expiré");
+        await handleGooglePlaySubscriptionExpiration(
+          purchaseToken,
+          subscriptionId
+        );
+        break;
+
+      case 5: // SUBSCRIPTION_ON_HOLD
+      case 6: // SUBSCRIPTION_IN_GRACE_PERIOD
+        secureLog("info", "⚠️ Abonnement en attente/grâce");
+        // Garder l'abonnement actif pendant la période de grâce
+        break;
+
+      default:
+        secureLog("info", `📋 Type notification non géré: ${notificationType}`);
+    }
+
+    res.status(200).send("OK");
+  } catch (error) {
+    secureLog("error", "❌ googlePlayWebhook erreur", {
+      error: error.message,
+      stack: error.stack,
+    });
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+/**
+ * 🟢 Gestion activation/renouvellement abonnement Google Play
+ */
+async function handleGooglePlaySubscriptionActivation(
+  purchaseToken,
+  subscriptionId
+) {
+  try {
+    secureLog("info", "🟢 handleGooglePlaySubscriptionActivation");
+
+    // Trouver l'utilisateur avec ce token d'achat
+    const usersSnapshot = await admin
+      .firestore()
+      .collection("users")
+      .where("subscriptionDetails.purchaseToken", "==", purchaseToken)
+      .get();
+
+    if (usersSnapshot.empty) {
+      secureLog(
+        "warn",
+        "⚠️ Aucun utilisateur trouvé pour ce token Google Play"
+      );
+      return;
+    }
+
+    const userDoc = usersSnapshot.docs[0];
+    const userId = userDoc.id;
+
+    // Valider l'abonnement avec l'API Google Play
+    const playClient = await getPlayClient();
+    const subscriptionResult = await playClient.purchases.subscriptions.get({
+      packageName: PLAY_CONFIG.packageName,
+      subscriptionId: subscriptionId,
+      token: purchaseToken,
+    });
+
+    const subscription = subscriptionResult.data;
+    const expiryTime = parseInt(subscription.expiryTimeMillis);
+    const startTime = parseInt(subscription.startTimeMillis);
+    const now = Date.now();
+
+    const isValid = expiryTime > now && subscription.paymentState === 1;
+
+    if (isValid) {
+      // Mettre à jour l'abonnement utilisateur
+      const subscriptionData = {
+        isSubscribed: true,
+        subscriptionType: "direct",
+        subscriptionPlatform: "google_play",
+        purchaseDate: new Date(startTime),
+        expiresDate: new Date(expiryTime),
+        productId: subscriptionId,
+        purchaseToken: purchaseToken,
+        autoRenewing: subscription.autoRenewing,
+        lastValidated: admin.firestore.FieldValue.serverTimestamp(),
+      };
+
+      await userDoc.ref.update({
+        isSubscribed: true,
+        subscriptionType: "direct",
+        subscriptionPlatform: "google_play",
+        subscriptionDetails: subscriptionData,
+      });
+
+      secureLog("info", "✅ Abonnement Google Play activé", { userId });
+
+      // 🚀 PARTAGE AUTOMATIQUE AVEC PARTENAIRE
+      const userData = (await userDoc.ref.get()).data();
+      const partnerId = userData?.partnerId;
+
+      if (partnerId && partnerId.trim() !== "") {
+        secureLog("info", "🤝 Déclenchement partage automatique webhook", {
+          fromUser: userId,
+          toPartner: partnerId,
+        });
+
+        try {
+          await admin.firestore().collection("users").doc(partnerId).update({
+            isSubscribed: true,
+            subscriptionType: "shared_from_partner",
+            subscriptionSharedFrom: userId,
+            subscriptionSharedAt: admin.firestore.FieldValue.serverTimestamp(),
+            subscriptionPlatform: "google_play_shared",
+          });
+
+          // Logger l'événement de partage
+          await admin.firestore().collection("subscription_sharing_logs").add({
+            fromUserId: userId,
+            toUserId: partnerId,
+            sharedAt: admin.firestore.FieldValue.serverTimestamp(),
+            subscriptionType: "inherited",
+            triggerSource: "google_play_webhook",
+            platform: "android",
+            notificationType: "activation",
+            productId: subscriptionId,
+          });
+
+          secureLog("info", "✅ Partage automatique webhook réussi");
+        } catch (shareError) {
+          secureLog("error", "❌ Erreur partage automatique webhook", {
+            error: shareError.message,
+          });
+        }
+      }
+    }
+  } catch (error) {
+    secureLog("error", "❌ handleGooglePlaySubscriptionActivation", {
+      error: error.message,
+    });
+  }
+}
+
+/**
+ * 🔴 Gestion expiration/annulation abonnement Google Play
+ */
+async function handleGooglePlaySubscriptionExpiration(
+  purchaseToken,
+  subscriptionId
+) {
+  try {
+    secureLog("info", "🔴 handleGooglePlaySubscriptionExpiration");
+
+    // Trouver l'utilisateur avec ce token d'achat
+    const usersSnapshot = await admin
+      .firestore()
+      .collection("users")
+      .where("subscriptionDetails.purchaseToken", "==", purchaseToken)
+      .get();
+
+    if (usersSnapshot.empty) {
+      secureLog("warn", "⚠️ Aucun utilisateur trouvé pour token expiré");
+      return;
+    }
+
+    const userDoc = usersSnapshot.docs[0];
+    const userId = userDoc.id;
+
+    // Désactiver l'abonnement de l'utilisateur principal
+    await userDoc.ref.update({
+      isSubscribed: false,
+      subscriptionType: admin.firestore.FieldValue.delete(),
+      subscriptionPlatform: admin.firestore.FieldValue.delete(),
+      "subscriptionDetails.lastValidated":
+        admin.firestore.FieldValue.serverTimestamp(),
+    });
+
+    secureLog("info", "❌ Abonnement Google Play désactivé", { userId });
+
+    // 🚀 SUPPRESSION AUTOMATIQUE DU PARTAGE
+    const userData = (await userDoc.ref.get()).data();
+    const partnerId = userData?.partnerId;
+
+    if (partnerId && partnerId.trim() !== "") {
+      secureLog("info", "💔 Suppression partage automatique", {
+        fromUser: userId,
+        toPartner: partnerId,
+      });
+
+      try {
+        await admin.firestore().collection("users").doc(partnerId).update({
+          isSubscribed: false,
+          subscriptionType: admin.firestore.FieldValue.delete(),
+          subscriptionSharedFrom: admin.firestore.FieldValue.delete(),
+          subscriptionSharedAt: admin.firestore.FieldValue.delete(),
+          subscriptionPlatform: admin.firestore.FieldValue.delete(),
+        });
+
+        // Logger la suppression de partage
+        await admin.firestore().collection("subscription_sharing_logs").add({
+          fromUserId: userId,
+          toUserId: partnerId,
+          sharedAt: admin.firestore.FieldValue.serverTimestamp(),
+          subscriptionType: "revoked",
+          triggerSource: "google_play_webhook",
+          platform: "android",
+          reason: "subscription_expired",
+          productId: subscriptionId,
+        });
+
+        secureLog("info", "✅ Suppression partage automatique réussie");
+      } catch (shareError) {
+        secureLog("error", "❌ Erreur suppression partage automatique", {
+          error: shareError.message,
+        });
+      }
+    }
+  } catch (error) {
+    secureLog("error", "❌ handleGooglePlaySubscriptionExpiration", {
+      error: error.message,
+    });
+  }
+}
+
+// =============================================================================
+// 💝 FAVORIS PARTAGÉS - SYSTÈME COMPLET LOVE2LOVE
+// =============================================================================
+
+/**
+ * 🤝 syncPartnerFavorites - Synchronisation Favoris Partagés
+ * Équivalent Android du système iOS de favoris partagés
+ *
+ * Fonctionnalités :
+ * - Synchronisation bidirectionnelle des favoris entre partenaires
+ * - Mise à jour automatique des partnerIds sur tous les favoris existants
+ * - Sécurité : Vérification connexion partenaire bidirectionnelle
+ * - Logging complet pour audit
+ */
+exports.syncPartnerFavorites = functions.https.onCall(async (data, context) => {
+  secureLog("info", "❤️ syncPartnerFavorites: Début synchronisation favoris");
+
+  // 🔑 VÉRIFICATION AUTHENTIFICATION
+  if (!context.auth) {
+    throw new functions.https.HttpsError(
+      "unauthenticated",
+      "Utilisateur non authentifié"
+    );
+  }
+
+  const currentUserId = context.auth.uid;
+  const { partnerId } = data;
+
+  // 🔑 VALIDATION SÉCURISÉE DES PARAMÈTRES
+  if (!partnerId || typeof partnerId !== "string" || partnerId.trim() === "") {
+    throw new functions.https.HttpsError(
+      "invalid-argument",
+      "ID partenaire requis"
+    );
+  }
+
+  try {
+    // 🔑 VÉRIFICATION CONNEXION PARTENAIRE
+    const [currentUserDoc, partnerUserDoc] = await Promise.all([
+      admin.firestore().collection("users").doc(currentUserId).get(),
+      admin.firestore().collection("users").doc(partnerId).get(),
+    ]);
+
+    if (!currentUserDoc.exists || !partnerUserDoc.exists) {
+      throw new functions.https.HttpsError(
+        "not-found",
+        "Utilisateur ou partenaire non trouvé"
+      );
+    }
+
+    const currentUserData = currentUserDoc.data();
+    const partnerUserData = partnerUserDoc.data();
+
+    // 🔑 VÉRIFICATION BIDIRECTIONNELLE DE LA CONNEXION
+    if (
+      currentUserData.partnerId !== partnerId ||
+      partnerUserData.partnerId !== currentUserId
+    ) {
+      throw new functions.https.HttpsError(
+        "permission-denied",
+        "Les utilisateurs ne sont pas connectés en tant que partenaires"
+      );
+    }
+
+    secureLog("info", "❤️ syncPartnerFavorites: Connexion partenaire vérifiée");
+
+    // 🔑 APPELER LA FONCTION INTERNE DE SYNCHRONISATION
+    const result = await syncPartnerFavoritesInternal(currentUserId, partnerId);
+
+    return {
+      success: true,
+      updatedFavoritesCount: result.updatedFavoritesCount,
+      userFavoritesCount: result.userFavoritesCount,
+      partnerFavoritesCount: result.partnerFavoritesCount,
+      message: `Synchronisation terminée: ${result.updatedFavoritesCount} favoris mis à jour`,
+    };
+  } catch (error) {
+    secureLog("error", "❌ syncPartnerFavorites: Erreur:", error);
+
+    // Si c'est déjà une HttpsError, la relancer
+    if (error.code && error.message) {
+      throw error;
+    }
+
+    throw new functions.https.HttpsError("internal", error.message);
+  }
+});
+
+/**
+ * 🔄 syncPartnerFavoritesInternal - Logique Interne Synchronisation
+ *
+ * Cette fonction fait le travail réel de synchronisation :
+ * 1. Récupère tous les favoris de l'utilisateur actuel
+ * 2. Récupère tous les favoris du partenaire
+ * 3. Met à jour les partnerIds de chaque favori pour inclure l'autre partenaire
+ * 4. Utilise Firestore batch pour atomicité
+ */
+async function syncPartnerFavoritesInternal(currentUserId, partnerId) {
+  secureLog("info", "❤️ syncPartnerFavoritesInternal: Début synchronisation");
+
+  // 🔑 RÉCUPÉRER TOUS LES FAVORIS DE L'UTILISATEUR ACTUEL
+  const currentUserFavoritesSnapshot = await admin
+    .firestore()
+    .collection("favoriteQuestions")
+    .where("authorId", "==", currentUserId)
+    .get();
+
+  // 🔑 RÉCUPÉRER TOUS LES FAVORIS DU PARTENAIRE
+  const partnerFavoritesSnapshot = await admin
+    .firestore()
+    .collection("favoriteQuestions")
+    .where("authorId", "==", partnerId)
+    .get();
+
+  let updatedCount = 0;
+  const batch = admin.firestore().batch();
+
+  // 🔑 MISE À JOUR DES FAVORIS DE L'UTILISATEUR ACTUEL
+  for (const doc of currentUserFavoritesSnapshot.docs) {
+    const favoriteData = doc.data();
+    const currentPartnerIds = favoriteData.partnerIds || [];
+
+    // Ajouter le partenaire s'il n'est pas déjà présent
+    if (!currentPartnerIds.includes(partnerId)) {
+      const updatedPartnerIds = [...currentPartnerIds, partnerId];
+      batch.update(doc.ref, {
+        partnerIds: updatedPartnerIds,
+        updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+      });
+      updatedCount++;
+      secureLog("info", `❤️ Mise à jour favori utilisateur: ${doc.id}`);
+    }
+  }
+
+  // 🔑 MISE À JOUR DES FAVORIS DU PARTENAIRE
+  for (const doc of partnerFavoritesSnapshot.docs) {
+    const favoriteData = doc.data();
+    const currentPartnerIds = favoriteData.partnerIds || [];
+
+    // Ajouter l'utilisateur actuel s'il n'est pas déjà présent
+    if (!currentPartnerIds.includes(currentUserId)) {
+      const updatedPartnerIds = [...currentPartnerIds, currentUserId];
+      batch.update(doc.ref, {
+        partnerIds: updatedPartnerIds,
+        updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+      });
+      updatedCount++;
+      secureLog("info", `❤️ Mise à jour favori partenaire: ${doc.id}`);
+    }
+  }
+
+  // 🔑 EXÉCUTION BATCH ATOMIQUE
+  if (updatedCount > 0) {
+    await batch.commit();
+    secureLog(
+      "info",
+      `✅ syncPartnerFavoritesInternal: ${updatedCount} favoris mis à jour`
+    );
+  } else {
+    secureLog(
+      "info",
+      "ℹ️ syncPartnerFavoritesInternal: Aucune mise à jour nécessaire"
+    );
+  }
+
+  return {
+    updatedFavoritesCount: updatedCount,
+    userFavoritesCount: currentUserFavoritesSnapshot.docs.length,
+    partnerFavoritesCount: partnerFavoritesSnapshot.docs.length,
+  };
+}
+
+/**
+ * 🔗 Intégration automatique avec connectPartners
+ * Quand deux utilisateurs se connectent, leurs favoris sont automatiquement synchronisés
+ */
+
+// Note: Cette fonction sera intégrée dans connectPartners() existant
+// Ajouter ceci dans connectPartners() après la ligne 2141 :
+
+/*
+// 7. Synchroniser automatiquement les favoris existants
+try {
+  console.log("❤️ connectPartners: Synchronisation des favoris...");
+
+  // 🔑 APPELER LA SYNCHRONISATION INTERNE DES FAVORIS
+  const syncFavoritesResult = await syncPartnerFavoritesInternal(
+    currentUserId,
+    partnerUserId
+  );
+
+  console.log(
+    `✅ connectPartners: Synchronisation favoris terminée - ${syncFavoritesResult.updatedFavoritesCount} favoris mis à jour`
+  );
+} catch (syncError) {
+  console.error(
+    "❌ connectPartners: Erreur synchronisation favoris:",
+    syncError
+  );
+  // Ne pas faire échouer la connexion pour une erreur de synchronisation
+}
+*/

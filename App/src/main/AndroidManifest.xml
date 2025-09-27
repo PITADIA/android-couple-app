@@ -5,11 +5,17 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.VIBRATE" /> <!-- === LOCALISATION (équivalent NSLocationWhenInUseUsageDescription) === -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    
+    <!-- === GOOGLE PLAY BILLING === -->
+    <uses-permission android:name="com.android.vending.BILLING" /> <!-- === LOCALISATION (équivalent NSLocationWhenInUseUsageDescription) === -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- === PHOTOS (équivalent NSPhotoLibraryUsageDescription) === -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />     <!-- === PHOTOS (équivalent NSPhotoLibraryUsageDescription) === -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" /> <!-- === NOTIFICATIONS === -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    
+    <!-- === CAMERA (équivalent NSCameraUsageDescription) === -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- === NOTIFICATIONS === -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" /> <!-- Badges support (ShortcutBadger) -->
     <uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
@@ -25,17 +31,34 @@
     <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.READ_APP_BADGE" />
     <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS" />
-    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS" /> <!-- === RESTRICTIONS DEVICE === -->
+    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS" />
+
+    <!-- === RESTRICTIONS DEVICE === -->
     <!-- Équivalent UIDeviceFamily = iPhone uniquement -->
     <uses-feature
-        android:name="android.hardware.telephony"
-        android:required="false" />
-    <uses-feature
         android:name="android.hardware.camera"
-        android:required="false" /> <!-- === ORIENTATIONS SUPPORTÉES === -->
+        android:required="false" />
+
+    <!-- === ORIENTATIONS SUPPORTÉES === -->
     <!-- Équivalent UISupportedInterfaceOrientations = Portrait uniquement -->
     <uses-feature
         android:name="android.hardware.screen.portrait"
+        android:required="true" />
+
+    <!-- === RESTRICTION AUX TÉLÉPHONES UNIQUEMENT === -->
+    <!-- Configuration moderne pour exclure les tablettes -->
+    <supports-screens
+        android:smallScreens="true"
+        android:normalScreens="true"
+        android:largeScreens="false"
+        android:xlargeScreens="false"
+        android:anyDensity="true"
+        android:requiresSmallestWidthDp="320"
+        android:compatibleWidthLimitDp="480"/>
+
+    <!-- Force l'utilisation du téléphone -->
+    <uses-feature
+        android:name="android.hardware.telephony"
         android:required="true" />
 
     <application
@@ -43,12 +66,13 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logo"
         android:label="Love2Love"
         android:networkSecurityConfig="@xml/network_security_config"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.CoupleApp"
+        android:hardwareAccelerated="true"
         tools:targetApi="31">
                 <activity
                     android:name=".MainActivity"
@@ -56,7 +80,7 @@
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Love2love"
+            android:theme="@style/Theme.Love2love.Launch"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -96,18 +120,25 @@
             android:value="@string/default_notification_channel_id" /> <!-- FCM default notification icon -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@drawable/ic_notification" /> <!-- FCM default notification color -->
+            android:resource="@drawable/ic_notification" />         <!-- FCM default notification color -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
-            android:resource="@color/notification_color" />         <!-- Firebase App Check Debug Token (developpement uniquement) -->
+            android:resource="@color/notification_color" />         
+            
+        <!-- Google Maps API Key -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${googleMapsApiKey}" />
+            
+        <!-- Firebase App Check Debug Token (developpement uniquement) -->
         <!-- Commenté temporairement pour éviter l'erreur de placeholder
         <meta-data
             android:name="firebase_app_check_debug_token"
             android:value="${FIREBASE_APP_CHECK_DEBUG_TOKEN}" />
-        --> <!-- 📱 WIDGETS LOVE2LOVE -->
+        -->         <!-- 📱 WIDGETS LOVE2LOVE -->
         <!-- Widget principal Love2Love -->
         <receiver
-            android:name="com.love2loveapp.widget.Love2LoveWidgetProvider"
+            android:name="com.love2loveapp.widgets.HomeScreenWidgetProvider"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -118,7 +149,7 @@
                 android:resource="@xml/love2love_widget_info" />
         </receiver> <!-- Widget de distance Love2Love -->
         <receiver
-            android:name="com.love2loveapp.widget.Love2LoveDistanceWidgetProvider"
+            android:name="com.love2loveapp.widgets.DistanceWidgetProvider"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -128,6 +159,14 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/love2love_distance_widget_info" />
         </receiver>
+
+        <!-- CropImage (CanHub) nécessite un thème AppCompat -->
+        <!-- CropImageActivity avec thème AppCompat requis -->
+        <activity
+            android:name="com.canhub.cropper.CropImageActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            tools:replace="android:theme,android:exported" />
     </application>
 
 </manifest>

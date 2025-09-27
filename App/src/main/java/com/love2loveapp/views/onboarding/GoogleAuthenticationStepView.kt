@@ -19,6 +19,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -83,25 +84,22 @@ fun GoogleAuthenticationStepView(
         }
     }
     
-    Box(
-        modifier = modifier
-            .fillMaxSize()
-            .background(Color(0xFFF7F7FA)) // Fond gris clair
+    Surface(
+        modifier = modifier.fillMaxSize(),
+        color = OnboardingColors.Background
     ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = 30.dp),
+                .padding(horizontal = OnboardingDimensions.HorizontalPadding),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Spacer(modifier = Modifier.height(20.dp))
+            Spacer(modifier = Modifier.height(OnboardingDimensions.TitleContentSpacing))
 
             // Titre
             Text(
                 text = stringResource(id = R.string.create_secure_account),
-                fontSize = 36.sp,
-                fontWeight = FontWeight.Bold,
-                color = Color.Black,
+                style = OnboardingTypography.TitleLarge,
                 textAlign = TextAlign.Center,
                 modifier = Modifier.padding(horizontal = 0.dp)
             )
@@ -160,7 +158,48 @@ fun GoogleAuthenticationStepView(
                         */
                         
                         Text(
-                            text = "Continuer avec Google",
+                            text = stringResource(id = R.string.continue_with_google),
+                            fontSize = 18.sp,
+                            fontWeight = FontWeight.SemiBold
+                        )
+                    }
+                }
+                
+                // Espacement minimal entre les boutons
+                Spacer(modifier = Modifier.height(1.dp))
+                
+                // 👤 Bouton Compte Invité - Design identique à Google mais couleurs inversées
+                Button(
+                    onClick = {
+                        Log.d("GuestAuth", "👤 Début création compte invité")
+                        scope.launch {
+                            googleAuthService.clearError()
+                            val success = googleAuthService.signInAnonymously()
+                            if (success) {
+                                Log.d("GuestAuth", "✅ Compte invité créé avec succès")
+                                // La navigation sera gérée automatiquement par UserDataIntegrationService
+                            } else {
+                                Log.e("GuestAuth", "❌ Échec création compte invité")
+                            }
+                        }
+                    },
+                    enabled = !isProcessing,
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color.White, // Fond blanc comme demandé
+                        contentColor = Color.Black  // Texte noir comme demandé
+                    ),
+                    shape = RoundedCornerShape(12.dp),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(56.dp)
+                ) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Center
+                    ) {
+                        // Texte traduit selon le rapport
+                        Text(
+                            text = stringResource(id = R.string.continue_as_guest),
                             fontSize = 18.sp,
                             fontWeight = FontWeight.SemiBold
                         )
@@ -198,13 +237,12 @@ fun GoogleAuthenticationStepView(
                     verticalArrangement = Arrangement.Center
                 ) {
                     CircularProgressIndicator(
-                        color = Color(0xFFFD267A)
+                        color = OnboardingColors.Primary
                     )
                     Spacer(Modifier.height(20.dp))
                     Text(
                         text = stringResource(id = R.string.authentication_in_progress),
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = Color.White,
+                        style = OnboardingTypography.BodyMedium.copy(color = Color.White),
                         textAlign = TextAlign.Center
                     )
                 }
