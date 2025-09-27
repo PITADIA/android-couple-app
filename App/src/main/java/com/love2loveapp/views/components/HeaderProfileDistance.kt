@@ -78,9 +78,9 @@ fun HeaderProfileDistance(
         
         // Log pour debugging
         Log.d("HeaderProfileDistance", "🔄 Recalcul distance:")
-        Log.d("HeaderProfileDistance", "  - Service location: ${userLocationFromService?.displayName}")
-        Log.d("HeaderProfileDistance", "  - AppState location: ${currentUser?.currentLocation?.displayName}")
-        Log.d("HeaderProfileDistance", "  - Partner location: ${partnerLocation?.displayName}")
+        Log.d("HeaderProfileDistance", "  - Service location: [SERVICE_LOCATION_MASKED]")
+        Log.d("HeaderProfileDistance", "  - AppState location: [USER_LOCATION_MASKED]")
+        Log.d("HeaderProfileDistance", "  - Partner location: [PARTNER_LOCATION_MASKED]")
         Log.d("HeaderProfileDistance", "  - Distance: $cachedDistance")
     }
     
@@ -240,12 +240,12 @@ private fun shouldShowLocationPermissionFlow(
     ) == android.content.pm.PackageManager.PERMISSION_GRANTED
     
     android.util.Log.d("HeaderProfileDistance", "🔍 shouldShowLocationPermissionFlow:")
-    android.util.Log.d("HeaderProfileDistance", "  - currentUser.name: ${currentUser?.name}")
-    android.util.Log.d("HeaderProfileDistance", "  - userLocation: ${userLocation?.displayName}")
+    android.util.Log.d("HeaderProfileDistance", "  - currentUser.name: [USER_MASKED]")
+    android.util.Log.d("HeaderProfileDistance", "  - userLocation: [LOCATION_MASKED]")
     android.util.Log.d("HeaderProfileDistance", "  - hasLocationPermission: $hasLocationPermission")
-    android.util.Log.d("HeaderProfileDistance", "  - partnerId: $partnerId")
+    android.util.Log.d("HeaderProfileDistance", "  - partnerId: [PARTNER_ID_MASKED]")
     android.util.Log.d("HeaderProfileDistance", "  - hasPartner: $hasPartner")
-    android.util.Log.d("HeaderProfileDistance", "  - partnerLocation: ${partnerLocation?.displayName}")
+    android.util.Log.d("HeaderProfileDistance", "  - partnerLocation: [PARTNER_LOCATION_MASKED]")
     
     // Si l'utilisateur n'a pas accordé la permission → demander permission
     if (!hasLocationPermission) {
@@ -281,12 +281,12 @@ private fun shouldShowPartnerLocationMessage(
     ) == android.content.pm.PackageManager.PERMISSION_GRANTED
     
     android.util.Log.d("HeaderProfileDistance", "💬 shouldShowPartnerLocationMessage:")
-    android.util.Log.d("HeaderProfileDistance", "  - currentUser.name: ${currentUser?.name}")
-    android.util.Log.d("HeaderProfileDistance", "  - userLocation: ${userLocation?.displayName}")
+    android.util.Log.d("HeaderProfileDistance", "  - currentUser.name: [USER_MASKED]")
+    android.util.Log.d("HeaderProfileDistance", "  - userLocation: [LOCATION_MASKED]")
     android.util.Log.d("HeaderProfileDistance", "  - hasLocationPermission: $hasLocationPermission")
-    android.util.Log.d("HeaderProfileDistance", "  - partnerId: $partnerId")
+    android.util.Log.d("HeaderProfileDistance", "  - partnerId: [PARTNER_ID_MASKED]")
     android.util.Log.d("HeaderProfileDistance", "  - hasPartner: $hasPartner")
-    android.util.Log.d("HeaderProfileDistance", "  - partnerLocation: ${partnerLocation?.displayName}")
+    android.util.Log.d("HeaderProfileDistance", "  - partnerLocation: [PARTNER_LOCATION_MASKED]")
     
     // Si utilisateur n'a pas la permission → ne pas afficher message partenaire
     if (!hasLocationPermission) {

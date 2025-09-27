@@ -286,7 +286,7 @@ class CompleteOnboardingViewModel : ViewModel() {
 
     private fun checkGoogleNameAndProceed() {
         val googleDisplayName = FirebaseAuth.getInstance().currentUser?.displayName
-        Log.d("CompleteOnboardingVM", "🔐 googleUserDisplayName='${googleDisplayName ?: "null"}'")
+        Log.d("CompleteOnboardingVM", "🔐 googleUserDisplayName='[USER_MASKED]'")
 
         // Toujours aller vers DisplayName (comme iOS) - ne plus sauter cette étape
         if (!googleDisplayName.isNullOrBlank()) {
@@ -383,8 +383,8 @@ class CompleteOnboardingViewModel : ViewModel() {
             // Si _userName.value est vide, le modèle User va automatiquement générer
             // "Utilisateur" + 4 premiers caractères de l'UUID (français) ou "User" + 4 premiers (anglais)
             Log.d("CompleteOnboardingVM", "🎯 CRÉATION USER - DONNÉES D'ENTRÉE:")
-            Log.d("CompleteOnboardingVM", "  - userId: '$userId'")
-            Log.d("CompleteOnboardingVM", "  - _userName.value: '${_userName.value}'")
+            Log.d("CompleteOnboardingVM", "  - userId: '[MASKED]'")
+            Log.d("CompleteOnboardingVM", "  - _userName.value: '[MASKED]'")
             Log.d("CompleteOnboardingVM", "  - _userName.value.isBlank(): ${_userName.value.isBlank()}")
             
             val user = com.love2loveapp.models.User(
@@ -399,11 +399,11 @@ class CompleteOnboardingViewModel : ViewModel() {
             )
             
             Log.d("CompleteOnboardingVM", "🔥 USER CRÉÉ - VÉRIFICATION:")
-            Log.d("CompleteOnboardingVM", "  - user.name (propriété calculée): '${user.name}'")
-            Log.d("CompleteOnboardingVM", "  - user.id: '${user.id}'")
+            Log.d("CompleteOnboardingVM", "  - user.name (propriété calculée): '[MASKED]'")
+            Log.d("CompleteOnboardingVM", "  - user.id: '[MASKED]'")
             
             Log.d("CompleteOnboardingVM", "✅ Onboarding finalisé avec succès")
-            Log.d("CompleteOnboardingVM", "👤 Utilisateur créé: ${user.name}")
+            Log.d("CompleteOnboardingVM", "👤 Utilisateur créé: [USER_MASKED]")
             Log.d("CompleteOnboardingVM", "🎯 Abonnement: $withSubscription")
             
             // 🔥 FINALISATION IMAGE PROFIL via ProfileImageManager (comme iOS)

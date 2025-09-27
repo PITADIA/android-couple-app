@@ -6,6 +6,8 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -91,18 +93,18 @@ fun UnifiedProfileImageView(
                 modifier = Modifier.fillMaxSize()
             )
         } else {
-            // 👤 Placeholder par défaut
+            // 👤 Bonhomme blanc pour partenaire non connecté (au lieu du "?")
             Box(
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(Color.Gray, CircleShape),
+                    .background(Color.Gray.copy(alpha = 0.1f), CircleShape),
                 contentAlignment = Alignment.Center
             ) {
-                Text(
-                    text = "?",
-                    color = Color.White,
-                    fontSize = (size.value * 0.4).sp,
-                    fontWeight = FontWeight.Bold
+                androidx.compose.material3.Icon(
+                    imageVector = Icons.Filled.Person,
+                    contentDescription = "Partenaire non connecté",
+                    tint = Color.White,
+                    modifier = Modifier.size(size * 0.6f)
                 )
             }
         }

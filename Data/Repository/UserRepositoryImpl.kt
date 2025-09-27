@@ -58,7 +58,7 @@ class UserRepositoryImpl(
             // 1. Vérifier cache local d'abord (Cache-First)
             val cachedUser = userCacheManager.getCachedUser()
             if (cachedUser != null && userCacheManager.isCacheValid()) {
-                Log.d(TAG, "⚡ Utilisateur trouvé en cache: ${cachedUser.email}")
+                Log.d(TAG, "⚡ Utilisateur trouvé en cache: [EMAIL_MASKED]")
                 val result = Result.Success(cachedUser)
                 _currentUserFlow.value = result
                 return result
@@ -81,7 +81,7 @@ class UserRepositoryImpl(
                     if (user != null) {
                         // 4. Mettre à jour le cache
                         userCacheManager.cacheUser(user)
-                        Log.d(TAG, "✅ Utilisateur récupéré et mis en cache: ${user.email}")
+                        Log.d(TAG, "✅ Utilisateur récupéré et mis en cache: [EMAIL_MASKED]")
                     }
                     
                     _currentUserFlow.value = userResult
@@ -110,7 +110,7 @@ class UserRepositoryImpl(
     override suspend fun updateUser(user: User): Result<User> {
         return try {
             _isLoadingFlow.value = true
-            Log.d(TAG, "📝 Mise à jour utilisateur: ${user.email}")
+            Log.d(TAG, "📝 Mise à jour utilisateur: [EMAIL_MASKED]")
             
             // 1. Mise à jour Firebase
             val updateResult = firebaseUserService.updateUserData(user)

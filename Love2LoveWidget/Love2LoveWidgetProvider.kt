@@ -92,8 +92,8 @@ class Love2LoveWidgetProvider : AppWidgetProvider() {
             Log.d(TAG, "  - daysTotal: ${widgetData.daysTotal}")
             Log.d(TAG, "  - timeComponents.days: ${timeComponents.days}")
             Log.d(TAG, "  - duration: ${widgetData.duration}")
-            Log.d(TAG, "  - userName: ${widgetData.userName}")
-            Log.d(TAG, "  - partnerName: ${widgetData.partnerName}")
+            Log.d(TAG, "  - userName: [USER_MASKED]")
+            Log.d(TAG, "  - partnerName: [PARTNER_MASKED]")
             Log.d(TAG, "  - lastUpdate: ${widgetData.lastUpdate}")
             
             if (timeComponents.days <= 0) {

@@ -61,11 +61,11 @@ class PartnerLocationService private constructor() {
      */
     fun startSyncWithPartner(partnerId: String) {
         if (currentPartnerId == partnerId) {
-            Log.d(TAG, "✅ Synchronisation déjà active pour: $partnerId")
+            Log.d(TAG, "✅ Synchronisation déjà active pour: [PARTNER_ID_MASKED]")
             return
         }
         
-        Log.d(TAG, "🚀 Démarrage synchronisation Cloud Functions partenaire: $partnerId")
+        Log.d(TAG, "🚀 Démarrage synchronisation Cloud Functions partenaire: [PARTNER_ID_MASKED]")
         
         // Arrêter l'ancienne synchronisation
         stopSync()
@@ -80,7 +80,7 @@ class PartnerLocationService private constructor() {
      * 🔄 Synchronisation périodique via Cloud Functions (équivalent iOS)
      */
     private fun startPeriodicSync(partnerId: String) {
-        Log.d(TAG, "⏱️ Démarrage synchronisation périodique pour: $partnerId")
+        Log.d(TAG, "⏱️ Démarrage synchronisation périodique pour: [PARTNER_ID_MASKED]")
         
         serviceScope.launch {
             // 🚀 Première synchronisation immédiate
@@ -101,7 +101,7 @@ class PartnerLocationService private constructor() {
                 }
             }
             
-            Log.d(TAG, "⏹️ Arrêt synchronisation périodique pour: $partnerId")
+            Log.d(TAG, "⏹️ Arrêt synchronisation périodique pour: [PARTNER_ID_MASKED]")
         }
     }
     
@@ -132,12 +132,12 @@ class PartnerLocationService private constructor() {
                 } ?: Log.w(TAG, "⚠️ ProfileImageManager non disponible pour sync partenaire")
                 
                 Log.d(TAG, "✅ DONNÉES PARTENAIRE MISES À JOUR (Cloud Functions):")
-                Log.d(TAG, "   - Nom: ${partnerInfo.name}")
+                Log.d(TAG, "   - Nom: [PARTNER_NAME_MASKED]")
                 Log.d(TAG, "   - Photo profil: ${if (partnerInfo.profileImageURL != null) "✅ Présente" else "❌ Absente"}")
                 Log.d(TAG, "   - Abonné: ${if (partnerInfo.isSubscribed) "✅ Oui" else "❌ Non"}")
                 
                 if (partnerInfo.profileImageURL != null) {
-                    Log.d(TAG, "🖼️ URL photo partenaire: ${partnerInfo.profileImageURL.take(50)}...")
+                    Log.d(TAG, "🖼️ URL photo partenaire: [URL_MASKED]")
                 }
             }.onFailure { error ->
                 Log.e(TAG, "❌ Erreur récupération infos partenaire: ${error.message}")
@@ -148,7 +148,7 @@ class PartnerLocationService private constructor() {
             locationResult.onSuccess { location ->
                 _partnerLocation.value = location
                 if (location != null) {
-                    Log.d(TAG, "📍 Localisation partenaire mise à jour: ${location.city}")
+                    Log.d(TAG, "📍 Localisation partenaire mise à jour: [PARTNER_LOCATION_MASKED]")
                 }
             }.onFailure { error ->
                 Log.e(TAG, "❌ Erreur récupération localisation partenaire: ${error.message}")
@@ -185,7 +185,7 @@ class PartnerLocationService private constructor() {
      */
     fun forceRefreshFromCloudFunctions() {
         currentPartnerId?.let { partnerId ->
-            Log.d(TAG, "🔄 FORCE: Synchronisation immédiate demandée pour: $partnerId")
+            Log.d(TAG, "🔄 FORCE: Synchronisation immédiate demandée pour: [PARTNER_ID_MASKED]")
             
             serviceScope.launch {
                 syncPartnerData(partnerId)
@@ -213,17 +213,17 @@ class PartnerLocationService private constructor() {
             return
         }
         
-        Log.d(TAG, "👤 Utilisateur connecté: $currentUserId - Observation AppState pour changements partenaire...")
+        Log.d(TAG, "👤 Utilisateur connecté: [USER_MASKED] - Observation AppState pour changements partenaire...")
         
         // Observer l'AppState pour détecter les changements de partenaire
         serviceScope.launch {
             try {
                 com.love2loveapp.AppDelegate.appState.currentUser.collect { user ->
                     val partnerId = user?.partnerId
-                    Log.d(TAG, "📄 AppState utilisateur reçu - partnerId: ${partnerId ?: "null"}")
+                    Log.d(TAG, "📄 AppState utilisateur reçu - partnerId: [PARTNER_ID_MASKED]")
                     
                     if (!partnerId.isNullOrEmpty()) {
-                        Log.d(TAG, "🔄 PARTENAIRE DÉTECTÉ (AppState) - Démarrage auto-sync: $partnerId")
+                        Log.d(TAG, "🔄 PARTENAIRE DÉTECTÉ (AppState) - Démarrage auto-sync: [PARTNER_ID_MASKED]")
                         startSyncWithPartner(partnerId)
                     } else {
                         Log.d(TAG, "ℹ️ Pas de partenaire (AppState), arrêt sync")

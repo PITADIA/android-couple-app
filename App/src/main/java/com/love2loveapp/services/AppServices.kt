@@ -163,7 +163,7 @@ class SimpleFreemiumManager : com.love2loveapp.models.FreemiumManager {
         val currentUser = com.love2loveapp.AppDelegate.appState.currentUser.value
         val isSubscribed = currentUser?.isSubscribed ?: false
         
-        Log.d(TAG, "🔍 État abonnement: $isSubscribed (utilisateur: ${currentUser?.name})")
+        Log.d(TAG, "🔍 État abonnement: $isSubscribed (utilisateur: [USER_MASKED])")
         
         // 1. Utilisateur abonné → Accès illimité
         if (isSubscribed) {

@@ -110,3 +110,8 @@ firebase/functions/node_modules/
 firebase/functions/.env
 firebase/functions/.env.localCoupleApp.zip
 CoupleApp/
+
+# KEYSTORE - NE JAMAIS COMMITTER
+App/Keystore/
+*.jks
+*.keystore

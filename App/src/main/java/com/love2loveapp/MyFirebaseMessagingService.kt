@@ -21,7 +21,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
     override fun onNewToken(token: String) {
         super.onNewToken(token)
-        Log.i(TAG, "📱 Nouveau token FCM: $token")
+        Log.i(TAG, "📱 Nouveau token FCM: [TOKEN_MASKED]")
         // Sauvegarde immédiate si user connecté, sinon on stash en SharedPreferences
         if (!updateFcmTokenForCurrentUser(this, token)) {
             stashTokenLocally(this, token)
@@ -129,7 +129,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
                     "fcmTokenUpdatedAt" to FieldValue.serverTimestamp()
                 )
             ).addOnSuccessListener {
-                Log.i(TAG, "✅ fcmToken enregistré pour user=${user.uid.take(6)}…")
+                Log.i(TAG, "✅ fcmToken enregistré pour user=[MASKED]")
                 clearStashedToken(context)
             }.addOnFailureListener {
                 Log.w(TAG, "⚠️ Échec écriture fcmToken, stash local", it)
@@ -176,7 +176,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
                         "fcmTokenUpdatedAt" to FieldValue.serverTimestamp()
                     )
                 ).addOnSuccessListener {
-                    Log.i(TAG, "✅ fcmToken flushed pour user=${user.uid.take(6)}…")
+                    Log.i(TAG, "✅ fcmToken flushed pour user=[MASKED]")
                     prefs.edit().remove(KEY_STASHED_TOKEN).apply()
                 }.addOnFailureListener {
                     Log.w(TAG, "⚠️ Échec flush fcmToken", it)

@@ -94,9 +94,8 @@ class LocationSyncService private constructor(private val context: Context) {
         val now = System.currentTimeMillis()
         
         Log.d(TAG, "🆕 NOUVELLE LOCALISATION REÇUE:")
-        Log.d(TAG, "  - userId: $userId")
-        Log.d(TAG, "  - latitude: ${location.latitude}")
-        Log.d(TAG, "  - longitude: ${location.longitude}")
+        Log.d(TAG, "  - userId: [MASKED]")
+        Log.d(TAG, "  - localisation: [GPS_MASKED]")
         Log.d(TAG, "  - précision: ${location.accuracy}m")
         
         // Éviter le spam d'updates
@@ -114,14 +113,14 @@ class LocationSyncService private constructor(private val context: Context) {
             lastUpdated = now
         )
         
-        Log.d(TAG, "  ✅ UserLocation créé: ${userLocation.displayName}")
+        Log.d(TAG, "  ✅ UserLocation créé: [LOCATION_MASKED]")
         
         // Mettre à jour le StateFlow local
         _currentLocation.value = userLocation
         lastUpdateTime = now
         lastSavedLocation = location
         
-        Log.d(TAG, "📍 Nouvelle localisation: ${location.latitude}, ${location.longitude}")
+        Log.d(TAG, "📍 Nouvelle localisation: [GPS_COORDINATES_MASKED]")
         
         // Sauvegarder dans Firestore
         saveLocationToFirestore(userLocation, userId)
@@ -132,8 +131,8 @@ class LocationSyncService private constructor(private val context: Context) {
      */
     private fun saveLocationToFirestore(userLocation: UserLocation, userId: String) {
         Log.d(TAG, "💾 SAUVEGARDE FIRESTORE:")
-        Log.d(TAG, "  - userId: $userId")
-        Log.d(TAG, "  - userLocation: ${userLocation.displayName}")
+        Log.d(TAG, "  - userId: [MASKED]")
+        Log.d(TAG, "  - userLocation: [LOCATION_MASKED]")
         
         serviceScope.launch {
             try {
@@ -257,7 +256,7 @@ class LocationSyncService private constructor(private val context: Context) {
                 val user = firebaseAuth.currentUser
                 
                 if (user != null) {
-                    Log.d(TAG, "✅ AUTH LISTENER: Utilisateur connecté détecté: ${user.uid}")
+                    Log.d(TAG, "✅ AUTH LISTENER: Utilisateur connecté détecté: [USER_MASKED]")
                     Log.d(TAG, "🚀 RELANCE LocationSync maintenant que l'auth est OK...")
                     
                     // Arrêter le listener et relancer le service

@@ -163,7 +163,7 @@ class JournalRepository private constructor(
             val partnerIds = mutableListOf(currentUser.uid) // Toujours inclure l'auteur
             appUser.partnerId?.let { partnerId ->
                 partnerIds.add(partnerId)
-                Log.d(TAG, "👥 Partage avec partenaire: $partnerId")
+                Log.d(TAG, "👥 Partage avec partenaire: [PARTNER_ID_MASKED]")
             }
             
             val entry = JournalEntry(

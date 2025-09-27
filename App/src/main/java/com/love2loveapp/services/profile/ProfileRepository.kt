@@ -86,7 +86,7 @@ class ProfileRepository @Inject constructor(
                 if (snapshot != null && snapshot.exists()) {
                     val user = UserProfile.fromFirestore(snapshot)
                     if (user != null) {
-                        Log.d(TAG, "✅ Profil utilisateur mis à jour: ${user.name}")
+                        Log.d(TAG, "✅ Profil utilisateur mis à jour: [USER_MASKED]")
                         _currentUser.value = user
                         _error.value = null // Clear error on success
                     } else {
@@ -161,9 +161,9 @@ class ProfileRepository @Inject constructor(
 
             // 🔒 VÉRIFICATION TOKEN AUTHENTIFICATION (FIX 403)
             currentUser.getIdToken(true).await() // Force refresh token
-            Log.d(TAG, "✅ Token Firebase rafraîchi pour: ${currentUser.uid}")
+            Log.d(TAG, "✅ Token Firebase rafraîchi pour: [USER_MASKED]")
 
-            Log.d(TAG, "📸 Upload photo profil pour user: ${currentUser.uid}")
+            Log.d(TAG, "📸 Upload photo profil pour user: [USER_MASKED]")
             Log.d(TAG, "📏 Image size: ${imageBytes.size} bytes")
 
             // 🕐 VÉRIFICATION LIMITE FRÉQUENCE (60 secondes comme Firebase Rules)
@@ -292,7 +292,7 @@ class ProfileRepository @Inject constructor(
             val currentUser = auth.currentUser
                 ?: return Result.failure(Exception("Utilisateur non connecté"))
 
-            Log.d(TAG, "🗑️ Début suppression compte utilisateur: ${currentUser.uid}")
+            Log.d(TAG, "🗑️ Début suppression compte utilisateur: [USER_MASKED]")
 
             // Étape 1: Réauthentification requise par Firebase pour opérations sensibles
             try {

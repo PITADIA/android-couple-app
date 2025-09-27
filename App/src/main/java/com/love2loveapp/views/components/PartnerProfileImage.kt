@@ -51,8 +51,8 @@ fun PartnerProfileImage(
     LaunchedEffect(hasPartner, imageURL, partnerName) {
         Log.d(TAG, "🖼️ PartnerProfileImage - ÉTAT:")
         Log.d(TAG, "   - hasPartner: $hasPartner")
-        Log.d(TAG, "   - partnerName: '$partnerName'")
-        Log.d(TAG, "   - imageURL: ${imageURL?.let { "${it.take(50)}${if (it.length > 50) "..." else ""}" } ?: "null"}")
+        Log.d(TAG, "   - partnerName: [PARTNER_MASKED]")
+        Log.d(TAG, "   - imageURL: [URL_MASKED]")
         Log.d(TAG, "   - userCacheManager: ${if (userCacheManager != null) "✅ Présent" else "❌ Null"}")
     }
     val clickableModifier = if (onClick != null && !hasPartner) {
@@ -115,13 +115,13 @@ fun PartnerProfileImage(
             }
             // PRIORITÉ 3: Initiales partenaire
             else if (partnerName.isNotEmpty()) {
-                Log.d(TAG, "🖼️ PRIORITÉ 3 - Affichage initiales: '$partnerName'")
+                Log.d(TAG, "🖼️ PRIORITÉ 3 - Affichage initiales: [PARTNER_MASKED]")
                 UserInitialsView(name = partnerName, size = size)
             }
-            // PRIORITÉ 4: Point d'interrogation
+            // PRIORITÉ 4: Bonhomme blanc (remplace le point d'interrogation)
             else {
-                Log.d(TAG, "🖼️ PRIORITÉ 4 - Aucune info → point d'interrogation")
-                QuestionMarkView(size = size)
+                Log.d(TAG, "🖼️ PRIORITÉ 4 - Aucune info → bonhomme blanc")
+                PersonIconView(size = size)
             }
         } else {
             Log.d(TAG, "👤 PAS DE PARTENAIRE → icône invitation")
@@ -165,8 +165,8 @@ private fun QuestionMarkView(size: Dp) {
 }
 
 /**
- * 👤 Petit bonhomme blanc pour utilisateur sans partenaire
- * Design identique à l'image fournie : fond gris clair + icône personne blanche
+ * 👤 Bonhomme blanc pour partenaire non connecté
+ * Design selon image fournie : fond gris très clair + bonhomme blanc
  */
 @Composable
 private fun PersonIconView(size: Dp) {
@@ -174,13 +174,13 @@ private fun PersonIconView(size: Dp) {
         modifier = Modifier
             .size(size)
             .clip(CircleShape)
-            .background(Color.Gray.copy(alpha = 0.15f)), // Fond gris clair comme sur l'image
+            .background(Color.Gray.copy(alpha = 0.1f)), // Fond gris très clair comme sur l'image
         contentAlignment = Alignment.Center
     ) {
         Icon(
             imageVector = Icons.Filled.Person,
             contentDescription = "Partenaire non connecté",
-            tint = Color.White, // Petit bonhomme blanc comme sur l'image
+            tint = Color.White, // Bonhomme blanc selon demande utilisateur
             modifier = Modifier.size(size * 0.6f) // Taille proportionnelle
         )
     }

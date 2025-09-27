@@ -269,7 +269,7 @@ fun AuthenticationStepScreen(
             hasProcessed = true
             val firebaseUser = FirebaseAuth.getInstance().currentUser
             if (firebaseUser != null) {
-                Log.d("GoogleAuth", "👤 Utilisateur: ${firebaseUser.displayName}")
+                Log.d("GoogleAuth", "👤 Utilisateur: [USER_MASKED]")
                 onAuthenticationComplete()
             } else {
                 Log.e("GoogleAuth", "❌ Aucun utilisateur Firebase trouvé")

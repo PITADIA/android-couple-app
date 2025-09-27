@@ -62,7 +62,7 @@ class UserDataIntegrationService private constructor(
         // Si déjà authentifié, démarrer immédiatement
         val currentUser = auth.currentUser
         if (currentUser != null) {
-            Log.d(TAG, "👤 Utilisateur déjà connecté: ${currentUser.uid}")
+            Log.d(TAG, "👤 Utilisateur déjà connecté: [USER_MASKED]")
             startUserDataSync(currentUser.uid)
         } else {
             Log.d(TAG, "ℹ️ Aucun utilisateur connecté")
@@ -94,7 +94,7 @@ class UserDataIntegrationService private constructor(
             val firebaseUser = firebaseAuth.currentUser
             
             if (firebaseUser != null) {
-                Log.d(TAG, "🔐 Utilisateur connecté: ${firebaseUser.uid}")
+                Log.d(TAG, "🔐 Utilisateur connecté: [USER_MASKED]")
                 
                 // Marquer comme authentifié dans AppState
                 appState.setAuthenticated(true, null) // Sera mis à jour par le listener Firestore
@@ -162,7 +162,7 @@ class UserDataIntegrationService private constructor(
      * 📊 Démarre la synchronisation des données utilisateur
      */
     private fun startUserDataSync(userId: String) {
-        Log.d(TAG, "📊 Démarrage sync données utilisateur: $userId")
+        Log.d(TAG, "📊 Démarrage sync données utilisateur: [USER_MASKED]")
         
         // Arrêter l'ancien listener s'il existe
         stopUserDataSync()
@@ -206,7 +206,7 @@ class UserDataIntegrationService private constructor(
                         // Sauvegarder dans SharedPreferences pour persistance
                         saveUserToSharedPreferences(user)
                         
-                        Log.d(TAG, "✅ Données utilisateur mises à jour: ${user.name}")
+                        Log.d(TAG, "✅ Données utilisateur mises à jour: [USER_MASKED]")
                         
                         // 🛫 Navigation intelligente basée sur l'état d'onboarding et d'abonnement
                         if (user.onboardingInProgress) {
@@ -236,7 +236,7 @@ class UserDataIntegrationService private constructor(
                         // Si localisation a changé, mettre à jour le service
                         user.currentLocation?.let { location ->
                             // La localisation sera gérée par LocationSyncService
-                            Log.d(TAG, "📍 Localisation utilisateur: ${location.displayName}")
+                            Log.d(TAG, "📍 Localisation utilisateur: [LOCATION_MASKED]")
                         }
                         
                     } catch (e: Exception) {
@@ -424,8 +424,8 @@ class UserDataIntegrationService private constructor(
         val firestoreData = mutableMapOf<String, Any?>()
         
         Log.d(TAG, "🎯 SAUVEGARDE FIRESTORE - DONNÉES USER:")
-        Log.d(TAG, "  - user.id: '${user.id}'")
-        Log.d(TAG, "  - user.name (propriété calc): '${user.name}'")
+        Log.d(TAG, "  - user.id: '[MASKED]'")
+        Log.d(TAG, "  - user.name (propriété calc): '[MASKED]'")
         
         // 🔥 PERSISTANCE: Sauvegarder le nom généré automatiquement en Firestore
         // pour éviter de régénérer à chaque chargement et maintenir la cohérence

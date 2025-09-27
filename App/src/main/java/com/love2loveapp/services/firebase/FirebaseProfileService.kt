@@ -37,7 +37,7 @@ class FirebaseProfileService {
      */
     suspend fun getPartnerInfo(partnerId: String): Result<PartnerInfo> {
         return try {
-            Log.d(TAG, "👥 Récupération info partenaire: $partnerId")
+            Log.d(TAG, "👥 Récupération info partenaire: [PARTNER_ID_MASKED]")
             
             val data = hashMapOf("partnerId" to partnerId)
             val result = functions
@@ -54,7 +54,7 @@ class FirebaseProfileService {
                     profileImageURL = partnerInfo["profileImageURL"] as? String
                 )
                 
-                Log.d(TAG, "✅ Info partenaire récupérées: ${info.name}, photo: ${info.profileImageURL != null}")
+                Log.d(TAG, "✅ Info partenaire récupérées: [PARTNER_MASKED], photo: ${info.profileImageURL != null}")
                 Result.success(info)
             } else {
                 Log.w(TAG, "⚠️ Échec récupération info partenaire")
@@ -72,7 +72,7 @@ class FirebaseProfileService {
      */
     suspend fun getPartnerLocation(partnerId: String): Result<UserLocation?> {
         return try {
-            Log.d(TAG, "📍 Récupération localisation partenaire: $partnerId")
+            Log.d(TAG, "📍 Récupération localisation partenaire: [PARTNER_ID_MASKED]")
             
             val data = hashMapOf("partnerId" to partnerId)
             val result = functions
@@ -92,7 +92,7 @@ class FirebaseProfileService {
                     lastUpdated = (location["lastUpdated"] as? Number)?.toLong() ?: System.currentTimeMillis()
                 )
                 
-                Log.d(TAG, "✅ Localisation partenaire trouvée: ${userLocation.city}")
+                Log.d(TAG, "✅ Localisation partenaire trouvée: [CITY_MASKED]")
                 Result.success(userLocation)
             } else {
                 val reason = response["reason"] as? String
@@ -111,7 +111,7 @@ class FirebaseProfileService {
      */
     suspend fun getPartnerProfileImage(partnerId: String): Result<String?> {
         return try {
-            Log.d(TAG, "🖼️ Récupération URL photo partenaire: $partnerId")
+            Log.d(TAG, "🖼️ Récupération URL photo partenaire: [PARTNER_ID_MASKED]")
             
             val data = hashMapOf("partnerId" to partnerId)
             val result = functions
@@ -143,7 +143,7 @@ class FirebaseProfileService {
      */
     suspend fun getSignedImageURL(filePath: String): Result<String?> {
         return try {
-            Log.d(TAG, "🔒 Génération URL signée: $filePath")
+            Log.d(TAG, "🔒 Génération URL signée: [FILE_PATH_MASKED]")
             
             val data = hashMapOf("filePath" to filePath)
             val result = functions

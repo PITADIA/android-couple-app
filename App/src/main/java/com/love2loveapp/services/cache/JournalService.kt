@@ -185,7 +185,7 @@ class JournalService private constructor(
             if (imageUri != null) {
                 Log.d(TAG, "📷 Upload image Journal...")
                 imageUrl = uploadImage(imageUri)
-                Log.d(TAG, "✅ Image uploadée: ${imageUrl?.takeLast(20)}...")
+                Log.d(TAG, "✅ Image uploadée: [URL_MASKED]")
             }
             
             // 2. Récupérer informations utilisateur

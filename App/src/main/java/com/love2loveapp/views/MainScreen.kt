@@ -105,7 +105,7 @@ fun MainScreen() {
     }
     
     Log.d("MainScreen", "🏠 Affichage écran principal HomeContentView")
-    Log.d("MainScreen", "👤 Utilisateur: ${currentUser?.name}")
+    Log.d("MainScreen", "👤 Utilisateur: [USER_MASKED]")
     Log.d("MainScreen", "💑 Partenaire connecté: $hasConnectedPartner")
 
     Box(
@@ -148,9 +148,9 @@ fun MainScreen() {
                 onDistanceTap = { showPartnerMessageOnly ->
                     Log.d("MainScreen", "🎯 CLIC SUR DISTANCE:")
                     Log.d("MainScreen", "  - showPartnerMessageOnly: $showPartnerMessageOnly")
-                    Log.d("MainScreen", "  - currentUser: ${currentUser?.name}")
-                    Log.d("MainScreen", "  - hasPartner: ${!currentUser?.partnerId.isNullOrEmpty()}")
-                    Log.d("MainScreen", "  - userLocation: ${currentUser?.currentLocation?.displayName}")
+                    Log.d("MainScreen", "  - currentUser: [USER_MASKED]")
+                    Log.d("MainScreen", "  - hasPartner: [PARTNER_STATUS_MASKED]")
+                    Log.d("MainScreen", "  - userLocation: [LOCATION_MASKED]")
                     
                     activeSheet = if (showPartnerMessageOnly) {
                         Log.d("MainScreen", "  ✅ Navigation vers PartnerLocationMessage")
@@ -304,11 +304,11 @@ fun MainScreen() {
                         val partnerHasLocation = partnerLocation != null
                         
                         Log.d("MainScreen", "📍 ANALYSE POST-PERMISSION:")
-                        Log.d("MainScreen", "  - currentUser.name: ${currentUser?.name}")
-                        Log.d("MainScreen", "  - currentUser.partnerId: ${currentUser?.partnerId}")
-                        Log.d("MainScreen", "  - currentUser.currentLocation: ${currentUser?.currentLocation?.displayName}")
+                        Log.d("MainScreen", "  - currentUser.name: [USER_MASKED]")
+                        Log.d("MainScreen", "  - currentUser.partnerId: [PARTNER_ID_MASKED]")
+                        Log.d("MainScreen", "  - currentUser.currentLocation: [LOCATION_MASKED]")
                         Log.d("MainScreen", "  - hasPartner: $hasPartner")
-                        Log.d("MainScreen", "  - partnerLocation: ${partnerLocation?.displayName}")
+                        Log.d("MainScreen", "  - partnerLocation: [PARTNER_LOCATION_MASKED]")
                         Log.d("MainScreen", "  - partnerHasLocation: $partnerHasLocation")
                         
                         if (hasPartner && !partnerHasLocation) {

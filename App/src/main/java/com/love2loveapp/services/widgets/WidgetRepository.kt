@@ -113,9 +113,9 @@ class WidgetRepository private constructor(
                 Log.d(TAG, "👤 CurrentUser: ${if (currentUser != null) "✅" else "❌ NULL"}")
                 
                 if (currentUser != null) {
-                    Log.d(TAG, "👤 User.name: ${currentUser.name}")
-                    Log.d(TAG, "👤 User.id: ${currentUser.id}")
-                    Log.d(TAG, "👤 User.partnerId: ${currentUser.partnerId}")
+                    Log.d(TAG, "👤 User.name: [USER_MASKED]")
+                    Log.d(TAG, "👤 User.id: [USER_MASKED]")
+                    Log.d(TAG, "👤 User.partnerId: [PARTNER_MASKED]")
                     Log.d(TAG, "📅 User.relationshipStartDate: ${currentUser.relationshipStartDate}")
                     
                     if (currentUser.relationshipStartDate != null) {
@@ -133,11 +133,10 @@ class WidgetRepository private constructor(
                 }
                 
                 // 🎯 RÉCUPÉRER DONNÉES PARTENAIRE VIA FIREBASE si connecté
-                val hasPartner = currentUser?.partnerId != null
-                val partnerData = if (hasPartner) {
-                    Log.d(TAG, "👥 Récupération données partenaire Firebase: ${currentUser!!.partnerId}")
-                    getPartnerDataForWidget(currentUser.partnerId!!)
-                } else {
+                val partnerData = currentUser?.partnerId?.let { partnerId ->
+                    Log.d(TAG, "👥 Récupération données partenaire Firebase: [PARTNER_MASKED]")
+                    getPartnerDataForWidget(partnerId)
+                } ?: run {
                     Log.d(TAG, "❌ Pas de partenaire connecté")
                     null
                 }
@@ -182,7 +181,7 @@ class WidgetRepository private constructor(
                     null
                 }
                 
-                Log.d(TAG, "👥 Partenaire Firebase: ${partnerData?.name ?: "null"}")
+                Log.d(TAG, "👥 Partenaire Firebase: [PARTNER_MASKED]")
                 Log.d(TAG, "📍 Distance: ${distanceInfo?.formattedDistance ?: "N/A"}")
                 
                 // 🔧 CONSTRUIRE NOUVELLES DONNÉES WIDGET avec données Firebase
@@ -344,8 +343,8 @@ class WidgetRepository private constructor(
             Log.d(TAG, "  - relationshipStats: ${if (relationshipStats != null) "✅" else "❌ NULL"}")
             Log.d(TAG, "  - daysTotal: $daysTotal")
             Log.d(TAG, "  - formattedDuration: ${relationshipStats?.formattedDuration}")
-            Log.d(TAG, "  - userName: ${widgetData.userName}")
-            Log.d(TAG, "  - partnerName: ${widgetData.partnerName}")
+            Log.d(TAG, "  - userName: [USER_MASKED]")
+            Log.d(TAG, "  - partnerName: [PARTNER_MASKED]")
             Log.d(TAG, "  - hasSubscription: ${widgetData.hasSubscription}")
             
             if (daysTotal <= 0) {
@@ -507,7 +506,7 @@ class WidgetRepository private constructor(
                 profileImageURL = partnerInfo["profileImageURL"] as? String
             )
             
-            Log.d(TAG, "✅ getPartnerInfo: Infos partenaire récupérées - ${partner.name}")
+            Log.d(TAG, "✅ getPartnerInfo: Infos partenaire récupérées - [PARTNER_MASKED]")
             Log.d(TAG, "✅ getPartnerInfo: Photo profil: ${if (partner.profileImageURL != null) "Présente" else "Absente"}")
             
             partner

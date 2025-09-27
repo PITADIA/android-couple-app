@@ -133,7 +133,7 @@ class ProfileImageManager @Inject constructor(
 
             // 🔒 VÉRIFICATION TOKEN AUTHENTIFICATION (FIX 403)
             currentUser.getIdToken(true).await() // Force refresh token
-            Log.d(TAG, "✅ Token Firebase rafraîchi pour: ${currentUser.uid}")
+            Log.d(TAG, "✅ Token Firebase rafraîchi pour: [USER_MASKED]")
 
             // 🕐 VÉRIFICATION LIMITE FRÉQUENCE (60 secondes comme Firebase Rules)
             val profileImagePath = "profile_images/${currentUser.uid}/profile.jpg"
@@ -159,7 +159,7 @@ class ProfileImageManager @Inject constructor(
                 Log.d(TAG, "ℹ️ Pas de fichier existant ou metadata inaccessible → Upload autorisé")
             }
 
-            Log.d(TAG, "🔥 Upload image utilisateur pour: ${currentUser.uid}")
+            Log.d(TAG, "🔥 Upload image utilisateur pour: [USER_MASKED]")
 
             // Conversion bitmap → ByteArray
             val outputStream = ByteArrayOutputStream()
@@ -286,7 +286,7 @@ class ProfileImageManager @Inject constructor(
                 return
             }
 
-            Log.d(TAG, "🎯 ID partenaire extrait: $partnerId")
+            Log.d(TAG, "🎯 ID partenaire extrait: [PARTNER_ID_MASKED]")
 
             // Vérifier si on a déjà cette version en cache
             val cachedURL = cacheManager?.getCachedPartnerProfileImageURL()
@@ -326,11 +326,11 @@ class ProfileImageManager @Inject constructor(
             }
             
             val encodedPath = urlMatch.groupValues[1]
-            Log.d(TAG, "🔍 Chemin encodé extrait: $encodedPath")
+            Log.d(TAG, "🔍 Chemin encodé extrait: [PATH_MASKED]")
             
             // 🎯 ÉTAPE 2 : Décoder les caractères échappés (comme iOS decodeURIComponent)
             val decodedPath = java.net.URLDecoder.decode(encodedPath, "UTF-8")
-            Log.d(TAG, "🔍 Chemin décodé: $decodedPath")
+            Log.d(TAG, "🔍 Chemin décodé: [PATH_MASKED]")
             
             // 🎯 ÉTAPE 3 : Extraire l'ID depuis le chemin décodé
             // Format : "profile_images/USER_ID/profile.jpg"
@@ -340,12 +340,12 @@ class ProfileImageManager @Inject constructor(
             val partnerId = pathMatch?.groupValues?.get(1)
             
             if (partnerId != null) {
-                Log.d(TAG, "✅ ID partenaire extrait avec succès: $partnerId")
+                Log.d(TAG, "✅ ID partenaire extrait avec succès: [PARTNER_ID_MASKED]")
             } else {
-                Log.e(TAG, "❌ Impossible d'extraire ID depuis le chemin décodé: $decodedPath")
+                Log.e(TAG, "❌ Impossible d'extraire ID depuis le chemin décodé: [PATH_MASKED]")
             }
             
-            Log.d(TAG, "🔍 Extraction ID partenaire: '$partnerId' depuis URL")
+            Log.d(TAG, "🔍 Extraction ID partenaire: [PARTNER_ID_MASKED] depuis URL")
             partnerId
             
         } catch (e: Exception) {
@@ -359,7 +359,7 @@ class ProfileImageManager @Inject constructor(
      * Architecture identique à iOS - utilise getPartnerProfileImage
      */
     private suspend fun downloadAndCachePartnerImageSecure(partnerId: String, originalUrl: String, updatedAt: Long?) {
-        Log.d(TAG, "🔐 Début téléchargement sécurisé pour partenaire: $partnerId")
+        Log.d(TAG, "🔐 Début téléchargement sécurisé pour partenaire: [PARTNER_ID_MASKED]")
         
         try {
             // 1. APPEL CLOUD FUNCTION sécurisée (comme iOS)
@@ -534,7 +534,7 @@ class ProfileImageManager @Inject constructor(
      * Similaire au téléchargement partenaire mais pour l'utilisateur actuel
      */
     private suspend fun downloadAndCacheUserImageFromUrl(imageUrl: String, updatedAt: Long?) {
-        Log.d(TAG, "⬇️ Téléchargement image utilisateur depuis: $imageUrl")
+        Log.d(TAG, "⬇️ Téléchargement image utilisateur depuis: [URL_MASKED]")
         
         try {
             val imageRef = storage.getReferenceFromUrl(imageUrl)

@@ -1,28 +1,18 @@
 package com.love2loveapp.views.navigation
 
+import androidx.annotation.DrawableRes
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Email
-import androidx.compose.material.icons.filled.Settings
-import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Create
-import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.outlined.Email
-import androidx.compose.material.icons.outlined.Settings
-import androidx.compose.material.icons.outlined.FavoriteBorder
-import androidx.compose.material.icons.outlined.Home
-import androidx.compose.material.icons.outlined.Create
-import androidx.compose.material.icons.outlined.Person
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.love2loveapp.R
 
 /**
  * 📱 Bottom Navigation - Menu de navigation principal
@@ -36,20 +26,20 @@ import androidx.compose.ui.unit.sp
  */
 
 /**
- * 🔄 Destinations de navigation
+ * 🔄 Destinations de navigation avec icônes personnalisées
  */
 enum class NavigationDestination(
     val route: String,
     val title: String,
-    val selectedIcon: ImageVector,
-    val unselectedIcon: ImageVector
+    @DrawableRes val selectedIcon: Int,
+    @DrawableRes val unselectedIcon: Int
 ) {
-    MAIN("main", "Questions", Icons.Filled.Home, Icons.Outlined.Home),
-    DAILY_QUESTIONS("daily_questions", "Question du Jour", Icons.Filled.Email, Icons.Outlined.Email),
-    DAILY_CHALLENGES("daily_challenges", "Défi du Jour", Icons.Filled.Settings, Icons.Outlined.Settings),
-    JOURNAL("journal", "Journal", Icons.Filled.Create, Icons.Outlined.Create),
-    FAVORITES("favorites", "Favoris", Icons.Filled.Favorite, Icons.Outlined.FavoriteBorder),
-    PROFILE("profile", "Profil", Icons.Filled.Person, Icons.Outlined.Person)
+    MAIN("main", "Accueil", R.drawable.home, R.drawable.home),
+    DAILY_QUESTIONS("daily_questions", "Question du Jour", R.drawable.star, R.drawable.star),
+    DAILY_CHALLENGES("daily_challenges", "Défi du Jour", R.drawable.miss, R.drawable.miss),
+    JOURNAL("journal", "Journal", R.drawable.map, R.drawable.map),
+    FAVORITES("favorites", "Favoris", R.drawable.heart, R.drawable.heart),
+    PROFILE("profile", "Profil", R.drawable.profile, R.drawable.profile)
 }
 
 /**
@@ -65,7 +55,7 @@ fun Love2LoveBottomNavigation(
     NavigationBar(
         modifier = modifier.fillMaxWidth(),
         containerColor = Color.White,
-        contentColor = Color(0xFFFF4081), // Rose Love2Love
+        contentColor = Color.Transparent, // Supprime le ripple par défaut
         tonalElevation = 8.dp
     ) {
         NavigationDestination.values().forEach { destination ->
@@ -80,12 +70,13 @@ fun Love2LoveBottomNavigation(
                 selected = currentDestination == destination,
                 onClick = { onDestinationSelected(destination) },
                 colors = NavigationBarItemDefaults.colors(
-                    selectedIconColor = Color(0xFFFF4081),
-                    selectedTextColor = Color(0xFFFF4081),
-                    unselectedIconColor = Color.Black.copy(alpha = 0.6f),
-                    unselectedTextColor = Color.Black.copy(alpha = 0.6f),
-                    indicatorColor = Color(0xFFFF4081).copy(alpha = 0.1f)
-                )
+                    selectedIconColor = Color.Black, // Icône sélectionnée reste en noir
+                    selectedTextColor = Color(0xFFFD267A), // Texte reste en rose
+                    unselectedIconColor = Color.Gray.copy(alpha = 0.8f), // Gris du rapport
+                    unselectedTextColor = Color.Gray.copy(alpha = 0.8f),
+                    indicatorColor = Color.Transparent // Supprime la bulle rose complètement
+                ),
+                interactionSource = remember { MutableInteractionSource() } // Supprime l'effet ripple
             )
         }
     }
@@ -117,9 +108,9 @@ private fun NavigationItemIcon(
         }
     ) {
         Icon(
-            imageVector = if (isSelected) destination.selectedIcon else destination.unselectedIcon,
+            painter = painterResource(if (isSelected) destination.selectedIcon else destination.unselectedIcon),
             contentDescription = destination.title,
-            modifier = Modifier.size(24.dp)
+            modifier = Modifier.size(if (isSelected) 32.dp else 28.dp) // Tailles selon le rapport
         )
     }
 }

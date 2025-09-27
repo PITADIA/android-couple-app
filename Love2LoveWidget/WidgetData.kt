@@ -125,8 +125,8 @@ data class WidgetData(
             
             Log.d(TAG, "🔍 Widget: Données récupérées:")
             Log.d(TAG, "  - daysTotal: $daysTotal")
-            Log.d(TAG, "  - userName: $userName")
-            Log.d(TAG, "  - partnerName: $partnerName")
+            Log.d(TAG, "  - userName: [USER_MASKED]")
+            Log.d(TAG, "  - partnerName: [PARTNER_MASKED]")
             Log.d(TAG, "  - hasSubscription: $hasSubscription")
             
             // Coordonnées (peuvent être null)

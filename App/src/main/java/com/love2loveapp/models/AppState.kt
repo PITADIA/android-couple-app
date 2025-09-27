@@ -36,7 +36,7 @@ class AppState(private val context: android.content.Context) {
     val isOnboardingCompleted: StateFlow<Boolean> = _isOnboardingCompleted.asStateFlow()
     
     // === États de navigation ===
-    private val _currentScreen = MutableStateFlow<AppScreen>(AppScreen.Welcome)
+    private val _currentScreen = MutableStateFlow<AppScreen>(determineInitialScreen())
     val currentScreen: StateFlow<AppScreen> = _currentScreen.asStateFlow()
     
     // === État pour tests/debug ===
@@ -55,6 +55,32 @@ class AppState(private val context: android.content.Context) {
     init {
         // Charger les intro flags existants au démarrage (pour les sessions persistantes)
         loadIntroFlagsAtStartup()
+    }
+    
+    /**
+     * 🎯 Détermine l'écran initial de manière intelligente
+     * Vérifie Firebase Auth de manière synchrone pour éviter les race conditions
+     */
+    private fun determineInitialScreen(): AppScreen {
+        return try {
+            // 🔑 Vérification synchrone de Firebase Auth
+            val currentFirebaseUser = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser
+            
+            if (currentFirebaseUser != null) {
+                // Utilisateur connecté → aller directement à Main
+                // UserDataIntegrationService gèrera les mises à jour après
+                android.util.Log.d("AppState", "🎯 Utilisateur connecté détecté [USER_MASKED] → Navigation directe vers Main")
+                AppScreen.Main
+            } else {
+                // Utilisateur déconnecté → Welcome pour onboarding/authentification
+                android.util.Log.d("AppState", "🎯 Aucun utilisateur connecté → Welcome")
+                AppScreen.Welcome
+            }
+        } catch (e: Exception) {
+            // En cas d'erreur, par défaut Welcome (plus sûr)
+            android.util.Log.e("AppState", "❌ Erreur détection utilisateur initial: ${e.message}")
+            AppScreen.Welcome
+        }
     }
     
     /**
@@ -82,7 +108,7 @@ class AppState(private val context: android.content.Context) {
     private fun saveUserData(user: User) {
         // Cette méthode sera appelée depuis AppDelegate
         // Pour l'instant, on log juste
-        android.util.Log.d("AppState", "Utilisateur à sauvegarder: ${user.name}")
+        android.util.Log.d("AppState", "Utilisateur à sauvegarder: [USER_MASKED]")
     }
     
     fun showWelcomeScreen() {
@@ -151,11 +177,11 @@ class AppState(private val context: android.content.Context) {
     fun updateUserData(user: User) {
         val previousUser = _currentUser.value
         _currentUser.value = user
-        android.util.Log.d("AppState", "✅ Données utilisateur mises à jour: ${user.name}, partenaire: ${user.partnerId != null}")
+        android.util.Log.d("AppState", "✅ Données utilisateur mises à jour: [USER_MASKED], partenaire: ${user.partnerId != null}")
         
         // 🚨 FILET SÉCURITÉ: Forcer démarrage PartnerLocationService si partenaire détecté
         if (user.partnerId != null && (previousUser?.partnerId != user.partnerId)) {
-            android.util.Log.d("AppState", "🚨 FILET SÉCURITÉ: Nouveau partenaire détecté (${user.partnerId}) - Force démarrage PartnerLocationService")
+            android.util.Log.d("AppState", "🚨 FILET SÉCURITÉ: Nouveau partenaire détecté [PARTNER_ID_MASKED] - Force démarrage PartnerLocationService")
             try {
                 // Délai court pour s'assurer que AppDelegate.partnerLocationService est initialisé
                 android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
@@ -192,7 +218,7 @@ class AppState(private val context: android.content.Context) {
         if (currentUser != null) {
             val updatedUser = currentUser.copy(currentLocation = userLocation)
             _currentUser.value = updatedUser
-            android.util.Log.d("AppState", "🌍 Localisation utilisateur mise à jour: ${userLocation.displayName}")
+            android.util.Log.d("AppState", "🌍 Localisation utilisateur mise à jour: [LOCATION_MASKED]")
         } else {
             android.util.Log.w("AppState", "⚠️ Impossible de mettre à jour localisation: utilisateur null")
         }
@@ -290,7 +316,7 @@ class AppState(private val context: android.content.Context) {
                     dailyChallenge = dailyChallengeSeen
                 )
                 
-                android.util.Log.d("AppState", "🚀 IntroFlags chargés au démarrage: DQ=$dailyQuestionSeen, DC=$dailyChallengeSeen (UserID: ${userId.take(8)}...)")
+                android.util.Log.d("AppState", "🚀 IntroFlags chargés au démarrage: DQ=$dailyQuestionSeen, DC=$dailyChallengeSeen (UserID: [MASKED])")
             } else {
                 android.util.Log.d("AppState", "ℹ️ Aucun utilisateur trouvé au démarrage - IntroFlags restent par défaut")
             }
@@ -346,7 +372,7 @@ data class User(
         get() {
             return if (com.love2loveapp.utils.UserNameGenerator.isNameEmpty(_rawName)) {
                 val generated = com.love2loveapp.utils.UserNameGenerator.generateAutomaticName(id)
-                android.util.Log.d("User", "🎯 Auto-génération nom: '$generated' (ID: ${id.take(4)})")
+                android.util.Log.d("User", "🎯 Auto-génération nom: [NAME_MASKED] (ID: [MASKED])")
                 generated
             } else {
                 _rawName.trim()

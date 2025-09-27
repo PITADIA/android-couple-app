@@ -313,7 +313,7 @@ class DailyQuestionRepository private constructor(
             val appStateUser = com.love2loveapp.AppDelegate.appState.currentUser.value
             val currentUserId = firebaseUser?.uid ?: appStateUser?.id
             
-            Log.d(TAG, "🧹 Utilisateur actuel: $currentUserId (${if (firebaseUser != null) "Firebase" else "Invité"})")
+            Log.d(TAG, "🧹 Utilisateur actuel: [MASKED] (${if (firebaseUser != null) "Firebase" else "Invité"})")
             Log.d(TAG, "🧹 Nombre de messages trouvés: ${messagesSnapshot.documents.size}")
             
             // Analyser chaque message
@@ -322,10 +322,10 @@ class DailyQuestionRepository private constructor(
                 val messageUserId = data["userId"] as? String
                 val messageText = data["text"] as? String
                 
-                Log.d(TAG, "🧹 Message ID: ${doc.id}")
-                Log.d(TAG, "🧹   userId: $messageUserId")
-                Log.d(TAG, "🧹   text: ${messageText?.take(20)}")
-                Log.d(TAG, "🧹   isCurrentUser: ${messageUserId == currentUserId}")
+                Log.d(TAG, "🧹 Message analysé")
+                // Log.d(TAG, "🧹   userId: [MASKED]")
+                // Log.d(TAG, "🧹   text: [MASKED]")
+                // Log.d(TAG, "🧹   isCurrentUser: [MASKED]")
             }
             
             Log.d(TAG, "✅ TERMINÉ: Analyse des messages (aucune correction automatique pour sécurité)")
@@ -448,12 +448,12 @@ class DailyQuestionRepository private constructor(
                 userName = firebaseUser.displayName?.takeIf { it.isNotBlank() }
                     ?: appStateUser?.name?.takeIf { it.isNotBlank() }
                     ?: "Utilisateur Firebase"
-                Log.d(TAG, "🔥 Mode Firebase Auth: '$userName' (displayName: '${firebaseUser.displayName}', email: '${firebaseUser.email}')")
+                Log.d(TAG, "🔥 Mode Firebase Auth: [USER_MASKED]")
             } else if (appStateUser != null) {
                 // Mode invité
                 userId = appStateUser.id
                 userName = appStateUser.name
-                Log.d(TAG, "👤 Mode invité: $userName (ID: ${userId.take(8)}...)")
+                Log.d(TAG, "👤 Mode invité: [USER_MASKED]")
             } else {
                 return Result.failure(Exception("Aucun utilisateur disponible"))
             }
@@ -461,13 +461,13 @@ class DailyQuestionRepository private constructor(
             val question = _currentQuestion.value
                 ?: return Result.failure(Exception("Aucune question active"))
 
-            Log.d(TAG, "📝 Soumission réponse: ${text.take(50)}...")
+            Log.d(TAG, "📝 Soumission réponse: [CONTENT_MASKED]")
             
             // 🔐 VALIDATION DONNÉES OBLIGATOIRES
             if (question.id.isBlank() || text.trim().isBlank() || userName.isBlank() || userId.isBlank()) {
-                val errorMsg = "Données manquantes: questionId='${question.id}', text='${text.trim()}', userName='$userName', userId='$userId'"
+                val errorMsg = "Données manquantes: questionId=[MASKED], text=[MASKED], userName=[MASKED], userId=[MASKED]"
                 Log.e(TAG, "❌ $errorMsg")
-                return Result.failure(Exception(errorMsg))
+                return Result.failure(Exception("Données manquantes"))
             }
 
             // 🔑 UTILISER LA MÊME CLOUD FUNCTION QUE iOS POUR COMPATIBILITÉ CROSS-PLATFORM            
@@ -478,7 +478,7 @@ class DailyQuestionRepository private constructor(
                 "userId" to userId  // Ajouter userId explicitement pour compatibilité mode invité
             )
             
-            Log.d(TAG, "📤 Données envoyées à Cloud Function: questionId='${question.id}', userName='$userName', userId='${userId.take(8)}...'")
+            Log.d(TAG, "📤 Données envoyées à Cloud Function: [DATA_MASKED]")
             
             val result = functions.getHttpsCallable("submitDailyQuestionResponse")
                 .call(data)

@@ -28,7 +28,7 @@ class CloudFunctionService @Inject constructor(
      */
     suspend fun getPartnerProfileImage(partnerId: String): PartnerImageResponse {
         return try {
-            Log.d(TAG, "🔐 Appel getPartnerProfileImage pour partenaire: $partnerId")
+            Log.d(TAG, "🔐 Appel getPartnerProfileImage pour partenaire: [PARTNER_ID_MASKED]")
 
             // Vérifier authentification utilisateur
             val currentUser = firebaseAuth.currentUser
@@ -106,7 +106,7 @@ class CloudFunctionService @Inject constructor(
      */
     suspend fun getPartnerInfo(partnerId: String): PartnerInfoResponse {
         return try {
-            Log.d(TAG, "👥 Appel getPartnerInfo pour partenaire: $partnerId")
+            Log.d(TAG, "👥 Appel getPartnerInfo pour partenaire: [PARTNER_ID_MASKED]")
 
             val data = hashMapOf("partnerId" to partnerId)
             val result = functions

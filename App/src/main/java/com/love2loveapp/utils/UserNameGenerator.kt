@@ -34,7 +34,7 @@ object UserNameGenerator {
             "User$shortId"         // 🇺🇸 Anglais/Autre (fallback)
         }
         
-        android.util.Log.d("UserNameGenerator", "✅ Génération: '$generatedName' (langue: $detectedLanguage)")
+        android.util.Log.d("UserNameGenerator", "✅ Génération: [NAME_MASKED] (langue: $detectedLanguage)")
         
         return generatedName
     }

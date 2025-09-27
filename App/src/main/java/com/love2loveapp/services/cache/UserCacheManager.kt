@@ -81,7 +81,7 @@ class UserCacheManager private constructor(private val context: Context) {
      */
     fun cacheUser(user: UserProfile) {
         try {
-            Log.d(TAG, "💾 Mise en cache utilisateur: ${user.name}")
+            Log.d(TAG, "💾 Mise en cache utilisateur: [USER_MASKED]")
             val json = gson.toJson(user)
             val timestamp = System.currentTimeMillis()
             
@@ -120,7 +120,7 @@ class UserCacheManager private constructor(private val context: Context) {
         
         return try {
             val user = gson.fromJson(json, UserProfile::class.java)
-            Log.d(TAG, "🚀 Utilisateur trouvé en cache: ${user.name}")
+            Log.d(TAG, "🚀 Utilisateur trouvé en cache: [USER_MASKED]")
             user
         } catch (e: Exception) {
             Log.e(TAG, "❌ Erreur décodage cache: ${e.message}. Nettoyage…", e)
@@ -346,7 +346,7 @@ class UserCacheManager private constructor(private val context: Context) {
     fun hasPartnerImageChanged(newURL: String?): Boolean {
         val hasChanged = cachedPartnerImageURL != newURL
         if (hasChanged) {
-            Log.d(TAG, "🔄 URL partenaire changée: '$cachedPartnerImageURL' → '$newURL'")
+            Log.d(TAG, "🔄 URL partenaire changée: [URL_MASKED] → [URL_MASKED]")
         }
         return hasChanged
     }

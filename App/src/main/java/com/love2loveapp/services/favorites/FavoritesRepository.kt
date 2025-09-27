@@ -184,7 +184,7 @@ class FavoritesRepository private constructor(
                 partnerId?.let { add(it) } // Partenaire si connecté
             }
 
-            Log.d(TAG, "🔥 partnerIds construits: $partnerIds")
+            Log.d(TAG, "🔥 partnerIds construits: [PARTNER_IDS_MASKED]")
 
             // 🔑 CRÉER LE FAVORI PARTAGÉ
             val sharedFavorite = SharedFavoriteQuestion(
@@ -247,7 +247,7 @@ class FavoritesRepository private constructor(
                 val canDelete = isAuthor || isInPartnerIds
 
                 Log.d(TAG, "🔒 Est auteur: $isAuthor")
-                Log.d(TAG, "🔒 Dans partnerIds: $isInPartnerIds")
+                Log.d(TAG, "🔒 Dans partnerIds: [PARTNER_STATUS_MASKED]")
                 Log.d(TAG, "🔒 Peut supprimer: $canDelete")
 
                 if (canDelete) {

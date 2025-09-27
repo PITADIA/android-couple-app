@@ -73,7 +73,7 @@ class PartnerSubscriptionSyncService private constructor(
         
         stopAllListeners() // Arrêter les listeners existants
         
-        Log.d(TAG, "🎧 Démarrage écoute changements abonnement pour: ${currentUser.uid}")
+        Log.d(TAG, "🎧 Démarrage écoute changements abonnement pour: [USER_MASKED]")
         
         userListener = firestore.collection(USERS_COLLECTION)
             .document(currentUser.uid)
@@ -86,14 +86,14 @@ class PartnerSubscriptionSyncService private constructor(
                 val data = snapshot?.data ?: return@addSnapshotListener
                 val partnerId = data["partnerId"] as? String
                 
-                Log.d(TAG, "📱 Changement détecté pour utilisateur: ${currentUser.uid}")
-                Log.d(TAG, "  - partnerId: $partnerId")
+                Log.d(TAG, "📱 Changement détecté pour utilisateur: [USER_MASKED]")
+                Log.d(TAG, "  - partnerId: [PARTNER_ID_MASKED]")
                 Log.d(TAG, "  - isSubscribed: ${data["isSubscribed"]}")
                 Log.d(TAG, "  - subscriptionType: ${data["subscriptionType"]}")
                 
                 if (!partnerId.isNullOrEmpty()) {
                     // Synchroniser avec le partenaire
-                    Log.d(TAG, "🔄 Déclenchement synchronisation avec partenaire: $partnerId")
+                    Log.d(TAG, "🔄 Déclenchement synchronisation avec partenaire: [PARTNER_ID_MASKED]")
                     syncSubscriptionsWithPartner(currentUser.uid, partnerId)
                 }
             }
@@ -109,7 +109,7 @@ class PartnerSubscriptionSyncService private constructor(
     private fun syncSubscriptionsWithPartner(userId: String, partnerId: String) {
         serviceScope.launch {
             try {
-                Log.d(TAG, "🔄 Synchronisation abonnements: $userId ↔ $partnerId")
+                Log.d(TAG, "🔄 Synchronisation abonnements: [USER_ID_MASKED] ↔ [PARTNER_ID_MASKED]")
                 
                 val data = hashMapOf(
                     "partnerId" to partnerId

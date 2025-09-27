@@ -160,7 +160,7 @@ class AppDelegate : Application() {
             Log.d(TAG, "👤 CurrentUser: ${if (currentUser != null) "✅" else "❌ NULL"}")
             
             if (currentUser != null) {
-                Log.d(TAG, "  - name: ${currentUser.name}")
+                Log.d(TAG, "  - name: [USER_MASKED]")
                 Log.d(TAG, "  - relationshipStartDate: ${currentUser.relationshipStartDate}")
                 
                 if (currentUser.relationshipStartDate != null) {
@@ -182,8 +182,8 @@ class AppDelegate : Application() {
             
             Log.d(TAG, "📋 SharedPreferences Love2LoveWidget:")
             Log.d(TAG, "  - widget_days_total: $savedDaysTotal")
-            Log.d(TAG, "  - widget_user_name: $savedUserName")
-            Log.d(TAG, "  - widget_partner_name: $savedPartnerName")
+            Log.d(TAG, "  - widget_user_name: [USER_MASKED]")
+            Log.d(TAG, "  - widget_partner_name: [PARTNER_MASKED]")
             Log.d(TAG, "  - widget_last_update: ${if (lastUpdate > 0) java.util.Date(lastUpdate) else "JAMAIS"}")
             
             if (savedDaysTotal <= 0) {
@@ -216,7 +216,7 @@ class AppDelegate : Application() {
             val googleServicesResourceId = resources.getIdentifier(
                 "google_services_json", "raw", packageName
             )
-            Log.d(TAG, "🔧 google-services.json resource ID: $googleServicesResourceId")
+            Log.d(TAG, "🔧 google-services.json resource ID: [RESOURCE_ID_MASKED]")
             
             val defaultApp = FirebaseApp.initializeApp(this)
             if (defaultApp != null) {
@@ -255,9 +255,9 @@ class AppDelegate : Application() {
         
         appState = AppState(this)
         
-        // Commencer sur Launch Screen - UserDataIntegrationService déterminera la navigation
-        Log.d(TAG, "🚀 Démarrage Launch Screen - UserDataIntegrationService déterminera l'état")
-        appState.navigateToScreen(com.love2loveapp.models.AppScreen.Launch)
+        // 🎯 AppState démarre sur Welcome par défaut - UserDataIntegrationService gère la navigation
+        Log.d(TAG, "🚀 AppState initialisé - UserDataIntegrationService déterminera l'état final")
+        // Plus besoin de forcer Launch - AppState démarre déjà sur Welcome
     }
     
     /**

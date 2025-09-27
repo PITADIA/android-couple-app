@@ -16,8 +16,8 @@ android {
         minSdk 24
         targetSdk 35
         // 📱 VERSION: Synchronisée avec Info.plist iOS
-        versionCode 2250
-        versionName "2.250"
+        versionCode 2280
+        versionName "2.280"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true

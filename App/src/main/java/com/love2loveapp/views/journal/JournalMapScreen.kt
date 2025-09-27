@@ -90,7 +90,7 @@ fun JournalMapScreen(
         entriesWithLocation.forEach { entry ->
             if (!entry.imageURL.isNullOrEmpty()) {
                 try {
-                    Log.d("JournalMapScreen", "📡 Chargement: '${entry.title}' - ${entry.imageURL?.take(50)}...")
+                    Log.d("JournalMapScreen", "📡 Chargement: '${entry.title}' - [URL_MASKED]")
                     
                     val bitmap = withContext(Dispatchers.IO) {
                         // 🚀 URL FIREBASE RÉELLE (le pré-chargement fonctionne !)

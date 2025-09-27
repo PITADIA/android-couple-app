@@ -77,7 +77,7 @@ fun CachedMapImageView(
     when {
         // ✅ SUCCESS: Image chargée (comme iOS)
         image != null -> {
-            Log.d("MapAnnotation", "✅ Affichage image réussie '${imageUrl.take(50)}...'")
+            Log.d("MapAnnotation", "✅ Affichage image réussie [URL_MASKED]")
             Image(
                 bitmap = image!!.asImageBitmap(),
                 contentDescription = "Journal Image",
@@ -88,7 +88,7 @@ fun CachedMapImageView(
         
         // ⏳ LOADING: Chargement en cours (comme iOS ProgressView)
         isLoading -> {
-            Log.d("MapAnnotation", "⏳ Affichage loading '${imageUrl.take(50)}...'")
+            Log.d("MapAnnotation", "⏳ Affichage loading [URL_MASKED]")
             Box(
                 modifier = modifier.background(Color.Gray.copy(alpha = 0.3f)),
                 contentAlignment = Alignment.Center
@@ -103,7 +103,7 @@ fun CachedMapImageView(
         
         // ❌ ERROR: Erreur de chargement (comme iOS icône photo)
         else -> {
-            Log.d("MapAnnotation", "❌ Affichage erreur '${imageUrl.take(50)}...'")
+            Log.d("MapAnnotation", "❌ Affichage erreur [URL_MASKED]")
             Box(
                 modifier = modifier.background(Color(0xFFFD267A)),
                 contentAlignment = Alignment.Center
@@ -120,7 +120,7 @@ fun CachedMapImageView(
     
     // 🔄 CHARGEMENT SYNCHRONE dans init() (comme iOS exactement)
     LaunchedEffect(imageUrl) {
-        Log.d("MapAnnotation", "🚀 TENTATIVE LaunchedEffect: '${imageUrl.take(50)}...'")
+        Log.d("MapAnnotation", "🚀 TENTATIVE LaunchedEffect: [URL_MASKED]")
         
         // 🧪 TEST : Forcer une image factice immédiatement
         image = createTestBitmap(60, 60)

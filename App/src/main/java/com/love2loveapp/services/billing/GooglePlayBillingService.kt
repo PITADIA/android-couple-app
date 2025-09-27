@@ -701,7 +701,7 @@ class GooglePlayBillingService private constructor(private val context: Context)
                 purchases.forEach { purchase ->
                     when (purchase.purchaseState) {
                         Purchase.PurchaseState.PURCHASED -> {
-                            Log.d(TAG, "🎉 Achat réussi: ${purchase.products}")
+                            Log.d(TAG, "🎉 Achat réussi: [PRODUCT_MASKED]")
                             handleSuccessfulPurchase(purchase)
                         }
                         Purchase.PurchaseState.PENDING -> {
@@ -730,7 +730,7 @@ class GooglePlayBillingService private constructor(private val context: Context)
             // 👤 Identifier le type de compte pour les logs
             val currentUser = auth.currentUser
             val accountType = if (currentUser?.isAnonymous == true) "Compte invité" else "Compte Google"
-            Log.d(TAG, "🎯 Traitement achat pour $accountType - UID: ${currentUser?.uid}")
+            Log.d(TAG, "🎯 Traitement achat pour $accountType - UID: [MASKED]")
             
             // Marquer immédiatement comme abonné pour éviter les états incohérents
             _isSubscribed.value = true

@@ -364,7 +364,7 @@ class ConnectedDailyChallengeViewModel(
      */
     private fun loadChallengesForUser(user: User) {
         viewModelScope.launch {
-            Log.d(TAG, "👤 Chargement défis pour utilisateur: ${user.email}")
+            Log.d(TAG, "👤 Chargement défis pour utilisateur: [EMAIL_MASKED]")
             
             // Charger défi du jour
             loadTodaysChallenge()

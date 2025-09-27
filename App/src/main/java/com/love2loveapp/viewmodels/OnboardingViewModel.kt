@@ -218,7 +218,7 @@ class OnboardingViewModel(
             OnboardingStep.complicity -> currentStep.value = OnboardingStep.authentication
             OnboardingStep.authentication -> currentStep.value = OnboardingStep.displayName
             OnboardingStep.displayName -> {
-                Log.d("OnboardingVM", "🔥 displayName -> profilePhoto (nom: '${userName.value}')")
+                Log.d("OnboardingVM", "🔥 displayName -> profilePhoto (nom: '[USER_MASKED]')")
                 currentStep.value = OnboardingStep.profilePhoto
             }
             OnboardingStep.profilePhoto -> currentStep.value = OnboardingStep.completion
@@ -301,7 +301,7 @@ class OnboardingViewModel(
 
     private fun checkGoogleNameAndProceed() {
         val googleDisplayName = FirebaseAuth.getInstance().currentUser?.displayName
-        Log.d("OnboardingVM", "🔥 googleUserDisplayName='${googleDisplayName ?: "null"}'")
+        Log.d("OnboardingVM", "🔥 googleUserDisplayName='[USER_MASKED]'")
 
         if (!googleDisplayName.isNullOrBlank()) {
             Log.d("OnboardingVM", "✅ Nom Google fourni ($googleDisplayName) - Skip DisplayName step")

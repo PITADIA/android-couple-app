@@ -186,7 +186,7 @@ fun OnboardingScreen(
             val user = appState.currentUser
             if (user?.onboardingInProgress == true) {
                 Log.d("OnboardingScreen", "🔥 USER PARTIEL DETECTE - ALLER A SUBSCRIPTION")
-                Log.d("OnboardingScreen", "🔥 - Nom: ${user.name}")
+                Log.d("OnboardingScreen", "🔥 - Nom: [USER_MASKED]")
                 Log.d("OnboardingScreen", "🔥 - Objectifs: ${user.relationshipGoals}")
 
                 // Restaurer dans le ViewModel

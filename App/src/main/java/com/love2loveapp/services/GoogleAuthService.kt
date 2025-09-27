@@ -157,7 +157,7 @@ class GoogleAuthService private constructor() {
             _isProcessingAuth.value = false
             
             if (result.user != null) {
-                Log.d("GoogleAuthService", "✅ Authentification réussie: ${result.user?.displayName}")
+                Log.d("GoogleAuthService", "✅ Authentification réussie: [USER_MASKED]")
                 // 🛡️ Activer immédiatement la protection anti-déconnexion (avant tout accès Firestore)
                 com.love2loveapp.AppDelegate.userDataIntegrationService?.suppressAccountDeletionDetectionTemporarily()
                 _authError.value = null
@@ -230,7 +230,7 @@ class GoogleAuthService private constructor() {
      * Équivalent iOS: loadUserData() avec fallback vers createEmptyUserProfile()
      */
     private fun verifyAndCreateDocumentIfNeeded(firebaseUser: com.google.firebase.auth.FirebaseUser) {
-        Log.d("GoogleAuthService", "🔍 Vérification existence document utilisateur: ${firebaseUser.uid}")
+        Log.d("GoogleAuthService", "🔍 Vérification existence document utilisateur: [USER_MASKED]")
         
         com.google.firebase.firestore.FirebaseFirestore.getInstance()
             .collection("users")
@@ -315,7 +315,7 @@ class GoogleAuthService private constructor() {
             _isProcessingAuth.value = false
             
             if (result.user != null) {
-                Log.d("GoogleAuthService", "✅ Authentification anonyme réussie: ${result.user?.uid}")
+                Log.d("GoogleAuthService", "✅ Authentification anonyme réussie: [USER_MASKED]")
                 
                 // 🛡️ Activer immédiatement la protection anti-déconnexion
                 com.love2loveapp.AppDelegate.userDataIntegrationService?.suppressAccountDeletionDetectionTemporarily()
@@ -416,8 +416,8 @@ class GoogleAuthService private constructor() {
             
             if (result.user != null) {
                 Log.d("GoogleAuthService", "✅ Liaison réussie - Compte anonyme → Google")
-                Log.d("GoogleAuthService", "🎯 UID conservé: ${result.user?.uid}")
-                Log.d("GoogleAuthService", "📧 Email ajouté: ${result.user?.email}")
+                Log.d("GoogleAuthService", "🎯 UID conservé: [USER_MASKED]")
+                Log.d("GoogleAuthService", "📧 Email ajouté: [EMAIL_MASKED]")
                 
                 // Mettre à jour le document Firestore pour marquer comme non-anonyme
                 updateUserDocumentAfterLinking(result.user!!)

@@ -97,8 +97,8 @@ data class WidgetData(
         ): WidgetData {
             
             Log.d(TAG, "🔧 Construction WidgetData depuis données utilisateur")
-            Log.d(TAG, "👤 Utilisateur: ${userName ?: "Anonyme"}")
-            Log.d(TAG, "👥 Partenaire: ${partnerName ?: "Non connecté"}")
+            Log.d(TAG, "👤 Utilisateur: [USER_MASKED]")
+            Log.d(TAG, "👥 Partenaire: [PARTNER_MASKED]")
             Log.d(TAG, "💎 Abonnement: $hasSubscription")
             
             // 💕 CALCUL STATISTIQUES RELATION

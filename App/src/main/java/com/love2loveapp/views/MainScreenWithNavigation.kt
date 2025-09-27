@@ -425,7 +425,7 @@ private fun LocationTutorialWithSheets(
                         val partnerHasLocation = partnerLocation != null
                         
                         android.util.Log.d("MainScreenWithNavigation", "📍 ANALYSE POST-PERMISSION MENU:")
-                        android.util.Log.d("MainScreenWithNavigation", "  - currentUser.name: ${currentUser?.name}")
+                        android.util.Log.d("MainScreenWithNavigation", "  - currentUser.name: [USER_MASKED]")
                         android.util.Log.d("MainScreenWithNavigation", "  - hasPartner: $hasPartner")
                         android.util.Log.d("MainScreenWithNavigation", "  - partnerHasLocation: $partnerHasLocation")
                         

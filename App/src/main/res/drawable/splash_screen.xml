@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Fond coloré personnalisé #FF5074 -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#FF5074" />
+        </shape>
+    </item>
+    
+    <!-- Image leetchi2 centrée -->
+    <item>
+        <bitmap
+            android:src="@drawable/leetchi2"
+            android:gravity="center" />
+    </item>
+</layer-list>

@@ -42,7 +42,7 @@ data class UserProfile(
                 val rawName = data["name"] as? String ?: ""
                 val finalName = if (com.love2loveapp.utils.UserNameGenerator.isNameEmpty(rawName)) {
                     val generatedName = com.love2loveapp.utils.UserNameGenerator.generateAutomaticName(document.id)
-                    android.util.Log.d(TAG, "🎯 UserProfile: Auto-génération nom pour '${document.id}' → '$generatedName'")
+                    android.util.Log.d(TAG, "🎯 UserProfile: Auto-génération nom pour [DOC_ID_MASKED] → [NAME_MASKED]")
                     generatedName
                 } else {
                     rawName.trim()

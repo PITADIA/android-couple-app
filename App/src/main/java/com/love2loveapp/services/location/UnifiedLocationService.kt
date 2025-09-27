@@ -132,7 +132,7 @@ class UnifiedLocationService private constructor(
             val user = firebaseAuth.currentUser
             
             if (user != null) {
-                Log.d(TAG, "✅ Utilisateur authentifié détecté: ${user.uid}")
+                Log.d(TAG, "✅ Utilisateur authentifié détecté: [USER_MASKED]")
                 // Tenter démarrage GPS maintenant que l'auth est OK
                 serviceScope.launch {
                     delay(1000) // Attendre stabilisation auth
@@ -186,7 +186,7 @@ class UnifiedLocationService private constructor(
             return
         }
         
-        Log.d(TAG, "📡 Démarrage récupération GPS pour: $userId")
+        Log.d(TAG, "📡 Démarrage récupération GPS pour: [USER_MASKED]")
         _isUpdatingLocation.value = true
         _locationError.value = null
         
@@ -253,8 +253,6 @@ class UnifiedLocationService private constructor(
         val now = System.currentTimeMillis()
         
         Log.d(TAG, "🎉 TRAITEMENT LOCALISATION RÉUSSIE:")
-        Log.d(TAG, "  - Latitude: ${location.latitude}")
-        Log.d(TAG, "  - Longitude: ${location.longitude}")
         Log.d(TAG, "  - Précision: ${location.accuracy}m")
         
         // Éviter spam d'updates
@@ -323,7 +321,7 @@ class UnifiedLocationService private constructor(
             )
         }
         
-        Log.d(TAG, "📍 UserLocation créé: ${userLocation.displayName}")
+        Log.d(TAG, "📍 UserLocation créé: [LOCATION_MASKED]")
         
         // 1. Mettre à jour StateFlow local (équivalent iOS @Published)
         _currentLocation.value = userLocation
@@ -359,8 +357,8 @@ class UnifiedLocationService private constructor(
      */
     private fun saveLocationToFirebase(userLocation: UserLocation, userId: String) {
         Log.d(TAG, "💾 SAUVEGARDE FIREBASE:")
-        Log.d(TAG, "  - userId: $userId")
-        Log.d(TAG, "  - location: ${userLocation.displayName}")
+        Log.d(TAG, "  - userId: [MASKED]")
+        Log.d(TAG, "  - location: [LOCATION_MASKED]")
         
         serviceScope.launch {
             try {

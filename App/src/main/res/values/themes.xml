@@ -5,10 +5,10 @@
     <style name="Theme.Love2love" parent="android:Theme.Material.Light.NoActionBar" />
     <style name="Theme.CoupleApp" parent="android:Theme.Material.Light.NoActionBar" />
     
-    <!-- 🚀 Thème neutre pour le lancement - Plus de splash coloré -->
+    <!-- 🚀 Thème personnalisé pour le splash screen avec leetchi2 centré -->
     <style name="Theme.Love2love.Launch" parent="Theme.Love2love">
-        <item name="android:windowBackground">@android:color/white</item>
-        <item name="android:statusBarColor">@android:color/white</item>
-        <item name="android:navigationBarColor">@android:color/white</item>
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+        <item name="android:statusBarColor">#FF5074</item>
+        <item name="android:navigationBarColor">#FF5074</item>
     </style>
 </resources>
