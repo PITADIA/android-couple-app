@@ -1,17 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <!-- Généré automatiquement depuis UI.xcstrings -->
-    
-    <!-- ===== CONFIGURATION APP (équivalent Info.plist) ===== -->
     <string name="app_name">Love2Love</string>
     <string name="app_version">1.86</string>
-    
-    <!-- === DESCRIPTIONS PERMISSIONS (équivalent Usage Descriptions iOS) === -->
     <string name="location_permission_rationale">Love2Love utiliza tu ubicación para calcular la distancia entre tú y tu pareja, y para permitirte agregar lugares a vuestros recuerdos compartidos.</string>
     <string name="photo_permission_rationale">Love2Love necesita acceder a tus fotos para permitirte personalizar tu perfil y agregar imágenes a vuestros recuerdos compartidos en el diario de pareja.</string>
     <string name="notification_permission_rationale">Love2Love te envía notificaciones cuando tu pareja te escribe. Puedes desactivar estas notificaciones en cualquier momento en los ajustes.</string>
-    
-    <!-- === NOTIFICATIONS === -->
     <string name="default_notification_channel_id">love2love_general</string>
     <string name="default_notification_channel_name">Notificaciones Love2Love</string>
     <string name="default_notification_channel_description">Notificaciones generales de Love2Love</string>
@@ -2658,15 +2651,72 @@
     <string name="yes">Sí</string>
     <string name="you">Tú</string>
     <string name="you_miss_me">Me echas de menos</string>
-    
-    <!-- Completion Step -->
     <string name="completion_subtitle">Todo está terminado</string>
     <string name="completion_title_line1">Gracias por</string>
     <string name="completion_title_line2">confiar en nosotros.</string>
     <string name="completion_description">Tu perfil ya está configurado.\n¡Podrás conectar con tu pareja y comenzar vuestro viaje juntos!</string>
     <string name="completion_button">Comenzar la aventura Love2Love</string>
-    
-    <!-- Simple strings -->
     <string name="share">Compartir</string>
     <string name="or">O</string>
+    <string name="daily_challenge_54">Cread juntos vuestro kit de supervivencia para los días de dudas amorosas.</string>
+    <string name="daily_challenge_55">Escribe un mensaje que no le enviarás… y envíaselo de todos modos.</string>
+    <string name="daily_challenge_56">Haced cada uno un top 3 de los pequeños detalles físicos o gestuales que amáis del otro.</string>
+    <string name="daily_challenge_57">Escribid cada uno una carta para abrir solo si algún día dudáis de vuestro vínculo.</string>
+    <string name="daily_challenge_58">Haced una batalla de cumplidos por mensajes: uno por turno, hasta que uno se rinda.</string>
+    <string name="daily_challenge_59">Di a tu pareja que es la debilidad más hermosa que amas de él/ella.</string>
+    <string name="daily_challenge_60">Haz una captura de pantalla del mensaje más bonito que hayas recibido de tu pareja y envíaselo.</string>
+    <string name="daily_challenge_61">Di al otro: “Te quiero en mi vida porque…” y completa la frase con sinceridad.</string>
+    <string name="daily_challenge_62">Dibuja un objeto que simbolice vuestra relación.</string>
+    <string name="daily_challenge_63">Enviaros una foto de un objeto o prenda que tenga una historia relacionada con vuestra relación.</string>
+    <string name="daily_challenge_64">Enviaros un deseo por correo electrónico para el otro, que se enviará en 10 años.</string>
+    <string name="daily_challenge_65">Inventad una serie de Netflix que cuente vuestra historia de amor.</string>
+    <string name="daily_challenge_66">Hoy es el minuto de la ternura: tenéis 60 segundos para deciros todo lo que amáis del otro.</string>
+    <string name="daily_challenge_67">Pregunta al otro: “¿Cuándo supiste que era más que atracción?”</string>
+    <string name="daily_challenge_68">Cread juntos vuestra bandera de pareja: colores, símbolos, lo que representa.</string>
+    <string name="daily_challenge_69">Pregúntale: Si nuestra relación fuera un paisaje, ¿cuál sería?</string>
+    <string name="daily_challenge_70">Estableced una frase para decir durante una discusión para aliviar la tensión.</string>
+    <string name="daily_challenge_71">Pregúntale: ¿Cuál es la frase que te dije que nunca has olvidado?</string>
+    <string name="daily_challenge_72">Elegid una canción que podría sonar en vuestra boda o renovación de votos. Explicad por qué.</string>
+    <string name="daily_challenge_73">Di a tu pareja: Esto es lo que he aprendido gracias a ti… y completa la frase.</string>
+    <string name="daily_challenge_74">Cread juntos una lista de reproducción de 3 canciones que representen mejor vuestro amor.</string>
+    <string name="daily_challenge_75">Envía un mensaje a tu pareja diciendo qué te gustaría que vuestros hijos recordaran de vuestra relación.</string>
+    <string name="daily_challenge_76">Pregúntale: ¿Qué viste en mí que yo mismo no veía?</string>
+    <string name="daily_challenge_77">Comparte un recuerdo de la infancia que te haga vulnerable y di por qué lo elegiste.</string>
+    <string name="daily_challenge_78">Elegid cada uno un momento en que os sentisteis comprendidos por el otro. Contad la historia.</string>
+    <string name="daily_challenge_79">Di al otro: Si pudiera revivir un solo momento contigo, sería…</string>
+    <string name="daily_challenge_80">Preguntaos mutuamente: ¿Qué quieres que recuerde de ti, incluso dentro de 40 años?</string>
+    <string name="daily_challenge_81">Escribe un mensaje que no le enviarás… y envíaselo de todos modos.</string>
+    <string name="daily_challenge_82">Haced cada uno un top 3 de los pequeños detalles físicos o gestuales que amáis del otro.</string>
+    <string name="daily_challenge_83">Escribid cada uno una carta para abrir solo si algún día dudáis de vuestro vínculo.</string>
+    <string name="daily_question_52">¿Qué es lo que ves hermoso en mí que yo no valoro lo suficiente?</string>
+    <string name="daily_question_53">¿Cuál es el miedo que nunca te has atrevido a confesarme, pero que te gustaría que entendiera?</string>
+    <string name="daily_question_54">¿Hubo un momento en que te sentiste apartado/a en nuestra relación, aunque no fuera mi intención?</string>
+    <string name="daily_question_55">¿Qué has aprendido de ti mismo/a desde que estamos juntos?</string>
+    <string name="daily_question_56">¿Cuál es tu definición de un amor duradero y cómo puedo acercarme a eso contigo?</string>
+    <string name="daily_question_57">¿En qué área de tu vida te gustaría que estuviera más presente o involucrado/a?</string>
+    <string name="daily_question_58">¿Cuándo sentiste que realmente te entendí?</string>
+    <string name="daily_question_59">¿Qué es algo que hago y que amas, aunque no me dé cuenta?</string>
+    <string name="daily_question_60">Cuando piensas en nosotros en 10 o 20 años, ¿qué esperas que hayamos logrado preservar?</string>
+    <string name="daily_question_61">Cuando atravesamos tensiones, ¿qué te tranquiliza y te hace creer que las superaremos juntos?</string>
+    <string name="daily_question_62">¿Tienes un recuerdo específico en el que te sentiste realmente amado/a por mí?</string>
+    <string name="daily_question_63">¿Cuál es la frase o el gesto que sueñas con escuchar o recibir de mí algún día?</string>
+    <string name="daily_question_64">Cuando dudas del futuro, ¿qué te devuelve la fe en nuestro vínculo?</string>
+    <string name="daily_question_65">¿Hay alguna expectativa específica que hayas interiorizado sin expresarla nunca, que te gustaría compartir ahora?</string>
+    <string name="daily_question_66">Si nuestra relación fuera un jardín, ¿qué necesitaría ahora para florecer mejor?</string>
+    <string name="daily_question_67">¿Cuál es el recuerdo que aún no hemos creado pero que sueñas que vivamos juntos?</string>
+    <string name="daily_question_68">¿Hay alguna forma de hacer el amor o tocarnos que te gustaría explorar más juntos?</string>
+    <string name="daily_question_69">¿Qué te gustaría que entendiera sin que tengas que explicármelo cada vez?</string>
+    <string name="daily_question_70">Si pudieras confiarme un sueño que nunca le has contado a nadie, ¿cuál sería?</string>
+    <string name="daily_question_71">¿Qué te gustaría que viera como una fortaleza en ti, donde a veces solo ves una debilidad?</string>
+    <string name="daily_question_72">¿Cuándo me necesitaste sin atreverte a mostrarlo? ¿Y qué te hubiera gustado que hiciese en ese momento?</string>
+    <string name="daily_question_73">¿Qué, en nuestra vida diaria, te hace sentir que realmente importas para mí?</string>
+    <string name="daily_question_74">Cuando estoy cansado/a, ¿qué te gustaría que nunca olvidara hacer por ti?</string>
+    <string name="daily_question_75">¿Cuál es el cumplido que te habría gustado escuchar más a menudo en tu vida y que puedo ofrecerte de ahora en adelante?</string>
+    <string name="daily_question_76">¿Cuál es tu miedo secreto sobre nuestro futuro y cómo puedo ayudarte a aliviarlo?</string>
+    <string name="daily_question_77">Cuando estás pasando por un momento difícil, ¿qué te gustaría que hiciera para que sientas que no estás solo/a?</string>
+    <string name="daily_question_78">¿Qué podría hacer para ayudarte a superar una duda o inseguridad que llevas dentro?</string>
+    <string name="daily_question_79">¿Hay alguna palabra que nunca he dicho, pero que tu corazón habría querido escuchar de mí?</string>
+    <string name="daily_question_80">Cuando miras atrás en nuestra historia, ¿en qué momento te dijiste: “Esta es la persona con la que quiero pasar mi vida”?</string>
+    <string name="daily_question_81">¿Qué parte de ti te cuesta ofrecer, pero te gustaría compartir conmigo algún día?</string>
+    <string name="daily_question_82">¿Cuál es la prueba de amor que nunca has recibido en tu vida y que te gustaría vivir conmigo algún día?</string>
 </resources>

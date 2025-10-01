@@ -15,6 +15,7 @@ import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.collectAsState
+import kotlinx.coroutines.flow.flowOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
@@ -29,6 +30,7 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.love2loveapp.AppDelegate
 import com.love2loveapp.models.QuestionCategory
+import com.love2loveapp.models.SharedFavoriteQuestion
 import com.love2loveapp.services.PackProgressService  
 import com.love2loveapp.services.QuestionDataManager
 import com.love2loveapp.views.cards.QuestionCard
@@ -104,6 +106,15 @@ fun QuestionListScreen(
     }
     
     val coroutineScope = rememberCoroutineScope()
+    
+    // 🔧 Initialiser FavoritesRepository dès que currentUser est disponible
+    LaunchedEffect(currentUser) {
+        val user = currentUser // Copie locale pour éviter le smart cast
+        if (user != null && favoritesRepository != null) {
+            Log.d(TAG, "🔧 Initialisation FavoritesRepository pour utilisateur: ${user.name}")
+            favoritesRepository.initialize(user.id, user.name)
+        }
+    }
     
     // Configuration du pager
     val totalPages = accessibleQuestions.size + 
@@ -271,13 +282,10 @@ fun QuestionListScreen(
             // Bouton Favoris en bas selon le rapport
             if (accessibleQuestions.isNotEmpty() && pagerState.currentPage < accessibleQuestions.size) {
                 val currentQuestion = accessibleQuestions[pagerState.currentPage]
-                val isFavorite by remember(currentQuestion.id) {
-                    if (favoritesRepository != null) {
-                        derivedStateOf { favoritesRepository.isFavorite(currentQuestion.id) }
-                    } else {
-                        mutableStateOf(false)
-                    }
-                }
+                
+                // ✅ Observer directement le StateFlow pour la recomposition automatique
+                val sharedFavorites by (favoritesRepository?.sharedFavoriteQuestions?.collectAsState() ?: flowOf(emptyList<SharedFavoriteQuestion>()).collectAsState(initial = emptyList()))
+                val isFavorite = sharedFavorites.any { it.questionId == currentQuestion.id }
                 
                 FavoriteButton(
                     isFavorite = isFavorite,

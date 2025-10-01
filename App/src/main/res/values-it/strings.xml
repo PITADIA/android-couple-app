@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <!-- Généré automatiquement depuis UI.xcstrings -->
     <string name="format_two_params">%1$@ %2$@</string>
     <string name="format_slash_separator">%1$@ / %2$@</string>
     <string name="format_comma_separator">%1$@, %2$@</string>
@@ -2652,15 +2651,71 @@
     <string name="yes">Sì</string>
     <string name="you">Tu</string>
     <string name="you_miss_me">Ti manco</string>
-    
-    <!-- Completion Step -->
     <string name="completion_subtitle">Tutto è terminato</string>
     <string name="completion_title_line1">Grazie per</string>
     <string name="completion_title_line2">la fiducia.</string>
     <string name="completion_description">Il tuo profilo è ora configurato.\nPotrai connettere il tuo partner e iniziare il vostro viaggio insieme!</string>
     <string name="completion_button">Inizia l\'avventura Love2Love</string>
-    
-    <!-- Simple strings -->
-    <string name="share">Condividi</string>
     <string name="or">O</string>
+    <string name="daily_challenge_54">Create insieme il vostro kit di sopravvivenza per i momenti di dubbi amorosi.</string>
+    <string name="daily_challenge_55">Scrivete un messaggio che non gli invierete… poi inviatelo comunque.</string>
+    <string name="daily_challenge_56">Fate ciascuno una top 3 dei piccoli dettagli fisici o gestuali che amate dell’altro.</string>
+    <string name="daily_challenge_57">Scrivete ciascuno una lettera da aprire solo se un giorno dubiterete del vostro legame.</string>
+    <string name="daily_challenge_58">Fate una battaglia di complimenti via messaggio: uno alla volta, finché uno non si arrende.</string>
+    <string name="daily_challenge_59">Dite al vostro partner che è la più bella debolezza che amate di lui/lei.</string>
+    <string name="daily_challenge_60">Fate uno screenshot del messaggio più bello che avete ricevuto dal vostro partner e inviatelo.</string>
+    <string name="daily_challenge_61">Dite all’altro: “Ti voglio nella mia vita perché…” e completate la frase sinceramente.</string>
+    <string name="daily_challenge_62">Disegnate un oggetto che simboleggia la vostra relazione.</string>
+    <string name="daily_challenge_63">Inviatevi una foto di un oggetto o indumento che ha una storia legata alla vostra relazione.</string>
+    <string name="daily_challenge_64">Inviatevi un desiderio via email per l’altro, da inviare fra 10 anni.</string>
+    <string name="daily_challenge_65">Inventate una serie Netflix che racconti la vostra storia d’amore.</string>
+    <string name="daily_challenge_66">Oggi è il minuto della tenerezza: avete 60 secondi per dirvi tutto ciò che amate dell’altro.</string>
+    <string name="daily_challenge_67">Fate questa domanda all’altro: “Quando hai capito che era più di un’attrazione?”</string>
+    <string name="daily_challenge_68">Create insieme la vostra bandiera di coppia: colori, simboli, ciò che rappresenta.</string>
+    <string name="daily_challenge_69">Chiedetegli: Se la nostra relazione fosse un paesaggio, quale sarebbe?</string>
+    <string name="daily_challenge_70">Stabilite una frase da dire durante una discussione per stemperare la tensione.</string>
+    <string name="daily_challenge_71">Chiedetegli: Qual è la frase che ti ho detto che non hai mai dimenticato?</string>
+    <string name="daily_challenge_72">Scegliete una canzone che potrebbe essere suonata al vostro matrimonio o rinnovo dei voti. Spiegate perché.</string>
+    <string name="daily_challenge_73">Dite al vostro partner: Ecco cosa ho imparato grazie a te… e completate la frase.</string>
+    <string name="daily_challenge_74">Create insieme una playlist di 3 canzoni che rappresentano al meglio il vostro amore.</string>
+    <string name="daily_challenge_75">Inviate un messaggio al vostro partner dicendo cosa vorreste che i vostri figli ricordassero della vostra relazione.</string>
+    <string name="daily_challenge_76">Chiedetegli: Cosa hai visto in me che io stesso non vedevo?</string>
+    <string name="daily_challenge_77">Condividete un ricordo d’infanzia che vi rende vulnerabili e dite perché avete scelto quello.</string>
+    <string name="daily_challenge_78">Scegliete ciascuno un momento in cui vi siete sentiti compresi dall’altro. Raccontatelo.</string>
+    <string name="daily_challenge_79">Dite all’altro: Se potessi rivivere un solo momento con te, sarebbe…</string>
+    <string name="daily_challenge_80">Chiedetevi a vicenda: Cosa vuoi che ricordi di te, anche tra 40 anni?</string>
+    <string name="daily_challenge_81">Scrivete un messaggio che non gli invierete… poi inviatelo comunque.</string>
+    <string name="daily_challenge_82">Fate ciascuno una top 3 dei piccoli dettagli fisici o gestuali che amate dell’altro.</string>
+    <string name="daily_challenge_83">Scrivete ciascuno una lettera da aprire solo se un giorno dubiterete del vostro legame.</string>
+    <string name="daily_question_52">Qual è la cosa che trovi bella in me, ma che io non valorizzo abbastanza?</string>
+    <string name="daily_question_53">Qual è la paura che non hai mai osato confidarmi, ma che vorresti che capissi?</string>
+    <string name="daily_question_54">C’è stato un momento in cui ti sei sentito/a messo/a da parte nella nostra relazione, anche se non era mia intenzione?</string>
+    <string name="daily_question_55">Cosa hai imparato su te stesso/a da quando siamo insieme?</string>
+    <string name="daily_question_56">Qual è la tua definizione di amore duraturo e come posso avvicinarmi a essa con te?</string>
+    <string name="daily_question_57">In quale ambito della tua vita vorresti che fossi più presente o coinvolto/a?</string>
+    <string name="daily_question_58">Quand’è che hai sentito che ti ho davvero capito/a?</string>
+    <string name="daily_question_59">Qual è la cosa che faccio e che ami, anche se non me ne rendo conto?</string>
+    <string name="daily_question_60">Quando pensi a noi fra 10 o 20 anni, cosa speri che siamo riusciti a preservare?</string>
+    <string name="daily_question_61">Quando attraversiamo momenti di tensione, cosa ti rassicura e ti fa credere che li supereremo insieme?</string>
+    <string name="daily_question_62">Hai un ricordo specifico in cui ti sei sentito/a davvero amato/a da me?</string>
+    <string name="daily_question_63">Qual è la frase o il gesto che sogni di ricevere un giorno da me?</string>
+    <string name="daily_question_64">Quando dubiti del futuro, cosa ti ridà fiducia nel nostro legame?</string>
+    <string name="daily_question_65">C’è un’aspettativa particolare che hai interiorizzato senza mai esprimerla, che ora vorresti condividere?</string>
+    <string name="daily_question_66">Se la nostra relazione fosse un giardino, di cosa avrebbe bisogno ora per fiorire meglio?</string>
+    <string name="daily_question_67">Qual è il ricordo che non abbiamo ancora creato ma che sogni di vivere insieme?</string>
+    <string name="daily_question_68">C’è un modo di fare l’amore o di toccarci che ti piacerebbe esplorare di più insieme?</string>
+    <string name="daily_question_69">Cosa vorresti che capissi senza dovermelo spiegare ogni volta?</string>
+    <string name="daily_question_70">Se potessi confidarmi un sogno che non hai mai detto a nessuno, quale sarebbe?</string>
+    <string name="daily_question_71">Cosa vorresti che vedessi come una forza in te, dove a volte vedi solo una debolezza?</string>
+    <string name="daily_question_72">Quando hai avuto bisogno di me senza osare mostrarlo? E cosa avresti voluto che facessi in quel momento?</string>
+    <string name="daily_question_73">Cosa, nella nostra quotidianità, ti fa sentire che sei davvero importante per me?</string>
+    <string name="daily_question_74">Quando sono stanco/a, cosa vorresti che non dimenticassi mai di fare per te?</string>
+    <string name="daily_question_75">Qual è il complimento che avresti voluto ricevere più spesso nella tua vita e che posso offrirti d’ora in poi?</string>
+    <string name="daily_question_76">Qual è la tua paura segreta riguardo al nostro futuro e come posso aiutarti a superarla?</string>
+    <string name="daily_question_77">Quando stai attraversando un periodo difficile, cosa vorresti che facessi per farti sentire meno solo/a?</string>
+    <string name="daily_question_78">Cosa potrei fare per aiutarti a superare un dubbio o un’insicurezza che porti dentro di te?</string>
+    <string name="daily_question_79">C’è una parola che non ho mai detto, ma che il tuo cuore avrebbe voluto sentirmi dire?</string>
+    <string name="daily_question_80">Quando ripensi alla nostra storia, in quale momento ti sei detto/a: “È questa la persona con cui voglio passare la mia vita”?</string>
+    <string name="daily_question_81">Quale parte di te fai fatica a offrire, ma che ti piacerebbe condividere con me un giorno?</string>
+    <string name="daily_question_82">Qual è la prova d’amore che non hai mai ricevuto nella tua vita e che ti piacerebbe vivere con me un giorno?</string>
 </resources>

@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <!-- Généré automatiquement depuis UI.xcstrings -->
     <string name="CFBundleDisplayName">Love2Love</string>
     <string name="CFBundleName">CoupleApp</string>
     <string name="format_two_params">%1$@ %2$@</string>
@@ -2290,14 +2289,11 @@
     <string name="skip_step">Skip this step</string>
     <string name="start_free">Try For Free</string>
     <string name="start_trial">START TRIAL</string>
-    
-    <!-- Plans paywall selon le rapport iOS -->
     <string name="weekly_plan">Weekly</string>
     <string name="monthly_plan">Monthly</string>
     <string name="weekly_price_description">%1$s per week</string>
     <string name="monthly_price_description">%1$s per month after free trial</string>
     <string name="save_percentage">Save 20%</string>
-    
     <string name="status_active">Active</string>
     <string name="status_both_answered">Both responded</string>
     <string name="status_expired">Expired</string>
@@ -2637,19 +2633,13 @@
     <string name="yes">Yes</string>
     <string name="you">You</string>
     <string name="you_miss_me">You miss me</string>
-    
-    <!-- Completion Step -->
     <string name="completion_subtitle">Everything is done</string>
     <string name="completion_title_line1">Thank you for</string>
     <string name="completion_title_line2">trusting us.</string>
     <string name="completion_description">Your profile is now configured.\nYou will be able to connect your partner and start your journey together!</string>
     <string name="completion_button">Start the Love2Love adventure</string>
-    
-    <!-- Simple strings -->
     <string name="share">Share</string>
     <string name="or">OR</string>
-    
-    <!-- Profile & Settings Strings (nouvelles clés uniques) -->
     <string name="profile_edit_name_title">Edit Name</string>
     <string name="profile_edit_name_description">Enter your new display name</string>
     <string name="profile_edit_name_error">Name cannot be empty</string>
@@ -2675,11 +2665,8 @@
     <string name="profile_write_to_us">Write to us</string>
     <string name="profile_terms_of_use">Terms of use</string>
     <string name="profile_privacy_policy_title">Privacy policy</string>
-    
-    <!-- 📱 Widget System - Strings manquants pour compilation -->
     <string name="widget_days_together">days together</string>
     <string name="widget_error_message">Widget error, please update</string>
-    
     <string name="widget_distance_error">Distance error</string>
     <string name="widget_distance_premium_title">Distance Premium</string>
     <string name="widget_distance_premium_message">Subscribe to see distance</string>
@@ -2691,8 +2678,6 @@
     <string name="widget_days_label">days</string>
     <string name="main_widget">Main Widget</string>
     <string name="distance_widget">Distance Widget</string>
-    
-    <!-- 🎓 Widget Tutorials - Strings essentiels manquants -->
     <string name="home_screen_widget_tutorial">Home Screen Widget</string>
     <string name="lock_screen_widget_tutorial">Lock Screen Widget</string>
     <string name="tutorial_skip">Skip</string>
@@ -2706,34 +2691,20 @@
     <string name="hold_description">Press and hold an empty area on your home screen</string>
     <string name="search_love2love_lock">Search Love2Love</string>
     <string name="search_lock_description">Find and add Love2Love widgets to your lock screen</string>
-    
-    <!-- 📊 Statistics Section - Individual Statistics Cards (keys already exist) -->
-    
-    <!-- 📊 Statistics Actions and Details -->
     <string name="refresh_statistics">Actualiser les statistiques</string>
     <string name="statistics_last_updated">Dernière mise à jour: %s</string>
     <string name="no_statistics_data">Aucune donnée statistique disponible</string>
     <string name="statistics_loading">Calcul des statistiques en cours...</string>
     <string name="statistics_error">Erreur calcul statistiques</string>
     <string name="statistics_retry">Réessayer</string>
-    
-    <!-- Journal Map Screen -->
     <string name="journal_map_title">Map Journal</string>
     <string name="journal_no_events_with_location">No events with location</string>
     <string name="journal_add_location_message">Add a location to your events to see them on the map</string>
-    
-    <!-- Journal Delete Dialog -->
     <string name="delete_memory_title">Delete this memory?</string>
-    
-    <!-- 📊 Time Formatting for Statistics (all keys already exist) -->
-    
-    <!-- 📊 Motivational Messages -->
     <string name="stats_new_couple">Nouveau couple, grandes émotions ! 🌟</string>
     <string name="stats_growing_love">Votre amour grandit chaque jour ! 💖</string>
     <string name="stats_beautiful_story">Une belle histoire qui se construit ! 👑</string>
     <string name="stats_lasting_love">Un amour qui dure dans le temps ! ✨</string>
-    
-    <!-- Favoris -->
     <string name="my_favorites">Mes favoris</string>
     <string name="add_favorite_questions">Ajoutez des questions favorites</string>
     <string name="add_favorites_description">Ajoutez en favoris les questions qui vous plaisent le plus pour les retrouver facilement et les partager avec votre partenaire.</string>
@@ -2742,8 +2713,6 @@
     <string name="remove_from_favorites">Retirer des favoris</string>
     <string name="remove">Retirer</string>
     <string name="remove_favorite_confirmation">Cette question sera retirée de vos favoris. Vous pourrez la remettre en favoris depuis sa catégorie.</string>
-    
-    <!-- Menu/Profil -->
     <string name="about_me">À propos de moi</string>
     <string name="application">Application</string>
     <string name="name">Nom</string>
@@ -2765,8 +2734,6 @@
     <string name="open_settings_button">Ouvrir les paramètres</string>
     <string name="error_image_not_found">Image non trouvée</string>
     <string name="close">Fermer</string>
-    
-    <!-- 🔖 Clés Défis Sauvegardés -->
     <string name="no_saved_challenges">Aucun défi sauvegardé</string>
     <string name="save_challenges_description">Sauvegardez vos défis préférés pour les retrouver facilement ici !</string>
     <string name="delete_challenge_title">Supprimer ce défi ?</string>
@@ -2774,5 +2741,65 @@
     <string name="delete_action">Supprimer</string>
     <string name="cancel_action">Annuler</string>
     <string name="loading_saved_challenges">Chargement des défis sauvegardés…</string>
-    
+    <string name="daily_challenge_54">Create together your survival kit for days when love feels uncertain.</string>
+    <string name="daily_challenge_55">Write a message you won’t send to them… then send it anyway.</string>
+    <string name="daily_challenge_56">Each of you make a top 3 of the little physical or gestural details you love about the other.</string>
+    <string name="daily_challenge_57">Each write a letter to be opened only if one day you doubt your bond.</string>
+    <string name="daily_challenge_58">Have a compliment battle via messages: one at a time, until one gives up.</string>
+    <string name="daily_challenge_59">Tell your partner they are the most beautiful weakness you love about them.</string>
+    <string name="daily_challenge_60">Take a screenshot of the most beautiful message you received from your partner and send it to them.</string>
+    <string name="daily_challenge_61">Tell the other: “I want you in my life because…” and complete the sentence sincerely.</string>
+    <string name="daily_challenge_62">Draw an object that symbolizes your relationship.</string>
+    <string name="daily_challenge_63">Send each other a photo of an object or clothing item that has a story tied to your relationship.</string>
+    <string name="daily_challenge_64">Send each other a wish via email for the other, to be sent in 10 years.</string>
+    <string name="daily_challenge_65">Invent a Netflix series that tells your love story.</string>
+    <string name="daily_challenge_66">Today is tenderness minute: you have 60 seconds to tell each other everything you love about the other.</string>
+    <string name="daily_challenge_67">Ask the other: “When did you know it was more than attraction?”</string>
+    <string name="daily_challenge_68">Create your couple’s flag together: colors, symbols, what it represents.</string>
+    <string name="daily_challenge_69">Ask them: If our relationship were a landscape, what would it be?</string>
+    <string name="daily_challenge_70">Establish a phrase to say during an argument to defuse tension.</string>
+    <string name="daily_challenge_71">Ask them: What’s the phrase I said to you that you’ve never forgotten?</string>
+    <string name="daily_challenge_72">Choose a song that could be played at your wedding or vow renewal. Explain why.</string>
+    <string name="daily_challenge_73">Tell your partner: Here’s what I’ve learned thanks to you… and complete the sentence.</string>
+    <string name="daily_challenge_74">Create together a playlist of 3 songs that best represent your love.</string>
+    <string name="daily_challenge_75">Send a message to your partner saying what you’d want your children to remember about your relationship.</string>
+    <string name="daily_challenge_76">Ask them: What did you see in me that I didn’t see in myself?</string>
+    <string name="daily_challenge_77">Share a childhood memory that makes you vulnerable and say why you chose it.</string>
+    <string name="daily_challenge_78">Each choose a moment when you felt understood by the other. Tell the story.</string>
+    <string name="daily_challenge_79">Tell the other: If I could relive one moment with you, it would be…</string>
+    <string name="daily_challenge_80">Ask each other: What do you want me to remember about you, even in 40 years?</string>
+    <string name="daily_challenge_81">Write a message you won’t send to them… then send it anyway.</string>
+    <string name="daily_challenge_82">Each make a top 3 of the small physical or gestural details you love about the other.</string>
+    <string name="daily_challenge_83">Each write a letter to open only if one day you doubt your bond.</string>
+    <string name="daily_question_52">What is something you find beautiful about me that I don’t value enough?</string>
+    <string name="daily_question_53">What is the fear you’ve never dared to share with me, but would like me to understand?</string>
+    <string name="daily_question_54">Is there a moment when you felt sidelined in our relationship, even if it wasn’t intentional on my part?</string>
+    <string name="daily_question_55">What have you learned about yourself since we’ve been together?</string>
+    <string name="daily_question_56">What is your definition of lasting love, and how can I get closer to it with you?</string>
+    <string name="daily_question_57">In which area of your life would you like me to be more present or involved?</string>
+    <string name="daily_question_58">When did you feel that I truly understood you?</string>
+    <string name="daily_question_59">What is something I do that you love, even if I don’t realize it?</string>
+    <string name="daily_question_60">When you think about us in 10 or 20 years, what do you hope we’ve managed to preserve?</string>
+    <string name="daily_question_61">When we go through tensions, what reassures you and makes you believe we’ll overcome them together?</string>
+    <string name="daily_question_62">Do you have a specific memory where you felt truly loved by me?</string>
+    <string name="daily_question_63">What is the phrase or gesture you dream of hearing or receiving from me one day?</string>
+    <string name="daily_question_64">When you doubt the future, what restores your faith in our bond?</string>
+    <string name="daily_question_65">Is there a specific expectation you’ve internalized without ever expressing, that you’d like to share now?</string>
+    <string name="daily_question_66">If our relationship were a garden, what would it need right now to bloom better?</string>
+    <string name="daily_question_67">What is the memory we haven’t created yet but that you dream of us experiencing together?</string>
+    <string name="daily_question_68">Is there a way of making love or touching each other that you’d like to explore more together?</string>
+    <string name="daily_question_69">What would you like me to understand without you having to explain it every time?</string>
+    <string name="daily_question_70">If you could share a dream you’ve never told anyone, what would it be?</string>
+    <string name="daily_question_71">What would you like me to see as a strength in you, where you sometimes see only a weakness?</string>
+    <string name="daily_question_72">When did you need me without daring to show it? And what would you have liked me to do at that moment?</string>
+    <string name="daily_question_73">What in our daily life makes you feel that you truly matter to me?</string>
+    <string name="daily_question_74">When I’m tired, what would you like me to never forget to do for you?</string>
+    <string name="daily_question_75">What is the compliment you wish you’d heard more often in your life, and that I can offer you from now on?</string>
+    <string name="daily_question_76">What is your secret fear about our future, and how can I help you ease it?</string>
+    <string name="daily_question_77">When you’re going through a tough time, what would you like me to do to make you feel you’re not alone?</string>
+    <string name="daily_question_78">What could I do to help you heal from a doubt or insecurity you carry within you?</string>
+    <string name="daily_question_79">Is there a word I’ve never said, but your heart would have loved to hear from me?</string>
+    <string name="daily_question_80">When you look back on our story, at what moment did you say to yourself: “This is the person I want to spend my life with”?</string>
+    <string name="daily_question_81">What part of yourself do you find hard to offer, but would like to be able to share with me one day?</string>
+    <string name="daily_question_82">What is the proof of love you’ve never received in your life, and that you’d like to experience with me one day?</string>
 </resources>

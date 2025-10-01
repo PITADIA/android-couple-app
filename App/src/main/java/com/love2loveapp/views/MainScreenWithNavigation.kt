@@ -2,13 +2,17 @@ package com.love2loveapp.views
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.ime
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import android.util.Log
@@ -62,6 +66,11 @@ fun MainScreenWithNavigation() {
     
     // Context pour permissions
     val context = LocalContext.current
+    
+    // 🎯 Détection du clavier pour masquer la bottom navigation
+    val density = LocalDensity.current
+    val imeHeightPx = WindowInsets.ime.getBottom(density)
+    val isKeyboardVisible = imeHeightPx > 0
     
     // États navigation Widgets
     var showingHomeScreenTutorial by remember { mutableStateOf(false) }
@@ -299,12 +308,13 @@ fun MainScreenWithNavigation() {
         )
     }
         
-        // Bottom Navigation
-        Love2LoveBottomNavigation(
-            currentDestination = currentDestination,
-            favoritesCount = favoritesCount.size,
-            onDestinationSelected = { destination ->
-                currentDestination = destination
+        // Bottom Navigation - masquée quand le clavier est visible
+        if (!isKeyboardVisible) {
+            Love2LoveBottomNavigation(
+                currentDestination = currentDestination,
+                favoritesCount = favoritesCount.size,
+                onDestinationSelected = { destination ->
+                    currentDestination = destination
                 
                 // Initialiser le repository si nécessaire lors du premier accès aux favoris
                 if (destination == NavigationDestination.FAVORITES && favoritesRepository != null) {
@@ -327,6 +337,7 @@ fun MainScreenWithNavigation() {
                 }
             }
         )
+        } // ✅ Fermeture du if (!isKeyboardVisible)
     }
 }
 

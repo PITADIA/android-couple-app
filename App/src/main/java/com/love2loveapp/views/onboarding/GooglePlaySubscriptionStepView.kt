@@ -79,6 +79,9 @@ fun GooglePlaySubscriptionStepView(
     // État local pour la vérification serveur
     var isValidatingSubscription by remember { mutableStateOf(false) }
     
+    // 🔄 État de chargement local qui persiste même quand Google Play s'ouvre
+    var isLocalLoading by remember { mutableStateOf(false) }
+    
     // Gestion de la completion automatique si abonné
     LaunchedEffect(isSubscribed, isValidatingSubscription) {
         // Protection contre les changements d'état rapides qui peuvent causer des bugs Compose
@@ -86,6 +89,8 @@ fun GooglePlaySubscriptionStepView(
         
         if (isSubscribed && !isValidatingSubscription) {
             Log.d("SubscriptionStep", "✅ Abonnement actif détecté - Passage à l'étape suivante")
+            // ✅ Arrêter l'état de chargement local avant la completion
+            isLocalLoading = false
             onComplete()
         }
     }
@@ -94,9 +99,23 @@ fun GooglePlaySubscriptionStepView(
     LaunchedEffect(isLoading) {
         if (isLoading) {
             isValidatingSubscription = true
+            isLocalLoading = true // 🔄 Activer l'état de chargement local
             Log.d("SubscriptionStep", "🔍 Validation d'abonnement en cours...")
-        } else {
+        } else if (isSubscribed) {
+            // Ne stopper le chargement local que si l'abonnement est confirmé
             isValidatingSubscription = false
+            isLocalLoading = false
+        }
+        // Sinon, garder l'état de chargement local jusqu'à résolution
+    }
+    
+    // 🚨 Observer les erreurs pour arrêter l'état de chargement local
+    LaunchedEffect(errorMessage) {
+        if (errorMessage != null) {
+            // ❌ Erreur détectée - arrêter l'état de chargement local
+            isLocalLoading = false
+            isValidatingSubscription = false
+            Log.d("SubscriptionStep", "❌ Erreur détectée - arrêt état de chargement")
         }
     }
     
@@ -246,7 +265,7 @@ fun GooglePlaySubscriptionStepView(
             // 7. Bouton principal selon le rapport iOS
             SubscriptionButtonIOS(
                 selectedPlan = selectedPlan,
-                isLoading = isLoading,
+                isLoading = isLoading || isLocalLoading, // ✨ Utiliser l'état de chargement combiné
                 isReady = billingConnectionState == GooglePlayBillingService.BillingConnectionState.CONNECTED,
                 onPurchase = {
                     Log.d("SubscriptionStep", "🛒 Démarrage achat: $selectedPlan")

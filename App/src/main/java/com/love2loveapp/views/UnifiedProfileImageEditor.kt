@@ -204,29 +204,21 @@ fun UnifiedProfileImageEditor(
             )
             Text("Traitement en cours...")
         } else {
-            // 📸 Boutons d'action
-            Row(
-                horizontalArrangement = Arrangement.spacedBy(16.dp)
+            // 🎯 Ouverture automatique de la galerie (pas de boutons)
+            LaunchedEffect(Unit) {
+                Log.d("UnifiedProfileImageEditor", "🖼️ Ouverture automatique de la galerie")
+                galleryLauncher.launch("image/*")
+            }
+            
+            // Message d'information pendant l'ouverture
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
             ) {
-                // Galerie
-                Button(
-                    onClick = { galleryLauncher.launch("image/*") },
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = Color(0xFFFD267A)
-                    )
-                ) {
-                    Text("Galerie")
-                }
-                
-                // Caméra
-                Button(
-                    onClick = { cameraLauncher.launch(null) },
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = Color(0xFFFD267A)
-                    )
-                ) {
-                    Text("Caméra")
-                }
+                Text(
+                    text = "Ouverture de la galerie...",
+                    color = Color(0xFF666666)
+                )
             }
         }
     }

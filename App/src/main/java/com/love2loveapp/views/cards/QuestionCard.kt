@@ -156,7 +156,7 @@ fun FavoriteButton(
                 contentDescription = if (isFavorite) 
                     stringResource(R.string.remove_from_favorites) else 
                     stringResource(R.string.add_to_favorites),
-                tint = if (isFavorite) Color(0xFFFF4081) else Color.White,
+                tint = Color.White, // ✅ Toujours blanc pour une meilleure visibilité
                 modifier = Modifier.size(20.dp)
             )
             

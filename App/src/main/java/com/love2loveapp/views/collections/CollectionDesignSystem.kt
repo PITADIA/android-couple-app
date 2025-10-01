@@ -1,5 +1,6 @@
 package com.love2loveapp.views.collections
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -10,11 +11,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.love2loveapp.R
 
 /**
  * 🎨 CollectionDesignSystem selon RAPPORT_DESIGN_COLLECTIONS_CARTES.md
@@ -231,21 +235,13 @@ fun Love2LoveBranding(
         verticalAlignment = Alignment.CenterVertically,
         modifier = modifier
     ) {
-        // TODO: Remplacer par vraie image quand disponible
-        Box(
-            modifier = Modifier
-                .size(CollectionDimensions.LogoSize)
-                .background(
-                    Color.White.copy(alpha = 0.3f),
-                    shape = RoundedCornerShape(4.dp)
-                ),
-            contentAlignment = Alignment.Center
-        ) {
-            Text(
-                text = "💕",
-                fontSize = 16.sp
-            )
-        }
+        // 🎯 LOGO LOVE2LOVE - Image leetchi2 24x24pt selon le rapport
+        Image(
+            painter = painterResource(R.drawable.leetchi2),
+            contentDescription = null,
+            modifier = Modifier.size(CollectionDimensions.LogoSize),
+            contentScale = ContentScale.Fit
+        )
 
         Text(
             text = "Love2Love",

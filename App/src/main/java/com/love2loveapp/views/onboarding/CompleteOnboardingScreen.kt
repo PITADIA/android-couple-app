@@ -12,6 +12,8 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.imePadding
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
@@ -32,9 +34,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -42,7 +47,8 @@ import com.love2loveapp.R
 import com.love2loveapp.viewmodels.CompleteOnboardingViewModel
 import kotlinx.coroutines.delay
 import com.love2loveapp.views.components.AndroidPhotoEditorView
-import com.love2loveapp.views.UnifiedProfileImageEditor
+import com.love2loveapp.views.UnifiedProfileImageView
+import com.love2loveapp.views.ProfileImageType
 import com.love2loveapp.views.onboarding.PartnerCodeStepScreen
 import com.love2loveapp.services.profile.ProfileRepository
 import com.love2loveapp.AppDelegate
@@ -747,6 +753,10 @@ fun RealDisplayNameStepScreen(
 ) {
     var name by remember { mutableStateOf(currentName) }
     
+    // 🎯 Gestion du clavier et du focus
+    val keyboardController = LocalSoftwareKeyboardController.current
+    val focusManager = LocalFocusManager.current
+    
     LaunchedEffect(currentName) {
         name = currentName
     }
@@ -754,7 +764,17 @@ fun RealDisplayNameStepScreen(
     Box(
         modifier = Modifier
             .fillMaxSize()
+            .imePadding() // ✅ Gestion automatique de l'espace clavier
             .background(OnboardingColors.Background)
+            .pointerInput(Unit) {
+                // 🎯 Fermer clavier au tap en dehors des champs de saisie
+                detectTapGestures(
+                    onTap = {
+                        focusManager.clearFocus()
+                        keyboardController?.hide()
+                    }
+                )
+            }
     ) {
         Column(
             modifier = Modifier
@@ -876,23 +896,24 @@ fun RealProfilePhotoStepScreen(
             // Centrer verticalement le cercle photo
             Spacer(modifier = Modifier.weight(1f))
             
-            // 🎯 ÉDITEUR UNIFIÉ - Centré au milieu (comme iOS)
-            UnifiedProfileImageEditor(
-                isOnboarding = true,
-                onImageUpdated = { bitmap ->
-                    Log.d("ProfilePhoto", "✅ Image mise à jour: ${bitmap.width}x${bitmap.height}")
-                    
-                    // ✅ Stockage temporaire dans ViewModel (comme iOS)
-                    viewModel.updateProfileImage(bitmap)
-                    hasSelectedPhoto = true
-                },
-                onError = { error ->
-                    Log.e("ProfilePhoto", "❌ Erreur éditeur: $error")
-                },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(200.dp) // Hauteur fixe pour centrage
-            )
+            // 🎯 BONHOMME BLANC CLIQUABLE - Ouverture directe galerie (comme profil)
+            Box(
+                modifier = Modifier.fillMaxWidth(),
+                contentAlignment = Alignment.Center
+            ) {
+                UnifiedProfileImageView(
+                    imageType = ProfileImageType.USER,
+                    size = 160.dp, // Grande taille pour l'onboarding
+                    userName = "", // Pas de nom = bonhomme blanc
+                    onImageUpdated = { bitmap ->
+                        // 🎯 Callback pour onboarding - stockage temporaire dans ViewModel
+                        Log.d("ProfilePhoto", "✅ Image mise à jour: ${bitmap.width}x${bitmap.height}")
+                        viewModel.updateProfileImage(bitmap)
+                        hasSelectedPhoto = true
+                    },
+                    modifier = Modifier.size(160.dp)
+                )
+            }
             
             Spacer(modifier = Modifier.weight(1f))
             

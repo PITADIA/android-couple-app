@@ -8,6 +8,10 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.ime
+import androidx.compose.foundation.layout.imePadding
+import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
@@ -15,12 +19,14 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Send
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.painterResource
@@ -76,12 +82,15 @@ fun DailyQuestionMainScreen(
     // Vérifier si c'est le premier message de l'utilisateur
     val userHasPostedBefore = responses.any { it.userId == currentUserId }
 
-    // 🔄 Auto-scroll vers le bas lors de nouveaux messages
+    // 🔄 Auto-scroll vers le bas lors de nouveaux messages et quand le clavier apparaît
     LaunchedEffect(responses.size) {
         if (responses.isNotEmpty()) {
             listState.animateScrollToItem(responses.size)
         }
     }
+    
+    // 📱 Auto-scroll vers le bas quand le clavier apparaît
+    // Auto-scroll pour nouveaux messages est déjà géré par LaunchedEffect(responses.size)
     
     // 📝 Fonction d'envoi de message avec gestion notification permission
     fun sendMessage() {
@@ -106,24 +115,91 @@ fun DailyQuestionMainScreen(
         }
     }
 
-    // 🎨 Background principal - RGB(247, 247, 247) selon rapport
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .pointerInput(Unit) {
-                // 🎯 Fermer clavier au tap en dehors des champs de saisie
-                detectTapGestures(
-                    onTap = {
-                        focusManager.clearFocus()
-                        keyboardController?.hide()
+    // 🎨 Interface avec Scaffold pour une gestion élégante du clavier
+    Scaffold(
+        modifier = Modifier.fillMaxSize(),
+        containerColor = Color(0xFFF7F7F7), // Gris clair uniforme selon rapport
+        bottomBar = {
+            // 📝 Barre de Saisie collée au clavier avec imePadding
+            Surface(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .imePadding(), // ✅ imePadding sur la bottomBar pour qu'elle suive le clavier
+                shadowElevation = 8.dp,
+                color = Color.White
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp),
+                    verticalAlignment = Alignment.Bottom
+                ) {
+                    OutlinedTextField(
+                        value = messageText,
+                        onValueChange = { messageText = it },
+                        modifier = Modifier.weight(1f),
+                        placeholder = {
+                            Text(
+                                text = stringResource(R.string.daily_question_type_response), // ✅ Clé de traduction
+                                color = Color.Gray
+                            )
+                        },
+                        shape = RoundedCornerShape(25.dp),
+                        maxLines = 4,
+                        keyboardOptions = KeyboardOptions(
+                            imeAction = ImeAction.Send
+                        ),
+                        keyboardActions = KeyboardActions(
+                            onSend = { sendMessage() }
+                        )
+                    )
+
+                    Spacer(modifier = Modifier.width(12.dp))
+
+                    FloatingActionButton(
+                        onClick = { sendMessage() },
+                        modifier = Modifier.size(48.dp),
+                        containerColor = Color(0xFFFD267A), // Rose Love2Love selon rapport
+                        elevation = FloatingActionButtonDefaults.elevation(
+                            defaultElevation = 4.dp
+                        )
+                    ) {
+                        if (isSubmitting) {
+                            CircularProgressIndicator(
+                                modifier = Modifier.size(20.dp),
+                                color = Color.White,
+                                strokeWidth = 2.dp
+                            )
+                        } else {
+                            Icon(
+                                Icons.Default.Send,
+                                contentDescription = stringResource(R.string.daily_question_send_button), // ✅ Clé de traduction
+                                tint = Color.White,
+                                modifier = Modifier.size(20.dp)
+                            )
+                        }
                     }
-                )
+                }
             }
-            .background(Color(0xFFF7F7F7)) // Gris clair uniforme selon rapport
-    ) {
-        Column(
-            modifier = Modifier.fillMaxSize()
+        }
+    ) { paddingValues ->
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(paddingValues) // ✅ Utilisation correcte du padding du Scaffold
+                .pointerInput(Unit) {
+                    // 🎯 Fermer clavier au tap en dehors des champs de saisie
+                    detectTapGestures(
+                        onTap = {
+                            focusManager.clearFocus()
+                            keyboardController?.hide()
+                        }
+                    )
+                }
         ) {
+            Column(
+                modifier = Modifier.fillMaxSize()
+            ) {
             // 📋 Header Principal
             Row(
                 modifier = Modifier
@@ -218,7 +294,12 @@ fun DailyQuestionMainScreen(
                     modifier = Modifier
                         .weight(1f)
                         .fillMaxWidth(),
-                    contentPadding = PaddingValues(horizontal = 16.dp, vertical = 16.dp), // Marges des bords selon rapport
+                    contentPadding = PaddingValues(
+                        start = 16.dp,
+                        end = 16.dp,
+                        top = 16.dp,
+                        bottom = 16.dp // ✅ Padding normal, le Scaffold gère l'espace de la bottomBar
+                    ),
                     verticalArrangement = Arrangement.spacedBy(4.dp)
                 ) {
                     if (responses.isEmpty()) {
@@ -263,65 +344,6 @@ fun DailyQuestionMainScreen(
                     }
                 }
 
-                // 📝 Barre de Saisie
-                Surface(
-                    modifier = Modifier.fillMaxWidth(),
-                    shadowElevation = 8.dp,
-                    color = Color.White
-                ) {
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(16.dp),
-                        verticalAlignment = Alignment.Bottom
-                    ) {
-                        OutlinedTextField(
-                            value = messageText,
-                            onValueChange = { messageText = it },
-                            modifier = Modifier.weight(1f),
-                            placeholder = {
-                                Text(
-                                    text = stringResource(R.string.daily_question_type_response), // ✅ Clé de traduction
-                                    color = Color.Gray
-                                )
-                            },
-                            shape = RoundedCornerShape(25.dp),
-                            maxLines = 4,
-                            keyboardOptions = KeyboardOptions(
-                                imeAction = ImeAction.Send
-                            ),
-                            keyboardActions = KeyboardActions(
-                                onSend = { sendMessage() }
-                            )
-                        )
-
-                        Spacer(modifier = Modifier.width(12.dp))
-
-                        FloatingActionButton(
-                            onClick = { sendMessage() },
-                            modifier = Modifier.size(48.dp),
-                            containerColor = Color(0xFFFD267A), // Rose Love2Love selon rapport
-                            elevation = FloatingActionButtonDefaults.elevation(
-                                defaultElevation = 4.dp
-                            )
-                        ) {
-                            if (isSubmitting) {
-                                CircularProgressIndicator(
-                                    modifier = Modifier.size(20.dp),
-                                    color = Color.White,
-                                    strokeWidth = 2.dp
-                                )
-                            } else {
-                                Icon(
-                                    Icons.Default.Send,
-                                    contentDescription = stringResource(R.string.daily_question_send_button), // ✅ Clé de traduction
-                                    tint = Color.White,
-                                    modifier = Modifier.size(20.dp)
-                                )
-                            }
-                        }
-                    }
-                }
             } else {
                 // État de chargement
                 Box(
@@ -358,6 +380,7 @@ fun DailyQuestionMainScreen(
                     }
                 }
             }
+            } // ✅ Fermeture du Column principal
         }
         
         // 🔔 Gestion permission notifications après premier message

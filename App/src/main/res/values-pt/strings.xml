@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Généré automatiquement depuis TuPreferes.xcstrings -->
     <string name="format_two_params">%1$@ %2$@</string>
     <string name="format_slash_separator">%1$@ / %2$@</string>
     <string name="format_comma_separator">%1$@, %2$@</string>
@@ -367,15 +366,11 @@
     <string name="tp_97">Preferias saber de antemão todos os bons momentos que vêm ou todos os maus?</string>
     <string name="tp_98">Preferias acordar todas as manhãs com um elogio ou com um abraço?</string>
     <string name="tp_99">Preferias deixar um legado material (dinheiro, bens) ou um legado imaterial (valores, memórias)?</string>
-    
-    <!-- Completion Step -->
     <string name="completion_subtitle">Tudo está terminado</string>
     <string name="completion_title_line1">Obrigado por</string>
     <string name="completion_title_line2">confiar em nós.</string>
     <string name="completion_description">O teu perfil está agora configurado.\nPoderás conectar o teu parceiro e começar a vossa jornada juntos!</string>
     <string name="completion_button">Começar a aventura Love2Love</string>
-    
-    <!-- Simple strings -->
     <string name="share">Partilhar</string>
     <string name="or">OU</string>
 </resources>

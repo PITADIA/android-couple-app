@@ -69,7 +69,7 @@ fun AndroidPhotoEditorView(
     modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current
-    var showActionSheet by remember { mutableStateOf(false) }
+    // ✅ showActionSheet supprimé - ouverture directe de la galerie
     var selectedImageUri by remember { mutableStateOf<Uri?>(null) }
     var processedImage by remember { mutableStateOf(currentImage) }
     var isProcessing by remember { mutableStateOf(false) }
@@ -146,32 +146,7 @@ fun AndroidPhotoEditorView(
         }
     }
     
-    // Camera launcher
-    val cameraLauncher = rememberLauncherForActivityResult(
-        contract = ActivityResultContracts.TakePicturePreview()
-    ) { bitmap ->
-        bitmap?.let {
-            Log.d("AndroidPhotoEditor", "📸 Photo prise avec la caméra: ${it.width}x${it.height}")
-            // Sauvegarder temporairement pour CropImage
-            val tempUri = saveBitmapToTempFile(context, it)
-            tempUri?.let { uri ->
-                selectedImageUri = uri
-                launchCropImage(uri)
-            }
-        }
-    }
-    
-    // 🔐 Gestion des permissions caméra
-    val requestCameraPermission = rememberCameraPermissionLauncher(
-        onPermissionGranted = {
-            Log.d("AndroidPhotoEditor", "📸 Permission caméra accordée")
-            cameraLauncher.launch(null)
-        },
-        onPermissionDenied = {
-            Log.w("AndroidPhotoEditor", "❌ Permission caméra refusée")
-            onError("L'accès à la caméra est nécessaire pour prendre des photos")
-        }
-    )
+    // ✅ Caméra et permissions supprimées - Galerie seulement
 
     // Gallery launcher
     val galleryLauncher = rememberLauncherForActivityResult(
@@ -211,7 +186,9 @@ fun AndroidPhotoEditorView(
                     .background(Color.White)
                     .clickable { 
                         if (!isProcessing) {
-                            showActionSheet = true 
+                            // 🎯 Ouvrir directement la galerie (pas d'ActionSheet)
+                            Log.d("AndroidPhotoEditor", "🖼️ Ouverture directe de la galerie")
+                            galleryLauncher.launch("image/*")
                         }
                     },
                 contentAlignment = Alignment.Center
@@ -265,103 +242,7 @@ fun AndroidPhotoEditorView(
 
         }
 
-        // Action Sheet (Bottom Sheet style)
-        if (showActionSheet) {
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .background(Color.Black.copy(alpha = 0.3f))
-                    .clickable { showActionSheet = false }
-            ) {
-                Card(
-                    modifier = Modifier
-                        .align(Alignment.BottomCenter)
-                        .fillMaxWidth()
-                        .padding(16.dp),
-                    shape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp)
-                ) {
-                    Column(
-                        modifier = Modifier.padding(24.dp)
-                    ) {
-                        Text(
-                            text = "Choisir une photo",
-                            fontSize = 18.sp,
-                            fontWeight = FontWeight.Bold,
-                            modifier = Modifier.fillMaxWidth(),
-                            textAlign = TextAlign.Center
-                        )
-                        
-                        Spacer(modifier = Modifier.height(20.dp))
-                        
-                        // Option Galerie
-                        Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .clickable {
-                                    showActionSheet = false
-                                    Log.d("AndroidPhotoEditor", "🖼️ Ouverture galerie")
-                                    galleryLauncher.launch("image/*")
-                                }
-                                .padding(vertical = 12.dp),
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            Icon(
-                                imageVector = Icons.Default.Add,
-                                contentDescription = null,
-                                tint = Color(0xFFFD267A),
-                                modifier = Modifier.size(24.dp)
-                            )
-                            Spacer(modifier = Modifier.width(16.dp))
-                            Text(
-                                text = "Galerie",
-                                fontSize = 16.sp,
-                                color = Color.Black
-                            )
-                        }
-                        
-                        // Option Caméra (avec demande de permission)
-                        Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .clickable {
-                                    showActionSheet = false
-                                    Log.d("AndroidPhotoEditor", "📸 Demande permission caméra")
-                                    requestCameraPermission()
-                                }
-                                .padding(vertical = 12.dp),
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            Icon(
-                                imageVector = Icons.Default.Edit,
-                                contentDescription = null,
-                                tint = Color(0xFFFD267A),
-                                modifier = Modifier.size(24.dp)
-                            )
-                            Spacer(modifier = Modifier.width(16.dp))
-                            Text(
-                                text = "Caméra",
-                                fontSize = 16.sp,
-                                color = Color.Black
-                            )
-                        }
-                        
-                        Spacer(modifier = Modifier.height(12.dp))
-                        
-                        // Bouton Annuler
-                        TextButton(
-                            onClick = { showActionSheet = false },
-                            modifier = Modifier.fillMaxWidth()
-                        ) {
-                            Text(
-                                text = "Annuler",
-                                fontSize = 16.sp,
-                                color = Color.Gray
-                            )
-                        }
-                    }
-                }
-            }
-        }
+        // ✅ ActionSheet supprimé - Ouverture directe de la galerie
     }
 }
 

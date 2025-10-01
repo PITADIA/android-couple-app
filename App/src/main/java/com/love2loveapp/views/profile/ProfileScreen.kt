@@ -72,7 +72,7 @@ fun ProfileScreen(
     // 🎭 États UI locaux pour modales selon le rapport
     var showingNameEditor by remember { mutableStateOf(false) }
     var showingRelationshipDatePicker by remember { mutableStateOf(false) }
-    var showingPhotoSelector by remember { mutableStateOf(false) }
+    // ✅ showingPhotoSelector supprimé - ouverture directe de la galerie
     var showingDeleteConfirmation by remember { mutableStateOf(false) }
 
     // 🚀 Initialisation
@@ -98,7 +98,10 @@ fun ProfileScreen(
             ProfileHeaderSection(
                     user = currentUser,
                     isLoading = isLoading,
-                onPhotoClick = { showingPhotoSelector = true }
+                onPhotoClick = { 
+                    // 🎯 Ouverture directe de la galerie (pas d'écran intermédiaire)
+                    // L'UnifiedProfileImageView gère déjà le clic pour ouvrir la galerie
+                }
             )
 
             // 👤 SECTION "À PROPOS DE MOI" selon le rapport
@@ -151,62 +154,7 @@ fun ProfileScreen(
         )
     }
 
-    if (showingPhotoSelector) {
-        // 🎯 ÉDITEUR UNIFIÉ - Nouveau système comme onboarding
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(Color.Black.copy(alpha = 0.9f))
-        ) {
-            Column(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(20.dp)
-            ) {
-                // Header
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Text(
-                        text = "Photo de profil",
-                        fontSize = 20.sp,
-                        fontWeight = FontWeight.Bold,
-                        color = Color.White
-                    )
-                    
-                    TextButton(onClick = { showingPhotoSelector = false }) {
-                        Text(
-                            text = "Fermer",
-                            fontSize = 16.sp,
-                            color = Color.White
-                        )
-                    }
-                }
-                
-                Spacer(modifier = Modifier.height(20.dp))
-                
-                // 🎯 Éditeur unifié (même système que onboarding)
-                UnifiedProfileImageEditor(
-                    isOnboarding = false, // Mode profil - upload immédiat
-                    onImageUpdated = { bitmap ->
-                        Log.d("ProfileScreen", "✅ Photo de profil mise à jour via système unifié")
-                        showingPhotoSelector = false
-                    },
-                    onError = { error ->
-                        Log.e("ProfileScreen", "❌ Erreur éditeur photo: $error")
-                        showingPhotoSelector = false
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .weight(1f)
-                )
-                
-                Spacer(modifier = Modifier.height(20.dp))
-            }
-        }
-    }
+    // ✅ Écran intermédiaire "Photo de profil" supprimé - ouverture directe de la galerie
 
     if (showingDeleteConfirmation) {
         DeleteAccountDialog(

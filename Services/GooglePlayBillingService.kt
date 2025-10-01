@@ -202,14 +202,19 @@ class GooglePlayBillingService private constructor(
             .setProductDetailsParamsList(productDetailsParamsList)
             .build()
         
+        // 🔄 État de chargement ACTIVÉ - persistera jusqu'à la fin du processus
         _isLoading.value = true
         _errorMessage.value = null
         
+        Log.d(TAG, "🚀 Lancement du flow de billing pour ${_selectedPlan.value}")
         val billingResult = billingClient?.launchBillingFlow(activity, billingFlowParams)
         if (billingResult?.responseCode != BillingClient.BillingResponseCode.OK) {
             Log.e(TAG, "❌ Erreur lancement achat: ${billingResult?.debugMessage}")
             _isLoading.value = false
             _errorMessage.value = "Erreur lancement achat: ${billingResult?.debugMessage}"
+        } else {
+            Log.d(TAG, "✅ Flow de billing lancé avec succès")
+            // ⚡ Ne pas mettre isLoading à false ici - sera géré par les callbacks
         }
     }
     
@@ -224,13 +229,24 @@ class GooglePlayBillingService private constructor(
     // === Gestion des Transactions ===
     
     private fun handlePurchasesUpdated(billingResult: BillingResult, purchases: List<Purchase>?) {
-        Log.d(TAG, "🔄 Mise à jour achats: ${billingResult.responseCode}")
+        Log.d(TAG, "📦 CALLBACK onPurchasesUpdated reçu")
+        Log.d(TAG, "📊 Code: ${billingResult.responseCode} (${if (billingResult.responseCode == BillingClient.BillingResponseCode.OK) "OK" else "ERREUR"})")
+        Log.d(TAG, "📝 Debug: ${billingResult.debugMessage}")
+        Log.d(TAG, "🛒 Achats: ${purchases?.size ?: 0}")
+        Log.d(TAG, "🔌 Thread: ${Thread.currentThread().name}")
         
         when (billingResult.responseCode) {
             BillingClient.BillingResponseCode.OK -> {
-                purchases?.forEach { purchase ->
-                    Log.d(TAG, "✅ Achat réussi: ${purchase.products}")
-                    handlePurchase(purchase)
+                Log.d(TAG, "✅ Response: OK")
+                purchases?.let { purchaseList ->
+                    Log.d(TAG, "✅ Achat mis à jour: ${purchaseList.size} achats")
+                    purchaseList.forEach { purchase ->
+                        Log.d(TAG, "🎉 Achat réussi: [PRODUCT_MASKED]")
+                        handlePurchase(purchase)
+                    }
+                } ?: run {
+                    Log.w(TAG, "⚠️ Aucun achat dans la réponse OK")
+                    _isLoading.value = false
                 }
             }
             BillingClient.BillingResponseCode.USER_CANCELED -> {
@@ -257,35 +273,48 @@ class GooglePlayBillingService private constructor(
     }
     
     private fun handlePurchase(purchase: Purchase) {
-        if (purchase.purchaseState == Purchase.PurchaseState.PURCHASED) {
-            if (!purchase.isAcknowledged) {
-                // Valider avec Firebase avant d'acquitter (comme iOS)
-                validatePurchaseWithFirebase(purchase)
-            } else {
-                // Déjà validé et acquitté
-                _isSubscribed.value = true
-                
-                // 🔥 CRITIQUE: Mettre à jour aussi l'AppState pour débloquer les catégories premium
-                try {
-                    com.love2loveapp.AppDelegate.appState.updateUserSubscriptionStatus(true)
-                } catch (e: Exception) {
-                    Log.e(TAG, "❌ Erreur mise à jour AppState pour abonnement validé", e)
+        when (purchase.purchaseState) {
+            Purchase.PurchaseState.PURCHASED -> {
+                if (!purchase.isAcknowledged) {
+                    // 🎯 Log pour identifier l'utilisateur (masqué en prod)
+                    Log.d(TAG, "🎯 Traitement achat pour Compte invité - UID: [MASKED]")
+                    
+                    // Valider avec Firebase avant d'acquitter (comme iOS)
+                    // ⚡ L'état de chargement reste à true pendant la validation Firebase
+                    validatePurchaseWithFirebase(purchase)
+                } else {
+                    // Déjà validé et acquitté
+                    _isSubscribed.value = true
+                    
+                    // 🔥 CRITIQUE: Mettre à jour aussi l'AppState pour débloquer les catégories premium
+                    try {
+                        com.love2loveapp.AppDelegate.appState.updateUserSubscriptionStatus(true)
+                        Log.d(TAG, "✅ Statut abonnement mis à jour: true")
+                    } catch (e: Exception) {
+                        Log.e(TAG, "❌ Erreur mise à jour AppState pour abonnement validé", e)
+                    }
+                    
+                    // ✅ Fin du chargement uniquement après mise à jour complète
+                    _isLoading.value = false
+                    Log.d(TAG, "✅ Abonnement déjà validé")
                 }
-                
-                _isLoading.value = false
-                Log.d(TAG, "✅ Abonnement déjà validé")
             }
-        } else if (purchase.purchaseState == Purchase.PurchaseState.PENDING) {
-            Log.d(TAG, "⏳ Achat en attente (approbation parentale?)")
-            _isLoading.value = false
-            _errorMessage.value = "Achat en attente d'approbation"
+            Purchase.PurchaseState.PENDING -> {
+                Log.d(TAG, "⏳ Achat en attente (approbation parentale?)")
+                _isLoading.value = false
+                _errorMessage.value = "Achat en attente d'approbation"
+            }
+            else -> {
+                Log.w(TAG, "⚠️ État de purchase non géré: ${purchase.purchaseState}")
+                _isLoading.value = false
+            }
         }
     }
 
     // === Validation Firebase (équivalent validateReceiptWithFirebase iOS) ===
     
     private fun validatePurchaseWithFirebase(purchase: Purchase) {
-        Log.d(TAG, "🔥 Validation Firebase pour: ${purchase.products}")
+        Log.d(TAG, "🔥 Validation Firebase pour [love2love_monthly]")
         
         val productId = purchase.products.firstOrNull()
         if (productId == null) {
@@ -301,8 +330,6 @@ class GooglePlayBillingService private constructor(
             "productId" to productId,
             "purchaseToken" to purchase.purchaseToken
         )).addOnCompleteListener { task ->
-            _isLoading.value = false
-            
             if (task.isSuccessful) {
                 val data = task.result?.data as? Map<String, Any>
                 val success = data?.get("success") as? Boolean ?: false
@@ -312,15 +339,28 @@ class GooglePlayBillingService private constructor(
                     _isSubscribed.value = true
                     _errorMessage.value = null
                     
+                    // 🔥 CRITIQUE: Mettre à jour aussi l'AppState pour débloquer les catégories premium
+                    try {
+                        com.love2loveapp.AppDelegate.appState.updateUserSubscriptionStatus(true)
+                        Log.d(TAG, "✅ Statut abonnement mis à jour: true")
+                    } catch (e: Exception) {
+                        Log.e(TAG, "❌ Erreur mise à jour AppState pour abonnement validé", e)
+                    }
+                    
                     // Acquitter l'achat après validation Firebase
                     acknowledgePurchase(purchase)
+                    
+                    // ✅ Fin du chargement uniquement après toutes les mises à jour
+                    _isLoading.value = false
                 } else {
                     Log.e(TAG, "❌ Validation Firebase échouée")
                     _errorMessage.value = "Erreur de validation de l'abonnement"
+                    _isLoading.value = false
                 }
             } else {
                 Log.e(TAG, "❌ Erreur appel Firebase: ${task.exception?.message}")
                 _errorMessage.value = "Erreur de validation: ${task.exception?.localizedMessage}"
+                _isLoading.value = false
             }
         }
     }

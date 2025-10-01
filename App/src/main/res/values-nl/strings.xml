@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <!-- Généré automatiquement depuis UI.xcstrings -->
     <string name="format_two_params">%1$@ %2$@</string>
     <string name="format_slash_separator">%1$@ / %2$@</string>
     <string name="format_comma_separator">%1$@, %2$@</string>
@@ -2652,15 +2651,72 @@
     <string name="yes">Ja</string>
     <string name="you">Jij</string>
     <string name="you_miss_me">Mis je me</string>
-    
-    <!-- Completion Step -->
     <string name="completion_subtitle">Alles is klaar</string>
     <string name="completion_title_line1">Dank je voor</string>
     <string name="completion_title_line2">je vertrouwen.</string>
     <string name="completion_description">Je profiel is nu geconfigureerd.\nJe kunt je partner verbinden en samen jullie reis beginnen!</string>
     <string name="completion_button">Begin het Love2Love avontuur</string>
-    
-    <!-- Simple strings -->
     <string name="share">Delen</string>
     <string name="or">OF</string>
+    <string name="daily_challenge_54">Maak samen jullie overlevingspakket voor momenten van twijfel in de liefde.</string>
+    <string name="daily_challenge_55">Schrijf een bericht dat je niet zou sturen… en stuur het toch.</string>
+    <string name="daily_challenge_56">Maak ieder een top 3 van de kleine fysieke of gebarende details die je bij de ander waardeert.</string>
+    <string name="daily_challenge_57">Schrijf ieder een brief die alleen geopend wordt als jullie ooit twijfelen aan jullie band.</string>
+    <string name="daily_challenge_58">Houd een complimentengevecht via berichten: om de beurt, totdat een van jullie opgeeft.</string>
+    <string name="daily_challenge_59">Zeg tegen je partner dat hij/zij de mooiste zwakte is die je aan hem/haar waardeert.</string>
+    <string name="daily_challenge_60">Maak een screenshot van het mooiste bericht dat je van je partner hebt ontvangen en stuur het naar hem/haar.</string>
+    <string name="daily_challenge_61">Zeg tegen de ander: “Ik wil je in mijn leven omdat…” en vul de zin oprecht aan.</string>
+    <string name="daily_challenge_62">Teken een object dat jullie relatie symboliseert.</string>
+    <string name="daily_challenge_63">Stuur elkaar een foto van een object of kledingstuk dat een verhaal heeft dat verbonden is met jullie relatie.</string>
+    <string name="daily_challenge_64">Stuur elkaar een wens via e-mail voor de ander, die over 10 jaar verzonden wordt.</string>
+    <string name="daily_challenge_65">Bedenk een Netflix-serie die jullie liefdesverhaal vertelt.</string>
+    <string name="daily_challenge_66">Vandaag is het minuutje tederheid: jullie hebben 60 seconden om elkaar alles te zeggen wat je aan de ander waardeert.</string>
+    <string name="daily_challenge_67">Stel de ander de vraag: “Wanneer wist je dat het meer was dan aantrekkingskracht?”</string>
+    <string name="daily_challenge_68">Maak samen jullie koppelsvlag: kleuren, symbolen, wat deze vertegenwoordigt.</string>
+    <string name="daily_challenge_69">Vraag hem/haar: Als onze relatie een landschap was, welke zou het zijn?</string>
+    <string name="daily_challenge_70">Bepaal een zin om te zeggen tijdens een ruzie om de spanning te ontladen.</string>
+    <string name="daily_challenge_71">Vraag hem/haar: Welke zin die ik tegen je zei, ben je nooit vergeten?</string>
+    <string name="daily_challenge_72">Kies een lied dat gespeeld kan worden op jullie bruiloft of geloftevernieuwing. Leg uit waarom.</string>
+    <string name="daily_challenge_73">Zeg tegen je partner: Dit heb ik dankzij jou geleerd… en vul de zin aan.</string>
+    <string name="daily_challenge_74">Maak samen een afspeellijst van 3 nummers die jullie liefde het beste vertegenwoordigen.</string>
+    <string name="daily_challenge_75">Stuur een bericht naar je partner waarin je zegt wat je wilt dat jullie kinderen zich herinneren van jullie relatie.</string>
+    <string name="daily_challenge_76">Vraag hem/haar: Wat zag je in mij dat ik zelf niet zag?</string>
+    <string name="daily_challenge_77">Deel een jeugdherinnering die je kwetsbaar maakt en vertel waarom je die hebt gekozen.</string>
+    <string name="daily_challenge_78">Kies ieder een moment waarop je je begrepen voelde door de ander. Vertel het verhaal.</string>
+    <string name="daily_challenge_79">Zeg tegen de ander: Als ik één moment met jou opnieuw kon beleven, zou het zijn…</string>
+    <string name="daily_challenge_80">Vraag elkaar: Wat wil je dat ik over 40 jaar over jou onthoud?</string>
+    <string name="daily_challenge_81">Schrijf een bericht dat je niet zou sturen… en stuur het toch.</string>
+    <string name="daily_challenge_82">Maak ieder een top 3 van de kleine fysieke of gebarende details die je bij de ander waardeert.</string>
+    <string name="daily_challenge_83">Schrijf ieder een brief die alleen geopend wordt als jullie ooit twijfelen aan jullie band.</string>
+    <string name="daily_question_52">Wat vind jij mooi aan mij dat ik zelf niet genoeg waardeer?</string>
+    <string name="daily_question_53">Welke angst heb je mij nooit durven toevertrouwen, maar zou je willen dat ik begrijp?</string>
+    <string name="daily_question_54">Is er een moment geweest dat je je buitengesloten voelde in onze relatie, ook al was dat niet mijn bedoeling?</string>
+    <string name="daily_question_55">Wat heb je over jezelf geleerd sinds we samen zijn?</string>
+    <string name="daily_question_56">Wat is jouw definitie van blijvende liefde, en hoe kan ik daar samen met jou dichterbij komen?</string>
+    <string name="daily_question_57">In welk deel van je leven zou je willen dat ik meer aanwezig of betrokken ben?</string>
+    <string name="daily_question_58">Wanneer voelde je dat ik je echt begreep?</string>
+    <string name="daily_question_59">Wat is iets dat ik doe en waar je van houdt, zelfs als ik het niet doorheb?</string>
+    <string name="daily_question_60">Als je aan ons denkt over 10 of 20 jaar, wat hoop je dat we hebben weten te behouden?</string>
+    <string name="daily_question_61">Wanneer we spanningen doormaken, wat stelt je gerust en geeft je het gevoel dat we ze samen zullen overwinnen?</string>
+    <string name="daily_question_62">Heb je een specifieke herinnering waarin je je echt geliefd voelde door mij?</string>
+    <string name="daily_question_63">Welke zin of welk gebaar droom je ervan ooit van mij te horen of te ontvangen?</string>
+    <string name="daily_question_64">Wanneer je twijfelt aan de toekomst, wat herstelt je vertrouwen in onze band?</string>
+    <string name="daily_question_65">Is er een specifieke verwachting die je hebt geïnternaliseerd zonder ooit te uiten, die je nu wilt delen?</string>
+    <string name="daily_question_66">Als onze relatie een tuin was, wat zou die nu nodig hebben om beter te bloeien?</string>
+    <string name="daily_question_67">Welke herinnering hebben we nog niet gemaakt, maar droom je ervan dat we die samen beleven?</string>
+    <string name="daily_question_68">Is er een manier van vrijen of elkaar aanraken die je meer samen zou willen ontdekken?</string>
+    <string name="daily_question_69">Wat zou je willen dat ik begrijp zonder dat je het steeds hoeft uit te leggen?</string>
+    <string name="daily_question_70">Als je mij een droom kon toevertrouwen die je nog nooit aan iemand hebt verteld, welke zou dat zijn?</string>
+    <string name="daily_question_71">Wat zou je willen dat ik als een kracht in jou zie, waar jij soms alleen een zwakte ziet?</string>
+    <string name="daily_question_72">Wanneer had je mij nodig zonder dat te durven laten zien? En wat had je gewild dat ik op dat moment deed?</string>
+    <string name="daily_question_73">Wat in ons dagelijks leven geeft je het gevoel dat je echt belangrijk voor me bent?</string>
+    <string name="daily_question_74">Wanneer ik moe ben, wat zou je willen dat ik nooit vergeet te doen voor jou?</string>
+    <string name="daily_question_75">Welk compliment had je in je leven vaker willen horen en dat ik je vanaf nu kan geven?</string>
+    <string name="daily_question_76">Wat is je geheime angst over onze toekomst, en hoe kan ik je helpen die te verlichten?</string>
+    <string name="daily_question_77">Wanneer je een moeilijke tijd doormaakt, wat zou je willen dat ik doe om je te laten voelen dat je niet alleen bent?</string>
+    <string name="daily_question_78">Wat zou ik kunnen doen om je te helpen een twijfel of onzekerheid die je met je meedraagt te overwinnen?</string>
+    <string name="daily_question_79">Is er een woord dat ik nooit heb gezegd, maar dat jouw hart graag van mij had gehoord?</string>
+    <string name="daily_question_80">Wanneer je terugkijkt op ons verhaal, op welk moment zei je tegen jezelf: “Dit is de persoon met wie ik mijn leven wil doorbrengen”?</string>
+    <string name="daily_question_81">Welk deel van jezelf vind je moeilijk om te geven, maar zou je op een dag met mij willen delen?</string>
+    <string name="daily_question_82">Wat is het bewijs van liefde dat je nooit in je leven hebt ontvangen en dat je op een dag met mij zou willen ervaren?</string>
 </resources>

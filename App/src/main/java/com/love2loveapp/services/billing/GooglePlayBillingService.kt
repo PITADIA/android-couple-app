@@ -304,7 +304,16 @@ class GooglePlayBillingService private constructor(private val context: Context)
                 productDetailsList.forEach { productDetails ->
                     val planType = SubscriptionPlanType.values().find { it.productId == productDetails.productId }
                     planType?.let { plan ->
-                        val pricingPhase = productDetails.subscriptionOfferDetails?.firstOrNull()?.pricingPhases?.pricingPhaseList?.firstOrNull()
+                        // 🔄 Récupération intelligente du prix selon le type d'offre
+                        val pricingPhases = productDetails.subscriptionOfferDetails?.firstOrNull()?.pricingPhases?.pricingPhaseList
+                        val pricingPhase = if (plan == SubscriptionPlanType.MONTHLY && (pricingPhases?.size ?: 0) > 1) {
+                            // Pour MONTHLY avec plusieurs phases (essai gratuit) → prendre la phase récurrente (dernière)
+                            pricingPhases?.lastOrNull()
+                        } else {
+                            // Pour WEEKLY ou offres simples → prendre la première phase
+                            pricingPhases?.firstOrNull()
+                        }
+                        
                         val price = pricingPhase?.formattedPrice ?: "N/A"
                         detailsMap[plan] = price
                         
@@ -314,7 +323,7 @@ class GooglePlayBillingService private constructor(private val context: Context)
                                 priceAmountMicros = pricingPhase.priceAmountMicros,
                                 priceCurrencyCode = pricingPhase.priceCurrencyCode
                             )
-                            Log.d(TAG, "💰 ${plan.name}: $price (${pricingPhase.priceAmountMicros} micros, ${pricingPhase.priceCurrencyCode})")
+                            Log.d(TAG, "💰 ${plan.name}: $price (${pricingPhase.priceAmountMicros} micros, ${pricingPhase.priceCurrencyCode}) - phases: ${pricingPhases?.size ?: 0}")
                         } else {
                             Log.d(TAG, "💰 ${plan.name}: $price")
                         }

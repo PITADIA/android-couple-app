@@ -45,9 +45,7 @@ fun FavoritesScreen(
     val favoriteQuestions by favoritesRepository.favoriteQuestions.collectAsState()
     val isLoading by favoritesRepository.isLoading.collectAsState()
 
-    // État local pour les alertes de suppression
-    var showingDeleteAlert by remember { mutableStateOf(false) }
-    var favoriteToDelete by remember { mutableStateOf<FavoriteQuestion?>(null) }
+    // État local pour les alertes de suppression - SUPPRIMÉ pour suppression directe
 
     // Pager state pour les cartes swipeables
     val pagerState = rememberPagerState(
@@ -104,12 +102,18 @@ fun FavoritesScreen(
 
                     Spacer(modifier = Modifier.height(20.dp))
 
-                    // 🔘 BOUTON DE SUPPRESSION selon le rapport
+                    // 🔘 BOUTON DE SUPPRESSION selon le rapport - SUPPRESSION DIRECTE
                     Button(
                         onClick = {
                             if (pagerState.currentPage < favoriteQuestions.size) {
-                                favoriteToDelete = favoriteQuestions[pagerState.currentPage]
-                                showingDeleteAlert = true
+                                val favoriteToDelete = favoriteQuestions[pagerState.currentPage]
+                                scope.launch {
+                                    favoritesRepository.removeFavorite(favoriteToDelete.questionId)
+                                    // Ajustement automatique de l'index
+                                    if (pagerState.currentPage >= favoriteQuestions.size - 1 && pagerState.currentPage > 0) {
+                                        // Le pager se réajustera automatiquement
+                                    }
+                                }
                             }
                         },
                         colors = ButtonDefaults.buttonColors(
@@ -149,57 +153,7 @@ fun FavoritesScreen(
         }
     }
 
-    // 🚨 ALERT DE CONFIRMATION selon le rapport
-    if (showingDeleteAlert && favoriteToDelete != null) {
-        AlertDialog(
-            onDismissRequest = { showingDeleteAlert = false },
-            title = {
-                Text(
-                    text = stringResource(R.string.remove_from_favorites),
-                    fontWeight = FontWeight.Bold
-                )
-            },
-            text = {
-                Text(
-                    text = stringResource(R.string.remove_favorite_confirmation)
-                )
-            },
-            confirmButton = {
-                TextButton(
-                    onClick = {
-                        favoriteToDelete?.let { favorite ->
-                            scope.launch {
-                                favoritesRepository.removeFavorite(favorite.questionId)
-                                // Ajustement automatique de l'index
-                                if (pagerState.currentPage >= favoriteQuestions.size - 1 && pagerState.currentPage > 0) {
-                                    // Le pager se réajustera automatiquement
-                                }
-                            }
-                        }
-                        showingDeleteAlert = false
-                        favoriteToDelete = null
-                    }
-                ) {
-                    Text(
-                        text = stringResource(R.string.remove),
-                        color = MaterialTheme.colorScheme.error
-                    )
-                }
-            },
-            dismissButton = {
-                TextButton(
-                    onClick = {
-                        showingDeleteAlert = false
-                        favoriteToDelete = null
-                    }
-                ) {
-                    Text(
-                        text = stringResource(R.string.cancel)
-                    )
-                }
-            }
-        )
-    }
+    // 🚨 ALERT DE CONFIRMATION - SUPPRIMÉ pour suppression directe
 }
 
 // 🏷️ HEADER SIMPLE ET ÉLÉGANT selon le rapport - Juste titre centré
@@ -286,4 +240,5 @@ fun EmptyFavoritesContent(
         }
     }
 }
+
 

@@ -16,8 +16,8 @@ android {
         minSdk 24
         targetSdk 35
         // 📱 VERSION: Synchronisée avec Info.plist iOS
-        versionCode 2280
-        versionName "2.280"
+        versionCode 2300
+        versionName "2.300"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
@@ -146,9 +146,9 @@ dependencies {
     // RevenueCat
     implementation 'com.revenuecat.purchases:purchases:7.7.0'
     
-    // Google Play Billing
-    implementation 'com.android.billingclient:billing:6.1.0'
-    implementation 'com.android.billingclient:billing-ktx:6.1.0'
+    // Google Play Billing - Version 7.1.1 (dernière stable, compatible avec les exigences Google)
+    implementation 'com.android.billingclient:billing:7.1.1'
+    implementation 'com.android.billingclient:billing-ktx:7.1.1'
 
     // Image Editing & Cropping (équivalent SwiftyCrop iOS) - Version compatible
     implementation 'com.github.CanHub:Android-Image-Cropper:4.3.3'

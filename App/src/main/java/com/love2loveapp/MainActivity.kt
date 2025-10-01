@@ -28,17 +28,33 @@ class MainActivity : ComponentActivity() {
             Log.d(TAG, "📦 Package: ${packageName}")
             Log.d(TAG, "🆔 Task ID: ${taskId}")
             
-            // 🛡️ Protection contre les crashes Compose hover (bug connu)
+            // 🛡️ Protection renforcée contre les crashes Compose hover (bug connu)
             Thread.setDefaultUncaughtExceptionHandler { thread, exception ->
                 when {
                     exception.message?.contains("ACTION_HOVER_EXIT event was not cleared") == true -> {
                         Log.w(TAG, "🛡️ Crash Compose hover intercepté et ignoré")
-                        // Ne pas crash l'app pour ce bug connu de Compose
+                        // ✅ Relancer l'UI au lieu de simplement ignorer
+                        runOnUiThread {
+                            try {
+                                // Force recomposition pour nettoyer l'état Compose
+                                recreate()
+                            } catch (e: Exception) {
+                                Log.e(TAG, "❌ Erreur recreate après crash hover: ${e.message}")
+                            }
+                        }
                         return@setDefaultUncaughtExceptionHandler
                     }
                     exception is IllegalStateException && 
                     exception.stackTrace.any { it.className.contains("AndroidComposeView") } -> {
                         Log.w(TAG, "🛡️ Crash AndroidComposeView intercepté: ${exception.message}")
+                        // ✅ Même traitement : relancer l'UI
+                        runOnUiThread {
+                            try {
+                                recreate()
+                            } catch (e: Exception) {
+                                Log.e(TAG, "❌ Erreur recreate après crash ComposeView: ${e.message}")
+                            }
+                        }
                         return@setDefaultUncaughtExceptionHandler
                     }
                     else -> {
